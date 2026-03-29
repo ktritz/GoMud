@@ -177,7 +177,7 @@ func (g *GMCPPartyModule) GetPartyNode(party *parties.Party, gmcpModule string) 
 
 		if user := users.GetByUserId(uId); user != nil {
 
-			hPct := int(math.Floor((float64(user.Character.Health) / float64(user.Character.HealthMax.Value)) * 100))
+			hPct := int(math.Floor((float64(user.Character.Health) / float64(user.Character.HealthMax.GetValue())) * 100))
 			if hPct < 0 {
 				hPct = 0
 			}

@@ -79,6 +79,30 @@ type StatInfo struct {
 	Mods     int `yaml:"-"`                  // How much it's modded by equipment, spells, etc.
 }
 
+func (si *StatInfo) GetValue() int {
+	return si.Value
+}
+
+func (si *StatInfo) SetValue(value int) {
+	si.Value = value
+}
+
+func (si *StatInfo) GetValueAdj() int {
+	return si.ValueAdj
+}
+
+func (si *StatInfo) GetBase() int {
+	return si.Base
+}
+
+func (si *StatInfo) GetMods() int {
+	return si.Mods
+}
+
+func (si *StatInfo) GetTraining() int {
+	return si.Training
+}
+
 func (si *StatInfo) SetMod(mod ...int) {
 	if len(mod) == 0 {
 		si.Mods = 0
@@ -144,4 +168,18 @@ func (s *Statistics) GetTraining(statName string) int {
 
 func (s *Statistics) SetTraining(statName string, value int) {
 	s.Get(statName).Training = value
+}
+
+func (s *Statistics) SetValue(statName string, value int) {
+	s.Get(statName).Value = value
+}
+
+// ActionValueAdj resolves an action name to the configured stat and returns its adjusted value.
+func (s *Statistics) ActionValueAdj(action string) int {
+	return s.GetValueAdj(configs.GetStatForAction(action))
+}
+
+// ActionValue resolves an action name to the configured stat and returns its value.
+func (s *Statistics) ActionValue(action string) int {
+	return s.GetValue(configs.GetStatForAction(action))
 }

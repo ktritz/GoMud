@@ -557,6 +557,62 @@ Statistics:
     BaseModFactor: 0.3333333334  # How much of a scaling to apply to levels before multiplying by racial stat
     NaturalGainsModFactor: 0.5   # Free stats gained per level modded by this
 
+  # Stat action mappings - grouped by stat
+  # Each stat lists the game actions it governs.
+  # To reassign an action, move it to a different stat block.
+  # To rename a stat, change the key and update BaseStats to match.
+  StatActions:
+    Strength:
+      Actions:
+        - DiceSides         # Additional damage dice sides
+        - CritPrimary       # Critical hit chance (primary)
+        - CarryCapacity     # How many items can be carried
+        - DisarmDefense1    # Resist disarm (primary)
+        - BumpOffense       # Bump/push success
+    Speed:
+      Actions:
+        - DiceCount         # Additional damage dice count
+        - AttackCount       # Extra attacks in combat
+        - HitChance         # Chance to land a hit
+        - CritSecondary     # Critical hit chance (secondary)
+        - FleeChance        # Chance to flee from combat
+        - MovementSpeed     # Extra movements per round
+        - TackleOffense     # Tackle success chance
+        - DisarmOffense1    # Disarm success (primary)
+        - Pickpocket1       # Pickpocket success (primary)
+        - MobFollowSpeed    # Speed component of mob follow
+    Smarts:
+      Actions:
+        - DisarmOffense2    # Disarm success (secondary)
+        - Pickpocket2       # Pickpocket success (secondary)
+        - MapMemory         # Room memory capacity
+        - MapSprawl         # Map generation range
+        - TameGrowth2       # Taming skill growth (secondary)
+    Vitality:
+      Actions:
+        - MaxHealth         # Contribution to maximum health
+    Mysticism:
+      Actions:
+        - MaxMana           # Contribution to maximum mana
+        - Casting           # Spell casting success chance
+        - EnchantPower      # Enchantment damage/defense/stat bonus
+        - EnchantProtection # Reduction in enchant item destruction
+        - PortalDuration    # How long portals last
+        - PrayerPower       # Number of prayer buffs received
+    Perception:
+      Actions:
+        - DamageBonus       # Bonus damage per hit
+        - TackleDefense     # Resist being tackled
+        - DisarmDefense2    # Resist disarm (secondary)
+        - Pickpocket3       # Pickpocket success (tertiary)
+        - PickpocketDefense # Resist pickpocket
+        - SearchSuccess     # Search for hidden things
+        - BarterDiscount    # Negotiate better prices
+        - MobFollowDefense  # Mob chase awareness
+        - HostilityReduction # Reduce hostile mob timer
+        - MobWeaponSearch   # Mob AI weapon pickup chance
+        - TameGrowth1       # Taming skill growth (primary)
+
 ################################################################################
 #
 #   Roles

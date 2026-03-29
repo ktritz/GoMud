@@ -5,19 +5,36 @@ import (
 	"strings"
 
 	"github.com/GoMudEngine/GoMud/internal/events"
-	"github.com/GoMudEngine/GoMud/internal/items"
+	"github.com/GoMudEngine/GoMud/internal/locksmith"
 	"github.com/GoMudEngine/GoMud/internal/rooms"
 	"github.com/GoMudEngine/GoMud/internal/users"
 	"github.com/GoMudEngine/GoMud/internal/util"
 )
 
 func Lock(rest string, user *users.UserRecord, room *rooms.Room, flags events.EventFlag) (bool, error) {
+	return lockOrUnlock(rest, user, room, true)
+}
+
+func Unlock(rest string, user *users.UserRecord, room *rooms.Room, flags events.EventFlag) (bool, error) {
+	return lockOrUnlock(rest, user, room, false)
+}
+
+func lockOrUnlock(rest string, user *users.UserRecord, room *rooms.Room, doLock bool) (bool, error) {
 
 	args := util.SplitButRespectQuotes(strings.ToLower(rest))
 
 	if len(args) < 1 {
-		user.SendText("Unlock what?")
+		if doLock {
+			user.SendText("Lock what?")
+		} else {
+			user.SendText("Unlock what?")
+		}
 		return true, nil
+	}
+
+	actionVerb := `unlock`
+	if doLock {
+		actionVerb = `lock`
 	}
 
 	containerName := room.FindContainerByName(args[0])
@@ -27,54 +44,52 @@ func Lock(rest string, user *users.UserRecord, room *rooms.Room, flags events.Ev
 
 		container := room.Containers[containerName]
 
-		if container.Lock.IsLocked() {
+		if doLock && container.Lock.IsLocked() {
 			user.SendText("That's already locked.")
 			return true, nil
 		}
-
-		lockId := fmt.Sprintf(`%d-%s`, room.RoomId, containerName)
-		hasKey, _ := user.Character.HasKey(lockId, int(container.Lock.Difficulty))
-
-		var backpackKeyItm items.Item = items.Item{}
-		var hasBackpackKey bool = false
-		if !hasKey {
-			backpackKeyItm, hasBackpackKey = user.Character.FindKeyInBackpack(lockId)
+		if !doLock && !container.Lock.IsLocked() {
+			user.SendText("That's not locked.")
+			return true, nil
 		}
 
-		if hasKey {
-			container.Lock.SetLocked()
-			room.Containers[containerName] = container
+		lockId := locksmith.BuildLockId(room.RoomId, containerName)
+		keyResult := locksmith.FindKey(user.Character, lockId, int(container.Lock.Difficulty))
 
+		if keyResult.HasKeyRingKey {
+			if doLock {
+				container.Lock.SetLocked()
+			} else {
+				container.Lock.SetUnlocked()
+			}
+			room.Containers[containerName] = container
 			room.PlaySound(`change`, `other`)
 
-			user.SendText(fmt.Sprintf(`You use a key to relock the <ansi fg="container">%s</ansi>.`, containerName))
-			room.SendText(fmt.Sprintf(`<ansi fg="username">%s</ansi> uses a key to relock the <ansi fg="container">%s</ansi>.`, user.Character.Name, containerName), user.UserId)
-		} else if hasBackpackKey {
+			user.SendText(fmt.Sprintf(`You use a key to %s the <ansi fg="container">%s</ansi>.`, actionVerb, containerName))
+			room.SendText(fmt.Sprintf(`<ansi fg="username">%s</ansi> uses a key to %s the <ansi fg="container">%s</ansi>.`, user.Character.Name, actionVerb, containerName), user.UserId)
 
-			itmSpec := backpackKeyItm.GetSpec()
+		} else if keyResult.HasBackpackKey {
+			itmSpec := keyResult.BackpackKey.GetSpec()
 
-			container.Lock.SetLocked()
+			if doLock {
+				container.Lock.SetLocked()
+			} else {
+				container.Lock.SetUnlocked()
+			}
 			room.Containers[containerName] = container
 
-			// Key entries look like:
-			// "key-<roomid>-<exitname>": "<itemid>"
-			user.Character.SetKey(`key-`+lockId, fmt.Sprintf(`%d`, backpackKeyItm.ItemId))
-			user.Character.RemoveItem(backpackKeyItm)
-
-			events.AddToQueue(events.ItemOwnership{
-				UserId: user.UserId,
-				Item:   backpackKeyItm,
-				Gained: false,
-			})
-
+			locksmith.ConsumeBackpackKey(user.Character, keyResult.BackpackKey, lockId, user.UserId)
 			room.PlaySound(`change`, `other`)
 
-			user.SendText(fmt.Sprintf(`You use your <ansi fg="item">%s</ansi> to lock the <ansi fg="container">%s</ansi>, and add it to your key ring for the future.`, itmSpec.Name, containerName))
-			room.SendText(
-				fmt.Sprintf(`<ansi fg="username">%s</ansi> uses a key to lock the <ansi fg="container">%s</ansi>.`, user.Character.Name, containerName),
-				user.UserId)
+			user.SendText(fmt.Sprintf(`You use your <ansi fg="item">%s</ansi> to %s the <ansi fg="container">%s</ansi>, and add it to your key ring for the future.`, itmSpec.Name, actionVerb, containerName))
+			room.SendText(fmt.Sprintf(`<ansi fg="username">%s</ansi> uses a key to %s the <ansi fg="container">%s</ansi>.`, user.Character.Name, actionVerb, containerName), user.UserId)
+
 		} else {
-			user.SendText(`You do not have the key for that.`)
+			if doLock {
+				user.SendText(`You do not have the key for that.`)
+			} else {
+				user.SendText(`You do not have the key for that. Maybe you could <ansi fg="command">picklock</ansi> the lock.`)
+			}
 		}
 
 		return true, nil
@@ -83,61 +98,59 @@ func Lock(rest string, user *users.UserRecord, room *rooms.Room, flags events.Ev
 
 		exitInfo, _ := room.GetExitInfo(exitName)
 
-		if exitInfo.Lock.IsLocked() {
+		if doLock && exitInfo.Lock.IsLocked() {
 			user.SendText("That's already locked.")
 			return true, nil
 		}
-
-		lockId := fmt.Sprintf(`%d-%s`, room.RoomId, exitName)
-		hasKey, _ := user.Character.HasKey(lockId, int(exitInfo.Lock.Difficulty))
-
-		var backpackKeyItm items.Item = items.Item{}
-		var hasBackpackKey bool = false
-		if !hasKey {
-			backpackKeyItm, hasBackpackKey = user.Character.FindKeyInBackpack(lockId)
+		if !doLock && !exitInfo.Lock.IsLocked() {
+			user.SendText("That's not locked.")
+			return true, nil
 		}
 
-		if hasKey {
-			exitInfo.Lock.SetLocked()
-			room.SetExitLock(exitName, true)
+		lockId := locksmith.BuildLockId(room.RoomId, exitName)
+		keyResult := locksmith.FindKey(user.Character, lockId, int(exitInfo.Lock.Difficulty))
 
+		if keyResult.HasKeyRingKey {
+			if doLock {
+				exitInfo.Lock.SetLocked()
+				room.SetExitLock(exitName, true)
+			} else {
+				exitInfo.Lock.SetUnlocked()
+				room.SetExitLock(exitName, false)
+			}
 			room.PlaySound(`change`, `other`)
 
-			user.SendText(fmt.Sprintf(`You use a key to relock the <ansi fg="exit">%s</ansi> lock.`, exitName))
-			room.SendText(fmt.Sprintf(`<ansi fg="username">%s</ansi> uses a key to relock the <ansi fg="exit">%s</ansi> lock`, user.Character.Name, exitName), user.UserId)
-		} else if hasBackpackKey {
+			user.SendText(fmt.Sprintf(`You use a key to %s the <ansi fg="exit">%s</ansi> lock.`, actionVerb, exitName))
+			room.SendText(fmt.Sprintf(`<ansi fg="username">%s</ansi> uses a key to %s the <ansi fg="exit">%s</ansi> lock`, user.Character.Name, actionVerb, exitName), user.UserId)
 
-			itmSpec := backpackKeyItm.GetSpec()
+		} else if keyResult.HasBackpackKey {
+			itmSpec := keyResult.BackpackKey.GetSpec()
 
-			exitInfo.Lock.SetLocked()
-			room.SetExitLock(exitName, true)
+			if doLock {
+				exitInfo.Lock.SetLocked()
+				room.SetExitLock(exitName, true)
+			} else {
+				exitInfo.Lock.SetUnlocked()
+				room.SetExitLock(exitName, false)
+			}
 
-			// Key entries look like:
-			// "key-<roomid>-<exitname>": "<itemid>"
-			user.Character.SetKey(`key-`+lockId, fmt.Sprintf(`%d`, backpackKeyItm.ItemId))
-			user.Character.RemoveItem(backpackKeyItm)
-
-			events.AddToQueue(events.ItemOwnership{
-				UserId: user.UserId,
-				Item:   backpackKeyItm,
-				Gained: false,
-			})
-
+			locksmith.ConsumeBackpackKey(user.Character, keyResult.BackpackKey, lockId, user.UserId)
 			room.PlaySound(`change`, `other`)
 
-			user.SendText(fmt.Sprintf(`You use your <ansi fg="item">%s</ansi> to lock the <ansi fg="exit">%s</ansi> exit, and add it to your key ring for the future.`, itmSpec.Name, exitName))
-			room.SendText(
-				fmt.Sprintf(`<ansi fg="username">%s</ansi> uses a key to lock the <ansi fg="exit">%s</ansi> exit.`, user.Character.Name, exitName),
-				user.UserId)
+			user.SendText(fmt.Sprintf(`You use your <ansi fg="item">%s</ansi> to %s the <ansi fg="exit">%s</ansi> exit, and add it to your key ring for the future.`, itmSpec.Name, actionVerb, exitName))
+			room.SendText(fmt.Sprintf(`<ansi fg="username">%s</ansi> uses a key to %s the <ansi fg="exit">%s</ansi> exit.`, user.Character.Name, actionVerb, exitName), user.UserId)
+
 		} else {
-			user.SendText(`You do not have the key for that.`)
+			if doLock {
+				user.SendText(`You do not have the key for that.`)
+			} else {
+				user.SendText(`You do not have the key for that. Maybe you could <ansi fg="command">picklock</ansi> the lock.`)
+			}
 		}
 
 		return true, nil
-
 	}
 
 	user.SendText("There is no such exit or container.")
 	return true, nil
-
 }

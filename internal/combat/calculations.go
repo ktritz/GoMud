@@ -24,16 +24,16 @@ func PowerRanking(atkChar characters.Character, defChar characters.Character) fl
 		pct += 0.4 * float64(atkDmg) / float64(defDmg)
 	}
 
-	if defChar.Stats.Get("Speed").ValueAdj == 0 {
+	if defChar.Stats.ActionValueAdj("HitChance") == 0 {
 		pct += 0.3
 	} else {
-		pct += 0.3 * float64(atkChar.Stats.Get("Speed").ValueAdj) / float64(defChar.Stats.Get("Speed").ValueAdj)
+		pct += 0.3 * float64(atkChar.Stats.ActionValueAdj("HitChance")) / float64(defChar.Stats.ActionValueAdj("HitChance"))
 	}
 
-	if defChar.HealthMax.Value == 0 {
+	if defChar.HealthMax.GetValue() == 0 {
 		pct += 0.2
 	} else {
-		pct += 0.2 * float64(atkChar.HealthMax.Value) / float64(defChar.HealthMax.Value)
+		pct += 0.2 * float64(atkChar.HealthMax.GetValue()) / float64(defChar.HealthMax.GetValue())
 	}
 
 	if defChar.GetDefense() == 0 {
@@ -89,7 +89,7 @@ func ChanceToTame(s *users.UserRecord, t *mobs.Mob) int {
 		levelDiff = MOD_LEVELDIFF_MIN
 	}
 
-	healthModifier := MOD_HEALTHPERCENT_MAX - math.Ceil(float64(s.Character.Health)/float64(s.Character.HealthMax.Value)*MOD_HEALTHPERCENT_MAX)
+	healthModifier := MOD_HEALTHPERCENT_MAX - math.Ceil(float64(s.Character.Health)/float64(s.Character.HealthMax.GetValue())*MOD_HEALTHPERCENT_MAX)
 
 	var aggroModifier float64 = 1
 	if t.Character.IsAggro(s.UserId, 0) {

@@ -5,6 +5,7 @@ import (
 	"github.com/GoMudEngine/GoMud/internal/characters"
 	"github.com/GoMudEngine/GoMud/internal/mobs"
 	"github.com/GoMudEngine/GoMud/internal/rooms"
+	"github.com/GoMudEngine/GoMud/internal/targeting"
 	"github.com/GoMudEngine/GoMud/internal/users"
 )
 
@@ -20,31 +21,11 @@ func Backstab(rest string, mob *mobs.Mob, room *rooms.Room) (bool, error) {
 	attackMobInstanceId := 0
 
 	if rest == `` {
-
 		if mob.Character.Aggro != nil {
 			mob.Character.Aggro.Type = characters.BackStab
 			return true, nil
-		} else {
-			// If no argument supplied, attack whoever is attacking the player currently.
-			for _, mId := range room.GetMobs(rooms.FindFightingMob) {
-				m := mobs.GetInstance(mId)
-				if m.Character.Aggro != nil && m.Character.Aggro.MobInstanceId == mob.InstanceId {
-					attackMobInstanceId = m.InstanceId
-					break
-				}
-			}
-
-			if attackMobInstanceId == 0 {
-				for _, uId := range room.GetPlayers(rooms.FindFightingMob) {
-					u := users.GetByUserId(uId)
-					if u.Character.Aggro != nil && u.Character.Aggro.MobInstanceId == mob.InstanceId {
-						attackPlayerId = u.UserId
-						break
-					}
-				}
-			}
 		}
-
+		attackPlayerId, attackMobInstanceId = targeting.FindAutoTarget(room, 0, mob.InstanceId)
 	} else {
 		attackPlayerId, attackMobInstanceId = room.FindByName(rest)
 	}

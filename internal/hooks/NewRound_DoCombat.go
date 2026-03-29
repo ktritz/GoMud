@@ -80,7 +80,7 @@ func handlePlayerCombat(evt events.NewRound) (affectedPlayerIds []int, affectedM
 					}
 
 					// Stat comparison accounts for up to 70% of chance to flee.
-					chanceIn100 := int(float64(user.Character.Stats.Get("Speed").ValueAdj) / (float64(user.Character.Stats.Get("Speed").ValueAdj) + float64(mob.Character.Stats.Get("Speed").ValueAdj)) * 70)
+					chanceIn100 := int(float64(user.Character.Stats.ActionValueAdj("FleeChance")) / (float64(user.Character.Stats.ActionValueAdj("FleeChance")) + float64(mob.Character.Stats.ActionValueAdj("FleeChance"))) * 70)
 					chanceIn100 += 30
 
 					roll := util.Rand(100)
@@ -103,7 +103,7 @@ func handlePlayerCombat(evt events.NewRound) (affectedPlayerIds []int, affectedM
 					}
 
 					// if equal, 25% chance of fleeing... at best, 50% chance. Then add 50% on top.
-					chanceIn100 := int(float64(user.Character.Stats.Get("Speed").ValueAdj) / (float64(user.Character.Stats.Get("Speed").ValueAdj) + float64(u.Character.Stats.Get("Speed").ValueAdj)) * 70)
+					chanceIn100 := int(float64(user.Character.Stats.ActionValueAdj("FleeChance")) / (float64(user.Character.Stats.ActionValueAdj("FleeChance")) + float64(u.Character.Stats.ActionValueAdj("FleeChance"))) * 70)
 					chanceIn100 += 30
 
 					roll := util.Rand(100)
@@ -361,89 +361,19 @@ func handlePlayerCombat(evt events.NewRound) (affectedPlayerIds []int, affectedM
 
 			roundResult := combat.AttackPlayerVsPlayer(user, defUser)
 
-			// If a mob attacks a player, check whether player has a charmed mob helping them, and if so, they will move to attack back
+			// If a mob attacks a player, check whether player has a charmed mob helping them
 			room := rooms.LoadRoom(roomId)
-			for _, instanceId := range room.GetMobs(rooms.FindCharmed) {
-				if charmedMob := mobs.GetInstance(instanceId); charmedMob != nil {
-					if charmedMob.Character.IsCharmed(defUser.UserId) && charmedMob.Character.Aggro == nil {
+			combat.TriggerCharmedMobRetaliation(room, defUser.UserId, user.UserId, false)
 
-						// Set aggro to something to prevent multiple attack triggers on this conditional
-						charmedMob.Character.Aggro = &characters.Aggro{
-							Type: characters.DefaultAttack,
-						}
+			combat.SendRoundMessages(roundResult, combat.RoundMessageContext{
+				SourceUser: user, TargetUser: defUser,
+				SourceRoom: uRoom, TargetRoom: defRoom,
+				ExcludeUserIds: []int{user.UserId, defUser.UserId},
+			})
 
-						charmedMob.Command(fmt.Sprintf("attack @%d", user.UserId))
-
-					}
-				}
-			}
-
-			for _, buffId := range roundResult.BuffSource {
-				user.AddBuff(buffId, `combat`)
-			}
-
-			for _, buffId := range roundResult.BuffTarget {
-				defUser.AddBuff(buffId, `combat`)
-			}
-
-			for _, msg := range roundResult.MessagesToSource {
-				user.SendText(msg)
-			}
-
-			for _, msg := range roundResult.MessagesToTarget {
-				defUser.SendText(msg)
-			}
-
-			for _, msg := range roundResult.MessagesToSourceRoom {
-				uRoom.SendText(msg, user.UserId, defUser.UserId)
-			}
-
-			for _, msg := range roundResult.MessagesToTargetRoom {
-				defRoom.SendText(msg, user.UserId, defUser.UserId)
-			}
-
-			// If the attack connected, check for damage to equipment.
 			if roundResult.Hit {
-
 				defUser.Character.TrackPlayerDamage(user.UserId, roundResult.DamageToTarget)
-
-				// For now, only focus on offhand items.
-				if defUser.Character.Equipment.Offhand.ItemId > 0 {
-
-					modifier := 0
-					if roundResult.Crit { // Crits double the chance of breakage for offhand items.
-						modifier = int(defUser.Character.Equipment.Offhand.GetSpec().BreakChance)
-					}
-
-					if defUser.Character.Equipment.Offhand.BreakTest(modifier) {
-						// Send message about the break
-
-						defUser.SendText(`<ansi fg="202">***</ansi>`)
-						defUser.SendText(fmt.Sprintf(`<ansi fg="214"><ansi fg="202">***</ansi> Your <ansi fg="item">%s</ansi> breaks! <ansi fg="202">***</ansi></ansi>`, defUser.Character.Equipment.Offhand.NameSimple()))
-						defUser.SendText(`<ansi fg="202">***</ansi>`)
-
-						defRoom.SendText(fmt.Sprintf(`<ansi fg="214"><ansi fg="202">***</ansi> The <ansi fg="item">%s</ansi> <ansi fg="username">%s</ansi> was carrying breaks! <ansi fg="202">***</ansi></ansi>`, defUser.Character.Equipment.Offhand.NameSimple(), defUser.Character.Name), defUser.UserId)
-
-						events.AddToQueue(events.ItemOwnership{
-							UserId: defUser.UserId,
-							Item:   defUser.Character.Equipment.Offhand,
-							Gained: false,
-						})
-
-						defUser.Character.RemoveFromBody(defUser.Character.Equipment.Offhand)
-
-						itm := items.New(20) // Broken item
-						if !defUser.Character.StoreItem(itm) {
-							room.AddItem(itm, false)
-
-							events.AddToQueue(events.ItemOwnership{
-								UserId: defUser.UserId,
-								Item:   itm,
-								Gained: true,
-							})
-						}
-					}
-				}
+				combat.HandleEquipmentBreak(defUser.Character, defRoom, roundResult, defUser.UserId, 0)
 			}
 
 			if user.Character.Health <= 0 || defUser.Character.Health <= 0 {
@@ -533,29 +463,13 @@ func handlePlayerCombat(evt events.NewRound) (affectedPlayerIds []int, affectedM
 
 			affectedPlayerIds = append(affectedPlayerIds, user.Character.Aggro.UserId)
 
-			var roundResult combat.AttackResult
+			roundResult := combat.AttackPlayerVsMob(user, defMob)
 
-			roundResult = combat.AttackPlayerVsMob(user, defMob)
-
-			for _, buffId := range roundResult.BuffSource {
-				user.AddBuff(buffId, `combat`)
-			}
-
-			for _, buffId := range roundResult.BuffTarget {
-				defMob.AddBuff(buffId, `combat`)
-			}
-
-			for _, msg := range roundResult.MessagesToSource {
-				user.SendText(msg)
-			}
-
-			for _, msg := range roundResult.MessagesToSourceRoom {
-				uRoom.SendText(msg, user.UserId)
-			}
-
-			for _, msg := range roundResult.MessagesToTargetRoom {
-				defRoom.SendText(msg, user.UserId)
-			}
+			combat.SendRoundMessages(roundResult, combat.RoundMessageContext{
+				SourceUser: user, TargetMob: defMob,
+				SourceRoom: uRoom, TargetRoom: defRoom,
+				ExcludeUserIds: []int{user.UserId},
+			})
 
 			// Handle any scripted behavior now.
 			if roundResult.Hit {
@@ -567,7 +481,7 @@ func handlePlayerCombat(evt events.NewRound) (affectedPlayerIds []int, affectedM
 			//
 			// Hostility default to 5 minutes
 			for _, groupName := range defMob.Groups {
-				mobs.MakeHostile(groupName, user.UserId, c.Timing.MinutesToRounds(2)-user.Character.Stats.Get("Perception").ValueAdj)
+				mobs.MakeHostile(groupName, user.UserId, c.Timing.MinutesToRounds(2)-user.Character.Stats.ActionValueAdj("HostilityReduction"))
 			}
 
 			// Mobs get aggro when attacked
@@ -793,9 +707,9 @@ func handleMobCombat(evt events.NewRound) (affectedPlayerIds []int, affectedMobI
 
 				roll := util.Rand(100)
 
-				util.LogRoll(`Look for weapon`, roll, mob.Character.Stats.Get("Perception").ValueAdj)
+				util.LogRoll(`Look for weapon`, roll, mob.Character.Stats.ActionValueAdj("MobWeaponSearch"))
 
-				if roll < mob.Character.Stats.Get("Perception").ValueAdj {
+				if roll < mob.Character.Stats.ActionValueAdj("MobWeaponSearch") {
 					possibleWeapons := []string{}
 					for _, itm := range mob.Character.Items {
 						iSpec := itm.GetSpec()
@@ -837,83 +751,18 @@ func handleMobCombat(evt events.NewRound) (affectedPlayerIds []int, affectedMobI
 
 			roundResult = combat.AttackMobVsPlayer(mob, defUser)
 
-			// If a mob attacks a player, check whether player has a charmed mob helping them, and if so, they will move to attack back
+			// If a mob attacks a player, check whether player has a charmed mob helping them
 			room := rooms.LoadRoom(roomId)
-			for _, instanceId := range room.GetMobs(rooms.FindCharmed) {
-				if charmedMob := mobs.GetInstance(instanceId); charmedMob != nil {
-					if charmedMob.Character.IsCharmed(defUser.UserId) && charmedMob.Character.Aggro == nil {
-						// This is set to prevent it from triggering more than once
-						charmedMob.Character.Aggro = &characters.Aggro{
-							Type: characters.DefaultAttack,
-						}
+			combat.TriggerCharmedMobRetaliation(room, defUser.UserId, mob.InstanceId, true)
 
-						charmedMob.Command(fmt.Sprintf("attack #%d", mob.InstanceId))
+			combat.SendRoundMessages(roundResult, combat.RoundMessageContext{
+				SourceMob: mob, TargetUser: defUser,
+				SourceRoom: mobRoom, TargetRoom: defRoom,
+				ExcludeUserIds: []int{defUser.UserId},
+			})
 
-					}
-				}
-			}
-
-			for _, buffId := range roundResult.BuffSource {
-				mob.AddBuff(buffId, `combat`)
-			}
-
-			for _, buffId := range roundResult.BuffTarget {
-				defUser.AddBuff(buffId, `combat`)
-			}
-
-			for _, msg := range roundResult.MessagesToTarget {
-				defUser.SendText(msg)
-			}
-
-			for _, msg := range roundResult.MessagesToSourceRoom {
-				mobRoom.SendText(msg, defUser.UserId)
-			}
-
-			for _, msg := range roundResult.MessagesToTargetRoom {
-				defRoom.SendText(msg, defUser.UserId)
-			}
-
-			// If the attack connected, check for damage to equipment.
 			if roundResult.Hit {
-
-				// For now, only focus on offhand items.
-				if defUser.Character.Equipment.Offhand.ItemId > 0 {
-
-					modifier := 0
-					if roundResult.Crit { // Crits double the chance of breakage for offhand items.
-						modifier = int(defUser.Character.Equipment.Offhand.GetSpec().BreakChance)
-					}
-
-					if defUser.Character.Equipment.Offhand.BreakTest(modifier) {
-						// Send message about the break
-
-						defUser.SendText(`<ansi fg="202">***</ansi>`)
-						defUser.SendText(fmt.Sprintf(`<ansi fg="214"><ansi fg="202">***</ansi> Your <ansi fg="item">%s</ansi> breaks! <ansi fg="202">***</ansi></ansi>`, defUser.Character.Equipment.Offhand.NameSimple()))
-						defUser.SendText(`<ansi fg="202">***</ansi>`)
-
-						defRoom.SendText(fmt.Sprintf(`<ansi fg="214"><ansi fg="202">***</ansi> The <ansi fg="item">%s</ansi> <ansi fg="username">%s</ansi> was carrying breaks! <ansi fg="202">***</ansi></ansi>`, defUser.Character.Equipment.Offhand.NameSimple(), defUser.Character.Name), defUser.UserId)
-
-						events.AddToQueue(events.ItemOwnership{
-							UserId: defUser.UserId,
-							Item:   defUser.Character.Equipment.Offhand,
-							Gained: false,
-						})
-
-						defUser.Character.RemoveFromBody(defUser.Character.Equipment.Offhand)
-
-						itm := items.New(20) // Broken item
-						if !defUser.Character.StoreItem(itm) {
-							room.AddItem(itm, false)
-
-							events.AddToQueue(events.ItemOwnership{
-								UserId: defUser.UserId,
-								Item:   itm,
-								Gained: true,
-							})
-
-						}
-					}
-				}
+				combat.HandleEquipmentBreak(defUser.Character, defRoom, roundResult, defUser.UserId, 0)
 			}
 
 			if mob.Character.Health <= 0 || defUser.Character.Health <= 0 {
@@ -968,25 +817,12 @@ func handleMobCombat(evt events.NewRound) (affectedPlayerIds []int, affectedMobI
 				continue
 			}
 
-			var roundResult combat.AttackResult
+			roundResult := combat.AttackMobVsMob(mob, defMob)
 
-			roundResult = combat.AttackMobVsMob(mob, defMob)
-
-			for _, buffId := range roundResult.BuffSource {
-				mob.AddBuff(buffId, `combat`)
-			}
-
-			for _, buffId := range roundResult.BuffTarget {
-				defMob.AddBuff(buffId, `combat`)
-			}
-
-			for _, msg := range roundResult.MessagesToSourceRoom {
-				mobRoom.SendText(msg)
-			}
-
-			for _, msg := range roundResult.MessagesToTargetRoom {
-				defRoom.SendText(msg)
-			}
+			combat.SendRoundMessages(roundResult, combat.RoundMessageContext{
+				SourceMob: mob, TargetMob: defMob,
+				SourceRoom: mobRoom, TargetRoom: defRoom,
+			})
 
 			// Handle any scripted behavior now.
 			if roundResult.Hit {
@@ -1002,43 +838,8 @@ func handleMobCombat(evt events.NewRound) (affectedPlayerIds []int, affectedMobI
 				defMob.Command(fmt.Sprintf("attack #%d", mob.InstanceId)) // # means mob
 			}
 
-			// If the attack connected, check for damage to equipment.
 			if roundResult.Hit {
-				// For now, only focus on offhand items.
-				if defMob.Character.Equipment.Offhand.ItemId > 0 {
-
-					modifier := 0
-					if roundResult.Crit { // Crits double the chance of breakage for offhand items.
-						modifier = int(defMob.Character.Equipment.Offhand.GetSpec().BreakChance)
-					}
-
-					if defMob.Character.Equipment.Offhand.BreakTest(modifier) {
-						// Send message about the break
-
-						if defRoom := rooms.LoadRoom(defMob.Character.RoomId); defRoom != nil {
-
-							defRoom.SendText(fmt.Sprintf(`<ansi fg="214"><ansi fg="202">***</ansi> The <ansi fg="item">%s</ansi> <ansi fg="mobname">%s</ansi> was carrying breaks! <ansi fg="202">***</ansi></ansi>`, defMob.Character.Equipment.Offhand.NameSimple(), defMob.Character.Name))
-
-							events.AddToQueue(events.ItemOwnership{
-								MobInstanceId: defMob.InstanceId,
-								Item:          defMob.Character.Equipment.Offhand,
-								Gained:        false,
-							})
-
-							defMob.Character.RemoveFromBody(defMob.Character.Equipment.Offhand)
-							itm := items.New(20) // Broken item
-							if !defMob.Character.StoreItem(itm) {
-								defRoom.AddItem(itm, false)
-
-								events.AddToQueue(events.ItemOwnership{
-									MobInstanceId: defMob.InstanceId,
-									Item:          itm,
-									Gained:        true,
-								})
-							}
-						}
-					}
-				}
+				combat.HandleEquipmentBreak(&defMob.Character, defRoom, roundResult, 0, defMob.InstanceId)
 			}
 
 			if mob.Character.Health <= 0 || defMob.Character.Health <= 0 {

@@ -24,7 +24,7 @@ func Suicide(rest string, mob *mobs.Mob, room *rooms.Room) (bool, error) {
 
 	if rest != `vanish` && mob.Character.HasBuffFlag(buffs.ReviveOnDeath) {
 
-		mob.Character.Health = mob.Character.HealthMax.Value
+		mob.Character.Health = mob.Character.HealthMax.GetValue()
 
 		room.SendText(`<ansi fg="mobname">` + mob.Character.Name + `</ansi> is suddenly revived in a shower of sparks!`)
 
@@ -171,7 +171,7 @@ func Suicide(rest string, mob *mobs.Mob, room *rooms.Room) (bool, error) {
 					if levelDelta < 0 {
 						levelDelta = 0
 					}
-					skillsDelta := int((float64(user.Character.Stats.Get("Perception").ValueAdj-mob.Character.Stats.Get("Perception").ValueAdj) + float64(user.Character.Stats.Get("Smarts").ValueAdj-mob.Character.Stats.Get("Smarts").ValueAdj)) / 2)
+					skillsDelta := int((float64(user.Character.Stats.ActionValueAdj("TameGrowth1")-mob.Character.Stats.ActionValueAdj("TameGrowth1")) + float64(user.Character.Stats.ActionValueAdj("TameGrowth2")-mob.Character.Stats.ActionValueAdj("TameGrowth2"))) / 2)
 					if skillsDelta < 0 {
 						skillsDelta = 0
 					}
@@ -251,7 +251,7 @@ func Suicide(rest string, mob *mobs.Mob, room *rooms.Room) (bool, error) {
 						if levelDelta < 0 {
 							levelDelta = 0
 						}
-						skillsDelta := int((float64(user.Character.Stats.Get("Perception").ValueAdj-mob.Character.Stats.Get("Perception").ValueAdj) + float64(user.Character.Stats.Get("Smarts").ValueAdj-mob.Character.Stats.Get("Smarts").ValueAdj)) / 2)
+						skillsDelta := int((float64(user.Character.Stats.ActionValueAdj("TameGrowth1")-mob.Character.Stats.ActionValueAdj("TameGrowth1")) + float64(user.Character.Stats.ActionValueAdj("TameGrowth2")-mob.Character.Stats.ActionValueAdj("TameGrowth2"))) / 2)
 						if skillsDelta < 0 {
 							skillsDelta = 0
 						}

@@ -5,7 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/GoMudEngine/GoMud/internal/buffs"
+	"github.com/GoMudEngine/GoMud/internal/actions"
 	"github.com/GoMudEngine/GoMud/internal/events"
 	"github.com/GoMudEngine/GoMud/internal/items"
 	"github.com/GoMudEngine/GoMud/internal/rooms"
@@ -19,28 +19,31 @@ func Drop(rest string, user *users.UserRecord, room *rooms.Room, flags events.Ev
 
 	if len(args) == 0 {
 		user.SendText(`Drop what?`)
-
 		return true, nil
+	}
+
+	ctx := actions.ActionContext{
+		UserId:      user.UserId,
+		Character:   user.Character,
+		Room:        room,
+		SendToActor: func(msg string) { user.SendText(msg) },
+		SendToRoom:  func(msg string, exclude ...int) { room.SendText(msg, exclude...) },
+		ActorName:   user.Character.Name,
+		ActorTag:    "username",
 	}
 
 	if args[0] == "all" {
-
-		iCopies := []items.Item{}
-
 		if user.Character.Gold > 0 {
-			Drop(fmt.Sprintf("%d gold", user.Character.Gold), user, room, flags)
+			actions.DoDropGold(ctx, user.Character.Gold)
 		}
-
-		iCopies = append(iCopies, user.Character.Items...)
-
+		iCopies := append([]items.Item{}, user.Character.Items...)
 		for _, item := range iCopies {
-			Drop(item.Name(), user, room, flags)
+			actions.DoDropItem(ctx, item)
 		}
-
 		return true, nil
 	}
 
-	// Drop 10 gold
+	// Drop N gold
 	if len(args) >= 2 && args[1] == "gold" {
 		g, _ := strconv.ParseInt(args[0], 10, 32)
 		dropAmt := int(g)
@@ -48,69 +51,25 @@ func Drop(rest string, user *users.UserRecord, room *rooms.Room, flags events.Ev
 			user.SendText("Oops!")
 			return true, nil
 		}
-
 		if dropAmt > user.Character.Gold {
 			user.SendText(fmt.Sprintf("You don't have a %d gold to drop.", dropAmt))
+			return true, nil
 		}
-
-		user.Character.CancelBuffsWithFlag(buffs.Hidden)
-
-		room.Gold += dropAmt
-		user.Character.Gold -= dropAmt
-
-		events.AddToQueue(events.EquipmentChange{
-			UserId:     user.UserId,
-			GoldChange: -dropAmt,
-		})
-
-		user.SendText(
-			fmt.Sprintf(`You drop <ansi fg="gold">%d gold</ansi> on the floor.`, dropAmt),
-		)
-		room.SendText(
-			fmt.Sprintf(`<ansi fg="username">%s</ansi> drops <ansi fg="gold">%d gold</ansi>.`, user.Character.Name, dropAmt),
-			user.UserId,
-		)
-
+		actions.DoDropGold(ctx, dropAmt)
 		return true, nil
 	}
 
-	// Check whether the user has an item in their inventory that matches
 	matchItem, found := user.Character.FindInBackpack(rest)
-
 	if !found {
 		user.SendText(fmt.Sprintf("You don't have a %s to drop.", rest))
-	} else {
+		return true, nil
+	}
 
-		user.Character.CancelBuffsWithFlag(buffs.Hidden)
+	actions.DoDropItem(ctx, matchItem)
 
-		iSpec := matchItem.GetSpec()
-
-		// Swap the item location
-		user.Character.RemoveItem(matchItem)
-
-		events.AddToQueue(events.ItemOwnership{
-			UserId: user.UserId,
-			Item:   matchItem,
-			Gained: false,
-		})
-
-		user.SendText(
-			fmt.Sprintf(`You drop the <ansi fg="item">%s</ansi>.`, matchItem.DisplayName()),
-		)
-		room.SendText(
-			fmt.Sprintf(`<ansi fg="username">%s</ansi> drops their <ansi fg="item">%s</ansi>...`, user.Character.Name, matchItem.DisplayName()),
-			user.UserId,
-		)
-
-		// If grenades are dropped, they explode and affect everyone in the room!
-		if iSpec.Type == items.Grenade {
-
-			user.SendText(`Todo. Grenades disabled for now.`)
-
-		}
-
-		room.AddItem(matchItem, false)
-
+	iSpec := matchItem.GetSpec()
+	if iSpec.Type == items.Grenade {
+		user.SendText(`Todo. Grenades disabled for now.`)
 	}
 
 	return true, nil

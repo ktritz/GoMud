@@ -175,8 +175,8 @@ func NewMobById(mobId MobId, homeRoomId int, forceLevel ...int) *Mob {
 
 		// Apply training for those stats
 		mob.Character.AutoTrain()
-		mob.Character.Health = mob.Character.HealthMax.Value
-		mob.Character.Mana = mob.Character.ManaMax.Value
+		mob.Character.Health = mob.Character.HealthMax.GetValue()
+		mob.Character.Mana = mob.Character.ManaMax.GetValue()
 
 		mob.Character.SetPermaBuffs(mob.BuffIds)
 

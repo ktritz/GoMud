@@ -198,12 +198,12 @@ func Party(rest string, user *users.UserRecord, room *rooms.Room, flags events.E
 				u := users.GetByUserId(uid)
 				uLevel := fmt.Sprintf(`%d`, u.Character.Level)
 				uRoom := rooms.LoadRoom(u.Character.RoomId)
-				//uHealth := fmt.Sprintf(`%d/%d`, u.Character.Health, u.Character.HealthMax.Value)
-				uHealthPct := int(math.Floor((float64(u.Character.Health) / float64(u.Character.HealthMax.Value)) * 100))
+				//uHealth := fmt.Sprintf(`%d/%d`, u.Character.Health, u.Character.HealthMax.GetValue())
+				uHealthPct := int(math.Floor((float64(u.Character.Health) / float64(u.Character.HealthMax.GetValue())) * 100))
 				uHealthPctStr := fmt.Sprintf(`%d%%`, uHealthPct)
 				uLoc := uRoom.Title
 				rank := currentParty.GetRank(u.UserId)
-				healthClass := util.HealthClass(u.Character.Health, u.Character.HealthMax.Value)
+				healthClass := util.HealthClass(u.Character.Health, u.Character.HealthMax.GetValue())
 
 				if isInvited {
 					uLevel = `-`
@@ -240,12 +240,12 @@ func Party(rest string, user *users.UserRecord, room *rooms.Room, flags events.E
 			for _, mobInstanceId := range charmedMobInstanceIds {
 				m := mobs.GetInstance(mobInstanceId)
 				mRoom := rooms.LoadRoom(m.Character.RoomId)
-				mHealthPct := int(math.Floor((float64(m.Character.Health) / float64(m.Character.HealthMax.Value)) * 100))
+				mHealthPct := int(math.Floor((float64(m.Character.Health) / float64(m.Character.HealthMax.GetValue())) * 100))
 				rows = append(rows, []string{
 					m.Character.Name,
 					`♥friend`,
 					fmt.Sprintf(`%d`, m.Character.Level),
-					//fmt.Sprintf(`%d/%d`, m.Character.Health, m.Character.HealthMax.Value),
+					//fmt.Sprintf(`%d/%d`, m.Character.Health, m.Character.HealthMax.GetValue()),
 					fmt.Sprintf(`%d%%`, mHealthPct),
 					mRoom.Title,
 					`-`,
@@ -255,7 +255,7 @@ func Party(rest string, user *users.UserRecord, room *rooms.Room, flags events.E
 					`<ansi fg="white-bold">%s</ansi>`,
 					`<ansi fg="yellow">%s</ansi>`,
 					//`<ansi fg="cyan-bold">%s</ansi>`,
-					`<ansi fg="` + util.HealthClass(m.Character.Health, m.Character.HealthMax.Value) + `">%s</ansi>`,
+					`<ansi fg="` + util.HealthClass(m.Character.Health, m.Character.HealthMax.GetValue()) + `">%s</ansi>`,
 					`<ansi fg="magenta-bold">%s</ansi>`,
 					`<ansi fg="white-bold">%s</ansi>`}
 

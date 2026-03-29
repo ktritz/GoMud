@@ -30,7 +30,7 @@ func Suicide(rest string, user *users.UserRecord, room *rooms.Room, flags events
 
 	if user.Character.HasBuffFlag(buffs.ReviveOnDeath) {
 
-		user.Character.Health = user.Character.HealthMax.Value
+		user.Character.Health = user.Character.HealthMax.GetValue()
 
 		user.SendText(`You are revived in a shower of magical sparks!`)
 		room.SendText(`<ansi fg="username">`+user.Character.Name+`</ansi> is suddenly revived in a shower of sparks!`, user.UserId)

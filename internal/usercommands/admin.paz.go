@@ -34,8 +34,8 @@ func Paz(rest string, user *users.UserRecord, room *rooms.Room, flags events.Eve
 			user.SendText(fmt.Sprintf(`You illuminate <ansi fg="mobname">%s</ansi> with a %s!`, mob.Character.Name, beamOfLight))
 			room.SendText(fmt.Sprintf(`<ansi fg="username">%s</ansi> illuminates <ansi fg="mobname">%s</ansi> with a %s!`, user.Character.Name, mob.Character.Name, beamOfLight), user.UserId)
 
-			mob.Character.Health = mob.Character.HealthMax.Value
-			mob.Character.Mana = mob.Character.ManaMax.Value
+			mob.Character.Health = mob.Character.HealthMax.GetValue()
+			mob.Character.Mana = mob.Character.ManaMax.GetValue()
 
 			return true, nil
 		}
@@ -46,8 +46,8 @@ func Paz(rest string, user *users.UserRecord, room *rooms.Room, flags events.Eve
 				room.SendText(fmt.Sprintf(`<ansi fg="username">%s</ansi> illuminates <ansi fg="username">%s</ansi> with a %s!`, user.Character.Name, u.Character.Name, beamOfLight), user.UserId, u.UserId)
 				u.SendText(fmt.Sprintf(`<ansi fg="username">%s</ansi> illuminates you with a %s!`, user.Character.Name, beamOfLight))
 
-				u.Character.Health = u.Character.HealthMax.Value
-				u.Character.Mana = u.Character.ManaMax.Value
+				u.Character.Health = u.Character.HealthMax.GetValue()
+				u.Character.Mana = u.Character.ManaMax.GetValue()
 
 				events.AddToQueue(events.CharacterVitalsChanged{UserId: u.UserId})
 
@@ -60,9 +60,9 @@ func Paz(rest string, user *users.UserRecord, room *rooms.Room, flags events.Eve
 	user.SendText(`You paz yourself with a ` + beamOfLight + `!`)
 	room.SendText(fmt.Sprintf(`<ansi fg="username">%s</ansi> illuminates <ansi fg="username">%s</ansi> with a %s!`, user.Character.Name, user.Character.Name, beamOfLight), user.UserId)
 
-	if user.Character.Health != user.Character.HealthMax.Value || user.Character.Mana != user.Character.ManaMax.Value {
-		user.Character.Health = user.Character.HealthMax.Value
-		user.Character.Mana = user.Character.ManaMax.Value
+	if user.Character.Health != user.Character.HealthMax.GetValue() || user.Character.Mana != user.Character.ManaMax.GetValue() {
+		user.Character.Health = user.Character.HealthMax.GetValue()
+		user.Character.Mana = user.Character.ManaMax.GetValue()
 
 		events.AddToQueue(events.CharacterVitalsChanged{UserId: user.UserId})
 	}

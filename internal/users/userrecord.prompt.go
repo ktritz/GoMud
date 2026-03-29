@@ -109,7 +109,7 @@ func (u *UserRecord) ProcessPromptString(promptStr string) string {
 
 			case `{hp}`:
 				if len(hpClass) == 0 {
-					hpClass = fmt.Sprintf(`health-%d`, util.QuantizeTens(u.Character.Health, u.Character.HealthMax.Value))
+					hpClass = fmt.Sprintf(`health-%d`, util.QuantizeTens(u.Character.Health, u.Character.HealthMax.GetValue()))
 				}
 				promptOut.WriteString(fmt.Sprintf(`<ansi fg="%s">%d</ansi>`, hpClass, u.Character.Health))
 
@@ -117,30 +117,30 @@ func (u *UserRecord) ProcessPromptString(promptStr string) string {
 				promptOut.WriteString(strconv.Itoa(u.Character.Health))
 			case `{HP}`:
 				if len(hpClass) == 0 {
-					hpClass = fmt.Sprintf(`health-%d`, util.QuantizeTens(u.Character.Health, u.Character.HealthMax.Value))
+					hpClass = fmt.Sprintf(`health-%d`, util.QuantizeTens(u.Character.Health, u.Character.HealthMax.GetValue()))
 				}
-				promptOut.WriteString(fmt.Sprintf(`<ansi fg="%s">%d</ansi>`, hpClass, u.Character.HealthMax.Value))
+				promptOut.WriteString(fmt.Sprintf(`<ansi fg="%s">%d</ansi>`, hpClass, u.Character.HealthMax.GetValue()))
 			case `{HP:-}`:
-				promptOut.WriteString(strconv.Itoa(u.Character.HealthMax.Value))
+				promptOut.WriteString(strconv.Itoa(u.Character.HealthMax.GetValue()))
 			case `{hp%}`:
 				if hpPct == -1 {
-					hpPct = int(math.Floor(float64(u.Character.Health) / float64(u.Character.HealthMax.Value) * 100))
+					hpPct = int(math.Floor(float64(u.Character.Health) / float64(u.Character.HealthMax.GetValue()) * 100))
 				}
 				if len(hpClass) == 0 {
-					hpClass = fmt.Sprintf(`health-%d`, util.QuantizeTens(u.Character.Health, u.Character.HealthMax.Value))
+					hpClass = fmt.Sprintf(`health-%d`, util.QuantizeTens(u.Character.Health, u.Character.HealthMax.GetValue()))
 				}
 				promptOut.WriteString(fmt.Sprintf(`<ansi fg="%s">%d%%</ansi>`, hpClass, hpPct))
 
 			case `{hp%:-}`:
 				if hpPct == -1 {
-					hpPct = int(math.Floor(float64(u.Character.Health) / float64(u.Character.HealthMax.Value) * 100))
+					hpPct = int(math.Floor(float64(u.Character.Health) / float64(u.Character.HealthMax.GetValue()) * 100))
 				}
 				promptOut.WriteString(strconv.Itoa(hpPct))
 				promptOut.WriteString(`%`)
 
 			case `{mp}`:
 				if len(mpClass) == 0 {
-					mpClass = fmt.Sprintf(`mana-%d`, util.QuantizeTens(u.Character.Mana, u.Character.ManaMax.Value))
+					mpClass = fmt.Sprintf(`mana-%d`, util.QuantizeTens(u.Character.Mana, u.Character.ManaMax.GetValue()))
 				}
 				promptOut.WriteString(fmt.Sprintf(`<ansi fg="%s">%d</ansi>`, mpClass, u.Character.Mana))
 
@@ -149,25 +149,25 @@ func (u *UserRecord) ProcessPromptString(promptStr string) string {
 
 			case `{MP}`:
 				if len(mpClass) == 0 {
-					mpClass = fmt.Sprintf(`mana-%d`, util.QuantizeTens(u.Character.Mana, u.Character.ManaMax.Value))
+					mpClass = fmt.Sprintf(`mana-%d`, util.QuantizeTens(u.Character.Mana, u.Character.ManaMax.GetValue()))
 				}
-				promptOut.WriteString(fmt.Sprintf(`<ansi fg="%s">%d</ansi>`, mpClass, u.Character.ManaMax.Value))
+				promptOut.WriteString(fmt.Sprintf(`<ansi fg="%s">%d</ansi>`, mpClass, u.Character.ManaMax.GetValue()))
 
 			case `{MP:-}`:
-				promptOut.WriteString(strconv.Itoa(u.Character.ManaMax.Value))
+				promptOut.WriteString(strconv.Itoa(u.Character.ManaMax.GetValue()))
 
 			case `{mp%}`:
 				if mpPct == -1 {
-					mpPct = int(math.Floor(float64(u.Character.Mana) / float64(u.Character.ManaMax.Value) * 100))
+					mpPct = int(math.Floor(float64(u.Character.Mana) / float64(u.Character.ManaMax.GetValue()) * 100))
 				}
 				if len(mpClass) == 0 {
-					mpClass = fmt.Sprintf(`mana-%d`, util.QuantizeTens(u.Character.Mana, u.Character.ManaMax.Value))
+					mpClass = fmt.Sprintf(`mana-%d`, util.QuantizeTens(u.Character.Mana, u.Character.ManaMax.GetValue()))
 				}
 				promptOut.WriteString(fmt.Sprintf(`<ansi fg="%s">%d%%</ansi>`, mpClass, mpPct))
 
 			case `{mp%:-}`:
 				if mpPct == -1 {
-					mpPct = int(math.Floor(float64(u.Character.Mana) / float64(u.Character.ManaMax.Value) * 100))
+					mpPct = int(math.Floor(float64(u.Character.Mana) / float64(u.Character.ManaMax.GetValue()) * 100))
 				}
 				promptOut.WriteString(strconv.Itoa(mpPct))
 				promptOut.WriteString(`%`)

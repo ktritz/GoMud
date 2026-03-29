@@ -20,7 +20,7 @@ func Pathto(rest string, mob *mobs.Mob, room *rooms.Room) (bool, error) {
 			// If can't go home, slowly lose health (10%)
 			// This helps to clean up mobs that get stuck in a weird location, which can
 			// happen for any number of reasons, like players dragging them through portals
-			mob.Character.Health -= int(math.Ceil(float64(mob.Character.HealthMax.Value) / 10))
+			mob.Character.Health -= int(math.Ceil(float64(mob.Character.HealthMax.GetValue()) / 10))
 			return true, nil
 		}
 	}

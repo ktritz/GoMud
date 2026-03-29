@@ -401,7 +401,7 @@ func (g *GMCPCharModule) GetCharNode(user *users.UserRecord, gmcpModule string) 
 					Name:    mob.Character.Name,
 					Level:   mob.Character.Level,
 					Hp:      mob.Character.Health,
-					MaxHp:   mob.Character.HealthMax.Value,
+					MaxHp:   mob.Character.HealthMax.GetValue(),
 					Engaged: mob.InstanceId == aggroMobInstanceId,
 				}
 
@@ -492,9 +492,9 @@ func (g *GMCPCharModule) GetCharNode(user *users.UserRecord, gmcpModule string) 
 
 		payload.Vitals = &GMCPCharModule_Payload_Vitals{
 			Hp:    user.Character.Health,
-			HpMax: user.Character.HealthMax.Value,
+			HpMax: user.Character.HealthMax.GetValue(),
 			Sp:    user.Character.Mana,
-			SpMax: user.Character.ManaMax.Value,
+			SpMax: user.Character.ManaMax.GetValue(),
 		}
 
 		if !all {

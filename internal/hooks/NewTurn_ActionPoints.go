@@ -22,8 +22,8 @@ func ActionPoints(e events.Event) events.ListenerReturn {
 
 	for _, user := range users.GetAllActiveUsers() {
 		user.Character.ActionPoints += 1
-		if user.Character.ActionPoints > user.Character.ActionPointsMax.Value {
-			user.Character.ActionPoints = user.Character.ActionPointsMax.Value
+		if user.Character.ActionPoints > user.Character.ActionPointsMax.GetValue() {
+			user.Character.ActionPoints = user.Character.ActionPointsMax.GetValue()
 		}
 	}
 

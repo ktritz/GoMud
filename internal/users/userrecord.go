@@ -218,12 +218,9 @@ func (u *UserRecord) GrantXP(amt int, source string) {
 			u.EventLog.Add(`xp`, fmt.Sprintf(`<ansi fg="username">%s</ansi> is now <ansi fg="magenta-bold">level %d</ansi>!`, u.Character.Name, u.Character.Level))
 
 			levelUpEvent.LevelsGained += 1
-			levelUpEvent.StatsDelta.Get("Strength").Value += statsDelta.Get("Strength").Value
-			levelUpEvent.StatsDelta.Get("Speed").Value += statsDelta.Get("Speed").Value
-			levelUpEvent.StatsDelta.Get("Smarts").Value += statsDelta.Get("Smarts").Value
-			levelUpEvent.StatsDelta.Get("Vitality").Value += statsDelta.Get("Vitality").Value
-			levelUpEvent.StatsDelta.Get("Mysticism").Value += statsDelta.Get("Mysticism").Value
-			levelUpEvent.StatsDelta.Get("Perception").Value += statsDelta.Get("Perception").Value
+			for _, name := range u.Character.Stats.GetStatInfoNames() {
+				levelUpEvent.StatsDelta.SetValue(name, levelUpEvent.StatsDelta.GetValue(name)+statsDelta.GetValue(name))
+			}
 
 			levelUpEvent.TrainingPoints += 1
 			levelUpEvent.StatPoints += 1
@@ -634,7 +631,7 @@ func (u *UserRecord) GetOnlineInfo() OnlineInfo {
 
 func (u *UserRecord) WimpyCheck() {
 	if currentWimpy := u.GetConfigOption(`wimpy`); currentWimpy != nil {
-		healthPct := int(math.Floor(float64(u.Character.Health) / float64(u.Character.HealthMax.Value) * 100))
+		healthPct := int(math.Floor(float64(u.Character.Health) / float64(u.Character.HealthMax.GetValue()) * 100))
 		if healthPct < currentWimpy.(int) {
 			u.Command(`flee`, -1)
 		}

@@ -8,6 +8,7 @@ import (
 	"github.com/GoMudEngine/GoMud/internal/characters"
 	"github.com/GoMudEngine/GoMud/internal/mobs"
 	"github.com/GoMudEngine/GoMud/internal/rooms"
+	"github.com/GoMudEngine/GoMud/internal/targeting"
 	"github.com/GoMudEngine/GoMud/internal/users"
 	"github.com/GoMudEngine/GoMud/internal/util"
 )
@@ -24,68 +25,9 @@ func Attack(rest string, mob *mobs.Mob, room *rooms.Room) (bool, error) {
 	attackMobInstanceId := 0
 
 	if rest == `` {
-		// If no argument supplied, attack whoever is attacking the player currently.
-		for _, mId := range room.GetMobs(rooms.FindFightingMob) {
-			m := mobs.GetInstance(mId)
-			if m.Character.Aggro != nil && m.Character.Aggro.MobInstanceId == mob.InstanceId {
-				attackMobInstanceId = m.InstanceId
-				break
-			}
-		}
-
-		if attackMobInstanceId == 0 {
-			for _, uId := range room.GetPlayers(rooms.FindFightingMob) {
-				u := users.GetByUserId(uId)
-				if u.Character.Aggro != nil && u.Character.Aggro.MobInstanceId == mob.InstanceId {
-					attackPlayerId = u.UserId
-					break
-				}
-			}
-		}
-	} else if rest[0] == '*' { // choose a target at random. Friend or foe.
-
-		if rest == `*` { // * ANYONE
-
-			allMobs := []int{}
-			allPlayers := room.GetPlayers()
-			for _, mobInstanceId := range room.GetMobs() {
-				if mobInstanceId == mob.InstanceId {
-					continue
-				}
-				allMobs = append(allMobs, mobInstanceId)
-			}
-
-			randomSelection := util.Rand(len(allMobs) + len(allPlayers))
-
-			if randomSelection < len(allMobs) {
-				attackMobInstanceId = allMobs[randomSelection]
-			} else {
-				randomSelection -= len(allMobs)
-				attackPlayerId = allPlayers[randomSelection]
-			}
-
-		} else if rest == `*mob` { // *mob ANY MOB
-
-			allMobs := []int{}
-			for _, mobInstanceId := range room.GetMobs() {
-				if mobInstanceId == mob.InstanceId {
-					continue
-				}
-				allMobs = append(allMobs, mobInstanceId)
-			}
-
-			if len(allMobs) > 0 {
-				attackMobInstanceId = allMobs[util.Rand(len(allMobs))]
-			}
-
-		} else { // *user etc. ANY PLAYER
-
-			if allPlayers := room.GetPlayers(); len(allPlayers) > 0 {
-				attackPlayerId = allPlayers[util.Rand(len(allPlayers))]
-			}
-
-		}
-
+		attackPlayerId, attackMobInstanceId = targeting.FindAutoTarget(room, 0, mob.InstanceId)
+	} else if rest[0] == '*' {
+		attackPlayerId, attackMobInstanceId = targeting.FindRandomTarget(room, rest, 0, mob.InstanceId)
 	} else {
 		attackPlayerId, attackMobInstanceId = room.FindByName(rest)
 	}

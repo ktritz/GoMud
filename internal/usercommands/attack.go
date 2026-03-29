@@ -9,8 +9,8 @@ import (
 	"github.com/GoMudEngine/GoMud/internal/mobs"
 	"github.com/GoMudEngine/GoMud/internal/parties"
 	"github.com/GoMudEngine/GoMud/internal/rooms"
+	"github.com/GoMudEngine/GoMud/internal/targeting"
 	"github.com/GoMudEngine/GoMud/internal/users"
-	"github.com/GoMudEngine/GoMud/internal/util"
 )
 
 func Attack(rest string, user *users.UserRecord, room *rooms.Room, flags events.EventFlag) (bool, error) {
@@ -19,117 +19,44 @@ func Attack(rest string, user *users.UserRecord, room *rooms.Room, flags events.
 	attackMobInstanceId := 0
 
 	if rest == `` {
-		partyInfo := parties.Get(user.UserId)
+		// First check who's directly attacking this player
+		attackPlayerId, attackMobInstanceId = targeting.FindAutoTarget(room, user.UserId, 0)
 
-		// If no argument supplied, attack whoever is attacking the player currently.
-		for _, mId := range room.GetMobs(rooms.FindFightingPlayer) {
-			m := mobs.GetInstance(mId)
-			if m.Character.Aggro == nil {
-				continue
-			}
-
-			if m.Character.Aggro.UserId == user.UserId {
-				attackMobInstanceId = m.InstanceId
-				break
-			}
-
-			if partyInfo != nil {
-				if partyInfo.IsMember(m.Character.Aggro.UserId) {
-					attackMobInstanceId = m.InstanceId
-					break
-				}
-			}
-		}
-
-		if attackMobInstanceId == 0 {
-			for _, uId := range room.GetPlayers(rooms.FindFightingPlayer) {
-				u := users.GetByUserId(uId)
-				if u.Character.Aggro == nil {
-					continue
-				}
-
-				if u.Character.Aggro.UserId == user.UserId {
-					attackPlayerId = u.UserId
-					break
-				}
-
-				if partyInfo != nil {
-					if partyInfo.IsMember(u.Character.Aggro.UserId) {
-						attackPlayerId = u.UserId
+		// Also check if anyone is attacking a party member
+		if attackMobInstanceId == 0 && attackPlayerId == 0 {
+			if partyInfo := parties.Get(user.UserId); partyInfo != nil {
+				// Check mobs attacking party members
+				for _, mId := range room.GetMobs(rooms.FindFightingPlayer) {
+					m := mobs.GetInstance(mId)
+					if m.Character.Aggro != nil && partyInfo.IsMember(m.Character.Aggro.UserId) {
+						attackMobInstanceId = m.InstanceId
 						break
 					}
 				}
-			}
-		}
 
-		// Finally, if still no targets, check if any party members are aggroed and just glom onto that
-		if attackMobInstanceId == 0 && attackPlayerId == 0 {
-			if partyInfo != nil {
-				for uId := range partyInfo.GetMembers() {
-					if partyUser := users.GetByUserId(uId); partyUser != nil {
-						if partyUser.Character.Aggro == nil {
-							continue
+				// Check if any party member is already in combat (glom onto their target)
+				if attackMobInstanceId == 0 && attackPlayerId == 0 {
+					for uId := range partyInfo.GetMembers() {
+						if partyUser := users.GetByUserId(uId); partyUser != nil {
+							if partyUser.Character.Aggro == nil {
+								continue
+							}
+							if partyUser.Character.Aggro.MobInstanceId > 0 {
+								attackMobInstanceId = partyUser.Character.Aggro.MobInstanceId
+								break
+							}
+							if partyUser.Character.Aggro.UserId > 0 {
+								attackPlayerId = partyUser.Character.Aggro.UserId
+								break
+							}
 						}
-
-						if partyUser.Character.Aggro.MobInstanceId > 0 {
-							attackMobInstanceId = partyUser.Character.Aggro.MobInstanceId
-							break
-						}
-
-						if partyUser.Character.Aggro.UserId > 0 {
-							attackPlayerId = partyUser.Character.Aggro.UserId
-							break
-						}
-
 					}
 				}
 			}
 		}
 
-	} else if rest[0] == '*' { // choose a target at random. Friend or foe.
-
-		if rest == `*` { // * ANYONE
-
-			allMobs := room.GetMobs()
-			allPlayers := []int{}
-			for _, userId := range room.GetPlayers() {
-				if userId == user.UserId {
-					continue
-				}
-				allPlayers = append(allPlayers, userId)
-			}
-
-			randomSelection := util.Rand(len(allMobs) + len(allPlayers))
-
-			if randomSelection < len(allMobs) {
-				attackMobInstanceId = allMobs[randomSelection]
-			} else {
-				randomSelection -= len(allMobs)
-				attackPlayerId = allPlayers[randomSelection]
-			}
-
-		} else if rest == `*mob` { // *mob ANY MOB
-
-			if allMobs := room.GetMobs(); len(allMobs) > 0 {
-				attackMobInstanceId = allMobs[util.Rand(len(allMobs))]
-			}
-
-		} else { // *user etc. ANY PLAYER
-
-			allPlayers := []int{}
-			for _, userId := range room.GetPlayers() {
-				if userId == user.UserId {
-					continue
-				}
-				allPlayers = append(allPlayers, userId)
-			}
-
-			if len(allPlayers) > 0 {
-				attackPlayerId = allPlayers[util.Rand(len(allPlayers))]
-			}
-
-		}
-
+	} else if rest[0] == '*' {
+		attackPlayerId, attackMobInstanceId = targeting.FindRandomTarget(room, rest, user.UserId, 0)
 	} else {
 		attackPlayerId, attackMobInstanceId = room.FindByName(rest)
 	}

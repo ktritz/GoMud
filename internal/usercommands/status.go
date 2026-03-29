@@ -61,8 +61,8 @@ func Status(rest string, user *users.UserRecord, room *rooms.Room, flags events.
 		spent := 0
 
 		// TODO: Now that we have removed the switch statement and replaced it with a map this command will always succeed so spent = 1 will always be true if the character has training points to spend. Need to come back to this and add some checks to see if the stat can actually be trained.
-		before = user.Character.Stats.Get(selection).Value - user.Character.Stats.Get(selection).Mods
-		user.Character.Stats.Get(selection).Training += 1
+		before = user.Character.Stats.GetValue(selection) - user.Character.Stats.Get(selection).GetMods()
+		user.Character.Stats.SetTraining(selection, user.Character.Stats.GetTraining(selection)+1)
 		spent = 1
 
 		if spent > 0 {

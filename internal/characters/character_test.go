@@ -194,7 +194,7 @@ func TestCharacter_CarryCapacity(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			c := New()
-			c.Stats.Get("Strength").ValueAdj = tt.strengthAdj
+			c.Stats.Get("Strength").ValueAdj = tt.strengthAdj // Test directly sets field for test setup
 			got := c.CarryCapacity()
 			assert.Equal(t, tt.expectedCap, got)
 		})
