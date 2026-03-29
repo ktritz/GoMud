@@ -49,6 +49,9 @@ else
     echo "Config already exists at $DATA_DIR/config.yaml — skipping data copy"
 fi
 
+# Create symlink for hardcoded _datafiles path in config loader
+ln -sf "$DATA_DIR" "$INSTALL_DIR/_datafiles"
+
 # Set ownership
 chown -R "$USER:$GROUP" "$INSTALL_DIR"
 
@@ -72,7 +75,7 @@ StandardError=append:$INSTALL_DIR/logs/gomud.log
 # Hardening
 NoNewPrivileges=true
 ProtectSystem=strict
-ReadWritePaths=$DATA_DIR $INSTALL_DIR/logs
+ReadWritePaths=$DATA_DIR $INSTALL_DIR/logs /tmp
 ProtectHome=true
 
 # Allow binding to low ports (80, 443) without root
