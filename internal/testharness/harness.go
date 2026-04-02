@@ -11,6 +11,8 @@ import (
 	"github.com/GoMudEngine/GoMud/internal/exit"
 	"github.com/GoMudEngine/GoMud/internal/items"
 	"github.com/GoMudEngine/GoMud/internal/keywords"
+	"github.com/GoMudEngine/GoMud/internal/mobcommands"
+	"github.com/GoMudEngine/GoMud/internal/mobs"
 	"github.com/GoMudEngine/GoMud/internal/parser"
 	"github.com/GoMudEngine/GoMud/internal/rooms"
 	"github.com/GoMudEngine/GoMud/internal/usercommands"
@@ -22,6 +24,7 @@ import (
 type Harness struct {
 	t    *testing.T
 	User *users.UserRecord
+	Mob  *mobs.Mob
 	Room *rooms.Room
 
 	// Adjacent rooms for movement tests
@@ -110,9 +113,17 @@ func New(t *testing.T) *Harness {
 	// Register user
 	users.RegisterTestUser(h.User)
 
+	// Create a test mob in the room
+	h.Mob = mobs.NewTestMob(99999, 99, "test goblin")
+	h.Mob.HomeRoomId = 9999
+	h.Mob.Character.RoomId = 9999
+	mobs.RegisterTestMobInstance(h.Mob)
+	h.Room.AddMob(h.Mob.InstanceId)
+
 	// Cleanup on test end
 	t.Cleanup(func() {
 		users.DeregisterTestUser(h.User.UserId)
+		mobs.DeregisterTestMobInstance(h.Mob.InstanceId)
 		for id := range h.Rooms {
 			rooms.DeregisterTestRoom(id)
 		}
@@ -149,6 +160,32 @@ func (h *Harness) Run(input string) (bool, error) {
 	h.collectOutput()
 
 	return handled, err
+}
+
+// RunMob executes a command string as the test mob.
+// Returns (handled, error).
+func (h *Harness) RunMob(input string) (bool, error) {
+	h.t.Helper()
+
+	command := input
+	rest := ""
+	if idx := strings.Index(input, " "); idx != -1 {
+		command = strings.ToLower(input[:idx])
+		rest = input[idx+1:]
+	}
+
+	if verb, r, ok := parser.TryMultiWordCollapse(input); ok {
+		command = verb
+		rest = r
+	}
+
+	handled, err := mobcommands.TryCommand(command, rest, h.Mob.InstanceId)
+	return handled, err
+}
+
+// MobGold returns the test mob's current gold.
+func (h *Harness) MobGold() int {
+	return h.Mob.Character.Gold
 }
 
 // Output returns all text sent to the user via SendText during the last Run().

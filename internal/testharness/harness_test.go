@@ -212,13 +212,13 @@ func TestAttackNoTarget(t *testing.T) {
 
 func TestAttackWithFillers(t *testing.T) {
 	h := New(t)
-	// "attack the goblin" — fillers should be stripped, but since there's
-	// no goblin in the room it should still say "attack the darkness"
+	// "attack the goblin" — fillers stripped, finds test goblin in room
 	handled, _ := h.Run("attack the goblin")
 	if !handled {
 		t.Error("expected attack to be handled")
 	}
-	h.ExpectOutput("darkness")
+	// Should NOT say "darkness" since there's a goblin in the room
+	h.ExpectNoOutput("darkness")
 }
 
 func TestKillAlias(t *testing.T) {
@@ -371,6 +371,55 @@ func TestAppraiseNoArgs(t *testing.T) {
 	handled, _ := h.Run("appraise")
 	if !handled {
 		t.Error("expected appraise to be handled")
+	}
+}
+
+// === Mob command tests ===
+
+func TestMobGetGold(t *testing.T) {
+	h := New(t)
+	h.Room.Gold = 50
+	startGold := h.MobGold()
+
+	handled, _ := h.RunMob("get gold")
+	if !handled {
+		t.Error("expected mob get gold to be handled")
+	}
+
+	if h.MobGold() <= startGold {
+		t.Error("expected mob gold to increase after getting gold from floor")
+	}
+}
+
+func TestMobGetAll(t *testing.T) {
+	h := New(t)
+	h.Room.Gold = 25
+	startGold := h.MobGold()
+
+	handled, _ := h.RunMob("get all")
+	if !handled {
+		t.Error("expected mob get all to be handled")
+	}
+
+	if h.MobGold() <= startGold {
+		t.Error("expected mob gold increase from get all")
+	}
+}
+
+func TestMobLook(t *testing.T) {
+	h := New(t)
+	handled, _ := h.RunMob("look")
+	if !handled {
+		t.Error("expected mob look to be handled")
+	}
+}
+
+func TestMobAttack(t *testing.T) {
+	h := New(t)
+	// Mob attack with no target — should be handled
+	handled, _ := h.RunMob("attack")
+	if !handled {
+		t.Error("expected mob attack to be handled")
 	}
 }
 
