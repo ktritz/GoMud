@@ -5,6 +5,7 @@ import (
 	"strings"
 
 	"github.com/GoMudEngine/GoMud/internal/buffs"
+	"github.com/GoMudEngine/GoMud/internal/parser"
 	"github.com/GoMudEngine/GoMud/internal/characters"
 	"github.com/GoMudEngine/GoMud/internal/events"
 	"github.com/GoMudEngine/GoMud/internal/items"
@@ -29,24 +30,43 @@ func Buy(rest string, user *users.UserRecord, room *rooms.Room, flags events.Eve
 
 	itemname := rest
 
-	// See if a "from" target was specified: "buy itemname from shopkeepername"
-	args := util.SplitButRespectQuotes(strings.ToLower(rest))
-	if len(args) >= 3 {
-		if args[len(args)-2] == `from` {
-			targetUserId, targetMobInstanceId = room.FindByName(args[len(args)-1])
+	// Use parser to detect "buy X from Y" pattern
+	if parsed := parser.GetParsedInput(user); parsed != nil && !parsed.Instrument.IsEmpty() && parsed.Preposition == "from" {
+		targetUserId, targetMobInstanceId = room.FindByName(parsed.Instrument.Noun)
 
-			if user.UserId == targetUserId {
-				user.SendText("You can't buy from yourself.")
-				return true, nil
+		if user.UserId == targetUserId {
+			user.SendText("You can't buy from yourself.")
+			return true, nil
+		}
+
+		if targetUserId == 0 && targetMobInstanceId == 0 {
+			user.SendText("Visit a merchant to purchase objects or services.")
+			return true, nil
+		}
+
+		itemname = parsed.Target.Noun
+		if len(parsed.Target.Adjectives) > 0 {
+			itemname = strings.Join(parsed.Target.Adjectives, " ") + " " + itemname
+		}
+	} else {
+		// Fallback: old-style "buy X from Y" detection
+		args := util.SplitButRespectQuotes(strings.ToLower(rest))
+		if len(args) >= 3 {
+			if args[len(args)-2] == `from` {
+				targetUserId, targetMobInstanceId = room.FindByName(args[len(args)-1])
+
+				if user.UserId == targetUserId {
+					user.SendText("You can't buy from yourself.")
+					return true, nil
+				}
+
+				if targetUserId == 0 && targetMobInstanceId == 0 {
+					user.SendText("Visit a merchant to purchase objects or services.")
+					return true, nil
+				}
+
+				itemname = strings.Join(args[0:len(args)-2], ` `)
 			}
-
-			// If nobody found when clearly specified somebody, send an error and abort
-			if targetUserId == 0 && targetMobInstanceId == 0 {
-				user.SendText("Visit a merchant to purchase objects or services.")
-				return true, nil
-			}
-
-			itemname = strings.Join(args[0:len(args)-2], ` `) // reform the purchase arg
 		}
 	}
 

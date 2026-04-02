@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	"github.com/GoMudEngine/GoMud/internal/events"
+	"github.com/GoMudEngine/GoMud/internal/parser"
 	"github.com/GoMudEngine/GoMud/internal/items"
 	"github.com/GoMudEngine/GoMud/internal/mobs"
 	"github.com/GoMudEngine/GoMud/internal/races"
@@ -24,6 +25,11 @@ Level 4 - eveals detailed stats of the player or mob, plus equipment and items, 
 */
 func Peep(rest string, user *users.UserRecord, room *rooms.Room, flags events.EventFlag) (bool, error) {
 
+
+	// Use parser-cleaned rest (fillers stripped)
+	if parsed := parser.GetParsedInput(user); parsed != nil && parsed.Rest != "" {
+		rest = parsed.Rest
+	}
 	skillLevel := user.Character.GetSkillLevel(skills.Peep)
 
 	if skillLevel == 0 {

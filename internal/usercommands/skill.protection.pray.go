@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	"github.com/GoMudEngine/GoMud/internal/events"
+	"github.com/GoMudEngine/GoMud/internal/parser"
 	"github.com/GoMudEngine/GoMud/internal/mobs"
 	"github.com/GoMudEngine/GoMud/internal/rooms"
 	"github.com/GoMudEngine/GoMud/internal/skills"
@@ -18,6 +19,11 @@ Level 4 - Pray to gods for a blessing
 */
 func Pray(rest string, user *users.UserRecord, room *rooms.Room, flags events.EventFlag) (bool, error) {
 
+
+	// Use parser-cleaned rest (fillers stripped)
+	if parsed := parser.GetParsedInput(user); parsed != nil && parsed.Rest != "" {
+		rest = parsed.Rest
+	}
 	skillLevel := user.Character.GetSkillLevel(skills.Protection)
 
 	if skillLevel < 4 {

@@ -8,6 +8,7 @@ import (
 	"github.com/GoMudEngine/GoMud/internal/buffs"
 	"github.com/GoMudEngine/GoMud/internal/characters"
 	"github.com/GoMudEngine/GoMud/internal/events"
+	"github.com/GoMudEngine/GoMud/internal/parser"
 	"github.com/GoMudEngine/GoMud/internal/mobs"
 	"github.com/GoMudEngine/GoMud/internal/rooms"
 	"github.com/GoMudEngine/GoMud/internal/scripting"
@@ -26,6 +27,11 @@ Level 4 - Tame up to 5 creatures
 */
 func Tame(rest string, user *users.UserRecord, room *rooms.Room, flags events.EventFlag) (bool, error) {
 
+
+	// Use parser-cleaned rest (fillers stripped)
+	if parsed := parser.GetParsedInput(user); parsed != nil && parsed.Rest != "" {
+		rest = parsed.Rest
+	}
 	skillLevel := user.Character.GetSkillLevel(skills.Tame)
 	if skillLevel == 0 {
 		user.SendText("You don't know how to tame.")
