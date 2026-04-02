@@ -101,7 +101,6 @@ var (
 		"upstairs":   {0, 0, 1, '△'},
 		"downstairs": {0, 0, -1, '▽'},
 		"basement":   {0, 0, -2, '▼'},
-		"ground floor": {0, 0, 2, '▲'},
 	}
 
 	mapperZoneCache     = map[string]*mapper{} // zonename-{"random" roomId} to mapper

@@ -6,7 +6,7 @@ mapsymbol: B
 maplegend: Basement
 biome: city
 exits:
-  ground floor:
+  upstairs:
     roomid: 5
 nouns:
   workbench: Dad's <ansi fg="itemname">workbench</ansi> is a monument to good intentions. There's a birdhouse with three walls, a shelf bracket that's been "drying" for a month, and a toolbox that's actually pretty well organized. A pegboard on the wall has outlines drawn for each tool, and most of them are actually hanging in the right spots. Dad's one organized space.
