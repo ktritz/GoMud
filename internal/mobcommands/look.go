@@ -6,6 +6,7 @@ import (
 
 	"github.com/GoMudEngine/GoMud/internal/buffs"
 	"github.com/GoMudEngine/GoMud/internal/mobs"
+	"github.com/GoMudEngine/GoMud/internal/parser"
 	"github.com/GoMudEngine/GoMud/internal/rooms"
 	"github.com/GoMudEngine/GoMud/internal/users"
 )
@@ -20,19 +21,13 @@ func Look(rest string, mob *mobs.Mob, room *rooms.Room) (bool, error) {
 
 	isSneaking := mob.Character.HasBuffFlag(buffs.Hidden)
 
-	// trim off some fluff
-	if len(rest) > 2 {
-		if rest[0:3] == `at ` {
-			rest = rest[3:]
-		}
-	}
-	if len(rest) > 3 {
-		if rest[0:4] == `the ` {
-			rest = rest[4:]
-		}
-	}
-
+	// Use parser-cleaned rest (fillers stripped)
 	lookAt := rest
+	if parsed := parser.GetParsedInputFrom(mob); parsed != nil && parsed.Rest != "" {
+		lookAt = parsed.Rest
+	} else if parsed != nil {
+		lookAt = ""
+	}
 
 	if len(lookAt) == 0 {
 
