@@ -33,22 +33,6 @@ var (
 	timeTrackers        = map[string]*Accumulator{}
 	serverAddr   string = `Unknown`
 
-	strippablePrepositions = []string{
-		`onto`,
-		`into`,
-		`over`,
-		`to`,
-		`toward`,
-		`towards`,
-		`from`,
-		`in`,
-		`under`,
-		`upon`,
-		`with`,
-		`the`, // also strip this because it's unnecessary
-		`my`,  // also strip this because it's unnecessary
-	}
-
 	colorShortTagRegex = regexp.MustCompile(`\{(\d*)(?::)?(\d*)?\}`)
 
 	// One CJK character, punctuation, and symbol is one word.
@@ -771,24 +755,6 @@ func QuantizeTens(value int, max int) int {
 	return int(math.Floor(float64(value)/float64(max)*10)) * 10
 }
 
-// Strips out common prepositions from a string
-func StripPrepositions(input string) string {
-
-	if input == `` {
-		return input
-	}
-
-	for _, prep := range strippablePrepositions {
-		prepLen := len(prep)
-
-		if len(input) > prepLen && input[0:len(prep)+1] == prep+` ` {
-			input = input[len(prep)+1:]
-		}
-		input = strings.ReplaceAll(input, ` `+prep+` `, ` `)
-	}
-
-	return input
-}
 
 func ConvertColorShortTags(input string) string {
 

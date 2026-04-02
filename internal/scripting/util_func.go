@@ -31,7 +31,6 @@ func setUtilFunctions(vm *goja.Runtime) {
 	vm.Set(`UtilGetMinutesToRounds`, UtilGetMinutesToRounds)
 	vm.Set(`UtilGetSecondsToTurns`, UtilGetSecondsToTurns)
 	vm.Set(`UtilGetMinutesToTurns`, UtilGetMinutesToTurns)
-	vm.Set(`UtilStripPrepositions`, UtilStripPrepositions)
 	vm.Set(`UtilDiceRoll`, UtilDiceRoll)
 	vm.Set(`UtilGetTime`, UtilGetTime)
 	vm.Set(`UtilGetTimeString`, UtilGetTimeString)
@@ -102,10 +101,6 @@ func UtilGetSecondsToTurns(seconds int) int {
 
 func UtilGetMinutesToTurns(minutes int) int {
 	return configs.GetTimingConfig().MinutesToTurns(minutes)
-}
-
-func UtilStripPrepositions(input string) string {
-	return util.StripPrepositions(input)
 }
 
 func UtilDiceRoll(diceQty int, diceSides int) int {
