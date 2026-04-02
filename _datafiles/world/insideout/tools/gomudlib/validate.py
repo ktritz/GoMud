@@ -294,7 +294,46 @@ def validate_world(base_dir, fix=False):
         data, parse_errors = validate_yaml_file(path)
         errors.extend(parse_errors)
 
+    # 8. Check for duplicate IDs across all data types
+    errors.extend(_check_duplicate_ids(base_dir, 'mobs', 'mobid'))
+    errors.extend(_check_duplicate_ids(base_dir, 'items', 'itemid'))
+    errors.extend(_check_duplicate_ids(base_dir, 'rooms', 'roomid'))
+    errors.extend(_check_duplicate_ids(base_dir, 'quests', 'questid'))
+    errors.extend(_check_duplicate_ids(base_dir, 'buffs', 'buffid'))
+    errors.extend(_check_duplicate_ids(base_dir, 'races', 'raceid'))
+    errors.extend(_check_duplicate_ids(base_dir, 'spells', 'spellid'))
+
     return errors, fixes
+
+
+def _check_duplicate_ids(base_dir, data_type, id_field):
+    """Check for duplicate IDs across all files of a given type."""
+    errors = []
+    seen = {}  # id -> filepath
+
+    pattern = os.path.join(base_dir, data_type, '**', '*.yaml')
+    for path in sorted(glob.glob(pattern, recursive=True)):
+        basename = os.path.basename(path)
+        if basename in ('zone-config.yaml', 'grid.yaml'):
+            continue
+        try:
+            with open(path) as f:
+                data = yaml.safe_load(f)
+        except:
+            continue
+
+        if not data or id_field not in data:
+            continue
+
+        entity_id = data[id_field]
+        if entity_id in seen:
+            errors.append(
+                f"Duplicate {id_field} {entity_id}: {path} conflicts with {seen[entity_id]}"
+            )
+        else:
+            seen[entity_id] = path
+
+    return errors
 
 
 def _fix_string_lists(data, fields, path):
