@@ -7,6 +7,7 @@ import (
 
 	"github.com/GoMudEngine/GoMud/internal/configs"
 	"github.com/GoMudEngine/GoMud/internal/events"
+	"github.com/GoMudEngine/GoMud/internal/parser"
 	"github.com/GoMudEngine/GoMud/internal/items"
 	"github.com/GoMudEngine/GoMud/internal/rooms"
 	"github.com/GoMudEngine/GoMud/internal/users"
@@ -15,6 +16,7 @@ import (
 
 func Put(rest string, user *users.UserRecord, room *rooms.Room, flags events.EventFlag) (bool, error) {
 
+	parsed := parser.GetParsedInput(user)
 	args := util.SplitButRespectQuotes(strings.ToLower(rest))
 
 	if len(args) < 2 {
@@ -23,17 +25,32 @@ func Put(rest string, user *users.UserRecord, room *rooms.Room, flags events.Eve
 	}
 
 	containerName := ``
-	nameSearch := ``
-	for i := len(args) - 1; i >= 1; i-- {
-		if len(nameSearch) > 0 {
-			nameSearch = ` ` + nameSearch
-		}
-		nameSearch = args[i] + nameSearch
 
-		containerName = room.FindContainerByName(nameSearch)
-		if containerName != `` {
-			args = args[:i]
-			break
+	// Use parser to identify container from preposition phrase
+	if parsed != nil && !parsed.Instrument.IsEmpty() {
+		containerName = room.FindContainerByName(parsed.Instrument.Noun)
+		if containerName != "" {
+			// Rebuild args from just the target
+			args = util.SplitButRespectQuotes(strings.ToLower(parsed.Target.Noun))
+			if parsed.Target.Quantity > 0 {
+				args = []string{fmt.Sprintf("%d", parsed.Target.Quantity), parsed.Target.Noun}
+			}
+		}
+	}
+
+	// Fallback: backward iteration to find container name
+	if containerName == "" {
+		nameSearch := ``
+		for i := len(args) - 1; i >= 1; i-- {
+			if len(nameSearch) > 0 {
+				nameSearch = ` ` + nameSearch
+			}
+			nameSearch = args[i] + nameSearch
+			containerName = room.FindContainerByName(nameSearch)
+			if containerName != `` {
+				args = args[:i]
+				break
+			}
 		}
 	}
 
