@@ -1,0 +1,23 @@
+roomid: 209
+zone: Headquarters
+title: Fear's Room
+description: 'Fear''s room is the most organized space in all of Headquarters -- obsessively, almost disturbingly so. Every surface is labeled, every item catalogued, every potential hazard identified with a small warning sticker. Emergency exit plans are posted on every wall, each one for a different scenario: fire, flood, surprise quiz, awkward silence, "what if the sun just doesn''t come up one day." A massive filing cabinet dominates one wall, its drawers labeled "Worst Case Scenarios A-F," "Worst Case Scenarios G-L," and so on through the alphabet, with a supplementary cabinet for "Worst Case Scenarios: Unlikely But You Never Know." A night light glows in every corner. There are four of them.'
+mapsymbol: F
+maplegend: Fear
+biome: mindscape
+exits:
+  north:
+    roomid: 208
+  south:
+    roomid: 210
+  east:
+    roomid: 200
+nouns:
+  filing cabinet: The filing cabinet is stuffed to bursting. A quick glance at the tabs reveals entries like "Bear Attack (School)," "Bear Attack (Home)," "Bear Attack (Unlikely But What If Bears Learn To Open Doors)," and an entire section dedicated to "Social Situations That Could Go Wrong." The last section takes up three drawers.
+  exit plans: The emergency exit plans are meticulous. Each one includes a color-coded map, a numbered list of steps, and a "panic level" rating from 1 to 10. The plan for "Someone Asks You A Question In Class" is rated an 8. The plan for "Actual Emergency" is, ironically, only a 6.
+  night lights: Four night lights glow softly in the four corners of the room. Each one is a different color and each one has a backup battery taped to it, just in case. A label on one reads "DO NOT UNPLUG. EVER."
+idlemessages:
+- One of the night lights flickers and the room's ambient anxiety level spikes noticeably.
+- The filing cabinet drawer labeled "NEW WORRIES" slides open slightly on its own.
+- A small alarm clock on the desk goes off, labeled "REMINDER -- WORRY ABOUT TOMORROW."
+- Something creaks in the walls and the emergency exit plans all flutter at once.

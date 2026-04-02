@@ -1,0 +1,20 @@
+roomid: 302
+zone: Long Term Memory
+title: Blue Memory Corridor
+description: The warmth of the yellow corridor fades behind you as a deep, cool blue light washes over everything. The sadness memories lining these shelves glow in shades of cerulean, cobalt, and midnight blue, casting long, gentle shadows that pool on the floor like still water. The air is noticeably cooler here and carries a faint dampness, as though the memories themselves are quietly weeping. Despite the melancholy, there is a strange beauty to this place -- the blue light is soft and kind, and the silence feels less empty than it does contemplative.
+mapsymbol: B
+maplegend: Blue
+biome: mindscape
+exits:
+  north:
+    roomid: 301
+  south:
+    roomid: 303
+nouns:
+  sadness memories: The <ansi fg="itemname">sadness memories</ansi> shimmer with a quiet depth. One shows a rainy car ride with no conversation. Another captures the moment of realizing a friendship has drifted apart. They are painful to look at but impossible to look away from. Each one feels important in a way that is hard to articulate.
+idlemessages:
+- A blue orb dims slightly and you feel an unexpected pang of nostalgia.
+- The sound of quiet rainfall leaks from a cluster of orbs on a high shelf.
+- A tear-shaped drop of light falls from a memory orb and evaporates before it hits the floor.
+- The corridor sighs -- or perhaps that is just the air shifting between the shelves.
+- A faint melody drifts past, the kind of sad song you cannot stop listening to.

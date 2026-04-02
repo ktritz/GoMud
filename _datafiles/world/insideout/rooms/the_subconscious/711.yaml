@@ -1,0 +1,22 @@
+roomid: 711
+zone: The Subconscious
+title: Creaky Attic
+description: A low-ceilinged space that feels impossibly like the attic of a house that does not exist, crammed with dusty boxes and forgotten junk piled in precarious towers that lean at alarming angles. The floorboards are warped and uneven, creaking loudly with every step, and the sloped ceiling forces you to duck in places. A single dirty window is set into one wall, but the glass is opaque with grime and the light that filters through is the wrong color -- a sickly, late-afternoon amber that belongs to no specific time of day. The attic smells like dust, old cardboard, and the peculiar dread of hearing a noise from upstairs when you are home alone.
+mapsymbol: ^
+maplegend: Attic
+biome: dungeon
+exits:
+  south:
+    roomid: 710
+  north:
+    roomid: 712
+nouns:
+  boxes: The <ansi fg="itemname">boxes</ansi> are unlabeled cardboard boxes taped shut with packing tape that has yellowed and cracked with age. If you shake one, you can hear something shift inside, but opening them reveals only more boxes. It is boxes all the way down. One box is heavier than the others and makes a sound like muffled crying when you move it.
+  junk: The <ansi fg="itemname">junk</ansi> is the detritus of childhood fears made physical -- a broken rocking horse with one glass eye, a doll with no face, a painting of a house that you are certain was facing the other direction a moment ago. Each item is unsettling on its own, but together they create an atmosphere of accumulated wrongness.
+  window: The <ansi fg="itemname">window</ansi> is too grimy to see through clearly, but shapes move behind it -- shadows that pass too slowly and stop too long. When you press your face close to the glass, the shapes stop moving, as if they noticed you looking. You step back and they resume.
+idlemessages:
+- A floorboard creaks loudly under your weight, and an answering creak comes from somewhere you are not standing.
+- A box in the corner shifts an inch across the floor on its own.
+- The light through the dirty window changes color, as if a cloud passed over a sun that is not there.
+- Something taps on the underside of the floor -- three slow, deliberate knocks.
+- A rocking horse in the corner begins rocking gently, though nothing touched it.

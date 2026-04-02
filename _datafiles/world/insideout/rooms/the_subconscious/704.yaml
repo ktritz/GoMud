@@ -1,0 +1,24 @@
+roomid: 704
+zone: The Subconscious
+title: Grandma's Vacuum Cleaner Room
+description: This oversized cell has been converted into a containment chamber for one of Riley's oldest, most primal fears -- Grandma's vacuum cleaner. The enormous vacuum dominates the center of the room, a chrome-and-plastic monstrosity from the 1990s that towers over you on wheels the size of dinner plates. Its cord trails across the floor like a dead snake, and its bag is distended and bulging with something that makes muffled thumping sounds. The machine is unplugged, but the power light on its handle blinks intermittently anyway, and the hose twitches in your direction when you get too close. Fear constructs have been drawn to this room, nesting in the corners like moths around a very loud, very terrifying flame.
+mapsymbol: V
+maplegend: Vacuum
+biome: dungeon
+exits:
+  west:
+    roomid: 702
+  north:
+    roomid: 705
+nouns:
+  vacuum: The <ansi fg="itemname">vacuum</ansi> is a relic of pure childhood terror. It is a Hoover Deluxe from some unknowable era, chrome plated and absurdly loud even when turned off -- you can hear a faint roaring hum emanating from its motor housing. The bag is so overstuffed that something inside is pressing against the fabric, creating shapes that look disturbingly like hands. The on/off switch reads "ON" and "MORE ON." There is no off position.
+spawninfo:
+- mobid: 50
+  message: A <ansi fg="mobname">fear spider</ansi> crawls out from behind the vacuum, its crystallized legs clicking against the stone floor.
+  respawnrate: 4 real minutes
+idlemessages:
+- The vacuum's hose twitches toward you, then slowly recoils.
+- The power light blinks faster for a moment, as if the vacuum sensed your fear.
+- Something inside the vacuum bag shifts with a muffled thump.
+- The vacuum emits a low, threatening hum that vibrates through the floor.
+- A <ansi fg="mobname">fear spider</ansi> skitters out from behind the vacuum, drawn by the ambient dread.

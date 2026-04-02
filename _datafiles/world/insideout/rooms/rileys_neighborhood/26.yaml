@@ -1,0 +1,17 @@
+roomid: 26
+zone: Rileys Neighborhood
+title: Upstairs Bathroom
+description: The upstairs bathroom is the kind of shared space that has caused at least three family arguments this week. Riley's side of the counter is a chaos of hair ties, a half-squeezed tube of toothpaste, and a phone charger that definitely shouldn't be near water. Mom has tried to organize it with little baskets that have been completely ignored. The shower curtain has a map of the world on it -- Dad's choice -- and someone has drawn a tiny hockey stick on Minnesota with a Sharpie.
+mapsymbol: B
+maplegend: Bath-2F
+biome: city
+exits:
+  west:
+    roomid: 24
+nouns:
+  counter: The <ansi fg="itemname">counter</ansi> is a battlefield. Riley's hair ties form a colony near the faucet. A tube of toothpaste has been squeezed from the middle, which Dad has opinions about. Three different kinds of shampoo sit in the shower caddy, none of them more than a quarter full.
+  curtain: The <ansi fg="itemname">shower curtain</ansi> has a detailed world map on it. Minnesota is circled in Sharpie with a little heart next to it. Someone -- probably Riley -- has also drawn a dotted line from Minnesota to San Francisco with "we are here" and an arrow. It's strangely touching.
+  mirror: The <ansi fg="itemname">mirror</ansi> is slightly fogged even though nobody has showered recently. If you look closely, you can see where someone drew a smiley face in the steam that left a faint residue.
+idlemessages:
+- The faucet drips in a steady rhythm.
+- The bathroom fan hums on its own for a moment, then stops.

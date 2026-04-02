@@ -1,0 +1,32 @@
+roomid: 107
+zone: School
+title: Gym
+description: The gym is a vast echoing box of polished hardwood floors and impossibly high ceilings. A basketball court is painted on the main floor, its lines faded and repainted so many times you can see ghost outlines of previous layouts underneath. Wooden bleachers fold out from the far wall, and a championship banner from 2003 hangs from the rafters -- the most recent one, which the PE teacher mentions at least twice a week. The air smells permanently like rubber and floor polish, and every sound bounces around the space in an endless echo. A Coach's whistle blast cuts through the noise at regular intervals, sharp enough to make your fillings vibrate.
+mapsymbol: G
+maplegend: Gym
+biome: city
+exits:
+  west:
+    roomid: 106
+  south:
+    roomid: 108
+  north:
+    roomid: 117
+nouns:
+  court: The basketball <ansi fg="itemname">court</ansi> is regulation size, or close enough for a public school. The free throw lines are worn pale from a thousand PE classes. Someone has scuffed a smiley face into the paint near half court. The hoops at each end have chain nets that rattle when the ball goes through, which sounds way cooler than nylon.
+  bleachers: The <ansi fg="itemname">bleachers</ansi> are wooden, creaky, and designed to be maximally uncomfortable. They fold out from the wall on a mechanical track that makes a terrifying grinding noise. The back rows are where everyone actually wants to sit. Decades of initials, hearts, and regrettable statements are carved into every surface.
+  banner: The <ansi fg="itemname">championship banner</ansi> reads "SFUSD DISTRICT CHAMPS 2003 -- BOYS BASKETBALL." It hangs alone in the rafters, which is either a testament to that team's greatness or a commentary on everything since. The fabric is starting to fade, but the PE teacher would fight anyone who suggested taking it down.
+idlemessages:
+- A basketball bounces somewhere in the gym, the echoes multiplying the sound.
+- A whistle blows sharply and a coach's voice barks "HUSTLE!"
+- Sneakers squeak on the polished floor as someone cuts hard on a layup.
+- The bleachers creak under their own weight as the building settles.
+- A dodgeball rolls out from under the bleachers and comes to rest at your feet.
+
+spawninfo:
+- mobid: 13
+  message: A <ansi fg="mobname">doubt shadow</ansi> flickers into existence near the doorway.
+  respawnrate: 4 real minutes
+- mobid: 76
+  message: <ansi fg="mobname">Coach Davis</ansi> jogs in, whistle bouncing.
+  respawnrate: 5 real minutes

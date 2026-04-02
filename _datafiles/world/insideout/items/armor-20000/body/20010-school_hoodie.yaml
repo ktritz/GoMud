@@ -1,0 +1,9 @@
+itemid: 20010
+name: school hoodie
+namesimple: hoodie
+description: 'A comfortable gray hoodie with your school''s logo on the front. It''s
+  got a kangaroo pocket and smells like the cafeteria.'
+type: body
+subtype: wearable
+damagereduction: 1
+value: 10

@@ -1,0 +1,22 @@
+roomid: 954
+zone: Belief System
+title: The Self-Image Chamber
+description: 'A circular room dominated by an enormous mirror that stretches from floor to ceiling, filling the entire far wall. But this isn''t a normal mirror -- it reflects not how Riley looks, but how she sees herself, and the image shifts constantly. One moment the reflection stands tall, confident, surrounded by golden light. The next it shrinks, shoulders hunched, the light turning gray and uncertain. Smaller mirrors ring the room at various angles, each one showing a different version: Riley as her friends see her, Riley as her parents see her, Riley as she fears strangers see her. The floor is polished to a reflective sheen, creating the disorienting sense of being surrounded by selves on every side. At the center of the room, a slowly rotating crystal projects all the reflections at once, trying to reconcile them into a single truth.'
+mapsymbol: M
+maplegend: Mirror
+biome: mindscape
+exits:
+  north:
+    roomid: 953
+  east:
+    roomid: 955
+nouns:
+  mirror: The great <ansi fg="itemname">mirror</ansi> is Riley's self-image in real-time. Right now the reflection shifts between confident and uncertain every few seconds, as if the mirror can't decide which version is more accurate. The confident Riley stands straight, eyes bright, radiating competence. The uncertain one looks smaller, as if trying to take up less space. Both are true. That's the hard part.
+  mirrors: The smaller <ansi fg="itemname">mirrors</ansi> show Riley through others' eyes. The "Friends" mirror shows someone funny, reliable, a little weird in a good way. The "Parents" mirror shows someone still young enough to protect but old enough to respect. The "Strangers" mirror is the cruelest -- it shows what Riley imagines others think, which is almost certainly worse than reality.
+  crystal: 'The rotating <ansi fg="itemname">crystal</ansi> at the center of the room is trying to solve an impossible problem: combining every version of how Riley is perceived into a single, coherent self-image. It spins and refracts light in conflicting directions, and occasionally it stutters, caught between two versions that can''t both be true. It will probably never stop spinning. That''s okay. That''s what growing up looks like.'
+idlemessages:
+- The great mirror flickers between confident and uncertain, searching for which Riley is real.
+- A smaller mirror labeled "How Classmates See You" adjusts its image after a social interaction.
+- The central crystal stutters and sends a prism of fractured light across every surface.
+- The reflection in the floor and the reflection in the mirror disagree for a moment, then align.
+- The "Parents" mirror glows warm and steady. Some reflections are easier to trust than others.

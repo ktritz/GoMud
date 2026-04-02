@@ -1,0 +1,29 @@
+raceid: 1
+name: human
+description: 'A regular teenager trying to figure out life, school, and whatever is
+  going on inside their head.'
+defaultalignment: 0
+size: medium
+unarmedname: fists
+tnlscale: 1
+selectable: true
+knowsfirstaid: true
+tameable: false
+angrycommands:
+- emote clenches their fists.
+- 'shout Let''s go!'
+- 'shout Oh, it is ON.'
+stats:
+  strength:
+    base: 1
+  speed:
+    base: 1
+  smarts:
+    base: 1
+  vitality:
+    base: 1
+  perception:
+    base: 1
+damage:
+  diceroll: 1d3
+disabledslots: []

@@ -1,0 +1,23 @@
+roomid: 511
+zone: Dream Productions
+title: Actor's Trailer
+description: A surprisingly luxurious trailer that would make any real-world actor jealous. A lit vanity mirror surrounded by warm bulbs dominates one wall, its counter cluttered with makeup, wigs, and jars of "Instant Emotion" in assorted colors. A plush chaise lounge draped in silk takes up most of the floor space, and a small fridge hums in the corner, stocked with sparkling water and what the label claims is "Liquid Charisma." Framed headshots of dream characters cover every inch of wall space -- the recurring cast of Riley's subconscious. A star on the door reads "DREAM ACTOR -- Please Knock (Twice, Dramatically)."
+mapsymbol: T
+maplegend: Trailer
+biome: dreamset
+exits:
+  north:
+    roomid: 510
+nouns:
+  mirror: 'The <ansi fg="itemname">vanity mirror</ansi> is ringed with warm bulbs that cast the most flattering light imaginable. The counter below is a mess of greasepaint, spirit gum, and a wig stand holding a wig that looks exactly like Riley''s hair. A note taped to the mirror reads "REMEMBER: You''re not really Riley. You just play her in dreams. Stay in character."'
+  lounge: The <ansi fg="itemname">chaise lounge</ansi> is draped in shimmering silk that changes color depending on the angle. It's the kind of furniture that demands you recline dramatically and deliver a monologue. A script is open on one arm, lines highlighted in yellow.
+  headshots: The <ansi fg="itemname">headshots</ansi> show the regular cast of Riley's dreams. There's "Generic Authority Figure," "That Kid From Camp She Can't Quite Remember," "Dog But It's Also A Person Somehow," and a headshot that's just a mirror because Riley often dreams about herself in the third person.
+spawninfo:
+- mobid: 42
+  message: A <ansi fg="mobname">dream actor</ansi> lounges in from the back of the trailer, already half in costume.
+  respawnrate: 8 real minutes
+idlemessages:
+- The vanity lights flicker in a dramatic sequence, as if announcing someone's entrance.
+- A wig on the stand shifts slightly, adjusting its own part.
+- The script on the chaise lounge flips to a new page on its own. Tonight's lines, presumably.
+- A headshot falls off the wall and another one immediately takes its place.

@@ -1,0 +1,21 @@
+roomid: 510
+zone: Dream Productions
+title: Special Effects Lab
+description: 'A mad scientist''s workshop if the scientist exclusively studied dreams. Bubbling vats of luminescent liquid line one wall, each a different color -- one swirls with the iridescent shimmer of flying dreams, another crackles with the electric blue of anxiety nightmares. Workstations covered in strange equipment fill the room: a machine that bottled déjà vu, a centrifuge for separating dream logic from regular logic, and a device labeled "EMOTIONAL AMPLIFIER -- USE SPARINGLY." Chalkboards on the walls are covered in formulas that mix neuroscience with pure nonsense. This is where the really weird dream effects are invented, tested, and occasionally unleashed on an unsuspecting Riley.'
+mapsymbol: E
+maplegend: Effects
+biome: dreamset
+exits:
+  west:
+    roomid: 509
+  south:
+    roomid: 511
+nouns:
+  vats: The <ansi fg="itemname">vats</ansi> bubble with concentrated dream essence. The gold one labeled "EUPHORIA" smells like birthday cake and summer vacation. The purple one labeled "UNEASE" makes your skin crawl if you stand too close. A small vat in the corner labeled "THAT FEELING WHEN YOU MISS A STEP ON THE STAIRS" is sealed shut with extra locks.
+  equipment: The <ansi fg="itemname">equipment</ansi> is equal parts genius and absurdity. A "Gravity Dial" can adjust the weight of anything in a dream. A "Narrative Coherence Meter" is permanently stuck at 15%. A printer in the corner is spitting out pages of dream logic that read like dadaist poetry.
+idlemessages:
+- A vat of golden dream essence bubbles over and the spill evaporates into tiny butterflies.
+- The Gravity Dial spins on its own, and everything in the room briefly floats an inch upward.
+- A chalkboard equation rewrites itself, replacing numbers with emotions and colors.
+- The déjà vu machine hums. The déjà vu machine hums. Wait, did that already happen?
+- A spark jumps between two machines and for an instant the room smells like childhood.

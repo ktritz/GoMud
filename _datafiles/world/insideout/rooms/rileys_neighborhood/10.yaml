@@ -1,0 +1,30 @@
+roomid: 10
+zone: Rileys Neighborhood
+title: Oak Street
+description: Oak Street is busier than the residential blocks behind you. Cars rumble past at irregular intervals, and the sidewalk is wider, lined with a few small shops and awnings. You can see the corner store up ahead to the east and the familiar rooftops of the neighborhood stretching out to the west. A yellow school bus route sign is bolted to a lamppost. The street has that in-between feel -- not quite downtown, not quite suburban, just a regular city street trying its best.
+mapsymbol: '='
+maplegend: Street
+biome: city
+exits:
+  north:
+    roomid: 6
+  east:
+    roomid: 11
+  south:
+    roomid: 16
+nouns:
+  cars: The <ansi fg="itemname">cars</ansi> parked along Oak Street are a mix of sensible hybrids and beat-up older models. A few have parking tickets tucked under their windshield wipers. One has a bumper sticker that reads "My Other Car Is Also Stuck In Traffic."
+  sign: The yellow <ansi fg="itemname">school bus sign</ansi> marks a stop on the route to Riley's school. The schedule posted on the lamppost below it is sun-faded and basically unreadable.
+idlemessages:
+- A car honks somewhere up the block and someone yells something back.
+- A yellow school bus rumbles past, windows full of bored faces.
+- A delivery truck double-parks and the driver hops out with a stack of boxes.
+- Someone on a bicycle weaves between parked cars.
+
+spawninfo:
+- mobid: 1
+  message: A <ansi fg="mobname">thought worm</ansi> wriggles out of nowhere.
+  respawnrate: 2 real minutes
+- mobid: 1
+  message: Another <ansi fg="mobname">thought worm</ansi> squirms into view.
+  respawnrate: 3 real minutes

@@ -1,0 +1,55 @@
+-
+  Supported:
+    "mind worker": ["mind worker"]
+  Conversation:
+    - ["#1 say Should we send this memory up to Headquarters?"]
+    - ["#2 emote squints at the memory orb",
+       "#2 say Nah, it's from three years ago. File it in the back."]
+    - ["#1 say What about the one where Riley learned to whistle?"]
+    - ["#2 say Does she even whistle anymore?"]
+    - ["#1 say ...Good point. Back shelf it is."]
+-
+  Supported:
+    "mind worker": ["mind worker"]
+  Conversation:
+    - ["#1 emote starts humming",
+       "#1 say Triple Dent Gum will make you smile!"]
+    - ["#2 say Please stop."]
+    - ["#1 say Triple Dent Gum, it lasts a while!"]
+    - ["#2 say I am filing a formal complaint with management."]
+    - ["#1 say Triple Dent Gum, it's--"]
+    - ["#2 say I WILL reassign you to the Forgetting section. Don't test me."]
+-
+  Supported:
+    "mind worker": ["mind worker"]
+  Conversation:
+    - ["#1 say Another batch of memories coming down from Headquarters. Look at this backlog."]
+    - ["#2 emote groans",
+       "#2 say It's been like this all week. Ever since Riley started that new class."]
+    - ["#1 say Half of these are just her worrying about the same thing over and over."]
+    - ["#2 say Anxiety must be working overtime up there."]
+    - ["#1 say Tell me about it. I've shelved the same memory about a pop quiz twelve times today."]
+-
+  Supported:
+    "mind worker": ["mind worker"]
+  Conversation:
+    - ["#1 say Hey, did you reorganize Aisle 7?"]
+    - ["#2 say Yeah, why?"]
+    - ["#1 say The childhood birthday memories are mixed in with the dentist visits now."]
+    - ["#2 say ...Oops."]
+    - ["#1 say Riley's going to remember cake and immediately think of a root canal."]
+    - ["#2 say I'll fix it on my break."]
+    - ["#1 say Your break was two hours ago."]
+    - ["#2 say Then I'll fix it on my NEXT break."]
+-
+  Supported:
+    "mind worker": ["bing bong"]
+  Conversation:
+    - ["#1 say You're still hanging around here?"]
+    - ["#2 emote looks down at his feet",
+       "#2 say Where else would I go? Riley doesn't imagine me anymore..."]
+    - ["#1 say ...Sorry, pal. Hey, at least you've got the memories."]
+    - ["#2 say Yeah. I've been visiting the ones from when she was little. When we used to fly the wagon to the moon."]
+    - ["#1 say That's a good one. We keep it polished, just so you know."]
+    - ["#2 emote sniffles",
+       "#2 say Thanks. That... that means a lot."]

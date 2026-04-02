@@ -1,0 +1,40 @@
+# Auto-generated grid layout
+#
+# y+14:  [914]
+# y+13:  [913]
+# y+12:  [912]
+# y+11:  [911]
+# y+10:  [910]
+# y+9:  [909]
+# y+8:  [908]
+# y+7:  [907]
+# y+6:  [906]
+# y+5:  [905]
+# y+4:  [904]
+# y+3:  [903]
+# y+2:  [902]
+# y+1:  [901]
+# y+0:  [900]
+#
+
+grid:
+  "0,0": 900    # The Sealed Door
+  "0,1": 901    # Suppression Corridor
+  "0,2": 902    # Vault Antechamber
+  "0,3": 903    # The Emotion Vault
+  "0,4": 904    # Echo Chamber
+  "0,5": 905    # The Bottled-Up Room
+  "0,6": 906    # Anxiety Spiral Nest
+  "0,7": 907    # Doubt Shadow Den
+  "0,8": 908    # Repression Hall
+  "0,9": 909    # The Glass Jar Room
+  "0,10": 910    # Anxiety's War Room
+  "0,11": 911    # Control Override Station
+  "0,12": 912    # Deep Breath Chamber
+  "0,13": 913    # Belief Thread Workshop
+  "0,14": 914    # The Release Valve
+
+special_exits:
+  914:
+    up:
+      roomid: 200

@@ -1,0 +1,22 @@
+roomid: 400
+zone: Imagination Land
+title: Imagination Land Gateway
+description: A grand archway of impossible architecture marks the entrance to Imagination Land, its columns built from stacked building blocks, frozen popsicles, and what appears to be solidified laughter. The arch shifts color constantly -- hot pink to electric blue to neon green -- and the air passing through it tastes faintly of cotton candy. Beyond the gateway, an entire world of pure creative chaos sprawls in every direction, its skyline a jumble of structures that could only exist in a child's mind. The bridge back to Long Term Memory stretches behind you, and ahead, a winding path of rainbow cobblestones leads deeper into the impossible.
+mapsymbol: A
+maplegend: Gateway
+biome: land
+exits:
+  north:
+    roomid: 320
+  south:
+    roomid: 401
+  east:
+    roomid: 420
+nouns:
+  archway: The <ansi fg="itemname">archway</ansi> is architecturally absurd and structurally magnificent. Its left column is a stack of giant alphabet blocks. Its right column is a tower of frozen popsicles that never melt. The keystone at the top is a golden star that spins slowly and emits a faint chiming sound. Carved into the base are the words "ANYTHING IS POSSIBLE (Terms and conditions may apply during puberty)."
+idlemessages:
+- The archway shifts from electric blue to hot pink with a musical chime.
+- A burst of glitter erupts from the top of the arch and rains down in slow motion.
+- The cobblestone path ahead rearranges itself slightly, because of course it does.
+- A butterfly made of crayon wax flutters through the gateway and dissolves into sparkles.
+- The air shimmers and for a split second you see the outline of something that has not been imagined yet.

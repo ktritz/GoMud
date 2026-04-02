@@ -1,0 +1,19 @@
+mobid: 6
+zone: Rileys Neighborhood
+hostile: false
+activitylevel: 20
+groups:
+- neighborhood-npc
+idlecommands:
+- emote kicks a ball against the wall and catches it on the rebound.
+- say School was so boring today. We had to do fractions. FRACTIONS.
+- emote wanders around aimlessly, looking for something interesting.
+- say Wanna hang out? I've got nothing to do until dinner.
+- wander
+- ''
+- ''
+character:
+  name: neighbor kid
+  description: A friendly neighborhood kid with scraped knees, a backwards baseball cap, and the boundless energy of someone with absolutely no responsibilities. He's always outside kicking a ball, riding a bike, or just wandering around looking for something to do. He talks about school the way most people talk about jury duty.
+  level: 3
+  raceid: 1

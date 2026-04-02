@@ -1,0 +1,22 @@
+roomid: 962
+zone: Belief System
+title: Belief Forge
+description: 'Heat and light radiate from this chamber where new beliefs are literally forged into existence. A massive anvil carved from crystallized emotion sits at the center, its surface scarred with the marks of countless beliefs hammered into shape. A furnace of pure emotional fire burns behind it, fed by experiences and fueled by the intensity of feeling. Tools line the walls -- not hammers and tongs, but instruments of self-reflection: journals, mirrors, question marks forged in iron. This is where the raw material of experience is heated, shaped, and cooled into the beliefs that define who Riley is. The air shimmers with creative heat, and every surface bears the glow of a belief recently made or remade.'
+mapsymbol: '*'
+maplegend: Forge
+biome: mindscape
+exits:
+  west:
+    roomid: 961
+  east:
+    roomid: 963
+nouns:
+  anvil: The <ansi fg="itemname">anvil</ansi> is ancient and essential. Its surface is covered in the impressions of beliefs forged here -- you can see the faint outline of "I can handle this" and the deeper mark of "I'm stronger than I think." Every belief leaves a mark, and the anvil remembers them all. It vibrates faintly, ready for the next piece of raw experience to be shaped upon it.
+  furnace: The <ansi fg="itemname">furnace</ansi> burns with emotional fire in every color -- golden joy, blue sorrow, red anger, all swirling together. The intensity depends on the belief being forged. Small beliefs need a gentle heat. The beliefs that change who you are require an inferno. Right now the furnace burns at a steady orange, processing something new.
+  journals: 'The <ansi fg="itemname">journals</ansi> that line the walls are the tools of self-examination. Each one contains questions rather than answers: "What did you learn from that?" "Why did that hurt?" "What do you want to be true about yourself?" The pages fill themselves as Riley reflects, and the answers become raw material for the forge.'
+idlemessages:
+- The furnace flares as a new experience is fed into it, ready to become a belief.
+- A fresh belief cools on the anvil, its surface hardening from molten emotion to solid conviction.
+- The journals on the wall rustle their pages, as if Riley is thinking something through.
+- Sparks fly from the anvil as a belief is tested, hammered, and tested again.
+- The forge glows brighter -- something significant is being processed in Riley's mind.

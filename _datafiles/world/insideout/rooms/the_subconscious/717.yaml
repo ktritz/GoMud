@@ -1,0 +1,21 @@
+roomid: 717
+zone: The Subconscious
+title: Cracked Floor
+description: The stone floor of this corridor is fractured into a web of deep cracks that glow faintly with a dull red light from somewhere far below. The cracks widen as you move forward, some broad enough to see down into -- though what you see is just more darkness, pulsing with that same sullen red glow. The walls here are unstable, shedding flakes of stone that crumble to dust before they hit the floor, and the ceiling sags dangerously in places, supported by makeshift braces that look like they were installed in a panic. The structural integrity of this section of the Subconscious is failing, worn thin by the weight of fears pressing down from above and the void pulling from below. Every step sends a network of new cracks racing ahead of you.
+mapsymbol: '='
+maplegend: Cracked
+biome: dungeon
+exits:
+  south:
+    roomid: 716
+  north:
+    roomid: 718
+nouns:
+  cracks: The <ansi fg="itemname">cracks</ansi> in the floor glow with a deep, ember-like red that pulses slowly. Peering into one reveals nothing but a shaft of darkness that drops farther than you can see, the red glow coming from somewhere impossibly far down. Hot air rises from the cracks, carrying a faint smell of burnt sugar and ozone. Some of the cracks are widening visibly.
+  braces: The <ansi fg="itemname">braces</ansi> are improvised supports made from whatever was available -- repurposed cell bars, bent shelf brackets, and what appears to be a stop sign. They groan under the weight of the sagging ceiling, and several have already buckled. One brace has a note taped to it reading "HOLD PLEASE" in shaky handwriting.
+idlemessages:
+- A new crack races across the floor with a sharp splitting sound, glowing red from within.
+- The ceiling sags another inch and one of the braces groans in protest.
+- Hot air gusts up from a crack, carrying sparks of dull red light that drift and fade.
+- A section of wall crumbles and a cloud of stone dust fills the air.
+- The floor shifts beneath your feet and you hear the distant sound of something very large settling deeper.

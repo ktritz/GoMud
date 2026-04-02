@@ -1,0 +1,23 @@
+roomid: 119
+zone: School
+title: Janitor's Closet
+description: A tiny, cramped closet crammed with mops, a wheeled bucket, and enough cleaning supplies to sterilize a small hospital. Shelves on both walls hold bottles of industrial cleaner, rolls of paper towels, and a box of rubber gloves. The single bulb overhead casts a harsh yellow light that makes everything look slightly jaundiced. The space smells aggressively of pine cleaner and lemon floor polish. But there's something else in here -- in the back wall, partially hidden behind a mop rack, there's a crack in the plaster that shouldn't be there. It's too straight, too deliberate, and if you press your eye to it, you can see a faint prismatic light pulsing on the other side. The air near the crack hums with a frequency you feel in your teeth more than your ears.
+mapsymbol: J
+maplegend: Janitor
+biome: city
+exits:
+  west:
+    roomid: 112
+  crack in wall:
+    roomid: 300
+    secret: true
+nouns:
+  mops: The <ansi fg="itemname">mops</ansi> are the industrial string variety, well-used and slightly damp. They lean against the wall in a cluster, their handles crossing like a tiny forest of cleaning implements. One of them has a strip of duct tape around the handle with "CARL'S -- DO NOT TOUCH" written on it.
+  bucket: The wheeled <ansi fg="itemname">bucket</ansi> is bright yellow with a wringer attachment and a permanent ring of gray water at the bottom. It's the kind of bucket that has mopped every hallway in this school a thousand times. One wheel squeaks. It always squeaks.
+  crack: The <ansi fg="itemname">crack</ansi> in the back wall runs from about knee height to just above your head, perfectly straight and slightly wider than a finger. Pressing close, you can feel warm air flowing through it, and the faint prismatic light on the other side shifts through colors that don't quite match anything in the visible spectrum. It smells like ozone and old memories. This isn't a crack in a wall -- it's a crack in something else entirely.
+idlemessages:
+- The crack in the wall pulses with a faint, shifting light -- gold, blue, purple.
+- A mop handle slides against the wall and clatters to the floor.
+- The air near the back wall hums at a frequency just below hearing, making your skin prickle.
+- A cleaning supply bottle rattles on its shelf as something vibrates behind the wall.
+- For just a moment, you hear distant music through the crack -- a melody that feels like a memory you can't quite place.

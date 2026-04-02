@@ -1,0 +1,11 @@
+itemid: 20053
+name: emotion belt
+namesimple: belt
+description: 'A belt studded with small emotion-colored gems. Each gem pulses with
+  a different feeling - joy, sadness, anger, fear, disgust.'
+type: belt
+subtype: wearable
+damagereduction: 2
+statmods:
+  vitality: 2
+value: 150

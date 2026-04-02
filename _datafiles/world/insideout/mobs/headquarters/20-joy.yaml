@@ -1,0 +1,32 @@
+mobid: 20
+zone: Headquarters
+hostile: false
+maxwander: 0
+activitylevel: 30
+groups:
+- headquarters-emotion
+idlecommands:
+- emote spins in a circle, arms outstretched, leaving a trail of golden sparkles in the air.
+- say Do you ever look at someone and wonder what is going on inside their head?
+- emote bounces on her toes, barely able to contain her excitement.
+- say Come on, group hug! Oh wait, you don't have to. But you should!
+- emote gives you the most genuinely warm smile you've ever seen.
+- say Think positive! Think positive! Think positive!
+- ''
+- ''
+combatcommands:
+- callforhelp 5:emotion:shouts for help.
+scripttag: questgiver
+questflags:
+- 3-start
+- 3-return
+- 3-end
+- 8-start
+- 10-start
+- 10-return
+- 10-end
+character:
+  name: joy
+  description: Joy is a radiant, golden-skinned emotion who literally glows with warm light, illuminating every room she enters. Her short, pixie-cut blue hair bounces with every enthusiastic gesture, and her enormous smile never quite fades even when she's trying to be serious. She wears a bright yellow-green dress that shimmers like sunlight on water, and tiny golden sparks trail behind her when she moves. As the self-appointed leader of Riley's emotions, she carries herself with boundless optimism and an almost manic energy, constantly looking for the bright side of every situation. Her eyes sparkle with an infectious warmth that makes it impossible not to feel a little happier just being near her.
+  level: 99
+  raceid: 2

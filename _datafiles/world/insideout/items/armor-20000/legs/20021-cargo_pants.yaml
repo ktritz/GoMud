@@ -1,0 +1,9 @@
+itemid: 20021
+name: cargo pants
+namesimple: pants
+description: Cargo pants with extra pockets for carrying memory orb fragments and
+  snacks. Function over fashion.
+type: legs
+subtype: wearable
+damagereduction: 2
+value: 40

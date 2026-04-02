@@ -1,0 +1,8 @@
+itemid: 13
+name: class schedule
+namesimple: schedule
+description: 'Your class schedule for the semester. Period 1: English (Room 102).
+  Period 2: Math (Room 103). Period 3: Science (Room 104). Lunch. Period 4: Art (Room
+  105). Period 5: Gym (Room 107).'
+type: object
+value: 0

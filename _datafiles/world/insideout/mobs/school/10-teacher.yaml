@@ -1,0 +1,24 @@
+mobid: 10
+zone: School
+hostile: false
+maxwander: 0
+activitylevel: 25
+groups:
+- school-npc
+idlecommands:
+- emote grades a stack of papers, occasionally circling something in red ink.
+- emote writes a vocabulary word on the whiteboard in neat cursive.
+- say Keep at it, you're doing better than you think.
+- emote straightens the papers on her desk and picks up the next one.
+- ''
+- ''
+scripttag: questgiver
+questflags:
+- 1-start
+- 1-found
+- 1-end
+character:
+  name: teacher
+  description: Ms. Parker is Riley's English teacher, a warm but firm woman with kind eyes and a no-nonsense demeanor that somehow makes students want to try harder. She always has a towering stack of papers tucked under one arm and a red pen behind her ear, ready to scribble encouraging notes in the margins. She genuinely cares about every student who walks through her door, and has a knack for knowing exactly when someone needs a word of encouragement or a gentle push in the right direction.
+  level: 15
+  raceid: 1

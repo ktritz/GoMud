@@ -1,0 +1,11 @@
+itemid: 20063
+name: shin guards
+namesimple: guards
+description: A pair of hard plastic shin guards held on with velcro straps. Standard issue for soccer and hockey practice. Good for blocking kicks and stray pucks alike.
+type: offhand
+subtype: wearable
+uses: 0
+damage:
+  diceroll: 0d0
+defense: 1
+value: 20

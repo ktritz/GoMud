@@ -116,11 +116,13 @@ func Mudmail(rest string, user *users.UserRecord, room *rooms.Room, flags events
 		return true, nil
 	}
 
-	users.SearchOfflineUsers(func(u *users.UserRecord) bool {
+	if err := users.SearchOfflineUsers(func(u *users.UserRecord) bool {
 		u.Inbox.Add(msg)
 		users.SaveUser(*u)
 		return true
-	})
+	}); err != nil {
+		return true, err
+	}
 
 	for _, u := range users.GetAllActiveUsers() {
 		u.Inbox.Add(msg)

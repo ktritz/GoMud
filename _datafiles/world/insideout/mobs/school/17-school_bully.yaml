@@ -1,0 +1,31 @@
+mobid: 17
+zone: School
+itemdropchance: 10
+hostile: true
+nocorpse: true
+deathmessage: '{name} stumbles back, mutters "whatever," and skulks away.'
+maxwander: 3
+activitylevel: 20
+groups:
+- school
+idlecommands:
+- emote cracks their knuckles and looks around for trouble.
+- emote shoves a locker door shut as they walk past.
+- say What are YOU looking at?
+- ''
+- ''
+- ''
+angrycommands:
+- emote squares up with a sneer.
+- say You're gonna regret that.
+character:
+  name: school bully
+  description: A bigger kid with a permanent scowl and a chip on their shoulder the size of a textbook. They wear an oversized hoodie with the sleeves pushed up and have the kind of posture that says they're looking for a reason. Underneath the tough act is probably a kid having a harder time than they let on, but right now they're mostly just having a hard time not being a jerk.
+  level: 3
+  raceid: 1
+  gold: 12
+  stats:
+    strength:
+      training: 2
+    vitality:
+      training: 1

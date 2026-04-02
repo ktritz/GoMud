@@ -8,6 +8,7 @@ import (
 	"log/slog"
 	"net"
 	"net/http"
+	"net/url"
 	"os"
 	"path/filepath"
 	"strings"
@@ -26,9 +27,7 @@ var (
 	httpsServer *http.Server
 
 	upgrader = websocket.Upgrader{
-		CheckOrigin: func(r *http.Request) bool {
-			return true
-		},
+		CheckOrigin: sameOriginWebSocketRequest,
 	}
 
 	httpRoot = ``
@@ -49,6 +48,37 @@ type WebPlugin interface {
 
 func SetWebPlugin(wp WebPlugin) {
 	webPlugins = wp
+}
+
+func sameOriginWebSocketRequest(r *http.Request) bool {
+	origin := r.Header.Get("Origin")
+	if origin == "" {
+		return true
+	}
+
+	originURL, err := url.Parse(origin)
+	if err != nil {
+		return false
+	}
+
+	if originURL.Host == "" {
+		return false
+	}
+
+	return strings.EqualFold(hostOnly(originURL.Host), hostOnly(r.Host))
+}
+
+func hostOnly(hostPort string) string {
+	if hostPort == "" {
+		return ""
+	}
+
+	host, _, err := net.SplitHostPort(hostPort)
+	if err == nil {
+		return host
+	}
+
+	return hostPort
 }
 
 // serveTemplate searches for the requested file in the HTTP_ROOT,
@@ -210,6 +240,7 @@ func serveTemplate(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		mudlog.Error("HTML ERROR", "action", "ParseFiles", "error", err)
 		http.Error(w, "Error parsing template files", http.StatusInternalServerError)
+		return
 	}
 
 	if pluginHtml != `` {
@@ -217,6 +248,7 @@ func serveTemplate(w http.ResponseWriter, r *http.Request) {
 		if err != nil {
 			mudlog.Error("HTML ERROR", "action", "Parse", "error", err)
 			http.Error(w, "Error parsing plugin html", http.StatusInternalServerError)
+			return
 		}
 	}
 

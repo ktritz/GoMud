@@ -1,0 +1,12 @@
+itemid: 10003
+name: textbook
+namesimple: textbook
+description: A heavy hardcover textbook on Advanced Algebra. Makes for surprisingly
+  effective blunt-force education.
+type: weapon
+hands: 1
+subtype: bludgeoning
+uses: 0
+damage:
+  diceroll: 1d3
+value: 15

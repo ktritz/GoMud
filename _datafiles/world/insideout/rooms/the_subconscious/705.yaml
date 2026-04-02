@@ -1,0 +1,21 @@
+roomid: 705
+zone: The Subconscious
+title: The Clown Room
+description: 'The walls of this room are covered in peeling circus wallpaper -- faded stripes and polka dots in colors that were once cheerful but have curdled into something deeply wrong. Broken toys litter the floor: a jack-in-the-box with its spring permanently extended and its painted face frozen mid-scream, a music box that plays its tune backwards, a handful of deflated balloon animals twisted into shapes that do not exist in nature. A sticky residue covers everything, the same pink as old bubblegum, and the air reeks of stale cotton candy and greasepaint. This is the anteroom to something worse. You can hear the rhythmic squeak of enormous shoes from the chamber to the north, accompanied by the occasional honk of a bicycle horn that echoes off the stone walls like a threat.'
+mapsymbol: '!'
+maplegend: Clown
+biome: dungeon
+exits:
+  south:
+    roomid: 704
+  north:
+    roomid: 706
+nouns:
+  wallpaper: The <ansi fg="itemname">wallpaper</ansi> is a crime scene of cheerfulness gone wrong. The circus stripes have faded from jolly red-and-white to a sickly pink-and-gray, and the polka dots seem to rearrange themselves when you are not looking directly at them. In several places the wallpaper has peeled away to reveal scratch marks on the stone beneath, as if something tried to claw its way through the wall.
+  toys: The <ansi fg="itemname">toys</ansi> are the detritus of a childhood nightmare. The jack-in-the-box's painted face has been worn smooth by something rubbing against it repeatedly. The music box plays "Pop Goes the Weasel" in reverse at half speed, which is the single most unsettling sound you have ever heard. The balloon animals are twisted into impossible shapes -- one appears to be a Klein bottle.
+idlemessages:
+- The jack-in-the-box bounces on its extended spring with a rusty creak.
+- The music box clicks on by itself and plays three backwards notes before stopping.
+- A deflated balloon animal inflates slightly, holds the shape of a scream, then deflates.
+- The squeaking of enormous shoes from the north gets closer, then recedes.
+- A bicycle horn honks twice from beyond the northern passage. The echoes take too long to fade.

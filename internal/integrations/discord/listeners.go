@@ -5,9 +5,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/GoMudEngine/GoMud/internal/connections"
 	"github.com/GoMudEngine/GoMud/internal/events"
-	"github.com/GoMudEngine/GoMud/internal/users"
 	"github.com/GoMudEngine/GoMud/internal/util"
 	"github.com/GoMudEngine/ansitags"
 )
@@ -23,16 +21,9 @@ func HandlePlayerSpawn(e events.Event) events.ListenerReturn {
 		return events.Cancel
 	}
 
-	user := users.GetByUserId(evt.UserId)
-	if user == nil {
-		return events.Cancel
-	}
+	message := fmt.Sprintf(":white_check_mark: **%s** connected", evt.CharacterName)
 
-	connDetails := connections.Get(user.ConnectionId())
-
-	message := fmt.Sprintf(":white_check_mark: **%s** connected", user.Character.Name)
-
-	if connDetails.IsWebSocket() {
+	if evt.ViaWebsocket {
 		message += ` (via websocket)`
 	}
 

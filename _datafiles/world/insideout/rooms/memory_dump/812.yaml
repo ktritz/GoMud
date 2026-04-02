@@ -1,0 +1,21 @@
+roomid: 812
+zone: Memory Dump
+title: The Last Song
+description: The dust basin rises on the far side into a clearing where the air is different -- warmer, softer, tinged with a faint pink glow that has no visible source. This is where Bing Bong's song still echoes -- the one he sang to power the rocket wagon, the one Riley sang with him on imaginary adventures to the moon. The melody loops endlessly, each repetition a little fainter, a little more distant, but still unmistakably present. "Who's your friend who likes to play? Bing Bong, Bing Bong." The song has been here since he dissolved, and somehow, in a place where everything fades, it has not faded completely. It is the most stubborn memory in the dump -- a song too loved to fully forget, echoing at the bottom of the mind like a heartbeat that refuses to stop.
+mapsymbol: S
+maplegend: Song
+biome: dungeon
+exits:
+  south:
+    roomid: 811
+  north:
+    roomid: 813
+nouns:
+  pink: The <ansi fg="itemname">pink</ansi> glow is cotton candy pink -- Bing Bong pink. It radiates from the air itself, as if the song has left a permanent stain on the space it occupies. The glow is warm and slightly sweet, and standing in it makes you feel the way you felt when you believed absolutely everything was possible, before you learned the word "impossible" and started applying it to yourself.
+idlemessages:
+- The melody loops again, fainter but unwavering -- who's your friend who likes to play...
+- The pink glow pulses in time with the song, brightening on the chorus.
+- The echo carries a familiar refrain -- Bing Bong, Bing Bong -- warm with the love of a friend who asked for nothing in return.
+- Your eyes sting and you are not sure why. You are sure why.
+- The song reaches the part about going to the moon and the pink glow flares, golden at the edges, then fades back to pink.
+- A voice, barely audible, sings about a rocket that makes you yell hooray. The words are held together by love and nothing else.

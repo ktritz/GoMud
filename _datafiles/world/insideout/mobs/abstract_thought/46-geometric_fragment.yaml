@@ -1,0 +1,23 @@
+mobid: 46
+zone: Abstract Thought
+itemdropchance: 15
+hostile: true
+nocorpse: true
+deathmessage: '{name} shatters into a cloud of disconnected angles and fades.'
+maxwander: 4
+activitylevel: 20
+groups:
+- abstract
+character:
+  name: geometric fragment
+  description: A smaller piece of abstract thought -- a sharp-edged polygon that spins aggressively in place, its facets catching light that doesn't seem to come from any source. It moves in sudden, angular bursts, changing direction at perfect right angles with no deceleration. Its edges are razor-thin and leave faint geometric scars in the air where they pass.
+  level: 10
+  gold: 32
+  raceid: 4
+  stats:
+    strength:
+      training: 7
+    speed:
+      training: 5
+    vitality:
+      training: 10

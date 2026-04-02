@@ -1,0 +1,11 @@
+itemid: 20042
+name: dream amulet
+namesimple: amulet
+description: An amulet shaped like a crescent moon that Dream Productions gives to
+  their best workers. It hums with dreamy energy.
+type: neck
+subtype: wearable
+damagereduction: 2
+statmods:
+  mysticism: 3
+value: 150

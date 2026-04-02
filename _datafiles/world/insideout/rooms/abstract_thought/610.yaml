@@ -1,0 +1,20 @@
+roomid: 610
+zone: Abstract Thought
+title: The Dot
+description: 'Everything converges here. The lines narrow, the geometry compresses, and all of Abstract Thought collapses down to a single point of light hovering in absolute void. The Dot is zero-dimensional -- no length, no width, no height -- and yet it contains everything that was removed on the journey here. All the shapes, colors, textures, dimensions, and meaning that abstraction stripped away are compressed into this infinitesimal singularity. It pulses once per second with a light that isn''t light, in a space that isn''t space. Standing before it feels like standing at the center of every thought Riley has ever had, reduced to its purest, most essential truth: that something exists rather than nothing.'
+mapsymbol: .
+maplegend: Dot
+biome: abstract
+exits:
+  south:
+    roomid: 609
+  north:
+    roomid: 611
+nouns:
+  point: The <ansi fg="itemname">point</ansi> is impossibly small and impossibly significant. Leaning close, you can almost perceive the compressed information within it -- every memory, every dream, every fear and joy and idle thought, all folded down to a single coordinate in the mind. It hums with the fundamental frequency of Riley's consciousness. Touching it would be unwise. Touching it would be everything. You don't touch it.
+idlemessages:
+- The Dot pulses, and for a fraction of a second the entire void around you flashes with compressed meaning.
+- A single thought emerges from the point, expands into full complexity, and collapses back in.
+- The void around the Dot is not darkness -- it's the complete absence of dimension.
+- You feel every abstracted thing you've passed through resonating in that single point.
+- The Dot doesn't move. Everything else does, orbiting it at a distance of zero.

@@ -111,11 +111,7 @@ func (g *GMCPCommModule) onComm(e events.Event) events.ListenerReturn {
 		//continue
 		//}
 
-		events.AddToQueue(GMCPOut{
-			UserId:  userId,
-			Module:  `Comm.Channel`,
-			Payload: payload,
-		})
+		gmcpModule.queueGMCPEvent(userId, `Comm.Channel`, payload)
 
 	}
 

@@ -1,0 +1,13 @@
+itemid: 20072
+name: basketball jersey
+namesimple: jersey
+description: A mesh basketball jersey that's a size too big, which is apparently how you're supposed to wear them. Light, breathable, and makes you feel like you could dunk even though you definitely cannot.
+type: body
+subtype: wearable
+uses: 0
+damage:
+  diceroll: 0d0
+defense: 1
+statmods:
+  speed: 1
+value: 25

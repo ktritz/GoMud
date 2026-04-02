@@ -1,0 +1,27 @@
+roomid: 112
+zone: School
+title: Locker Hallway South
+description: The south end of the locker hallway is quieter than its northern counterpart, tucked away from the main flow of student traffic. More lockers line the walls here, these ones slightly newer -- replaced after a water pipe burst a few years back. A bulletin board on one wall is pinned with club sign-up sheets, a lost-and-found flyer for someone's retainer (with a photo, unfortunately), and a poster for the upcoming school dance. The hallway connects to the administrative wing to the east and opens out toward the courtyard to the west. A faded "EXIT" sign glows above the courtyard door.
+mapsymbol: <
+maplegend: South-Lockers
+biome: city
+exits:
+  north:
+    roomid: 111
+  east:
+    roomid: 110
+  south:
+    roomid: 114
+  west:
+    roomid: 116
+  closet:
+    roomid: 119
+    secret: true
+nouns:
+  lockers: These <ansi fg="itemname">lockers</ansi> are marginally nicer than the ones in the north hallway -- fewer dents, less graffiti, and the paint is only chipping in a few places. The replacement lockers have slightly different handles, which drives the custodial staff crazy for reasons nobody else understands.
+  bulletin board: The <ansi fg="itemname">bulletin board</ansi> is a layered archaeology of school announcements. Peel back the top layer and you'll find sign-up sheets from three semesters ago. Current postings include Drama Club auditions, a Mathletes recruitment flyer with zero names on it, and someone selling a "slightly used" graphing calculator. A hand-drawn flyer for the school dance has hearts on it and the theme "ENCHANTED EVENING" which someone has edited to "ENCHANTED EVENING (of awkward slow dancing)."
+idlemessages:
+- A student speed-walks past, clearly late for something.
+- The courtyard door opens and a gust of cool bay air sweeps through the hall.
+- A flyer peels off the bulletin board and drifts to the floor.
+- Someone tests their locker combination three times before realizing they're at the wrong locker.

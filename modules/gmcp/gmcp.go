@@ -13,6 +13,7 @@ import (
 	"github.com/GoMudEngine/GoMud/internal/mudlog"
 	"github.com/GoMudEngine/GoMud/internal/plugins"
 	"github.com/GoMudEngine/GoMud/internal/term"
+	"github.com/GoMudEngine/GoMud/internal/transport"
 	"github.com/GoMudEngine/GoMud/internal/users"
 	lru "github.com/hashicorp/golang-lru/v2"
 )
@@ -62,7 +63,7 @@ func init() {
 	gmcpModule.plug.Callbacks.SetIACHandler(gmcpModule.HandleIAC)
 	gmcpModule.plug.Callbacks.SetOnNetConnect(gmcpModule.onNetConnect)
 
-	events.RegisterListener(GMCPOut{}, gmcpModule.dispatchGMCP)
+	events.RegisterTransportListener(GMCPOut{}, gmcpModule.dispatchGMCP)
 	events.RegisterListener(events.PlayerSpawn{}, gmcpModule.handlePlayerJoin)
 
 }
@@ -82,9 +83,11 @@ func isGMCPEnabled(connectionId uint64) bool {
 // ///////////////////
 
 type GMCPOut struct {
-	UserId  int
-	Module  string
-	Payload any
+	UserId        int
+	ConnectionId  connections.ConnectionId
+	UseWebPayload bool
+	Module        string
+	Payload       any
 }
 
 func (g GMCPOut) Type() string { return `GMCPOut` }
@@ -158,14 +161,7 @@ func (g *GMCPModule) isGMCPCommand(b []byte) bool {
 }
 
 func (g *GMCPModule) sendGMCPEvent(userId int, moduleName string, payload any) {
-
-	evt := GMCPOut{
-		UserId:  userId,
-		Module:  moduleName,
-		Payload: payload,
-	}
-
-	events.AddToQueue(evt)
+	g.queueGMCPEvent(userId, moduleName, payload)
 }
 
 func (g *GMCPModule) handlePlayerJoin(e events.Event) events.ListenerReturn {
@@ -185,12 +181,58 @@ func (g *GMCPModule) handlePlayerJoin(e events.Event) events.ListenerReturn {
 	return events.Continue
 }
 
+func cloneGMCPPayload(payload any) any {
+	if data, ok := payload.([]byte); ok {
+		return append([]byte(nil), data...)
+	}
+
+	return payload
+}
+
+func (g *GMCPModule) queueGMCPEvent(userId int, moduleName string, payload any) bool {
+	evt, ok := g.buildGMCPEvent(userId, moduleName, payload)
+	if !ok {
+		return false
+	}
+
+	events.AddToQueue(evt)
+
+	return true
+}
+
+func (g *GMCPModule) buildGMCPEvent(userId int, moduleName string, payload any) (GMCPOut, bool) {
+	if userId < 1 {
+		return GMCPOut{}, false
+	}
+
+	connId := users.GetConnectionId(userId)
+	if connId == 0 {
+		return GMCPOut{}, false
+	}
+
+	gmcpSettings, ok := g.cache.Get(connId)
+	if !ok {
+		gmcpSettings = GMCPSettings{}
+		g.cache.Add(connId, gmcpSettings)
+		g.sendGMCPEnableRequest(connId)
+		return GMCPOut{}, false
+	}
+
+	return GMCPOut{
+		UserId:        userId,
+		ConnectionId:  connId,
+		UseWebPayload: gmcpSettings.Client.Name == `WebClient`,
+		Module:        moduleName,
+		Payload:       cloneGMCPPayload(payload),
+	}, true
+}
+
 // Sends a telnet IAC request to enable GMCP
 func (g *GMCPModule) sendGMCPEnableRequest(connectionId uint64) {
-	connections.SendTo(
-		GmcpEnable.BytesWithPayload(nil),
-		connectionId,
-	)
+	transport.Queue(transport.Delivery{
+		ConnectionIds: []connections.ConnectionId{connectionId},
+		Payload:       GmcpEnable.BytesWithPayload(nil),
+	})
 }
 
 // Returns a map of module name to version number
@@ -288,12 +330,8 @@ func (g *GMCPModule) HandleIAC(connectionId uint64, iacCmd []byte) bool {
 
 					// Trigger the Mudlet detected event
 					userId := 0
-					// Try to find the user ID associated with this connection
-					for _, user := range users.GetAllActiveUsers() {
-						if user.ConnectionId() == connectionId {
-							userId = user.UserId
-							break
-						}
+					if user := users.GetByConnectionId(connectionId); user != nil {
+						userId = user.UserId
 					}
 
 					if userId > 0 {
@@ -367,13 +405,9 @@ func (g *GMCPModule) HandleIAC(connectionId uint64, iacCmd []byte) bool {
 		default:
 			// Check if it's a Discord message
 			if strings.HasPrefix(command, "External.Discord") {
-				// Try to find the user ID associated with this connection
 				userId := 0
-				for _, user := range users.GetAllActiveUsers() {
-					if user.ConnectionId() == connectionId {
-						userId = user.UserId
-						break
-					}
+				if user := users.GetByConnectionId(connectionId); user != nil {
+					userId = user.UserId
 				}
 
 				if userId > 0 {
@@ -383,9 +417,9 @@ func (g *GMCPModule) HandleIAC(connectionId uint64, iacCmd []byte) bool {
 						discordCommand = parts[2] // External.Discord.Hello -> Hello
 					}
 
-					// Dispatch a GMCPDiscordMessage event
 					events.AddToQueue(GMCPDiscordMessage{
 						ConnectionId: connectionId,
+						UserId:       userId,
 						Command:      discordCommand,
 						Payload:      payload,
 					})
@@ -413,24 +447,19 @@ func (g *GMCPModule) dispatchGMCP(e events.Event) events.ListenerReturn {
 		return events.Cancel
 	}
 
-	if gmcp.UserId < 1 {
-		return events.Continue
-	}
-
-	connId := users.GetConnectionId(gmcp.UserId)
-	if connId == 0 {
+	if gmcp.UserId < 1 || gmcp.ConnectionId == 0 {
 		return events.Continue
 	}
 
 	var gmcpSettings GMCPSettings
 	var ok bool
-	if !isGMCPEnabled(connId) {
-		gmcpSettings, ok = g.cache.Get(connId)
+	if !isGMCPEnabled(gmcp.ConnectionId) {
+		gmcpSettings, ok = g.cache.Get(gmcp.ConnectionId)
 		if !ok {
 			gmcpSettings = GMCPSettings{}
-			g.cache.Add(connId, gmcpSettings)
+			g.cache.Add(gmcp.ConnectionId, gmcpSettings)
 
-			g.sendGMCPEnableRequest(connId)
+			g.sendGMCPEnableRequest(gmcp.ConnectionId)
 
 			return events.Continue
 		}
@@ -440,7 +469,7 @@ func (g *GMCPModule) dispatchGMCP(e events.Event) events.ListenerReturn {
 			return events.Continue
 		}
 	} else {
-		gmcpSettings, ok = g.cache.Get(connId)
+		gmcpSettings, ok = g.cache.Get(gmcp.ConnectionId)
 		if !ok {
 			return events.Continue
 		}
@@ -463,11 +492,7 @@ func (g *GMCPModule) dispatchGMCP(e events.Event) events.ListenerReturn {
 			v = append([]byte(gmcp.Module+` `), v...)
 		}
 
-		if gmcpSettings.Client.Name == `WebClient` {
-			connections.SendTo(GmcpWebPayload.BytesWithPayload(v), connId)
-		} else {
-			connections.SendTo(GmcpPayload.BytesWithPayload(v), connId)
-		}
+		g.queueGMCPPayload(gmcp.ConnectionId, gmcp.UseWebPayload, v)
 
 	case string:
 
@@ -485,11 +510,7 @@ func (g *GMCPModule) dispatchGMCP(e events.Event) events.ListenerReturn {
 			v = gmcp.Module + ` ` + v
 		}
 
-		if gmcpSettings.Client.Name == `WebClient` {
-			connections.SendTo(GmcpWebPayload.BytesWithPayload([]byte(v)), connId)
-		} else {
-			connections.SendTo(GmcpPayload.BytesWithPayload([]byte(v)), connId)
-		}
+		g.queueGMCPPayload(gmcp.ConnectionId, gmcp.UseWebPayload, []byte(v))
 
 	default:
 		payload, err := json.Marshal(gmcp.Payload)
@@ -512,13 +533,21 @@ func (g *GMCPModule) dispatchGMCP(e events.Event) events.ListenerReturn {
 			payload = append([]byte(gmcp.Module+` `), payload...)
 		}
 
-		if gmcpSettings.Client.Name == `WebClient` {
-			connections.SendTo(GmcpWebPayload.BytesWithPayload(payload), connId)
-		} else {
-			connections.SendTo(GmcpPayload.BytesWithPayload(payload), connId)
-		}
+		g.queueGMCPPayload(gmcp.ConnectionId, gmcp.UseWebPayload, payload)
 
 	}
 
 	return events.Continue
+}
+
+func (g *GMCPModule) queueGMCPPayload(connId connections.ConnectionId, useWebPayload bool, payload []byte) {
+	finalPayload := GmcpPayload.BytesWithPayload(payload)
+	if useWebPayload {
+		finalPayload = GmcpWebPayload.BytesWithPayload(payload)
+	}
+
+	transport.Queue(transport.Delivery{
+		ConnectionIds: []connections.ConnectionId{connId},
+		Payload:       finalPayload,
+	})
 }

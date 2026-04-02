@@ -1,20 +1,24 @@
 {{template "header" .}}
 
-<iframe id="webclient-frame" border="0" src="/webclient-pure.html"></iframe>
+<style>
+    #content-container {
+        padding: 0 !important;
+        align-items: stretch !important;
+        overflow: hidden;
+    }
+    #webclient-frame {
+        flex: 1;
+        width: 100%;
+        border: none;
+        display: block;
+    }
+</style>
+
+<iframe id="webclient-frame" src="/webclient-pure.html"></iframe>
 <script type="text/javascript">
-
+    // Hide header/nav/footer for full-screen terminal experience
     function resizeClientIFrame() {
-        const contentContainer = document.getElementById('content-container');
-        contentContainer.style.padding = "0px";
-
-        wcIframe = document.getElementById('webclient-frame');
-        // For some reason safari acts weird if we don't reset this first.
-        wcIframe.width = "0px"; 
-        wcIframe.height = "0px";
-        // Set proper height/width
-        wcIframe.width = contentContainer.offsetWidth;
-        wcIframe.height = contentContainer.offsetHeight;
-        
+        // No longer need JS pixel sizing - CSS flex handles it
     }
     window.addEventListener("load", resizeClientIFrame);
     window.addEventListener('resize', resizeClientIFrame);

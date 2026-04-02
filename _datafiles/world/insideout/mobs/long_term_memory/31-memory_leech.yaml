@@ -1,0 +1,27 @@
+mobid: 31
+zone: Long Term Memory
+itemdropchance: 15
+hostile: true
+nocorpse: true
+deathmessage: '{name} pops like a soap bubble, releasing a tiny flash of stolen color.'
+maxwander: 3
+activitylevel: 15
+groups:
+- forgotten
+idlecommands:
+- emote oozes slowly along a shelf, leaving a trail of gray residue behind it.
+- emote latches onto a fading memory orb and pulses brighter as it feeds.
+- ''
+character:
+  name: memory leech
+  description: A slug-like creature that feeds on fading memories, growing brighter as it absorbs them. Its semi-transparent body ripples with stolen colors -- fragments of birthday parties, old songs, half-remembered faces -- all swirling beneath its slick skin. It leaves a trail of gray residue wherever it oozes, bleaching the color from the shelves it crawls across.
+  level: 5
+  gold: 17
+  raceid: 7
+  stats:
+    strength:
+      training: 2
+    speed:
+      training: 0
+    vitality:
+      training: 3

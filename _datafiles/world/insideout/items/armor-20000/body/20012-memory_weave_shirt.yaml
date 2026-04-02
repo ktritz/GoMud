@@ -1,0 +1,12 @@
+itemid: 20012
+name: memory weave shirt
+namesimple: shirt
+description: 'A shirt woven from strands of happy memories. It shifts colors gently
+  - gold, blue, green - and is warm to the touch even in the coldest parts of the
+  mind.'
+type: body
+subtype: wearable
+damagereduction: 3
+statmods:
+  vitality: 2
+value: 90

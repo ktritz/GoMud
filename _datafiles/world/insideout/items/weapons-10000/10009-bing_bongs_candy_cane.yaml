@@ -1,0 +1,13 @@
+itemid: 10009
+name: 'bing bong''s candy cane'
+namesimple: cane
+description: 'Bing Bong''s oversized candy cane from his rocket wagon. It smells like
+  cotton candy and bubblegum, and sparkles leave a trail wherever you swing it. Who''s
+  your friend who likes to play?'
+type: weapon
+hands: 2
+subtype: bludgeoning
+uses: 0
+damage:
+  diceroll: 2d4
+value: 120

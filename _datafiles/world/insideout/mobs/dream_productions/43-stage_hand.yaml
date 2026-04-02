@@ -1,0 +1,32 @@
+mobid: 43
+zone: Dream Productions
+hostile: false
+maxwander: 0
+activitylevel: 20
+groups:
+- dream-workers
+idlecommands:
+- emote hauls a teetering stack of props across the room.
+- emote checks a clipboard, frowns, and checks it again.
+- say type <ansi fg="command">list</ansi> to see what we've got in stock.
+- ''
+character:
+  name: stage hand
+  description: A no-nonsense worker in a black crew t-shirt and cargo pants, hauling an improbable stack of props, costumes, and set pieces that sways dangerously with every step. She communicates almost entirely in curt hand signals and exasperated sighs, having long since given up on the director's artistic vision. She keeps Dream Productions running through sheer stubborn competence and an encyclopedic knowledge of where every prop belongs.
+  level: 10
+  raceid: 3
+  shop:
+  - itemid: 20013
+    quantitymax: 2
+  - itemid: 20022
+    quantitymax: 2
+  - itemid: 20033
+    quantitymax: 2
+  - itemid: 20042
+    quantitymax: 1
+  - itemid: 10006
+    quantitymax: 3
+  - itemid: 20004
+    quantitymax: 1
+  - itemid: 30005
+    quantitymax: 10

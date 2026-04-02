@@ -1,0 +1,25 @@
+roomid: 953
+zone: Belief System
+title: Negative Belief Corridor
+description: The light dims here. The corridor narrows, its walls a darker shade of gray that absorbs warmth rather than reflecting it. Inscriptions cover every surface, but these are different -- jagged, scratched into the stone as if by anxious fingernails, their letters flickering with the uncertain light of beliefs that hurt but feel true. "I'm not good enough" stretches across the largest wall, its letters deeper than any other inscription here, fed by years of comparison and self-doubt. Shadows pool in the corners, thick and almost tangible, whispering in voices that sound uncomfortably like Riley's own. This corridor exists because every mind has one. The beliefs here aren't facts. But they feel like facts, and sometimes that's worse.
+mapsymbol: '-'
+maplegend: Negative
+biome: mindscape
+exits:
+  east:
+    roomid: 951
+  south:
+    roomid: 954
+nouns:
+  walls: The <ansi fg="itemname">walls</ansi> bear the beliefs that keep Riley up at night. "<ansi fg="red">I'm not good enough</ansi>" dominates, its letters carved deep by every perceived failure and unfavorable comparison. "<ansi fg="208">Everyone is watching and judging</ansi>" flickers in anxious orange. "<ansi fg="magenta">I don't really belong here</ansi>" is scratched small and low, as if it's trying to hide. Some inscriptions have been partially filled in -- attempted repairs by Joy and the other emotions -- but the letters keep resurfacing.
+  shadows: The <ansi fg="itemname">shadows</ansi> in the corners are more than darkness. They have weight and whisper in Riley's internal voice -- the one she uses when she's being hardest on herself. "Remember that time you..." they begin, always trailing off before finishing, letting anxiety fill in the worst possible ending. They can't hurt you physically, but standing near them makes your chest tight.
+spawninfo:
+- mobid: 61
+  message: A <ansi fg="mobname">toxic thought</ansi> crystallizes from the dark inscriptions on the wall, humming with self-doubt.
+  respawnrate: 4 real minutes
+idlemessages:
+- The inscription "I'm not good enough" darkens for a moment, as if fed by a passing insecurity.
+- A shadow in the corner shifts and whispers something that sounds like a bad memory starting.
+- The walls seem to close in slightly, then relax. The corridor breathes with Riley's anxiety.
+- A faint scratching sound comes from somewhere, as if a new negative belief is being carved.
+- One of the dimmer inscriptions flickers out entirely. A small victory, maybe.

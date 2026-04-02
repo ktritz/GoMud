@@ -1,0 +1,11 @@
+itemid: 20011
+name: varsity jacket
+namesimple: jacket
+description: A red and white varsity jacket with a hockey patch on the chest. It makes
+  you feel like you belong on the team.
+type: body
+subtype: wearable
+damagereduction: 2
+statmods:
+  strength: 1
+value: 35

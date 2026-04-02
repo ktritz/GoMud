@@ -1,0 +1,20 @@
+roomid: 211
+zone: Headquarters
+title: New Arrivals Wing
+description: This wing of Headquarters has a noticeably different energy -- newer, sharper, a little more intense. When Riley hit puberty, the renovation crew showed up overnight and built this entire section to house the new emotions. The walls are a sleeker material than the rest of Headquarters, with a slightly more angular design. Motivational posters line the hallway (most of them put up by Anxiety, most of them about preparation). A large welcome mat at the entrance reads "NEW EMOTIONS THIS WAY" with an arrow, though someone has crossed out "welcome" and written "brace yourself" underneath. Doors branch off toward the newer emotion quarters, and the air crackles with the restless energy of a mind figuring out who it's becoming.
+mapsymbol: N
+maplegend: New-Wing
+biome: mindscape
+exits:
+  east:
+    roomid: 200
+  south:
+    roomid: 212
+nouns:
+  posters: The motivational posters are an interesting mix. "PREPARE FOR THE WORST, HOPE FOR THE SLIGHTLY LESS WORST" hangs next to "You're Doing Fine (Probably)" and "HAVE YOU CONSIDERED ALL POSSIBLE OUTCOMES? (You Haven't.)" One poster just says "meh" in very small text -- that one is definitely Ennui's.
+  welcome mat: The welcome mat has seen some editorial revisions. The original text reads "WELCOME, NEW EMOTIONS!" but it's been annotated several times. Anxiety added "Please review the safety protocols." Embarrassment added "(sorry for existing)." Ennui didn't add anything, which somehow says everything.
+idlemessages:
+- A poster peels slightly off the wall and then sticks itself back with anxious precision.
+- The lights in the hallway flicker to a slightly more intense shade, then settle.
+- A faint sigh drifts from somewhere down the hall. Ennui, probably.
+- The welcome mat shifts slightly, as if embarrassed to be noticed.

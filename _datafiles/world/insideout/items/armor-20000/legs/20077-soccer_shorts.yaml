@@ -1,0 +1,11 @@
+itemid: 20077
+name: soccer shorts
+namesimple: shorts
+description: Loose-fitting soccer shorts with the school crest embroidered on one leg. Grass-stained at the knees from slide tackles.
+type: legs
+subtype: wearable
+uses: 0
+damage:
+  diceroll: 0d0
+defense: 1
+value: 15

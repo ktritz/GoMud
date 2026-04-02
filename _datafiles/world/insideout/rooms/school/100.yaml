@@ -1,0 +1,22 @@
+roomid: 100
+zone: School
+title: School Front Entrance
+description: Wide concrete steps lead up to a pair of heavy glass double doors plastered with spirit week flyers and a faded "GO FOGHORNS!" banner. A row of bike racks lines the sidewalk to the left, most of them claimed by a tangle of locks and cables. The school name is etched into a stone plaque above the entrance, and a flagpole out front snaps a California state flag in the bay breeze. Kids stream in and out between bells, backpacks slung over one shoulder, earbuds in, eyes on their phones. The whole building has that institutional beige look that says "built in the nineties, renovated never."
+mapsymbol: E
+maplegend: Entrance
+biome: city
+exits:
+  south:
+    roomid: 12
+  north:
+    roomid: 101
+nouns:
+  doors: The <ansi fg="itemname">glass double doors</ansi> are smudged with a thousand fingerprints and held open during passing period by a rubber doorstop that someone keeps kicking away. A laminated sign taped to one door reads "ALL VISITORS MUST CHECK IN AT THE FRONT OFFICE." Another sign below it reads "PLEASE STOP TAPING SIGNS TO THE DOOR."
+  bike racks: The <ansi fg="itemname">bike racks</ansi> are a metallic knot of locked bikes, scooters, and one very optimistic unicycle. Half the locks look like they haven't been opened since last semester. A lonely helmet dangles from a handlebar, slowly spinning in the wind.
+  banner: The <ansi fg="itemname">school banner</ansi> reads "HOME OF THE FOGHORNS" in blue and gold letters. It's been up so long the colors have faded to gray and beige, but nobody has the heart -- or the budget -- to replace it.
+idlemessages:
+- A kid on a skateboard ollies up the curb and nearly wipes out on the steps.
+- The school bell rings in the distance and a wave of students pours through the doors.
+- Someone's phone blasts music from a backpack pocket as they jog up the steps.
+- A parent in an SUV honks twice and waves frantically at a kid who pretends not to know them.
+- The flagpole rope clangs against the metal pole in the wind with a steady ping-ping-ping.

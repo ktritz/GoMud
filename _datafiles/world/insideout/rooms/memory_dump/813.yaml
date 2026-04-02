@@ -1,0 +1,25 @@
+roomid: 813
+zone: Memory Dump
+title: Corrupted Core
+description: The heart of the Memory Dump is a pulsing, unstable mass of corrupted core memory that has absorbed so many forgotten experiences it has become something new and dangerous. The core hovers a few feet above the ground, a sphere of roiling dark energy shot through with veins of color that flash and die -- gold, blue, red, green, purple -- each one a core memory that fell too far and was consumed. The air around it crackles with psychic static, and the ground beneath it has been scorched clean, the memory dust vaporized by the intensity of so much concentrated loss. This is what happens when memories do not just fade but break -- they become angry, confused, and desperate, lashing out at anything that still has the coherence they have lost. The corrupted core is the Memory Dump's only permanent resident, and it has been growing.
+mapsymbol: X
+maplegend: Core
+biome: dungeon
+exits:
+  south:
+    roomid: 812
+  north:
+    roomid: 814
+nouns:
+  core memory: The corrupted <ansi fg="itemname">core memory</ansi> is a sphere of pure psychic anguish, roughly six feet across and growing. Its surface is a chaotic swirl of every emotion simultaneously -- joy curdled into mania, sadness deepened into despair, anger concentrated into fury, fear amplified into terror. Faces press against the surface from the inside -- dozens of them, the faces of forgotten people trying to be remembered one last time. The core pulses with a rhythm that opposes your heartbeat, and standing near it makes you feel like everything you love is already lost.
+spawninfo:
+- mobid: 56
+  message: The corrupted core pulses violently and expels a <ansi fg="mobname">corrupted core memory</ansi>, a writhing mass of tangled emotions that hits the ground and rises, furious and incoherent.
+  respawnrate: 10 real minutes
+  maxwander: 0
+idlemessages:
+- The corrupted core pulses and a face presses against its surface -- mouth open, eyes desperate -- then sinks back in.
+- A vein of golden light races across the core's surface and dies, the last flicker of someone's happiest memory.
+- The psychic static intensifies and for a moment you forget your own name. It comes back. But slower than it should.
+- The core grows a fraction larger, absorbing another forgotten memory into its mass.
+- A scream of color erupts from the core -- red fury, blue grief, gold joy -- all tangled together in a sound that is not a sound.

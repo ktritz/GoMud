@@ -1,0 +1,84 @@
+zone: memory_dump
+zone_config:
+  name: "Memory Dump"
+mobs:
+  - id: 54
+    name: forgotten memory
+    desc: >-
+      A faded humanoid figure that barely exists anymore. Its outline wavers
+      like a reflection in disturbed water, features smudged beyond recognition
+      -- was it someone you knew? Something you did? The details have been
+      eaten away by time and neglect until only the faintest impression remains.
+      It reaches toward you with translucent hands, grasping at anything solid,
+      desperately trying to be remembered by something, anything, before it
+      dissolves entirely.
+    level: 17
+    race: 7
+    hostile: true
+    wander: 4
+    activity: 20
+    drop: 20
+    groups: [forgotten]
+
+  - id: 55
+    name: memory wraith
+    desc: >-
+      A forgotten memory that has passed beyond desperation into hostility. Where
+      the fading memories reach out in confused longing, the wraith strikes with
+      purpose -- a dark, tattered figure that crackles with the residual energy
+      of whatever it used to be. Fragments of corrupted images flicker across its
+      surface: a face twisted into something unrecognizable, a voice playing
+      backwards, colors that don't exist anymore. It has decided that if it
+      cannot be remembered, nothing else should be either.
+    level: 19
+    race: 7
+    hostile: true
+    wander: 3
+    activity: 25
+    drop: 25
+    groups: [forgotten]
+    combat: ["backstab", "cast mm"]
+
+  - id: 56
+    name: corrupted core memory
+    desc: >-
+      A core memory that has been consumed by the void and become something
+      terrible. It pulses with shifting dark colors -- corrupted versions of
+      joy's gold turned to sickly amber, sadness's blue curdled to bruise-black,
+      anger's red bleeding into a deep, infected crimson, fear's purple gone
+      hollow and vacant, disgust's green rotted to a gangrenous brown. It was
+      once one of Riley's most important memories, the kind that defines who you
+      are, but the Memory Dump has twisted it into a howling vortex of everything
+      those emotions were never meant to be. It radiates a wrongness you can feel
+      in your bones, and the air around it tastes like the moment before you
+      forget something you swore you'd never forget. This is where memories come
+      to die, and this one has decided to take everything else with it.
+    level: 20
+    race: 7
+    hostile: true
+    wander: 0
+    activity: 30
+    drop: 50
+    gold: 1000
+    groups: [forgotten, boss]
+    combat: ["backstab", "cast mm", "cast sparks", "callforhelp 5:forgotten:lets out a wave of corrupted memory!"]
+    angry:
+      - "shout YOU WILL BE FORGOTTEN!"
+      - "emote pulses with void energy, the colors on its surface inverting violently."
+
+  - id: 57
+    name: dissolving shade
+    desc: >-
+      A barely-there entity on the final edge of dissolution. It flickers in
+      and out of visibility like a dying signal, its outline fraying into wisps
+      of nothing at the edges. Whatever it was -- a person, a place, a feeling
+      -- is long gone now, replaced by a hollow, translucent shell that drifts
+      through the Memory Dump with no apparent purpose, slowly coming apart
+      like smoke in a breeze.
+    level: 16
+    race: 7
+    hostile: true
+    wander: 4
+    activity: 15
+    drop: 15
+    groups: [forgotten]

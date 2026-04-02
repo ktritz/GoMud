@@ -1,0 +1,341 @@
+zone: headquarters
+zone_config:
+  name: Headquarters
+mobs:
+  - id: 20
+    name: joy
+    desc: >-
+      Joy is a radiant, golden-skinned emotion who literally glows with warm
+      light, illuminating every room she enters. Her short, pixie-cut blue hair
+      bounces with every enthusiastic gesture, and her enormous smile never
+      quite fades even when she's trying to be serious. She wears a bright
+      yellow-green dress that shimmers like sunlight on water, and tiny golden
+      sparks trail behind her when she moves. As the self-appointed leader of
+      Riley's emotions, she carries herself with boundless optimism and an
+      almost manic energy, constantly looking for the bright side of every
+      situation. Her eyes sparkle with an infectious warmth that makes it
+      impossible not to feel a little happier just being near her.
+    level: 99
+    race: 2
+    hostile: false
+    wander: 0
+    activity: 30
+    groups: [headquarters-emotion]
+    combat: ["callforhelp 5:emotion:shouts for help."]
+    idle:
+      - "emote spins in a circle, arms outstretched, leaving a trail of golden sparkles in the air."
+      - "say Do you ever look at someone and wonder what is going on inside their head?"
+      - "emote bounces on her toes, barely able to contain her excitement."
+      - "say Come on, group hug! Oh wait, you don't have to. But you should!"
+      - "emote gives you the most genuinely warm smile you've ever seen."
+      - "say Think positive! Think positive! Think positive!"
+      - ""
+      - ""
+    questflags: ["3-start", "3-return", "3-end", "8-start", "10-start", "10-return", "10-end"]
+    script: questgiver
+
+  - id: 21
+    name: sadness
+    desc: >-
+      Sadness is a short, round, blue-skinned emotion bundled up in an oversized
+      white turtleneck sweater that she constantly tugs at for comfort. Thick,
+      round glasses sit on her nose, magnifying her perpetually teary eyes and
+      giving her a bookish, melancholy look. She moves slowly and deliberately,
+      as if the weight of every sad thing that ever happened is pressing down on
+      her shoulders. Despite her gloomy demeanor, there is something deeply
+      endearing about her -- she understands loss and empathy in ways the other
+      emotions never could. Her blue hair hangs limp and flat, and she often
+      clutches a well-worn book to her chest like a security blanket. She proved
+      in her own quiet way that sometimes you need to feel sad before you can
+      feel anything else.
+    level: 99
+    race: 2
+    hostile: false
+    wander: 0
+    activity: 25
+    groups: [headquarters-emotion]
+    combat: ["callforhelp 5:emotion:calls out tearfully for help."]
+    idle:
+      - "emote lets out a long, heavy sigh."
+      - "emote adjusts her thick glasses and blinks slowly."
+      - "emote is quietly reading a book, occasionally sniffling."
+      - "say I read that crying actually helps you feel better. I cry a lot, so I should feel great... but I don't."
+      - "say It's okay to be sad. I learned that the hard way."
+      - ""
+      - ""
+    questflags: ["5-start", "5-return", "5-end"]
+    script: questgiver
+
+  - id: 22
+    name: anger
+    desc: >-
+      Anger is a short, stocky, brick-shaped emotion with deep crimson skin
+      that darkens to near-purple when he's really worked up. He wears a
+      rumpled white dress shirt with a loosened tie, looking like an accountant
+      who's been stuck in traffic for three hours. The top of his flat head
+      literally erupts into flames when he gets upset, which is often. His
+      underbite gives him a permanent scowl, and his tiny fists are always
+      clenched. He reads the Mind Reader newspaper obsessively and gets
+      furious at every headline. Despite his volatile exterior, Anger genuinely
+      cares about fairness and making sure Riley isn't taken advantage of --
+      he just expresses it by yelling and occasionally catching things on fire.
+    level: 99
+    race: 2
+    hostile: false
+    wander: 0
+    activity: 25
+    groups: [headquarters-emotion]
+    combat: ["callforhelp 5:emotion:roars for backup, flames erupting from his head."]
+    idle:
+      - "emote flips furiously through the pages of the Mind Reader."
+      - "emote grumbles something about the unfairness of it all."
+      - "emote steams visibly from the top of his head, tiny flames flickering."
+      - "say Congratulations, San Francisco, you've ruined pizza! First you put broccoli on pizza, now THIS?"
+      - "say I don't want to hear another word about feelings. I AM a feeling!"
+      - ""
+      - ""
+    shop:
+      - itemid: 10003
+        qty: 5
+      - itemid: 30001
+        qty: 10
+
+  - id: 23
+    name: fear
+    desc: >-
+      Fear is a tall, impossibly thin, purple-skinned emotion with enormous
+      wide eyes that dart around constantly, scanning for threats real and
+      imagined. He wears a tiny plaid bow tie and a houndstooth sweater vest
+      that does nothing to make him look less terrified. His wild, wiry hair
+      stands on end as if permanently electrified by his own anxiety. Every
+      sudden noise makes him leap several feet into the air, and his long,
+      spindly fingers are always clutching something for support. He keeps a
+      mental catalog of every possible worst-case scenario and is eager to share
+      them with anyone who will listen. Despite his constant state of panic,
+      Fear's vigilance has saved Riley from countless scraped knees, bad
+      decisions, and at least one very suspicious-looking dog.
+    level: 99
+    race: 2
+    hostile: false
+    wander: 0
+    activity: 30
+    groups: [headquarters-emotion]
+    combat: ["callforhelp 5:emotion:shrieks in terror and calls for help."]
+    idle:
+      - "emote glances nervously at every exit, cataloging escape routes."
+      - "emote startles violently at absolutely nothing."
+      - "say Did you hear that? WHAT WAS THAT? Oh... nothing. It was nothing. Probably."
+      - "say I have a list of all the things that could go wrong today. It's... it's a long list."
+      - "emote mutters something about worst-case scenarios while wringing his hands."
+      - ""
+      - ""
+    questflags: ["6-start", "6-return", "6-end"]
+    script: questgiver
+
+  - id: 24
+    name: disgust
+    desc: >-
+      Disgust is a sleek, fashion-forward emotion with vivid green skin and
+      perfectly styled emerald hair that frames her face like she just walked
+      off a runway. Her half-lidded eyes and perpetually arched eyebrow convey
+      a level of judgment that could wilt flowers. She wears a stylish scarf
+      and an outfit that somehow manages to look effortlessly chic while
+      everyone else in Headquarters is a mess. Her primary job is protecting
+      Riley from physical and social poison -- bad food, bad fashion, and bad
+      social decisions alike. She inspects everything with the critical eye of
+      a food critic visiting a gas station, but underneath her withering
+      sarcasm she truly cares about keeping Riley safe from embarrassment and
+      things that are just, like, totally gross.
+    level: 99
+    race: 2
+    hostile: false
+    wander: 0
+    activity: 20
+    groups: [headquarters-emotion]
+    combat: ["callforhelp 5:emotion:rolls her eyes and calls for backup."]
+    idle:
+      - "emote inspects her perfectly manicured nails with an air of supreme disinterest."
+      - "emote gives a nearby outfit a long, withering once-over."
+      - "say Ugh, when I think of all the things that could happen... no. Just no."
+      - "emote makes a face like she just smelled something truly foul."
+      - "say Okay, I'm not saying I'm the most important emotion, but someone has to have standards around here."
+      - ""
+      - ""
+
+  - id: 25
+    name: anxiety
+    desc: >-
+      Anxiety is a wiry, orange-skinned emotion with a manic, electric energy
+      that fills any room she enters. Her wild orange hair literally stands
+      straight up, crackling with nervous static, and her enormous eyes are
+      always slightly too wide, as if she's permanently caffeinated. She talks
+      at roughly twice the speed of anyone else, her words tumbling over each
+      other in a breathless torrent of worst-case planning and contingency
+      strategies. She fidgets constantly -- wringing her hands, pacing in tight
+      circles, compulsively making lists on a notepad she pulls from thin air.
+      Unlike Fear, who reacts to immediate danger, Anxiety is fixated on the
+      future and all the terrible things that might happen. She genuinely means
+      well and desperately wants to protect Riley, but her well-intentioned
+      planning has a tendency to spiral into full catastrophic overdrive.
+    level: 99
+    race: 2
+    hostile: false
+    wander: 0
+    activity: 35
+    groups: [headquarters-emotion]
+    combat: ["callforhelp 5:emotion:screams and frantically calls for help."]
+    idle:
+      - "emote paces back and forth in a frantic, tight circle."
+      - "emote scribbles furiously on a notepad, making yet another contingency plan."
+      - "say Okay okay okay, so what if everything goes wrong? I need a plan for that. And a plan for THAT plan."
+      - "say What if they don't like us? What if we say the wrong thing? What if we say the RIGHT thing but in the WRONG way?"
+      - "emote fidgets with her hair, which crackles with static electricity."
+      - "say I'm not panicking. This is just... very aggressive preparedness."
+      - ""
+    questflags: ["8-key"]
+    script: dialog
+
+  - id: 26
+    name: envy
+    desc: >-
+      Envy is a small, teal-skinned emotion with wide, glistening eyes that
+      are perpetually fixed on whatever someone else has. She has a rounded,
+      compact form and a tendency to lean forward on her tiptoes, as if always
+      reaching for something just beyond her grasp. Her expression shifts
+      between wistful longing and a forced smile that doesn't quite reach her
+      eyes. She speaks softly, often trailing off mid-sentence as she notices
+      something else she wishes she had.
+    level: 99
+    race: 2
+    hostile: false
+    wander: 0
+    activity: 20
+    groups: [headquarters-emotion]
+    combat: ["callforhelp 5:emotion:looks around desperately for help."]
+    idle:
+      - "emote stares longingly at something in the distance with wide, glistening eyes."
+      - "emote sighs wistfully and looks down at her own hands."
+      - "say I just wish we had what they have, you know? Just... just a little bit of it."
+      - "say That's so nice. You're so lucky. I'm fine though. Really."
+      - ""
+      - ""
+
+  - id: 27
+    name: ennui
+    desc: >-
+      Ennui is a large, languid, indigo-blue emotion who appears to be in a
+      permanent state of exhaustion despite never actually doing anything. She
+      is draped across the nearest available surface at all times, her heavy-
+      lidded eyes barely open, a phone perpetually in hand as she scrolls with
+      glacial slowness. Her deep, monotone voice makes everything sound like
+      the most boring thing that has ever been said. She operates the console
+      from the couch by texting commands, which drives Joy absolutely insane.
+      Despite her complete lack of enthusiasm for anything, Ennui somehow
+      manages to be one of the funniest presences in Headquarters, her utter
+      indifference a perfect foil to the frantic energy of everyone around her.
+    level: 99
+    race: 2
+    hostile: false
+    wander: 0
+    activity: 15
+    groups: [headquarters-emotion]
+    combat: ["callforhelp 5:emotion:sighs and halfheartedly calls for help."]
+    idle:
+      - "emote sighs so dramatically that the very air seems to get heavier."
+      - "emote scrolls through her phone without any change in expression."
+      - "say Whatever."
+      - "say I would care about that, but it seems like a lot of effort."
+      - "emote somehow manages to slouch even further into the couch."
+      - "say Is this still happening? Can we not?"
+      - ""
+      - ""
+      - ""
+
+  - id: 28
+    name: embarrassment
+    desc: >-
+      Embarrassment is an absolutely enormous, soft pink emotion who somehow
+      manages to make himself as small as possible despite being the largest
+      figure in Headquarters. He hunches over constantly, pulling his hoodie
+      up over his face and peeking out from behind furniture, his own hands,
+      or whatever else might provide cover. When he speaks, which is rare, it
+      comes out as a barely audible whisper. His cheeks are in a permanent
+      state of deep crimson blush, and he tends to shuffle his feet and avoid
+      eye contact with the intensity of someone diffusing a bomb. He means
+      absolutely no harm to anyone and just wants to not be noticed, which is
+      difficult when you're eight feet tall and bright pink.
+    level: 99
+    race: 2
+    hostile: false
+    wander: 0
+    activity: 15
+    groups: [headquarters-emotion]
+    combat: ["callforhelp 5:emotion:hides behind something and whimpers for help."]
+    idle:
+      - "emote hides his face behind his enormous hands, peeking through his fingers."
+      - "emote peeks out from behind a piece of furniture, then ducks back behind it."
+      - "emote blushes an even deeper shade of pink, which shouldn't be possible."
+      - "emote whispers something completely inaudible."
+      - ""
+      - ""
+      - ""
+      - ""
+
+  - id: 29
+    name: nostalgia
+    desc: >-
+      Nostalgia is a sweet, soft-blue old-lady emotion who appears in brief,
+      gentle moments, filling the room with a warm, bittersweet glow. She has
+      kind, crinkled eyes behind delicate spectacles, a cozy cardigan, and a
+      tender smile that suggests she's remembering something wonderful that
+      happened a very long time ago. She speaks softly and slowly, every word
+      carrying the weight of cherished memories. She has a habit of wandering
+      between Headquarters and the Long Term Memory shelves, gently touching
+      old memory orbs and smiling to herself.
+    level: 99
+    race: 2
+    hostile: false
+    maxwander: 20
+    activity: 20
+    groups: [headquarters-emotion]
+    combat: ["callforhelp 5:emotion:clutches her cardigan and calls for help."]
+    idle:
+      - "emote gazes into the distance, a gentle smile playing across her face."
+      - "emote gets teary-eyed and dabs at her spectacles with a handkerchief."
+      - "say Oh, this reminds me of that time... well, you wouldn't remember. But it was lovely."
+      - "say They grow up so fast. It feels like just yesterday..."
+      - "say Remember when Riley used to do that little thing? Oh... you probably don't. But I do."
+      - "wander"
+      - ""
+      - ""
+
+  - id: 30
+    name: mind worker
+    desc: >-
+      This hardhat-wearing mind worker is one of the diligent crew that keeps
+      Riley's mental infrastructure running. He wears a blue jumpsuit, a yellow
+      hardhat, and carries a clipboard that he consults with bureaucratic
+      seriousness. He runs the Supply Closet, making sure the emotions and
+      anyone else passing through Headquarters has access to basic necessities.
+      He takes his job very seriously, even if nobody else seems to.
+    level: 99
+    race: 3
+    hostile: false
+    wander: 0
+    activity: 20
+    groups: [headquarters-worker]
+    combat: ["callforhelp 5:emotion:blows a whistle and calls for backup."]
+    idle:
+      - "emote checks items off a clipboard with meticulous precision."
+      - "emote adjusts his hardhat and surveys the Supply Closet."
+      - "say Supply Closet is fully stocked. Mostly. Don't tell management about the gum situation."
+      - "say type <ansi fg=\"command\">list</ansi> to see what I've got in stock."
+      - ""
+      - ""
+    shop:
+      - itemid: 30001
+        qty: 10
+      - itemid: 30002
+        qty: 5
+      - itemid: 30008
+        qty: 5

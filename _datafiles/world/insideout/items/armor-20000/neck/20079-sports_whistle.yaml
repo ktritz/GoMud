@@ -1,0 +1,13 @@
+itemid: 20079
+name: sports whistle
+namesimple: whistle
+description: A metal coach's whistle on a braided cord. Wearing it makes you feel like you're in charge even when you're clearly not.
+type: neck
+subtype: wearable
+uses: 0
+damage:
+  diceroll: 0d0
+defense: 0
+statmods:
+  perception: 1
+value: 20

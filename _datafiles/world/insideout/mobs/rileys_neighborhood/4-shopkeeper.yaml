@@ -1,0 +1,44 @@
+mobid: 4
+zone: Rileys Neighborhood
+hostile: false
+maxwander: 0
+activitylevel: 20
+groups:
+- neighborhood-npc
+idlecommands:
+- emote restocks the shelves, humming a tune.
+- say Welcome in! Let me know if you need anything.
+- say type <ansi fg="command">list</ansi> to see what's on the shelves.
+- emote wipes down the counter with a well-worn rag.
+- ''
+- ''
+character:
+  name: shopkeeper
+  description: A friendly corner store owner with an easy smile and a clean apron. He knows every regular by name and always has a kind word and a well-stocked shelf. His small shop is a neighborhood fixture, the kind of place where you can grab a juice box and end up chatting for twenty minutes about absolutely nothing important.
+  level: 10
+  raceid: 1
+  shop:
+    - itemid: 10003
+      quantitymax: 3
+    - itemid: 10014
+      quantitymax: 5
+    - itemid: 10019
+      quantitymax: 5
+    - itemid: 20001
+      quantitymax: 3
+    - itemid: 20010
+      quantitymax: 3
+    - itemid: 20020
+      quantitymax: 3
+    - itemid: 20030
+      quantitymax: 3
+    - itemid: 20050
+      quantitymax: 3
+    - itemid: 20040
+      quantitymax: 5
+    - itemid: 20052
+      quantitymax: 3
+    - itemid: 20054
+      quantitymax: 3
+    - itemid: 20064
+      quantitymax: 5

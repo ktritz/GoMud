@@ -1,0 +1,63 @@
+zone: back_of_the_mind
+zone_config:
+  name: "The Back of the Mind"
+mobs:
+  - id: 58
+    name: anxiety spiral
+    desc: >-
+      A spinning vortex of tangled, half-formed thoughts that has grown far
+      beyond the small, agitated spirals found near the school. This one is a
+      roaring cyclone of worried words and catastrophic projections, pulling
+      everything nearby into its orbit. Fragments of panicked thought whip
+      through it -- what if it all falls apart, what if they find out, what if
+      this is as good as it gets -- spinning too fast to read but impossible
+      to ignore. The air around it vibrates with a low, anxious hum that
+      makes your chest tight.
+    level: 16
+    race: 5
+    hostile: true
+    wander: 3
+    activity: 20
+    drop: 20
+    groups: [fear]
+    combat: ["backstab", "cast mm"]
+
+  - id: 59
+    name: doubt shadow elder
+    desc: >-
+      An ancient, fully-formed doubt that has existed for so long it has
+      forgotten what certainty even looks like. It is massive and solid where
+      younger doubts are flickering and vague -- a towering dark figure with
+      features that shift between every face you've ever been afraid of
+      disappointing. Its voice is quiet, measured, and devastating, delivering
+      its whispered undermining with the practiced precision of something that
+      has been doing this for a very, very long time.
+    level: 17
+    race: 5
+    hostile: true
+    wander: 3
+    activity: 20
+    drop: 25
+    groups: [fear]
+    combat: ["backstab", "cast mm"]
+
+  - id: 60
+    name: suppression guard
+    desc: >-
+      A mechanical, emotionless guardian created by Anxiety to protect the vault
+      at the back of the mind. It stands perfectly still until something
+      approaches, then activates with a sharp click and a whir of internal
+      mechanisms. Its body is angular and utilitarian, built from rigid geometric
+      plates that interlock like armor. It has no face, just a smooth, featureless
+      panel where a face should be, and it moves with the precise, soulless
+      efficiency of something that was never alive and never will be.
+    level: 18
+    race: 4
+    hostile: true
+    wander: 0
+    activity: 25
+    drop: 25
+    groups: [abstract, guard]
+    combat: ["backstab", "cast mm"]
+    angry:
+      - "emote activates defense protocols, plates shifting and locking into combat configuration."

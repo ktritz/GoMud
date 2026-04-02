@@ -1,0 +1,21 @@
+roomid: 508
+zone: Dream Productions
+title: The Green Room
+description: A wave of deep comfort washes over you the moment you step inside. This is where dream actors rest between takes, and the room is designed for maximum relaxation. Plush couches in soft greens and golds form cozy clusters around low tables stacked with dream magazines. A refreshment table along one wall offers snacks that taste like whatever you want them to -- one bite and it's your favorite food, whatever that happens to be right now. Warm, indirect lighting fills the room with a soothing amber glow, and the faint hum of white noise generators smooths every sharp edge off reality. A sign on the wall reads "Rest well. You dream again in thirty minutes."
+mapsymbol: +
+maplegend: Rest
+biome: dreamset
+exits:
+  west:
+    roomid: 507
+  south:
+    roomid: 509
+nouns:
+  couches: The <ansi fg="itemname">couches</ansi> are impossibly comfortable -- the kind of furniture that only exists in dreams, which makes sense because that's literally where you are. The cushions seem to adjust to whoever sits on them, and they're warm without being hot. A couch this good in the waking world would cost a fortune.
+  snacks: 'The <ansi fg="itemname">refreshment table</ansi> is stocked with dream snacks that defy description. Each one tastes different depending on who''s eating it. A label reads "Flavor: Yes." There are also drinks in unmarked cups that are simultaneously hot cocoa and cold lemonade.'
+idlemessages:
+- The couches seem to exhale softly, settling deeper into their own comfort.
+- A warm breeze drifts through the room carrying the smell of freshly baked cookies.
+- The white noise generators shift to the sound of gentle rain, then back again.
+- A dream magazine flips its own pages to an article titled "Top 10 Flying Dreams of the Year."
+- The amber lighting dims and brightens in a slow, soothing rhythm, like breathing.

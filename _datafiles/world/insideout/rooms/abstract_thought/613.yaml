@@ -1,0 +1,22 @@
+roomid: 613
+zone: Abstract Thought
+title: Abstract Overlook
+description: A wide platform extends over the edge of Abstract Thought, offering a panoramic view of Riley's inner mindscape. From this vantage point, you can see the distant glow of Headquarters above and to the north, the warm lights of Dream Productions to the west, and the endless shelves of Long Term Memory stretching south. The railing is solid here -- fully reconstructed, real, three-dimensional -- and leaning against it feels like returning to shore after being lost at sea. The air is clear, the light is natural, and everything makes sense again. Below the overlook, the abstract zones shimmer like heat haze, their impossible geometries visible but safely distant. A telescope mounted on a swivel stand lets you survey the landscape.
+mapsymbol: O
+maplegend: Overlook
+biome: abstract
+exits:
+  south:
+    roomid: 612
+  east:
+    roomid: 614
+nouns:
+  platform: The <ansi fg="itemname">platform</ansi> is reassuringly solid. Real stone, real metal, real geometry. After the journey through abstraction, the reliability of a flat surface you can trust is almost moving.
+  railing: The <ansi fg="itemname">railing</ansi> is cold iron, bolted firmly to the platform. It has height, width, and depth, and it exists in exactly one location. After the Non-Figurative Core, this is luxury.
+  telescope: The <ansi fg="itemname">telescope</ansi> is a brass instrument on a smooth swivel. Through it, you can see Dream Productions' spotlights sweeping, the warm glow of Headquarters' Console Room, and far below, Mind Workers shuffling memory orbs along the shelves. A placard reads "You are here. Everything else is there. Isn't that nice?"
+idlemessages:
+- The distant spotlights of Dream Productions sweep across the mindscape like searchlights.
+- A warm glow from Headquarters pulses once, as if Riley just had a happy thought.
+- The abstract zones below shimmer, their geometries visible but safely incomprehensible from here.
+- Through the telescope, you can see a Mind Worker waving, or possibly just shelving an orb.
+- A breeze carries the faint scent of something real -- grass, or rain, or home.

@@ -1,0 +1,21 @@
+roomid: 206
+zone: Headquarters
+title: Joy's Room
+description: 'Stepping through the doorway is like walking into bottled sunshine. The walls of Joy''s room are painted in every shade of yellow and gold, covered floor to ceiling with Riley''s drawings, photos, and happy memories pinned up with star-shaped tacks. A bed that looks like it''s never been slept in sits in the corner -- Joy has too much energy for sleep. Glitter seems to hang permanently in the air, catching the light that radiates from the room itself. A corkboard labeled "TOMORROW''S FUN IDEAS" is overflowing with sticky notes, and a small shelf holds a collection of Riley''s favorite things: a hockey puck, a family photo, and a friendship bracelet. The whole room practically vibrates with optimism.'
+mapsymbol: J
+maplegend: Joy
+biome: mindscape
+exits:
+  west:
+    roomid: 200
+  south:
+    roomid: 207
+nouns:
+  drawings: Riley's artwork covers every available surface. Some are from childhood -- crayon stick figures and lopsided houses -- and some are more recent sketches. Joy has kept every single one, arranged in no particular order except "all of them are the best."
+  corkboard: The corkboard is stuffed beyond capacity with sticky notes, each one an idea for making Riley's day better. "Compliment someone!" "Try that new song!" "Suggest pizza for dinner!" Several notes have gold star stickers on them, marking ideas that worked.
+  puck: Riley's first hockey puck, scuffed and battered from hundreds of games. Joy keeps it front and center on the shelf, polished to a shine.
+idlemessages:
+- A burst of glitter drifts down from somewhere near the ceiling for no apparent reason.
+- The drawings on the wall seem to glow a little brighter for a moment.
+- A sticky note peels off the corkboard and flutters to the floor. It reads "SMILE MORE :)"
+- The room pulses with golden warmth, as if Joy's optimism is a physical force.

@@ -1,0 +1,20 @@
+mobid: 2
+zone: Rileys Neighborhood
+hostile: false
+maxwander: 0
+activitylevel: 20
+groups:
+- neighborhood-npc
+idlecommands:
+- say Hey, who wants to hear a joke? ...Okay, here it is anyway.
+- say Did you see the game last night? Unbelievable. Un. Believable.
+- emote chuckles to himself about something that is almost certainly a pun.
+- say How was school today? Learn anything? No? That's my girl.
+- emote leans back and pretends to watch TV.
+- ''
+- ''
+character:
+  name: riley's dad
+  description: Riley's Dad is a tall, warm-eyed man with a slightly goofy mustache and the unmistakable air of someone who thinks he's much funnier than he actually is. He wears a comfortable flannel shirt and has the relaxed posture of a guy who'd rather be watching hockey than doing almost anything else. He moved the family from Minnesota to San Francisco for work, and he's doing his best to keep everyone happy -- mostly through an endless supply of terrible puns and a genuine, if occasionally clueless, devotion to his family. His inner emotions are famously preoccupied with hockey and classic rock.
+  level: 20
+  raceid: 1

@@ -1,5 +1,7 @@
 package discord
 
+import "github.com/GoMudEngine/GoMud/internal/transport"
+
 // Reference: https://birdie0.github.io/discord-webhooks-guide/discord_webhook.html
 
 // Discord message payload for non-rich content
@@ -76,3 +78,13 @@ type embedField struct {
 	Value  string `json:"value,omitempty"`
 	Inline bool   `json:"inline,omitempty"`
 }
+
+type webhookEvent struct {
+	Payload []byte
+}
+
+func (w webhookEvent) Type() string { return "DiscordWebhook" }
+
+func (w webhookEvent) TransportEvent() bool { return true }
+
+var _ transport.TransportEvent = webhookEvent{}

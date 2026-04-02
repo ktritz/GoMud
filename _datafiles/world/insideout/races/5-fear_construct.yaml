@@ -1,0 +1,27 @@
+raceid: 5
+name: fear construct
+description: 'A creature born from raw fear. It takes whatever shape is most frightening,
+  shifting and flickering like a bad dream.'
+defaultalignment: -30
+size: large
+unarmedname: terror touch
+tnlscale: 1
+selectable: false
+knowsfirstaid: false
+tameable: false
+angrycommands:
+- emote lets out a bone-chilling shriek.
+- 'emote grows larger, shadows pooling around it.'
+stats:
+  strength:
+    base: 1
+  speed:
+    base: 2
+  perception:
+    base: 1
+damage:
+  diceroll: 1d5
+disabledslots:
+- weapon
+- offhand
+- ring

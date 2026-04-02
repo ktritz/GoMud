@@ -1,0 +1,9 @@
+itemid: 20056
+name: imagination shield
+namesimple: shield
+description: 'A shield that looks different to everyone who sees it. To you, it''s
+  the coolest shield you can imagine.'
+type: offhand
+subtype: wearable
+damagereduction: 3
+value: 75

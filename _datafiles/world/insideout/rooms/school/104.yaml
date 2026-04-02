@@ -1,0 +1,28 @@
+roomid: 104
+zone: School
+title: Science Lab
+description: The science lab smells like a permanent combination of hand sanitizer and whatever chemical they used last period. Black-topped lab tables are arranged in pairs, each one equipped with a small sink and a gas nozzle that everyone is forbidden from touching. Beakers and graduated cylinders line the shelves along the back wall, and a massive periodic table poster dominates the space above the whiteboard. A row of microscopes sits in a locked cabinet, and a human skeleton model named "Mr. Bones" stands in the corner wearing a pair of sunglasses that the teacher gave up trying to remove.
+mapsymbol: S
+maplegend: Science
+biome: city
+exits:
+  south:
+    roomid: 111
+nouns:
+  beakers: The <ansi fg="itemname">beakers</ansi> come in every size, from tiny sample cups to ones big enough to hold a suspicious amount of liquid. Most are clean, but a few in the back still have residue from an experiment that turned an unexpected shade of purple. A label on one reads "DO NOT DRINK" which raises the question of why that label was necessary.
+  periodic table: The <ansi fg="itemname">periodic table</ansi> is enormous, taking up most of the front wall. Someone has circled "Au" and written "goals" next to it. The noble gases section has a tiny crown drawn over it. Oganesson has a question mark next to it and the note "is this even real?"
+  microscope: The <ansi fg="itemname">microscopes</ansi> are decent quality but clearly battle-worn from years of student use. One has a cracked eyepiece held together with tape. The focus knobs are stiff from students cranking them like they're opening a submarine hatch. A sign reads "GENTLE adjustments. GENTLE."
+idlemessages:
+- A Bunsen burner hisses somewhere, its blue flame dancing in a draft.
+- Mr. Bones stares at you from the corner, sunglasses slightly askew.
+- Something bubbles in a beaker on the back shelf. It's probably fine.
+- The fume hood fan kicks on with a low hum, startling nobody except you.
+- A poster of the scientific method flutters as the ventilation system cycles.
+
+spawninfo:
+- mobid: 71
+  message: <ansi fg="mobname">Dr. Reeves</ansi> arrives, ready to teach.
+  respawnrate: 5 real minutes
+- mobid: 17
+  message: A <ansi fg="mobname">school bully</ansi> swaggers in from around the corner.
+  respawnrate: 3 real minutes

@@ -1,0 +1,27 @@
+mobid: 21
+zone: Headquarters
+hostile: false
+maxwander: 0
+activitylevel: 25
+groups:
+- headquarters-emotion
+idlecommands:
+- emote lets out a long, heavy sigh.
+- emote adjusts her thick glasses and blinks slowly.
+- emote is quietly reading a book, occasionally sniffling.
+- say I read that crying actually helps you feel better. I cry a lot, so I should feel great... but I don't.
+- say It's okay to be sad. I learned that the hard way.
+- ''
+- ''
+combatcommands:
+- callforhelp 5:emotion:calls out tearfully for help.
+scripttag: questgiver
+questflags:
+- 5-start
+- 5-return
+- 5-end
+character:
+  name: sadness
+  description: Sadness is a short, round, blue-skinned emotion bundled up in an oversized white turtleneck sweater that she constantly tugs at for comfort. Thick, round glasses sit on her nose, magnifying her perpetually teary eyes and giving her a bookish, melancholy look. She moves slowly and deliberately, as if the weight of every sad thing that ever happened is pressing down on her shoulders. Despite her gloomy demeanor, there is something deeply endearing about her -- she understands loss and empathy in ways the other emotions never could. Her blue hair hangs limp and flat, and she often clutches a well-worn book to her chest like a security blanket. She proved in her own quiet way that sometimes you need to feel sad before you can feel anything else.
+  level: 99
+  raceid: 2

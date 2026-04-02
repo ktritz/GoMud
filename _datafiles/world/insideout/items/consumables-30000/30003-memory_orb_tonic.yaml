@@ -1,0 +1,11 @@
+itemid: 30003
+name: memory orb tonic
+namesimple: tonic
+description: 'A shimmering liquid distilled from fading memory orbs. Drinking it sharpens
+  your mental focus to a razor''s edge.'
+type: potion
+subtype: drinkable
+uses: 1
+value: 30
+buffids:
+- 42

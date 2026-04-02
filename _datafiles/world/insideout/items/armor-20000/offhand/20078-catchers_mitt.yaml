@@ -1,0 +1,11 @@
+itemid: 20078
+name: catcher's mitt
+namesimple: mitt
+description: A well-oiled leather catcher's mitt that's been broken in over two seasons. It makes a satisfying pop when something hits the pocket.
+type: offhand
+subtype: wearable
+uses: 0
+damage:
+  diceroll: 0d0
+defense: 2
+value: 30

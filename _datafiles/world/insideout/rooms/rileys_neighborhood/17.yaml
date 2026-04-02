@@ -1,0 +1,21 @@
+roomid: 17
+zone: Rileys Neighborhood
+title: Pizza Parlor
+description: The pizza place. THE pizza place. A neighborhood institution with red vinyl booths, checkered tablecloths, and the warm, overwhelming smell of baking dough and melted cheese. A glass counter displays slices of every variety, including the controversial San Francisco special with broccoli on it. A chalkboard menu hangs on the wall behind the register. The floor is slightly sticky in the way all good pizza places are. An old jukebox in the corner plays something from the '80s that nobody asked for.
+mapsymbol: P
+maplegend: Pizza
+biome: city
+exits:
+  north:
+    roomid: 11
+nouns:
+  menu: The <ansi fg="itemname">menu</ansi> is written in colorful chalk on a big blackboard. Cheese, pepperoni, Hawaiian (crossed out and re-added at least three times), veggie, meat lovers, and of course the "San Francisco Special" -- which is pizza with broccoli. It has its own section. There are strong opinions about it.
+  pizza: The <ansi fg="itemname">pizza</ansi> in the display case looks incredible. Golden crust, perfectly melted cheese, all the good stuff. And then there's the San Francisco Special sitting right in the middle, bright green broccoli florets arranged on top of the cheese like little trees. It's polarizing. People have reportedly moved away over this pizza.
+  counter: The <ansi fg="itemname">counter</ansi> is scuffed from years of sliding pizza trays across it. A tip jar sits next to the register with a sign that says "Tips help us put even weirder stuff on pizza." There's a stack of paper plates and a dispenser of red pepper flakes.
+  broccoli: The <ansi fg="itemname">broccoli</ansi>. It's on the pizza. Bright green florets sitting right there on top of melted mozzarella like they belong there. The people of San Francisco are deeply divided on this issue. Riley's family had a full dinner conversation about it the first week they moved here. Dad said it was "an abomination." Mom tried to keep an open mind. Nobody ordered it again.
+idlemessages:
+- The smell of fresh pizza wafts out from the kitchen and it's honestly unfair.
+- Two people at a booth are having a heated debate about whether broccoli belongs on pizza.
+- The jukebox switches to a song you almost recognize but can't quite place.
+- A cook in the back tosses pizza dough in the air and catches it with practiced ease.
+- Someone takes a bite of the San Francisco Special and pauses to reconsider their life choices.

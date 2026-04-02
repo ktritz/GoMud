@@ -1,0 +1,20 @@
+roomid: 202
+zone: Headquarters
+title: Core Memory Vault
+description: This sacred chamber is smaller and quieter than the rest of Headquarters, bathed in a reverent glow that radiates from the core memories themselves. Five ornate pedestals stand in a semicircle, each holding an orb that burns brighter and larger than any ordinary memory. The golden orb pulses with Joy's warmth, the blue orb shimmers with bittersweet depth, the red orb crackles with fierce intensity, the green orb gleams with sharp clarity, and the purple orb flickers with cautious energy. Together they power the Personality Islands and define who Riley is. The walls are reinforced and the temperature is carefully controlled -- these memories are irreplaceable.
+mapsymbol: V
+maplegend: Vault
+biome: mindscape
+exits:
+  west:
+    roomid: 201
+nouns:
+  golden orb: The golden core memory radiates pure happiness. Inside, a young Riley scores her first hockey goal, her parents cheering from the stands. The scene loops endlessly, each replay just as warm as the last.
+  blue orb: The blue core memory is surprisingly beautiful in its sadness. It shows Riley crying on her first day at a new school, and then being comforted by her parents. The sadness and the love are inseparable.
+  red orb: The red core memory burns hot. Inside, Riley stands up to a bully who was picking on her friend, her face flushed with righteous anger. The memory practically vibrates with intensity.
+  green orb: The green core memory has a sharp, discerning quality. It captures the moment Riley first developed her own sense of style, rejecting an outfit her mom picked out with absolute certainty. Standards were established that day.
+  purple orb: The purple core memory pulses nervously. It shows Riley's first time on stage at a school play, terrified but pushing through. The fear made the triumph that followed mean something.
+idlemessages:
+- The core memories pulse in unison for a moment, casting rainbow light across the vault walls.
+- The golden orb flares brighter briefly, as if Riley just thought of something happy.
+- A faint hum resonates from the pedestals, the sound of memories holding a mind together.

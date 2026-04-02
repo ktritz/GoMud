@@ -1,0 +1,11 @@
+itemid: 20062
+name: hockey jersey
+namesimple: jersey
+description: A well-worn hockey jersey with a number on the back and grass stains on the elbows from that time someone wore it to the park. It has light padding sewn into the shoulders.
+type: body
+subtype: wearable
+uses: 0
+damage:
+  diceroll: 0d0
+defense: 2
+value: 30

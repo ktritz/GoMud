@@ -1,0 +1,22 @@
+roomid: 814
+zone: Memory Dump
+title: The Way Back Up
+description: Beyond the corrupted core, a narrow passage climbs steeply upward through the wall of the dump, carved by mind workers as an emergency escape route for anyone foolish enough to descend this far. The passage is lined with handholds driven into the rock at regular intervals, and faint guide lights are embedded in the walls, each one a tiny, warm point of gold that flickers like a candle flame. The climb is steep and the passage is narrow, but the air improves with every upward step -- warmer, more colorful, more alive. After the bleakness of the dump, the faint glow of Long Term Memory above is the most beautiful thing you have ever seen. The passage narrows to a final squeeze before opening onto the familiar shelves. You made it back. You remember.
+mapsymbol: ^
+maplegend: Way-Up
+biome: dungeon
+exits:
+  south:
+    roomid: 813
+  up:
+    roomid: 316
+nouns:
+  passage: 'The <ansi fg="itemname">passage</ansi> is carved from raw mindstone, rough and unfinished, clearly dug in haste by workers who prioritized function over aesthetics. It is wide enough for one person and slopes at an aggressive forty-five degree angle. The walls are scarred with tool marks and the occasional panicked message scratched by previous climbers: "KEEP GOING." "ALMOST THERE." "DO NOT LOOK BACK."'
+  handholds: The <ansi fg="itemname">handholds</ansi> are iron spikes driven into the rock, spaced just close enough for an average reach. They are worn smooth by the grip of everyone who has climbed out of the dump, and each one is faintly warm, as if the act of escaping the Memory Dump leaves a residue of hope on everything you touch.
+  lights: 'The guide <ansi fg="itemname">lights</ansi> are tiny golden bulbs embedded in the passage walls. They are the only source of color in the deepest parts of the dump, and their warm light is shockingly vivid after the relentless gray below. Each light is labeled with a tiny plaque: "You are real." "Your memories matter." "Keep climbing."'
+idlemessages:
+- A guide light flickers and you feel a surge of determination to keep climbing.
+- The air grows warmer as a draft from Long Term Memory above reaches you, carrying the scent of stored memories.
+- A handhold radiates warmth under your grip, left by the hope of the last person who climbed out.
+- The golden glow of the shelves above grows brighter, pulling you upward.
+- You hear the distant, organized hum of Long Term Memory and it sounds like coming home.

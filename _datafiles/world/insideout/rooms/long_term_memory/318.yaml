@@ -1,0 +1,21 @@
+roomid: 318
+zone: Long Term Memory
+title: Crumbling Memory Wall
+description: A massive section of the shelf structure has partially collapsed here, creating a wall of broken shelving, scattered orbs, and cascading gray dust that shifts and settles with every vibration. The collapse has exposed the raw infrastructure of Long Term Memory -- support beams of crystallized thought, conduits that once carried emotional energy, and the hollow spaces where memories were never stored at all. The remaining shelves creak and groan ominously, and small avalanches of dust trickle down at irregular intervals. Picking through the rubble, you can see a passage continuing south beyond the worst of the damage.
+mapsymbol: '#'
+maplegend: Crumble
+biome: mindscape
+exits:
+  north:
+    roomid: 317
+  south:
+    roomid: 319
+nouns:
+  dust: The <ansi fg="itemname">dust</ansi> here is a mix of crumbled shelf material and pulverized memory orbs. It shifts and slides like dry sand, and occasionally a shard of an orb surfaces, playing a half-second fragment of a scene before going dark. Walking through it feels like wading through the detritus of a thousand forgotten Tuesdays.
+  beams: The exposed support beams are made of something that looks like crystal but feels like solidified thought. They hum faintly when touched, and light travels through them in slow pulses -- the structural nervous system of Long Term Memory itself.
+idlemessages:
+- A section of shelf groans and drops another inch, sending a cascade of dust to the floor.
+- An orb fragment surfaces in the rubble, plays a single note of music, and goes dark.
+- The support beams hum louder for a moment, then settle back to their baseline frequency.
+- A crack spider-webs across a leaning shelf with a sound like breaking ice.
+- Dust pours from a gap in the wall in a steady stream, like an hourglass counting down.

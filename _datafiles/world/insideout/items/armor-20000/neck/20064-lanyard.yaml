@@ -1,0 +1,11 @@
+itemid: 20064
+name: lanyard
+namesimple: lanyard
+description: A school-issued lanyard with a student ID badge clipped to it. The badge has a terrible photo on it. Everyone's badge has a terrible photo on it.
+type: neck
+subtype: wearable
+uses: 0
+damage:
+  diceroll: 0d0
+defense: 0
+value: 5

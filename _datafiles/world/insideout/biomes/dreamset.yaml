@@ -1,0 +1,11 @@
+biomeid: dreamset
+name: Dream Set
+symbol: ☆
+description: A movie studio set inside Riley's mind where dreams are produced.
+  Everything here has a slightly surreal, cinematic quality, as if you're walking
+  through a half-remembered dream.
+darkarea: false
+litarea: true
+requireditemid: 0
+usesitem: false
+burns: false

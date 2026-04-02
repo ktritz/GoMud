@@ -1,0 +1,25 @@
+roomid: 507
+zone: Dream Productions
+title: Props Room
+description: Floor-to-ceiling shelves packed with every conceivable prop crowd this room into a labyrinth of dream artifacts. Foam swords lean against rubber chickens. A jar labeled "TEETH (for the teeth dream)" sits next to a box of "GRAVITY -- REDUCED." One shelf holds nothing but doorknobs that each open onto a different dream. A workbench in the center is covered in half-finished props -- someone is building a new giant pencil and what appears to be a talking sandwich. Everything here is designed to look real enough for a dream but falls apart the moment you examine it too closely. Which is, of course, exactly how dreams work.
+mapsymbol: P
+maplegend: Props
+biome: dreamset
+exits:
+  north:
+    roomid: 506
+  east:
+    roomid: 508
+nouns:
+  shelves: The <ansi fg="itemname">shelves</ansi> are a treasure trove of dream logic. One section is labeled "THINGS THAT SHOULDN'T BE ABLE TO FLY (BUT DO)." Another holds "PHONES THAT DON'T WORK WHEN YOU NEED THEM." A third is just rows and rows of slightly wrong versions of everyday objects -- clocks with 13 hours, books with blank pages, shoes that are always the wrong size.
+  doorknobs: 'The <ansi fg="itemname">doorknobs</ansi> are fascinating. Each one is a different style -- brass, crystal, wooden, one that appears to be made of chocolate. A small card beneath each one describes where it leads: "Childhood bedroom," "That classroom you''ve never actually been in," "Underwater but you can breathe."'
+spawninfo:
+- mobid: 43
+  message: A <ansi fg="mobname">stage hand</ansi> backs through the door carrying a prop that's clearly too big for them.
+  respawnrate: 10 real minutes
+idlemessages:
+- A rubber chicken on the top shelf honks softly for no reason whatsoever.
+- A prop sword falls off a shelf, bounces, and somehow lands perfectly balanced on its tip.
+- The jar of teeth rattles. You decide not to think about it.
+- A doorknob on the shelf turns on its own, and you hear the distant sound of the ocean.
+- Someone's left a half-eaten prop sandwich on the workbench. Wait, it might be a real sandwich.

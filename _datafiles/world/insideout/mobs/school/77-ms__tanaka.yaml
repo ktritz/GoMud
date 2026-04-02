@@ -1,0 +1,19 @@
+mobid: 77
+zone: School
+scripttag: questgiver
+hostile: false
+maxwander: 0
+activitylevel: 25
+groups:
+- school-npc
+idlecommands:
+- emote types rapidly, pauses, then deletes everything and starts over.
+- say Remember, the computer only does what you tell it to. If it's wrong, it's YOUR fault.
+- emote adjusts her glasses and squints at a screen full of code.
+- ''
+- ''
+character:
+  name: ms. tanaka
+  description: Ms. Tanaka is the computer science teacher, a sharp-eyed woman who can spot a syntax error from across the room. She wears practical clothes, keeps her hair in a no-nonsense ponytail, and has a mechanical keyboard that she types on with intimidating speed. Her teaching style is Socratic -- she answers every question with another question until the student figures it out themselves, which is either brilliant or infuriating depending on your patience level.
+  level: 15
+  raceid: 1

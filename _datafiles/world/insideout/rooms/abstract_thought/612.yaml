@@ -1,0 +1,23 @@
+roomid: 612
+zone: Abstract Thought
+title: Logical Paradox Room
+description: A room that shouldn't work but does. Four doors lead out, each clearly labeled with a direction, but the directions don't correspond to where they actually go. An Escher-esque staircase in the center climbs upward and somehow arrives back at its own base. Water flows uphill in a narrow channel along one wall. A clock runs forward and backward simultaneously, its two sets of hands crossing and uncrossing in an endless dance. A sign on the wall reads "THIS STATEMENT IS FALSE" and the letters rearrange themselves every time you read it. The room functions perfectly despite violating every rule it can find. Abstraction's last joke before letting you leave.
+mapsymbol: '?'
+maplegend: Paradox
+biome: abstract
+exits:
+  south:
+    roomid: 611
+  north:
+    roomid: 613
+  west:
+    roomid: 603
+nouns:
+  doors: The <ansi fg="itemname">doors</ansi> are clearly labeled but the labels are lies. "North" leads south. "Exit" leads deeper in. One door is labeled "This door does not exist" and yet you can open it. Another is labeled "Entrance" from both sides. The doors work fine; it's the concept of direction that's having an off day.
+  staircase: 'The <ansi fg="itemname">staircase</ansi> is a perfect Penrose construction -- four flights of stairs that each go up and yet form a closed loop that arrives where it started. Walking it is disorienting but not unpleasant. Someone has left a small sign at the base: "Great exercise. Infinite cardio."'
+idlemessages:
+- The staircase completes another impossible loop, and a small breeze swirls at its base.
+- The clock's two sets of hands meet, and time pauses for exactly zero seconds.
+- Water flows uphill, pauses at the top, and flows uphill again from there.
+- A door opens and closes simultaneously, which is fine if you don't think about it.
+- The paradox sign rearranges to read "THIS STATEMENT IS TRUE" then back again.

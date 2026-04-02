@@ -1,0 +1,110 @@
+zone: the_subconscious
+zone_config:
+  name: "The Subconscious"
+mobs:
+  - id: 49
+    name: jangles the clown
+    desc: >-
+      Jangles the Clown is the thing that lives in the deepest, darkest pit of
+      Riley's subconscious -- a towering, nightmarish clown that makes every
+      other fear in here look like a mild inconvenience. His peeling white
+      makeup is cracked like old porcelain, revealing something dark and wrong
+      underneath. His smile stretches impossibly wide, painted in a red that
+      looks less like makeup and more like a warning. Oversized shoes squeak
+      with each thundering step, and his eyes glow an unnatural, sickly yellow
+      that tracks you with predatory focus. He carries an enormous mallet in
+      one hand and clutches a bicycle horn in the other, honking it at moments
+      calculated for maximum terror. This is the fear that keeps Riley awake at
+      night, the one that the other fears lock behind the heaviest door they
+      can find.
+    level: 30
+    race: 5
+    hostile: true
+    wander: 0
+    activity: 30
+    drop: 50
+    gold: 500
+    groups: [fear, boss]
+    combat: ["backstab", "cast mm", "callforhelp 3:fear:honks his horn for backup!"]
+    angry:
+      - "shout WANT TO PLAY?! HONK HONK!"
+      - "emote looms over you, grinning with far too many teeth."
+    equip:
+      weapon: 10010
+
+  - id: 50
+    name: fear spider
+    desc: >-
+      A spider the size of a large dog, its body made of crystallized fear that
+      refracts light into sickly, prismatic patterns. Each of its eight legs ends
+      in a needle-thin point that clicks against the ground like tapping fingers.
+      Its web is woven from strands of pure anxiety -- sticky, clinging threads
+      that tighten when you struggle and whisper worst-case scenarios directly
+      into your mind. Its bite doesn't inject venom; it injects dread.
+    level: 14
+    race: 5
+    hostile: true
+    wander: 4
+    activity: 20
+    drop: 20
+    groups: [fear]
+    combat: ["backstab"]
+
+  - id: 51
+    name: darkness creeper
+    desc: >-
+      A shapeless dark mass that clings to shadows the way moss clings to stone.
+      It has no face, no limbs, no features at all -- just an area of darkness
+      that is somehow darker than the darkness around it. You only know it's
+      there when you feel it watching you, when the hair on the back of your
+      neck stands up and the silence gets a little too thick. It moves without
+      sound and leaves no trace except a lingering feeling that you are not
+      alone and never were.
+    level: 13
+    race: 5
+    hostile: true
+    wander: 3
+    activity: 15
+    drop: 15
+    groups: [fear]
+    idle:
+      - "emote melts into the shadows, becoming nearly invisible."
+      - ""
+
+  - id: 52
+    name: broccoli horror
+    desc: >-
+      It's a six-foot-tall piece of broccoli and it is furious. Riley's childhood
+      dinner-table trauma has taken on a life of its own down here in the
+      Subconscious, growing thick and green and deeply, personally offended. It
+      wobbles toward you on its stalk with a menacing determination that would be
+      funny if it weren't also trying to kill you.
+    level: 12
+    race: 5
+    hostile: true
+    wander: 3
+    activity: 20
+    drop: 20
+    groups: [fear]
+    idle:
+      - "emote wobbles menacingly on its stalk."
+      - ""
+
+  - id: 53
+    name: doubt shadow
+    desc: >-
+      A fully grown doubt shadow, much larger and more defined than the ones
+      that haunt the school hallways. Down here in the Subconscious, doubt has
+      had time to grow and fester, feeding on every second-guess and sleepless
+      night until it stands taller than you, a dark silhouette with hollow eyes
+      that mirror your own face. It whispers in a voice you recognize -- yours,
+      on your worst day -- and every word carries the weight of years of
+      accumulated self-doubt.
+    level: 15
+    race: 5
+    hostile: true
+    wander: 3
+    activity: 20
+    drop: 20
+    groups: [fear]
+    combat: ["backstab", "cast mm"]

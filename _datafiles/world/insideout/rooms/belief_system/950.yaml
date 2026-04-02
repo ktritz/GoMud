@@ -1,0 +1,21 @@
+roomid: 950
+zone: Belief System
+title: Belief System Gateway
+description: 'A soaring archway of braided light marks the entrance to Riley''s Belief System. The arch is woven from strands of every emotional color -- gold, blue, red, green, purple, and the newer shades that arrived with puberty: orange anxiety, pink embarrassment, teal ennui. Beyond the threshold, the air shimmers with a warmth that feels deeply personal, like the inside of a thought you''ve had about yourself a thousand times. Inscriptions run along both sides of the archway, fragments of beliefs both old and new, layered over each other like graffiti on a bridge. This is where Riley''s sense of self begins -- the bedrock on which everything else is built.'
+mapsymbol: G
+maplegend: Gateway
+biome: mindscape
+exits:
+  north:
+    roomid: 951
+  west:
+    roomid: 913
+nouns:
+  arch: The <ansi fg="itemname">arch</ansi> is a living structure, its braided strands of light slowly shifting and rearranging as Riley's beliefs evolve. Some strands are thick and bright -- core beliefs that have been reinforced for years. Others are thin and flickering, new beliefs still finding their strength. Where two strands cross, they fuse and glow brighter, as if beliefs become stronger when they connect.
+  inscriptions: The <ansi fg="itemname">inscriptions</ansi> layer over each other in Riley's own mental handwriting. "I'm a good person" is written in confident gold. "I don't fit in" is scratched in anxious orange beneath it, partially faded. "I matter" glows steady and warm. Some inscriptions have been crossed out and rewritten, evidence of a mind constantly revising its understanding of itself.
+idlemessages:
+- A strand of gold light in the archway brightens, pulsing with a belief reinforced.
+- The inscriptions shift slightly, a new phrase appearing at the edge -- I'm figuring it out.
+- A warm breeze carries the feeling of recognition, like catching your own reflection unexpectedly.
+- The archway hums with a frequency that feels like your own name spoken kindly.
+- A thin strand of orange light flickers anxiously, then steadies as a gold strand wraps around it.

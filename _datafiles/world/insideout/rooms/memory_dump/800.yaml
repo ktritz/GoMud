@@ -1,0 +1,21 @@
+roomid: 800
+zone: Memory Dump
+title: Edge of Forgetting
+description: The service ladder from Long Term Memory ends at a narrow ledge jutting out over an abyss so vast it swallows all sense of scale. You stand on the lip of the Memory Dump -- the bottomless pit where Riley's forgotten memories come to dissolve into nothing. The air is thin and bone-dry, carrying a fine gray dust that coats everything in a layer of erasure. The walls of the chasm rise around you, smooth and featureless, carved by the slow erosion of discarded thoughts. Far below, enormous mounds of gray rubble stretch to the horizon -- the accumulated remains of everything Riley has ever forgotten. The silence here is not just the absence of sound; it is the presence of forgetting, a pressure against your mind that makes recent memories feel suddenly fragile.
+mapsymbol: E
+maplegend: Edge
+biome: dungeon
+exits:
+  up:
+    roomid: 316
+  north:
+    roomid: 801
+nouns:
+  ledge: The <ansi fg="itemname">ledge</ansi> is barely wide enough for two people to stand side by side. The stone is worn smooth by the passage of memories rolling over the edge and plummeting into the void below. Deep grooves are cut into the rock where countless orbs have bounced and tumbled on their final journey. The edge has no railing. Nothing down here cares about safety.
+  dust: The gray <ansi fg="itemname">dust</ansi> is what memories become after they have been forgotten completely -- a fine, weightless powder that clings to everything. It has no smell, no taste, no temperature. It is the physical residue of nothing. If you hold a handful up to the light, you might catch the faintest ghost of a scene playing in the motes -- a face, a place, a feeling -- but it fades before you can focus on it.
+idlemessages:
+- A faded memory orb rolls off the ledge above and tumbles into the abyss, its last flicker of color winking out.
+- Gray dust swirls up in a slow spiral, carrying the ghost of someone's name that you almost recognize.
+- The silence deepens until you can hear the sound of memories dissolving far below -- a soft, continuous whisper of loss.
+- The chasm wall beside you is perfectly smooth, as if even the stone has forgotten what it used to be.
+- A cold updraft carries a flake of something that used to be golden, now bleached entirely gray.

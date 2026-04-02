@@ -1,0 +1,31 @@
+mobid: 1
+zone: Rileys Neighborhood
+hostile: true
+nocorpse: true
+deathmessage: '{name} unravels into wisps of static and fades away.'
+maxwander: 3
+activitylevel: 15
+groups:
+- forgotten
+idlecommands:
+- emote squirms and writhes, flickering with half-formed images.
+- emote wriggles aimlessly across the ground, leaving a faint trail of static.
+- wander
+- ''
+- ''
+- ''
+- ''
+- ''
+character:
+  name: thought worm
+  description: A translucent, writhing worm made of stray, unfinished thoughts that never quite became memories. Its pale gray body pulses with faint, half-formed images -- a face without features, a word without meaning, a feeling without a name. It squirms erratically across the ground, leaving a faint smear of static in its wake, drawn mindlessly toward anything with coherent thought.
+  level: 1
+  raceid: 7
+  gold: 3
+  stats:
+    speed:
+      training: -10
+    strength:
+      training: -10
+    vitality:
+      training: -5

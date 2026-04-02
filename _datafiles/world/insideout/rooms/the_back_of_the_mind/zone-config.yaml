@@ -1,0 +1,9 @@
+name: The Back of the Mind
+roomid: 900
+autoscale:
+  minimum: 14
+  maximum: 18
+idlemessages:
+- 'A muffled feeling pushes against the walls, trying to be heard.'
+- The air hums with the low vibration of suppressed emotions.
+defaultbiome: dungeon

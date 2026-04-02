@@ -1,0 +1,11 @@
+itemid: 10016
+name: baseball bat
+namesimple: bat
+description: An aluminum baseball bat with a rubber grip and a few dents from batting practice. Light enough to swing fast, heavy enough to make an impression.
+type: weapon
+hands: 2
+subtype: bludgeoning
+uses: 0
+damage:
+  diceroll: 1d4+1
+value: 30

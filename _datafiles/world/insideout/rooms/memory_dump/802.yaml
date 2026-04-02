@@ -1,0 +1,25 @@
+roomid: 802
+zone: Memory Dump
+title: The Gray Fog
+description: The ledge descends into a thick, formless fog that reduces visibility to a few feet in every direction. The fog is not water vapor -- it is the collective exhalation of billions of dissolving memories, a gray mist of lost experiences so dense you can feel it against your skin. Shapes move in the fog -- slow, drifting silhouettes that might be the remnants of forgotten people, places, and things, wandering the dump in search of someone who still remembers them. The ground here levels off into a flat plain of compressed memory dust, soft and yielding underfoot. Sound behaves strangely in the fog; voices seem to come from every direction at once, always just too quiet to understand.
+mapsymbol: '#'
+maplegend: Fog
+biome: dungeon
+exits:
+  south:
+    roomid: 801
+  north:
+    roomid: 803
+nouns:
+  fog: The <ansi fg="itemname">fog</ansi> is thick enough to taste -- and it tastes like nothing. Absolute nothing. It is the flavor of a word on the tip of your tongue that you will never remember. If you wave your hand through it, the mist parts reluctantly and you can see faces forming and dissolving in the currents -- a teacher you had in second grade, a neighbor's dog, the name of your first friend.
+  silhouettes: The <ansi fg="itemname">silhouettes</ansi> drift through the fog with no apparent purpose or destination. They are the outlines of forgotten memories given just enough form to wander but not enough to exist. One silhouette raises a hand as if waving, but the gesture dissolves before it completes. Another turns toward you with a face that is nothing but smooth gray where features should be.
+spawninfo:
+- mobid: 57
+  message: A <ansi fg="mobname">dissolving shade</ansi> coalesces from the fog, its half-formed face struggling to hold a shape as it drifts toward you.
+  respawnrate: 5 real minutes
+idlemessages:
+- A silhouette drifts past in the fog, reaching toward you with fingers that dissolve before they make contact.
+- The fog thickens and you feel the memory of a childhood pet tug at the edge of your mind, then slip away.
+- A voice whispers your name from somewhere in the gray. When you turn, there is only fog.
+- The ground gives slightly beneath your feet, soft with the compressed dust of a million forgotten moments.
+- A silhouette in the fog stops and turns toward you, its blank face tilted as if it is trying to remember what you are.

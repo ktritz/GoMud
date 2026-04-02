@@ -1,0 +1,109 @@
+-
+  Supported:
+    "joy": ["sadness"]
+  Conversation:
+    - ["#1 say Remember when we thought only happy memories mattered?"]
+    - ["#2 emote adjusts her glasses thoughtfully",
+       "#2 say I remember. It was a hard lesson."]
+    - ["#1 say I'm so glad we learned better. Riley needs all of us."]
+    - ["#2 say Even the sad parts?"]
+    - ["#1 sayto #2 Especially the sad parts."]
+-
+  Supported:
+    "joy": ["sadness"]
+  Conversation:
+    - ["#1 say Hey Sadness, want to hear a joke?"]
+    - ["#2 say ...okay."]
+    - ["#1 say What did the memory say to the emotion? 'You complete me!'"]
+    - ["#2 emote adjusts her glasses",
+       "#2 say That's... actually kind of sweet."]
+    - ["#1 emote beams with delight"]
+-
+  Supported:
+    "joy": ["sadness"]
+  Conversation:
+    - ["#1 say You know what I love about today?"]
+    - ["#2 say That it's not over yet, so nothing bad has happened?"]
+    - ["#1 say ...I was going to say the sunrise was pretty, but sure, let's go with that."]
+    - ["#2 say Sorry. Force of habit."]
+    - ["#1 sayto #2 Don't apologize. You keep us grounded."]
+-
+  Supported:
+    "joy": ["anger"]
+  Conversation:
+    - ["#1 say Could you try to smile? Just a tiny one?"]
+    - ["#2 say This IS my smile."]
+    - ["#1 emote tilts her head, studying his face",
+       "#1 say ...Fair enough!"]
+-
+  Supported:
+    "joy": ["anger"]
+  Conversation:
+    - ["#1 say You know, Anger, I think deep down you're a real softie."]
+    - ["#2 say I am NOT a softie. I am a PILLAR of righteous FURY."]
+    - ["#1 say A pillar of righteous fury who cried during that dog movie."]
+    - ["#2 say THAT DOG DESERVED BETTER!"]
+-
+  Supported:
+    "joy": ["fear"]
+  Conversation:
+    - ["#1 say Everything is going to be totally fine!"]
+    - ["#2 say You say that about everything. Including the time Riley almost fell off her bike."]
+    - ["#1 say And she was FINE! ...Eventually."]
+    - ["#2 say She had a cast for six weeks, Joy."]
+    - ["#1 say A COLORFUL cast that all her friends signed! See? Fine!"]
+-
+  Supported:
+    "joy": ["fear"]
+  Conversation:
+    - ["#1 say Fear! Great news! Tomorrow is going to be the BEST day ever!"]
+    - ["#2 emote flinches",
+       "#2 say Please don't say that. Every time you say that, something goes horribly wrong."]
+    - ["#1 say Name ONE time."]
+    - ["#2 say The talent show. The first day of school. The hockey tryout. The--"]
+    - ["#1 say Okay okay okay, point taken!"]
+-
+  Supported:
+    "joy": ["disgust"]
+  Conversation:
+    - ["#1 say Love the outfit today!"]
+    - ["#2 emote inspects her nails",
+       "#2 say Obviously. I have a mirror for a reason."]
+    - ["#1 say You always know how to put a look together."]
+    - ["#2 say Someone has to maintain standards around here."]
+-
+  Supported:
+    "joy": ["anxiety"]
+  Conversation:
+    - ["#1 say We should talk about boundaries..."]
+    - ["#2 say I was just trying to protect Riley!"]
+    - ["#1 say I know, but maybe next time don't lock us in a vault?"]
+    - ["#2 emote wrings her hands nervously",
+       "#2 say It seemed like a good idea at the time..."]
+    - ["#1 say It never seems like a good idea to the people IN the vault."]
+    - ["#2 say ...Noted."]
+-
+  Supported:
+    "joy": ["ennui"]
+  Conversation:
+    - ["#1 say Want to do something fun?!"]
+    - ["#2 emote doesn't look up from her phone",
+       "#2 say ...pass."]
+    - ["#1 say Come on! We could go reorganize the core memories! Or visit Imagination Land!"]
+    - ["#2 say I'd rather dissolve into the floor."]
+    - ["#1 say ...I'm going to choose to hear that as a maybe!"]
+-
+  Supported:
+    "joy": ["*"]
+  Conversation:
+    - ["#1 say Another beautiful day in Headquarters!"]
+    - ["#2 emote glances around the room"]
+    - ["#1 say Don't you just love it? Every day is a chance for Riley to make amazing new memories!"]
+-
+  Supported:
+    "joy": ["*"]
+  Conversation:
+    - ["#1 emote twirls around happily",
+       "#1 say I just have this feeling today is going to be a GREAT day!"]
+    - ["#2 say You say that every day."]
+    - ["#1 say And I mean it every day!"]

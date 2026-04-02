@@ -1,0 +1,26 @@
+roomid: 401
+zone: Imagination Land
+title: Cloud Town
+description: An entire neighborhood built on and out of clouds. Cottages of compressed cumulus sit along a street paved with flattened cirrus, their fluffy walls slightly translucent and glowing from within with soft pastel light. Everything here is bouncy -- the ground gives pleasantly under each step, the fences wobble when touched, and the mailboxes bob gently in a breeze that seems to come from nowhere. A cloud builder works at a station near the town square, shaping raw cloud material into furniture and architectural elements with practiced hands. The whole place smells like the air after a rainstorm, clean and full of possibility.
+mapsymbol: C
+maplegend: Clouds
+biome: land
+exits:
+  north:
+    roomid: 400
+  south:
+    roomid: 402
+  east:
+    roomid: 414
+nouns:
+  clouds: The <ansi fg="itemname">clouds</ansi> that make up everything here are surprisingly solid -- firm enough to walk on, soft enough to sink your fingers into. They are warm to the touch and slightly damp, like a towel fresh from the dryer. If you pull off a piece, it reforms within seconds. The cottages are built by layering clouds of different densities, creating walls you can lean against but also put your hand through if you push hard enough.
+spawninfo:
+- mobid: 39
+  message: A <ansi fg="mobname">cloud builder</ansi> materializes from a thick bank of fog, tools in hand and ready to trade.
+  respawnrate: 2 real minutes
+idlemessages:
+- A cloud cottage settles slightly, like a souffle that got startled.
+- A mailbox drifts six inches to the left, then drifts back. Nobody seems concerned.
+- You bounce slightly with each step. The ground here has opinions about gravity.
+- A wisp of cloud breaks free from a rooftop and floats upward, becoming a tiny hat-shaped cloud.
+- The cloud builder hums a tune while sculpting a new piece of furniture from raw nimbus.

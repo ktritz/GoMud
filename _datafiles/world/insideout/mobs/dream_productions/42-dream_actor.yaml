@@ -1,0 +1,17 @@
+mobid: 42
+zone: Dream Productions
+hostile: false
+maxwander: 5
+activitylevel: 25
+groups:
+- dream-workers
+idlecommands:
+- say To dream, or not to dream!
+- emote strikes a dramatic pose, one hand outstretched toward an invisible spotlight.
+- emote rehearses dying, dramatically, clutching his chest and staggering in a slow spiral.
+- ''
+character:
+  name: dream actor
+  description: An over-the-top thespian in a billowing cape and ruffled collar who treats every hallway as a stage and every bystander as an audience. He projects his voice at all times, enunciates every syllable with agonizing precision, and has never once broken character -- mostly because nobody is sure which character he's playing. He wanders Dream Productions in search of his big break, which has been coming any day now for years.
+  level: 8
+  raceid: 3

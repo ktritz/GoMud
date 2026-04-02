@@ -1,0 +1,9 @@
+itemid: 20024
+name: void-forged greaves
+namesimple: greaves
+description: Heavy greaves forged in the depths of the Memory Dump. The dark metal
+  is etched with patterns of memories that have been lost to time.
+type: legs
+subtype: wearable
+damagereduction: 7
+value: 480

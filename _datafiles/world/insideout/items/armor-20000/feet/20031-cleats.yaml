@@ -1,0 +1,11 @@
+itemid: 20031
+name: cleats
+namesimple: cleats
+description: Hockey-style cleats that give you great traction on any surface. Riley
+  wore these to her first practice in San Francisco.
+type: feet
+subtype: wearable
+damagereduction: 2
+statmods:
+  speed: 1
+value: 30

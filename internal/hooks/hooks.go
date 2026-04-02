@@ -19,7 +19,7 @@ func RegisterListeners() {
 	events.RegisterListener(events.NewRound{}, PruneVMs)
 	events.RegisterListener(events.NewRound{}, InactivePlayers)
 	events.RegisterListener(events.NewRound{}, UpdateZoneMutators)
-	events.RegisterListener(events.NewRound{}, CheckNewDay)
+	events.RegisterTransportListener(events.NewRound{}, CheckNewDay)
 	events.RegisterListener(events.NewRound{}, SpawnLootGoblin)
 	events.RegisterListener(events.NewRound{}, UserRoundTick)
 	events.RegisterListener(events.NewRound{}, MobRoundTick)
@@ -45,7 +45,8 @@ func RegisterListeners() {
 	events.RegisterListener(events.ItemOwnership{}, CheckItemQuests)
 
 	// MSP Sound
-	events.RegisterListener(events.MSP{}, PlaySound)
+	events.RegisterListener(events.MSP{}, PlaySound_PlanDelivery)
+	events.RegisterTransportListener(mspPayloadPlan{}, PlaySound)
 	// Quest Events
 	events.RegisterListener(events.Quest{}, HandleQuestUpdate)
 	// Spawn events
@@ -57,31 +58,35 @@ func RegisterListeners() {
 	events.RegisterListener(events.LevelUp{}, CheckGuide)
 
 	// Day/Night cycle
-	events.RegisterListener(events.DayNightCycle{}, NotifySunriseSunset)
+	events.RegisterTransportListener(events.DayNightCycle{}, NotifySunriseSunset)
 
 	// Looking
 	events.RegisterListener(events.Looking{}, HandleLookHints)
 
 	// Messages
-	events.RegisterListener(events.Message{}, Message_SendMessage)
+	events.RegisterListener(events.Message{}, Message_PlanDelivery)
+	events.RegisterTransportListener(messageDeliveryPlan{}, Message_SendMessage)
 	// Prompt
-	events.RegisterListener(events.RedrawPrompt{}, RedrawPrompt_SendRedraw)
+	events.RegisterListener(events.RedrawPrompt{}, RedrawPrompt_PlanDelivery)
+	events.RegisterTransportListener(promptDeliveryPlan{}, RedrawPrompt_SendRedraw)
 
 	// User Settings change
 	events.RegisterListener(events.UserSettingChanged{}, ClearSettingCaches)
 
 	events.RegisterListener(events.PlayerDrop{}, HandlePlayerDrop)
-	events.RegisterListener(events.WebClientCommand{}, WebClientCommand_SendWebClientCommand)
+	events.RegisterTransportListener(events.WebClientCommand{}, WebClientCommand_SendWebClientCommand)
 
-	events.RegisterListener(events.CharacterCreated{}, BroadcastNewChar)
-	events.RegisterListener(events.CharacterChanged{}, BroadcastNewChar)
+	events.RegisterTransportListener(events.CharacterCreated{}, BroadcastNewChar)
+	events.RegisterTransportListener(events.CharacterChanged{}, BroadcastNewChar)
 
-	events.RegisterListener(events.Broadcast{}, Broadcast_SendToAll)
+	events.RegisterListener(events.Broadcast{}, Broadcast_PlanDelivery)
+	events.RegisterTransportListener(broadcastDeliveryPlan{}, Broadcast_SendToAll)
 
 	events.RegisterListener(events.RebuildMap{}, HandleMapRebuild)
 
 	// Log tee to users
 	events.RegisterListener(events.Log{}, FollowLogs)
+	events.RegisterTransportListener(events.Log{}, FollowLogsOutput)
 
 	// Listener for debugging some stuff (catches all events)
 	/*

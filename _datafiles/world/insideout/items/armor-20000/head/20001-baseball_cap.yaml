@@ -1,0 +1,9 @@
+itemid: 20001
+name: baseball cap
+namesimple: cap
+description: 'A worn San Francisco Giants baseball cap. It''s seen better days, but
+  it still fits.'
+type: head
+subtype: wearable
+damagereduction: 1
+value: 10

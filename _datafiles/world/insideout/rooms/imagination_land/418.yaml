@@ -1,0 +1,25 @@
+roomid: 418
+zone: Imagination Land
+title: Adventure Canyon
+description: A dramatic desert canyon carved from red and orange rock, its walls rising in sheer cliffs on either side of a winding trail. This is the action zone of Imagination Land, where every childhood adventure story plays out at full scale. Rope bridges span the gaps between cliff faces. Mysterious caves dot the canyon walls, some glowing with treasure light, others dark and ominous. The trail is marked with painted arrows and the footprints of a hundred imaginary expeditions. Something moves in the shadows of the canyon walls -- not all of Imagination Land is friendly, and this is where the mind keeps the things that make adventures dangerous enough to be exciting.
+mapsymbol: X
+maplegend: Canyon
+biome: land
+exits:
+  north:
+    roomid: 417
+  south:
+    roomid: 419
+nouns:
+  canyon: The <ansi fg="itemname">canyon</ansi> is a masterwork of imagined geography. Its walls show strata of different adventures -- a layer of pirate gold, a vein of dinosaur bones, a seam of alien crystal. Every childhood adventure genre is represented in the geology, layered on top of each other like a cross-section of every story Riley ever loved.
+  caves: 'The <ansi fg="itemname">caves</ansi> in the canyon walls come in two varieties: treasure caves, which glow golden and contain piles of imaginary loot, and danger caves, which are dark and make low rumbling sounds. An experienced adventurer can tell them apart. An inexperienced one has a more exciting time.'
+spawninfo:
+- mobid: 38
+  message: A <ansi fg="mobname">gloom raider scout</ansi> drops from a canyon ledge, landing in a crouch, its dark form silhouetted against the red rock.
+  respawnrate: 4 real minutes
+idlemessages:
+- A rope bridge sways in a dramatic gust of wind that seems to come from nowhere.
+- Something growls from one of the dark caves. It might be a monster. It might be the wind. It is a monster.
+- A glint of treasure light flashes from a cave high on the canyon wall.
+- Pebbles clatter down the cliff face, dislodged by something moving along the rim above.
+- The trail ahead bends around a corner you cannot see past. Adventure literally awaits.

@@ -1,0 +1,11 @@
+itemid: 20033
+name: dream dancing shoes
+namesimple: shoes
+description: 'Elegant shoes from Dream Productions that make you feel like you''re
+  dancing even when you''re walking. They have a slight sparkle effect.'
+type: feet
+subtype: wearable
+damagereduction: 4
+statmods:
+  speed: 2
+value: 130

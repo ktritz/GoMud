@@ -1,0 +1,5 @@
+buffid: 46
+name: Core Restoration
+description: 'The essence of a core memory pulses through you, restoring your vitality.'
+triggerrate: 2 rounds
+triggercount: 5

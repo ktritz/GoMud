@@ -1,0 +1,21 @@
+roomid: 709
+zone: The Subconscious
+title: The Dark Pit
+description: The stairs end at the bottom of a vast, circular pit carved from black stone that absorbs light like a sponge. This is the deepest point of the Subconscious, where the heaviest fears eventually settle like sediment. The ceiling is lost in darkness high above, and the walls curve inward, giving the space the feel of being inside a closed fist. The floor is covered in a fine black dust that muffles every sound, and the air is so still it feels like the room is holding its breath. There is a profound, primal wrongness to this place -- the kind of fear that exists before language, before reason, before anything except the certainty that you are not supposed to be here.
+mapsymbol: O
+maplegend: Pit
+biome: dungeon
+exits:
+  up:
+    roomid: 708
+  north:
+    roomid: 710
+nouns:
+  pit: The <ansi fg="itemname">pit</ansi> is unnervingly symmetrical, a perfect circle of black stone polished smooth by forces that predate Riley's conscious mind. The stone is cold to the touch -- not the cold of a basement, but the cold of deep space, the cold of the void between thoughts. Standing in the center makes you feel very small and very observed.
+  dust: The black <ansi fg="itemname">dust</ansi> is impossibly fine, like ground-up darkness. It clings to your shoes and dampens every sound to nothing. If you scoop up a handful, it feels weightless and slightly warm, and for a moment you feel a flash of something -- a fear you cannot name, from a time before you had words for anything.
+idlemessages:
+- The black dust on the floor shifts in a slow spiral pattern, as if stirred by an invisible finger.
+- The silence deepens until you can hear your own heartbeat echoing off the walls.
+- Something in the darkness above shifts, and a cascade of fine black dust drifts down like dark snow.
+- The walls seem to contract slightly, then expand, as if the pit is breathing.
+- A wave of primal unease washes over you for no reason you can identify, then passes.

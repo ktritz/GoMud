@@ -1,0 +1,23 @@
+mobid: 57
+zone: Memory Dump
+itemdropchance: 15
+hostile: true
+nocorpse: true
+deathmessage: '{name} melts into a puddle of gray that evaporates instantly.'
+maxwander: 4
+activitylevel: 15
+groups:
+- forgotten
+character:
+  name: dissolving shade
+  description: A barely-there entity on the final edge of dissolution. It flickers in and out of visibility like a dying signal, its outline fraying into wisps of nothing at the edges. Whatever it was -- a person, a place, a feeling -- is long gone now, replaced by a hollow, translucent shell that drifts through the Memory Dump with no apparent purpose, slowly coming apart like smoke in a breeze.
+  level: 16
+  gold: 50
+  raceid: 7
+  stats:
+    strength:
+      training: 18
+    speed:
+      training: 13
+    vitality:
+      training: 22

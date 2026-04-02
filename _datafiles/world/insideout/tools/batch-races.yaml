@@ -1,0 +1,142 @@
+races:
+  - id: 0
+    name: ghostly spirit
+    desc: A pale, translucent spirit that drifts silently. It doesn't seem to fully exist in this world.
+    size: small
+    unarmed: ectoplasm
+    tnl: 1
+    selectable: false
+    alignment: 0
+    damage: 1d1
+    disabled: [weapon, offhand, head, body, legs, feet, gloves, belt, ring, neck]
+
+  - id: 1
+    name: human
+    desc: A regular teenager trying to figure out life, school, and whatever is going on inside their head.
+    size: medium
+    unarmed: fists
+    tnl: 1
+    selectable: true
+    firstaid: true
+    alignment: 0
+    stats:
+      strength: 1
+      smarts: 1
+      vitality: 1
+      perception: 1
+    damage: 1d3
+    angry:
+      - "emote clenches their fists."
+      - "shout Let's go!"
+      - "shout Oh, it is ON."
+
+  - id: 2
+    name: emotion
+    desc: A luminous being made of pure feeling. Each emotion radiates their signature color and exudes an aura that affects everyone nearby.
+    size: medium
+    unarmed: emotional surge
+    tnl: 1
+    selectable: false
+    alignment: 10
+    stats:
+      smarts: 2
+      perception: 2
+    damage: 1d6
+    angry:
+      - "emote glows intensely."
+      - "shout You do NOT want to mess with feelings!"
+
+  - id: 3
+    name: memory worker
+    desc: A small, blue-suited worker who maintains Riley's memories. They carry clipboards, wear hard hats, and take their job very seriously.
+    size: medium
+    unarmed: clipboard
+    tnl: 1
+    selectable: false
+    alignment: 5
+    stats:
+      smarts: 1
+    damage: 1d3
+
+  - id: 4
+    name: abstract being
+    desc: A shifting, impossible form that defies description. One moment it looks geometric, the next it's just a feeling of shapes.
+    size: large
+    unarmed: formless strike
+    tnl: 1
+    selectable: false
+    alignment: -20
+    stats:
+      smarts: 2
+      mysticism: 1
+    damage: 1d6
+    disabled: [head, feet, gloves, ring]
+    angry:
+      - "emote shifts into something terrifying."
+
+  - id: 5
+    name: fear construct
+    desc: A creature born from raw fear. It takes whatever shape is most frightening, shifting and flickering like a bad dream.
+    size: large
+    unarmed: terror touch
+    tnl: 1
+    selectable: false
+    alignment: -30
+    stats:
+      strength: 1
+      speed: 2
+      perception: 1
+    damage: 1d5
+    disabled: [weapon, offhand, ring]
+    angry:
+      - "emote lets out a bone-chilling shriek."
+      - "emote grows larger, shadows pooling around it."
+
+  - id: 6
+    name: imaginary friend
+    desc: A whimsical creature made partly of cotton candy, partly of forgotten birthday wishes, and entirely of imagination.
+    size: medium
+    unarmed: whimsy punch
+    tnl: 1
+    selectable: false
+    alignment: 15
+    stats:
+      vitality: 1
+      perception: 1
+    damage: 1d4
+    angry:
+      - "emote puffs up indignantly."
+      - "say Hey, that's not very imaginative of you!"
+
+  - id: 7
+    name: forgotten memory
+    desc: A translucent, fading figure that flickers in and out of existence. What it once was is impossible to tell anymore.
+    size: medium
+    unarmed: fading grasp
+    tnl: 1
+    selectable: false
+    alignment: -10
+    stats:
+      mysticism: 1
+    damage: 1d4
+    disabled: [weapon, offhand, gloves, belt, ring, legs, feet, neck]
+
+  - id: 19
+    name: dummy
+    desc: A simple training dummy. It doesn't fight back. Much.
+    size: medium
+    unarmed: thud
+    tnl: 1
+    selectable: false
+    damage: 1d1
+    disabled: [weapon, offhand, head, neck, body, belt, gloves, ring, legs, feet]
+
+  - id: 20
+    name: orb
+    desc: A small, floating orb of light. It hums softly.
+    size: small
+    unarmed: zap
+    tnl: 1
+    selectable: false
+    damage: 1d1
+    disabled: [weapon, offhand, head, neck, body, belt, gloves, ring, legs, feet]

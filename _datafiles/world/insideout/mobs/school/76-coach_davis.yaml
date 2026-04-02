@@ -1,0 +1,19 @@
+mobid: 76
+zone: School
+scripttag: questgiver
+hostile: false
+maxwander: 0
+activitylevel: 25
+groups:
+- school-npc
+idlecommands:
+- emote blows his whistle sharply.
+- say Hustle! You think your muscles grow while you're standing around?
+- emote does pushups to prove a point nobody asked about.
+- ''
+- ''
+character:
+  name: coach davis
+  description: Coach Davis is built like a refrigerator with a crew cut and a permanent whistle around his neck. He wears the same gym shorts and school polo shirt every single day, rain or shine. Despite his drill-sergeant demeanor, he genuinely cares about every student's health and will quietly check in on anyone who seems to be having a rough day. He has strong opinions about hydration.
+  level: 15
+  raceid: 1

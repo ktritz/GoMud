@@ -1,0 +1,21 @@
+roomid: 419
+zone: Imagination Land
+title: Bottomless Pit Edge
+description: The terrain of Imagination Land ends abruptly at the edge of a vast pit that drops into absolute darkness. This is the boundary between creation and oblivion -- below lies the Memory Dump, the final resting place of everything the mind discards. The edge is ragged and crumbling, and chunks of Imagination Land occasionally break free and tumble silently into the void. A weathered guardrail made of popsicle sticks provides questionable protection. The view is sobering -- from here you can see how close imagination and forgetting really are, separated by nothing more than a crumbling lip of colorful rock and a child's belief that the things they love will last forever.
+mapsymbol: '!'
+maplegend: Pit
+biome: land
+exits:
+  north:
+    roomid: 418
+  south:
+    roomid: 420
+nouns:
+  pit: The <ansi fg="itemname">pit</ansi> is exactly what it says -- bottomless. Drop a rock and you will never hear it land. The darkness below is not just absence of light; it is absence of memory, absence of imagination, absence of everything. The Memory Dump is down there somewhere, but from this height, all you can see is nothing going on forever.
+  guardrail: 'The <ansi fg="itemname">guardrail</ansi> is a row of popsicle sticks glued together and painted yellow. It would not stop a strong breeze, let alone a person. A sign on it reads "CAUTION: BOTTOMLESS. WE MEAN IT." Below that, someone has written "Bing Bong was here" in fading crayon.'
+idlemessages:
+- A chunk of colorful rock breaks from the edge and falls silently into the darkness.
+- The guardrail creaks in the wind rising from the pit. It is not reassuring.
+- You peer over the edge and see nothing. Then less than nothing. Then you step back.
+- A cold breath of air rises from the pit, carrying the faintest whisper of a forgotten song.
+- The darkness below seems to pulse, as if the void itself is breathing.

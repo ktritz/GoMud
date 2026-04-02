@@ -1,0 +1,21 @@
+roomid: 317
+zone: Long Term Memory
+title: Mind Worker Patrol Route
+description: A long, straight corridor between the shelves that serves as the main patrol route for the mind workers assigned to the deep sections. Safety lamps are bolted to the shelves at regular intervals, casting pools of warm orange light that push back the gloom. Painted arrows on the floor mark the patrol path, and a series of checkpoint stations line the route, each one a small podium with a logbook and a bell. The shelves along this corridor are better maintained than the surrounding areas -- the mind workers take their patrol duties seriously, even if the things they are guarding against prefer to stay in the dark.
+mapsymbol: M
+maplegend: Patrol
+biome: mindscape
+exits:
+  north:
+    roomid: 315
+  south:
+    roomid: 318
+nouns:
+  lamps: The safety <ansi fg="itemname">lamps</ansi> are heavy-duty fixtures bolted directly into the shelf frames. They run on some kind of mental energy and never seem to burn out, though they flicker occasionally when something passes through the shadows between them. Each one has a small plaque reading "PROPERTY OF MIND WORKER LOCAL 107."
+  stations: 'The checkpoint <ansi fg="itemname">stations</ansi> are simple podiums with logbooks chained to them. The entries are meticulous: "0300 -- All clear. Shelf 7,892 stable." "0315 -- Heard scratching in Section F. Investigated. Found nothing. Unsettling." "0330 -- Still thinking about the scratching."'
+idlemessages:
+- A distant bell rings at a checkpoint station deeper in the corridor.
+- Footsteps echo from around a corner -- a mind worker on their rounds.
+- One of the safety lamps flickers and a shadow darts between the shelves.
+- A logbook page turns in a draft, revealing an entry that just says "NOPE" in large letters.
+- The painted arrows on the floor glow faintly, guiding the way forward.

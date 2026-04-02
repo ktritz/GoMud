@@ -1,0 +1,11 @@
+itemid: 30009
+name: anxiety tea
+namesimple: tea
+description: 'A cup of herbal tea that Anxiety brews when she''s trying to calm down.
+  It makes you hyper-aware but also slightly jittery.'
+type: potion
+subtype: drinkable
+uses: 1
+value: 20
+buffids:
+- 48

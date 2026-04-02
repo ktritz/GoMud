@@ -1,0 +1,14 @@
+mobid: 98
+zone: Tutorial
+itemdropchance: 0
+hostile: false
+maxwander: 0
+activitylevel: 10
+character:
+  name: training dummy
+  description: A wobbly practice dummy that looks like it was drawn by a five-year-old Riley and brought to life by pure imagination. It has lopsided button eyes, pool-noodle arms, and a smile that is somehow both encouraging and a little unsettling. It sways gently, waiting to be hit.
+  raceid: 19
+  level: 1
+  stats:
+    vitality:
+      training: -5

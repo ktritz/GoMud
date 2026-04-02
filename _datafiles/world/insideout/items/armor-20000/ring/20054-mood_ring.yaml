@@ -1,0 +1,11 @@
+itemid: 20054
+name: mood ring
+namesimple: ring
+description: 'A classic mood ring that actually works in Riley''s mind. It shifts
+  colors based on the dominant emotion in the area.'
+type: ring
+subtype: wearable
+damagereduction: 0
+statmods:
+  perception: 1
+value: 10

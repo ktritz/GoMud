@@ -6,7 +6,9 @@ import (
 
 	"github.com/GoMudEngine/GoMud/internal/buffs"
 	"github.com/GoMudEngine/GoMud/internal/events"
+	"github.com/GoMudEngine/GoMud/internal/mobs"
 	"github.com/GoMudEngine/GoMud/internal/rooms"
+	"github.com/GoMudEngine/GoMud/internal/scripting"
 	"github.com/GoMudEngine/GoMud/internal/users"
 	"github.com/GoMudEngine/GoMud/internal/util"
 )
@@ -42,6 +44,13 @@ func Say(rest string, user *users.UserRecord, room *rooms.Room, flags events.Eve
 		Name:         user.Character.Name,
 		Message:      rest,
 	})
+
+	// Let mobs in the room react to what was said
+	for _, mobId := range room.GetMobs() {
+		if mob := mobs.GetInstance(mobId); mob != nil {
+			scripting.TryMobScriptEvent(`onSay`, mob.InstanceId, user.UserId, `user`, map[string]any{"msg": rest})
+		}
+	}
 
 	return true, nil
 }

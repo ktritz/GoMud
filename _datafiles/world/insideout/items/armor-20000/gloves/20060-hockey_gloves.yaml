@@ -1,0 +1,11 @@
+itemid: 20060
+name: hockey gloves
+namesimple: gloves
+description: Padded hockey gloves with reinforced knuckles and a good grip. They smell faintly of rink ice and effort.
+type: gloves
+subtype: wearable
+uses: 0
+damage:
+  diceroll: 0d0
+defense: 1
+value: 30

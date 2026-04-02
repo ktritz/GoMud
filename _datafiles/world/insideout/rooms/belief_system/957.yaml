@@ -1,0 +1,21 @@
+roomid: 957
+zone: Belief System
+title: Identity Island - Family
+description: Warmth envelops you like a hug you didn't know you needed. This island is built from every memory of home -- the Anderson family's love made into architecture. A miniature yellow house with a red door sits at the center, glowing from within with golden light. A dinner table is set for three, and the place settings shift subtly -- Minnesota dishes, San Francisco dishes, the good plates from holidays. Family photos float in the air like gentle constellations. The whole island smells like Mom's cooking and Dad's terrible coffee, and it radiates the foundational warmth of being known completely by the people who matter most. Even the ground here feels warmer than everywhere else.
+mapsymbol: F
+maplegend: Family
+biome: mindscape
+exits:
+  west:
+    roomid: 956
+  east:
+    roomid: 958
+nouns:
+  house: The <ansi fg="itemname">yellow house</ansi> is a perfect miniature of the Anderson family home, complete with the red door Mom picked the paint for and the porch light Dad still hasn't fixed. Through the windows, warm golden light spills out, and you can see shadows moving inside -- not real people, but the feeling of people, the sense of belonging that Riley carries with her everywhere.
+  table: The <ansi fg="itemname">dinner table</ansi> is always set and always welcoming. The chairs are mismatched the same way they are at home. A crayon drawing Riley made at age four is framed above the table. The food on the plates keeps changing -- Minnesota hotdish, San Francisco takeout, Dad's legendary burnt pancakes -- but the warmth of sitting together never wavers.
+idlemessages:
+- The yellow house glows brighter, its windows pulsing with the warmth of a family evening.
+- The dinner table sets itself for a meal, and the smell of comfort food drifts outward.
+- A family photo drifts past showing the Andersons mid-laugh at something Dad said.
+- The porch light on the miniature house flickers. Still broken, still perfect.
+- Warmth radiates from the island's core, the irreducible heat of being loved unconditionally.

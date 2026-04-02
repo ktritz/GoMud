@@ -1,0 +1,26 @@
+roomid: 103
+zone: School
+title: Classroom 202 - Math
+description: This math classroom has the stark, no-nonsense energy of a room dedicated entirely to numbers. The equations on the whiteboard are dense enough to make your eyes cross -- something about quadratics that trails off into a forest of x's and y's. A few graphing calculators sit in a charging station near the teacher's desk, each one labeled with a number in masking tape. The desks are arranged in strict rows, perfectly aligned, because the math teacher is the kind of person who would notice if one was off by an inch. A poster on the wall reads "MATH IS NOT A SPECTATOR SPORT" next to a picture of Einstein sticking out his tongue.
+mapsymbol: '2'
+maplegend: Math
+biome: city
+exits:
+  east:
+    roomid: 101
+nouns:
+  equations: The <ansi fg="itemname">equations</ansi> sprawl across the whiteboard in three colors of dry-erase marker. The main problem is a quadratic formula that's been worked out step by step, each step more terrifying than the last. Someone has drawn a tiny crying face next to the final answer.
+  calculator: The graphing <ansi fg="itemname">calculators</ansi> are the expensive kind that the school guards like gold bars. Each one has its number written on it in three different places, plus a sticker that says "PROPERTY OF SFUSD." Half of them have games secretly loaded onto them. The other half have games that were secretly loaded and then secretly deleted by the teacher.
+idlemessages:
+- Someone sighs deeply from the back of the room, the universal sound of math class.
+- A calculator beeps once and the whole room flinches.
+- The teacher taps the whiteboard with a marker, right next to the part everyone got wrong.
+- A kid sneaks their phone under the desk and types something frantically.
+
+spawninfo:
+- mobid: 70
+  message: <ansi fg="mobname">Mr. Chen</ansi> strides in, whiteboard marker in hand.
+  respawnrate: 5 real minutes
+- mobid: 13
+  message: A <ansi fg="mobname">doubt shadow</ansi> flickers into existence near the doorway.
+  respawnrate: 4 real minutes

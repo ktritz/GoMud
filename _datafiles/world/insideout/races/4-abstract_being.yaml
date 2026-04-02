@@ -1,0 +1,25 @@
+raceid: 4
+name: abstract being
+description: 'A shifting, impossible form that defies description. One moment it looks
+  geometric, the next it''s just a feeling of shapes.'
+defaultalignment: -20
+size: large
+unarmedname: formless strike
+tnlscale: 1
+selectable: false
+knowsfirstaid: false
+tameable: false
+angrycommands:
+- emote shifts into something terrifying.
+stats:
+  smarts:
+    base: 2
+  mysticism:
+    base: 1
+damage:
+  diceroll: 1d6
+disabledslots:
+- head
+- feet
+- gloves
+- ring

@@ -1,0 +1,21 @@
+roomid: 409
+zone: Imagination Land
+title: Crayon Meadow
+description: A wide, rolling meadow stretches before you, and every single thing in it is drawn in crayon. The grass is thick green strokes. The flowers are bright wax spirals of red, yellow, and purple. The sky overhead is colored in with that specific shade of blue that only comes in the big crayon box. A bright yellow sun with a smiley face beams down from the corner of the sky, because that is where suns go in crayon drawings. The ground has a waxy texture underfoot, and the whole world smells like that specific, nostalgic crayon smell that is impossible to describe but impossible to forget. Birds drawn as simple M-shapes glide overhead.
+mapsymbol: '~'
+maplegend: Meadow
+biome: land
+exits:
+  north:
+    roomid: 408
+  south:
+    roomid: 410
+nouns:
+  meadow: The <ansi fg="itemname">meadow</ansi> is a child's drawing brought to life at full scale. Every blade of grass is a distinct crayon stroke, each one slightly different from the last. The flowers do not sway in the wind so much as they wobble, because crayon flowers are not great at physics. It is beautiful in a way that has nothing to do with realism and everything to do with sincerity.
+  sun: The <ansi fg="itemname">sun</ansi> has a face. It is smiling. It has triangular rays coming off it in every direction. It sits in the upper right corner of the sky, because that is where you put the sun when you are five. It radiates genuine warmth, as if the love that went into drawing it is what makes it shine.
+idlemessages:
+- A crayon butterfly lands on your shoulder, leaving a faint waxy smudge.
+- The sun in the corner of the sky winks. Or maybe the light just shifted. No, it definitely winked.
+- An M-shaped bird glides past, trailing a faint line of blue crayon behind it.
+- The meadow smells like a freshly opened box of 64 crayons, the good kind with the sharpener.
+- A crayon flower blooms in fast-forward, its petals unfurling in bright spirals of wax.

@@ -1,0 +1,26 @@
+mobid: 59
+zone: The Back of the Mind
+itemdropchance: 25
+hostile: true
+nocorpse: true
+deathmessage: '{name} shudders, its ancient form cracking, then shatters into whispered insecurities that fade to silence.'
+maxwander: 3
+activitylevel: 20
+groups:
+- fear
+combatcommands:
+- backstab
+- cast mm
+character:
+  name: doubt shadow elder
+  description: An ancient, fully-formed doubt that has existed for so long it has forgotten what certainty even looks like. It is massive and solid where younger doubts are flickering and vague -- a towering dark figure with features that shift between every face you've ever been afraid of disappointing. Its voice is quiet, measured, and devastating, delivering its whispered undermining with the practiced precision of something that has been doing this for a very, very long time.
+  level: 17
+  gold: 53
+  raceid: 5
+  stats:
+    strength:
+      training: 20
+    speed:
+      training: 15
+    vitality:
+      training: 25

@@ -1,0 +1,21 @@
+roomid: 911
+zone: The Back of the Mind
+title: Control Override Station
+description: A sleek, high-tech workstation built into an alcove, designed to remotely override the console in Headquarters. The terminal is still active, its screens displaying a real-time feed of Riley's emotional output alongside a series of sliders that can dampen or amplify each emotion independently. The interface is intuitive and terrifyingly powerful -- a few adjustments here could change how Riley feels about anything. Anxiety used this station to gradually dial down the emotions she deemed threats and crank up the ones she could control. The sliders for Joy and Sadness are pinned at zero. Anxiety's slider is maxed out. Someone has since pulled all the sliders to a neutral middle position, but the system is still live. The power here is real and uncomfortable.
+mapsymbol: C
+maplegend: Override
+biome: dungeon
+exits:
+  south:
+    roomid: 910
+  north:
+    roomid: 912
+nouns:
+  terminal: 'The <ansi fg="itemname">terminal</ansi> is a curved screen showing a real-time emotional dashboard. Color-coded bars represent each emotion''s current intensity. The system log scrolls with entries: "22:14 -- Joy output reduced 15%. Reason: Prevents social risk." "22:15 -- Anxiety output increased 30%. Reason: High school requires constant vigilance." "22:16 -- OVERRIDE REJECTED. Reason: Sadness is trying to log in again."'
+  sliders: The <ansi fg="itemname">sliders</ansi> are physical controls -- smooth metal toggles that move with a satisfying resistance. Each one is labeled with an emotion and color-coded. Joy (gold) and Sadness (blue) still show fingerprints from being forced to zero. Anxiety (orange) has worn marks from being held at maximum. The neutral positions feel precarious, as if the sliders want to slide back to their extremes.
+idlemessages:
+- The emotional dashboard flickers and Joy's bar spikes briefly before the system corrects it.
+- A slider shifts a millimeter on its own, nudged by residual anxiety in the system.
+- The system log scrolls a new entry in orange text that reads "MONITORING."
+- The screen glitches and for a moment all the bars max out simultaneously, then reset.
+- A soft alarm beeps once -- an emotion trying to exceed its suppressed threshold.

@@ -1,0 +1,21 @@
+mobid: 3
+zone: Rileys Neighborhood
+scripttag: questgiver
+hostile: false
+maxwander: 0
+activitylevel: 20
+groups:
+- neighborhood-npc
+idlecommands:
+- emote stirs something on the stove that smells like home.
+- say How was school today, sweetie? Did you make any new friends?
+- emote glances at her phone, then puts it down with a small sigh.
+- say I just want to make sure you're settling in okay. This move has been a lot for everyone.
+- emote hums softly while tidying up the kitchen.
+- ''
+- ''
+character:
+  name: riley's mom
+  description: Riley's Mom is a kind, put-together woman with warm brown eyes and a gentle smile that can shift to quiet concern in an instant. She wears comfortable but stylish clothes and always seems to be multitasking -- cooking, checking her phone, and worrying about Riley all at the same time. She uprooted her life to support the family's move to San Francisco and carries a quiet worry about whether Riley is adjusting okay. Her inner emotions spend a lot of time thinking about that cool helicopter pilot from Brazil, but outwardly she's the steady, caring anchor of the Anderson family.
+  level: 20
+  raceid: 1

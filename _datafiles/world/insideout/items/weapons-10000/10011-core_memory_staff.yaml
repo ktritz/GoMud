@@ -1,0 +1,15 @@
+itemid: 10011
+name: core memory staff
+namesimple: staff
+description: 'A staff with a brilliant golden core memory orb set into its head. The
+  orb pulses with warmth and light, and the whole weapon hums with the power of Riley''s
+  most important memories.'
+type: weapon
+hands: 2
+subtype: bludgeoning
+uses: 0
+damage:
+  diceroll: 2d5
+statmods:
+  smarts: 3
+value: 400

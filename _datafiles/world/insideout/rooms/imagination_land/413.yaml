@@ -1,0 +1,21 @@
+roomid: 413
+zone: Imagination Land
+title: Doodle Gallery
+description: The walls of this wide corridor are covered floor to ceiling in doodles -- an evolving gallery of every idle sketch, margin drawing, and notebook scribble Riley has ever produced. The earliest ones near the floor are crude stick figures and misshapen animals. Higher up, the drawings get more sophisticated -- comic characters, geometric patterns, the name of a crush written in increasingly elaborate lettering. Near the ceiling, the doodles are genuinely good, showing real artistic development. A few have peeled off the wall and walk around the gallery on their own, animated by the creative energy that made them. The whole corridor hums with the satisfied energy of every boring class that produced something beautiful in the margins.
+mapsymbol: D
+maplegend: Doodles
+biome: land
+exits:
+  north:
+    roomid: 412
+  south:
+    roomid: 414
+nouns:
+  doodles: 'The <ansi fg="itemname">doodles</ansi> are a timeline of creativity. At floor level: a stick-figure family, a house with a triangle roof, a sun with a face. Mid-wall: superhero characters, elaborate mazes, the word "BORED" in bubble letters. Near the ceiling: surprisingly skilled portraits, abstract designs, and a beautifully detailed drawing of a hockey player mid-shot. Every boring moment in every class produced something here.'
+  lettering: Several <ansi fg="itemname">names</ansi> are written on the wall in the elaborate, ornamental style of someone who should definitely be paying attention in class instead. Hearts, stars, and swirls surround each one. Some names are crossed out and replaced. The handwriting gets better over time, but the impulse stays exactly the same.
+idlemessages:
+- A stick figure peels off the wall, walks a few steps, and plasters itself back in a different spot.
+- A new doodle appears near the ceiling in real time -- Riley must be in a boring class right now.
+- Two animated doodles chase each other along the wall, leaving faint pencil trails.
+- A bubble-letter word rearranges itself, changing from "BORED" to "BOARD" to "BORED" again.
+- The hockey player doodle near the ceiling takes a shot, and a tiny drawn puck bounces off the wall.

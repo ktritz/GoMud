@@ -1,0 +1,8 @@
+buffid: 50
+name: Deconstructing
+description: Reality is breaking down around you. You feel yourself becoming... simpler.
+triggerrate: 2 rounds
+triggercount: 1
+statmods:
+  strength: -3
+  speed: -3

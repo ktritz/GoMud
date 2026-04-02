@@ -1,0 +1,20 @@
+roomid: 20
+zone: Rileys Neighborhood
+title: Bridge Overlook
+description: A pedestrian bridge arches over the roadway below, opening up to a stunning view of the San Francisco bay. The Golden Gate Bridge rises in the distance, its orange towers half-swallowed by the rolling fog. The water below is steel-gray and choppy, dotted with sailboats and the occasional ferry. The wind is stronger up here, tugging at your clothes and carrying the salt smell of the ocean. It's the kind of view that makes you stop and just stand there for a minute, even if you've seen it a hundred times. The railing is lined with locks that couples have attached -- a tradition that someone keeps trying to stop and no one listens.
+mapsymbol: ^
+maplegend: Overlook
+biome: city
+exits:
+  west:
+    roomid: 12
+nouns:
+  view: The <ansi fg="itemname">view</ansi> is genuinely spectacular. The bay stretches out to the horizon, gray-blue water meeting gray-white sky. Alcatraz sits out there looking appropriately gloomy. The hills of Marin County rise on the far side, green and hazy. On a clear day you can supposedly see all the way to the Farallon Islands, but today isn't that day.
+  bridge: The <ansi fg="itemname">Golden Gate Bridge</ansi> stands in the distance, its International Orange towers cutting through the fog like they were built to do exactly that. Even half-hidden, it's impossible to miss. You still remember the first time you saw it after the move from Minnesota. It didn't feel real.
+  bay: The <ansi fg="itemname">bay</ansi> is alive with movement -- whitecaps on the chop, sailboats tacking against the wind, a container ship inching toward the port. The water changes color depending on the light, shifting between green and gray and sometimes a surprising blue. Seagulls wheel and dive, screaming at each other over fish.
+idlemessages:
+- Fog rolls in slowly across the bay, swallowing the base of the Golden Gate Bridge.
+- A sailboat tacks across the wind, its white sail bright against the gray water.
+- The wind picks up, whistling through the railings of the bridge overlook.
+- A seagull lands on the railing, eyes you hopefully, then launches itself back into the wind.
+- The fog horn sounds somewhere in the distance, low and mournful.

@@ -4,12 +4,14 @@ import (
 	"embed"
 	"errors"
 	"fmt"
+	"os"
 	"strconv"
 	"strings"
 	"time"
 
 	"github.com/GoMudEngine/GoMud/internal/events"
 	"github.com/GoMudEngine/GoMud/internal/items"
+	"github.com/GoMudEngine/GoMud/internal/mudlog"
 	"github.com/GoMudEngine/GoMud/internal/plugins"
 	"github.com/GoMudEngine/GoMud/internal/rooms"
 	"github.com/GoMudEngine/GoMud/internal/templates"
@@ -53,8 +55,8 @@ func init() {
 	//
 	// Add the embedded filesystem
 	//
-	if err := a.plug.AttachFileSystem(files); err != nil {
-		panic(err)
+	if plugins.LogInitError("auctions", a.plug.AttachFileSystem(files)) {
+		return
 	}
 	//
 	// Register any user/mob commands
@@ -110,7 +112,9 @@ func (ae AuctionUpdate) Data(name string) any {
 }
 
 func (mod *AuctionsModule) load() {
-	mod.plug.ReadIntoStruct(`auctionhistory`, &mod.auctionMgr)
+	if err := mod.plug.ReadIntoStruct(`auctionhistory`, &mod.auctionMgr); err != nil && !os.IsNotExist(err) {
+		mudlog.Warn(`auctions.load`, `error`, err)
+	}
 }
 
 func (mod *AuctionsModule) save() {
@@ -377,13 +381,15 @@ func (mod *AuctionsModule) newRoundHandler(e events.Event) events.ListenerReturn
 
 				msg := fmt.Sprintf(`You won the auction for the <ansi fg="item">%s</ansi> while you were offline.`, auctionNow.ItemData.DisplayName())
 
-				users.SearchOfflineUsers(func(u *users.UserRecord) bool {
+				if err := users.SearchOfflineUsers(func(u *users.UserRecord) bool {
 					if u.UserId == auctionNow.HighestBidUserId {
 						user = u
 						return false
 					}
 					return true
-				})
+				}); err != nil {
+					mudlog.Error("AuctionsModule.newRoundHandler", "error", err.Error())
+				}
 
 				if user != nil {
 					user.Inbox.Add(
@@ -415,13 +421,15 @@ func (mod *AuctionsModule) newRoundHandler(e events.Event) events.ListenerReturn
 
 					msg := fmt.Sprintf(`Your auction of the <ansi fg="item">%s</ansi> has ended while you were offline. The highest bid was made by <ansi fg="username">%s</ansi> for <ansi fg="gold">%d gold</ansi>.`, auctionNow.ItemData.DisplayName(), auctionNow.HighestBidderName, auctionNow.HighestBid)
 
-					users.SearchOfflineUsers(func(u *users.UserRecord) bool {
+					if err := users.SearchOfflineUsers(func(u *users.UserRecord) bool {
 						if u.UserId == auctionNow.SellerUserId {
 							sellerUser = u
 							return false
 						}
 						return true
-					})
+					}); err != nil {
+						mudlog.Error("AuctionsModule.newRoundHandler", "error", err.Error())
+					}
 
 					if sellerUser != nil {
 						sellerUser.Inbox.Add(

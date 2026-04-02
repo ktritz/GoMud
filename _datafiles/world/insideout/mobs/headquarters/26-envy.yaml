@@ -1,0 +1,21 @@
+mobid: 26
+zone: Headquarters
+hostile: false
+maxwander: 0
+activitylevel: 20
+groups:
+- headquarters-emotion
+idlecommands:
+- emote stares longingly at something in the distance with wide, glistening eyes.
+- emote sighs wistfully and looks down at her own hands.
+- say I just wish we had what they have, you know? Just... just a little bit of it.
+- say That's so nice. You're so lucky. I'm fine though. Really.
+- ''
+- ''
+combatcommands:
+- callforhelp 5:emotion:looks around desperately for help.
+character:
+  name: envy
+  description: Envy is a small, teal-skinned emotion with wide, glistening eyes that are perpetually fixed on whatever someone else has. She has a rounded, compact form and a tendency to lean forward on her tiptoes, as if always reaching for something just beyond her grasp. Her expression shifts between wistful longing and a forced smile that doesn't quite reach her eyes. She speaks softly, often trailing off mid-sentence as she notices something else she wishes she had.
+  level: 99
+  raceid: 2

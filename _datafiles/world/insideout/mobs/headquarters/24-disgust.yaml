@@ -1,0 +1,22 @@
+mobid: 24
+zone: Headquarters
+hostile: false
+maxwander: 0
+activitylevel: 20
+groups:
+- headquarters-emotion
+idlecommands:
+- emote inspects her perfectly manicured nails with an air of supreme disinterest.
+- emote gives a nearby outfit a long, withering once-over.
+- say Ugh, when I think of all the things that could happen... no. Just no.
+- emote makes a face like she just smelled something truly foul.
+- say Okay, I'm not saying I'm the most important emotion, but someone has to have standards around here.
+- ''
+- ''
+combatcommands:
+- callforhelp 5:emotion:rolls her eyes and calls for backup.
+character:
+  name: disgust
+  description: Disgust is a sleek, fashion-forward emotion with vivid green skin and perfectly styled emerald hair that frames her face like she just walked off a runway. Her half-lidded eyes and perpetually arched eyebrow convey a level of judgment that could wilt flowers. She wears a stylish scarf and an outfit that somehow manages to look effortlessly chic while everyone else in Headquarters is a mess. Her primary job is protecting Riley from physical and social poison -- bad food, bad fashion, and bad social decisions alike. She inspects everything with the critical eye of a food critic visiting a gas station, but underneath her withering sarcasm she truly cares about keeping Riley safe from embarrassment and things that are just, like, totally gross.
+  level: 99
+  raceid: 2

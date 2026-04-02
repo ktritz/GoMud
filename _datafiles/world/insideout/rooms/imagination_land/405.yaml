@@ -1,0 +1,21 @@
+roomid: 405
+zone: Imagination Land
+title: Princess Dream Castle
+description: A fairy-tale castle rises in sparkling pink and silver splendor, its towers topped with pennants that flutter in a perpetual magical breeze. The walls are encrusted with gems that are almost certainly made of sugar, and the drawbridge is a giant candy bar spanning a moat of sparkling purple liquid. Inside, the great hall is draped in silk banners and lit by floating candelabras. A throne sits on a raised dais, sized for someone about four feet tall, with a tiara resting on its cushion. The castle has the unshakeable grandeur of a six-year-old's ultimate fantasy, and not a single thing about it is ironic. It is perfect.
+mapsymbol: P
+maplegend: Castle
+biome: land
+exits:
+  north:
+    roomid: 404
+  south:
+    roomid: 406
+nouns:
+  castle: The <ansi fg="itemname">castle</ansi> is exactly what every child imagines when they hear the word. Tall towers, fluttering flags, a drawbridge that works, and at least three secret passages (one behind a tapestry, one behind the throne, one in the kitchen that leads to the cookie jar). It has been here since Riley was about five, and puberty has not managed to knock it down yet.
+  gems: The <ansi fg="itemname">gems</ansi> embedded in the castle walls are rock candy in every color. They sparkle convincingly, and if you pry one out it tastes like grape. The structural integrity of a castle held together by sugar is best not examined too closely.
+idlemessages:
+- A floating candelabra drifts past, trailing sparkles like a tiny comet.
+- The tiara on the throne glints, as if waiting for someone to put it on.
+- A pennant snaps in the magical breeze, emblazoned with a unicorn rampant.
+- The drawbridge creaks and lowers a few inches, then raises again. Just practicing.
+- Sparkles fall from the ceiling like the castle itself is excited you are here.

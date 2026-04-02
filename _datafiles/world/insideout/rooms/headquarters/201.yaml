@@ -1,0 +1,22 @@
+roomid: 201
+zone: Headquarters
+title: Memory Intake
+description: A cavernous room hums with constant activity as the memory intake system processes Riley's daily experiences. A long conveyor belt winds through the center of the chamber, carrying freshly formed memory orbs that glow in every color -- golden joy, blue sadness, red anger, purple fear, and green disgust. The orbs roll gently along the belt, each one a perfect sphere containing a tiny scene that plays on loop inside it. Sorting chutes line the walls, labeled with categories like "School," "Family," "Friends," and the suspiciously full "Embarrassing Moments." The air smells faintly of new experiences.
+mapsymbol: M
+maplegend: Memory
+biome: mindscape
+exits:
+  north:
+    roomid: 200
+  east:
+    roomid: 202
+  west:
+    roomid: 205
+nouns:
+  orbs: The memory orbs are mesmerizing up close. Each one is about the size of a softball and perfectly smooth, glowing from within with the color of whatever emotion dominated that memory. If you look closely, you can see tiny scenes playing inside -- a lunch table conversation, a homework problem, a dog spotted on the walk home.
+  conveyor: The conveyor belt is an ingenious piece of mental machinery, all gleaming rails and gentle curves. It carries orbs from the intake port near the ceiling down through a series of sorting stations before depositing them into the proper chutes. Occasionally an orb rolls off-track and a small mechanical arm nudges it back into place.
+idlemessages:
+- A bright golden orb rolls down the conveyor, glowing with the warmth of a good memory.
+- A blue-tinged orb wobbles along the belt, its tiny scene showing a rainy afternoon.
+- Two orbs bump into each other on the conveyor and briefly flash with mixed colors.
+- A mechanical arm reaches out and redirects a stray orb back onto the conveyor belt.

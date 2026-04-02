@@ -1,0 +1,21 @@
+roomid: 611
+zone: Abstract Thought
+title: Reconstruction Path
+description: 'Reality begins to rebuild. The path forward accretes detail like a painting being finished in fast-forward -- first lines sketch themselves into existence, then surfaces fill in between them, then color bleeds into the surfaces like watercolor on wet paper. Dimension returns in stages: a flat path gains height, walls rise up and thicken, the ceiling develops depth instead of being a mere suggestion. Texture creeps back -- rough stone, smooth metal, the grain of wood. By the time you reach the far end of the path, objects have shadows again, light comes from a source, and the relief of existing in three dimensions is almost overwhelming.'
+mapsymbol: +
+maplegend: Rebuild
+biome: abstract
+exits:
+  south:
+    roomid: 610
+  north:
+    roomid: 612
+nouns:
+  lines: The <ansi fg="itemname">lines</ansi> are the skeleton of reality, sketching themselves into the void like an architect's first draft. They define edges, suggest corners, propose the idea of a room that is slowly voting itself into existence. Watching them appear is like seeing a wireframe render in real-time.
+  surfaces: The <ansi fg="itemname">surfaces</ansi> fill in between the lines with visible effort, color spreading like ink on blotting paper. Some surfaces try on several colors before settling. A wall starts as blue, shifts to gray, and finally decides on white. The floor experiments with tile, then wood, then settles on stone with a small satisfied click.
+idlemessages:
+- A wall section fills in with color, starting as watercolor wash and solidifying to opaque.
+- Shadows appear beneath objects that only just acquired enough dimension to cast them.
+- A sound gains its consonants back, becoming a recognizable word -- almost.
+- The floor gains texture -- the cold, reliable grit of stone beneath your feet.
+- Something that was a concept becomes a thing, and the difference is like waking up.

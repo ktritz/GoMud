@@ -1,0 +1,11 @@
+itemid: 10017
+name: tennis racket
+namesimple: racket
+description: A mid-range tennis racket with a slightly overworn grip. Someone wrapped the handle in electrical tape to get a few more seasons out of it.
+type: weapon
+hands: 1
+subtype: bludgeoning
+uses: 0
+damage:
+  diceroll: 1d3+1
+value: 20

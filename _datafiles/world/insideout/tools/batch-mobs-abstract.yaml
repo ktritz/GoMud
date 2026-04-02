@@ -1,0 +1,81 @@
+zone: abstract_thought
+zone_config:
+  name: "Abstract Thought"
+mobs:
+  - id: 45
+    name: abstract form
+    desc: >-
+      A shifting geometric entity that can't decide what shape it wants to be.
+      One moment it's a perfect cube, then a sphere, then a tangled knot of
+      impossible angles that hurt to look at directly. Triangles, circles, and
+      shapes that don't have names phase in and out of its surface like bubbles
+      in boiling water. It hums with a low, atonal vibration that you feel in
+      your teeth more than hear with your ears.
+    level: 12
+    race: 4
+    hostile: true
+    wander: 3
+    activity: 20
+    drop: 20
+    groups: [abstract]
+    idle:
+      - "emote shifts from cube to sphere to something indescribable."
+      - ""
+    combat: ["backstab"]
+
+  - id: 46
+    name: geometric fragment
+    desc: >-
+      A smaller piece of abstract thought -- a sharp-edged polygon that spins
+      aggressively in place, its facets catching light that doesn't seem to
+      come from any source. It moves in sudden, angular bursts, changing
+      direction at perfect right angles with no deceleration. Its edges are
+      razor-thin and leave faint geometric scars in the air where they pass.
+    level: 10
+    race: 4
+    hostile: true
+    wander: 4
+    activity: 20
+    drop: 15
+    groups: [abstract]
+    combat: ["backstab"]
+
+  - id: 47
+    name: non-figurative horror
+    desc: >-
+      Something that has completely abandoned all recognizable form. It isn't a
+      shape so much as an absence of shape -- the visual equivalent of a word on
+      the tip of your tongue that you can never quite say. Looking at it triggers
+      a deep, primal unease, the sensation of forgetting what you look like, of
+      reaching for your own reflection and finding nothing there. It occupies
+      space the way a headache occupies your skull: undeniably present, impossible
+      to pin down. The air around it warps and buckles, as though reality itself
+      is flinching away.
+    level: 14
+    race: 4
+    hostile: true
+    wander: 0
+    activity: 25
+    drop: 25
+    groups: [abstract]
+    combat: ["backstab", "cast mm"]
+    angry:
+      - "emote becomes something your mind refuses to process."
+
+  - id: 48
+    name: perspective shifter
+    desc: >-
+      A disorienting entity that warps your perception just by being nearby. Up
+      tilts sideways, the floor feels like it's receding, and distances stop
+      meaning anything -- a wall that looked ten feet away is suddenly right in
+      front of you, then impossibly far again. The shifter itself is hard to
+      focus on, a shimmering distortion in the air like heat haze, always
+      seeming to be somewhere slightly other than where it actually is.
+    level: 11
+    race: 4
+    hostile: true
+    wander: 3
+    activity: 20
+    drop: 20
+    groups: [abstract]
+    combat: ["backstab"]

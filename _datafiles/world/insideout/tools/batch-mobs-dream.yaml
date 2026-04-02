@@ -1,0 +1,118 @@
+zone: dream_productions
+zone_config:
+  name: "Dream Productions"
+mobs:
+  - id: 40
+    name: dream director
+    desc: >-
+      A dramatic figure perched in a folding director's chair, wearing a black
+      beret tilted at a rakish angle and oversized sunglasses indoors. He holds a
+      battered megaphone in one hand and gestures wildly with the other, directing
+      scenes that nobody asked for with the intensity of someone filming an epic.
+      Every conversation is a screenplay, every moment a chance for a dramatic
+      close-up. He takes his art very seriously, even if nobody else on set does.
+    level: 20
+    race: 3
+    hostile: false
+    wander: 0
+    activity: 25
+    groups: [dream-workers]
+    idle:
+      - "shout CUT! CUT! That's all wrong!"
+      - "emote adjusts his beret and peers through an imaginary viewfinder."
+      - "say We need more EMOTION in this scene!"
+      - ""
+    questflags: ["4-start", "4-script", "4-return", "4-end"]
+    script: questgiver
+
+  - id: 41
+    name: dream nightmare
+    desc: >-
+      A flickering dark shape that refuses to hold a single form, shifting between
+      half-rendered horrors with sickening speed -- a test you forgot to study for,
+      showing up to school in your pajamas, your teeth crumbling out of your mouth
+      one by one. Each image is just detailed enough to trigger a lurch of dread
+      before it melts into the next. It smells faintly of cold sweat and Monday
+      mornings.
+    level: 10
+    race: 5
+    hostile: true
+    wander: 3
+    activity: 20
+    drop: 20
+    groups: [fear, nightmare]
+    idle:
+      - "emote shifts into something unsettling."
+      - ""
+    combat: ["backstab"]
+
+  - id: 42
+    name: dream actor
+    desc: >-
+      An over-the-top thespian in a billowing cape and ruffled collar who treats
+      every hallway as a stage and every bystander as an audience. He projects his
+      voice at all times, enunciates every syllable with agonizing precision, and
+      has never once broken character -- mostly because nobody is sure which
+      character he's playing. He wanders Dream Productions in search of his big
+      break, which has been coming any day now for years.
+    level: 8
+    race: 3
+    hostile: false
+    wander: 5
+    activity: 25
+    groups: [dream-workers]
+    idle:
+      - "say To dream, or not to dream!"
+      - "emote strikes a dramatic pose, one hand outstretched toward an invisible spotlight."
+      - "emote rehearses dying, dramatically, clutching his chest and staggering in a slow spiral."
+      - ""
+
+  - id: 43
+    name: stage hand
+    desc: >-
+      A no-nonsense worker in a black crew t-shirt and cargo pants, hauling an
+      improbable stack of props, costumes, and set pieces that sways dangerously
+      with every step. She communicates almost entirely in curt hand signals and
+      exasperated sighs, having long since given up on the director's artistic
+      vision. She keeps Dream Productions running through sheer stubborn
+      competence and an encyclopedic knowledge of where every prop belongs.
+    level: 10
+    race: 3
+    hostile: false
+    wander: 0
+    activity: 20
+    groups: [dream-workers]
+    idle:
+      - "emote hauls a teetering stack of props across the room."
+      - "emote checks a clipboard, frowns, and checks it again."
+      - "say type <ansi fg=\"command\">list</ansi> to see what we've got in stock."
+      - ""
+    shop:
+      - {item: 20013, qty: 2}
+      - {item: 20022, qty: 2}
+      - {item: 20033, qty: 2}
+      - {item: 20042, qty: 1}
+      - {item: 10006, qty: 3}
+      - {item: 20004, qty: 1}
+      - {item: 30005, qty: 10}
+
+  - id: 44
+    name: corrupted dream
+    desc: >-
+      A dream that went wrong somewhere and never found its way back. It replays
+      corrupted scenes on a stuttering loop -- fragments of birthday parties with
+      no faces, laughter that comes out backwards, a door that opens onto nothing.
+      The images glitch and tear like damaged film, stitching themselves together
+      in combinations that were never meant to exist. It lurches forward with the
+      jerky, broken motion of something that has forgotten how movement works.
+    level: 11
+    race: 7
+    hostile: true
+    wander: 3
+    activity: 20
+    drop: 20
+    groups: [nightmare]
+    idle:
+      - "emote replays a distorted scene, the images tearing and reforming."
+      - ""
+    combat: ["backstab"]

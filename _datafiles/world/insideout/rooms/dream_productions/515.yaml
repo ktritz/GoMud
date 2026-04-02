@@ -1,0 +1,21 @@
+roomid: 515
+zone: Dream Productions
+title: Catwalks Above Stage
+description: Narrow metal catwalks crisscross high above the soundstages, offering a dizzying bird's-eye view of Dream Productions in its entirety. From up here, you can see all three soundstages at once -- the pink glow of Romance, the red flicker of Horror, the explosive flashes of Action -- all operating simultaneously like a three-ring circus of the subconscious. Spotlights hang from the rigging beside you, their massive housings warm to the touch. Ropes, pulleys, and sandbags dangle overhead, part of the elaborate rigging system that makes dream effects possible. The catwalk sways gently with every step, and looking down through the metal grating sends a thrill of vertigo through your stomach. A ladder on the far end descends toward the backlot below.
+mapsymbol: null
+maplegend: Catwalks
+biome: dreamset
+exits:
+  down:
+    roomid: 514
+  ladder:
+    roomid: 501
+nouns:
+  catwalks: 'The <ansi fg="itemname">catwalks</ansi> are a web of narrow metal walkways suspended by cables from the unseen ceiling above. They creak and sway with every step, and the guardrails are disturbingly low. Stagehands have left notes clipped to the railing: "DON''T LOOK DOWN" and "Seriously, don''t."'
+  spotlights: The <ansi fg="itemname">spotlights</ansi> are enormous up close, each one the size of a small car. Their lenses are tinted with emotional colors -- warm gold for joy scenes, deep blue for sad scenes, harsh red for nightmares. One spotlight has a sticky note reading "Aim at protagonist. NOT the audience. We talked about this."
+idlemessages:
+- The catwalks sway gently as something shifts in the rigging far above.
+- A spotlight below sweeps across Soundstage A, briefly illuminating the romance set in pink.
+- The metal grating beneath your feet vibrates with the bass from an explosion on the action stage.
+- A sandbag swings past on a rope, narrowly missing a lighting rig.
+- From up here, you can see a crew member on the backlot below, no bigger than a thumb.

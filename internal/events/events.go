@@ -23,6 +23,7 @@ var (
 	uniqueMap    = make(map[string]struct{}) // map to enforce uniqueness
 
 	eventDebugging bool
+	eventReady     = make(chan struct{}, 1)
 )
 
 type requeue struct {
@@ -120,6 +121,7 @@ func AddToQueue(e Event, priority ...int) {
 	}
 
 	heap.Push(&globalQueue, pe)
+	signalProcessor()
 }
 
 // Same as AddToQueue but avoids a mutex lock for optimization purposes
@@ -154,6 +156,7 @@ func reAddToQueue(e Event, priority ...int) {
 	}
 
 	heap.Push(&globalQueue, pe)
+	signalProcessor()
 }
 
 func addToRequeue(e Event, priority ...int) {
@@ -168,6 +171,53 @@ func addToRequeue(e Event, priority ...int) {
 		evt:      e,
 		priority: prio,
 	})
+	signalProcessor()
+}
+
+func activateRequeuesLocked() {
+	for _, itm := range requeues {
+		reAddToQueue(itm.evt, itm.priority)
+	}
+	requeues = requeues[:0]
+}
+
+func popNextEventLocked() *prioritizedEvent {
+	if globalQueue.Len() < 1 {
+		return nil
+	}
+
+	pe := heap.Pop(&globalQueue).(*prioritizedEvent)
+	if ue, ok := pe.event.(uniqueEvent); ok {
+		delete(uniqueMap, ue.UniqueID())
+	}
+
+	return pe
+}
+
+// ActivateRequeues moves deferred events back into the main queue.
+// Should be called once per EventLoop invocation, not per-event.
+func ActivateRequeues() {
+	qLock.Lock()
+	defer qLock.Unlock()
+	activateRequeuesLocked()
+}
+
+func signalProcessor() {
+	select {
+	case eventReady <- struct{}{}:
+	default:
+	}
+}
+
+func NotifyChan() <-chan struct{} {
+	return eventReady
+}
+
+func HasPending() bool {
+	qLock.Lock()
+	defer qLock.Unlock()
+
+	return globalQueue.Len() > 0 || len(requeues) > 0
 }
 
 // ProcessEvents runs the event loop until the queue is empty.
@@ -192,30 +242,16 @@ func ProcessEvents() {
 
 	qLock.Lock()
 
-	// Requeues are a special group that has been deferred to the next processevents loop
-	// They are added back into the event queue at the top of the process events function
-	for _, itm := range requeues {
-		reAddToQueue(itm.evt, itm.priority)
-	}
-	requeues = requeues[:0]
-
 	var evtResult ListenerReturn
 	for {
-
-		if globalQueue.Len() < 1 {
+		pe := popNextEventLocked()
+		if pe == nil {
 			break
 		}
-
-		pe := heap.Pop(&globalQueue).(*prioritizedEvent)
 
 		if eventDebugging {
 			eventCounter++
 			fmt.Println(`events.ProcessEvents`, "type:", pe.event.Type(), `remain:`, globalQueue.Len())
-		}
-
-		// If this is a unique event, remove it from the uniqueMap.
-		if ue, ok := pe.event.(uniqueEvent); ok {
-			delete(uniqueMap, ue.UniqueID())
 		}
 
 		qLock.Unlock()
@@ -230,6 +266,23 @@ func ProcessEvents() {
 	}
 
 	qLock.Unlock()
+}
+
+func ProcessSingle(dispatch func(Event) ListenerReturn) bool {
+	qLock.Lock()
+	pe := popNextEventLocked()
+	qLock.Unlock()
+
+	if pe == nil {
+		return false
+	}
+
+	evtResult := dispatch(pe.event)
+	if evtResult == CancelAndRequeue {
+		addToRequeue(pe.event, pe.priority)
+	}
+
+	return true
 }
 
 func SetDebug(on bool) {

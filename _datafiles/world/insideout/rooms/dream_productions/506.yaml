@@ -1,0 +1,24 @@
+roomid: 506
+zone: Dream Productions
+title: Costume Department
+description: Racks upon racks of dream costumes fill this enormous wardrobe department, stretching back into what feels like an impossible amount of space. Every outfit Riley's subconscious has ever conjured hangs here -- astronaut suits next to medieval armor next to a disturbingly accurate recreation of what she wore on the first day of school. Full-length mirrors stand between the racks, and each one reflects you in a slightly different outfit, because that's just how dream mirrors work. A sewing station in the corner is manned by busy hands, stitching together tonight's wardrobe. Bolts of fabric in impossible colors -- colors that don't exist when you're awake -- lean against every surface.
+mapsymbol: C
+maplegend: Costumes
+biome: dreamset
+exits:
+  east:
+    roomid: 501
+  south:
+    roomid: 507
+nouns:
+  costumes: The <ansi fg="itemname">dream costumes</ansi> range from mundane to magnificent. There's a perfectly normal school uniform hanging next to a full suit of crystal armor. A section labeled "EMBARRASSMENT WARDROBE" contains nothing but underwear and pajamas. The "HERO SECTION" has capes in every color and a leather jacket that makes you feel cool just looking at it.
+  mirrors: The <ansi fg="itemname">mirrors</ansi> are disconcerting. One shows you in a ball gown. Another shows you in hockey gear. A third shows you in something you definitely wore in a dream once but can't quite remember. None of them show what you're actually wearing right now.
+spawninfo:
+- mobid: 43
+  message: A <ansi fg="mobname">stage hand</ansi> appears from behind a costume rack, pushing a cart of freshly pressed outfits.
+  respawnrate: 10 real minutes
+idlemessages:
+- A costume falls off its hanger and lands in a dramatically perfect pose on the floor.
+- The mirrors flicker and every reflection changes outfits simultaneously.
+- A sewing machine whirs to life on its own, stitching something sparkly at incredible speed.
+- You catch a mirror showing you in an outfit you've never seen before. It looks great, honestly.

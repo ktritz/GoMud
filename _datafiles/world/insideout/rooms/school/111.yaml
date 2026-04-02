@@ -1,0 +1,33 @@
+roomid: 111
+zone: School
+title: Locker Hallway North
+description: A secondary hallway branches off from the main corridor, its walls lined with rows of blue lockers that stretch in both directions. The hall is narrower here, forcing students to squeeze past each other between classes in an awkward shuffle of backpacks and elbows. Combination locks dangle from most doors, and a few lockers stand slightly ajar, their contents -- textbooks, crumpled papers, a forgotten lunch bag -- visible through the gap. The overhead lights hum at a slightly different pitch than the main hallway, and the floor has a noticeable scuff trail from the constant foot traffic between the science wing and the music room.
+mapsymbol: '>'
+maplegend: North-Lockers
+biome: city
+exits:
+  southwest:
+    roomid: 101
+  north:
+    roomid: 104
+  east:
+    roomid: 113
+  south:
+    roomid: 112
+nouns:
+  lockers: The <ansi fg="itemname">lockers</ansi> are identical blue metal boxes, three high and stretching down the entire hallway. Some are personalized with stickers, photos taped inside the doors, and magnetic mirrors. A few have been decorated for someone's birthday with streamers and a sign. One locker near the middle is dented so badly it won't close all the way -- the victim of someone who got their exam grade back and expressed their feelings physically.
+containers:
+  locker:
+    lock:
+      difficulty: 5
+idlemessages:
+- A locker door swings open and a textbook tumbles out onto the floor.
+- Two students bump into each other rounding the corner and mumble apologies without making eye contact.
+- The clatter of a combination lock spinning echoes down the hall.
+- A kid struggles with their locker for a solid ten seconds before it finally pops open.
+- Someone shoves their entire backpack into a locker and forces it shut through sheer willpower.
+
+spawninfo:
+- mobid: 17
+  message: A <ansi fg="mobname">school bully</ansi> swaggers in from around the corner.
+  respawnrate: 3 real minutes

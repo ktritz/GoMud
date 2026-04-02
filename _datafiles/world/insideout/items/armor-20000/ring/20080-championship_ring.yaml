@@ -1,0 +1,13 @@
+itemid: 20080
+name: championship ring
+namesimple: ring
+description: A chunky gold-plated ring from a regional tournament. The stone is glass, the gold is plating, and the pride is real.
+type: ring
+subtype: wearable
+uses: 0
+damage:
+  diceroll: 0d0
+defense: 0
+statmods:
+  strength: 1
+value: 45

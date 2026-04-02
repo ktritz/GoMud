@@ -1,0 +1,44 @@
+# Auto-generated grid layout
+#
+# y+2:   [3]     [8]     [9]
+# y+1:   [2]     [7]     [19]
+# y+0:   [1]     [5]     [15]
+# y-1:   [12]    [20]    [11]
+# y-2:           [16]    [18]
+# y-3:           [13]
+# y-4:           [14]
+#
+
+grid:
+  "0,0": 1    # Riley's Street
+  "0,1": 2    # Riley's Front Yard
+  "0,2": 3    # Riley's Bedroom
+  "1,1": 4    # Park Entrance
+  "1,0": 5    # Andersen Sidewalk
+  "1,0": 6    # Andersen Sidewalk
+  "1,1": 7    # Park Entrance
+  "1,2": 8    # Park Playground
+  "2,2": 9    # Park Bench Area
+  "1,-1": 10    # Bridge Overlook
+  "2,-1": 11    # Corner Store
+  "0,-1": 12    # Bus Stop
+  "1,-3": 13    # Back Alley
+  "1,-4": 14    # Dumpster Area
+  "2,0": 15    # Neighbor's Yard
+  "1,-2": 16    # Sidewalk Crossing
+  "2,-2": 17    # Hockey Rink
+  "2,-2": 18    # Hockey Rink
+  "2,1": 19    # Community Garden
+  "1,-1": 20    # Bridge Overlook
+
+special_exits:
+  9:
+    path:
+      roomid: 16
+  12:
+    bus:
+      roomid: 100
+      secret: true
+  16:
+    path:
+      roomid: 9

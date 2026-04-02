@@ -4,6 +4,7 @@ import (
 	"embed"
 	"fmt"
 	"net/http"
+	"os"
 	"strconv"
 	"time"
 
@@ -48,8 +49,8 @@ func init() {
 	//
 	// Add the embedded filesystem
 	//
-	if err := t.plug.AttachFileSystem(files); err != nil {
-		panic(err)
+	if plugins.LogInitError("leaderboards", t.plug.AttachFileSystem(files)) {
+		return
 	}
 	//
 	// Register any user/mob commands
@@ -101,17 +102,22 @@ func (l *LeaderboardModule) webLeaderboardData(r *http.Request) map[string]any {
 }
 
 func (l *LeaderboardModule) loadLBs() {
-
-	l.plug.ReadIntoStruct(`latest-leaderboards`, &l)
+	if err := l.plug.ReadIntoStruct(`latest-leaderboards`, l); err != nil && !os.IsNotExist(err) {
+		mudlog.Warn(`leaderboards.loadLBs`, `error`, err)
+	}
 
 	l.GoldEnabled = true
-	l.LB_Gold = leaderboardData{Name: `Gold`, ValueColor: `experience`}
-
 	l.ExperienceEnabled = true
-	l.LB_Experience = leaderboardData{Name: `Experience`, ValueColor: `gold`}
-
 	l.KillsEnabled = true
-	l.LB_Kills = leaderboardData{Name: `Kills`, ValueColor: `red-bold`}
+
+	l.LB_Gold.Name = `Gold`
+	l.LB_Gold.ValueColor = `experience`
+
+	l.LB_Experience.Name = `Experience`
+	l.LB_Experience.ValueColor = `gold`
+
+	l.LB_Kills.Name = `Kills`
+	l.LB_Kills.ValueColor = `red-bold`
 }
 
 func (l *LeaderboardModule) saveLBs() {
@@ -233,7 +239,7 @@ func (l *LeaderboardModule) Update() {
 	}
 
 	// Check offline users
-	users.SearchOfflineUsers(func(u *users.UserRecord) bool {
+	if err := users.SearchOfflineUsers(func(u *users.UserRecord) bool {
 
 		userCount++
 		characterCount++
@@ -269,7 +275,9 @@ func (l *LeaderboardModule) Update() {
 		}
 
 		return true
-	})
+	}); err != nil {
+		mudlog.Error("LeaderboardModule.Refresh", "error", err.Error())
+	}
 
 	mudlog.Info("leaderboard.Update()", "user-processed", userCount, "characters-processed", characterCount, "Time Taken", time.Since(start))
 

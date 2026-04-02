@@ -1,0 +1,18 @@
+roomid: 214
+zone: Headquarters
+title: Supply Closet
+description: 'What was once a simple storage closet has been converted into a small but well-stocked supply shop run by the Mind Workers. Shelves line every wall from floor to ceiling, packed with all the emotional supplies Headquarters could ever need. Boxes of spare memory orbs (blank, ready for imprinting) sit next to jars of emotional essence in every color. A rack holds "Emergency Feeling Kits" for various situations, and a bin near the door is labeled "LOST AND FOUND: Thoughts Riley Started But Never Finished." A small counter near the entrance has a bell on it and a sign reading "Ring for service. Please be patient, we are also managing an entire mind."'
+mapsymbol: $
+maplegend: Shop
+biome: mindscape
+exits:
+  northeast:
+    roomid: 200
+nouns:
+  shelves: The shelves are surprisingly well-organized for a closet. Everything is labeled in neat handwriting. "Memory Orbs (Blank)," "Emotional Essence (Assorted)," "Dream Supplies," "Imagination Fuel," and a top shelf labeled "DO NOT TOUCH" that appears to contain bottled abstract thoughts.
+  bell: A small brass bell sits on the counter, polished to a shine. A note beneath it reads "One ring for service. Two rings if urgent. Three rings if Anger broke something again."
+  kits: 'The Emergency Feeling Kits come in several varieties: "First Day Of School," "Awkward Family Dinner," "Unexpected Compliment," and the popular "Someone Is Being Nice And You Don''t Know Why." Each kit contains a carefully curated mix of emotional responses.'
+idlemessages:
+- A box of blank memory orbs rattles on a shelf, as if eager to be filled.
+- The bell on the counter dings softly, though nobody touched it.
+- A jar of golden emotional essence glows warmly from its spot on the shelf.

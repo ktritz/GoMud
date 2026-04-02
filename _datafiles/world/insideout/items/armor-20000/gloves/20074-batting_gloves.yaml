@@ -1,0 +1,11 @@
+itemid: 20074
+name: batting gloves
+namesimple: gloves
+description: Snug-fitting batting gloves with a leather palm and velcro wrist strap. They have that broken-in feel that says someone actually uses them.
+type: gloves
+subtype: wearable
+uses: 0
+damage:
+  diceroll: 0d0
+defense: 1
+value: 20

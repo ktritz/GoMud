@@ -1,0 +1,19 @@
+roomid: 110
+zone: School
+title: Principal's Office
+description: The principal's office radiates the specific energy of a room you never want to be called into. A heavy wooden desk dominates the space, impeccably organized with a pen cup, a lamp, and a nameplate that reads "PRINCIPAL VASQUEZ." Motivational posters line the walls -- "INTEGRITY IS DOING THE RIGHT THING WHEN NOBODY IS WATCHING" and "EVERY DAY IS A CHANCE TO BE BETTER" -- the kind that feel encouraging or threatening depending on why you're here. Two uncomfortable chairs face the desk for students who are definitely in trouble. A framed diploma from Stanford hangs on the wall next to photos of every graduating class going back fifteen years.
+mapsymbol: P
+maplegend: Principal
+biome: city
+exits:
+  west:
+    roomid: 112
+nouns:
+  desk: Principal Vasquez's <ansi fg="itemname">desk</ansi> is the cleanest surface in the entire school. Everything is squared off and organized with military precision. A small cactus sits in the corner of the desk -- the only personal touch. A manila folder labeled "DISCIPLINARY ACTIONS - CURRENT" sits in the center, thick enough to be concerning.
+  nameplate: The <ansi fg="itemname">nameplate</ansi> reads "PRINCIPAL R. VASQUEZ" in engraved brass letters on dark wood. It's positioned perfectly at the front of the desk, angled to be readable from the student chairs. There's something about seeing your name carved in brass that says "I am not messing around."
+  posters: The <ansi fg="itemname">motivational posters</ansi> are the standard-issue inspirational variety, but someone -- presumably Vasquez -- has added handwritten notes to a few of them. "BELIEVE IN YOURSELF" has "and also study for your tests" written below it in neat cursive. "TEAMWORK MAKES THE DREAM WORK" has "but individual accountability makes the grade" added underneath.
+idlemessages:
+- The desk chair swivels slightly, as if Principal Vasquez just stepped out.
+- A phone on the desk rings twice and then goes silent.
+- The motivational posters stare down at you with aggressive encouragement.
+- A pen rolls slowly across the desk and stops at the exact edge without falling.

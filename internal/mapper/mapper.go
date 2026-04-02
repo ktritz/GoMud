@@ -95,6 +95,13 @@ var (
 		"northeast-gap3": {3, -3, 0, ' '},
 		"southwest-gap3": {-3, 3, 0, ' '},
 		"southeast-gap3": {3, 3, 0, ' '},
+		// Building/structure transitions — use z-layer to avoid grid overlap
+		"inside":     {0, 0, 1, '◎'},
+		"outside":    {0, 0, -1, '◎'},
+		"upstairs":   {0, 0, 1, '△'},
+		"downstairs": {0, 0, -1, '▽'},
+		"basement":   {0, 0, -2, '▼'},
+		"ground floor": {0, 0, 2, '▲'},
 	}
 
 	mapperZoneCache     = map[string]*mapper{} // zonename-{"random" roomId} to mapper

@@ -136,6 +136,7 @@ func Room(rest string, user *users.UserRecord, liveRoom *rooms.Room, flags event
 
 			if _, ok := room.Nouns[args[1]]; ok {
 				delete(room.Nouns, args[1])
+				rooms.SaveRoomTemplate(*room)
 				user.SendText(`Noun deleted.`)
 			} else {
 				user.SendText(`Noun not found.`)
@@ -254,6 +255,7 @@ func Room(rest string, user *users.UserRecord, liveRoom *rooms.Room, flags event
 				return handled, nil
 			}
 			delete(room.Exits, direction)
+			rooms.SaveRoomTemplate(*room)
 			return handled, nil
 		}
 
@@ -263,6 +265,7 @@ func Room(rest string, user *users.UserRecord, liveRoom *rooms.Room, flags event
 			if exitRename != `` {
 				delete(room.Exits, direction)
 				room.Exits[exitRename] = currentExit
+				rooms.SaveRoomTemplate(*room)
 
 				user.SendText(fmt.Sprintf("Exit %s renamed to %s.", direction, exitRename))
 				return true, nil
@@ -343,8 +346,10 @@ func Room(rest string, user *users.UserRecord, liveRoom *rooms.Room, flags event
 					}
 				} else if room.Mutators.Remove(propertyValue) {
 					user.SendText(`<ansi fg="table-title">Mutator <ansi fg="mutator">` + propertyValue + `</ansi> Removed.</ansi>`)
+					rooms.SaveRoomTemplate(*room)
 				} else if room.Mutators.Add(propertyValue) {
 					user.SendText(`<ansi fg="table-title">Mutator <ansi fg="mutator">` + propertyValue + `</ansi> Added.</ansi>`)
+					rooms.SaveRoomTemplate(*room)
 				}
 
 				user.SendText(``)
@@ -397,6 +402,7 @@ func Room(rest string, user *users.UserRecord, liveRoom *rooms.Room, flags event
 
 		} else if propertyName == "biome" {
 			room.Biome = strings.ToLower(propertyValue)
+			rooms.SaveRoomTemplate(*room)
 		} else {
 			user.SendText(
 				`Invalid property provided to <ansi fg="command">room set</ansi>.`,
@@ -411,4 +417,3 @@ func Room(rest string, user *users.UserRecord, liveRoom *rooms.Room, flags event
 
 	return handled, nil
 }
-

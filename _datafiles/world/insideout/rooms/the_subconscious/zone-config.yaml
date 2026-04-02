@@ -1,0 +1,9 @@
+name: The Subconscious
+roomid: 700
+autoscale:
+  minimum: 12
+  maximum: 16
+idlemessages:
+- 'A distant, unsettling laugh echoes.'
+- Something skitters in the shadows.
+defaultbiome: dungeon

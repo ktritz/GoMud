@@ -1,0 +1,9 @@
+itemid: 20023
+name: abstract legguards
+namesimple: legguards
+description: Legguards that phase between two and three dimensions. They look flat
+  from one angle and solid from another.
+type: legs
+subtype: wearable
+damagereduction: 5
+value: 220

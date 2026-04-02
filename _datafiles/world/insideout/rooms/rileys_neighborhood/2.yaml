@@ -1,0 +1,22 @@
+roomid: 2
+zone: Rileys Neighborhood
+title: Riley's Front Yard
+description: A short brick walkway leads up to a cheerful yellow house with a bright red door. The front yard is small but well-kept, with a patchy lawn and a little garden of wildflowers along the fence. An old swing set sits off to one side, its chains slightly rusted -- it looks like it hasn't been used in a couple of years, but nobody has gotten around to taking it down. A welcome mat at the front door says "The Andersens" in cheerful script.
+mapsymbol: Y
+maplegend: Yard
+biome: city
+exits:
+  south:
+    roomid: 1
+  inside:
+    roomid: 21
+nouns:
+  garden: The <ansi fg="itemname">garden</ansi> is a little wild, with black-eyed Susans and California poppies growing in no particular order. A ceramic garden gnome with a chipped nose stands guard among the flowers. Mom planted these when they first moved in from Minnesota.
+  swing: The <ansi fg="itemname">swing set</ansi> is a faded red metal frame with two rubber seats hanging from rusty chains. One of the seats hangs a little crooked. You remember spending hours on this thing when you were younger. Now it just makes you feel a weird mix of happy and sad at the same time.
+  swingset: :swing
+  door: The <ansi fg="itemname">red door</ansi> is the kind of red that Mom specifically picked out from about forty paint samples. It has a brass knocker shaped like a sun and a peephole at adult height. The paint is starting to chip a little around the edges.
+idlemessages:
+- The swing set creaks faintly in the breeze.
+- A hummingbird hovers over the garden for a moment before darting away.
+- The porch light flickers on, then off again. Dad still hasn't fixed that.
+- A leaf tumbles across the walkway and gets stuck against the welcome mat.

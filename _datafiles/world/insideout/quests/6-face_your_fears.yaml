@@ -1,0 +1,24 @@
+questid: 6
+name: Face Your Fears
+description: Fear has detected something stirring in the Subconscious. Something has
+  riled up the creatures there.
+steps:
+- id: start
+  description: Enter the Subconscious and investigate the disturbance.
+  hint: The Subconscious entrance is accessible from the deepest parts of Long Term
+    Memory.
+- id: investigate
+  description: Find the source of the disturbance in the Subconscious.
+  hint: Go deeper into the Subconscious. Something big is in there.
+- id: defeat
+  description: 'Defeat Jangles the Clown!'
+  hint: 'Jangles is on his stage deep in the Subconscious. Prepare well - he''s powerful.'
+- id: return
+  description: Return to Fear in Headquarters and tell him the news.
+  hint: Fear is in his room in Headquarters.
+- id: end
+  description: Fear is relieved. The Subconscious is calm again... for now.
+rewards:
+  experience: 10000
+  gold: 1000
+  itemid: 10010

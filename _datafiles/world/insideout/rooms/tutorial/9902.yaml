@@ -1,0 +1,13 @@
+roomid: 9902
+zone: Tutorial
+title: The Thought Arena
+description: The space opens up into a small practice arena made of crystallized imagination. A training dummy stands in the center -- it looks like a wobbly, hand-drawn stick figure that someone in Riley's mind sketched up for practice. The walls pulse with encouraging colors, and somewhere you can hear Joy's voice saying "You can do this!" This is where you learn to stand your ground.
+exits:
+  north:
+    roomid: 9901
+    lock:
+      difficulty: 10
+  west:
+    roomid: 9903
+mutators:
+- mutatorid: training-combat

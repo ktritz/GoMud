@@ -1,0 +1,29 @@
+roomid: 106
+zone: School
+title: Cafeteria
+description: The cafeteria is a cavernous room of long tables with attached benches, the kind you have to swing your legs over to sit down. The lunch line snakes along the far wall past a sneeze guard and a series of warming trays that hold today's questionable offerings. A vending machine hums in the corner, its glass front displaying chips, candy bars, and a granola bar that's been stuck on the top row since September. The menu board above the serving counter lists today's options in removable letters, though someone has rearranged a few to spell something inappropriate that the lunch staff hasn't noticed yet. The noise level in here is a wall of sound -- laughter, arguments about nothing, and the constant clatter of plastic trays.
+mapsymbol: C
+maplegend: Cafeteria
+biome: city
+exits:
+  south:
+    roomid: 101
+  east:
+    roomid: 107
+  north:
+    roomid: 116
+nouns:
+  tables: The <ansi fg="itemname">tables</ansi> are long, beige, and bolted to the floor. Each one seats about twelve kids and has its own social ecosystem. The popular table is near the windows. The quiet table is in the corner. The table near the trash cans is for people who showed up late and lost the seating lottery. Every surface is slightly sticky no matter how recently it was wiped.
+  vending machine: The <ansi fg="itemname">vending machine</ansi> takes bills, coins, and an unreasonable amount of patience. Its selection is about sixty percent chips, twenty percent candy, and twenty percent "healthy options" that nobody buys. The granola bar on row A7 has been there so long it might qualify as a historical artifact. A handwritten note taped to the side reads "MACHINE ATE MY DOLLAR -- YOU OWE ME, VENDING ROBOT."
+  menu board: 'The <ansi fg="itemname">menu board</ansi> reads "TODAY: CHICKEN NUGGETS / VEGGIE WRAP / MYSTERY CASSEROLE" in white plastic letters. The "mystery" part is not an official menu term -- someone just swapped the letters around. Friday always says "PIZZA" because even institutional food service knows not to mess with Friday pizza.'
+idlemessages:
+- The cafeteria erupts in laughter from a table near the windows.
+- Someone drops a tray and the whole room goes "OHHHHH" in unison.
+- The smell of reheated chicken nuggets and industrial ketchup wafts from the lunch line.
+- A kid at the vending machine bangs on the glass, trying to shake loose a bag of chips.
+- The lunch monitor blows a whistle and points at a table that's getting too rowdy.
+
+spawninfo:
+- mobid: 17
+  message: A <ansi fg="mobname">school bully</ansi> swaggers in from around the corner.
+  respawnrate: 3 real minutes

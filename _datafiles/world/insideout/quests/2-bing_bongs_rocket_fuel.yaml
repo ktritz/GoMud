@@ -1,0 +1,19 @@
+questid: 2
+name: 'Bing Bong''s Rocket Fuel'
+description: Bing Bong needs special rocket fuel to power his wagon. Help him gather
+  it from Imagination Land.
+steps:
+- id: start
+  description: Gather rocket fuel from Imagination Land for Bing Bong.
+  hint: The French Fry Forest and Cookie Factory in Imagination Land may have what
+    you need.
+- id: collect
+  description: Return the rocket fuel to Bing Bong.
+  hint: Bing Bong is hiding out in Long Term Memory.
+- id: end
+  description: 'Bing Bong''s rocket wagon is fueled up! He gives you his candy cane
+    as thanks.'
+rewards:
+  experience: 3000
+  gold: 200
+  itemid: 10009

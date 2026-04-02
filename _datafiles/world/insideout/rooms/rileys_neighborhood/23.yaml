@@ -1,0 +1,16 @@
+roomid: 23
+zone: Rileys Neighborhood
+title: Downstairs Bathroom
+description: A small half-bathroom tucked under the stairs with barely enough room to turn around. The wallpaper has a faded seashell pattern that was here when they moved in and will probably be here forever. A tiny pedestal sink has a soap dispenser shaped like a whale -- Mom's touch. The toilet has one of those fuzzy lid covers that Dad thinks is ridiculous but knows better than to remove. A basket of magazines sits next to the toilet, mostly outdated.
+mapsymbol: b
+maplegend: Bath-1F
+biome: city
+exits:
+  east:
+    roomid: 21
+nouns:
+  soap: The <ansi fg="itemname">whale soap dispenser</ansi> is ceramic, blue, and has a little spout on top where the soap comes out. It's cute in a way that makes Dad sigh every time he washes his hands. The soap smells like lavender.
+  wallpaper: The <ansi fg="itemname">seashell wallpaper</ansi> is peeling at the seams near the ceiling. Someone started to peel a corner once and Mom shut that down immediately. "We'll repaint when we repaint," she said, which means never.
+idlemessages:
+- The faucet drips once. Then again.
+- The pipes rattle faintly behind the wall.

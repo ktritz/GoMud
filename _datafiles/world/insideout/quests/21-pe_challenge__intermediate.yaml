@@ -1,0 +1,17 @@
+questid: 21
+name: 'PE Challenge: Intermediate'
+description: Coach Davis has harder physical challenges for you.
+steps:
+- id: start
+  description: Complete Coach Davis's intermediate challenges.
+- id: q1
+  description: Complete challenge 1.
+- id: q2
+  description: Complete challenge 2.
+- id: q3
+  description: Complete challenge 3.
+- id: end
+  description: You passed the intermediate PE challenges!
+rewards:
+  experience: 3000
+  gold: 250

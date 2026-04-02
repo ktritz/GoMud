@@ -1,0 +1,21 @@
+roomid: 909
+zone: The Back of the Mind
+title: The Glass Jar Room
+description: 'A vast, circular room illuminated by the soft glow of hundreds of jars arranged on tiered shelves that spiral from floor to ceiling. Each jar contains a miniature scene playing on loop -- a preserved emotion frozen at its peak intensity. The scenes are vivid and startlingly intimate: a child running to hug a parent, a teenager crying in a bathroom stall, a girl screaming into a pillow after a fight, a quiet moment of disgust at a questionable cafeteria meal. The jars glow with the color of their emotion, turning the room into a kaleidoscope of feeling that the Back of the Mind has tried to archive and forget. A viewing bench sits in the center, as if someone comes here sometimes to remember what feelings look like.'
+mapsymbol: O
+maplegend: Jars
+biome: dungeon
+exits:
+  south:
+    roomid: 908
+  north:
+    roomid: 910
+nouns:
+  jars: The <ansi fg="itemname">jars</ansi> are sealed with wax stamps embossed with Anxiety's spiral logo. Inside each one, a moment plays in perfect detail. A golden jar shows Riley at age five, belly-laughing at a cartoon. A blue jar captures the exact second she realized her best friend was moving away. A red jar contains the fury of being blamed for something her sister did. Each jar is warm to the touch and vibrates faintly, the emotion inside still alive, still trying to be felt.
+  bench: The viewing <ansi fg="itemname">bench</ansi> is a simple wooden seat worn smooth by use. It faces the shelves at eye level with some of the most intense jars. There are scuff marks on the floor in front of it -- someone has sat here many times, watching the emotions play. A single tissue is crumpled on the seat. Even the part of the mind that suppresses feelings needs to feel something, sometimes.
+idlemessages:
+- A golden jar flares and for a moment you hear a child's delighted laughter, pure and uncomplicated.
+- A blue jar dims and brightens in a slow rhythm, like someone breathing through tears.
+- Two jars on adjacent shelves pulse in sync -- a joy and a sadness that belong to the same memory.
+- The viewing bench creaks, as if someone invisible just sat down to watch.
+- A red jar rattles on its shelf and the wax seal cracks slightly, leaking a wisp of anger-red smoke.

@@ -51,6 +51,7 @@ import (
 	"github.com/GoMudEngine/GoMud/internal/suggestions"
 	"github.com/GoMudEngine/GoMud/internal/templates"
 	"github.com/GoMudEngine/GoMud/internal/term"
+	"github.com/GoMudEngine/GoMud/internal/transport"
 	"github.com/GoMudEngine/GoMud/internal/users"
 	"github.com/GoMudEngine/GoMud/internal/util"
 	"github.com/GoMudEngine/GoMud/internal/web"
@@ -185,6 +186,7 @@ func main() {
 	})
 
 	hooks.RegisterListeners()
+	transport.RegisterListeners()
 
 	// Discord integration
 	if webhookUrl := string(c.Integrations.Discord.WebhookUrl); webhookUrl != "" {
@@ -468,8 +470,11 @@ func handleTelnetConnection(connDetails *connections.ConnectionDetails, wg *sync
 		n, err := connDetails.Read(inputBuffer)
 		if err != nil {
 
-			// If failed to read from the connection, switch to zombie state
-			if userObject != nil {
+			// If failed to read from the connection, switch to zombie state.
+			// Only if this connection is still the active one for this user —
+			// if another login kicked us, the user already has a new connection
+			// and we must not re-zombify them.
+			if userObject != nil && userObject.ConnectionId() == connDetails.ConnectionId() {
 
 				userObject.EventLog.Add(`conn`, `Disconnected`)
 
@@ -769,8 +774,11 @@ func HandleWebSocketConnection(conn *websocket.Conn) {
 
 		if err != nil {
 
-			// If failed to read from the connection, switch to zombie state
-			if userObject != nil {
+			// If failed to read from the connection, switch to zombie state.
+			// Only if this connection is still the active one for this user —
+			// if another login kicked us, the user already has a new connection
+			// and we must not re-zombify them.
+			if userObject != nil && userObject.ConnectionId() == connDetails.ConnectionId() {
 
 				userObject.EventLog.Add(`conn`, `Disconnected`)
 

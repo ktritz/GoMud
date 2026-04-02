@@ -1,0 +1,21 @@
+roomid: 406
+zone: Imagination Land
+title: Rocket Ship Crash Site
+description: A red wagon lies on its side in a shallow crater, its rainbow-colored rocket boosters cracked and flickering with residual imagination energy. This is Bing Bong's legendary rocket wagon -- the one powered by song that could fly through the sky and make you feel like anything was possible. It crashed here some time ago, and the impact crater has become overgrown with candy flowers and crayon grass. Scattered around the wreck are fragments of old adventures -- a torn treasure map, a plastic sword, a jar of imaginary cookies. The wagon's song-powered engine still hums faintly, waiting for someone to sing it back to life.
+mapsymbol: '!'
+maplegend: Crash
+biome: land
+exits:
+  north:
+    roomid: 405
+  south:
+    roomid: 407
+nouns:
+  rocket: 'The <ansi fg="itemname">rocket</ansi> boosters on the wagon are rainbow-striped cylinders that once burned with the power of a child''s singing voice. They are cracked now, leaking wisps of multicolored light that drift upward and pop like soap bubbles. The fuel gauge reads "SONGS REMAINING: 0" but the engine still hums, as if it remembers how to fly even if nobody is singing.'
+  wagon: The red <ansi fg="itemname">wagon</ansi> is battered but intact, its Radio Flyer-style body scratched and dented from adventures beyond counting. The interior still has a faded cushion and a candy-cane steering wheel. A nameplate on the side reads "THE BING BONG EXPRESS" in glitter glue letters, half of which have peeled off. It is the saddest and most wonderful thing in Imagination Land.
+idlemessages:
+- The rocket boosters flicker with rainbow light and the wagon shudders, remembering flight.
+- A wisp of song drifts from the engine -- a few notes of a melody you almost recognize.
+- A candy flower blooms at the edge of the crater, growing toward the wagon as if offering comfort.
+- The steering wheel turns slightly on its own, pointing toward the sky.
+- A fragment of a treasure map flutters in the breeze, its X marking a spot that probably does not exist anymore.

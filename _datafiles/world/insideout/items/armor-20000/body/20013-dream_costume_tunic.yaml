@@ -1,0 +1,11 @@
+itemid: 20013
+name: dream costume tunic
+namesimple: tunic
+description: 'A theatrical tunic from the Dream Productions costume department. It''s
+  designed for the hero role and makes you feel like you''re in an action movie.'
+type: body
+subtype: wearable
+damagereduction: 4
+statmods:
+  speed: 2
+value: 130

@@ -1,0 +1,22 @@
+mobid: 29
+zone: Headquarters
+hostile: false
+activitylevel: 20
+groups:
+- headquarters-emotion
+idlecommands:
+- emote gazes into the distance, a gentle smile playing across her face.
+- emote gets teary-eyed and dabs at her spectacles with a handkerchief.
+- say Oh, this reminds me of that time... well, you wouldn't remember. But it was lovely.
+- say They grow up so fast. It feels like just yesterday...
+- say Remember when Riley used to do that little thing? Oh... you probably don't. But I do.
+- wander
+- ''
+- ''
+combatcommands:
+- callforhelp 5:emotion:clutches her cardigan and calls for help.
+character:
+  name: nostalgia
+  description: Nostalgia is a sweet, soft-blue old-lady emotion who appears in brief, gentle moments, filling the room with a warm, bittersweet glow. She has kind, crinkled eyes behind delicate spectacles, a cozy cardigan, and a tender smile that suggests she's remembering something wonderful that happened a very long time ago. She speaks softly and slowly, every word carrying the weight of cherished memories. She has a habit of wandering between Headquarters and the Long Term Memory shelves, gently touching old memory orbs and smiling to herself.
+  level: 99
+  raceid: 2

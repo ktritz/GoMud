@@ -1,0 +1,89 @@
+-
+  Supported:
+    "anger": ["disgust"]
+  Conversation:
+    - ["#1 say Did you see what they served in the cafeteria today?"]
+    - ["#2 emote wrinkles her nose",
+       "#2 say Don't even get me started. Was that supposed to be pizza?"]
+    - ["#1 say It was an INSULT to pizza! An absolute TRAVESTY!"]
+    - ["#2 say The cheese wasn't even melted. It was just... sitting there. Like a sad little blanket."]
+    - ["#1 say I wanted to FLIP the tray!"]
+    - ["#2 say For once, I wouldn't have stopped you."]
+-
+  Supported:
+    "anger": ["disgust"]
+  Conversation:
+    - ["#1 say Why does everyone keep telling Riley to 'calm down'? You know what that does?"]
+    - ["#2 say Makes you louder?"]
+    - ["#1 say IT MAKES ME LOUDER! Wait-- don't agree with me like that!"]
+    - ["#2 emote smirks",
+       "#2 say Too late."]
+-
+  Supported:
+    "anger": ["fear"]
+  Conversation:
+    - ["#1 say Stop jumping at every little noise!"]
+    - ["#2 say Stop YELLING at every little noise!"]
+    - ["#1 say I'M NOT YELLING!"]
+    - ["#2 emote stares at Anger"]
+    - ["#1 say ...Okay maybe a little. BUT I HAVE GOOD REASON!"]
+-
+  Supported:
+    "anger": ["fear"]
+  Conversation:
+    - ["#1 emote slams the newspaper down on the console",
+       "#1 say Can you BELIEVE they cancelled hockey practice?! AGAIN?!"]
+    - ["#2 emote jumps back in alarm",
+       "#2 say Please don't slam things! My heart can't take it!"]
+    - ["#1 say YOUR heart?! What about Riley's SCHEDULE?!"]
+    - ["#2 say What about my NERVES?!"]
+-
+  Supported:
+    "anger": ["sadness"]
+  Conversation:
+    - ["#1 say Why are you crying NOW?"]
+    - ["#2 say I read something sad in the newspaper..."]
+    - ["#1 say That's MY newspaper!"]
+    - ["#2 say The comics section was really touching today..."]
+    - ["#1 say The comics section is supposed to be FUNNY!"]
+    - ["#2 say The dog was waiting for his owner to come home, and..."]
+    - ["#1 emote looks away quickly",
+       "#1 say ...Don't tell me the rest."]
+-
+  Supported:
+    "anger": ["embarrassment"]
+  Conversation:
+    - ["#1 say You know what really gets me? When people cut in LINE! In FRONT of Riley!"]
+    - ["#2 emote shrinks down and pulls hood over face"]
+    - ["#1 say We should say something! We should STAND UP!"]
+    - ["#2 emote whimpers quietly"]
+    - ["#1 say ...Or we could just stand here. Quietly. Fuming. THAT'S FINE TOO."]
+-
+  Supported:
+    "anger": ["envy"]
+  Conversation:
+    - ["#1 say Did you hear? Jordan got the LEAD in the school play. The LEAD!"]
+    - ["#2 emote crosses her arms",
+       "#2 say Yeah. Must be nice to just... get things handed to you."]
+    - ["#1 say Riley auditioned TWICE! TWICE! And they gave her 'Townsperson Number Four'!"]
+    - ["#2 say Jordan probably didn't even practice."]
+    - ["#1 say THIS IS AN OUTRAGE!"]
+-
+  Supported:
+    "anger": ["anger"]
+  Conversation:
+    - ["#1 emote picks up the newspaper and starts reading",
+       "#1 say Unbelievable. They traded Martinez. TRADED HIM!"]
+    - ["#2 say For who?!"]
+    - ["#1 say Some rookie nobody's ever HEARD of!"]
+    - ["#2 say That's it. Season's OVER."]
+    - ["#1 say The management of this team is a DISGRACE!"]
+    - ["#2 say An absolute DISGRACE!"]
+-
+  Supported:
+    "anger": ["*"]
+  Conversation:
+    - ["#1 emote grumbles while reading the newspaper",
+       "#1 say You know what? EVERYTHING about today is infuriating."]
+    - ["#2 say What happened?"]
+    - ["#1 say What DIDN'T happen! That's the question!"]

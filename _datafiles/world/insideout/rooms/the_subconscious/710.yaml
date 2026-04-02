@@ -1,0 +1,28 @@
+roomid: 710
+zone: The Subconscious
+title: Spider Nest
+description: Thick webs of crystallized fear stretch across this chamber in dense, overlapping layers, turning the room into a three- dimensional maze of sticky, glittering strands. The webs refract the dim light into sickly prismatic patterns that shift across the walls like an oil slick. Wrapped bundles hang from the ceiling at various heights -- some small, some disturbingly person-shaped -- each one cocooned in layer after layer of anxiety silk. The floor is carpeted with shed exoskeletons and the brittle remains of previous webs, crunching underfoot with every step. The spiders that built this place are still here, their crystallized bodies catching the light as they move through the web with a clicking, tapping rhythm that never quite stops.
+mapsymbol: X
+maplegend: Nest
+biome: dungeon
+exits:
+  south:
+    roomid: 709
+  north:
+    roomid: 711
+nouns:
+  webs: The <ansi fg="itemname">webs</ansi> are made of pure crystallized anxiety, each strand as thin as a hair but strong enough to hold your weight. They vibrate faintly at a frequency you can feel in your teeth, and when touched, they whisper worst-case scenarios in a voice that sounds like your own internal monologue on a very bad day. The strands are sticky and warm.
+  bundles: The <ansi fg="itemname">bundles</ansi> hanging from the web are tightly wrapped cocoons of anxiety silk. Most are small -- wrapped-up fears, worries, and bad dreams that the spiders have collected and stored for later. A few are larger and shift occasionally, as if whatever is inside is not entirely unconscious. You do not want to know what is in the biggest one.
+spawninfo:
+- mobid: 50
+  message: A <ansi fg="mobname">fear spider</ansi> descends from the web above on a strand of anxiety silk, its prismatic body refracting sickly light.
+  respawnrate: 3 real minutes
+- mobid: 50
+  message: A <ansi fg="mobname">fear spider</ansi> crawls out from behind a cluster of cocoons, clicking its crystallized legs together.
+  respawnrate: 4 real minutes
+idlemessages:
+- A web strand near your head vibrates and whispers something about a test you forgot to study for.
+- Two <ansi fg="mobname">fear spiders</ansi> click across the ceiling, their crystallized legs catching the light.
+- A cocoon bundle twitches, and something inside lets out a muffled sound.
+- The webs tighten suddenly, as if the entire nest just tensed.
+- A shed exoskeleton crunches under your foot and the clicking in the room pauses for one terrible second.

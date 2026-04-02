@@ -1,0 +1,21 @@
+roomid: 411
+zone: Imagination Land
+title: Cardboard Box Spaceship
+description: You are standing inside a cardboard box that is definitely, absolutely, one hundred percent a spaceship. The interior has been decorated with drawn-on control panels, paper plate portholes showing a convincing star field, and a captain's chair made from a stack of phone books covered with a blanket. Aluminum foil covers every surface that is supposed to be metal, and a paper towel tube serves as the main thruster control. The stars outside the portholes move slowly, because this ship is currently cruising at imagination speed through the cosmos. A crayon sign above the door reads "S.S. AWESOME -- No Girls Allowed" with "Girls" crossed out and "Boring People" written above it.
+mapsymbol: '='
+maplegend: Ship
+biome: land
+exits:
+  north:
+    roomid: 410
+  south:
+    roomid: 412
+nouns:
+  cardboard box: The <ansi fg="itemname">cardboard box</ansi> is from a refrigerator, judging by the faded product label on the outside. But inside it is the bridge of a starship. The transformation is complete and non-negotiable. If you say "this is just a box" out loud, the star field outside the portholes will stutter. Do not do that.
+  control panels: The <ansi fg="itemname">control panels</ansi> are drawn on the cardboard walls in marker. Buttons are labeled "LASERS," "SHIELDS," "WARP DRIVE," and "SNACK DISPENSER." The snack dispenser button has been pressed so many times the cardboard is worn through. Someone has added more advanced controls in a different handwriting -- "QUANTUM NAVIGATION" and "AUXILIARY POWER" -- evidence of the imagination growing up but not giving up.
+idlemessages:
+- The star field outside the portholes drifts slowly to the left. The ship is definitely moving.
+- A paper plate porthole rattles as the ship encounters mild imaginary turbulence.
+- The thruster control tube rolls across the floor and bumps against the captain's chair.
+- A distant sound effect -- clearly someone saying "pew pew" -- echoes through the hull.
+- The aluminum foil walls crinkle and catch the starlight, which is actually just a flashlight taped to the ceiling.

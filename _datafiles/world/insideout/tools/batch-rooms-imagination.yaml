@@ -1,0 +1,867 @@
+zone: imagination_land
+zone_config:
+  name: "Imagination Land"
+  roomid: 400
+  autoscale: {minimum: 6, maximum: 9}
+  defaultbiome: land
+
+rooms:
+  # ── IMAGINATION LAND GATEWAY ───────────────────────────────────────
+  - id: 400
+    title: "Imagination Land Gateway"
+    desc: >-
+      A grand <ansi fg="itemname">archway</ansi> of impossible architecture
+      marks the entrance to Imagination Land, its columns built from stacked
+      building blocks, frozen popsicles, and what appears to be solidified
+      laughter. The arch shifts color constantly -- hot pink to electric blue
+      to neon green -- and the air passing through it tastes faintly of cotton
+      candy. Beyond the gateway, an entire world of pure creative chaos sprawls
+      in every direction, its skyline a jumble of structures that could only
+      exist in a child's mind. The bridge back to Long Term Memory stretches
+      behind you, and ahead, a winding path of rainbow cobblestones leads
+      deeper into the impossible.
+    biome: land
+    symbol: "A"
+    legend: Gateway
+    exits:
+      north: 320
+      south: 401
+    nouns:
+      archway: >-
+        The <ansi fg="itemname">archway</ansi> is architecturally absurd and
+        structurally magnificent. Its left column is a stack of giant alphabet
+        blocks. Its right column is a tower of frozen popsicles that never
+        melt. The keystone at the top is a golden star that spins slowly and
+        emits a faint chiming sound. Carved into the base are the words
+        "ANYTHING IS POSSIBLE (Terms and conditions may apply during puberty)."
+    idle:
+      - The archway shifts from electric blue to hot pink with a musical chime.
+      - A burst of glitter erupts from the top of the arch and rains down in slow motion.
+      - The cobblestone path ahead rearranges itself slightly, because of course it does.
+      - A butterfly made of crayon wax flutters through the gateway and dissolves into sparkles.
+      - The air shimmers and for a split second you see the outline of something that has not been imagined yet.
+
+  # ── CLOUD TOWN ────────────────────────────────────────────────────
+  - id: 401
+    title: "Cloud Town"
+    desc: >-
+      An entire neighborhood built on and out of <ansi fg="itemname">clouds</ansi>.
+      Cottages of compressed cumulus sit along a street paved with flattened
+      cirrus, their fluffy walls slightly translucent and glowing from within
+      with soft pastel light. Everything here is bouncy -- the ground gives
+      pleasantly under each step, the fences wobble when touched, and the
+      mailboxes bob gently in a breeze that seems to come from nowhere. A
+      <ansi fg="mobname">cloud builder</ansi> works at a station near the
+      town square, shaping raw cloud material into furniture and architectural
+      elements with practiced hands. The whole place smells like the air
+      after a rainstorm, clean and full of possibility.
+    biome: land
+    symbol: C
+    legend: Clouds
+    exits:
+      north: 400
+      south: 402
+      east: 414
+    nouns:
+      clouds: >-
+        The <ansi fg="itemname">clouds</ansi> that make up everything here are
+        surprisingly solid -- firm enough to walk on, soft enough to sink your
+        fingers into. They are warm to the touch and slightly damp, like a towel
+        fresh from the dryer. If you pull off a piece, it reforms within seconds.
+        The cottages are built by layering clouds of different densities, creating
+        walls you can lean against but also put your hand through if you push
+        hard enough.
+    idle:
+      - A cloud cottage settles slightly, like a souffle that got startled.
+      - A mailbox drifts six inches to the left, then drifts back. Nobody seems concerned.
+      - You bounce slightly with each step. The ground here has opinions about gravity.
+      - A wisp of cloud breaks free from a rooftop and floats upward, becoming a tiny hat-shaped cloud.
+      - The cloud builder hums a tune while sculpting a new piece of furniture from raw nimbus.
+    spawns:
+      - {mob: 39, rate: "2 real minutes", msg: "A <ansi fg=\"mobname\">cloud builder</ansi> materializes from a thick bank of fog, tools in hand and ready to trade."}
+
+  # ── FRENCH FRY FOREST ──────────────────────────────────────────────
+  - id: 402
+    title: "French Fry Forest"
+    desc: >-
+      A forest of towering golden <ansi fg="itemname">fries</ansi> stretches
+      in every direction, each one a crispy, salt-dusted pillar rising twenty
+      feet into the air. The canopy overhead is a lattice of crossed fries that
+      filters warm, golden light down to the forest floor, which is covered in
+      a soft layer of sea salt and what appears to be powdered cheese. The
+      <ansi fg="itemname">trees</ansi> are warm to the touch and smell
+      incredible -- the entire forest is basically a deep-fried paradise that
+      no amount of growing up can make you stop loving. Pools of ketchup
+      collect in natural depressions between the fry-trunks, and somewhere
+      deeper in the forest you can hear the sizzle of new fries growing in.
+    biome: land
+    symbol: F
+    legend: Fries
+    exits:
+      north: 401
+      south: 403
+    nouns:
+      fries: >-
+        The <ansi fg="itemname">fries</ansi> are structurally perfect -- golden
+        brown, uniformly crispy on the outside, fluffy on the inside. Each one
+        is about the circumference of a tree trunk and rises straight up into
+        the canopy. They are warm, they smell like the best drive-through in
+        the universe, and yes, they are technically edible, though eating the
+        structural supports of a forest seems inadvisable.
+      trees: >-
+        The fry <ansi fg="itemname">trees</ansi> grow in clusters, their
+        golden surfaces glistening with salt crystals. Some have curly fry
+        branches spiraling out from their trunks. Others are straight-cut,
+        tall and proud. A few waffle fry specimens grow near the edges,
+        their latticed surfaces creating natural windows. The forest is a
+        complete taxonomy of fried potato varieties, and every single one
+        of them smells amazing.
+    idle:
+      - A fresh fry sprouts from the ground with a gentle sizzle, already golden and perfect.
+      - Salt crystals fall from the canopy like warm, savory snow.
+      - You step in a ketchup puddle. It is exactly as warm and satisfying as you would expect.
+      - The forest sways gently, releasing a wave of deep-fried fragrance.
+      - A curly fry branch uncurls slightly, reaching toward the golden light above.
+
+  # ── TROPHY TOWN ───────────────────────────────────────────────────
+  - id: 403
+    title: "Trophy Town"
+    desc: >-
+      Every surface in this gleaming plaza is covered with <ansi fg="itemname">trophies</ansi>.
+      Giant golden cups, towering silver columns, enormous ribbons in first-place
+      blue -- they line the streets, fill the windows of every building, and
+      stack on top of each other in precarious towers that catch the light and
+      throw it in brilliant flashes across the whole area. The trophies are for
+      everything imaginable: "BEST AT HOCKEY," "MOST LIKELY TO BE AWESOME,"
+      "WINNER OF EVERYTHING ALWAYS." Inspirational <ansi fg="itemname">banners</ansi>
+      hang from every lamppost, each one more aggressively motivational than
+      the last. The whole town radiates the unshakeable confidence of a child
+      who has not yet learned what second place feels like.
+    biome: land
+    symbol: T
+    legend: Trophies
+    exits:
+      north: 402
+      south: 404
+    nouns:
+      trophies: >-
+        The <ansi fg="itemname">trophies</ansi> are magnificent in their
+        shameless self-celebration. A ten-foot golden cup is engraved "WORLD'S
+        GREATEST KID -- No Contest." A silver column reads "CHAMPION OF
+        CHAMPIONS OF CHAMPIONS." One small trophy in the back just says "GOOD
+        JOB EXISTING" which, honestly, is the most motivational one here.
+      banners: >-
+        The <ansi fg="itemname">banners</ansi> are relentless. "YOU CAN DO
+        ANYTHING!" "THE LIMIT DOES NOT EXIST!" "BELIEVE IN YOURSELF AND ALSO
+        IN TROPHIES!" One banner has been edited in crayon to read "YOU CAN
+        DO MOST THINGS (with practice)" which has a distinctly more mature energy.
+    idle:
+      - A trophy catches the light and sends a blinding golden flash across the plaza.
+      - A banner unfurls from a lamppost reading "TODAY IS YOUR DAY! (And also tomorrow!)"
+      - Somewhere in Trophy Town, a victory fanfare plays on invisible trumpets.
+      - A new trophy materializes on a pedestal, inscribed "AWARD FOR READING THIS AWARD."
+      - The trophies gleam so aggressively that the reflections have reflections.
+
+  # ── LAVA FLOOR LIVING ROOM ────────────────────────────────────────
+  - id: 404
+    title: "Lava Floor Living Room"
+    desc: >-
+      A massive living room stretches before you, furnished with overstuffed
+      <ansi fg="itemname">couches</ansi>, armchairs, and coffee tables --
+      all arranged in a chaotic obstacle course across a floor of bubbling,
+      glowing <ansi fg="itemname">lava</ansi>. The furniture is the only
+      safe ground. The lava itself is a vivid, cartoon orange, rolling in
+      slow waves and occasionally belching a harmless puff of warm air. Throw
+      <ansi fg="itemname">pillows</ansi> are scattered strategically as
+      stepping stones between the larger pieces, and scorch marks on the
+      furniture legs tell the story of countless daring leaps and narrow
+      escapes. A massive sign on the wall reads "THE FLOOR IS LAVA" in
+      dripping red letters, as if that needed clarification.
+    biome: land
+    symbol: L
+    legend: Lava
+    exits:
+      north: 403
+      south: 405
+    nouns:
+      couches: >-
+        The <ansi fg="itemname">couches</ansi> are massive, well-worn, and
+        positioned just far enough apart to make jumping between them a genuine
+        challenge. Their cushions are slightly singed on the bottom edges. Each
+        one wobbles when you land on it, adding to the thrill.
+      lava: >-
+        The <ansi fg="itemname">lava</ansi> is warm but not actually dangerous --
+        this is Imagination Land, after all. If you fell in you would probably just
+        feel embarrassed. But the RULES say it is lava, and in here, the rules of
+        imagination are the only rules that matter. So do not touch the floor.
+      pillows: >-
+        The throw <ansi fg="itemname">pillows</ansi> serve as stepping stones
+        between the larger furniture pieces. They sink slightly into the lava
+        when you step on them, giving you about two seconds before they go under.
+        Speed and commitment are required.
+    idle:
+      - The lava bubbles and a warm puff of air rises, smelling faintly of cinnamon.
+      - A throw pillow drifts across the lava like a tiny raft, spinning slowly.
+      - Someone -- or something -- leaps between couches in the distance with a triumphant yell.
+      - The lava belches cheerfully and a couch wobbles on its perch.
+      - A scorch mark appears on a coffee table leg. The lava is getting closer. Probably.
+
+  # ── PRINCESS DREAM CASTLE ─────────────────────────────────────────
+  - id: 405
+    title: "Princess Dream Castle"
+    desc: >-
+      A fairy-tale <ansi fg="itemname">castle</ansi> rises in sparkling pink
+      and silver splendor, its towers topped with pennants that flutter in a
+      perpetual magical breeze. The walls are encrusted with <ansi fg="itemname">gems</ansi>
+      that are almost certainly made of sugar, and the drawbridge is a giant
+      candy bar spanning a moat of sparkling purple liquid. Inside, the great
+      hall is draped in silk banners and lit by floating candelabras. A throne
+      sits on a raised dais, sized for someone about four feet tall, with a
+      tiara resting on its cushion. The castle has the unshakeable grandeur of
+      a six-year-old's ultimate fantasy, and not a single thing about it is
+      ironic. It is perfect.
+    biome: land
+    symbol: P
+    legend: Castle
+    exits:
+      north: 404
+      south: 406
+    nouns:
+      castle: >-
+        The <ansi fg="itemname">castle</ansi> is exactly what every child
+        imagines when they hear the word. Tall towers, fluttering flags, a
+        drawbridge that works, and at least three secret passages (one behind
+        a tapestry, one behind the throne, one in the kitchen that leads to
+        the cookie jar). It has been here since Riley was about five, and
+        puberty has not managed to knock it down yet.
+      gems: >-
+        The <ansi fg="itemname">gems</ansi> embedded in the castle walls are
+        rock candy in every color. They sparkle convincingly, and if you pry
+        one out it tastes like grape. The structural integrity of a castle held
+        together by sugar is best not examined too closely.
+    idle:
+      - A floating candelabra drifts past, trailing sparkles like a tiny comet.
+      - The tiara on the throne glints, as if waiting for someone to put it on.
+      - A pennant snaps in the magical breeze, emblazoned with a unicorn rampant.
+      - The drawbridge creaks and lowers a few inches, then raises again. Just practicing.
+      - Sparkles fall from the ceiling like the castle itself is excited you are here.
+
+  # ── ROCKET SHIP CRASH SITE ────────────────────────────────────────
+  - id: 406
+    title: "Rocket Ship Crash Site"
+    desc: >-
+      A red <ansi fg="itemname">wagon</ansi> lies on its side in a shallow
+      crater, its rainbow-colored <ansi fg="itemname">rocket</ansi> boosters
+      cracked and flickering with residual imagination energy. This is Bing
+      Bong's legendary rocket wagon -- the one powered by song that could
+      fly through the sky and make you feel like anything was possible. It
+      crashed here some time ago, and the impact crater has become overgrown
+      with candy flowers and crayon grass. Scattered around the wreck are
+      fragments of old adventures -- a torn treasure map, a plastic sword,
+      a jar of imaginary cookies. The wagon's song-powered engine still
+      hums faintly, waiting for someone to sing it back to life.
+    biome: land
+    symbol: "!"
+    legend: Crash
+    exits:
+      north: 405
+      south: 407
+    nouns:
+      rocket: >-
+        The <ansi fg="itemname">rocket</ansi> boosters on the wagon are
+        rainbow-striped cylinders that once burned with the power of a child's
+        singing voice. They are cracked now, leaking wisps of multicolored
+        light that drift upward and pop like soap bubbles. The fuel gauge
+        reads "SONGS REMAINING: 0" but the engine still hums, as if it
+        remembers how to fly even if nobody is singing.
+      wagon: >-
+        The red <ansi fg="itemname">wagon</ansi> is battered but intact, its
+        Radio Flyer-style body scratched and dented from adventures beyond
+        counting. The interior still has a faded cushion and a candy-cane
+        steering wheel. A nameplate on the side reads "THE BING BONG EXPRESS"
+        in glitter glue letters, half of which have peeled off. It is the
+        saddest and most wonderful thing in Imagination Land.
+    idle:
+      - The rocket boosters flicker with rainbow light and the wagon shudders, remembering flight.
+      - A wisp of song drifts from the engine -- a few notes of a melody you almost recognize.
+      - A candy flower blooms at the edge of the crater, growing toward the wagon as if offering comfort.
+      - The steering wheel turns slightly on its own, pointing toward the sky.
+      - A fragment of a treasure map flutters in the breeze, its X marking a spot that probably does not exist anymore.
+
+  # ── IMAGINARY BOYFRIEND GENERATOR ─────────────────────────────────
+  - id: 407
+    title: "Imaginary Boyfriend Generator"
+    desc: >-
+      A massive, ridiculous <ansi fg="itemname">machine</ansi> dominates this
+      clearing, all chrome pipes, blinking lights, and a conveyor belt that
+      feeds into a heart-shaped archway. The machine's purpose is printed in
+      enormous pink letters on the side: "IMAGINARY BOYFRIEND GENERATOR --
+      Now With 40% More Emotional Availability." A control panel offers
+      options for height, hair color, and "willingness to share feelings on
+      a scale of 1 to 10 (all options are 10)." The conveyor belt hums and
+      occasionally produces an <ansi fg="mobname">imaginary boyfriend</ansi>
+      who steps through the archway, immediately says something supportive,
+      and gazes into the middle distance with perfect cheekbones.
+    biome: land
+    symbol: "H"
+    legend: Boyfriends
+    exits:
+      north: 406
+      south: 408
+    nouns:
+      machine: >-
+        The <ansi fg="itemname">machine</ansi> is equal parts absurd and
+        impressive. Its inner workings are visible through glass panels --
+        gears shaped like hearts, pistons that move in the rhythm of a slow
+        dance, and a central furnace that burns with the exact shade of pink
+        you see in a sunset. A warning label reads "CAUTION: Imaginary
+        boyfriends are not real. They will, however, always text back."
+    idle:
+      - 'An <ansi fg="mobname">imaginary boyfriend</ansi> steps off the conveyor and says "I just think you''re really brave."'
+      - The machine whirs and produces a boyfriend who immediately offers to carry something heavy.
+      - '"I wrote you a poem," announces a freshly generated boyfriend. "It''s about your eyes."'
+      - 'An <ansi fg="mobname">imaginary boyfriend</ansi> leans against the machine and says "I cleared my whole schedule. For you."'
+      - The machine briefly malfunctions and produces two boyfriends who compete to see who can be more supportive.
+    spawns:
+      - {mob: 37, rate: "3 real minutes", msg: "The machine hums to life and an <ansi fg=\"mobname\">imaginary boyfriend</ansi> steps through the heart-shaped archway, hair perfect, smile genuine."}
+
+  # ── STUFFED ANIMAL ZOO ────────────────────────────────────────────
+  - id: 408
+    title: "Stuffed Animal Zoo"
+    desc: >-
+      An open-air zoo where the exhibits hold enormous <ansi fg="itemname">stuffed
+      animals</ansi> the size of actual animals. Giant teddy bears lumber behind
+      velvet ropes. A plush giraffe stretches its neck toward fake felt leaves.
+      A massive stuffed elephant sprays imaginary water from its trunk. Most
+      of the animals are cheerful and bright, but a few in the far enclosures
+      have gone wrong -- their <ansi fg="itemname">stitching</ansi> is
+      unraveling, their button eyes glow with an unsettling light, and their
+      stuffing has been replaced with something darker. A sign at the entrance
+      reads "PLEASE DO NOT FEED THE IMAGINATION ANIMALS" and below it,
+      in smaller letters, "Especially the ones in the back."
+    biome: land
+    symbol: Z
+    legend: Zoo
+    exits:
+      north: 407
+      south: 409
+    nouns:
+      stuffed animals: >-
+        The <ansi fg="itemname">stuffed animals</ansi> are wonderfully absurd
+        at this scale. A teddy bear the size of an actual grizzly sits in its
+        enclosure, button eyes gleaming, a permanent smile stitched across its
+        face. A plush lion yawns silently, revealing a mouth full of felt
+        teeth. They move with the slow, deliberate grace of things that are
+        not quite alive but not quite not.
+      stitching: >-
+        The corrupted animals in the back enclosures have stitching that writhes
+        and shifts on its own. Thread that was once bright red or blue has
+        darkened to black, and the seams pulse with a faint, unsettling glow.
+        Whatever happened to these imaginary friends, it happened slowly, and
+        it is not over yet.
+    idle:
+      - A giant teddy bear waves slowly from its enclosure. Its smile does not waver.
+      - The plush giraffe bends down to examine you with enormous button eyes.
+      - A corrupted stuffed animal in the back enclosure shifts, its unraveling stitching twitching.
+      - A stuffed penguin waddles past the fence line, realizes its mistake, and waddles back.
+      - You hear a low growl from the dark enclosure in the back. Stuffed animals should not growl.
+    spawns:
+      - {mob: 36, rate: "4 real minutes", msg: "A <ansi fg=\"mobname\">corrupted imaginary friend</ansi> tears free from its enclosure, button eyes glowing an angry red, stitching writhing."}
+
+  # ── CRAYON MEADOW ─────────────────────────────────────────────────
+  - id: 409
+    title: "Crayon Meadow"
+    desc: >-
+      A wide, rolling <ansi fg="itemname">meadow</ansi> stretches before you,
+      and every single thing in it is drawn in crayon. The grass is thick
+      green strokes. The flowers are bright wax spirals of red, yellow, and
+      purple. The sky overhead is colored in with that specific shade of blue
+      that only comes in the big crayon box. A bright yellow
+      <ansi fg="itemname">sun</ansi> with a smiley face beams down from the
+      corner of the sky, because that is where suns go in crayon drawings.
+      The ground has a waxy texture underfoot, and the whole world smells
+      like that specific, nostalgic crayon smell that is impossible to describe
+      but impossible to forget. Birds drawn as simple M-shapes glide overhead.
+    biome: land
+    symbol: "~"
+    legend: Meadow
+    exits:
+      north: 408
+      south: 410
+    nouns:
+      meadow: >-
+        The <ansi fg="itemname">meadow</ansi> is a child's drawing brought to
+        life at full scale. Every blade of grass is a distinct crayon stroke,
+        each one slightly different from the last. The flowers do not sway in
+        the wind so much as they wobble, because crayon flowers are not great
+        at physics. It is beautiful in a way that has nothing to do with
+        realism and everything to do with sincerity.
+      sun: >-
+        The <ansi fg="itemname">sun</ansi> has a face. It is smiling. It has
+        triangular rays coming off it in every direction. It sits in the upper
+        right corner of the sky, because that is where you put the sun when
+        you are five. It radiates genuine warmth, as if the love that went
+        into drawing it is what makes it shine.
+    idle:
+      - A crayon butterfly lands on your shoulder, leaving a faint waxy smudge.
+      - The sun in the corner of the sky winks. Or maybe the light just shifted. No, it definitely winked.
+      - An M-shaped bird glides past, trailing a faint line of blue crayon behind it.
+      - The meadow smells like a freshly opened box of 64 crayons, the good kind with the sharpener.
+      - A crayon flower blooms in fast-forward, its petals unfurling in bright spirals of wax.
+
+  # ── BUILDING BLOCK FORTRESS ───────────────────────────────────────
+  - id: 410
+    title: "Building Block Fortress"
+    desc: >-
+      A massive <ansi fg="itemname">fortress</ansi> constructed entirely from
+      giant building blocks rises in primary-colored splendor. Red, blue,
+      yellow, and green blocks the size of cars are stacked in thick walls
+      with crenellations along the top. Arrow slits are just gaps where blocks
+      do not quite line up. The main gate is two blocks leaning against each
+      other, and somehow the whole structure is both architecturally unsound
+      and completely indestructible. Inside the walls, a courtyard holds a
+      <ansi fg="itemname">toy chest</ansi> the size of a small building,
+      its lid propped open to reveal a jumble of oversized toys and
+      imagination supplies. The fortress smells like new plastic and the
+      faint ozone of creative energy.
+    biome: land
+    symbol: "#"
+    legend: Fort
+    exits:
+      north: 409
+      south: 411
+    nouns:
+      fortress: >-
+        The <ansi fg="itemname">fortress</ansi> defies every law of physics
+        and architecture. Blocks that should topple stay perfectly balanced.
+        Walls that should collapse hold firm against any force. It is built
+        with the absolute confidence of a child who does not know that
+        buildings can fall down, and in Imagination Land, that confidence
+        is structural integrity.
+      toy chest: >-
+        The enormous <ansi fg="itemname">toy chest</ansi> is overflowing.
+        Giant action figures, rubber balls the size of boulders, a jump rope
+        that could lasso a building, and sets of jacks that could puncture a
+        tire. Everything in it is scaled up to the exaggerated proportions of
+        childhood memory, when every toy felt as big as the world.
+    idle:
+      - A building block at the top of the wall wobbles, then settles firmly back into place.
+      - The toy chest lid creaks open another inch, as if something inside wants out.
+      - A giant rubber ball bounces out of the courtyard and rolls to a stop against the wall.
+      - The fortress hums with a low, satisfied vibration, proud of its own impossible existence.
+      - A block changes color from red to blue. Nobody built it that way. It just decided.
+
+  # ── CARDBOARD BOX SPACESHIP ───────────────────────────────────────
+  - id: 411
+    title: "Cardboard Box Spaceship"
+    desc: >-
+      You are standing inside a <ansi fg="itemname">cardboard box</ansi> that
+      is definitely, absolutely, one hundred percent a spaceship. The interior
+      has been decorated with drawn-on <ansi fg="itemname">control panels</ansi>,
+      paper plate portholes showing a convincing star field, and a captain's
+      chair made from a stack of phone books covered with a blanket. Aluminum
+      foil covers every surface that is supposed to be metal, and a paper
+      towel tube serves as the main thruster control. The stars outside the
+      portholes move slowly, because this ship is currently cruising at
+      imagination speed through the cosmos. A crayon sign above the door
+      reads "S.S. AWESOME -- No Girls Allowed" with "Girls" crossed out
+      and "Boring People" written above it.
+    biome: land
+    symbol: "="
+    legend: Ship
+    exits:
+      north: 410
+      south: 412
+    nouns:
+      cardboard box: >-
+        The <ansi fg="itemname">cardboard box</ansi> is from a refrigerator,
+        judging by the faded product label on the outside. But inside it is
+        the bridge of a starship. The transformation is complete and
+        non-negotiable. If you say "this is just a box" out loud, the star
+        field outside the portholes will stutter. Do not do that.
+      control panels: >-
+        The <ansi fg="itemname">control panels</ansi> are drawn on the
+        cardboard walls in marker. Buttons are labeled "LASERS," "SHIELDS,"
+        "WARP DRIVE," and "SNACK DISPENSER." The snack dispenser button has
+        been pressed so many times the cardboard is worn through. Someone
+        has added more advanced controls in a different handwriting --
+        "QUANTUM NAVIGATION" and "AUXILIARY POWER" -- evidence of the
+        imagination growing up but not giving up.
+    idle:
+      - The star field outside the portholes drifts slowly to the left. The ship is definitely moving.
+      - A paper plate porthole rattles as the ship encounters mild imaginary turbulence.
+      - The thruster control tube rolls across the floor and bumps against the captain's chair.
+      - A distant sound effect -- clearly someone saying "pew pew" -- echoes through the hull.
+      - The aluminum foil walls crinkle and catch the starlight, which is actually just a flashlight taped to the ceiling.
+
+  # ── PRESCHOOL PLAYROOM ────────────────────────────────────────────
+  - id: 412
+    title: "Preschool Playroom"
+    desc: >-
+      The imagination here is younger, simpler, and achingly sweet. This
+      playroom is filled with the earliest forms of creative play --
+      <ansi fg="itemname">finger paintings</ansi> on the walls in bold,
+      uncoordinated smears of color, a pile of wooden blocks that have
+      been stacked and knocked over a thousand times, and a toy
+      <ansi fg="itemname">kitchen</ansi> where plastic food is served with
+      absolute seriousness. The colors are brighter here, more saturated,
+      as if seen through the eyes of someone for whom everything is still
+      new. A tiny table with tiny chairs sits in the center, set for a tea
+      party that has been going on for years. The whole room radiates the
+      fierce, uncomplicated imagination of a three-year-old.
+    biome: land
+    symbol: "o"
+    legend: Playroom
+    exits:
+      north: 411
+      south: 413
+    nouns:
+      finger paintings: >-
+        The <ansi fg="itemname">finger paintings</ansi> are magnificent in
+        their absolute lack of technique. Bold smears of red, blue, and
+        yellow cover the walls in patterns that mean everything to the artist
+        and nothing to anyone else. One is labeled "FAMLEE" in backwards
+        letters. Another is just a handprint, small enough to break your heart.
+      kitchen: >-
+        The toy <ansi fg="itemname">kitchen</ansi> is fully stocked with
+        plastic food -- rubber fried eggs, foam bread, a wooden cake that
+        weighs nothing. The stove makes no heat and the sink has no water,
+        but the meals prepared here are served with the gravity of a five-star
+        restaurant. A tiny menu on the counter offers "SOOP," "CAKE," and
+        "SPSGETTI."
+    idle:
+      - A stack of wooden blocks topples over with a cheerful clatter, then slowly rebuilds itself.
+      - The tea party table resets its cups and saucers, ready for another round.
+      - A finger painting on the wall shifts colors slightly, as if being painted over in real time.
+      - The toy kitchen dings and produces a fresh plastic pie from its cardboard oven.
+      - A tiny chair scoots back from the table on its own, inviting someone very small to sit down.
+
+  # ── DOODLE GALLERY ────────────────────────────────────────────────
+  - id: 413
+    title: "Doodle Gallery"
+    desc: >-
+      The walls of this wide corridor are covered floor to ceiling in
+      <ansi fg="itemname">doodles</ansi> -- an evolving gallery of every
+      idle sketch, margin drawing, and notebook scribble Riley has ever
+      produced. The earliest ones near the floor are crude stick figures
+      and misshapen animals. Higher up, the drawings get more sophisticated
+      -- comic characters, geometric patterns, the name of a crush written
+      in increasingly elaborate <ansi fg="itemname">lettering</ansi>. Near
+      the ceiling, the doodles are genuinely good, showing real artistic
+      development. A few have peeled off the wall and walk around the
+      gallery on their own, animated by the creative energy that made them.
+      The whole corridor hums with the satisfied energy of every boring
+      class that produced something beautiful in the margins.
+    biome: land
+    symbol: D
+    legend: Doodles
+    exits:
+      north: 412
+      south: 414
+    nouns:
+      doodles: >-
+        The <ansi fg="itemname">doodles</ansi> are a timeline of creativity.
+        At floor level: a stick-figure family, a house with a triangle roof,
+        a sun with a face. Mid-wall: superhero characters, elaborate mazes,
+        the word "BORED" in bubble letters. Near the ceiling: surprisingly
+        skilled portraits, abstract designs, and a beautifully detailed drawing
+        of a hockey player mid-shot. Every boring moment in every class
+        produced something here.
+      lettering: >-
+        Several <ansi fg="itemname">names</ansi> are written on the wall in
+        the elaborate, ornamental style of someone who should definitely be
+        paying attention in class instead. Hearts, stars, and swirls surround
+        each one. Some names are crossed out and replaced. The handwriting
+        gets better over time, but the impulse stays exactly the same.
+    idle:
+      - A stick figure peels off the wall, walks a few steps, and plasters itself back in a different spot.
+      - A new doodle appears near the ceiling in real time -- Riley must be in a boring class right now.
+      - Two animated doodles chase each other along the wall, leaving faint pencil trails.
+      - A bubble-letter word rearranges itself, changing from "BORED" to "BOARD" to "BORED" again.
+      - The hockey player doodle near the ceiling takes a shot, and a tiny drawn puck bounces off the wall.
+
+  # ── RAINBOW BRIDGE ────────────────────────────────────────────────
+  - id: 414
+    title: "Rainbow Bridge"
+    desc: >-
+      A spectacular <ansi fg="itemname">bridge</ansi> of pure prismatic
+      light arcs through the sky, connecting the far-flung regions of
+      Imagination Land. Each stripe of the rainbow is a walkable surface,
+      and stepping on different colors produces different sensations --
+      red is warm, blue is cool, yellow tickles, green smells like fresh
+      grass, and violet makes you hear distant music. The bridge has no
+      railings because railings are boring and this is Imagination Land.
+      The view from the apex is staggering -- you can see Cloud Town, the
+      French Fry Forest, the distant towers of the Princess Dream Castle,
+      and territories of imagination that have not been explored yet,
+      shimmering on the horizon like a promise.
+    biome: land
+    symbol: "R"
+    legend: Rainbow
+    exits:
+      north: 413
+      west: 401
+      south: 415
+    nouns:
+      bridge: >-
+        The <ansi fg="itemname">bridge</ansi> is a physical rainbow, solid
+        enough to walk on and vivid enough to make your eyes water. Each
+        color band is about three feet wide and radiates its corresponding
+        wavelength as warmth, sound, or scent. Walking across it is a full
+        sensory experience. The bridge curves gracefully through the sky,
+        connecting areas that would otherwise require hours of walking.
+        There are no railings. There will never be railings.
+    idle:
+      - You step on the red band and warmth floods up through your feet.
+      - The violet stripe hums with a melody you have never heard but somehow know by heart.
+      - A gust of wind sends a spray of rainbow mist off the edge of the bridge.
+      - The view from up here makes the whole of Imagination Land look like a painting in progress.
+      - The yellow stripe tickles your feet and you hear a distant, delighted giggle.
+
+  # ── IMAGINARY FRIEND NURSERY ──────────────────────────────────────
+  - id: 415
+    title: "Imaginary Friend Nursery"
+    desc: >-
+      A soft, warm room where new <ansi fg="itemname">imaginary friends</ansi>
+      are born. Incubation pods line the walls, each one a translucent bubble
+      filled with swirling creative energy. Inside them, vague shapes are slowly
+      forming -- a wing here, a tentacle there, a face that keeps changing its
+      mind about how many eyes it wants. Some pods are nearly mature, containing
+      recognizable figures that press against the walls of their bubbles. Others
+      hold only a spark of an idea, a single trait like "funny" or "brave" or
+      "can fly" waiting to grow into a full personality. A gentle
+      <ansi fg="itemname">humming</ansi> fills the room, the sound of
+      imagination at work, quietly building friends for a mind that needs them.
+    biome: land
+    symbol: N
+    legend: Nursery
+    exits:
+      north: 414
+      south: 416
+    nouns:
+      imaginary friends: >-
+        The developing <ansi fg="itemname">imaginary friends</ansi> are
+        fascinating to watch. One pod contains what appears to be a dragon
+        made of pillows. Another holds a superhero whose costume keeps
+        changing colors. A third has something that is half cat, half
+        spaceship, and entirely confident about it. Each one is being built
+        from scratch by the raw material of imagination.
+      humming: >-
+        The <ansi fg="itemname">humming</ansi> is not mechanical -- it is
+        the sound of creative energy doing its work. It changes pitch and
+        tone based on what is being created. Dragon ideas make it rumble.
+        Fairy ideas make it chime. The half-cat-half-spaceship makes it
+        produce a sound that should not exist but does.
+    idle:
+      - A pod near the wall pulses and the shape inside gains a pair of wings. Then loses them. Then gains four.
+      - The humming shifts to a lower register as a new imaginary friend begins to take form.
+      - A nearly-mature imaginary friend presses a hand against its pod wall and waves.
+      - Creative energy swirls through the room in ribbons of color, feeding into the pods.
+      - A pod pops open prematurely, releasing a half-formed idea that bounces off the walls before dissolving.
+
+  # ── HOUSE OF CARDS ────────────────────────────────────────────────
+  - id: 416
+    title: "House of Cards"
+    desc: >-
+      A towering structure of giant playing <ansi fg="itemname">cards</ansi>
+      rises around you, each card the size of a door and leaning against
+      its neighbor in precarious balance. The house is enormous -- corridors,
+      rooms, and staircases all made from cards that tremble with every
+      footstep and sway in every draft. Face cards peer down from the walls
+      with painted expressions that seem to follow you. The entire structure
+      should have collapsed a thousand times over, and the air is thick with
+      the tension of something that knows it is defying gravity and is
+      getting nervous about it. Every surface vibrates with a faint,
+      anxious energy. Walk carefully.
+    biome: land
+    symbol: "V"
+    legend: Cards
+    exits:
+      north: 415
+      south: 417
+    nouns:
+      cards: >-
+        The <ansi fg="itemname">cards</ansi> are standard playing cards
+        scaled up to absurd proportions. Kings, queens, and jacks stare
+        from the walls with regal indifference. Number cards form the
+        floors and ceilings, their pips slightly worn from foot traffic.
+        If you lean on one, the entire corridor shifts half an inch and
+        every card in the building holds its breath.
+    idle:
+      - A card wall shudders and leans a degree further. The whole building creaks in sympathy.
+      - The King of Spades on the wall narrows his painted eyes at you. Or maybe the card just shifted.
+      - A card from the upper floors flutters down, and the structure compensates with a nervous wobble.
+      - The floor vibrates faintly under your feet. Every step is a negotiation with collapse.
+      - A draft passes through and every card in the building sways in unison, then stills. Barely.
+
+  # ── COOKIE FACTORY ────────────────────────────────────────────────
+  - id: 417
+    title: "Cookie Factory"
+    desc: >-
+      A whimsical <ansi fg="itemname">factory</ansi> that produces imagination
+      cookies on an industrial scale. Conveyor belts carry trays of
+      <ansi fg="itemname">cookies</ansi> in impossible flavors through ovens
+      shaped like smiling faces. The air is thick with the smell of baking --
+      chocolate chip, snickerdoodle, peanut butter, and flavors that can only
+      exist in someone's head, like "the smell of a snow day" and "the feeling
+      of winning." Frosting pipes dispense decoration in every color, and a
+      quality control station manned by nobody rejects cookies that are not
+      fun enough. The whole operation runs on pure creative energy and produces
+      far more cookies than any mind could ever consume. There are always
+      more cookies.
+    biome: land
+    symbol: K
+    legend: Cookies
+    exits:
+      north: 416
+      south: 418
+    nouns:
+      factory: >-
+        The <ansi fg="itemname">factory</ansi> is a Willy Wonka fever dream
+        scaled for a child's expectations. The machinery is all bright colors
+        and rounded edges, with no safety hazards because the concept of
+        safety hazards has not been imagined here. Gears turn, belts roll,
+        and ovens bake, all powered by the simple belief that cookies should
+        exist in unlimited quantities.
+      cookies: >-
+        The <ansi fg="itemname">cookies</ansi> come in every variety, real
+        and imagined. Classic chocolate chip sits next to "Rocket Ship Crunch"
+        and "Purple Flavor." Each one is warm, perfectly baked, and tastes
+        exactly as good as you imagined it would. The flavors are memories as
+        much as they are food -- one tastes like a birthday party, another
+        like the first day of summer vacation.
+    idle:
+      - A fresh batch of cookies rolls out of a smiling oven, filling the air with impossibly good smells.
+      - The quality control station rejects a cookie for being "not whimsical enough." It is replaced instantly.
+      - A frosting pipe dispenses a rainbow spiral onto a cookie the size of a dinner plate.
+      - The factory hums with the satisfied energy of a place that knows exactly what it is for.
+      - A cookie shaped like a star floats off the conveyor belt and drifts toward you, still warm.
+
+  # ── ADVENTURE CANYON ──────────────────────────────────────────────
+  - id: 418
+    title: "Adventure Canyon"
+    desc: >-
+      A dramatic desert <ansi fg="itemname">canyon</ansi> carved from red
+      and orange rock, its walls rising in sheer cliffs on either side of a
+      winding trail. This is the action zone of Imagination Land, where every
+      childhood adventure story plays out at full scale. Rope bridges span
+      the gaps between cliff faces. Mysterious <ansi fg="itemname">caves</ansi>
+      dot the canyon walls, some glowing with treasure light, others dark and
+      ominous. The trail is marked with painted arrows and the footprints of
+      a hundred imaginary expeditions. Something moves in the shadows of the
+      canyon walls -- not all of Imagination Land is friendly, and this is
+      where the mind keeps the things that make adventures dangerous enough
+      to be exciting.
+    biome: land
+    symbol: "X"
+    legend: Canyon
+    exits:
+      north: 417
+      south: 419
+    nouns:
+      canyon: >-
+        The <ansi fg="itemname">canyon</ansi> is a masterwork of imagined
+        geography. Its walls show strata of different adventures -- a layer
+        of pirate gold, a vein of dinosaur bones, a seam of alien crystal.
+        Every childhood adventure genre is represented in the geology, layered
+        on top of each other like a cross-section of every story Riley ever
+        loved.
+      caves: >-
+        The <ansi fg="itemname">caves</ansi> in the canyon walls come in two
+        varieties: treasure caves, which glow golden and contain piles of
+        imaginary loot, and danger caves, which are dark and make low
+        rumbling sounds. An experienced adventurer can tell them apart.
+        An inexperienced one has a more exciting time.
+    idle:
+      - A rope bridge sways in a dramatic gust of wind that seems to come from nowhere.
+      - Something growls from one of the dark caves. It might be a monster. It might be the wind. It is a monster.
+      - A glint of treasure light flashes from a cave high on the canyon wall.
+      - Pebbles clatter down the cliff face, dislodged by something moving along the rim above.
+      - The trail ahead bends around a corner you cannot see past. Adventure literally awaits.
+    spawns:
+      - {mob: 38, rate: "4 real minutes", msg: "A <ansi fg=\"mobname\">gloom raider scout</ansi> drops from a canyon ledge, landing in a crouch, its dark form silhouetted against the red rock."}
+
+  # ── BOTTOMLESS PIT EDGE ───────────────────────────────────────────
+  - id: 419
+    title: "Bottomless Pit Edge"
+    desc: >-
+      The terrain of Imagination Land ends abruptly at the edge of a vast
+      <ansi fg="itemname">pit</ansi> that drops into absolute darkness. This
+      is the boundary between creation and oblivion -- below lies the Memory
+      Dump, the final resting place of everything the mind discards. The edge
+      is ragged and crumbling, and chunks of Imagination Land occasionally
+      break free and tumble silently into the void. A weathered
+      <ansi fg="itemname">guardrail</ansi> made of popsicle sticks provides
+      questionable protection. The view is sobering -- from here you can see
+      how close imagination and forgetting really are, separated by nothing
+      more than a crumbling lip of colorful rock and a child's belief that
+      the things they love will last forever.
+    biome: land
+    symbol: "!"
+    legend: Pit
+    exits:
+      north: 418
+      south: 420
+    nouns:
+      pit: >-
+        The <ansi fg="itemname">pit</ansi> is exactly what it says -- bottomless.
+        Drop a rock and you will never hear it land. The darkness below is not
+        just absence of light; it is absence of memory, absence of imagination,
+        absence of everything. The Memory Dump is down there somewhere, but from
+        this height, all you can see is nothing going on forever.
+      guardrail: >-
+        The <ansi fg="itemname">guardrail</ansi> is a row of popsicle sticks
+        glued together and painted yellow. It would not stop a strong breeze,
+        let alone a person. A sign on it reads "CAUTION: BOTTOMLESS. WE MEAN
+        IT." Below that, someone has written "Bing Bong was here" in fading
+        crayon.
+    idle:
+      - A chunk of colorful rock breaks from the edge and falls silently into the darkness.
+      - The guardrail creaks in the wind rising from the pit. It is not reassuring.
+      - You peer over the edge and see nothing. Then less than nothing. Then you step back.
+      - A cold breath of air rises from the pit, carrying the faintest whisper of a forgotten song.
+      - The darkness below seems to pulse, as if the void itself is breathing.
+
+  # ── PIRATE SHIP DECK ─────────────────────────────────────────────
+  - id: 420
+    title: "Pirate Ship Deck"
+    desc: >-
+      An enormous imaginary <ansi fg="itemname">pirate ship</ansi> is
+      anchored at the far edge of Imagination Land, its wooden hull creaking
+      and its tattered <ansi fg="itemname">sails</ansi> snapping in a wind
+      that smells like salt water and adventure. The deck is a chaos of coiled
+      rope, treasure chests, and cannons made from painted cardboard tubes.
+      A crow's nest at the top of the mast offers views across all of
+      Imagination Land and back toward the distant glow of Long Term Memory.
+      A plank extends over the edge of the world. The Jolly Roger flies
+      overhead, though someone has drawn a smiley face on the skull. The
+      whole ship vibrates with the swashbuckling energy of every pirate
+      story ever told at bedtime, and the crew is not entirely friendly.
+    biome: land
+    symbol: "J"
+    legend: Pirates
+    exits:
+      north: 419
+      west: 400
+    nouns:
+      pirate ship: >-
+        The <ansi fg="itemname">pirate ship</ansi> is the real deal -- or
+        the imaginary real deal, which in Imagination Land is the same thing.
+        Its hull is scarred from a hundred imaginary sea battles. Its wheel
+        spins freely. Its hold is rumored to contain treasure beyond counting,
+        though the treasure is probably imaginary gold, which spends the same
+        as real gold here.
+      sails: >-
+        The <ansi fg="itemname">sails</ansi> are tattered in the most dramatic
+        way possible, with just enough holes to look cool without actually
+        affecting sailing performance. Each one is painted with a different
+        insignia -- a skull and crossbones, a treasure map, and one that just
+        says "ARRRR" in enormous letters.
+    idle:
+      - The ship creaks and sways as an imaginary wave rolls beneath the hull.
+      - A cannon made of painted cardboard fires a puff of confetti over the rail.
+      - The Jolly Roger snaps in the wind, its smiley-face skull grinning at the sky.
+      - Somewhere below deck, something clatters and a voice yells "AVAST!" followed by giggling.
+      - The plank extends over the void, daring someone to walk it. There are no takers.
+    spawns:
+      - {mob: 36, rate: "5 real minutes", msg: "A <ansi fg=\"mobname\">corrupted imaginary friend</ansi> swings down from the rigging, landing on the deck with a hollow thud, button eyes blazing."}

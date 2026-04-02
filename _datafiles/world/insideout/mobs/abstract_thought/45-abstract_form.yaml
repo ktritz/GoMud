@@ -1,0 +1,26 @@
+mobid: 45
+zone: Abstract Thought
+itemdropchance: 20
+hostile: true
+nocorpse: true
+deathmessage: '{name} loses coherence and collapses into meaningless shapes.'
+maxwander: 3
+activitylevel: 20
+groups:
+- abstract
+idlecommands:
+- emote shifts from cube to sphere to something indescribable.
+- ''
+character:
+  name: abstract form
+  description: A shifting geometric entity that can't decide what shape it wants to be. One moment it's a perfect cube, then a sphere, then a tangled knot of impossible angles that hurt to look at directly. Triangles, circles, and shapes that don't have names phase in and out of its surface like bubbles in boiling water. It hums with a low, atonal vibration that you feel in your teeth more than hear with your ears.
+  level: 12
+  gold: 38
+  raceid: 4
+  stats:
+    strength:
+      training: 10
+    speed:
+      training: 7
+    vitality:
+      training: 14

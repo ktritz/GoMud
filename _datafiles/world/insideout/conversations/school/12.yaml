@@ -1,0 +1,68 @@
+-
+  Supported:
+    "classmate": ["classmate"]
+  Conversation:
+    - ["#1 say Did you finish the homework?"]
+    - ["#2 say What homework?!"]
+    - ["#1 say The math worksheet? Due today?"]
+    - ["#2 emote goes pale",
+       "#2 say ...I thought that was due Friday."]
+    - ["#1 say It IS Friday."]
+    - ["#2 say Oh no. Oh no no no no no."]
+-
+  Supported:
+    "classmate": ["classmate"]
+  Conversation:
+    - ["#1 say That test was SO unfair."]
+    - ["#2 say I know, right? Who puts essay questions on a math test?"]
+    - ["#1 say 'Explain in your own words how you feel about fractions.' HOW I FEEL?!"]
+    - ["#2 say I wrote 'betrayed.' Just the one word."]
+    - ["#1 say ...Do you think we'll get partial credit?"]
+    - ["#2 say For feelings? Probably not."]
+-
+  Supported:
+    "classmate": ["classmate"]
+  Conversation:
+    - ["#1 say Want to sit together at lunch?"]
+    - ["#2 say Sure, if you're not gonna talk about hockey again."]
+    - ["#1 say ...No promises."]
+    - ["#2 say Last time you spent twenty minutes explaining what 'icing' is."]
+    - ["#1 say Because you ASKED!"]
+    - ["#2 say I asked if you wanted my ice cream!"]
+-
+  Supported:
+    "classmate": ["classmate"]
+  Conversation:
+    - ["#1 emote leans over conspiratorially",
+       "#1 say I heard there's a substitute teacher today."]
+    - ["#2 say No way. For which class?"]
+    - ["#1 say Science. You know what that means."]
+    - ["#2 say Movie day?"]
+    - ["#1 say MOVIE DAY!"]
+    - ["#2 say Best. Friday. Ever."]
+-
+  Supported:
+    "classmate": ["teacher"]
+  Conversation:
+    - ["#1 sayto #2 Is this going to be on the test?"]
+    - ["#2 say Everything is on the test."]
+    - ["#1 say ...Even this conversation?"]
+    - ["#2 say Especially this conversation. I hope you were taking notes."]
+    - ["#1 emote frantically starts scribbling in a notebook"]
+-
+  Supported:
+    "classmate": ["teacher"]
+  Conversation:
+    - ["#1 sayto #2 Can I go to the bathroom?"]
+    - ["#2 say I don't know. CAN you?"]
+    - ["#1 say ...MAY I go to the bathroom?"]
+    - ["#2 say You may. But the hall pass is missing."]
+    - ["#1 say It's been missing since September."]
+    - ["#2 say And yet, here we are."]
+-
+  Supported:
+    "classmate": ["*"]
+  Conversation:
+    - ["#1 say I can't wait for summer break."]
+    - ["#2 say It's October."]
+    - ["#1 say I know. I've been counting down since September."]

@@ -1,0 +1,11 @@
+itemid: 20005
+name: abstract thought helm
+namesimple: helm
+description: 'A helmet that exists in multiple geometric states simultaneously. Looking
+  at it gives you a headache, but wearing it clarifies abstract concepts.'
+type: head
+subtype: wearable
+damagereduction: 5
+statmods:
+  smarts: 3
+value: 200

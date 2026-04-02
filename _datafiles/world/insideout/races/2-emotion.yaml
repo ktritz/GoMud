@@ -1,0 +1,22 @@
+raceid: 2
+name: emotion
+description: A luminous being made of pure feeling. Each emotion radiates their signature
+  color and exudes an aura that affects everyone nearby.
+defaultalignment: 10
+size: medium
+unarmedname: emotional surge
+tnlscale: 1
+selectable: false
+knowsfirstaid: false
+tameable: false
+angrycommands:
+- emote glows intensely.
+- 'shout You do NOT want to mess with feelings!'
+stats:
+  smarts:
+    base: 2
+  perception:
+    base: 2
+damage:
+  diceroll: 1d6
+disabledslots: []

@@ -1,0 +1,32 @@
+roomid: 200
+zone: Headquarters
+title: The Console Room
+description: The heart of Riley's mind stretches out before you, a vast circular chamber dominated by the console -- a sprawling control panel covered in hundreds of colorful buttons, sliders, and levers that pulse with soft light. A massive screen mounted on the far wall shows Riley's point of view in real-time, the image shifting as she goes about her day. Five emotion stations ring the console, each tinted a different color and worn smooth from years of use. The floor is a polished surface that subtly shifts hue depending on Riley's current mood, and the domed ceiling above glows with a warm ambient light that makes everything feel alive and important. This is where every feeling starts.
+mapsymbol: C
+maplegend: Console
+biome: mindscape
+exits:
+  south:
+    roomid: 201
+  east:
+    roomid: 206
+  west:
+    roomid: 211
+  north:
+    roomid: 203
+  up:
+    roomid: 204
+  southeast:
+    roomid: 213
+  southwest:
+    roomid: 214
+nouns:
+  console: The console is a magnificent arc of controls stretching nearly wall to wall. Its surface is dotted with buttons in every color imaginable -- golden yellows, deep blues, fiery reds, sickly greens, and vivid purples. Some buttons glow steadily while others flicker, waiting to be pressed. A faint hum of energy radiates from it.
+  screen: The massive screen shows Riley's live perspective. Right now she seems to be at school, the image slightly unfocused as if she's daydreaming. Occasionally the feed sharpens when something catches her attention.
+  buttons: Hundreds of buttons cover the console in neat clusters. Each group controls a different aspect of Riley's emotional response. Some are well-worn from frequent use, while others look barely touched. A few have sticky notes attached reading things like "DO NOT PRESS DURING MATH CLASS."
+idlemessages:
+- The console flickers through a rapid sequence of golden and blue lights.
+- A button on the console presses itself and a brief giggle echoes through the room.
+- The screen shifts and Riley's perspective blurs for a moment as she blinks.
+- The floor beneath your feet ripples from cool blue to warm yellow and back again.
+- Somewhere in the room, a faint melody plays -- a half-remembered song from childhood.

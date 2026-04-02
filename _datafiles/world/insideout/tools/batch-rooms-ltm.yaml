@@ -1,0 +1,802 @@
+zone: long_term_memory
+zone_config:
+  name: "Long Term Memory"
+  roomid: 300
+  autoscale: {minimum: 4, maximum: 7}
+  defaultbiome: cave
+
+rooms:
+  # ── MEMORY SHELF ENTRANCE ──────────────────────────────────────────
+  - id: 300
+    title: "Memory Shelf Entrance"
+    desc: >-
+      The Recall Tube deposits you at the top of Long Term Memory with a faint
+      pneumatic hiss. Towering shelves stretch in every direction, rising hundreds
+      of feet overhead and vanishing into a dim haze below. Each shelf holds
+      thousands of <ansi fg="itemname">memory orbs</ansi> arranged in neat rows,
+      their soft glow painting the narrow corridors in shifting pastel light. A
+      spiral stairway from the Headquarters Balcony arrives here as well, its
+      final step worn smooth by generations of mind workers. The air is cool and
+      still, carrying the faint hum of a billion stored moments.
+    biome: cave
+    symbol: E
+    legend: Entrance
+    exits:
+      tube: 205
+      stairway: 215
+      south: 301
+    nouns:
+      orbs: >-
+        The <ansi fg="itemname">memory orbs</ansi> nearest the entrance are some of
+        the most recently stored. Each one is a perfect sphere about the size of a
+        softball, glowing with the color of its dominant emotion. You can see tiny
+        scenes playing inside them -- a classroom lecture, a text conversation, a
+        slice of pepperoni pizza.
+      shelves: >-
+        The shelves are built from a smooth, dark material that seems to absorb
+        sound. They stretch so far in every direction that the far ends dissolve
+        into a faint luminous haze. Small labels mark each section, though the
+        organizational system is incomprehensible to anyone who isn't a mind worker.
+    idle:
+      - A memory orb rolls slightly on its shelf, its tiny scene flickering as if replaying a dream.
+      - The hum of stored memories rises and falls like slow breathing.
+      - Somewhere deep in the shelves, a faint golden light flares and then fades.
+      - A cool draft drifts up from the lower levels, carrying the musty smell of old thoughts.
+      - The Recall Tube above lets out a soft whoosh as a memory is summoned back to Headquarters.
+
+  # ── YELLOW MEMORY CORRIDOR ─────────────────────────────────────────
+  - id: 301
+    title: "Yellow Memory Corridor"
+    desc: >-
+      A warm golden glow suffuses this corridor, radiating from shelves packed
+      entirely with <ansi fg="itemname">joy memories</ansi>. Every orb here
+      shines a rich, buttery yellow, and the light they cast makes the narrow
+      passage feel like a sun-drenched afternoon that never ends. The air itself
+      seems warmer, and you catch fragments of laughter and music leaking from
+      the orbs as you pass. Occasional bright flares mark particularly intense
+      happy memories, momentarily washing the corridor in blinding gold. A side
+      passage branches off toward the fading sections to the west.
+    biome: cave
+    symbol: "Y"
+    legend: Yellow
+    exits:
+      north: 300
+      south: 302
+      west: 306
+    nouns:
+      joy memories: >-
+        The <ansi fg="itemname">joy memories</ansi> glow with an infectious warmth.
+        Peering into one reveals a birthday party, candles blazing. Another shows
+        a dog licking someone's face. A third captures the exact moment of hearing
+        your favorite song for the first time. Each one makes you want to smile.
+    idle:
+      - A nearby orb flares golden and the sound of a child's laughter echoes briefly through the corridor.
+      - The warm glow intensifies for a moment, as if a cluster of happy memories are being recalled at once.
+      - You catch a whiff of birthday cake drifting from one of the shelves.
+      - A golden orb rolls to the edge of its shelf, glowing brighter, then settles back into place.
+      - The sound of distant applause leaks from an orb somewhere above you.
+
+  # ── BLUE MEMORY CORRIDOR ───────────────────────────────────────────
+  - id: 302
+    title: "Blue Memory Corridor"
+    desc: >-
+      The warmth of the yellow corridor fades behind you as a deep, cool blue
+      light washes over everything. The <ansi fg="itemname">sadness memories</ansi>
+      lining these shelves glow in shades of cerulean, cobalt, and midnight blue,
+      casting long, gentle shadows that pool on the floor like still water. The
+      air is noticeably cooler here and carries a faint dampness, as though the
+      memories themselves are quietly weeping. Despite the melancholy, there is a
+      strange beauty to this place -- the blue light is soft and kind, and the
+      silence feels less empty than it does contemplative.
+    biome: cave
+    symbol: B
+    legend: Blue
+    exits:
+      north: 301
+      south: 303
+    nouns:
+      sadness memories: >-
+        The <ansi fg="itemname">sadness memories</ansi> shimmer with a quiet depth.
+        One shows a rainy car ride with no conversation. Another captures the moment
+        of realizing a friendship has drifted apart. They are painful to look at but
+        impossible to look away from. Each one feels important in a way that is hard
+        to articulate.
+    idle:
+      - A blue orb dims slightly and you feel an unexpected pang of nostalgia.
+      - The sound of quiet rainfall leaks from a cluster of orbs on a high shelf.
+      - A tear-shaped drop of light falls from a memory orb and evaporates before it hits the floor.
+      - The corridor sighs -- or perhaps that is just the air shifting between the shelves.
+      - A faint melody drifts past, the kind of sad song you cannot stop listening to.
+
+  # ── RED MEMORY CORRIDOR ────────────────────────────────────────────
+  - id: 303
+    title: "Red Memory Corridor"
+    desc: >-
+      The temperature climbs sharply as you enter the red memory corridor. The
+      <ansi fg="itemname">anger memories</ansi> packed into these shelves burn
+      with a fierce, ruddy glow that makes the walls look like they are lit by
+      an underground furnace. Some orbs pulse erratically, as if the fury inside
+      them is still simmering years later. The air is dry and warm, carrying a
+      faint smell of scorched metal. The shelves here are reinforced with extra
+      bracing, and a few orbs sit in special containment brackets -- memories so
+      intense they might roll right off the shelf without them. You can almost
+      hear teeth grinding.
+    biome: cave
+    symbol: R
+    legend: Red
+    exits:
+      north: 302
+      south: 304
+    nouns:
+      anger memories: >-
+        The <ansi fg="itemname">anger memories</ansi> are hot to the touch. One
+        shows a slammed door. Another captures the white-hot moment of being accused
+        of something you did not do. A third replays an argument on loop, each
+        repetition making the orb glow brighter. The containment brackets on the
+        most intense ones are slightly warped from the heat.
+    idle:
+      - A red orb flares violently, casting sharp shadows that jump across the walls.
+      - The temperature spikes and you feel a sudden urge to clench your fists.
+      - Something inside a nearby orb makes a sound like a door slamming.
+      - The reinforced shelves creak under the strain of particularly furious memories.
+      - A faint smell of smoke drifts from the deeper sections of the corridor.
+
+  # ── PURPLE MEMORY CORRIDOR ─────────────────────────────────────────
+  - id: 304
+    title: "Purple Memory Corridor"
+    desc: >-
+      The light drops to a dim, flickering purple as you enter this section.
+      The <ansi fg="itemname">fear memories</ansi> on these shelves give off an
+      uncertain, jittery glow that never quite holds steady, casting twitching
+      shadows that make the corridor feel like it is moving when you are not.
+      The shelves seem to lean inward overhead, though that might just be a trick
+      of the anxious light. The air is chilly and thin, and every small sound --
+      a settling shelf, a shifting orb -- is amplified into something that makes
+      you want to look over your shoulder. The passage ahead is darker still.
+    biome: cave
+    symbol: P
+    legend: Purple
+    exits:
+      north: 303
+      south: 305
+    nouns:
+      fear memories: >-
+        The <ansi fg="itemname">fear memories</ansi> flicker nervously. One shows
+        a dark hallway at night. Another captures the moment before a test you did
+        not study for. A third replays the split second of tripping in front of
+        everyone. Looking at them too long makes your pulse quicken.
+    idle:
+      - A purple orb sputters and the shadows around you lurch sideways.
+      - You hear a faint creaking from somewhere deep in the shelves. It is probably nothing.
+      - The temperature drops a few degrees and the hair on your arms stands up.
+      - A memory orb rolls an inch on its shelf with a soft click that sounds deafening in the silence.
+      - Something flickers at the edge of your vision, but when you turn there is nothing there.
+
+  # ── GREEN MEMORY CORRIDOR ──────────────────────────────────────────
+  - id: 305
+    title: "Green Memory Corridor"
+    desc: >-
+      A sharp, discerning green light fills this corridor, cast by the
+      <ansi fg="itemname">disgust memories</ansi> that line the shelves in neat,
+      almost prissy rows. Unlike the other corridors, these orbs are arranged
+      with unusual precision -- sorted by intensity, subcategory, and what appears
+      to be a personal rating system using tiny sticker labels. The green light
+      has an acerbic quality, making everything look slightly overexposed and
+      unforgiving. The air smells faintly of broccoli and moral superiority. A
+      passage continues south toward the Mind Worker Break Room.
+    biome: cave
+    symbol: G
+    legend: Green
+    exits:
+      north: 304
+      south: 309
+    nouns:
+      disgust memories: >-
+        The <ansi fg="itemname">disgust memories</ansi> are meticulously catalogued.
+        One captures the moment of biting into something unexpectedly slimy. Another
+        shows a fashion choice so bad it apparently warranted its own containment
+        bracket. The sticker rating system goes from one to five green faces, with
+        five being "Absolutely Not."
+    idle:
+      - A green orb flashes and you catch a brief whiff of something deeply unappetizing.
+      - The sticker labels on the shelves flutter as if a disapproving breeze just passed through.
+      - You notice an orb labeled with five green faces sitting in its own quarantine bracket.
+      - The corridor's green light makes your skin look slightly sickly, which somehow feels intentional.
+      - A faint "ugh" echoes from somewhere in the shelves, though there is nobody else here.
+
+  # ── FADING MEMORY AISLE ────────────────────────────────────────────
+  - id: 306
+    title: "Fading Memory Aisle"
+    desc: >-
+      The light dims sharply as you turn into this aisle. The memory orbs here
+      have lost their vibrancy -- once-bright colors have washed out to pale
+      pastels and grays, and many orbs sit dark and still on their shelves,
+      their scenes frozen mid-frame or playing in stuttering loops. A fine gray
+      <ansi fg="itemname">dust</ansi> coats the lower shelves, and the air
+      tastes stale and flat, like a room that hasn't been opened in years. Some
+      orbs have hairline cracks running through them, leaking wisps of faint
+      light that evaporate before they reach the floor. This is where memories
+      come to be forgotten.
+    biome: cave
+    symbol: F
+    legend: Fading
+    exits:
+      east: 301
+      south: 307
+    nouns:
+      dust: >-
+        The <ansi fg="itemname">dust</ansi> is not ordinary dust. It is the residue
+        of completely forgotten memories -- thoughts that have faded so thoroughly
+        they crumbled into nothing. It is fine and gray and slightly warm to the
+        touch, and if you hold a handful up to the light you can sometimes catch
+        the ghost of a scene playing inside the motes.
+      orbs: >-
+        The fading orbs are heartbreaking up close. A once-golden memory now shows
+        only a blurred outline of a smiling face, the details long gone. A blue
+        orb plays a conversation where the words have been replaced by silence.
+        They are still here, technically, but barely.
+    idle:
+      - A gray orb on a nearby shelf flickers once, then goes completely dark.
+      - Dust motes drift through the air, each one the ghost of something once remembered.
+      - A faded orb tries to replay its scene but the image stutters and freezes.
+      - The silence here feels heavy, as if sound itself is being forgotten.
+      - A <ansi fg="mobname">memory leech</ansi> slithers between the shelves, drawn to the fading light.
+    spawns:
+      - {mob: 31, rate: "3 real minutes", msg: "A <ansi fg=\"mobname\">memory leech</ansi> oozes out from between the dusty shelves, drawn by fading light."}
+      - {mob: 31, rate: "4 real minutes", msg: "Another <ansi fg=\"mobname\">memory leech</ansi> drags itself from the shadows beneath a crumbling shelf."}
+
+  # ── DUSTY MEMORY CORNER ────────────────────────────────────────────
+  - id: 307
+    title: "Dusty Memory Corner"
+    desc: >-
+      A dead-end alcove where the shelves crowd close and the ceiling dips
+      low, creating a cramped, claustrophobic space choked with gray
+      <ansi fg="itemname">dust</ansi>. Nearly every orb here is dark or deeply
+      faded, their scenes reduced to vague impressions -- a color, a feeling,
+      the ghost of a face with no name attached. Cobweb-like strands of
+      decayed memory stretch between the shelves, and the dust is thick enough
+      to muffle your footsteps. A narrow gap between the shelves leads deeper
+      into the fading sections. The air is so stale it almost crackles when
+      you breathe.
+    biome: cave
+    symbol: D
+    legend: Dusty
+    exits:
+      north: 306
+      south: 308
+    nouns:
+      dust: >-
+        The dust here is ankle-deep in places. It piles against the shelf bases
+        in drifts of powdered memory. If you sift through it carefully you can
+        occasionally find a tiny shard of an orb -- a fragment that holds one
+        last second of a forgotten moment before dissolving in your fingers.
+      cobwebs: >-
+        The strands connecting the shelves are not spider silk but the remnants
+        of associations between memories. When one memory fades, the connections
+        it had to other memories wither into these ghostly threads. Pull one and
+        somewhere on a distant shelf, another memory dims slightly.
+    idle:
+      - A strand of decayed memory snaps with a faint chime, and a distant orb flickers.
+      - The dust shifts in a slow eddy, as if something just passed through unseen.
+      - A dark orb on a high shelf crumbles silently, adding to the dust below.
+      - You hear a faint wet sound from the shadows -- something feeding.
+      - The air tastes like the moment after you forget what you were going to say.
+    spawns:
+      - {mob: 31, rate: "5 real minutes", msg: "A <ansi fg=\"mobname\">memory leech</ansi> pulls itself from beneath a collapsed shelf, antennae twitching."}
+      - {mob: 35, rate: "6 real minutes", msg: "A <ansi fg=\"mobname\">fading memory</ansi> drifts out of a dark orb, barely visible in the gloom."}
+
+  # ── THE FORGETTING SHELF ───────────────────────────────────────────
+  - id: 308
+    title: "The Forgetting Shelf"
+    desc: >-
+      This is the last stop before oblivion. The shelves here hold orbs that
+      are little more than hollow shells -- translucent, colorless spheres
+      with nothing playing inside them. Many have crumbled entirely, leaving
+      only <ansi fg="itemname">piles of gray dust</ansi> where memories once
+      sat. The shelves themselves are cracked and leaning, as if the structure
+      of Long Term Memory is giving up on this section. A cold draft rises
+      from a dark <ansi fg="itemname">opening</ansi> in the floor where the
+      shelves have collapsed, revealing the vast emptiness of the Memory Dump
+      far below. The silence here is absolute.
+    biome: cave
+    symbol: "!"
+    legend: Forget
+    exits:
+      north: 307
+      south: 316
+    nouns:
+      piles: >-
+        The <ansi fg="itemname">piles of gray dust</ansi> are all that remain of
+        thousands of memories. Each pile was once a moment in someone's life -- a
+        Tuesday afternoon, a stranger's face, the name of a song heard only once.
+        They are gone now, and nobody misses them, because nobody remembers them.
+      opening: >-
+        The <ansi fg="itemname">opening</ansi> in the floor reveals a dizzying
+        drop into darkness. Far, far below, the Memory Dump sprawls like a gray
+        wasteland. You can see the outlines of enormous piles of discarded memory
+        fragments, the final resting place of everything the mind decides to let go.
+    idle:
+      - An orb shell collapses inward with a soft crunch, releasing a puff of gray dust.
+      - The draft from the opening below carries a faint, formless whisper -- lost words from lost memories.
+      - A section of shelf gives way with a groan, sending a cascade of dust to the floor.
+      - The absolute silence presses against your ears like something solid.
+      - A translucent orb rolls off its shelf and shatters on the floor, releasing nothing at all.
+
+  # ── MIND WORKER BREAK ROOM ─────────────────────────────────────────
+  - id: 309
+    title: "Mind Worker Break Room"
+    desc: >-
+      A surprisingly cheerful room carved out of the shelving structure, lit
+      by warm overhead lamps that give it a cozy cafeteria feel. Battered
+      <ansi fg="itemname">tables</ansi> and mismatched chairs fill the space,
+      most of them occupied by squat, blue-gray <ansi fg="mobname">mind workers</ansi>
+      on their break. A row of <ansi fg="itemname">vending machines</ansi>
+      lines one wall, stocked with snacks that seem to exist only inside
+      someone's head -- "Subconscious Snack Mix," "Déjà Vu Drops," and
+      "Abstract Thought Pretzels." A bulletin board near the door is covered
+      in work schedules, safety notices, and a flyer for the Mind Worker
+      softball league. The room buzzes with quiet conversation and the
+      clinking of cups.
+    biome: cave
+    symbol: W
+    legend: Workers
+    exits:
+      north: 305
+      south: 310
+    nouns:
+      tables: >-
+        The <ansi fg="itemname">tables</ansi> are scarred and stained from years
+        of coffee rings and spilled Subconscious Snack Mix. Each one has a small
+        nameplate claiming it for a different work crew -- "Shelf Team Alpha,"
+        "Recall Squad 7," and the ominous "Night Shift." Crumbs cover every surface.
+      vending machines: >-
+        The <ansi fg="itemname">vending machines</ansi> offer a bewildering
+        selection. The drinks include "Liquid Nostalgia (Grape)" and "Focused
+        Concentration Juice." One machine is labeled "OUT OF ORDER" but a mind
+        worker tells you it has been that way since Riley was four. The prices
+        are listed in "thought units."
+      bulletin board: >-
+        The bulletin board is cluttered with notices. "REMINDER: DO NOT REORGANIZE
+        THE EMBARRASSING MEMORIES AGAIN." "Softball game Tuesday -- bring your
+        own glove." "LOST: One memory of a phone number. If found, please return
+        to Shelf 4,792." A safety poster reads "A Tidy Shelf Is A Happy Shelf."
+    idle:
+      - A mind worker at a nearby table slurps coffee loudly and stares at nothing.
+      - Two mind workers argue about whether a particular memory belongs in "School" or "Friends."
+      - Someone feeds coins into a vending machine and it dispenses a bag of Déjà Vu Drops.
+      - A mind worker checks the bulletin board, shakes their head, and walks away muttering.
+      - The coffee machine gurgles and produces a cup that smells like concentrated focus.
+
+  # ── MEMORY SORTING STATION ─────────────────────────────────────────
+  - id: 310
+    title: "Memory Sorting Station"
+    desc: >-
+      A bustling workstation where the real labor of Long Term Memory happens.
+      Conveyor belts carry freshly stored memory orbs from the upper levels down
+      to sorting trays, where <ansi fg="mobname">mind workers</ansi> examine
+      each one and slot it into the correct section. A massive <ansi fg="itemname">sorting
+      board</ansi> on the wall displays the current shelf map, with colored pins
+      marking which sections are full and which have room. Tools of the trade
+      hang on pegboards -- orb polishers, label makers, shelf extenders, and a
+      device ominously labeled "Memory Compressor (USE WITH CAUTION)." The whole
+      operation runs with the efficiency of a factory and the energy of a post
+      office on a Monday.
+    biome: cave
+    symbol: S
+    legend: Sorting
+    exits:
+      north: 309
+      south: 311
+    nouns:
+      sorting board: >-
+        The <ansi fg="itemname">sorting board</ansi> is an enormous map of the
+        entire Long Term Memory system. Colored pins mark every section -- yellow
+        for joy memories, blue for sadness, red for anger, and so on. Several
+        sections are flagged with tiny warning signs reading "NEARLY FULL" or
+        "NEEDS DEFRAGMENTATION." The embarrassing memories section is, predictably,
+        the largest.
+      tools: >-
+        The tools on the pegboard are specialized for memory maintenance. The orb
+        polisher restores faded memories to temporary brightness. The label maker
+        prints tiny categorization tags. The Memory Compressor apparently merges
+        similar memories into single orbs, which explains why you can never
+        remember which specific Tuesday something happened on.
+    idle:
+      - A mind worker holds up an orb, squints at it, and drops it into a sorting tray labeled "Misc."
+      - The conveyor belt lurches and a pile of fresh memory orbs tumbles into the sorting queue.
+      - Someone accidentally drops an orb and it rolls under a table, playing a scene from gym class.
+      - A mind worker stamps "PROCESSED" on an orb with a satisfying thunk.
+      - The sorting board updates with a soft click as a new section is flagged full.
+    spawns:
+      - {mob: 32, rate: "1 real minutes", msg: "A <ansi fg=\"mobname\">mind worker</ansi> trudges in from the shelves, clipboard in hand, ready to help."}
+
+  # ── TRIPLE DENT GUM ALLEY ─────────────────────────────────────────
+  - id: 311
+    title: "Triple Dent Gum Alley"
+    desc: >-
+      The instant you step into this alley between the shelves, it hits you --
+      the <ansi fg="itemname">jingle</ansi>. That catchy, inescapable, maddeningly
+      repetitive Triple Dent Gum jingle, playing from an orb somewhere in these
+      shelves on an infinite loop. The mind workers have tried everything to stop
+      it. They have moved the orb. They have buried it under other orbs. They have
+      filed formal complaints. Nothing works. The jingle persists. The walls of
+      this narrow passage are plastered with faded Triple Dent Gum wrappers and
+      someone has scratched "MAKE IT STOP" into the shelf frame. The orbs nearby
+      have taken on a pinkish tint, as if even the neighboring memories have been
+      infected.
+    biome: cave
+    symbol: T
+    legend: Gum
+    exits:
+      north: 310
+      south: 312
+    nouns:
+      jingle: >-
+        The <ansi fg="itemname">jingle</ansi> is coming from a single, innocuous-
+        looking pink orb wedged into a middle shelf. Inside it, a commercial plays
+        on an eternal loop: smiling people chewing gum, a catchy tune, and the
+        words "Triple Dent Gum will make you smile!" It is the catchiest thing
+        you have ever heard and you already know it will be stuck in your head
+        for days.
+      wrappers: >-
+        Faded Triple Dent Gum wrappers are stuck to the walls, shelves, and floor
+        of this alley. They seem to multiply when you are not looking. Each one
+        features the same grinning mascot and the slogan "You'll Never Forget
+        The Taste!" which, given the location, is unfortunately accurate.
+    idle:
+      - "Triple Dent Gum, it makes you smile! Triple Dent Gum, it lasts a while!"
+      - The jingle restarts from the beginning. It never actually stopped.
+      - A mind worker hurries through the alley with their hands over their ears.
+      - "Triple Dent Gum! Triple Dent Gum! Triple Dent Gum!"
+      - You catch yourself humming along and feel a deep sense of betrayal by your own brain.
+
+  # ── BING BONG'S HIDEOUT ───────────────────────────────────────────
+  - id: 312
+    title: "Bing Bong's Hideout"
+    desc: >-
+      Tucked behind a loose shelf panel is a cozy little nook that someone has
+      turned into a home. A threadbare <ansi fg="itemname">blanket</ansi> is
+      spread on the floor, and the walls are decorated with crayon drawings of
+      a little girl and a large pink creature riding a red wagon through the
+      sky. A battered <ansi fg="itemname">satchel</ansi> leans against the
+      wall, overflowing with loose memories and candy wrappers. The space smells
+      like cotton candy and something bittersweet that is hard to place. This
+      is where <ansi fg="mobname">Bing Bong</ansi> has been hiding out among
+      the shelves, waiting to be remembered. The drawings are fading at the
+      edges, but the love in them is unmistakable.
+    biome: cave
+    symbol: "~"
+    legend: Bing Bong
+    exits:
+      north: 311
+      south: 313
+    nouns:
+      blanket: >-
+        The <ansi fg="itemname">blanket</ansi> is old and soft, patterned with
+        faded stars and moons. It smells like a childhood bedroom -- a mix of
+        baby shampoo, crayons, and imagination. It has been patched in several
+        places with what appears to be candy wrappers and hope.
+      satchel: >-
+        The <ansi fg="itemname">satchel</ansi> is stuffed to bursting. Inside
+        are memory orbs of varying brightness, sticks of rainbow chalk, a
+        deflated balloon, a crumpled drawing labeled "Me and Riley -- Best
+        Friends," and an alarming number of candy wrappers. Everything in it
+        tells the story of someone who refuses to be forgotten.
+      drawings: >-
+        The crayon drawings show a pink elephant-cat-dolphin creature and a
+        small girl having adventures together -- flying through clouds, exploring
+        a jungle, building a tower of blocks. The newer drawings are bright and
+        vivid. The older ones are fading, the crayon lines blurring into the wall.
+    idle:
+      - A faint smell of cotton candy drifts through the hideout.
+      - One of the crayon drawings on the wall seems to glow faintly, then fades.
+      - A candy wrapper crinkles inside the satchel, though nothing appears to have moved it.
+      - The blanket shifts slightly, as if someone just got up from sitting on it.
+      - A half-remembered song -- something about a rocket -- plays faintly from a nearby orb.
+    spawns:
+      - {mob: 33, rate: "2 real minutes", msg: "<ansi fg=\"mobname\">Bing Bong</ansi> squeezes out from behind a shelf panel, brushing dust off his pink fur and grinning broadly."}
+
+  # ── CHILDHOOD MEMORY WING ─────────────────────────────────────────
+  - id: 313
+    title: "Childhood Memory Wing"
+    desc: >-
+      The shelves here hold some of the oldest memories in Long Term storage,
+      and they glow with a warm, nostalgic golden light that is softer and
+      gentler than the sharp yellow of the joy corridor. The
+      <ansi fg="itemname">orbs</ansi> are slightly larger than modern ones --
+      childhood memories take up more space, apparently, because everything
+      felt bigger back then. Many show simple scenes: a sandbox, a sprinkler
+      on a summer lawn, the interior of a blanket fort. The shelves are lower
+      here, as if built for smaller hands, and the air carries the faint
+      sweetness of juice boxes and Play-Doh. It is impossible to walk through
+      this wing without feeling a gentle ache for something you cannot quite name.
+    biome: cave
+    symbol: C
+    legend: Childhood
+    exits:
+      north: 312
+      south: 314
+    nouns:
+      orbs: >-
+        The childhood <ansi fg="itemname">orbs</ansi> are beautiful in their
+        simplicity. One shows a pair of tiny hands finger-painting. Another
+        captures the moment of learning to ride a bicycle, the world tilting
+        wildly. A third replays a bedtime story, the parent's voice warm and
+        close. They glow with the pure, uncomplicated light of a time before
+        things got complicated.
+    idle:
+      - A golden orb plays a scene of a toddler laughing at a funny face, and you feel inexplicably warm.
+      - The shelves here smell faintly of crayons and sunscreen.
+      - A memory of a lullaby drifts from a nearby orb, barely audible but deeply familiar.
+      - The warm golden light flickers and for a moment you are five years old again.
+      - Dust motes float through the amber light like tiny, lazy fireflies.
+
+  # ── DEEP MEMORY SHELF ─────────────────────────────────────────────
+  - id: 314
+    title: "Deep Memory Shelf"
+    desc: >-
+      The shelves close in tight and the light drops to a dim, uncertain glow
+      as you push deeper into Long Term Memory. The orbs here are old, many
+      of them partially faded, their scenes playing in slow, dreamlike loops
+      that skip and repeat. The air is cold and damp, and dark patches on the
+      shelves mark places where orbs have already crumbled away. Strange
+      <ansi fg="itemname">scratch marks</ansi> score the shelf frames, as if
+      something has been clawing at the structure. A low, guttural sound
+      echoes from somewhere in the darkness ahead -- something that lives
+      down here and feeds on what is left behind.
+    biome: cave
+    symbol: "X"
+    legend: Deep
+    exits:
+      north: 313
+      south: 315
+    nouns:
+      scratch marks: >-
+        The <ansi fg="itemname">scratch marks</ansi> are deep gouges in the
+        dark shelf material, made by something with claws. They are concentrated
+        around the darker, more faded orbs, as if whatever made them was trying
+        to pry the last light from dying memories. Some of the scratches are
+        fresh.
+    idle:
+      - A faded orb sputters and something in the darkness shifts toward it.
+      - The scratch marks on a nearby shelf glisten with a faint, oily residue.
+      - A low growl reverberates through the shelves, too deep to pinpoint.
+      - Cold air rolls across the floor in a slow wave, carrying the smell of decay.
+      - An orb cracks with a sharp snap and its feeble light is snuffed out instantly.
+    spawns:
+      - {mob: 34, rate: "5 real minutes", msg: "A <ansi fg=\"mobname\">gloom raider</ansi> slinks out from the deep shadows between the shelves, its dark form barely visible."}
+      - {mob: 35, rate: "6 real minutes", msg: "A <ansi fg=\"mobname\">fading memory</ansi> peels away from a darkened orb and drifts into the corridor, formless and searching."}
+
+  # ── TWISTED MEMORY PATH ───────────────────────────────────────────
+  - id: 315
+    title: "Twisted Memory Path"
+    desc: >-
+      The orderly grid of shelves breaks down here, the passages twisting
+      and doubling back on themselves in ways that defy the logic of any
+      filing system. Shelves lean at odd angles, some fused together where
+      memories have cross-contaminated, creating dead ends and loops that
+      bring you back to where you started. The <ansi fg="itemname">labels</ansi>
+      on the shelves are smeared and contradictory -- "SCHOOL" next to
+      "VACATION" next to "THAT DREAM ABOUT SCHOOL ON VACATION." The light
+      shifts unpredictably between colors as you walk past orbs from every
+      emotional category jammed together in confused clusters. It is easy
+      to get lost here. Many have.
+    biome: cave
+    symbol: "?"
+    legend: Twisted
+    exits:
+      north: 314
+      west: 306
+      south: 317
+    nouns:
+      labels: >-
+        The <ansi fg="itemname">labels</ansi> are a mess. Someone has tried to
+        recategorize this section multiple times, each attempt layered over the
+        last. "BIRTHDAY PARTIES" is crossed out and relabeled "TUESDAYS" which
+        is crossed out and relabeled "THINGS WITH FROSTING." The organizational
+        logic has completely collapsed.
+    idle:
+      - You turn a corner and find yourself back where you were a moment ago. Or were you?
+      - Two orbs on adjacent shelves glow the same scene from different perspectives.
+      - A label peels off a shelf and drifts to the floor, revealing three more labels underneath.
+      - The corridor ahead bends in a direction that should not exist.
+      - You hear your own footsteps echoing from somewhere you have not walked yet.
+
+  # ── MEMORY DUMP ACCESS ────────────────────────────────────────────
+  - id: 316
+    title: "Memory Dump Access"
+    desc: >-
+      The shelves end abruptly at a dark, yawning <ansi fg="itemname">chasm</ansi>
+      that drops straight down into the Memory Dump. The final row of shelves
+      leans precariously over the edge, some already tipping forward, their
+      faded orbs rolling slowly toward the void. A cold updraft carries the
+      smell of dust and dissolution -- the smell of memories being permanently
+      erased. The darkness below is not empty; you can see faint gray shapes
+      far down, enormous piles of forgotten memory fragments slowly dissolving
+      into nothing. A rickety service <ansi fg="itemname">ladder</ansi>
+      bolted to the edge descends into the dark. A sign next to it reads
+      "MEMORY DUMP -- AUTHORIZED PERSONNEL ONLY. SERIOUSLY."
+    biome: cave
+    symbol: "V"
+    legend: Dump
+    exits:
+      north: 308
+      down: {roomid: 800, lock: 10}
+    nouns:
+      chasm: >-
+        The <ansi fg="itemname">chasm</ansi> is staggering in scale. It is not
+        just a hole -- it is the bottom of the mind, the place where everything
+        unwanted eventually ends up. The walls are smooth and featureless, carved
+        by the steady erosion of discarded thoughts. Looking down for too long
+        makes you feel like you are forgetting something important.
+      ladder: >-
+        The service <ansi fg="itemname">ladder</ansi> is rusty and questionable,
+        bolted to the chasm wall with brackets that have seen better days. It
+        descends into darkness, each rung progressively more corroded. A clipboard
+        hanging from the top rung has a sign-out sheet. The last entry reads
+        "Bing Bong -- went to look for something. Will be back soon." The date
+        is years ago.
+    idle:
+      - A gray orb rolls off the last shelf and tumbles silently into the chasm.
+      - The cold updraft intensifies, carrying a whisper that sounds almost like a name you have forgotten.
+      - A shelf at the edge groans and tilts another inch toward the void.
+      - Dust spirals up from the chasm in a slow, hypnotic column.
+      - Far below, something that was once a memory dissolves into formless gray light.
+
+  # ── MIND WORKER PATROL ROUTE ──────────────────────────────────────
+  - id: 317
+    title: "Mind Worker Patrol Route"
+    desc: >-
+      A long, straight corridor between the shelves that serves as the main
+      patrol route for the mind workers assigned to the deep sections. Safety
+      <ansi fg="itemname">lamps</ansi> are bolted to the shelves at regular
+      intervals, casting pools of warm orange light that push back the gloom.
+      Painted arrows on the floor mark the patrol path, and a series of
+      checkpoint <ansi fg="itemname">stations</ansi> line the route, each one
+      a small podium with a logbook and a bell. The shelves along this corridor
+      are better maintained than the surrounding areas -- the mind workers
+      take their patrol duties seriously, even if the things they are guarding
+      against prefer to stay in the dark.
+    biome: cave
+    symbol: M
+    legend: Patrol
+    exits:
+      north: 315
+      south: 318
+    nouns:
+      lamps: >-
+        The safety <ansi fg="itemname">lamps</ansi> are heavy-duty fixtures
+        bolted directly into the shelf frames. They run on some kind of mental
+        energy and never seem to burn out, though they flicker occasionally when
+        something passes through the shadows between them. Each one has a small
+        plaque reading "PROPERTY OF MIND WORKER LOCAL 107."
+      stations: >-
+        The checkpoint <ansi fg="itemname">stations</ansi> are simple podiums
+        with logbooks chained to them. The entries are meticulous: "0300 -- All
+        clear. Shelf 7,892 stable." "0315 -- Heard scratching in Section F.
+        Investigated. Found nothing. Unsettling." "0330 -- Still thinking about
+        the scratching."
+    idle:
+      - A distant bell rings at a checkpoint station deeper in the corridor.
+      - Footsteps echo from around a corner -- a mind worker on their rounds.
+      - One of the safety lamps flickers and a shadow darts between the shelves.
+      - A logbook page turns in a draft, revealing an entry that just says "NOPE" in large letters.
+      - The painted arrows on the floor glow faintly, guiding the way forward.
+
+  # ── CRUMBLING MEMORY WALL ─────────────────────────────────────────
+  - id: 318
+    title: "Crumbling Memory Wall"
+    desc: >-
+      A massive section of the shelf structure has partially collapsed here,
+      creating a wall of broken shelving, scattered orbs, and cascading gray
+      <ansi fg="itemname">dust</ansi> that shifts and settles with every
+      vibration. The collapse has exposed the raw infrastructure of Long
+      Term Memory -- support beams of crystallized thought, conduits that
+      once carried emotional energy, and the hollow spaces where memories
+      were never stored at all. The remaining shelves creak and groan
+      ominously, and small avalanches of dust trickle down at irregular
+      intervals. Picking through the rubble, you can see a passage
+      continuing south beyond the worst of the damage.
+    biome: cave
+    symbol: "#"
+    legend: Crumble
+    exits:
+      north: 317
+      south: 319
+    nouns:
+      dust: >-
+        The <ansi fg="itemname">dust</ansi> here is a mix of crumbled shelf
+        material and pulverized memory orbs. It shifts and slides like dry sand,
+        and occasionally a shard of an orb surfaces, playing a half-second
+        fragment of a scene before going dark. Walking through it feels like
+        wading through the detritus of a thousand forgotten Tuesdays.
+      beams: >-
+        The exposed support beams are made of something that looks like crystal
+        but feels like solidified thought. They hum faintly when touched, and
+        light travels through them in slow pulses -- the structural nervous
+        system of Long Term Memory itself.
+    idle:
+      - A section of shelf groans and drops another inch, sending a cascade of dust to the floor.
+      - An orb fragment surfaces in the rubble, plays a single note of music, and goes dark.
+      - The support beams hum louder for a moment, then settle back to their baseline frequency.
+      - A crack spider-webs across a leaning shelf with a sound like breaking ice.
+      - Dust pours from a gap in the wall in a steady stream, like an hourglass counting down.
+
+  # ── EMOTIONAL TAG STATION ─────────────────────────────────────────
+  - id: 319
+    title: "Emotional Tag Station"
+    desc: >-
+      A specialized workstation hidden deep in the shelves, equipped with
+      delicate machinery designed to <ansi fg="itemname">retag</ansi> the
+      emotional color of memory orbs. A rotating platform holds an orb in
+      a cradle of light while adjustable lenses filter different emotional
+      wavelengths through it, allowing a skilled operator to shift a memory's
+      dominant emotion. What was once a purely sad memory can gain a golden
+      edge of gratitude. An angry memory can cool into something more like
+      determination. The <ansi fg="itemname">controls</ansi> are intricate
+      and clearly require expertise. A sign above the station reads "EMOTIONAL
+      RECATEGORIZATION -- Handle With Care. A memory's color is not just what
+      you felt, but what you learned."
+    biome: cave
+    symbol: "="
+    legend: Tags
+    exits:
+      north: 318
+      south: 320
+    nouns:
+      retag: >-
+        The <ansi fg="itemname">retagging</ansi> machinery is elegant and precise.
+        A memory orb sits in a cradle of crystallized light while lenses rotate
+        around it, each one tinted with a different emotional hue. The process does
+        not erase the original emotion -- it layers new understanding on top,
+        the way growing up changes how you see the past without changing what
+        actually happened.
+      controls: >-
+        The <ansi fg="itemname">controls</ansi> are a series of fine dials
+        and sliders, each one labeled with an emotional spectrum. "Joy-Sadness,"
+        "Anger-Acceptance," "Fear-Courage," "Disgust-Appreciation." Finding
+        the right balance is apparently an art form. A handwritten note on the
+        console reads "Riley's been doing a lot of this on her own lately. Growing up, I guess."
+    idle:
+      - The retagging lenses rotate slowly, casting prismatic light across the walls.
+      - An orb in the cradle shifts from pure blue to a complex blue-gold swirl.
+      - The controls hum with a gentle vibration, the machinery always ready to work.
+      - A memory being processed flickers between colors, searching for its new truth.
+      - The sign above the station catches the shifting light and seems to glow with quiet wisdom.
+
+  # ── BRIDGE TO IMAGINATION LAND ────────────────────────────────────
+  - id: 320
+    title: "Bridge to Imagination Land"
+    desc: >-
+      The gray shelves of Long Term Memory give way to an explosion of color
+      as a sweeping <ansi fg="itemname">bridge</ansi> arcs out from the edge
+      of the shelf structure toward the impossible skyline of Imagination Land.
+      The bridge is built from solidified daydreams -- its surface shifts
+      between rainbow patterns, and the railings are sculpted from what looks
+      like frozen candy. Below, the gap between memory and imagination yawns
+      wide, filled with drifting clouds of creative energy in every color.
+      Ahead, the towering structures of Imagination Land rise against a sky
+      that is somehow every color at once. Behind you, the ordered shelves of
+      Long Term Memory stretch into their quiet, glowing infinity. This is the
+      border between what was and what could be.
+    biome: cave
+    symbol: ">"
+    legend: Bridge
+    exits:
+      north: 319
+      south: 400
+    nouns:
+      bridge: >-
+        The <ansi fg="itemname">bridge</ansi> is a marvel of subconscious
+        engineering. Its surface ripples with color when you step on it, and
+        the railings are warm to the touch, as if made from solidified joy.
+        Looking over the edge reveals clouds of creative energy drifting in
+        the space between regions of the mind. Occasionally a half-formed
+        idea floats past -- a castle, a dinosaur, a song that does not
+        exist yet.
+    idle:
+      - The bridge surface ripples with rainbow light under your feet.
+      - A cloud of creative energy drifts past below, briefly taking the shape of a dragon before dissolving.
+      - The colors of Imagination Land ahead shift and swirl like a living painting.
+      - A warm breeze carries the faint sound of laughter and the smell of crayons from across the bridge.
+      - The shelves of Long Term Memory behind you glow quietly, a vast library of everything that ever was.

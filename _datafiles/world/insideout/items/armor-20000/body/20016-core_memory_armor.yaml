@@ -1,0 +1,13 @@
+itemid: 20016
+name: core memory armor
+namesimple: armor
+description: 'Magnificent armor infused with the essence of Riley''s core memories.
+  It glows with shifting colors - golden joy, blue sadness, red anger, purple fear,
+  green disgust - and thrums with emotional power.'
+type: body
+subtype: wearable
+damagereduction: 9
+statmods:
+  vitality: 5
+  strength: 3
+value: 600

@@ -1,0 +1,13 @@
+itemid: 20082
+name: swim team jacket
+namesimple: jacket
+description: A zip-up team jacket with the school name across the back. It has that synthetic athletic fabric that somehow always feels slightly cool to the touch.
+type: body
+subtype: wearable
+uses: 0
+damage:
+  diceroll: 0d0
+defense: 1
+statmods:
+  speed: 1
+value: 30

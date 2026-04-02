@@ -1,0 +1,25 @@
+roomid: 607
+zone: Abstract Thought
+title: Non-Figurative Core
+description: 'Language fails here. Not because the place is indescribable, but because description requires reference to things, and there are no things here anymore. There are shapes that are not shapes but the relationships between where shapes would be. There are colors that exist as pure wavelength, unattached to any surface, visible without being seen. Movement happens without anything moving. Space exists without distance. You are still here, somehow, but "here" is a generous interpretation of a place that has moved beyond the need for places. This is Stage Four: the absolute core of abstraction, where thought is stripped to its barest possible state. It is terrifying and transcendent in equal measure.'
+mapsymbol: '4'
+maplegend: Core
+biome: abstract
+exits:
+  south:
+    roomid: 606
+  north:
+    roomid: 608
+nouns:
+  shapes: The <ansi fg="itemname">shapes</ansi> resist examination. Looking at one directly causes it to become something else -- not a different shape, but a different category of existence entirely. A triangle becomes the concept of three-ness. A circle becomes continuity without beginning. A line becomes the idea of direction, pointing everywhere and nowhere. You understand them perfectly for the split second before your brain tries to name them.
+  colors: The <ansi fg="itemname">colors</ansi> are unmoored from anything that could be colored. Red floats as pure emotion -- urgency, warmth, anger -- without a surface to sit on. Blue drifts as the feeling of distance and depth. A color you've never seen before and can't remember afterward pulses in the space between the others. It might be the most beautiful thing that doesn't exist.
+spawninfo:
+- mobid: 45
+  message: An <ansi fg="mobname">abstract form</ansi> manifests from pure mathematical probability, its existence a theorem proving itself.
+  respawnrate: 4 real minutes
+idlemessages:
+- A shape that has no name rotates through dimensions you can't count.
+- Color separates from wavelength for a moment, and you experience hue as a sound.
+- Something that might be a thought drifts past. It feels like Tuesday.
+- The space between two points changes without either point moving.
+- You briefly understand something profound about existence, then immediately forget it.

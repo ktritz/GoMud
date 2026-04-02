@@ -1,0 +1,11 @@
+itemid: 10018
+name: lacrosse stick
+namesimple: stick
+description: A lacrosse stick with a mesh pocket head. Surprisingly versatile as both a catching implement and a thing to hit people with.
+type: weapon
+hands: 2
+subtype: bludgeoning
+uses: 0
+damage:
+  diceroll: 1d6
+value: 45

@@ -1,0 +1,20 @@
+roomid: 313
+zone: Long Term Memory
+title: Childhood Memory Wing
+description: 'The shelves here hold some of the oldest memories in Long Term storage, and they glow with a warm, nostalgic golden light that is softer and gentler than the sharp yellow of the joy corridor. The orbs are slightly larger than modern ones -- childhood memories take up more space, apparently, because everything felt bigger back then. Many show simple scenes: a sandbox, a sprinkler on a summer lawn, the interior of a blanket fort. The shelves are lower here, as if built for smaller hands, and the air carries the faint sweetness of juice boxes and Play-Doh. It is impossible to walk through this wing without feeling a gentle ache for something you cannot quite name.'
+mapsymbol: C
+maplegend: Childhood
+biome: mindscape
+exits:
+  north:
+    roomid: 312
+  south:
+    roomid: 314
+nouns:
+  orbs: The childhood <ansi fg="itemname">orbs</ansi> are beautiful in their simplicity. One shows a pair of tiny hands finger-painting. Another captures the moment of learning to ride a bicycle, the world tilting wildly. A third replays a bedtime story, the parent's voice warm and close. They glow with the pure, uncomplicated light of a time before things got complicated.
+idlemessages:
+- A golden orb plays a scene of a toddler laughing at a funny face, and you feel inexplicably warm.
+- The shelves here smell faintly of crayons and sunscreen.
+- A memory of a lullaby drifts from a nearby orb, barely audible but deeply familiar.
+- The warm golden light flickers and for a moment you are five years old again.
+- Dust motes float through the amber light like tiny, lazy fireflies.

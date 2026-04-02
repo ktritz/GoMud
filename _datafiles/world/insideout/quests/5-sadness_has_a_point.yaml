@@ -1,0 +1,20 @@
+questid: 5
+name: Sadness Has a Point
+description: 'Sadness feels like she doesn''t belong. Help her understand her importance
+  by recoloring some memories.'
+steps:
+- id: start
+  description: Sadness needs your help. Visit the Emotional Tag Station in Long Term
+    Memory.
+  hint: The Emotional Tag Station is deep in the Long Term Memory zone.
+- id: tag
+  description: Help recolor a memory at the Emotional Tag Station.
+  hint: Look around the Tag Station and interact with the equipment there.
+- id: return
+  description: Tell Sadness what you discovered.
+  hint: Sadness is in her room in Headquarters.
+- id: end
+  description: Sadness smiles through her tears. She knows she matters.
+rewards:
+  experience: 2000
+  gold: 150

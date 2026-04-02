@@ -1,0 +1,8 @@
+buffid: 47
+name: Minty Fresh
+description: 'Triple Dent Gum will make you smile! Triple Dent Gum, it lasts a while!
+  The jingle won''t leave your head, but your feet feel faster.'
+triggerrate: 3 rounds
+triggercount: 4
+statmods:
+  speed: 15

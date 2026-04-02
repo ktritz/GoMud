@@ -1,0 +1,21 @@
+roomid: 956
+zone: Belief System
+title: Identity Island - Hockey
+description: The bridge gives way to solid ground, and suddenly you're standing on a miniature world built entirely from Riley's love of hockey. A gleaming ice rink dominates the center, its surface perpetually frozen and smooth, etched with the marks of a thousand practice sessions. The boards are covered in team photos and pennants from every team Riley has played on -- the Prairie Dogs back in Minnesota and her current San Francisco team. The air is crisp and cold and smells like fresh ice and rubber puck. Sticks lean against every surface and a scoreboard overhead reads HOME in bright letters, because this part of Riley's identity has always felt like coming home.
+mapsymbol: H
+maplegend: Hockey
+biome: mindscape
+exits:
+  south:
+    roomid: 955
+  east:
+    roomid: 957
+nouns:
+  rink: The <ansi fg="itemname">ice rink</ansi> is perfect -- exactly the way Riley pictures it in her best memories. The ice is fresh-cut and gleaming, the lines painted crisp and bright. If you listen closely, you can hear the ghost of skates carving through ice, the crack of a puck against a stick, the roar of a crowd that exists only in Riley's happiest moments on the ice.
+  photos: The <ansi fg="itemname">team photos</ansi> chronicle Riley's entire hockey journey. A tiny kid in oversized gear grinning with the Prairie Dogs. A more confident player wearing her San Francisco jersey. In every photo, Riley is smiling the same smile -- the one that means she's exactly where she belongs.
+idlemessages:
+- The ice rink gleams as an invisible skater carves a perfect figure eight across its surface.
+- A hockey stick falls against the boards with a familiar clatter, then rights itself.
+- The scoreboard flickers and displays a highlight reel of Riley's best goals.
+- The crisp air carries the distant sound of a crowd chanting Riley's name.
+- A puck slides across the ice on its own, banking perfectly off the boards.

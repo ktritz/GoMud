@@ -1,0 +1,31 @@
+roomid: 906
+zone: The Back of the Mind
+title: Anxiety Spiral Nest
+description: The clinical order of the Back of the Mind breaks down here, replaced by a chaotic tangle of spirals etched into every surface -- walls, floor, ceiling, even the air itself, where faint luminous trails loop and twist in patterns that make your eyes water if you try to follow them. This is where Anxiety's energy pooled and concentrated, spawning the spinning vortex creatures that patrol the vault. The floor is scarred with burn marks where spirals have touched down and spun themselves into frenzy, and the walls vibrate at a frequency that makes your thoughts race. Being here too long makes you think of every test you might fail, every text you should have sent, every future that could go wrong.
+mapsymbol: '@'
+maplegend: Spirals
+biome: dungeon
+exits:
+  south:
+    roomid: 905
+  north:
+    roomid: 907
+nouns:
+  spirals: The <ansi fg="itemname">spirals</ansi> are burned into the surfaces like brands, each one a different size but all following the same tightening pattern -- wide loops that get smaller and faster until they reach a central point of frantic intensity. Touching one makes your mind race through a cascade of what-ifs that takes effort to stop.
+  floor: The <ansi fg="itemname">floor</ansi> is covered in overlapping scorch marks where anxiety spirals have touched down. The marks form a chaotic map of worry -- each burn radiating outward in a pattern that gets tighter and more frantic toward the center. In the worst spots, the floor has been worn through entirely, revealing raw, humming metal beneath.
+spawninfo:
+- mobid: 58
+  message: An <ansi fg="mobname">anxiety spiral</ansi> ignites in the center of the room, spinning into existence with a sound like a thousand worries spoken at once.
+  respawnrate: 3 real minutes
+- mobid: 58
+  message: An <ansi fg="mobname">anxiety spiral</ansi> tears itself free from a wall etching, uncoiling into the air with frantic energy.
+  respawnrate: 5 real minutes
+- mobid: 60
+  message: A <ansi fg="mobname">suppression guard</ansi> marches in from the corridor, drawn by the spiraling energy.
+  respawnrate: 6 real minutes
+idlemessages:
+- A luminous spiral traces itself in the air, tightening until it sparks and vanishes.
+- Your thoughts suddenly race -- did you leave something behind? Are you prepared for what comes next? The feeling passes.
+- The walls vibrate at a frequency that makes your jaw clench involuntarily.
+- Two spirals collide in midair and burst into a shower of anxious sparks.
+- The burn marks on the floor glow brighter and you feel a pull toward the center of the room.

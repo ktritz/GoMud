@@ -23,6 +23,7 @@ import (
 
 	"github.com/GoMudEngine/GoMud/internal/mudlog"
 	"github.com/GoMudEngine/GoMud/internal/term"
+	"github.com/GoMudEngine/ansitags"
 	"github.com/mattn/go-runewidth"
 )
 
@@ -60,6 +61,11 @@ var (
 	// \p{S}: symbol
 	wordRegex        = regexp.MustCompile(`([\p{Han}\p{Hiragana}\p{Katakana}\p{Hangul}]|\w+|[\p{P}\p{S}\s]+)`)
 	punctuationRegex = regexp.MustCompile(`[\p{P}]+`)
+
+	// Matches <ansi ...> opening tags and </ansi> closing tags.
+	// Used to split text into tag vs. non-tag segments so that tags
+	// are not counted toward visible line width during word wrapping.
+	ansiTagRegex = regexp.MustCompile(`<ansi[^>]*>|</ansi>`)
 
 	mudLock = sync.RWMutex{}
 )
@@ -182,6 +188,37 @@ func LogRoll(name string, rollResult int, targetNumber int) {
 	mudlog.Debug(`Rand Result`, `Name`, name, `Result`, fmt.Sprintf(`%d < %d`, rollResult, targetNumber), `Success`, success)
 }
 
+// visibleWidth returns the display width of a string, excluding any
+// <ansi ...> and </ansi> markup tags. The tags are stripped before
+// measuring so they don't inflate the visible character count.
+func visibleWidth(s string) int {
+	return runewidth.StringWidth(ansitags.Parse(s, ansitags.StripTags))
+}
+
+// tokenizeWithTags splits a line into tokens where <ansi ...> and </ansi>
+// tags are kept as whole tokens rather than being fragmented by wordRegex.
+// Non-tag text is tokenized with wordRegex as before.
+func tokenizeWithTags(line string) []string {
+	var tokens []string
+	lastIdx := 0
+
+	tagLocs := ansiTagRegex.FindAllStringIndex(line, -1)
+	for _, loc := range tagLocs {
+		// Tokenize the plain text before this tag
+		if loc[0] > lastIdx {
+			tokens = append(tokens, wordRegex.FindAllString(line[lastIdx:loc[0]], -1)...)
+		}
+		// Keep the entire tag as a single token
+		tokens = append(tokens, line[loc[0]:loc[1]])
+		lastIdx = loc[1]
+	}
+	// Tokenize any remaining plain text after the last tag
+	if lastIdx < len(line) {
+		tokens = append(tokens, wordRegex.FindAllString(line[lastIdx:], -1)...)
+	}
+	return tokens
+}
+
 func SplitString(input string, lineWidth int) []string {
 	var result []string
 	var currentLine string
@@ -190,7 +227,7 @@ func SplitString(input string, lineWidth int) []string {
 	parts := strings.Split(input, "\n")
 
 	for _, textLine := range parts {
-		words := wordRegex.FindAllString(textLine, -1)
+		words := tokenizeWithTags(textLine)
 
 		l := len(words)
 
@@ -201,10 +238,10 @@ func SplitString(input string, lineWidth int) []string {
 				continue
 			}
 
-			wordLen := runewidth.StringWidth(word)
+			wordLen := visibleWidth(word)
 
 			if idx < l-1 && punctuationRegex.MatchString(words[idx+1]) {
-				wordLen += runewidth.StringWidth(words[idx+1])
+				wordLen += visibleWidth(words[idx+1])
 				word += words[idx+1]
 				skip = true
 			} else {
@@ -222,7 +259,7 @@ func SplitString(input string, lineWidth int) []string {
 				}
 				// clear spaces at the beginning of the line
 				currentLine = strings.TrimLeft(word, " ")
-				currentLen = runewidth.StringWidth(currentLine)
+				currentLen = visibleWidth(currentLine)
 			} else {
 				currentLine += word
 				currentLen += wordLen

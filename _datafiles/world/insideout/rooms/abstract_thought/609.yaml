@@ -1,0 +1,21 @@
+roomid: 609
+zone: Abstract Thought
+title: Line Segment Passage
+description: 'Beyond the Shape Chamber, abstraction has reached its most minimal state. This passage consists of lines -- nothing more. Parallel lines define a path forward. Perpendicular lines suggest walls. A single diagonal line overhead implies a ceiling. There is no color, no texture, no mass -- only geometry in its most reduced form, the skeleton of a corridor with all the flesh removed. You move along the lines because they suggest movement, and your mind fills in everything else: the sense of floor, the feeling of enclosure, the impression of direction. The intersections where lines cross glow faintly, the only points of emphasis in this wireframe world.'
+mapsymbol: '-'
+maplegend: Lines
+biome: abstract
+exits:
+  south:
+    roomid: 608
+  north:
+    roomid: 610
+nouns:
+  lines: The <ansi fg="itemname">lines</ansi> are pure geometry -- one-dimensional objects extended through space. They have position and direction but no width, no depth, no color. Your mind paints them white against black out of habit, but they're neither. They are simply the concept of "between two points" made as real as a concept can get.
+  intersections: The <ansi fg="itemname">intersections</ansi> glow where lines cross, creating vertices of faint light. Each one is a decision point in the most literal sense -- a place where directions meet and choices are made. Standing at one, you can feel the pull of every direction the lines extend.
+idlemessages:
+- A line extends a few inches further, then retracts, as if testing a boundary.
+- An intersection brightens and dims in a slow pulse, like a geometric heartbeat.
+- The parallel lines defining the floor shift a fraction of a degree closer together.
+- A new line appears, crosses two existing ones, then fades to nothing.
+- The wireframe world flickers, and for one instant you see a fully rendered corridor before it strips back down.

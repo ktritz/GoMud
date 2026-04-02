@@ -1,0 +1,23 @@
+roomid: 207
+zone: Headquarters
+title: Sadness's Room
+description: Sadness's room is small, cozy, and perpetually dim, like a rainy afternoon that never quite ends. The walls are painted in soft blues and grays, and every surface is covered in plush pillows, fuzzy blankets, and oversized stuffed animals. A gentle sound of rainfall plays from somewhere, though there's no visible source. Rain-themed decorations hang from the ceiling -- delicate glass teardrops that catch what little light there is and scatter it in pale blue patterns. A well-worn reading nook is built into one wall, stacked with books that all seem to have bittersweet endings. Despite the melancholy, there's something deeply comforting about this room, like a good cry that leaves you feeling lighter.
+mapsymbol: S
+maplegend: Sadness
+biome: mindscape
+exits:
+  north:
+    roomid: 206
+  south:
+    roomid: 208
+  east:
+    roomid: 200
+nouns:
+  pillows: The pillows are impossibly soft, the kind that make you want to sink in and never get up. Each one is a different shade of blue, from pale sky to deep ocean. They smell faintly of chamomile.
+  books: 'The reading nook is stacked with well-thumbed books. Titles include "The Giving Tree," "Where the Red Fern Grows," and a dog-eared copy of "It''s Okay to Feel Sad: A Complete History." Several have tearstains on the pages.'
+  teardrops: The glass teardrops hanging from the ceiling are beautiful in their sadness, each one perfectly formed and catching the soft blue light. They chime gently when the air shifts, making a sound like a music box winding down.
+idlemessages:
+- The sound of gentle rainfall grows slightly louder, then fades back to a whisper.
+- One of the glass teardrops catches the light and sends a cascade of blue across the walls.
+- A pillow slowly deflates with a soft sigh, as if the room itself is feeling blue.
+- The books in the reading nook seem to rearrange themselves, putting the saddest ones on top.

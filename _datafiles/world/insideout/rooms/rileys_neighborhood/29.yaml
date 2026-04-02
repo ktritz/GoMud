@@ -1,0 +1,21 @@
+roomid: 29
+zone: Rileys Neighborhood
+title: Attic
+description: A cramped attic space with sloped ceilings and exposed rafters. Dust motes float in the thin shafts of light that squeeze through a small round window at the far end. The space is packed with the accumulated debris of family life -- old suitcases, a broken exercise bike, holiday decorations in labeled bins, and a stack of yearbooks from Mom's high school days. Cobwebs connect everything to everything else like a second architecture. In the far corner, behind a stack of boxes, there's a faint shimmer in the air -- the same prismatic light you've noticed under Riley's bed, but stronger here, pulsing with colors that don't have names.
+mapsymbol: A
+maplegend: Attic
+biome: city
+exits:
+  downstairs:
+    roomid: 24
+nouns:
+  window: The <ansi fg="itemname">round window</ansi> is grimy and small, letting in just enough light to see by. Through the smudged glass you can see the neighborhood rooftops, the park trees, and a sliver of the bay. It's a view nobody ever sees because nobody ever comes up here.
+  shimmer: The <ansi fg="itemname">shimmer</ansi> in the corner is unmistakable now -- a curtain of shifting light that hangs in the air like heat haze but cold to the touch. The colors cycle through gold, blue, red, green, purple in a pattern that feels almost like breathing. Something on the other side is trying to get through. Or maybe something on this side is trying to get out.
+  yearbooks: Mom's <ansi fg="itemname">yearbooks</ansi> are from a high school in a small town you've never been to. The hairstyles are incredible. Mom is in the drama club photo, the track team, and was apparently voted "Most Likely to Move Somewhere Interesting." She'd probably be embarrassed if she knew you found these.
+  bike: The <ansi fg="itemname">exercise bike</ansi> was going to change everything. Dad bought it three New Years ago with great conviction. It was used enthusiastically for two weeks, occasionally for another month, and has been up here ever since, serving as a very expensive coat rack for boxes.
+idlemessages:
+- The shimmer in the corner pulses brighter for a moment, then dims.
+- A cobweb sways despite the still air.
+- Something creaks overhead -- just the roof settling in the sun.
+- Dust motes spiral lazily through the shaft of light from the window.
+- The colors in the shimmer shift -- for just a second, you think you see a face in the light.

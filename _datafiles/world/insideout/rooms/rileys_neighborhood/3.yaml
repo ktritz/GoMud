@@ -1,0 +1,24 @@
+roomid: 3
+zone: Rileys Neighborhood
+title: Riley's Bedroom
+description: This is your room, and it looks like it. Band posters cover most of the walls -- some from bands you still listen to, some from ones you would rather forget. A desk sits under the window, buried under homework, empty chip bags, and a laptop with too many stickers on it. Hockey gear spills out of a half-open closet. The bed is unmade, obviously, and from somewhere underneath it a faint shimmering light pulses with a strange, warm glow that doesn't seem to have any source. It's been doing that for a few days now. You keep meaning to look into it.
+mapsymbol: B
+maplegend: Bedroom
+biome: city
+exits:
+  south:
+    roomid: 24
+nouns:
+  bed: The <ansi fg="itemname">bed</ansi> is a mess of tangled sheets, a flat pillow, and a stuffed elephant you would deny owning if anyone asked. The strange glow is definitely coming from under here. If you crouch down, you can see the light shifting in slow, hypnotic patterns -- gold, blue, green, red, purple -- like something alive is breathing down there.
+  desk: The <ansi fg="itemname">desk</ansi> is a disaster zone. There's a half-finished math worksheet, three pens (none of which work), a phone charger with no phone attached, and a framed photo of the old hockey team from Minnesota. The laptop has a "San Francisco or Bust" sticker peeling off the corner.
+  posters: The <ansi fg="itemname">band posters</ansi> are a timeline of your music taste over the last few years. There's an embarrassing boy band one partially hidden behind a newer indie rock poster. A Kezha poster is pinned up with hockey tape. One corner of the wall has glow-in-the-dark stars that you put up in middle school.
+  hockey: Your <ansi fg="itemname">hockey gear</ansi> is mostly stuffed in the closet -- shin guards, gloves, a helmet with a cracked visor you keep forgetting to replace. Your stick leans against the wall by the door, wrapped in fresh tape. At least you take care of that.
+  gear: :hockey
+  light: The <ansi fg="itemname">shimmering light</ansi> under the bed pulses gently, cycling through colors that feel strangely familiar -- a warm gold, a deep blue, a fiery red, a soft purple, a sharp green. It doesn't illuminate the room so much as it seems to pull at something inside your chest. It started a few days ago and it's getting brighter. Part of you wants to crawl under there and find out what it is. Part of you really, really doesn't.
+  shimmer: :light
+idlemessages:
+- The shimmering light under the bed pulses brighter for a moment, casting colored shadows on the wall.
+- A faint hum drifts up from beneath the bed, just at the edge of hearing.
+- The glow under the bed shifts from gold to deep blue and back again.
+- Your phone buzzes on the desk. Probably a group chat you've been ignoring.
+- The light flares briefly with a warm purple glow, and you feel a tug behind your eyes.

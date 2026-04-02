@@ -1,0 +1,24 @@
+raceid: 0
+name: ghostly spirit
+description: 'A pale, translucent spirit that drifts silently. It doesn''t seem to
+  fully exist in this world.'
+defaultalignment: 0
+size: small
+unarmedname: ectoplasm
+tnlscale: 1
+selectable: false
+knowsfirstaid: false
+tameable: false
+damage:
+  diceroll: 1d1
+disabledslots:
+- weapon
+- offhand
+- head
+- body
+- legs
+- feet
+- gloves
+- belt
+- ring
+- neck

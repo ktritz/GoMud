@@ -1,0 +1,27 @@
+roomid: 105
+zone: School
+title: Art Room
+description: The art room is the most colorful disaster zone in the entire school. Paint-splattered tables are scattered around the room at odd angles, each one a canvas of accidental masterpieces from years of spilled acrylics. Works in progress sit on easels around the perimeter -- a half-finished portrait, an abstract that might be a sunset or might be a pizza, and something involving a lot of glitter that nobody wants to claim. Shelves overflow with supplies -- tubes of paint, jars of brushes, palettes crusted with dried color. The air smells like turpentine and possibility. A drying rack near the window holds ceramic projects in various stages of completion, and every surface has at least one handprint on it.
+mapsymbol: A
+maplegend: Art
+biome: city
+exits:
+  north:
+    roomid: 109
+nouns:
+  easels: The <ansi fg="itemname">easels</ansi> hold a gallery of student ambition. One canvas shows a surprisingly good landscape of the Golden Gate Bridge in fog. Another is an abstract explosion of red and orange that the artist insists represents "the duality of existence" but looks suspiciously like they knocked over the paint cups. A third is completely blank except for a single dot in the center -- either a bold artistic statement or someone who gave up immediately.
+  paintings: The <ansi fg="itemname">paintings</ansi> around the room represent every skill level from "future museum exhibit" to "enthusiastic attempt." A few are genuinely beautiful, capturing light and shadow in ways that make you stop and stare. Most are fine. One is a still life of a banana that somehow looks angry.
+  supplies: The <ansi fg="itemname">art supplies</ansi> are organized in theory but chaotic in practice. Paint tubes are sorted by color but squeezed from every possible angle. Brush jars hold everything from fine-tip detail brushes to one that looks like it was used to paint a house. A bin labeled "SCISSORS" contains three scissors and about forty glue sticks.
+idlemessages:
+- A paintbrush rolls off a table and clatters to the paint-speckled floor.
+- The smell of wet clay drifts from the ceramics corner.
+- Someone left the cap off a marker and the room smells faintly of Sharpie.
+- A piece of student art catches the sunlight from the window and glows with color.
+
+spawninfo:
+- mobid: 72
+  message: <ansi fg="mobname">Ms. Flores</ansi> arrives, ready to teach.
+  respawnrate: 5 real minutes
+- mobid: 13
+  message: A <ansi fg="mobname">doubt shadow</ansi> flickers into existence near the doorway.
+  respawnrate: 4 real minutes

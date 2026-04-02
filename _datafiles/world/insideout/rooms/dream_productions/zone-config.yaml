@@ -1,0 +1,6 @@
+name: Dream Productions
+roomid: 500
+autoscale:
+  minimum: 8
+  maximum: 11
+defaultbiome: dreamset

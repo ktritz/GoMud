@@ -1,0 +1,26 @@
+mobid: 55
+zone: Memory Dump
+itemdropchance: 25
+hostile: true
+nocorpse: true
+deathmessage: '{name} lets out a hollow wail and dissipates like smoke.'
+maxwander: 3
+activitylevel: 25
+groups:
+- forgotten
+combatcommands:
+- backstab
+- cast mm
+character:
+  name: memory wraith
+  description: 'A forgotten memory that has passed beyond desperation into hostility. Where the fading memories reach out in confused longing, the wraith strikes with purpose -- a dark, tattered figure that crackles with the residual energy of whatever it used to be. Fragments of corrupted images flicker across its surface: a face twisted into something unrecognizable, a voice playing backwards, colors that don''t exist anymore. It has decided that if it cannot be remembered, nothing else should be either.'
+  level: 19
+  gold: 59
+  raceid: 7
+  stats:
+    strength:
+      training: 24
+    speed:
+      training: 18
+    vitality:
+      training: 30

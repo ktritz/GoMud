@@ -1,0 +1,43 @@
+# Auto-generated grid layout
+#
+# y+14:  [814]
+# y+13:  [813]
+# y+12:  [812]
+# y+11:  [811]
+# y+10:  [810]
+# y+9:  [809]
+# y+8:  [808]
+# y+7:  [807]
+# y+6:  [806]
+# y+5:  [805]
+# y+4:  [804]
+# y+3:  [803]
+# y+2:  [802]
+# y+1:  [801]
+# y+0:  [800]
+#
+
+grid:
+  "0,0": 800    # Edge of Forgetting
+  "0,1": 801    # Crumbling Memory Ledge
+  "0,2": 802    # The Gray Fog
+  "0,3": 803    # Bing Bong's Final Stand
+  "0,4": 804    # Forgotten Toy Graveyard
+  "0,5": 805    # Dissolving Memory Field
+  "0,6": 806    # The Fading Path
+  "0,7": 807    # Ancient Memory Fragment
+  "0,8": 808    # The Void's Edge
+  "0,9": 809    # Pile of Lost Names
+  "0,10": 810    # Colorless Expanse
+  "0,11": 811    # Memory Dust Basin
+  "0,12": 812    # The Last Song
+  "0,13": 813    # Corrupted Core
+  "0,14": 814    # The Way Back Up
+
+special_exits:
+  800:
+    up:
+      roomid: 316
+  814:
+    up:
+      roomid: 316

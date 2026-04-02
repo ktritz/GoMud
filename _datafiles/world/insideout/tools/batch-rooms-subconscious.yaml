@@ -1,0 +1,783 @@
+zone: the_subconscious
+zone_config:
+  name: "The Subconscious"
+  roomid: 700
+  autoscale: {minimum: 12, maximum: 16}
+  defaultbiome: dungeon
+  idlemessages:
+    - "A distant, unsettling laugh echoes."
+    - "Something skitters in the shadows."
+
+rooms:
+  # ── SUBCONSCIOUS GATE ──────────────────────────────────────────────
+  - id: 700
+    title: "Subconscious Gate"
+    desc: >-
+      A massive iron <ansi fg="itemname">gate</ansi> stands before you, riveted
+      with bolts the size of fists and streaked with rust that looks disturbingly
+      like dried blood in the dim light. The words "DO NOT OPEN" have been
+      scratched into the metal from the inside, and someone on this side has
+      added "SERIOUSLY" in yellow paint. A heavy <ansi fg="itemname">padlock</ansi>
+      shaped like a clown nose secures the gate, and cold air seeps through the
+      gaps between the bars, carrying with it the unmistakable smell of old
+      rubber and stale birthday cake. Beyond the gate, a corridor descends into
+      a darkness so complete it seems to push back against any light that tries
+      to enter. Whatever is locked in here wants out, and whatever locked it in
+      here had very good reasons.
+    biome: dungeon
+    symbol: G
+    legend: Gate
+    exits:
+      south: {roomid: 315, lock: 20}
+      north: 701
+    nouns:
+      gate: >-
+        The <ansi fg="itemname">gate</ansi> is a slab of riveted iron set directly
+        into the stone of the mind. Scratch marks cover the interior side -- long,
+        desperate gouges from things that tried to claw their way out. The hinges are
+        massive and well-oiled, which is somehow worse than if they were rusted shut.
+        Someone maintains this gate. Someone expects it to be used.
+      padlock: >-
+        The <ansi fg="itemname">padlock</ansi> is shaped like a grotesque clown nose,
+        bright red and slightly rubbery to the touch. It is far heavier than it looks
+        and faintly warm, as though something on the other side is breathing on it.
+        The keyhole is shaped like a tiny, grinning mouth.
+    idle:
+      - Something behind the gate shifts heavily, and the bars vibrate with a low hum.
+      - A faint, high-pitched giggle drifts through the gaps in the gate and then abruptly stops.
+      - The padlock sways on its own, as if nudged by something you cannot see.
+      - Cold air pulses through the gate in slow, rhythmic waves, like breathing.
+      - The scratch marks on the gate seem to have multiplied since you last looked.
+
+  # ── THE DARK CORRIDOR ──────────────────────────────────────────────
+  - id: 701
+    title: "The Dark Corridor"
+    desc: >-
+      The corridor beyond the gate is swallowed by a darkness so thick it feels
+      physical, pressing against your skin like cold water. The walls are rough
+      stone that glistens with condensation, and the floor slopes steadily downward
+      into the unseen depths of Riley's deepest fears. Without a light source, you
+      can barely see your own hands. The silence is oppressive and total, broken
+      only by the faint drip of water from somewhere far below and the persistent
+      feeling that the darkness itself is watching you, patiently, the way a spider
+      watches a fly that has just landed on the very edge of its web.
+    biome: dungeon
+    symbol: "."
+    legend: Dark
+    exits:
+      south: 700
+      north: 702
+    idle:
+      - A drop of ice-cold water lands on the back of your neck from somewhere above.
+      - The darkness ahead seems to shift and resettle, like something large just moved.
+      - Your footsteps echo in ways that suggest the corridor is much larger than you thought.
+      - The temperature drops so sharply your breath comes out in visible clouds -- then warms again.
+      - A faint scraping sound comes from behind you, then stops when you turn around.
+
+  # ── CELL BLOCK A ───────────────────────────────────────────────────
+  - id: 702
+    title: "Cell Block A"
+    desc: >-
+      The corridor opens into a wide chamber lined with heavy iron
+      <ansi fg="itemname">cells</ansi> on both sides, their bars thick enough to
+      hold back whatever Riley's mind decided was too frightening to roam free.
+      Most of the cells are dark and quiet, their occupants either sleeping or
+      long since dissolved, but a few contain shapes that shift restlessly in the
+      shadows. Faded <ansi fg="itemname">labels</ansi> are bolted to each cell
+      door -- "THAT NOISE IN THE ATTIC," "THE THING UNDER THE BED," "SUBSTITUTE
+      TEACHER WITH THE LAZY EYE." The floor is scuffed with drag marks leading
+      deeper into the prison. Fluorescent lights overhead flicker in an arrhythmic
+      pattern that is deeply, specifically unsettling.
+    biome: dungeon
+    symbol: A
+    legend: Block A
+    exits:
+      south: 701
+      north: 703
+      east: 704
+    nouns:
+      cells: >-
+        The <ansi fg="itemname">cells</ansi> are built from reinforced iron and
+        something that looks like hardened thought-stuff. Most are empty, their doors
+        hanging open, but a few are sealed shut with extra padlocks. One cell contains
+        what appears to be an extremely large spider made of shadow. Another holds a
+        shape that looks like a dentist's chair. A third is completely dark except for
+        two faintly glowing eyes at the back.
+      labels: >-
+        The <ansi fg="itemname">labels</ansi> are typed on little brass plates in a
+        clinical font. Some are mundane -- "LOSING A TOOTH," "FORGETTING HOMEWORK."
+        Others are more specific and alarming -- "THAT TIME THE ESCALATOR STOPPED AND
+        NOBODY KNEW WHAT TO DO," "THE POSSIBILITY THAT DOGS DON'T ACTUALLY LIKE YOU."
+    idle:
+      - Something in one of the sealed cells throws itself against the bars with a heavy clang.
+      - The fluorescent lights flicker off for exactly two seconds, then snap back on.
+      - A low moan drifts from the darkest cell at the end of the row, then trails off into silence.
+      - One of the cell labels spins on its bolt, clicking softly as it rotates.
+      - You hear the distinct sound of something dragging itself across a stone floor deeper in the block.
+
+  # ── CELL BLOCK B ───────────────────────────────────────────────────
+  - id: 703
+    title: "Cell Block B"
+    desc: >-
+      The second cell block is older and less maintained than the first, its
+      iron bars tarnished to a dull black and its <ansi fg="itemname">walls</ansi>
+      covered in a network of hairline cracks that pulse faintly with a sickly
+      purple light. The cells here hold the deeper fears -- the ones Riley does
+      not even know she has. There are no labels on these doors, just tally marks
+      scratched into the metal by whatever is inside. The air is heavier here,
+      thick with the psychic weight of accumulated dread, and the fluorescent
+      lights have given up entirely, replaced by a dim bioluminescent glow that
+      seeps from the cracks in the <ansi fg="itemname">walls</ansi> like something
+      alive. The passage continues deeper, past cells that nobody has checked in
+      a very long time.
+    biome: dungeon
+    symbol: B
+    legend: Block B
+    exits:
+      south: 702
+      east: 708
+    nouns:
+      walls: >-
+        The <ansi fg="itemname">walls</ansi> are laced with cracks that glow a faint,
+        diseased purple. If you press your ear to the stone, you can hear whispers --
+        not words, exactly, but the emotional essence of every fear that has ever been
+        locked away down here. The sound is like a crowd of people all holding their
+        breath at the same time.
+    idle:
+      - The purple glow in the wall cracks intensifies, then fades like a slow heartbeat.
+      - Tally marks appear on a nearby cell door with a soft scratching sound. There was no one inside a moment ago.
+      - The air pressure shifts and your ears pop, as if something large just exhaled in the dark.
+      - A cell door at the far end of the block swings open an inch, then slowly creaks shut on its own.
+      - The bioluminescent glow flickers and for a split second you see something standing in the corridor ahead. Then it is gone.
+
+  # ── GRANDMA'S VACUUM CLEANER ROOM ──────────────────────────────────
+  - id: 704
+    title: "Grandma's Vacuum Cleaner Room"
+    desc: >-
+      This oversized cell has been converted into a containment chamber for one
+      of Riley's oldest, most primal fears -- Grandma's vacuum cleaner. The
+      enormous <ansi fg="itemname">vacuum</ansi> dominates the center of the room,
+      a chrome-and-plastic monstrosity from the 1990s that towers over you on
+      wheels the size of dinner plates. Its cord trails across the floor like a
+      dead snake, and its bag is distended and bulging with something that makes
+      muffled thumping sounds. The machine is unplugged, but the power light on
+      its handle blinks intermittently anyway, and the hose twitches in your
+      direction when you get too close. Fear constructs have been drawn to this
+      room, nesting in the corners like moths around a very loud, very terrifying
+      flame.
+    biome: dungeon
+    symbol: V
+    legend: Vacuum
+    exits:
+      west: 702
+      north: 705
+    nouns:
+      vacuum: >-
+        The <ansi fg="itemname">vacuum</ansi> is a relic of pure childhood terror.
+        It is a Hoover Deluxe from some unknowable era, chrome plated and absurdly
+        loud even when turned off -- you can hear a faint roaring hum emanating from
+        its motor housing. The bag is so overstuffed that something inside is pressing
+        against the fabric, creating shapes that look disturbingly like hands. The
+        on/off switch reads "ON" and "MORE ON." There is no off position.
+    idle:
+      - The vacuum's hose twitches toward you, then slowly recoils.
+      - The power light blinks faster for a moment, as if the vacuum sensed your fear.
+      - Something inside the vacuum bag shifts with a muffled thump.
+      - The vacuum emits a low, threatening hum that vibrates through the floor.
+      - A <ansi fg="mobname">fear spider</ansi> skitters out from behind the vacuum, drawn by the ambient dread.
+    spawns:
+      - {mob: 50, rate: "4 real minutes", msg: "A <ansi fg=\"mobname\">fear spider</ansi> crawls out from behind the vacuum, its crystallized legs clicking against the stone floor."}
+
+  # ── THE CLOWN ROOM ─────────────────────────────────────────────────
+  - id: 705
+    title: "The Clown Room"
+    desc: >-
+      The walls of this room are covered in peeling circus <ansi fg="itemname">wallpaper</ansi>
+      -- faded stripes and polka dots in colors that were once cheerful but have
+      curdled into something deeply wrong. Broken <ansi fg="itemname">toys</ansi>
+      litter the floor: a jack-in-the-box with its spring permanently extended
+      and its painted face frozen mid-scream, a music box that plays its tune
+      backwards, a handful of deflated balloon animals twisted into shapes that
+      do not exist in nature. A sticky residue covers everything, the same pink
+      as old bubblegum, and the air reeks of stale cotton candy and greasepaint.
+      This is the anteroom to something worse. You can hear the rhythmic squeak
+      of enormous shoes from the chamber to the north, accompanied by the
+      occasional honk of a bicycle horn that echoes off the stone walls like a
+      threat.
+    biome: dungeon
+    symbol: "!"
+    legend: Clown
+    exits:
+      south: 704
+      north: 706
+    nouns:
+      wallpaper: >-
+        The <ansi fg="itemname">wallpaper</ansi> is a crime scene of cheerfulness
+        gone wrong. The circus stripes have faded from jolly red-and-white to a
+        sickly pink-and-gray, and the polka dots seem to rearrange themselves when
+        you are not looking directly at them. In several places the wallpaper has
+        peeled away to reveal scratch marks on the stone beneath, as if something
+        tried to claw its way through the wall.
+      toys: >-
+        The <ansi fg="itemname">toys</ansi> are the detritus of a childhood
+        nightmare. The jack-in-the-box's painted face has been worn smooth by
+        something rubbing against it repeatedly. The music box plays "Pop Goes
+        the Weasel" in reverse at half speed, which is the single most unsettling
+        sound you have ever heard. The balloon animals are twisted into impossible
+        shapes -- one appears to be a Klein bottle.
+    idle:
+      - The jack-in-the-box bounces on its extended spring with a rusty creak.
+      - The music box clicks on by itself and plays three backwards notes before stopping.
+      - A deflated balloon animal inflates slightly, holds the shape of a scream, then deflates.
+      - The squeaking of enormous shoes from the north gets closer, then recedes.
+      - A bicycle horn honks twice from beyond the northern passage. The echoes take too long to fade.
+
+  # ── JANGLES' STAGE ─────────────────────────────────────────────────
+  - id: 706
+    title: "Jangles' Stage"
+    desc: >-
+      A nightmarish recreation of a birthday party <ansi fg="itemname">stage</ansi>
+      fills this cavernous chamber, complete with sagging streamers in colors that
+      have bled together into a sickly brownish-pink and a cracked plastic
+      <ansi fg="itemname">banner</ansi> that reads "HAPPY BIRTHDAY" in letters
+      that drip like they are melting. The stage itself is a raised wooden platform
+      stained with something that looks like cake frosting mixed with tears, and
+      a single <ansi fg="itemname">spotlight</ansi> hangs from the ceiling, casting
+      a harsh cone of yellowish light on the performance area. Deflated balloons
+      litter the floor like shed skins. This is where Jangles holds court -- the
+      clown king of Riley's deepest fears, performing for an audience of no one in
+      an endless birthday party that was never fun to begin with. The air tastes
+      like old frosting and bad decisions.
+    biome: dungeon
+    symbol: J
+    legend: Jangles
+    exits:
+      south: 705
+      east: 707
+    nouns:
+      stage: >-
+        The <ansi fg="itemname">stage</ansi> is warped and splintered, bowed in the
+        center from the weight of something very large jumping on it repeatedly. The
+        boards are stained in layers -- frosting, greasepaint, and something darker
+        that you choose not to investigate. Confetti is ground into every crack, fused
+        there by years of stomping oversized shoes.
+      banner: >-
+        The <ansi fg="itemname">banner</ansi> reads "HAPPY BIRTHDAY" but the letters
+        are running, dripping down the plastic in long streaks that pool on the floor.
+        The "H" has almost completely dissolved. Underneath, in smaller letters that
+        someone has scratched into the plastic with a fingernail, it reads "every day
+        is your birthday down here."
+      spotlight: >-
+        The <ansi fg="itemname">spotlight</ansi> is a massive theatrical lamp bolted
+        to the ceiling, casting a harsh yellowish cone onto the stage. It buzzes with
+        a low electrical hum and flickers at irregular intervals. When it dims, the
+        shadows at the edges of the room seem to lean inward, and when it flares back
+        to full brightness, things have moved.
+    idle:
+      - The spotlight flickers and the shadows surge forward before snapping back into place.
+      - A bicycle horn honks from the stage, though nothing visible pressed it.
+      - The banner drips another letter onto the floor with a wet splat.
+      - Deflated balloons on the floor inflate slightly, as if something is breathing into them from below.
+      - The sound of enormous shoes squeaking on wood echoes through the chamber in a slow, deliberate rhythm.
+    spawns:
+      - {mob: 49, rate: "8 real minutes", wander: 0, msg: "<ansi fg=\"mobname\">Jangles the Clown</ansi> lumbers onto the stage from behind a tattered curtain, his yellow eyes sweeping the room as his bicycle horn lets out a long, slow HONNNK."}
+
+  # ── BROCCOLI NIGHTMARE CHAMBER ─────────────────────────────────────
+  - id: 707
+    title: "Broccoli Nightmare Chamber"
+    desc: >-
+      The stone walls of this chamber have been overtaken by a sprawling,
+      impossible garden of <ansi fg="itemname">broccoli</ansi> that grows in
+      thick, angry clusters from every crack and crevice. The florets are
+      enormous -- some as large as your head -- and they pulse with a sickly
+      green bioluminescence that makes the whole room look like the inside of
+      a vegetable crisper drawer from hell. The air is thick with the smell of
+      overcooked cruciferous vegetables, the kind of smell that triggers a
+      primal childhood gag reflex. Thick <ansi fg="itemname">stalks</ansi>
+      have broken through the floor in places, creating an uneven terrain of
+      green, fibrous obstacles. Something in here is deeply, personally
+      offended that you do not like broccoli.
+    biome: dungeon
+    symbol: "~"
+    legend: Broccoli
+    exits:
+      west: 706
+      south: 708
+    nouns:
+      broccoli: >-
+        The <ansi fg="itemname">broccoli</ansi> is not normal broccoli. Each floret
+        is the size of a fist and glows with a faint green light that pulses in time
+        with your heartbeat, which is unsettling on several levels. The florets are
+        warm to the touch and slightly moist. If you look closely, you can see tiny
+        faces in the broccoli clusters -- angry faces, the faces of vegetables that
+        remember being left on the plate.
+      stalks: >-
+        The <ansi fg="itemname">stalks</ansi> are as thick as tree trunks and have
+        punched through the stone floor with the determination of a vegetable that
+        will not be ignored. They are fibrous and tough, and they creak when anything
+        brushes against them, as if tensing. One particularly large stalk has what
+        appears to be a bite mark on it -- a very old, very small bite mark from a
+        child who tried exactly once.
+    idle:
+      - A broccoli floret pops open with a wet squelch, releasing a puff of green spores.
+      - The stalks creak and lean toward you as you move, tracking your position like sunflowers.
+      - The smell of steamed broccoli intensifies suddenly, triggering an involuntary grimace.
+      - A cluster of florets pulses brighter and you hear what sounds like an offended huff.
+      - Something green and stalk-shaped wobbles past the doorway, pauses, and wobbles back.
+    spawns:
+      - {mob: 52, rate: "5 real minutes", msg: "A <ansi fg=\"mobname\">broccoli horror</ansi> tears itself free from the wall, wobbling upright on its thick stalk with a sound like ripping velcro."}
+
+  # ── BASEMENT STAIRS ────────────────────────────────────────────────
+  - id: 708
+    title: "Basement Stairs"
+    desc: >-
+      A narrow stone <ansi fg="itemname">staircase</ansi> spirals downward into
+      the deeper levels of the Subconscious, each step worn smooth by the passage
+      of things that prefer to move in the dark. The walls are close enough to
+      touch on both sides, and they are cold and slightly damp, covered in a thin
+      film of condensation that makes everything slick. A single bare
+      <ansi fg="itemname">lightbulb</ansi> hangs from a wire at the top of the
+      stairs, swinging gently in a draft that comes from below, casting swaying
+      shadows that make the stairs look like they are moving. The air gets colder
+      with each step down, and the silence gets louder, if that makes any sense.
+      It doesn't. That's the point.
+    biome: dungeon
+    symbol: "<"
+    legend: Stairs
+    exits:
+      west: 703
+      north: 707
+      down: 709
+    nouns:
+      staircase: >-
+        The <ansi fg="itemname">staircase</ansi> is carved directly into the stone
+        of the mind, each step slightly uneven, as if they were formed by something
+        other than tools. The center of each step is worn into a shallow depression
+        by years of use. Some of the steps have claw marks at the edges, where
+        something gripped for purchase on the way up -- or was dragged on the way down.
+      lightbulb: >-
+        The <ansi fg="itemname">lightbulb</ansi> is a bare, dusty incandescent bulb
+        that provides just enough light to make the shadows worse. It swings on its
+        wire in a slow, pendulum arc, and every time it swings, the light shifts and
+        the stairs seem to change shape. The wire it hangs from is frayed, and you
+        cannot shake the feeling that it is going to go out at the worst possible
+        moment.
+    idle:
+      - The lightbulb swings and the shadows on the stairs shift like living things.
+      - A cold draft rushes up from below, carrying a faint whiff of something ancient and wrong.
+      - Your footstep echoes down the stairwell and comes back changed, as if something repeated it.
+      - The lightbulb flickers twice. In the half-second of darkness, you hear breathing that is not yours.
+      - A step beneath your foot shifts slightly, as if the stairs are settling deeper into the dark.
+
+  # ── THE DARK PIT ───────────────────────────────────────────────────
+  - id: 709
+    title: "The Dark Pit"
+    desc: >-
+      The stairs end at the bottom of a vast, circular <ansi fg="itemname">pit</ansi>
+      carved from black stone that absorbs light like a sponge. This is the
+      deepest point of the Subconscious, where the heaviest fears eventually
+      settle like sediment. The ceiling is lost in darkness high above, and the
+      walls curve inward, giving the space the feel of being inside a closed fist.
+      The floor is covered in a fine black <ansi fg="itemname">dust</ansi> that
+      muffles every sound, and the air is so still it feels like the room is
+      holding its breath. There is a profound, primal wrongness to this place --
+      the kind of fear that exists before language, before reason, before anything
+      except the certainty that you are not supposed to be here.
+    biome: dungeon
+    symbol: O
+    legend: Pit
+    exits:
+      up: 708
+      north: 710
+    nouns:
+      pit: >-
+        The <ansi fg="itemname">pit</ansi> is unnervingly symmetrical, a perfect
+        circle of black stone polished smooth by forces that predate Riley's conscious
+        mind. The stone is cold to the touch -- not the cold of a basement, but the
+        cold of deep space, the cold of the void between thoughts. Standing in the
+        center makes you feel very small and very observed.
+      dust: >-
+        The black <ansi fg="itemname">dust</ansi> is impossibly fine, like ground-up
+        darkness. It clings to your shoes and dampens every sound to nothing. If you
+        scoop up a handful, it feels weightless and slightly warm, and for a moment
+        you feel a flash of something -- a fear you cannot name, from a time before
+        you had words for anything.
+    idle:
+      - The black dust on the floor shifts in a slow spiral pattern, as if stirred by an invisible finger.
+      - The silence deepens until you can hear your own heartbeat echoing off the walls.
+      - Something in the darkness above shifts, and a cascade of fine black dust drifts down like dark snow.
+      - The walls seem to contract slightly, then expand, as if the pit is breathing.
+      - A wave of primal unease washes over you for no reason you can identify, then passes.
+
+  # ── SPIDER NEST ────────────────────────────────────────────────────
+  - id: 710
+    title: "Spider Nest"
+    desc: >-
+      Thick <ansi fg="itemname">webs</ansi> of crystallized fear stretch across
+      this chamber in dense, overlapping layers, turning the room into a three-
+      dimensional maze of sticky, glittering strands. The webs refract the dim
+      light into sickly prismatic patterns that shift across the walls like an
+      oil slick. Wrapped <ansi fg="itemname">bundles</ansi> hang from the ceiling
+      at various heights -- some small, some disturbingly person-shaped -- each
+      one cocooned in layer after layer of anxiety silk. The floor is carpeted
+      with shed exoskeletons and the brittle remains of previous webs, crunching
+      underfoot with every step. The spiders that built this place are still here,
+      their crystallized bodies catching the light as they move through the web
+      with a clicking, tapping rhythm that never quite stops.
+    biome: dungeon
+    symbol: X
+    legend: Nest
+    exits:
+      south: 709
+      north: 711
+    nouns:
+      webs: >-
+        The <ansi fg="itemname">webs</ansi> are made of pure crystallized anxiety,
+        each strand as thin as a hair but strong enough to hold your weight. They
+        vibrate faintly at a frequency you can feel in your teeth, and when touched,
+        they whisper worst-case scenarios in a voice that sounds like your own internal
+        monologue on a very bad day. The strands are sticky and warm.
+      bundles: >-
+        The <ansi fg="itemname">bundles</ansi> hanging from the web are tightly
+        wrapped cocoons of anxiety silk. Most are small -- wrapped-up fears, worries,
+        and bad dreams that the spiders have collected and stored for later. A few
+        are larger and shift occasionally, as if whatever is inside is not entirely
+        unconscious. You do not want to know what is in the biggest one.
+    idle:
+      - A web strand near your head vibrates and whispers something about a test you forgot to study for.
+      - Two <ansi fg="mobname">fear spiders</ansi> click across the ceiling, their crystallized legs catching the light.
+      - A cocoon bundle twitches, and something inside lets out a muffled sound.
+      - The webs tighten suddenly, as if the entire nest just tensed.
+      - A shed exoskeleton crunches under your foot and the clicking in the room pauses for one terrible second.
+    spawns:
+      - {mob: 50, rate: "3 real minutes", msg: "A <ansi fg=\"mobname\">fear spider</ansi> descends from the web above on a strand of anxiety silk, its prismatic body refracting sickly light."}
+      - {mob: 50, rate: "4 real minutes", msg: "A <ansi fg=\"mobname\">fear spider</ansi> crawls out from behind a cluster of cocoons, clicking its crystallized legs together."}
+
+  # ── CREAKY ATTIC ───────────────────────────────────────────────────
+  - id: 711
+    title: "Creaky Attic"
+    desc: >-
+      A low-ceilinged space that feels impossibly like the attic of a house that
+      does not exist, crammed with dusty <ansi fg="itemname">boxes</ansi> and
+      forgotten <ansi fg="itemname">junk</ansi> piled in precarious towers that
+      lean at alarming angles. The floorboards are warped and uneven, creaking
+      loudly with every step, and the sloped ceiling forces you to duck in places.
+      A single dirty <ansi fg="itemname">window</ansi> is set into one wall,
+      but the glass is opaque with grime and the light that filters through is
+      the wrong color -- a sickly, late-afternoon amber that belongs to no
+      specific time of day. The attic smells like dust, old cardboard, and the
+      peculiar dread of hearing a noise from upstairs when you are home alone.
+    biome: dungeon
+    symbol: "^"
+    legend: Attic
+    exits:
+      south: 710
+      north: 712
+    nouns:
+      boxes: >-
+        The <ansi fg="itemname">boxes</ansi> are unlabeled cardboard boxes taped
+        shut with packing tape that has yellowed and cracked with age. If you shake
+        one, you can hear something shift inside, but opening them reveals only more
+        boxes. It is boxes all the way down. One box is heavier than the others and
+        makes a sound like muffled crying when you move it.
+      junk: >-
+        The <ansi fg="itemname">junk</ansi> is the detritus of childhood fears made
+        physical -- a broken rocking horse with one glass eye, a doll with no face,
+        a painting of a house that you are certain was facing the other direction a
+        moment ago. Each item is unsettling on its own, but together they create an
+        atmosphere of accumulated wrongness.
+      window: >-
+        The <ansi fg="itemname">window</ansi> is too grimy to see through clearly,
+        but shapes move behind it -- shadows that pass too slowly and stop too long.
+        When you press your face close to the glass, the shapes stop moving, as if
+        they noticed you looking. You step back and they resume.
+    idle:
+      - A floorboard creaks loudly under your weight, and an answering creak comes from somewhere you are not standing.
+      - A box in the corner shifts an inch across the floor on its own.
+      - The light through the dirty window changes color, as if a cloud passed over a sun that is not there.
+      - Something taps on the underside of the floor -- three slow, deliberate knocks.
+      - A rocking horse in the corner begins rocking gently, though nothing touched it.
+
+  # ── SHADOWY ALCOVE ─────────────────────────────────────────────────
+  - id: 712
+    title: "Shadowy Alcove"
+    desc: >-
+      A narrow recess in the stone wall has been carved into a small chamber
+      that seems specifically designed to make you feel observed. The shadows
+      here do not behave normally -- they pool in corners that should not have
+      shadows, stretch in directions opposite to any light source, and
+      occasionally shift when you are looking directly at them. A tall, dark
+      <ansi fg="itemname">silhouette</ansi> stands against the far wall,
+      perfectly still, its hollow eyes level with yours. It might be a trick
+      of the light. It is not a trick of the light. The air in here is thick
+      with the psychic weight of every time Riley questioned herself, every
+      moment of "am I good enough" given form and substance and a pair of
+      empty, staring eyes.
+    biome: dungeon
+    symbol: "?"
+    legend: Alcove
+    exits:
+      south: 711
+      north: 713
+    nouns:
+      silhouette: >-
+        The <ansi fg="itemname">silhouette</ansi> is a doubt shadow at rest, a tall,
+        dark figure with hollow eyes that mirror your own face in a way that is
+        specifically calculated to make you uncomfortable. When you look at it head-on,
+        it is perfectly still. When you look away, it is closer. It does not walk. It
+        does not glide. It is simply in a different place every time you check.
+    idle:
+      - The shadows in the alcove shift, and the silhouette appears to be an inch closer than it was.
+      - A whisper that sounds exactly like your own voice says something you cannot quite make out.
+      - The shadows stretch toward you like reaching fingers, then slowly retract.
+      - You catch your own reflection in the silhouette's hollow eyes, but the reflection is frowning.
+      - The temperature plummets and you feel a crushing weight of self-doubt that lifts after a moment.
+    spawns:
+      - {mob: 53, rate: "5 real minutes", msg: "A <ansi fg=\"mobname\">doubt shadow</ansi> peels away from the wall, its hollow eyes opening like wounds in the dark."}
+
+  # ── THE LOCKED WARD ────────────────────────────────────────────────
+  - id: 713
+    title: "The Locked Ward"
+    desc: >-
+      The corridor narrows and the walls close in, reinforced with heavy steel
+      <ansi fg="itemname">plates</ansi> bolted over the stone. This is the high-
+      security wing of the Subconscious, where the fears too dangerous to keep
+      in ordinary cells are contained behind multiple layers of mental locks.
+      Every surface is covered in warning <ansi fg="itemname">signs</ansi> --
+      "MAXIMUM CONTAINMENT," "DO NOT ENGAGE," "IF YOU CAN READ THIS YOU ARE
+      ALREADY TOO CLOSE." The lights here are industrial halogens that hum at
+      a frequency designed to keep things awake, and the air tastes metallic
+      and sharp, like the moment before a lightning strike. Something behind
+      one of the steel plates is tapping in a slow, patient rhythm.
+    biome: dungeon
+    symbol: W
+    legend: Ward
+    exits:
+      south: 712
+      north: 714
+    nouns:
+      plates: >-
+        The steel <ansi fg="itemname">plates</ansi> are half an inch thick and covered
+        in scratch marks from both sides. Some of the bolts are bent outward, stressed
+        by whatever is pushing against them from behind. One plate has been dented so
+        severely it has buckled inward, and through the gap you can see absolute darkness
+        and feel cold air flowing out.
+      signs: >-
+        The warning <ansi fg="itemname">signs</ansi> escalate in urgency as you go
+        deeper. The first few are standard -- "AUTHORIZED PERSONNEL ONLY." Then they
+        get specific -- "DO NOT MAKE EYE CONTACT." Then desperate -- "PLEASE LEAVE."
+        The last one, bolted crookedly to the wall near the end of the corridor, just
+        says "RUN."
+    idle:
+      - The tapping from behind a steel plate stops, as if whatever is inside heard you.
+      - A bolt on one of the plates pops loose and clatters to the floor.
+      - The halogen lights flicker and you see something dark pressed against the gap in a buckled plate.
+      - The metallic taste in the air intensifies and your skin prickles with static.
+      - The tapping resumes in a new rhythm -- faster, closer to the door.
+    spawns:
+      - {mob: 51, rate: "4 real minutes", msg: "A <ansi fg=\"mobname\">darkness creeper</ansi> oozes out from beneath a buckled steel plate, a patch of shadow that is somehow darker than everything around it."}
+
+  # ── GUARD STATION ──────────────────────────────────────────────────
+  - id: 714
+    title: "Guard Station"
+    desc: >-
+      An abandoned guard post sits at the junction of two corridors, its
+      <ansi fg="itemname">desk</ansi> still covered in paperwork that no one
+      will ever finish. A <ansi fg="itemname">chair</ansi> is overturned behind
+      the desk, and a cold cup of coffee sits untouched next to a half-eaten
+      sandwich that has been here so long it has become something new and
+      disturbing. Whoever was stationed here left in a hurry -- the drawers are
+      open, a clipboard is on the floor, and the security monitors mounted to
+      the wall show nothing but static on every channel. A calendar pinned to
+      the wall is open to a date that has not happened yet.
+    biome: dungeon
+    symbol: S
+    legend: Guard
+    exits:
+      south: 713
+      north: 715
+    nouns:
+      desk: >-
+        The <ansi fg="itemname">desk</ansi> is a heavy metal affair bolted to the
+        floor, covered in unfinished incident reports. Most are routine -- "Cell 14:
+        Occupant moaning. Applied standard ignoring protocol." But the last report,
+        still in the typewriter, reads "Something is wrong with Cell 23. The door is
+        open but nothing came out. I repeat, nothing came o" and then it stops.
+      chair: >-
+        The <ansi fg="itemname">chair</ansi> is a standard-issue office chair lying
+        on its side. The wheels are still spinning slowly, as though someone just
+        knocked it over. But the dust on the seat suggests it has been here for a
+        very long time. Both things cannot be true, and yet.
+    idle:
+      - The security monitors flicker and for one frame you see something staring into the camera.
+      - The overturned chair's wheels spin faster, then slow to a stop.
+      - A page turns on the desk, moved by a draft that you cannot feel.
+      - The coffee on the desk is still warm. It should not still be warm.
+      - Static on the monitors resolves into a pattern that looks like a face, then dissolves.
+
+  # ── NIGHTMARE STORAGE ──────────────────────────────────────────────
+  - id: 715
+    title: "Nightmare Storage"
+    desc: >-
+      Floor-to-ceiling metal <ansi fg="itemname">shelves</ansi> line this long,
+      narrow room, stacked with sealed <ansi fg="itemname">containers</ansi> of
+      every size -- crates, jars, locked boxes, and vacuum-sealed bags, each one
+      labeled with a date and a brief, clinical description of the nightmare
+      inside. The containers hum and vibrate on the shelves, some rattling so
+      hard they walk toward the edge before settling back. The lighting is harsh
+      fluorescent that makes everything look sterile and clinical, like a hospital
+      for bad dreams. A logistics board on the wall tracks inventory with
+      obsessive precision: "NIGHTMARE #4,872: THE ONE WHERE YOUR TEETH FALL OUT.
+      STATUS: CONTAINED. BARELY."
+    biome: dungeon
+    symbol: N
+    legend: Storage
+    exits:
+      south: 714
+      north: 716
+    nouns:
+      shelves: >-
+        The <ansi fg="itemname">shelves</ansi> are industrial-grade steel, bolted
+        to the walls and floor with brackets rated for extreme containment. Despite
+        this, several brackets are bent, and one shelf unit has been pushed back a
+        full inch from the wall by the force of whatever is vibrating inside the
+        containers on it.
+      containers: >-
+        The <ansi fg="itemname">containers</ansi> are labeled with an efficient,
+        joyless filing system. "NM-001: FALLING DREAM (RECURRING, HIGH INTENSITY)."
+        "NM-347: SHOWING UP TO SCHOOL IN UNDERWEAR (CLASSIC, PERSISTENT)." "NM-1,204:
+        THAT THING WITH THE STAIRS THAT GO NOWHERE (SURREAL, UNSETTLING)." One
+        container near the bottom is just labeled "DO NOT" with no further description.
+    idle:
+      - A container on a high shelf rattles violently, then stops with a thud.
+      - The fluorescent lights buzz louder and one of the sealed jars glows faintly from within.
+      - A label peels off a container and you catch the words "the one where everyone is staring at you."
+      - Something inside a crate scratches at the lid in a slow, deliberate pattern.
+      - The logistics board updates itself with a soft click. A new entry reads "STATUS: RESTLESS."
+
+  # ── THE PHOBIA GALLERY ─────────────────────────────────────────────
+  - id: 716
+    title: "The Phobia Gallery"
+    desc: >-
+      This wide, vaulted chamber has been arranged like a museum gallery, with
+      individual <ansi fg="itemname">exhibits</ansi> mounted on pedestals and
+      displayed behind thick glass that fogs and clears in slow, breathing cycles.
+      Each exhibit represents one of Riley's phobias, preserved and presented with
+      the clinical detachment of a natural history museum -- if the natural history
+      museum was curated by something that enjoyed watching people squirm. Soft
+      lighting illuminates each display, and small brass <ansi fg="itemname">plaques</ansi>
+      provide educational descriptions that manage to make everything worse. The
+      gallery is arranged in a circle, so no matter where you stand, at least one
+      exhibit is behind you.
+    biome: dungeon
+    symbol: P
+    legend: Phobias
+    exits:
+      south: 715
+      north: 717
+    nouns:
+      exhibits: >-
+        The <ansi fg="itemname">exhibits</ansi> are displayed with museum-quality
+        precision. The Heights exhibit features a glass floor over an infinite drop
+        that makes your stomach lurch even though you know it is not real. The Dark
+        exhibit is a sealed chamber with a window -- inside, it is a darkness so
+        complete that staring into it feels like the darkness is staring back. The
+        Clowns exhibit is a miniature stage with a tiny Jangles figure that follows
+        you with its eyes. The Spiders exhibit contains a single web with a sign
+        reading "EXHIBIT TEMPORARILY ESCAPED." The Public Speaking exhibit is a
+        podium facing a thousand empty chairs that somehow feel occupied.
+      plaques: >-
+        The brass <ansi fg="itemname">plaques</ansi> read like parodies of museum
+        descriptions. "ACROPHOBIA (Fear of Heights): First manifested age 6, Grandpa's
+        balcony incident. Current severity: Moderate. Note: Elevators with glass walls
+        remain problematic." "ARACHNOPHOBIA (Fear of Spiders): See Exhibit -- oh, it
+        escaped again. Please report any sightings." "GLOSSOPHOBIA (Fear of Public
+        Speaking): Current severity: EXTREME. The empty chairs can hear your heartbeat."
+    idle:
+      - The glass floor of the Heights exhibit ripples and the infinite drop below seems to deepen.
+      - The tiny Jangles figure on the Clowns stage turns to face you, then freezes when you look at it.
+      - The empty chairs in the Public Speaking exhibit creak, as if an invisible audience just leaned forward.
+      - The Darkness exhibit window fogs over and when it clears, the darkness inside is closer to the glass.
+      - A thread of spider silk drifts down from the ceiling near the Spiders exhibit. The sign was not lying.
+
+  # ── CRACKED FLOOR ──────────────────────────────────────────────────
+  - id: 717
+    title: "Cracked Floor"
+    desc: >-
+      The stone floor of this corridor is fractured into a web of deep
+      <ansi fg="itemname">cracks</ansi> that glow faintly with a dull red light
+      from somewhere far below. The cracks widen as you move forward, some broad
+      enough to see down into -- though what you see is just more darkness, pulsing
+      with that same sullen red glow. The walls here are unstable, shedding flakes
+      of stone that crumble to dust before they hit the floor, and the ceiling sags
+      dangerously in places, supported by makeshift <ansi fg="itemname">braces</ansi>
+      that look like they were installed in a panic. The structural integrity of
+      this section of the Subconscious is failing, worn thin by the weight of
+      fears pressing down from above and the void pulling from below. Every step
+      sends a network of new cracks racing ahead of you.
+    biome: dungeon
+    symbol: "="
+    legend: Cracked
+    exits:
+      south: 716
+      north: 718
+    nouns:
+      cracks: >-
+        The <ansi fg="itemname">cracks</ansi> in the floor glow with a deep, ember-like
+        red that pulses slowly. Peering into one reveals nothing but a shaft of darkness
+        that drops farther than you can see, the red glow coming from somewhere impossibly
+        far down. Hot air rises from the cracks, carrying a faint smell of burnt sugar
+        and ozone. Some of the cracks are widening visibly.
+      braces: >-
+        The <ansi fg="itemname">braces</ansi> are improvised supports made from
+        whatever was available -- repurposed cell bars, bent shelf brackets, and what
+        appears to be a stop sign. They groan under the weight of the sagging ceiling,
+        and several have already buckled. One brace has a note taped to it reading
+        "HOLD PLEASE" in shaky handwriting.
+    idle:
+      - A new crack races across the floor with a sharp splitting sound, glowing red from within.
+      - The ceiling sags another inch and one of the braces groans in protest.
+      - Hot air gusts up from a crack, carrying sparks of dull red light that drift and fade.
+      - A section of wall crumbles and a cloud of stone dust fills the air.
+      - The floor shifts beneath your feet and you hear the distant sound of something very large settling deeper.
+
+  # ── EMERGENCY EXIT ─────────────────────────────────────────────────
+  - id: 718
+    title: "Emergency Exit"
+    desc: >-
+      A narrow, hastily constructed tunnel punches through the back wall of the
+      Subconscious, shored up with mismatched timber and corrugated metal
+      <ansi fg="itemname">panels</ansi> that rattle with every tremor from the
+      cracking floors behind you. A faded emergency <ansi fg="itemname">sign</ansi>
+      bolted above the tunnel entrance reads "EMERGENCY EGRESS TO LONG TERM MEMORY
+      -- USE ONLY IN CASE OF CATASTROPHIC FEAR BREACH." The tunnel angles sharply
+      upward, climbing toward the distant glow of the memory shelves above. The air
+      here is warmer and cleaner than the rest of the Subconscious, carrying the
+      faint smell of stored memories and the promise of safety. After everything
+      you have seen down here, the exit feels less like an architectural feature
+      and more like a mercy.
+    biome: dungeon
+    symbol: E
+    legend: Exit
+    exits:
+      south: 717
+      up: 315
+    nouns:
+      panels: >-
+        The corrugated metal <ansi fg="itemname">panels</ansi> are salvaged from
+        various parts of the mind -- one has "DREAM PRODUCTIONS" stamped on it,
+        another is painted with cheerful stripes from what was probably once a
+        Personality Island support strut. They vibrate and rattle constantly but
+        hold firm, testament to whoever built this escape route under pressure.
+      sign: >-
+        The emergency <ansi fg="itemname">sign</ansi> is standard-issue mental
+        infrastructure, the kind of thing mind workers bolt up and hope never gets
+        used. The text is faded but legible, and someone has added in pen: "Tested
+        once during the Jangles Incident of Year 4. Worked. Barely." Below that,
+        another hand has written: "DO NOT let the broccoli follow you out."
+    idle:
+      - A tremor from the Subconscious sends dust cascading from the tunnel ceiling.
+      - The metal panels rattle like drums and then settle back into an uneasy quiet.
+      - A warm draft from the tunnel above carries the faint scent of stored memories.
+      - The emergency sign flickers with its own dim internal light, beckoning you toward the exit.
+      - You hear the distant, organized hum of Long Term Memory above, and it sounds like the best thing you have ever heard.

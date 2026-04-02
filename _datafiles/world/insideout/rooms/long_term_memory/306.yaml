@@ -1,0 +1,28 @@
+roomid: 306
+zone: Long Term Memory
+title: Fading Memory Aisle
+description: The light dims sharply as you turn into this aisle. The memory orbs here have lost their vibrancy -- once-bright colors have washed out to pale pastels and grays, and many orbs sit dark and still on their shelves, their scenes frozen mid-frame or playing in stuttering loops. A fine gray dust coats the lower shelves, and the air tastes stale and flat, like a room that hasn't been opened in years. Some orbs have hairline cracks running through them, leaking wisps of faint light that evaporate before they reach the floor. This is where memories come to be forgotten.
+mapsymbol: F
+maplegend: Fading
+biome: mindscape
+exits:
+  east:
+    roomid: 301
+  south:
+    roomid: 307
+nouns:
+  dust: The <ansi fg="itemname">dust</ansi> is not ordinary dust. It is the residue of completely forgotten memories -- thoughts that have faded so thoroughly they crumbled into nothing. It is fine and gray and slightly warm to the touch, and if you hold a handful up to the light you can sometimes catch the ghost of a scene playing inside the motes.
+  orbs: The fading orbs are heartbreaking up close. A once-golden memory now shows only a blurred outline of a smiling face, the details long gone. A blue orb plays a conversation where the words have been replaced by silence. They are still here, technically, but barely.
+spawninfo:
+- mobid: 31
+  message: A <ansi fg="mobname">memory leech</ansi> oozes out from between the dusty shelves, drawn by fading light.
+  respawnrate: 3 real minutes
+- mobid: 31
+  message: Another <ansi fg="mobname">memory leech</ansi> drags itself from the shadows beneath a crumbling shelf.
+  respawnrate: 4 real minutes
+idlemessages:
+- A gray orb on a nearby shelf flickers once, then goes completely dark.
+- Dust motes drift through the air, each one the ghost of something once remembered.
+- A faded orb tries to replay its scene but the image stutters and freezes.
+- The silence here feels heavy, as if sound itself is being forgotten.
+- A <ansi fg="mobname">memory leech</ansi> slithers between the shelves, drawn to the fading light.

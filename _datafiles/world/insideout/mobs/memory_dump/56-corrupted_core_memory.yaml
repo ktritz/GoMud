@@ -1,0 +1,35 @@
+mobid: 56
+zone: Memory Dump
+itemdropchance: 50
+hostile: true
+nocorpse: true
+deathmessage: '{name} cracks open in a burst of corrupted light, then collapses inward and vanishes.'
+maxwander: 0
+activitylevel: 30
+groups:
+- forgotten
+- boss
+combatcommands:
+- backstab
+- cast mm
+- cast sparks
+- callforhelp 5:forgotten:lets out a wave of corrupted memory!
+angrycommands:
+- shout YOU WILL BE FORGOTTEN!
+- emote pulses with void energy, the colors on its surface inverting violently.
+character:
+  name: corrupted core memory
+  description: A core memory that has been consumed by the void and become something terrible. It pulses with shifting dark colors -- corrupted versions of joy's gold turned to sickly amber, sadness's blue curdled to bruise-black, anger's red bleeding into a deep, infected crimson, fear's purple gone hollow and vacant, disgust's green rotted to a gangrenous brown. It was once one of Riley's most important memories, the kind that defines who you are, but the Memory Dump has twisted it into a howling vortex of everything those emotions were never meant to be. It radiates a wrongness you can feel in your bones, and the air around it tastes like the moment before you forget something you swore you'd never forget. This is where memories come to die, and this one has decided to take everything else with it.
+  level: 20
+  raceid: 7
+  gold: 1000
+  stats:
+    strength:
+      training: 30
+    speed:
+      training: 20
+    vitality:
+      training: 40
+  equipment:
+    weapon:
+      itemid: 10012

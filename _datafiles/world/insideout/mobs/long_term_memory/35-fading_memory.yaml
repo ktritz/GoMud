@@ -1,0 +1,27 @@
+mobid: 35
+zone: Long Term Memory
+itemdropchance: 15
+hostile: true
+nocorpse: true
+deathmessage: '{name} flickers one last time and fades to nothing, like a memory you can''t quite hold onto.'
+maxwander: 3
+activitylevel: 15
+groups:
+- forgotten
+idlecommands:
+- emote flickers violently, nearly disappearing for a moment before solidifying again.
+- emote reaches for something that isn't there.
+- ''
+character:
+  name: fading memory
+  description: A translucent humanoid figure that has lost most of its detail, flickering in and out of visibility like a dying lightbulb. You can almost make out a face -- the suggestion of a smile, the ghost of someone's eyes -- but then it shifts and blurs into nothing. It moves with a desperate, grasping urgency, reaching for anything solid as if trying to remember what it was. It attacks instinctively, clutching at the living as though contact alone might make it real again.
+  level: 6
+  gold: 20
+  raceid: 7
+  stats:
+    strength:
+      training: 3
+    speed:
+      training: 1
+    vitality:
+      training: 4

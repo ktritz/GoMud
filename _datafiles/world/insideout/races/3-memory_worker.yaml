@@ -1,0 +1,17 @@
+raceid: 3
+name: memory worker
+description: 'A small, blue-suited worker who maintains Riley''s memories. They carry
+  clipboards, wear hard hats, and take their job very seriously.'
+defaultalignment: 5
+size: medium
+unarmedname: clipboard
+tnlscale: 1
+selectable: false
+knowsfirstaid: false
+tameable: false
+stats:
+  smarts:
+    base: 1
+damage:
+  diceroll: 1d3
+disabledslots: []

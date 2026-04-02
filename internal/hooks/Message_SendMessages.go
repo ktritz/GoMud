@@ -8,18 +8,32 @@ import (
 	"github.com/GoMudEngine/GoMud/internal/rooms"
 	"github.com/GoMudEngine/GoMud/internal/templates"
 	"github.com/GoMudEngine/GoMud/internal/term"
+	"github.com/GoMudEngine/GoMud/internal/transport"
 	"github.com/GoMudEngine/GoMud/internal/users"
 	"github.com/GoMudEngine/GoMud/internal/util"
 )
 
-// Checks whether their level is too high for a guide
-func Message_SendMessage(e events.Event) events.ListenerReturn {
+type messageRecipient struct {
+	ConnectionId connections.ConnectionId
+	ScreenReader bool
+}
+
+type messageDeliveryPlan struct {
+	Text       string
+	Recipients []messageRecipient
+}
+
+func (m messageDeliveryPlan) Type() string { return `MessageDeliveryPlan` }
+
+func Message_PlanDelivery(e events.Event) events.ListenerReturn {
 
 	message, typeOk := e.(events.Message)
 	if !typeOk {
 		mudlog.Error("Event", "Expected Type", "Message", "Actual Type", e.Type())
 		return events.Continue
 	}
+
+	recipients := []messageRecipient{}
 
 	if message.UserId > 0 {
 
@@ -30,11 +44,10 @@ func Message_SendMessage(e events.Event) events.ListenerReturn {
 				return events.Continue
 			}
 
-			textOut := templates.AnsiParse(message.Text)
-			if user.ScreenReader {
-				textOut = util.StripCharsForScreenReaders(textOut)
-			}
-			connections.SendTo([]byte(term.AnsiMoveCursorColumn.String()+term.AnsiEraseLine.String()+textOut), user.ConnectionId())
+			recipients = append(recipients, messageRecipient{
+				ConnectionId: user.ConnectionId(),
+				ScreenReader: user.ScreenReader,
+			})
 
 			events.AddToQueue(events.RedrawPrompt{UserId: user.UserId}, 100)
 
@@ -83,19 +96,62 @@ func Message_SendMessage(e events.Event) events.ListenerReturn {
 					}
 				}
 
-				textOut := templates.AnsiParse(message.Text)
-				if user.ScreenReader {
-					textOut = util.StripCharsForScreenReaders(textOut)
-				}
-
-				connections.SendTo([]byte(term.AnsiMoveCursorColumn.String()+term.AnsiEraseLine.String()+textOut), user.ConnectionId())
+				recipients = append(recipients, messageRecipient{
+					ConnectionId: user.ConnectionId(),
+					ScreenReader: user.ScreenReader,
+				})
 
 				events.AddToQueue(events.RedrawPrompt{UserId: user.UserId}, 100)
 
 			}
 		}
-
 	}
+
+	if len(recipients) > 0 {
+		events.AddToQueue(messageDeliveryPlan{
+			Text:       message.Text,
+			Recipients: recipients,
+		})
+	}
+
 	return events.Continue
 
+}
+
+// Checks whether their level is too high for a guide
+func Message_SendMessage(e events.Event) events.ListenerReturn {
+
+	plan, typeOk := e.(messageDeliveryPlan)
+	if !typeOk {
+		mudlog.Error("Event", "Expected Type", "MessageDeliveryPlan", "Actual Type", e.Type())
+		return events.Continue
+	}
+
+	if len(plan.Recipients) == 0 {
+		return events.Continue
+	}
+
+	textOut := templates.AnsiParse(plan.Text)
+	textOutSR := ``
+	prefix := term.AnsiMoveCursorColumn.String() + term.AnsiEraseLine.String()
+	deliveries := make([]transport.Delivery, 0, len(plan.Recipients))
+
+	for _, recipient := range plan.Recipients {
+		payloadText := textOut
+		if recipient.ScreenReader {
+			if textOutSR == `` {
+				textOutSR = util.StripCharsForScreenReaders(textOut)
+			}
+			payloadText = textOutSR
+		}
+
+		deliveries = append(deliveries, transport.Delivery{
+			ConnectionIds: []connections.ConnectionId{recipient.ConnectionId},
+			Payload:       []byte(prefix + payloadText),
+		})
+	}
+
+	transport.Queue(deliveries...)
+
+	return events.Continue
 }

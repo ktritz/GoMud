@@ -1,0 +1,23 @@
+mobid: 28
+zone: Headquarters
+hostile: false
+maxwander: 0
+activitylevel: 15
+groups:
+- headquarters-emotion
+idlecommands:
+- emote hides his face behind his enormous hands, peeking through his fingers.
+- emote peeks out from behind a piece of furniture, then ducks back behind it.
+- emote blushes an even deeper shade of pink, which shouldn't be possible.
+- emote whispers something completely inaudible.
+- ''
+- ''
+- ''
+- ''
+combatcommands:
+- callforhelp 5:emotion:hides behind something and whimpers for help.
+character:
+  name: embarrassment
+  description: Embarrassment is an absolutely enormous, soft pink emotion who somehow manages to make himself as small as possible despite being the largest figure in Headquarters. He hunches over constantly, pulling his hoodie up over his face and peeking out from behind furniture, his own hands, or whatever else might provide cover. When he speaks, which is rare, it comes out as a barely audible whisper. His cheeks are in a permanent state of deep crimson blush, and he tends to shuffle his feet and avoid eye contact with the intensity of someone diffusing a bomb. He means absolutely no harm to anyone and just wants to not be noticed, which is difficult when you're eight feet tall and bright pink.
+  level: 99
+  raceid: 2

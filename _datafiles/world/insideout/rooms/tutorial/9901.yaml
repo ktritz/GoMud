@@ -1,0 +1,11 @@
+roomid: 9901
+zone: Tutorial
+title: The Mirror of Self
+description: You step into a room dominated by a large, shimmering mirror that seems to be made of liquid emotion. Your reflection stares back, but it shows more than just your appearance -- it shows how you're feeling, what you're carrying, and who you are underneath. The orb of knowledge floats beside you, ready to teach you how to understand yourself. This is where you learn to check your status, your health, and what makes you tick.
+exits:
+  south:
+    roomid: 9902
+    lock:
+      difficulty: 10
+  west:
+    roomid: 9900

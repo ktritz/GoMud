@@ -1,0 +1,9 @@
+buffid: 48
+name: Anxious Awareness
+description: Your senses are heightened to an almost uncomfortable degree. You notice
+  EVERYTHING.
+triggerrate: 3 rounds
+triggercount: 4
+statmods:
+  perception: 15
+  vitality: -5

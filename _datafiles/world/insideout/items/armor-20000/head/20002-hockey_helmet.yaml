@@ -1,0 +1,11 @@
+itemid: 20002
+name: hockey helmet
+namesimple: helmet
+description: 'A solid hockey helmet with a face cage. Riley''s lucky helmet - she
+  scored her first goal wearing one just like it.'
+type: head
+subtype: wearable
+damagereduction: 2
+statmods:
+  vitality: 1
+value: 30

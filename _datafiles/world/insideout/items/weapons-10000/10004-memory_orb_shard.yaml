@@ -1,0 +1,12 @@
+itemid: 10004
+name: memory orb shard
+namesimple: shard
+description: 'A jagged fragment of a shattered memory orb. It still glimmers with
+  the ghost of whatever memory it once held, and its edges are razor sharp.'
+type: weapon
+hands: 1
+subtype: slashing
+uses: 0
+damage:
+  diceroll: 1d4+1
+value: 40

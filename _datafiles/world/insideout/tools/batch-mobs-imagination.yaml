@@ -1,0 +1,103 @@
+zone: imagination_land
+zone_config:
+  name: "Imagination Land"
+mobs:
+  - id: 36
+    name: corrupted imaginary friend
+    desc: >-
+      An imaginary friend that has gone horribly wrong. Its colors have curdled
+      into sickly, bruised shades of green and yellow, and its smile stretches
+      far too wide across a face with slightly too many eyes. Its proportions
+      are disturbingly off -- arms too long, legs bending the wrong way, fingers
+      that don't quite end where they should. It moves in wild, jerky bursts,
+      giggling wetly as it lurches toward anything that catches its attention.
+    level: 8
+    race: 6
+    hostile: true
+    wander: 3
+    activity: 20
+    drop: 20
+    groups: [corrupted]
+    idle:
+      - "emote twitches violently, its limbs snapping into unnatural angles."
+      - "emote giggles unsettlingly, the sound coming from somewhere other than its mouth."
+      - "wander"
+      - ""
+    combat: ["backstab"]
+    angry:
+      - "emote stretches its smile impossibly wide."
+
+  - id: 37
+    name: imaginary boyfriend
+    desc: >-
+      One of the many identical imaginary boyfriends produced by the Imaginary
+      Boyfriend Generator. He is tall, absurdly handsome, and has the kind of
+      perfect hair that moves in slow motion even when there is no wind. He says
+      only supportive and deeply cheesy things with absolute sincerity, gazing
+      meaningfully at whoever is nearest as though they are the most important
+      person in the universe.
+    level: 5
+    race: 6
+    hostile: false
+    maxwander: 2
+    activity: 30
+    groups: [imaginary]
+    idle:
+      - "say I would die for Riley."
+      - "emote brushes hair out of his eyes dramatically."
+      - "say You look amazing today, by the way."
+      - "say I read her a poem I wrote. It goes... uh... roses are red..."
+      - "emote gazes meaningfully into the middle distance."
+
+  - id: 38
+    name: gloom raider scout
+    desc: >-
+      A faster, more aggressive variant of the gloom raider, built lean and
+      angular where its larger counterpart is amorphous. It darts between the
+      colorful structures of Imagination Land, scanning for areas rich in
+      emotional energy to drain. Its dim blue aura flickers rapidly, and it
+      lets out a low, rattling hiss when it senses something worth consuming.
+    level: 7
+    race: 5
+    hostile: true
+    wander: 5
+    activity: 25
+    drop: 20
+    groups: [fear]
+    idle:
+      - "emote scans the area with quick, jerking movements of its shadowy head."
+      - "emote lets out a low hiss."
+      - "wander"
+      - ""
+    combat: ["backstab"]
+
+  - id: 39
+    name: cloud builder
+    desc: >-
+      A cheerful being made of solidified imagination, with a puffy white body
+      that shifts shape slightly whenever you aren't looking directly at it. It
+      floats a few inches off the ground and has a friendly, slightly vacant
+      expression, as though its mind is always half in some other creative
+      dimension. It builds and maintains Cloud Town with patient, dreamy
+      enthusiasm.
+    level: 12
+    race: 6
+    hostile: false
+    maxwander: 0
+    activity: 20
+    groups: [imaginary]
+    idle:
+      - "emote shapes a cloud into a bunny, admires it for a moment, then starts on a new one."
+      - "say Welcome to Imagination Land! Anything is possible here!"
+      - "emote floats up a few inches, then settles back down."
+    shop:
+      - itemid: 10005
+        qty: 2
+      - itemid: 20003
+        qty: 2
+      - itemid: 20032
+        qty: 2
+      - itemid: 20056
+        qty: 2
+      - itemid: 30004
+        qty: 5

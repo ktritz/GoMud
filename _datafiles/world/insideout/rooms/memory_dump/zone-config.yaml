@@ -1,0 +1,9 @@
+name: Memory Dump
+roomid: 800
+autoscale:
+  minimum: 16
+  maximum: 20
+idlemessages:
+- The gray silence presses in from every direction.
+- Something that was once a memory crumbles to dust nearby.
+defaultbiome: dungeon

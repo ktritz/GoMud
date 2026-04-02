@@ -1,0 +1,30 @@
+mobid: 36
+zone: Imagination Land
+itemdropchance: 20
+hostile: true
+nocorpse: true
+deathmessage: '{name} flickers sadly, whispers something you almost remember, and fades away.'
+maxwander: 3
+activitylevel: 20
+groups:
+- corrupted
+idlecommands:
+- emote twitches violently, its limbs snapping into unnatural angles.
+- emote giggles unsettlingly, the sound coming from somewhere other than its mouth.
+- wander
+- ''
+angrycommands:
+- emote stretches its smile impossibly wide.
+character:
+  name: corrupted imaginary friend
+  description: An imaginary friend that has gone horribly wrong. Its colors have curdled into sickly, bruised shades of green and yellow, and its smile stretches far too wide across a face with slightly too many eyes. Its proportions are disturbingly off -- arms too long, legs bending the wrong way, fingers that don't quite end where they should. It moves in wild, jerky bursts, giggling wetly as it lurches toward anything that catches its attention.
+  level: 8
+  gold: 26
+  raceid: 6
+  stats:
+    strength:
+      training: 5
+    speed:
+      training: 3
+    vitality:
+      training: 7

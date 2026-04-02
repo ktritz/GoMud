@@ -1,0 +1,22 @@
+roomid: 309
+zone: Long Term Memory
+title: Mind Worker Break Room
+description: A surprisingly cheerful room carved out of the shelving structure, lit by warm overhead lamps that give it a cozy cafeteria feel. Battered tables and mismatched chairs fill the space, most of them occupied by squat, blue-gray mind workers on their break. A row of vending machines lines one wall, stocked with snacks that seem to exist only inside someone's head -- "Subconscious Snack Mix," "Déjà Vu Drops," and "Abstract Thought Pretzels." A bulletin board near the door is covered in work schedules, safety notices, and a flyer for the Mind Worker softball league. The room buzzes with quiet conversation and the clinking of cups.
+mapsymbol: W
+maplegend: Workers
+biome: mindscape
+exits:
+  north:
+    roomid: 305
+  south:
+    roomid: 310
+nouns:
+  tables: The <ansi fg="itemname">tables</ansi> are scarred and stained from years of coffee rings and spilled Subconscious Snack Mix. Each one has a small nameplate claiming it for a different work crew -- "Shelf Team Alpha," "Recall Squad 7," and the ominous "Night Shift." Crumbs cover every surface.
+  vending machines: The <ansi fg="itemname">vending machines</ansi> offer a bewildering selection. The drinks include "Liquid Nostalgia (Grape)" and "Focused Concentration Juice." One machine is labeled "OUT OF ORDER" but a mind worker tells you it has been that way since Riley was four. The prices are listed in "thought units."
+  bulletin board: 'The bulletin board is cluttered with notices. "REMINDER: DO NOT REORGANIZE THE EMBARRASSING MEMORIES AGAIN." "Softball game Tuesday -- bring your own glove." "LOST: One memory of a phone number. If found, please return to Shelf 4,792." A safety poster reads "A Tidy Shelf Is A Happy Shelf."'
+idlemessages:
+- A mind worker at a nearby table slurps coffee loudly and stares at nothing.
+- Two mind workers argue about whether a particular memory belongs in "School" or "Friends."
+- Someone feeds coins into a vending machine and it dispenses a bag of Déjà Vu Drops.
+- A mind worker checks the bulletin board, shakes their head, and walks away muttering.
+- The coffee machine gurgles and produces a cup that smells like concentrated focus.

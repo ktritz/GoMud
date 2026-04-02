@@ -1,0 +1,11 @@
+itemid: 30002
+name: pizza slice
+namesimple: pizza
+description: 'A slice of San Francisco style pizza. Yes, it has broccoli on it. Don''t
+  think about it too hard.'
+type: food
+subtype: drinkable
+uses: 1
+value: 15
+buffids:
+- 41

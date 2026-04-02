@@ -1,0 +1,23 @@
+roomid: 18
+zone: Rileys Neighborhood
+title: Hockey Rink
+description: The Andersen Heights Ice Rink is a small indoor facility with that unmistakable cold, clean smell of ice and zamboni fumes. The rink itself gleams under bright overhead lights, its surface freshly resurfaced with smooth parallel lines. Metal bleachers line one side, and a pair of goals sit at either end of the ice. A banner on the wall reads "GO FOGHORNS!" in the local team's colors. There's a small equipment window near the entrance where you can talk to the coach. This place feels like home in a way the rest of San Francisco is still figuring out.
+mapsymbol: H
+maplegend: Rink
+biome: city
+exits:
+  west:
+    roomid: 16
+nouns:
+  ice: The <ansi fg="itemname">ice</ansi> is freshly resurfaced and almost mirror-smooth. You can see the faint reflection of the overhead lights on its surface. The red and blue lines are crisp and bright. Your fingers itch for your stick just looking at it.
+  goals: The <ansi fg="itemname">goals</ansi> are regulation size with fresh white netting. Both have puck marks on the crossbars and posts from years of practice shots. The left goal has a water bottle perched on top of it -- the classic target.
+  bleachers: The metal <ansi fg="itemname">bleachers</ansi> are cold even through your clothes. They seat maybe a hundred people on a good day. There are a few lost mittens and a forgotten scarf draped over the railing. During games, the parents get surprisingly loud for such a small space.
+spawninfo:
+- mobid: 5
+  message: The <ansi fg="mobname">hockey coach</ansi> steps out of the equipment room, clipboard in hand.
+  respawnrate: 5 real minutes
+idlemessages:
+- The sound of skate blades cutting ice echoes through the rink.
+- Someone's hockey stick clatters against the boards.
+- The zamboni sits in the corner, waiting patiently for its next resurfacing run.
+- A kid wobbles across the ice on rental skates, arms windmilling.

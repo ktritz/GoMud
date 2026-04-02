@@ -1,0 +1,11 @@
+itemid: 20070
+name: batting helmet
+namesimple: helmet
+description: A glossy red batting helmet with an ear guard on one side. There's a faded sticker of a lightning bolt on the back that someone put there for good luck.
+type: head
+subtype: wearable
+uses: 0
+damage:
+  diceroll: 0d0
+defense: 1
+value: 25

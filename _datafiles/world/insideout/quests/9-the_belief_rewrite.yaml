@@ -1,0 +1,27 @@
+questid: 9
+name: The Belief Rewrite
+description: 'A toxic belief - ''I''m not good enough'' - has taken root in Riley''s
+  Belief System. Help replace it with something better.'
+steps:
+- id: start
+  description: Enter the Belief System and find the toxic belief.
+  hint: The Belief System is connected from Headquarters and the Back of the Mind.
+- id: find
+  description: Find and confront the toxic belief.
+  hint: Look in the Negative Belief Corridor.
+- id: defeat
+  description: Clear out the toxic thoughts protecting the false belief.
+  hint: Defeat the toxic thoughts in the area around the negative beliefs.
+- id: forge
+  description: Forge a new positive belief at the Belief Forge.
+  hint: Combine a belief thread with a core memory at the Belief Forge.
+- id: plant
+  description: Plant the new belief in the Sense of Self Core.
+  hint: Take the forged belief to the deepest room of the Belief System.
+- id: end
+  description: 'The toxic belief crumbles. ''I AM good enough'' takes its place.'
+rewards:
+  playermessage: Riley stands a little taller. She knows who she is now.
+  experience: 8000
+  gold: 800
+  itemid: 20055

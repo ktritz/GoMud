@@ -1,0 +1,42 @@
+# Auto-generated grid layout
+#
+# y+1:          [203]   [215]
+# y+0:  [211]   [200]   [206]
+# y-1:  [212]   [201]   [207]
+# y-2:                  [208]
+# y-3:                  [209]
+# y-4:                  [210]
+#
+
+grid:
+  "0,0": 200    # The Console Room
+  "0,-1": 201    # Memory Intake
+  "1,-1": 202    # The Projection Screen
+  "0,1": 203    # Personality Islands Overlook
+  "-1,-1": 205    # Supply Closet
+  "1,0": 206    # Joy's Room
+  "1,-1": 207    # The Projection Screen
+  "1,-2": 208    # Anger's Room
+  "1,-3": 209    # Fear's Room
+  "1,-4": 210    # Disgust's Room
+  "-1,0": 211    # New Arrivals Wing
+  "-1,-1": 212    # Supply Closet
+  "1,-1": 213    # The Projection Screen
+  "-1,-1": 214    # Supply Closet
+  "1,1": 215    # Headquarters Balcony
+
+special_exits:
+  200:
+    up:
+      roomid: 204
+  204:
+    down:
+      roomid: 200
+    tunnel:
+      roomid: 500
+  205:
+    tube:
+      roomid: 300
+  215:
+    stairway:
+      roomid: 300

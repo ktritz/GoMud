@@ -1,0 +1,6 @@
+name: Abstract Thought
+roomid: 600
+autoscale:
+  minimum: 10
+  maximum: 14
+defaultbiome: abstract

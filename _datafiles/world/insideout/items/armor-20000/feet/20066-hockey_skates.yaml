@@ -1,0 +1,13 @@
+itemid: 20066
+name: hockey skates
+namesimple: skates
+description: A pair of broken-in hockey skates with freshly sharpened blades. The leather is scuffed from countless hours on the ice, and one of the laces has been replaced with a mismatched color.
+type: feet
+subtype: wearable
+uses: 0
+damage:
+  diceroll: 0d0
+defense: 1
+statmods:
+  speed: 1
+value: 40

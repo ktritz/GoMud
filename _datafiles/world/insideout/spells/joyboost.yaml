@@ -1,0 +1,8 @@
+spellid: joyboost
+name: 'Joy''s Encouragement'
+description: A warm golden light heals for 2d4+2
+type: helpsingle
+school: restoration
+cost: 5
+waitrounds: 1
+difficulty: 10

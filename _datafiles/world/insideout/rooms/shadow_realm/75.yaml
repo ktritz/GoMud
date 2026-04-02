@@ -1,0 +1,7 @@
+roomid: 75
+zone: Shadow Realm
+title: The Recovery Room
+description: You wake up in a soft, warm space that feels like being wrapped in a favorite memory. The walls glow with a gentle golden light, and somewhere nearby you can hear a faint melody -- like a lullaby you almost remember. This is where Riley's mind sends you when things get overwhelming. It's safe here. The feeling of being hurt is already fading, replaced by a quiet reassurance that everything is going to be okay. Take a moment. Breathe. You'll be back on your feet soon.
+exits: {}
+mutators:
+- mutatorid: death-recovery

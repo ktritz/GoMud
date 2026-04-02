@@ -1,0 +1,23 @@
+roomid: 316
+zone: Long Term Memory
+title: Memory Dump Access
+description: The shelves end abruptly at a dark, yawning chasm that drops straight down into the Memory Dump. The final row of shelves leans precariously over the edge, some already tipping forward, their faded orbs rolling slowly toward the void. A cold updraft carries the smell of dust and dissolution -- the smell of memories being permanently erased. The darkness below is not empty; you can see faint gray shapes far down, enormous piles of forgotten memory fragments slowly dissolving into nothing. A rickety service ladder bolted to the edge descends into the dark. A sign next to it reads "MEMORY DUMP -- AUTHORIZED PERSONNEL ONLY. SERIOUSLY."
+mapsymbol: V
+maplegend: Dump
+biome: mindscape
+exits:
+  north:
+    roomid: 308
+  down:
+    roomid: 800
+    lock:
+      difficulty: 10
+nouns:
+  chasm: The <ansi fg="itemname">chasm</ansi> is staggering in scale. It is not just a hole -- it is the bottom of the mind, the place where everything unwanted eventually ends up. The walls are smooth and featureless, carved by the steady erosion of discarded thoughts. Looking down for too long makes you feel like you are forgetting something important.
+  ladder: The service <ansi fg="itemname">ladder</ansi> is rusty and questionable, bolted to the chasm wall with brackets that have seen better days. It descends into darkness, each rung progressively more corroded. A clipboard hanging from the top rung has a sign-out sheet. The last entry reads "Bing Bong -- went to look for something. Will be back soon." The date is years ago.
+idlemessages:
+- A gray orb rolls off the last shelf and tumbles silently into the chasm.
+- The cold updraft intensifies, carrying a whisper that sounds almost like a name you have forgotten.
+- A shelf at the edge groans and tilts another inch toward the void.
+- Dust spirals up from the chasm in a slow, hypnotic column.
+- Far below, something that was once a memory dissolves into formless gray light.

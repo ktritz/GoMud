@@ -14,6 +14,7 @@ type ListenerWrapper struct {
 	id       ListenerId
 	listener Listener
 	isFinal  bool
+	outside  bool
 }
 
 // Return false to stop further handling of this event.
@@ -50,10 +51,20 @@ func ClearListeners() {
 	listenerLock.Lock()
 	defer listenerLock.Unlock()
 	eventListeners = map[string][]ListenerWrapper{}
+	hasWildcardListener = false
+	eventsWithoutListeners = map[string]int{}
 }
 
 // Returns an ID for the listener which can be used to unregister later.
 func RegisterListener(emptyEvent any, cbFunc Listener, qFlag ...QueueFlag) ListenerId {
+	return registerListener(emptyEvent, cbFunc, false, qFlag...)
+}
+
+func RegisterTransportListener(emptyEvent any, cbFunc Listener, qFlag ...QueueFlag) ListenerId {
+	return registerListener(emptyEvent, cbFunc, true, qFlag...)
+}
+
+func registerListener(emptyEvent any, cbFunc Listener, outside bool, qFlag ...QueueFlag) ListenerId {
 	listenerLock.Lock()
 	defer listenerLock.Unlock()
 
@@ -81,6 +92,7 @@ func RegisterListener(emptyEvent any, cbFunc Listener, qFlag ...QueueFlag) Liste
 		id:       listenerCt,
 		listener: cbFunc,
 		isFinal:  len(qFlag) > 0 && qFlag[0] == Last,
+		outside:  outside,
 	}
 
 	frontOfQueue := len(qFlag) > 0 && qFlag[0] == First
@@ -148,45 +160,82 @@ func UnregisterListener(emptyEvent Event, id ListenerId) bool {
 
 }
 
-func DoListeners(e Event) ListenerReturn {
-
-	listenerLock.Lock()
-	defer listenerLock.Unlock()
-
+func runListenersForPhase(e Event, outside bool) (ListenerReturn, bool) {
+	listenerLock.RLock()
 	if len(eventListeners) == 0 {
-		return Continue
+		listenerLock.RUnlock()
+		return Continue, false
 	}
 
-	listenerFound := false
-	// wildcard listener is really for debugging purpose
+	wildcardListeners := []ListenerWrapper{}
 	if hasWildcardListener {
 		if vals, ok := eventListeners[`*`]; ok {
-			listenerFound = true
-			for _, lw := range vals {
-				if result := lw.listener(e); result != Continue {
-					return result
+			for _, val := range vals {
+				if val.outside == outside {
+					wildcardListeners = append(wildcardListeners, val)
 				}
 			}
 		}
-
 	}
 
+	typedListeners := []ListenerWrapper{}
 	if vals, ok := eventListeners[e.Type()]; ok {
+		for _, val := range vals {
+			if val.outside == outside {
+				typedListeners = append(typedListeners, val)
+			}
+		}
+	}
+	listenerLock.RUnlock()
+
+	listenerFound := false
+	// wildcard listener is really for debugging purpose
+	if len(wildcardListeners) > 0 {
 		listenerFound = true
-		for _, lw := range vals {
+		for _, lw := range wildcardListeners {
 			if result := lw.listener(e); result != Continue {
-				return result
+				return result, true
 			}
 		}
 	}
 
-	if !listenerFound {
-		t := e.Type()
-		eventsWithoutListeners[t] = eventsWithoutListeners[t] + 1
-		if eventsWithoutListeners[t]%NoListenerSampleSize == 0 {
-			mudlog.Error(`DoListeners`, "Event", t, "error", "no listener for event", "sample-size", NoListenerSampleSize)
+	if len(typedListeners) > 0 {
+		listenerFound = true
+		for _, lw := range typedListeners {
+			if result := lw.listener(e); result != Continue {
+				return result, true
+			}
 		}
 	}
 
-	return Continue
+	return Continue, listenerFound
+}
+
+func NoteNoListeners(e Event) {
+	t := e.Type()
+	listenerLock.Lock()
+	eventsWithoutListeners[t] = eventsWithoutListeners[t] + 1
+	sample := eventsWithoutListeners[t]%NoListenerSampleSize == 0
+	listenerLock.Unlock()
+	if sample {
+		mudlog.Error(`DoListeners`, "Event", t, "error", "no listener for event", "sample-size", NoListenerSampleSize)
+	}
+}
+
+func DoListeners(e Event) ListenerReturn {
+	result, found := runListenersForPhase(e, false)
+	if result != Continue {
+		return result
+	}
+
+	result, outsideFound := runListenersForPhase(e, true)
+	if !found && !outsideFound {
+		NoteNoListeners(e)
+	}
+
+	return result
+}
+
+func RunListenersForPhase(e Event, outside bool) (ListenerReturn, bool) {
+	return runListenersForPhase(e, outside)
 }

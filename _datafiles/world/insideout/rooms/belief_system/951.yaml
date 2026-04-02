@@ -1,0 +1,23 @@
+roomid: 951
+zone: Belief System
+title: The Foundation
+description: 'Solid ground stretches beneath your feet -- not stone or metal, but something that feels like certainty made physical. The floor is a deep, warm amber, smooth and unyielding, and inscriptions are carved directly into its surface: Riley''s oldest, most fundamental beliefs, the ones that everything else stands on. "I am loved." "I am safe." "I belong." They glow with a soft, steady light that has never once flickered. Pillars rise from the foundation at regular intervals, each one carved from a different emotional crystal, supporting the vast chamber above. The ceiling is lost in a gentle golden haze. This place feels ancient -- not in years, but in certainty. These beliefs were here before Riley could speak, and they''ve held firm ever since.'
+mapsymbol: F
+maplegend: Foundation
+biome: mindscape
+exits:
+  south:
+    roomid: 950
+  east:
+    roomid: 952
+  west:
+    roomid: 953
+nouns:
+  inscriptions: The <ansi fg="itemname">inscriptions</ansi> in the foundation are the deepest beliefs Riley holds. "I am loved" is carved in letters a foot deep, filled with warm gold light. "I am safe" glows beside it in steady blue. "I belong" radiates in purple and green intertwined. These carvings can't be scratched, chipped, or erased -- they've been reinforced by thousands of moments, from the first time her parents held her to last night's family dinner.
+  pillars: The <ansi fg="itemname">pillars</ansi> are beautiful and structurally essential. One is pure golden crystal -- Joy's influence made solid, warm to the touch. Another is deep blue and cool, the sadness that gives depth to happiness. A red one radiates faint heat, the righteous anger that protects what matters. Together they hold up the entire belief structure. Remove one and the ceiling would sag.
+idlemessages:
+- The inscription "I am loved" pulses with warmth, as if Riley just felt it again.
+- A pillar of golden crystal catches the light and sends warm beams across the chamber.
+- The foundation beneath your feet vibrates gently, solid as bedrock, steady as a heartbeat.
+- New cracks of light appear in the floor as a fresh experience reinforces an old belief.
+- The golden haze above stirs and parts briefly, revealing the vast architecture of self above.

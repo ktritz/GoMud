@@ -1,0 +1,21 @@
+roomid: 901
+zone: The Back of the Mind
+title: Suppression Corridor
+description: The corridor beyond the sealed door is a study in enforced calm -- every surface is coated in a matte, sound-dampening material that absorbs noise, color, and apparently feelings themselves. The walls are a washed-out gray that used to be something brighter, and the floor is padded with a soft, clinical carpet that muffles your footsteps to nothing. Recessed lights in the ceiling cast an even, shadowless glow that eliminates all contrast. Nothing in this corridor has edges. Nothing has texture. Nothing has personality. It is the architectural equivalent of taking a deep breath and pushing everything down, down, down until you cannot feel it anymore. And yet the walls pulse, just barely, with colors trying to break through.
+mapsymbol: .
+maplegend: Suppression
+biome: dungeon
+exits:
+  south:
+    roomid: 900
+  north:
+    roomid: 902
+nouns:
+  material: The <ansi fg="itemname">material</ansi> coating the walls is a dense, foam-like substance that absorbs everything -- sound, light, emotion. If you press your hand against it, you feel a faint vibration, like something screaming on the other side of a very thick wall. The material is warm to the touch, which means whatever it is absorbing is still alive in there.
+  carpet: The <ansi fg="itemname">carpet</ansi> is thick, gray, and impossibly soft. It swallows your footsteps completely. If you look closely, you can see it shifting color in tiny, desperate patches -- a flash of blue sadness here, a spark of red anger there -- emotions trying to surface through the suppression before being smothered back to gray.
+idlemessages:
+- A patch of wall flickers briefly to a vivid blue before the gray swallows it again.
+- Your footsteps make no sound on the carpet, as if the corridor is swallowing your presence.
+- The lights dim almost imperceptibly and you feel a wave of enforced calm wash over you.
+- A muffled sob echoes from somewhere deep in the walls, then cuts off abruptly.
+- The gray carpet ripples with a flash of angry red that fades before it can fully form.

@@ -1,0 +1,25 @@
+roomid: 961
+zone: Belief System
+title: The Crumbling Edge
+description: The solid ground of the Personality Islands gives way here to a precipice of fractured stone and fading light. This is where islands collapse when Riley outgrows them -- chunks of abandoned identity falling away into the abyss below. Cracks spider-web through the ground, and entire sections have already broken off, leaving jagged gaps that reveal the churning void beneath. Rubble from fallen platforms litters the edge -- fragments of old interests, outdated beliefs, and phases that passed. A section that once held "Boy Band Island" is nothing but a few crumbling columns. Another that might have been "Dinosaur Phase Island" is a single forlorn tooth of rock. The edge is where the self sheds what it no longer needs, and the process is neither gentle nor pretty.
+mapsymbol: '!'
+maplegend: Edge
+biome: mindscape
+exits:
+  west:
+    roomid: 960
+  east:
+    roomid: 962
+nouns:
+  precipice: The <ansi fg="itemname">precipice</ansi> drops away into a swirling void that's part memory dump, part emotional recycling center. Looking over the edge, you can see fragments of collapsed islands still falling -- slowly, like leaves, glowing faintly with the remnants of who Riley used to be. It's sad and necessary in equal measure. Growing up means letting go.
+  rubble: The <ansi fg="itemname">rubble</ansi> is a graveyard of outgrown identities. A crumbled pillar still bears the inscription "PRINCESS PHASE." A shattered platform fragment reads "REALLY INTO DINOSAURS, AGE 7." Some rubble still glows faintly -- not quite gone, not quite forgotten, just no longer load- bearing in the architecture of self.
+spawninfo:
+- mobid: 62
+  message: A <ansi fg="mobname">crumbling belief</ansi> tears itself from the fractured ground, shedding fragments of outdated identity.
+  respawnrate: 4 real minutes
+idlemessages:
+- A section of ground cracks and a chunk falls away into the void, glowing as it tumbles.
+- The rubble shifts and settles, old identities making room for whatever comes next.
+- A faint echo rises from the abyss -- the ghost of an interest Riley barely remembers having.
+- The edge groans as another crack appears, widening slowly but steadily.
+- A fragment from Boy Band Island crumbles to dust with a faint chord of a song Riley used to love.

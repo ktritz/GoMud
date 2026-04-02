@@ -1,0 +1,11 @@
+itemid: 10019
+name: dodgeball
+namesimple: ball
+description: A red rubber dodgeball with that specific gym class smell. The surface is slightly tacky for maximum grip and maximum sting on impact.
+type: weapon
+hands: 1
+subtype: bludgeoning
+uses: 0
+damage:
+  diceroll: 1d3
+value: 10

@@ -1,0 +1,11 @@
+biomeid: abstract
+name: Abstract Space
+symbol: △
+description: A zone where concrete thought breaks down into pure abstraction.
+  Things lose their shape, their color, their meaning. The deeper you go,
+  the less recognizable everything becomes.
+darkarea: false
+litarea: false
+requireditemid: 0
+usesitem: false
+burns: false

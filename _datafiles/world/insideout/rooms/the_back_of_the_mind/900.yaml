@@ -1,0 +1,23 @@
+roomid: 900
+zone: The Back of the Mind
+title: The Sealed Door
+description: A featureless steel door stands at the end of a sterile white corridor, sealed with a complex locking mechanism that looks like it was designed by someone who really, really did not want anything getting out. The door has no handle on this side -- only a recessed keyhole and a small panel that displays a single blinking red light. The walls here are smooth and white, scrubbed clean of any personality or warmth, and the floor is polished to a mirror finish that reflects your face back at you with clinical detachment. The air is filtered and temperature-controlled, carrying the faint antiseptic smell of emotions that have been sanitized out of existence. Whatever Anxiety locked behind this door, she made very sure it would stay locked.
+mapsymbol: D
+maplegend: Door
+biome: dungeon
+exits:
+  south:
+    roomid: 200
+    lock:
+      difficulty: 25
+  north:
+    roomid: 901
+nouns:
+  door: The <ansi fg="itemname">door</ansi> is a slab of brushed steel with no visible hinges, seams, or weak points. Its surface is perfectly smooth except for the keyhole, which is shaped like a tiny spiral -- the shape of an anxiety spiral, naturally. The locking mechanism makes a low, constant clicking sound, as if it is counting down to something or counting up from everything.
+  panel: The <ansi fg="itemname">panel</ansi> displays a single red LED that blinks in a pattern suspiciously resembling a heartbeat. Below the light, embossed in tiny letters, are the words "SUPPRESSION SYSTEM ACTIVE. ALL UNAUTHORIZED EMOTIONS WILL BE CONTAINED FOR RILEY'S OWN GOOD." The word "good" has been scratched out and rewritten several times, each version less certain than the last.
+idlemessages:
+- The red light on the panel blinks faster for a moment, then returns to its steady rhythm.
+- A muffled sound comes from beyond the door -- something between a cry and a whisper.
+- The polished floor reflects a version of you that looks slightly more anxious than you feel.
+- The locking mechanism clicks through a complex sequence, testing itself.
+- The antiseptic smell intensifies, as if the corridor is trying to sterilize a feeling you just had.

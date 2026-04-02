@@ -1,0 +1,21 @@
+roomid: 319
+zone: Long Term Memory
+title: Emotional Tag Station
+description: A specialized workstation hidden deep in the shelves, equipped with delicate machinery designed to retag the emotional color of memory orbs. A rotating platform holds an orb in a cradle of light while adjustable lenses filter different emotional wavelengths through it, allowing a skilled operator to shift a memory's dominant emotion. What was once a purely sad memory can gain a golden edge of gratitude. An angry memory can cool into something more like determination. The controls are intricate and clearly require expertise. A sign above the station reads "EMOTIONAL RECATEGORIZATION -- Handle With Care. A memory's color is not just what you felt, but what you learned."
+mapsymbol: '='
+maplegend: Tags
+biome: mindscape
+exits:
+  north:
+    roomid: 318
+  south:
+    roomid: 320
+nouns:
+  retag: The <ansi fg="itemname">retagging</ansi> machinery is elegant and precise. A memory orb sits in a cradle of crystallized light while lenses rotate around it, each one tinted with a different emotional hue. The process does not erase the original emotion -- it layers new understanding on top, the way growing up changes how you see the past without changing what actually happened.
+  controls: The <ansi fg="itemname">controls</ansi> are a series of fine dials and sliders, each one labeled with an emotional spectrum. "Joy-Sadness," "Anger-Acceptance," "Fear-Courage," "Disgust-Appreciation." Finding the right balance is apparently an art form. A handwritten note on the console reads "Riley's been doing a lot of this on her own lately. Growing up, I guess."
+idlemessages:
+- The retagging lenses rotate slowly, casting prismatic light across the walls.
+- An orb in the cradle shifts from pure blue to a complex blue-gold swirl.
+- The controls hum with a gentle vibration, the machinery always ready to work.
+- A memory being processed flickers between colors, searching for its new truth.
+- The sign above the station catches the shifting light and seems to glow with quiet wisdom.

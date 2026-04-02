@@ -1,0 +1,21 @@
+roomid: 716
+zone: The Subconscious
+title: The Phobia Gallery
+description: This wide, vaulted chamber has been arranged like a museum gallery, with individual exhibits mounted on pedestals and displayed behind thick glass that fogs and clears in slow, breathing cycles. Each exhibit represents one of Riley's phobias, preserved and presented with the clinical detachment of a natural history museum -- if the natural history museum was curated by something that enjoyed watching people squirm. Soft lighting illuminates each display, and small brass plaques provide educational descriptions that manage to make everything worse. The gallery is arranged in a circle, so no matter where you stand, at least one exhibit is behind you.
+mapsymbol: P
+maplegend: Phobias
+biome: dungeon
+exits:
+  south:
+    roomid: 715
+  north:
+    roomid: 717
+nouns:
+  exhibits: The <ansi fg="itemname">exhibits</ansi> are displayed with museum-quality precision. The Heights exhibit features a glass floor over an infinite drop that makes your stomach lurch even though you know it is not real. The Dark exhibit is a sealed chamber with a window -- inside, it is a darkness so complete that staring into it feels like the darkness is staring back. The Clowns exhibit is a miniature stage with a tiny Jangles figure that follows you with its eyes. The Spiders exhibit contains a single web with a sign reading "EXHIBIT TEMPORARILY ESCAPED." The Public Speaking exhibit is a podium facing a thousand empty chairs that somehow feel occupied.
+  plaques: 'The brass <ansi fg="itemname">plaques</ansi> read like parodies of museum descriptions. "ACROPHOBIA (Fear of Heights): First manifested age 6, Grandpa''s balcony incident. Current severity: Moderate. Note: Elevators with glass walls remain problematic." "ARACHNOPHOBIA (Fear of Spiders): See Exhibit -- oh, it escaped again. Please report any sightings." "GLOSSOPHOBIA (Fear of Public Speaking): Current severity: EXTREME. The empty chairs can hear your heartbeat."'
+idlemessages:
+- The glass floor of the Heights exhibit ripples and the infinite drop below seems to deepen.
+- The tiny Jangles figure on the Clowns stage turns to face you, then freezes when you look at it.
+- The empty chairs in the Public Speaking exhibit creak, as if an invisible audience just leaned forward.
+- The Darkness exhibit window fogs over and when it clears, the darkness inside is closer to the glass.
+- A thread of spider silk drifts down from the ceiling near the Spiders exhibit. The sign was not lying.

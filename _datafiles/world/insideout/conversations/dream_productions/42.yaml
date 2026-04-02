@@ -1,0 +1,53 @@
+-
+  Supported:
+    "dream actor": ["dream actor"]
+  Conversation:
+    - ["#1 say To dream, or not to dream, that is the question!"]
+    - ["#2 say You used that one yesterday."]
+    - ["#1 say Art is REPETITION, darling! Each performance is a unique snowflake of expression!"]
+    - ["#2 say It's the same line. Delivered the same way. While wearing the same dog costume."]
+    - ["#1 emote adjusts dog costume with dignity",
+       "#1 say You wouldn't understand. I'm a METHOD actor."]
+-
+  Supported:
+    "dream actor": ["dream actor"]
+  Conversation:
+    - ["#1 say You completely upstaged me in last night's dream sequence!"]
+    - ["#2 say I was standing in the background holding a potted plant."]
+    - ["#1 say EXACTLY! You held it with such PRESENCE! All eyes were on YOUR fern!"]
+    - ["#2 say ...It was a ficus, actually."]
+    - ["#1 say SEE?! Even now you're stealing focus!"]
+-
+  Supported:
+    "dream actor": ["dream actor"]
+  Conversation:
+    - ["#1 say I've been workshopping a new character. 'The Mysterious Stranger.' Thoughts?"]
+    - ["#2 say We did 'Mysterious Stranger' three dreams ago."]
+    - ["#1 say This one is DIFFERENT. This one has a HAT."]
+    - ["#2 say A hat."]
+    - ["#1 say A MYSTERIOUS hat."]
+    - ["#2 say ...I'll bring it up to the director."]
+-
+  Supported:
+    "dream actor": ["stage hand"]
+  Conversation:
+    - ["#1 say I need my motivation!"]
+    - ["#2 say Your motivation is that it's your job."]
+    - ["#1 emote gasps dramatically",
+       "#1 say How DARE you reduce art to commerce!"]
+    - ["#2 say You're playing a lamp. The motivation is 'stand there and glow.'"]
+    - ["#1 say But what is the lamp's inner JOURNEY? What are its DREAMS?"]
+    - ["#2 say It's a lamp. In a dream. Please just stand on your mark."]
+-
+  Supported:
+    "dream actor": ["dream director"]
+  Conversation:
+    - ["#1 say I have some thoughts about my character..."]
+    - ["#2 say Your character is 'Random Person Number 3.' There are no thoughts to have."]
+    - ["#1 say But what if Random Person Number 3 has a SECRET PAST?"]
+    - ["#2 say They don't."]
+    - ["#1 say What if they're secretly a PRINCE?"]
+    - ["#2 say They're background scenery. Please stand next to the locker and look confused."]
+    - ["#1 emote strikes a dramatically confused pose",
+       "#1 say Like this?"]
+    - ["#2 say ...Less drama. More confused. Think 'where did I park?'"]

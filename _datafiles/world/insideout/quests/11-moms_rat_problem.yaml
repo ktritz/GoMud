@@ -1,0 +1,12 @@
+questid: 11
+name: Mom's Rat Problem
+description: Mom heard scratching in the basement. Time to deal with the rats.
+steps:
+- id: start
+  description: Kill 5 rats in the basement for Mom.
+  hint: Head inside the house, through the kitchen, and down to the basement.
+- id: end
+  description: You cleared out the rats. Mom is relieved.
+rewards:
+  experience: 500
+  gold: 25

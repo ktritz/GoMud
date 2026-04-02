@@ -1,0 +1,19 @@
+roomid: 504
+zone: Dream Productions
+title: Soundstage C - Action
+description: Everything in this soundstage is turned up to eleven. A partially destroyed city block set fills the main stage, complete with overturned cars made of foam, breakaway walls, and a fire hydrant that shoots real water on a timer. Pyrotechnic rigs line the ceiling, each one labeled with helpful notes like "SMALL BOOM," "MEDIUM BOOM," and "RILEY JUST ATE SPICY FOOD." A stunt mat the size of a swimming pool cushions the floor beneath a zip line that runs the full length of the stage. Somewhere a countdown is always running, and something is always about to explode. This is where the dreams that make you wake up with your heart pounding are born.
+mapsymbol: A
+maplegend: Action
+biome: dreamset
+exits:
+  west:
+    roomid: 503
+nouns:
+  city block: 'The <ansi fg="itemname">city block</ansi> is impressively detailed despite being entirely fake. The overturned cars are foam but painted to look like real wreckage. One building facade has a hole shaped suspiciously like a person who was thrown through it. A movie slate on the ground reads "CHASE DREAM #847 -- Take 1."'
+  pyrotechnics: The <ansi fg="itemname">pyrotechnic rigs</ansi> are an elaborate network of launchers, sparklers, and smoke canisters. A safety manual is duct-taped to the wall, opened to a page that just says "Eh, it's a dream, what's the worst that could happen?" Signed by the Dream Director.
+idlemessages:
+- A pyrotechnic rig fires a burst of sparks across the ceiling with a satisfying CRACK.
+- A foam car flips over in slow motion, lands, then resets itself for the next take.
+- The fire hydrant erupts, spraying water everywhere before shutting off just as suddenly.
+- An explosion rocks the far end of the stage and a crew member holds up a sign reading "COOL."
+- The zip line whirs as an invisible stunt double zips across the soundstage.

@@ -1,0 +1,655 @@
+zone: the_back_of_the_mind
+zone_config:
+  name: "The Back of the Mind"
+  roomid: 900
+  autoscale: {minimum: 14, maximum: 18}
+  defaultbiome: dungeon
+  idlemessages:
+    - "A muffled feeling pushes against the walls, trying to be heard."
+    - "The air hums with the low vibration of suppressed emotions."
+
+rooms:
+  # ── THE SEALED DOOR ────────────────────────────────────────────────
+  - id: 900
+    title: "The Sealed Door"
+    desc: >-
+      A featureless steel <ansi fg="itemname">door</ansi> stands at the end of a
+      sterile white corridor, sealed with a complex locking mechanism that looks
+      like it was designed by someone who really, really did not want anything
+      getting out. The door has no handle on this side -- only a recessed keyhole
+      and a small <ansi fg="itemname">panel</ansi> that displays a single blinking
+      red light. The walls here are smooth and white, scrubbed clean of any
+      personality or warmth, and the floor is polished to a mirror finish that
+      reflects your face back at you with clinical detachment. The air is filtered
+      and temperature-controlled, carrying the faint antiseptic smell of emotions
+      that have been sanitized out of existence. Whatever Anxiety locked behind
+      this door, she made very sure it would stay locked.
+    biome: dungeon
+    symbol: D
+    legend: Door
+    exits:
+      south: {roomid: 200, lock: 25}
+      north: 901
+    nouns:
+      door: >-
+        The <ansi fg="itemname">door</ansi> is a slab of brushed steel with no
+        visible hinges, seams, or weak points. Its surface is perfectly smooth except
+        for the keyhole, which is shaped like a tiny spiral -- the shape of an anxiety
+        spiral, naturally. The locking mechanism makes a low, constant clicking sound,
+        as if it is counting down to something or counting up from everything.
+      panel: >-
+        The <ansi fg="itemname">panel</ansi> displays a single red LED that blinks
+        in a pattern suspiciously resembling a heartbeat. Below the light, embossed
+        in tiny letters, are the words "SUPPRESSION SYSTEM ACTIVE. ALL UNAUTHORIZED
+        EMOTIONS WILL BE CONTAINED FOR RILEY'S OWN GOOD." The word "good" has been
+        scratched out and rewritten several times, each version less certain than
+        the last.
+    idle:
+      - The red light on the panel blinks faster for a moment, then returns to its steady rhythm.
+      - A muffled sound comes from beyond the door -- something between a cry and a whisper.
+      - The polished floor reflects a version of you that looks slightly more anxious than you feel.
+      - The locking mechanism clicks through a complex sequence, testing itself.
+      - The antiseptic smell intensifies, as if the corridor is trying to sterilize a feeling you just had.
+
+  # ── SUPPRESSION CORRIDOR ───────────────────────────────────────────
+  - id: 901
+    title: "Suppression Corridor"
+    desc: >-
+      The corridor beyond the sealed door is a study in enforced calm -- every
+      surface is coated in a matte, sound-dampening <ansi fg="itemname">material</ansi>
+      that absorbs noise, color, and apparently feelings themselves. The walls
+      are a washed-out gray that used to be something brighter, and the floor
+      is padded with a soft, clinical <ansi fg="itemname">carpet</ansi> that
+      muffles your footsteps to nothing. Recessed lights in the ceiling cast
+      an even, shadowless glow that eliminates all contrast. Nothing in this
+      corridor has edges. Nothing has texture. Nothing has personality. It is
+      the architectural equivalent of taking a deep breath and pushing
+      everything down, down, down until you cannot feel it anymore. And yet
+      the walls pulse, just barely, with colors trying to break through.
+    biome: dungeon
+    symbol: "."
+    legend: Suppression
+    exits:
+      south: 900
+      north: 902
+    nouns:
+      material: >-
+        The <ansi fg="itemname">material</ansi> coating the walls is a dense,
+        foam-like substance that absorbs everything -- sound, light, emotion. If
+        you press your hand against it, you feel a faint vibration, like something
+        screaming on the other side of a very thick wall. The material is warm
+        to the touch, which means whatever it is absorbing is still alive in there.
+      carpet: >-
+        The <ansi fg="itemname">carpet</ansi> is thick, gray, and impossibly
+        soft. It swallows your footsteps completely. If you look closely, you can
+        see it shifting color in tiny, desperate patches -- a flash of blue sadness
+        here, a spark of red anger there -- emotions trying to surface through
+        the suppression before being smothered back to gray.
+    idle:
+      - A patch of wall flickers briefly to a vivid blue before the gray swallows it again.
+      - Your footsteps make no sound on the carpet, as if the corridor is swallowing your presence.
+      - The lights dim almost imperceptibly and you feel a wave of enforced calm wash over you.
+      - A muffled sob echoes from somewhere deep in the walls, then cuts off abruptly.
+      - The gray carpet ripples with a flash of angry red that fades before it can fully form.
+
+  # ── VAULT ANTECHAMBER ──────────────────────────────────────────────
+  - id: 902
+    title: "Vault Antechamber"
+    desc: >-
+      The suppression corridor opens into a wider space that serves as the
+      staging area for the Emotion Vault beyond. Clinical white
+      <ansi fg="itemname">cabinets</ansi> line the walls, filled with neatly
+      organized tools of emotional suppression -- rolls of gray dampening tape,
+      jars of neutralizing solution, and stacks of forms labeled "EMOTION
+      PROCESSING AND CONTAINMENT REPORT." A heavy
+      <ansi fg="itemname">desk</ansi> sits in the center of the room, covered
+      in paperwork and a half-empty bottle of antacid tablets. The air here
+      crackles with nervous energy -- this is where Anxiety's plan was
+      executed, where feelings were processed and filed and locked away with
+      ruthless efficiency. The vault door to the north looms heavy and final.
+    biome: dungeon
+    symbol: A
+    legend: Antechamber
+    exits:
+      south: 901
+      north: 903
+    nouns:
+      cabinets: >-
+        The <ansi fg="itemname">cabinets</ansi> are organized with obsessive
+        precision. Each drawer is labeled in Anxiety's handwriting -- tight, cramped
+        letters that get smaller as the labels get longer. "SADNESS: TOOLS FOR
+        SUPPRESSION," "JOY: DAMPENING SUPPLIES," "ANGER: CONTAINMENT PROTOCOL 7B."
+        The drawers for "EMBARRASSMENT" are suspiciously overstocked.
+      desk: >-
+        The <ansi fg="itemname">desk</ansi> is a monument to anxious overwork. Every
+        inch is covered in papers, charts, and contingency plans. A whiteboard behind
+        the desk has "WHAT IF RILEY FEELS TOO MUCH?" written at the top, followed by
+        a flowchart so complex it loops back on itself seventeen times. The antacid
+        bottle is nearly empty.
+    idle:
+      - A cabinet drawer slides open on its own, then slams shut.
+      - The paperwork on the desk rustles as if caught in a draft of pure nervous energy.
+      - A jar of neutralizing solution bubbles despite being sealed.
+      - The whiteboard behind the desk adds a new branch to its flowchart. Nobody is holding the marker.
+      - An antacid tablet rolls off the desk and dissolves on the floor with a quiet fizz.
+    spawns:
+      - {mob: 58, rate: "5 real minutes", msg: "An <ansi fg=\"mobname\">anxiety spiral</ansi> uncoils from a cabinet, spinning into the room in a blur of tangled, half-formed thoughts."}
+      - {mob: 60, rate: "6 real minutes", msg: "A <ansi fg=\"mobname\">suppression guard</ansi> steps out from behind a cabinet, its blank visor scanning the room."}
+
+  # ── THE EMOTION VAULT ──────────────────────────────────────────────
+  - id: 903
+    title: "The Emotion Vault"
+    desc: >-
+      The vault is a circular chamber of polished steel and reinforced glass,
+      designed with a single, terrible purpose: to contain Riley's emotions so
+      completely that she cannot feel them. Five empty <ansi fg="itemname">containment
+      pods</ansi> stand in a ring around the room, each one shaped to hold
+      a specific emotion -- Joy, Sadness, Anger, Fear, Disgust. The pods are
+      open now, their restraints dangling loose, but the scuff marks on the
+      floor and the dents in the steel walls tell the story of what happened
+      here. A central <ansi fg="itemname">console</ansi> controls the
+      suppression field, its screens still displaying emotional readouts that
+      flatline one by one. This is where Anxiety tried to protect Riley by
+      removing everything that made her feel. The room hums with residual
+      energy and a profound, clinical emptiness.
+    biome: dungeon
+    symbol: V
+    legend: Vault
+    exits:
+      south: 902
+      north: {roomid: 904, lock: 20}
+    nouns:
+      containment pods: >-
+        The <ansi fg="itemname">containment pods</ansi> are transparent capsules
+        sized for humanoid emotions. Joy's pod still has faint golden fingerprints
+        on the inside of the glass where she pressed against it. Sadness's pod has
+        a small puddle of blue at the bottom that never evaporates. Anger's pod is
+        dented outward in several places. Fear's pod has scratch marks on the lock.
+        Disgust's pod is the cleanest -- she refused to touch the walls.
+      console: >-
+        The central <ansi fg="itemname">console</ansi> is Anxiety's masterwork --
+        a sprawling control system that monitored and suppressed Riley's emotional
+        output in real time. Screens display graphs of emotional intensity, all
+        trending toward zero. One screen still reads "OPERATION: PROTECT RILEY.
+        STATUS: ACTIVE." Beneath it, someone -- maybe Joy, maybe Sadness -- has
+        scratched "This isn't protection."
+    idle:
+      - A containment pod hums and its restraints twitch, as if remembering the emotion they held.
+      - The console beeps softly and an emotional readout flickers from flatline to a brief spike of blue.
+      - Golden fingerprints on Joy's pod glow faintly, then fade.
+      - The puddle of blue in Sadness's pod ripples, moved by a feeling too deep to suppress completely.
+      - The suppression field hums louder for a moment and your emotions feel muffled, then the hum fades.
+
+  # ── ECHO CHAMBER ───────────────────────────────────────────────────
+  - id: 904
+    title: "Echo Chamber"
+    desc: >-
+      A domed chamber of curved, reflective <ansi fg="itemname">walls</ansi> that
+      bounce sound endlessly between them, creating an acoustic trap for the
+      emotional echoes that leak through Anxiety's suppression field. The room
+      resonates with fragments of feelings -- half-words, interrupted laughs,
+      the beginning of a cry that never finishes. The reflective surfaces are
+      not quite mirrors; they show distorted versions of the room that are
+      slightly more colorful, slightly more alive, as if the emotions trapped
+      in the echoes are trying to rebuild themselves from sound alone. The
+      effect is disorienting and deeply sad, like hearing a conversation
+      through a wall and knowing you are missing something important.
+    biome: dungeon
+    symbol: ")"
+    legend: Echo
+    exits:
+      south: 903
+      north: 905
+    idle:
+      - A fragment of Joy's laughter bounces off the walls, growing quieter with each reflection until it fades.
+      - The echo of someone crying loops three times, each repetition losing more of its emotion.
+      - A voice that sounds like Anger shouts something, but only the feeling of the words reaches you, not the meaning.
+      - The reflective walls briefly show a room full of color before snapping back to muted gray.
+      - An echo of Riley's voice says "I'm fine" and the room repeats it until the word "fine" sounds hollow.
+
+  # ── THE BOTTLED-UP ROOM ────────────────────────────────────────────
+  - id: 905
+    title: "The Bottled-Up Room"
+    desc: >-
+      Floor-to-ceiling shelves hold hundreds of sealed glass <ansi fg="itemname">bottles</ansi>,
+      each one containing a single suppressed emotion rendered visible as a
+      swirling, luminous liquid. The bottles glow in every color -- golden joy,
+      deep blue sadness, furious red anger, sharp green disgust, nervous purple
+      fear, and newer colors too: soft pink embarrassment, teal envy, burnt
+      orange nostalgia. Some bottles are calm, their contents drifting in gentle
+      currents. Others vibrate on the shelf, their emotions straining against
+      the glass with visible intensity. A few bottles have hairline
+      <ansi fg="itemname">cracks</ansi>, leaking wisps of colored vapor that
+      curl through the air before being recaptured by the suppression field.
+      This is what happens when you tell yourself you are fine for too long.
+    biome: dungeon
+    symbol: B
+    legend: Bottled
+    exits:
+      south: 904
+      north: 906
+    nouns:
+      bottles: >-
+        The <ansi fg="itemname">bottles</ansi> are labeled in Anxiety's meticulous
+        handwriting. "JOY-4,872: The time Riley laughed so hard milk came out of her
+        nose. SUPPRESSED: Too undignified." "SADNESS-891: Missing her old bedroom.
+        SUPPRESSED: Not helpful." "ANGER-2,103: Being told she was overreacting.
+        SUPPRESSED: Might cause a scene." Each label is clinical and precise, and
+        each one is quietly heartbreaking.
+      cracks: >-
+        The <ansi fg="itemname">cracks</ansi> in the compromised bottles leak
+        emotion in visible wisps of colored vapor. A golden wisp from a cracked joy
+        bottle brushes against you and for a split second you remember exactly what
+        it felt like to jump in puddles after rain. Then the suppression field pulls
+        it back. A blue wisp carries the ghost of a good cry -- the kind that makes
+        you feel better afterward. Then it too is recaptured.
+    idle:
+      - A golden bottle vibrates on its shelf and a wisp of joy escapes through a hairline crack.
+      - A blue bottle pulses slowly, its sadness pressing against the glass like a face against a window.
+      - A red bottle rattles so hard it nearly falls, then settles back with a defiant clink.
+      - Colored vapor wisps through the air -- gold, blue, red, green -- before the suppression field pulls them back.
+      - You hear a faint laugh trapped inside a nearby bottle and for a moment you feel something. Then it is gone.
+
+  # ── ANXIETY SPIRAL NEST ────────────────────────────────────────────
+  - id: 906
+    title: "Anxiety Spiral Nest"
+    desc: >-
+      The clinical order of the Back of the Mind breaks down here, replaced by
+      a chaotic tangle of <ansi fg="itemname">spirals</ansi> etched into every
+      surface -- walls, floor, ceiling, even the air itself, where faint
+      luminous trails loop and twist in patterns that make your eyes water
+      if you try to follow them. This is where Anxiety's energy pooled and
+      concentrated, spawning the spinning vortex creatures that patrol the
+      vault. The <ansi fg="itemname">floor</ansi> is scarred with burn marks
+      where spirals have touched down and spun themselves into frenzy, and
+      the walls vibrate at a frequency that makes your thoughts race. Being
+      here too long makes you think of every test you might fail, every text
+      you should have sent, every future that could go wrong.
+    biome: dungeon
+    symbol: "@"
+    legend: Spirals
+    exits:
+      south: 905
+      north: 907
+    nouns:
+      spirals: >-
+        The <ansi fg="itemname">spirals</ansi> are burned into the surfaces like
+        brands, each one a different size but all following the same tightening
+        pattern -- wide loops that get smaller and faster until they reach a central
+        point of frantic intensity. Touching one makes your mind race through a
+        cascade of what-ifs that takes effort to stop.
+      floor: >-
+        The <ansi fg="itemname">floor</ansi> is covered in overlapping scorch marks
+        where anxiety spirals have touched down. The marks form a chaotic map of
+        worry -- each burn radiating outward in a pattern that gets tighter and more
+        frantic toward the center. In the worst spots, the floor has been worn through
+        entirely, revealing raw, humming metal beneath.
+    idle:
+      - A luminous spiral traces itself in the air, tightening until it sparks and vanishes.
+      - Your thoughts suddenly race -- did you leave something behind? Are you prepared for what comes next? The feeling passes.
+      - The walls vibrate at a frequency that makes your jaw clench involuntarily.
+      - Two spirals collide in midair and burst into a shower of anxious sparks.
+      - The burn marks on the floor glow brighter and you feel a pull toward the center of the room.
+    spawns:
+      - {mob: 58, rate: "3 real minutes", msg: "An <ansi fg=\"mobname\">anxiety spiral</ansi> ignites in the center of the room, spinning into existence with a sound like a thousand worries spoken at once."}
+      - {mob: 58, rate: "5 real minutes", msg: "An <ansi fg=\"mobname\">anxiety spiral</ansi> tears itself free from a wall etching, uncoiling into the air with frantic energy."}
+      - {mob: 60, rate: "6 real minutes", msg: "A <ansi fg=\"mobname\">suppression guard</ansi> marches in from the corridor, drawn by the spiraling energy."}
+
+  # ── DOUBT SHADOW DEN ───────────────────────────────────────────────
+  - id: 907
+    title: "Doubt Shadow Den"
+    desc: >-
+      The lights in this chamber have been permanently dimmed to a level that
+      makes everything uncertain. <ansi fg="itemname">Shadows</ansi> pool in
+      every corner and stretch across the floor in shapes that do not match
+      anything casting them. The walls are covered in faint, handwritten
+      <ansi fg="itemname">text</ansi> -- thousands of lines of cramped,
+      anxious writing that repeats the same themes: "not good enough," "what
+      if they find out," "everyone is just pretending to like you," "you will
+      never be who you want to be." This is where doubt has made its home in
+      the Back of the Mind, feeding on the suppressed emotions nearby and
+      growing fat and confident in its assertions that nothing will ever be
+      okay. The shadows here have weight. You can feel them pressing down
+      on your shoulders.
+    biome: dungeon
+    symbol: "?"
+    legend: Den
+    exits:
+      south: 906
+      north: 908
+    nouns:
+      shadows: >-
+        The <ansi fg="itemname">shadows</ansi> in this room are not cast by
+        anything. They exist independently, moving with a slow, deliberate intent
+        that suggests intelligence. They cluster together when you approach and
+        disperse when you retreat, always keeping themselves between you and whatever
+        you are trying to reach. They are cold to the touch and leave a lingering
+        feeling of inadequacy.
+      text: >-
+        The <ansi fg="itemname">text</ansi> on the walls is written in hundreds of
+        different handwritings, all of them recognizably Riley's at different ages.
+        A child's scrawl reads "nobody wants to play with me." A teenager's angular
+        handwriting says "everyone at the new school already has friends." The newest
+        writing, still wet, reads "what if I'm not the person I thought I was?"
+    idle:
+      - The shadows on the floor shift toward you, then away, like a tide of self-doubt.
+      - New text appears on the wall in wet, dark ink. You try not to read it.
+      - The weight on your shoulders increases and you catch yourself wondering if you should even be here.
+      - A shadow reaches toward the light and recoils, as if the idea of confidence physically hurts it.
+      - The handwriting on the walls blurs and resharpens, as if the doubts are rewriting themselves.
+    spawns:
+      - {mob: 59, rate: "5 real minutes", msg: "A <ansi fg=\"mobname\">doubt shadow elder</ansi> rises from the floor, ancient and fully formed, its hollow eyes reflecting your own face with a critical expression."}
+
+  # ── REPRESSION HALL ────────────────────────────────────────────────
+  - id: 908
+    title: "Repression Hall"
+    desc: >-
+      A long, straight hallway that stretches farther than it should, its
+      perspective lines converging on a vanishing point that you never seem
+      to reach. The walls are lined with identical gray <ansi fg="itemname">panels</ansi>
+      set at precise intervals, each one a sealed compartment containing a
+      repressed experience. Small indicator <ansi fg="itemname">lights</ansi>
+      on each panel glow in muted colors -- the faded ghosts of whatever
+      emotion the experience originally carried. The hallway is perfectly
+      climate-controlled, perfectly lit, and perfectly silent, which makes
+      the occasional muffled thump from behind a panel all the more jarring.
+      Walking down this hall feels like scrolling through a list of things
+      you have decided not to think about.
+    biome: dungeon
+    symbol: "="
+    legend: Hall
+    exits:
+      south: 907
+      north: 909
+    nouns:
+      panels: >-
+        The gray <ansi fg="itemname">panels</ansi> are numbered but not labeled --
+        the contents have been deliberately anonymized, as if even naming them might
+        let them loose. Pressing your ear to one, you can hear a muffled conversation.
+        Another vibrates with what feels like held-back tears. A third is warm to the
+        touch and pulses with a faint red glow. None of them open.
+      lights: >-
+        The indicator <ansi fg="itemname">lights</ansi> are small LEDs that glow
+        in washed-out versions of emotion colors. Faded gold for suppressed joy.
+        Pale blue for buried sadness. Dim red for swallowed anger. The lights pulse
+        at different rates, and if you watch long enough, you realize the pulses
+        are synced to Riley's heartbeat.
+    idle:
+      - A panel thumps from the inside, and its indicator light flashes bright before dimming again.
+      - The hallway seems to stretch longer ahead of you, though you have been walking for a while.
+      - A muffled laugh leaks from one panel, followed by abrupt silence as the suppression field clamps down.
+      - The indicator lights along the hall pulse in a slow wave, like a heartbeat rolling down the corridor.
+      - You pass a panel that is warm to the touch. Something inside is still fighting.
+
+  # ── THE GLASS JAR ROOM ────────────────────────────────────────────
+  - id: 909
+    title: "The Glass Jar Room"
+    desc: >-
+      A vast, circular room illuminated by the soft glow of hundreds of
+      <ansi fg="itemname">jars</ansi> arranged on tiered shelves that spiral
+      from floor to ceiling. Each jar contains a miniature scene playing on
+      loop -- a preserved emotion frozen at its peak intensity. The scenes
+      are vivid and startlingly intimate: a child running to hug a parent,
+      a teenager crying in a bathroom stall, a girl screaming into a pillow
+      after a fight, a quiet moment of disgust at a questionable cafeteria
+      meal. The jars glow with the color of their emotion, turning the room
+      into a kaleidoscope of feeling that the Back of the Mind has tried to
+      archive and forget. A viewing <ansi fg="itemname">bench</ansi> sits
+      in the center, as if someone comes here sometimes to remember what
+      feelings look like.
+    biome: dungeon
+    symbol: "O"
+    legend: Jars
+    exits:
+      south: 908
+      north: 910
+    nouns:
+      jars: >-
+        The <ansi fg="itemname">jars</ansi> are sealed with wax stamps embossed
+        with Anxiety's spiral logo. Inside each one, a moment plays in perfect
+        detail. A golden jar shows Riley at age five, belly-laughing at a cartoon.
+        A blue jar captures the exact second she realized her best friend was
+        moving away. A red jar contains the fury of being blamed for something
+        her sister did. Each jar is warm to the touch and vibrates faintly, the
+        emotion inside still alive, still trying to be felt.
+      bench: >-
+        The viewing <ansi fg="itemname">bench</ansi> is a simple wooden seat worn
+        smooth by use. It faces the shelves at eye level with some of the most
+        intense jars. There are scuff marks on the floor in front of it -- someone
+        has sat here many times, watching the emotions play. A single tissue is
+        crumpled on the seat. Even the part of the mind that suppresses feelings
+        needs to feel something, sometimes.
+    idle:
+      - A golden jar flares and for a moment you hear a child's delighted laughter, pure and uncomplicated.
+      - A blue jar dims and brightens in a slow rhythm, like someone breathing through tears.
+      - Two jars on adjacent shelves pulse in sync -- a joy and a sadness that belong to the same memory.
+      - The viewing bench creaks, as if someone invisible just sat down to watch.
+      - A red jar rattles on its shelf and the wax seal cracks slightly, leaking a wisp of anger-red smoke.
+
+  # ── ANXIETY'S WAR ROOM ────────────────────────────────────────────
+  - id: 910
+    title: "Anxiety's War Room"
+    desc: >-
+      This is where Anxiety orchestrated her takeover of Headquarters -- a
+      cramped, intensely organized command center covered wall-to-wall with
+      <ansi fg="itemname">plans</ansi>, <ansi fg="itemname">maps</ansi>,
+      and contingency documents. A massive corkboard dominates one wall,
+      connected by a spiderweb of orange string that links photos, notes,
+      and newspaper clippings into an elaborate conspiracy of worry. A
+      central <ansi fg="itemname">table</ansi> holds a detailed model of
+      Headquarters with tiny figurines of each emotion, several of which
+      have been moved to a box labeled "UNNECESSARY." The room smells of
+      burnt coffee and deadline panic. Anxiety did not do this out of malice.
+      Every note, every plan, every sleepless detail was done out of a
+      desperate, misguided love for Riley. That makes it worse.
+    biome: dungeon
+    symbol: W
+    legend: War Room
+    exits:
+      south: 909
+      north: 911
+    nouns:
+      plans: >-
+        The <ansi fg="itemname">plans</ansi> are exhaustive. "PHASE 1: Identify
+        all social threats to Riley's high school career. PHASE 2: Develop
+        comprehensive anxiety responses. PHASE 3: Remove emotions that interfere
+        with self-protection. PHASE 4: Achieve total control of the console." Each
+        phase has hundreds of sub-steps. Phase 4 is circled in red with a note:
+        "For Riley's own good. She'll thank us later."
+      maps: >-
+        The <ansi fg="itemname">maps</ansi> chart every pathway through Riley's
+        mind, annotated in Anxiety's cramped handwriting. Key locations are circled
+        -- the Console, the Belief System, the Emotion Vault. Escape routes for
+        each emotion are mapped and crossed out. One map shows the Back of the Mind
+        itself, with a note reading "If they find this place, implement Protocol
+        Omega." There is no document explaining what Protocol Omega is.
+      table: >-
+        The <ansi fg="itemname">table</ansi> holds a scale model of Headquarters
+        that is accurate down to the individual buttons on the console. Tiny figurines
+        represent each emotion -- Joy, Sadness, Anger, Fear, Disgust, Anxiety, and
+        the newer emotions. Joy's figurine has been placed in the "UNNECESSARY" box.
+        Sadness is in there too. Anxiety's own figurine stands alone at the console,
+        and someone has drawn a tiny crown on its head in orange marker.
+    idle:
+      - An orange string on the corkboard snaps taut on its own, connecting two new pins.
+      - The model of Headquarters on the table vibrates, and Joy's figurine inches toward the edge of the box.
+      - A new note appears on the wall in Anxiety's handwriting. It just says "WHAT IF?"
+      - The burnt coffee smell intensifies and a paper on the desk curls at the edges from stress.
+      - A contingency document flips open to a page titled "What To Do If Everything Falls Apart" followed by thirty-seven numbered steps.
+
+  # ── CONTROL OVERRIDE STATION ───────────────────────────────────────
+  - id: 911
+    title: "Control Override Station"
+    desc: >-
+      A sleek, high-tech workstation built into an alcove, designed to
+      remotely override the console in Headquarters. The
+      <ansi fg="itemname">terminal</ansi> is still active, its screens
+      displaying a real-time feed of Riley's emotional output alongside a
+      series of <ansi fg="itemname">sliders</ansi> that can dampen or amplify
+      each emotion independently. The interface is intuitive and terrifyingly
+      powerful -- a few adjustments here could change how Riley feels about
+      anything. Anxiety used this station to gradually dial down the emotions
+      she deemed threats and crank up the ones she could control. The sliders
+      for Joy and Sadness are pinned at zero. Anxiety's slider is maxed out.
+      Someone has since pulled all the sliders to a neutral middle position,
+      but the system is still live. The power here is real and uncomfortable.
+    biome: dungeon
+    symbol: C
+    legend: Override
+    exits:
+      south: 910
+      north: 912
+    nouns:
+      terminal: >-
+        The <ansi fg="itemname">terminal</ansi> is a curved screen showing a
+        real-time emotional dashboard. Color-coded bars represent each emotion's
+        current intensity. The system log scrolls with entries: "22:14 -- Joy
+        output reduced 15%. Reason: Prevents social risk." "22:15 -- Anxiety
+        output increased 30%. Reason: High school requires constant vigilance."
+        "22:16 -- OVERRIDE REJECTED. Reason: Sadness is trying to log in again."
+      sliders: >-
+        The <ansi fg="itemname">sliders</ansi> are physical controls -- smooth
+        metal toggles that move with a satisfying resistance. Each one is labeled
+        with an emotion and color-coded. Joy (gold) and Sadness (blue) still show
+        fingerprints from being forced to zero. Anxiety (orange) has worn marks
+        from being held at maximum. The neutral positions feel precarious, as if
+        the sliders want to slide back to their extremes.
+    idle:
+      - The emotional dashboard flickers and Joy's bar spikes briefly before the system corrects it.
+      - A slider shifts a millimeter on its own, nudged by residual anxiety in the system.
+      - The system log scrolls a new entry in orange text that reads "MONITORING."
+      - The screen glitches and for a moment all the bars max out simultaneously, then reset.
+      - A soft alarm beeps once -- an emotion trying to exceed its suppressed threshold.
+
+  # ── DEEP BREATH CHAMBER ────────────────────────────────────────────
+  - id: 912
+    title: "Deep Breath Chamber"
+    desc: >-
+      After the clinical intensity of the rest of the Back of the Mind, this
+      room is a startling oasis of warmth and softness. The walls are curved
+      and organic, tinted a gentle <ansi fg="itemname">lavender</ansi> that
+      pulses slowly in time with a calm, steady breathing rhythm. The floor
+      is cushioned and yielding, and the air is infused with a subtle warmth
+      that loosens the tension in your shoulders the moment you step inside.
+      Soft <ansi fg="itemname">chimes</ansi> ring at intervals that seem
+      designed to slow your heart rate. This chamber was built as a
+      counterbalance to the suppression -- a place where even the Back of
+      the Mind acknowledges that you need to feel something, even if it is
+      just peace. Spending time here feels like the first real breath after
+      holding one for too long.
+    biome: dungeon
+    symbol: "+"
+    legend: Breath
+    exits:
+      south: 911
+      north: 913
+    nouns:
+      lavender: >-
+        The <ansi fg="itemname">lavender</ansi> tint is not paint -- it radiates
+        from the walls themselves, a soft bioluminescence that responds to your
+        presence. When you are tense, it glows warmer. When you start to relax,
+        it brightens gently, as if the room is pleased. The color is the exact
+        shade of a sunset you once saw and felt completely at peace with the world.
+      chimes: >-
+        The <ansi fg="itemname">chimes</ansi> are small crystalline bells suspended
+        from the ceiling on invisible threads. They ring without being touched,
+        producing a tone that resonates in your chest and makes your breathing slow
+        to match. Each chime is tuned to a slightly different frequency, and together
+        they create a harmony that sounds like someone saying "it is okay to feel."
+    idle:
+      - The lavender walls pulse gently and you feel your breathing slow to match the rhythm.
+      - A chime rings softly and the tension in your shoulders eases a fraction.
+      - The air warms briefly, like a hug from someone who knows you need one.
+      - The breathing rhythm of the walls stutters for a moment -- then catches and steadies, like someone choosing calm.
+      - A faint golden light blooms in the center of the room, the ghost of joy finding its way even here.
+
+  # ── BELIEF THREAD WORKSHOP ─────────────────────────────────────────
+  - id: 913
+    title: "Belief Thread Workshop"
+    desc: >-
+      A cluttered workshop strung with thousands of luminous
+      <ansi fg="itemname">threads</ansi> that connect the Back of the Mind
+      to the Belief System beyond. The threads are living things -- glowing
+      filaments of self-perception that carry Riley's beliefs about herself
+      between her conscious and suppressed minds. Each thread hums with a
+      different conviction: "I am brave," "I am not enough," "I can do hard
+      things," "Nobody really understands me." Workbenches line the walls,
+      covered in <ansi fg="itemname">tools</ansi> for repairing damaged
+      threads and spinning new ones. Some threads are bright and strong.
+      Others are frayed, their messages garbled by suppression. A few have
+      been cut entirely, their severed ends sparking weakly.
+    biome: dungeon
+    symbol: T
+    legend: Threads
+    exits:
+      south: 912
+      north: 914
+      east: 950
+    nouns:
+      threads: >-
+        The <ansi fg="itemname">threads</ansi> are mesmerizing up close. Each one
+        is thinner than a hair but impossibly strong, glowing with the color of
+        whatever emotion anchors the belief it carries. A golden thread hums "I am
+        loved" and vibrates with warmth. A frayed blue thread whispers "I don't
+        belong here" in a voice that cracks. An orange thread, newer than the
+        others, buzzes with "What if I'm not ready?" The threads that have been
+        cut dangle in the air, their beliefs lost to static.
+      tools: >-
+        The <ansi fg="itemname">tools</ansi> are specialized instruments for belief
+        maintenance -- tiny spindles for spinning new threads, delicate scissors for
+        trimming frayed ones, spools of raw emotional fiber in every color. A
+        magnifying lamp is clamped to one bench, positioned over a thread so damaged
+        it is nearly transparent. The repair manual open beside it reads: "Belief
+        restoration is a gradual process. Rushing it will only create a belief that
+        feels hollow."
+    idle:
+      - A golden thread flares brighter and hums "I am brave" in a voice that sounds like it means it.
+      - A frayed thread snaps with a tiny ping, and a whispered belief dissolves into static.
+      - The tools on a workbench rattle as a particularly strong belief thread vibrates with conviction.
+      - A new thread begins spinning itself from raw emotional fiber, glowing a tentative pink.
+      - The threads hum in chorus for a moment, creating a harmony that sounds like every version of Riley agreeing on something.
+
+  # ── THE RELEASE VALVE ──────────────────────────────────────────────
+  - id: 914
+    title: "The Release Valve"
+    desc: >-
+      At the far end of the Back of the Mind, a massive industrial
+      <ansi fg="itemname">valve</ansi> is set into the wall, its wheel the
+      size of a dining table and its pipes disappearing into the structure
+      of Riley's mind in every direction. This is the pressure release for
+      the entire suppression system -- the emergency mechanism that allows
+      bottled emotions to vent safely back into conscious feeling. The valve
+      is currently cracked open, a thin stream of colored <ansi fg="itemname">vapor</ansi>
+      hissing from its seal, and the pressure gauge mounted above it reads
+      just below the red zone. The air here is thick with escaped emotion --
+      wisps of joy, grief, anger, and fear all tangled together in a rich,
+      overwhelming tapestry of feeling. It is a lot. It is supposed to be a
+      lot. That is the whole point.
+    biome: dungeon
+    symbol: ">"
+    legend: Valve
+    exits:
+      south: 913
+      up: 200
+    nouns:
+      valve: >-
+        The <ansi fg="itemname">valve</ansi> is a masterpiece of mental engineering,
+        a physical metaphor made real. Its wheel requires significant effort to turn,
+        and the resistance increases the more you open it -- as if the act of letting
+        yourself feel requires more courage the further you go. The metal is warm to
+        the touch and vibrates with the pressure of everything behind it. A small
+        plaque reads "CAUTION: Opening this valve may result in experiencing your
+        own emotions. Proceed with care and self-compassion."
+      vapor: >-
+        The colored <ansi fg="itemname">vapor</ansi> escaping from the valve is a
+        visible stream of raw emotion returning to consciousness. Golden joy sparks
+        and crackles. Blue sadness flows like water. Red anger hisses like steam.
+        The vapors intertwine as they rise, mixing into something that is not any
+        single emotion but all of them together -- the complicated, messy, beautiful
+        experience of being a person who feels things.
+    idle:
+      - The pressure gauge ticks up a notch and the valve hisses louder, releasing a burst of golden vapor.
+      - A plume of blue sadness vents from the valve and you feel your eyes sting for a moment.
+      - The valve wheel turns a fraction on its own as the pressure builds behind it.
+      - Mixed emotion vapor swirls through the air and for a moment you feel everything at once -- then it settles.
+      - The pressure gauge drops slightly and the room feels lighter, as if something that needed to be felt was finally felt.

@@ -1,0 +1,25 @@
+roomid: 907
+zone: The Back of the Mind
+title: Doubt Shadow Den
+description: 'The lights in this chamber have been permanently dimmed to a level that makes everything uncertain. Shadows pool in every corner and stretch across the floor in shapes that do not match anything casting them. The walls are covered in faint, handwritten text -- thousands of lines of cramped, anxious writing that repeats the same themes: "not good enough," "what if they find out," "everyone is just pretending to like you," "you will never be who you want to be." This is where doubt has made its home in the Back of the Mind, feeding on the suppressed emotions nearby and growing fat and confident in its assertions that nothing will ever be okay. The shadows here have weight. You can feel them pressing down on your shoulders.'
+mapsymbol: '?'
+maplegend: Den
+biome: dungeon
+exits:
+  south:
+    roomid: 906
+  north:
+    roomid: 908
+nouns:
+  shadows: The <ansi fg="itemname">shadows</ansi> in this room are not cast by anything. They exist independently, moving with a slow, deliberate intent that suggests intelligence. They cluster together when you approach and disperse when you retreat, always keeping themselves between you and whatever you are trying to reach. They are cold to the touch and leave a lingering feeling of inadequacy.
+  text: The <ansi fg="itemname">text</ansi> on the walls is written in hundreds of different handwritings, all of them recognizably Riley's at different ages. A child's scrawl reads "nobody wants to play with me." A teenager's angular handwriting says "everyone at the new school already has friends." The newest writing, still wet, reads "what if I'm not the person I thought I was?"
+spawninfo:
+- mobid: 59
+  message: A <ansi fg="mobname">doubt shadow elder</ansi> rises from the floor, ancient and fully formed, its hollow eyes reflecting your own face with a critical expression.
+  respawnrate: 5 real minutes
+idlemessages:
+- The shadows on the floor shift toward you, then away, like a tide of self-doubt.
+- New text appears on the wall in wet, dark ink. You try not to read it.
+- The weight on your shoulders increases and you catch yourself wondering if you should even be here.
+- A shadow reaches toward the light and recoils, as if the idea of confidence physically hurts it.
+- The handwriting on the walls blurs and resharpens, as if the doubts are rewriting themselves.

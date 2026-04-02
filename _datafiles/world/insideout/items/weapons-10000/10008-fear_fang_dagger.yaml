@@ -1,0 +1,14 @@
+itemid: 10008
+name: fear fang dagger
+namesimple: dagger
+description: 'A curved dagger forged from a crystallized fear. It''s always slightly
+  cold to the touch, and looking at it too long makes you uneasy.'
+type: weapon
+hands: 1
+subtype: stabbing
+uses: 0
+damage:
+  diceroll: 1d8+1
+statmods:
+  speed: 1
+value: 200

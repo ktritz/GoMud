@@ -1,0 +1,19 @@
+mobid: 75
+zone: School
+scripttag: questgiver
+hostile: false
+maxwander: 0
+activitylevel: 25
+groups:
+- school-npc
+idlecommands:
+- emote adjusts his bow tie and opens a thick history textbook.
+- say Those who do not learn history are doomed to repeat it. Those who DO learn it are doomed to watch everyone else repeat it.
+- emote points at a timeline on the wall with great enthusiasm.
+- ''
+- ''
+character:
+  name: mr. grant
+  description: Mr. Grant is the history teacher, a tall thin man who wears bow ties unironically and speaks about the American Revolution like he was personally there. His enthusiasm for dates and treaties is so genuine that students can't help but pay attention, even when the subject matter is objectively dry. He has a replica Declaration of Independence framed behind his desk that he is very protective of.
+  level: 15
+  raceid: 1

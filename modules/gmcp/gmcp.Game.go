@@ -6,7 +6,6 @@ import (
 	"github.com/GoMudEngine/GoMud/internal/configs"
 	"github.com/GoMudEngine/GoMud/internal/events"
 	"github.com/GoMudEngine/GoMud/internal/plugins"
-	"github.com/GoMudEngine/GoMud/internal/users"
 )
 
 // ////////////////////////////////////////////////////////////////////
@@ -26,8 +25,8 @@ func init() {
 		plug: plugins.New(`gmcp.Game`, `1.0`),
 	}
 
-	events.RegisterListener(events.PlayerDespawn{}, g.onJoinLeave)
-	events.RegisterListener(events.PlayerSpawn{}, g.onJoinLeave)
+	events.RegisterTransportListener(events.PlayerDespawn{}, g.onJoinLeave)
+	events.RegisterTransportListener(events.PlayerSpawn{}, g.onJoinLeave)
 
 }
 
@@ -45,27 +44,33 @@ func (g *GMCPGameModule) onJoinLeave(e events.Event) events.ListenerReturn {
 	whoPayload := `"Who": { "Players": [`
 
 	infoPayloads := map[int]string{}
+	onlinePlayers := []events.OnlinePlayerSnapshot{}
+
+	switch evt := e.(type) {
+	case events.PlayerSpawn:
+		onlinePlayers = evt.OnlinePlayers
+	case events.PlayerDespawn:
+		onlinePlayers = evt.OnlinePlayers
+	default:
+		return events.Cancel
+	}
 
 	pCt := 0
-	for _, user := range users.GetAllActiveUsers() {
+	for _, user := range onlinePlayers {
 
-		infoPayloads[user.UserId] = `"Info": { "logintime": "` + user.GetConnectTime().Format(tFormat) + `", "name": "` + string(c.Server.MudName) + `" }`
+		infoPayloads[user.UserId] = `"Info": { "logintime": "` + user.ConnectTime.Format(tFormat) + `", "name": "` + string(c.Server.MudName) + `" }`
 
 		if pCt > 0 {
 			whoPayload += `, `
 		}
 		pCt++
 
-		whoPayload += `{ "level": ` + strconv.Itoa(user.Character.Level) + `, "name": "` + user.Character.Name + `", "title": "` + user.Role + `"}`
+		whoPayload += `{ "level": ` + strconv.Itoa(user.Level) + `, "name": "` + user.Name + `", "title": "` + user.Role + `"}`
 	}
 	whoPayload += `] }`
 
 	for userId, infoStr := range infoPayloads {
-		events.AddToQueue(GMCPOut{
-			UserId:  userId,
-			Module:  `Game`,
-			Payload: `{ ` + infoStr + `, ` + whoPayload + ` }`,
-		})
+		gmcpModule.queueGMCPEvent(userId, `Game`, `{ `+infoStr+`, `+whoPayload+` }`)
 	}
 
 	return events.Continue

@@ -1,0 +1,24 @@
+roomid: 712
+zone: The Subconscious
+title: Shadowy Alcove
+description: A narrow recess in the stone wall has been carved into a small chamber that seems specifically designed to make you feel observed. The shadows here do not behave normally -- they pool in corners that should not have shadows, stretch in directions opposite to any light source, and occasionally shift when you are looking directly at them. A tall, dark silhouette stands against the far wall, perfectly still, its hollow eyes level with yours. It might be a trick of the light. It is not a trick of the light. The air in here is thick with the psychic weight of every time Riley questioned herself, every moment of "am I good enough" given form and substance and a pair of empty, staring eyes.
+mapsymbol: '?'
+maplegend: Alcove
+biome: dungeon
+exits:
+  south:
+    roomid: 711
+  north:
+    roomid: 713
+nouns:
+  silhouette: The <ansi fg="itemname">silhouette</ansi> is a doubt shadow at rest, a tall, dark figure with hollow eyes that mirror your own face in a way that is specifically calculated to make you uncomfortable. When you look at it head-on, it is perfectly still. When you look away, it is closer. It does not walk. It does not glide. It is simply in a different place every time you check.
+spawninfo:
+- mobid: 53
+  message: A <ansi fg="mobname">doubt shadow</ansi> peels away from the wall, its hollow eyes opening like wounds in the dark.
+  respawnrate: 5 real minutes
+idlemessages:
+- The shadows in the alcove shift, and the silhouette appears to be an inch closer than it was.
+- A whisper that sounds exactly like your own voice says something you cannot quite make out.
+- The shadows stretch toward you like reaching fingers, then slowly retract.
+- You catch your own reflection in the silhouette's hollow eyes, but the reflection is frowning.
+- The temperature plummets and you feel a crushing weight of self-doubt that lifts after a moment.

@@ -1,0 +1,20 @@
+questid: 3
+name: 'Joy''s Missing Core Memory'
+description: A golden core memory has gone missing from the vault. Joy needs your
+  help to find it.
+steps:
+- id: start
+  description: Search Long Term Memory for the missing golden core memory.
+  hint: Check the fading memory aisles and the deep memory shelf.
+- id: search
+  description: 'A Memory Leech seems to have absorbed the core memory! Defeat Memory
+    Leeches until you recover it.'
+  hint: Memory Leeches lurk in the fading memory aisles of Long Term Memory.
+- id: return
+  description: Return the golden core memory to Joy in Headquarters.
+  hint: Joy is in the Console Room at Headquarters.
+- id: end
+  description: 'The core memory is safely back in the vault!'
+rewards:
+  experience: 4000
+  gold: 300

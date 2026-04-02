@@ -1,0 +1,26 @@
+mobid: 53
+zone: The Subconscious
+itemdropchance: 20
+hostile: true
+nocorpse: true
+deathmessage: '{name} flickers violently and dissolves into nothing.'
+maxwander: 3
+activitylevel: 20
+groups:
+- fear
+combatcommands:
+- backstab
+- cast mm
+character:
+  name: doubt shadow
+  description: A fully grown doubt shadow, much larger and more defined than the ones that haunt the school hallways. Down here in the Subconscious, doubt has had time to grow and fester, feeding on every second-guess and sleepless night until it stands taller than you, a dark silhouette with hollow eyes that mirror your own face. It whispers in a voice you recognize -- yours, on your worst day -- and every word carries the weight of years of accumulated self-doubt.
+  level: 15
+  gold: 47
+  raceid: 5
+  stats:
+    strength:
+      training: 16
+    speed:
+      training: 12
+    vitality:
+      training: 20

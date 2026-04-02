@@ -1,0 +1,25 @@
+roomid: 707
+zone: The Subconscious
+title: Broccoli Nightmare Chamber
+description: The stone walls of this chamber have been overtaken by a sprawling, impossible garden of broccoli that grows in thick, angry clusters from every crack and crevice. The florets are enormous -- some as large as your head -- and they pulse with a sickly green bioluminescence that makes the whole room look like the inside of a vegetable crisper drawer from hell. The air is thick with the smell of overcooked cruciferous vegetables, the kind of smell that triggers a primal childhood gag reflex. Thick stalks have broken through the floor in places, creating an uneven terrain of green, fibrous obstacles. Something in here is deeply, personally offended that you do not like broccoli.
+mapsymbol: '~'
+maplegend: Broccoli
+biome: dungeon
+exits:
+  west:
+    roomid: 706
+  south:
+    roomid: 708
+nouns:
+  broccoli: The <ansi fg="itemname">broccoli</ansi> is not normal broccoli. Each floret is the size of a fist and glows with a faint green light that pulses in time with your heartbeat, which is unsettling on several levels. The florets are warm to the touch and slightly moist. If you look closely, you can see tiny faces in the broccoli clusters -- angry faces, the faces of vegetables that remember being left on the plate.
+  stalks: The <ansi fg="itemname">stalks</ansi> are as thick as tree trunks and have punched through the stone floor with the determination of a vegetable that will not be ignored. They are fibrous and tough, and they creak when anything brushes against them, as if tensing. One particularly large stalk has what appears to be a bite mark on it -- a very old, very small bite mark from a child who tried exactly once.
+spawninfo:
+- mobid: 52
+  message: A <ansi fg="mobname">broccoli horror</ansi> tears itself free from the wall, wobbling upright on its thick stalk with a sound like ripping velcro.
+  respawnrate: 5 real minutes
+idlemessages:
+- A broccoli floret pops open with a wet squelch, releasing a puff of green spores.
+- The stalks creak and lean toward you as you move, tracking your position like sunflowers.
+- The smell of steamed broccoli intensifies suddenly, triggering an involuntary grimace.
+- A cluster of florets pulses brighter and you hear what sounds like an offended huff.
+- Something green and stalk-shaped wobbles past the doorway, pauses, and wobbles back.

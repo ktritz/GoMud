@@ -1,0 +1,17 @@
+mobid: 37
+zone: Imagination Land
+hostile: false
+activitylevel: 30
+groups:
+- imaginary
+idlecommands:
+- say I would die for Riley.
+- emote brushes hair out of his eyes dramatically.
+- say You look amazing today, by the way.
+- say I read her a poem I wrote. It goes... uh... roses are red...
+- emote gazes meaningfully into the middle distance.
+character:
+  name: imaginary boyfriend
+  description: One of the many identical imaginary boyfriends produced by the Imaginary Boyfriend Generator. He is tall, absurdly handsome, and has the kind of perfect hair that moves in slow motion even when there is no wind. He says only supportive and deeply cheesy things with absolute sincerity, gazing meaningfully at whoever is nearest as though they are the most important person in the universe.
+  level: 5
+  raceid: 6

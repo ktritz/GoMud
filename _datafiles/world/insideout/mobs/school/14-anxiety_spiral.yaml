@@ -1,0 +1,31 @@
+mobid: 14
+zone: School
+itemdropchance: 15
+hostile: true
+nocorpse: true
+deathmessage: '{name} spins apart into fragments of worried thoughts that scatter and vanish.'
+maxwander: 2
+activitylevel: 25
+groups:
+- fear
+idlecommands:
+- emote spins faster, fragments of worried words whirling through its form.
+- emote pulses with nervous energy, the air around it growing tense.
+- ''
+- ''
+- ''
+angrycommands:
+- emote expands with a rush of panicked energy.
+character:
+  name: anxiety spiral
+  description: A spinning vortex of tangled, half-formed thoughts that hovers a few feet off the ground, crackling with nervous energy. Fragments of worried words swirl through it -- what if, but maybe, you should have -- too fast to read but impossible to ignore. It pulls at your attention like a whirlpool, making everything feel urgent and overwhelming all at once. It is slightly larger and more agitated than the doubt shadows that lurk in the same corners.
+  level: 6
+  raceid: 5
+  gold: 15
+  stats:
+    strength:
+      training: 3
+    speed:
+      training: 1
+    vitality:
+      training: 4

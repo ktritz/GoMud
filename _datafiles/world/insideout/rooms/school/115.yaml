@@ -1,0 +1,19 @@
+roomid: 115
+zone: School
+title: Teacher's Lounge
+description: The mythical teacher's lounge, forbidden territory for students and therefore the most interesting room in the school. A coffee machine dominates the counter, surrounded by a graveyard of mismatched mugs and a bowl of creamer packets. Comfortable but aging chairs are arranged around a low table covered in newspapers, crossword puzzles, and someone's abandoned lunch container from three days ago. A bulletin board on the wall holds staff memos, a sign-up sheet for potluck Friday, and a passive-aggressive note about labeling your food in the fridge. The vibe in here is "exhausted adults pretending to recharge in twenty-two minutes."
+mapsymbol: T
+maplegend: Teachers
+biome: city
+exits:
+  south:
+    roomid: 116
+nouns:
+  coffee machine: The <ansi fg="itemname">coffee machine</ansi> is the most important object in the entire school, at least according to the faculty. It's an industrial-grade brewer that runs approximately sixteen hours a day. The coffee it produces is strong enough to strip paint, and the teachers drink it like water. A handwritten label on the pot reads "DECAF IS FOR QUITTERS." Someone has added "and people who want to sleep, Karen" underneath.
+  bulletin board: 'The staff <ansi fg="itemname">bulletin board</ansi> is a window into the hidden world of teacher politics. Meeting schedules, professional development reminders, and a sign-up sheet for "WELLNESS WEDNESDAY (mandatory fun)" are pinned alongside a passive-aggressive note that reads "To whoever keeps taking my yogurt from the fridge: I know who you are. -- G.P." Below it, someone has pinned a response: "Prove it."'
+idlemessages:
+- The coffee machine gurgles and dispenses another cup of liquid determination.
+- Muffled conversation drifts from behind a newspaper -- teachers talking about students, probably.
+- Someone sighs the deep, existential sigh of a person grading essays on a Friday.
+- A phone alarm goes off and a teacher mutters "already?" before standing up reluctantly.
+- The microwave beeps three times and nobody gets up to check it.

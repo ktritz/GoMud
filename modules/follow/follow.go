@@ -49,8 +49,8 @@ func init() {
 	//
 	// Add the embedded filesystem
 	//
-	if err := f.plug.AttachFileSystem(files); err != nil {
-		panic(err)
+	if plugins.LogInitError("follow", f.plug.AttachFileSystem(files)) {
+		return
 	}
 	//
 	// Register any user/mob commands

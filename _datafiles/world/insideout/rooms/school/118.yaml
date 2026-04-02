@@ -1,0 +1,19 @@
+roomid: 118
+zone: School
+title: School Roof Access
+description: A concrete stairwell leads up from the courtyard to a heavy metal door marked "ROOF ACCESS -- AUTHORIZED PERSONNEL ONLY." The stairs are bare and utilitarian, the kind of space that exists purely to connect point A to point B with zero architectural ambition. Graffiti tags dot the walls, layered over years of paint, and the air gets cooler as you climb. Through a narrow window on the landing, you can see a sliver of sky and the tops of buildings stretching toward the bay. The door at the top is propped open with a brick -- someone has been up here recently. Beyond it, you can hear the wind and the distant hum of the city. It feels like standing at the edge of something.
+mapsymbol: R
+maplegend: Roof
+biome: city
+exits:
+  east:
+    roomid: 116
+nouns:
+  stairs: The <ansi fg="itemname">stairs</ansi> are poured concrete with metal railings, echoing with every footstep. Someone has drawn an arrow on each landing pointing up, like breadcrumbs for anyone brave enough to follow them. The steps are chipped at the edges and the railing is cold to the touch.
+  door: The metal <ansi fg="itemname">door</ansi> at the top of the stairs is heavy-gauge steel with a push bar, the kind designed to keep people out. The "AUTHORIZED PERSONNEL ONLY" sign is official, but the brick propping it open suggests the rules are flexible. Through the gap, you can see open sky and feel the wind pulling at you.
+  sky: Through the narrow window, the <ansi fg="itemname">sky</ansi> opens up into the wide, foggy expanse above San Francisco. You can see the tops of nearby buildings, a water tower on a distant roof, and the gray-white layer of marine fog rolling in from the coast. From up here, school feels very small and the world feels very big.
+idlemessages:
+- Wind howls down the stairwell, rattling the metal door at the top.
+- Your footsteps echo off the concrete walls with a hollow, lonely sound.
+- A pigeon coos from somewhere above, its voice amplified by the stairwell acoustics.
+- The door at the top creaks open another inch and you catch a glimpse of open sky.

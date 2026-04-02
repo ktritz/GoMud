@@ -1,0 +1,25 @@
+roomid: 604
+zone: Abstract Thought
+title: Flattened Gallery
+description: An exhibition space that has been ironed flat by abstraction. What were once three-dimensional sculptures are now outlines -- perfect contours of their former selves, pressed into the floor and walls like botanical specimens in a book. A statue of Riley exists only as a silhouette. A model of Headquarters is a floor plan with no walls. Frames hang on the walls but they contain shapes rather than images -- a red square where a portrait used to be, a blue circle where a landscape once hung. You can walk through objects because they're only edges now. The gallery is beautiful in a stark, alien way, like a blueprint of the world with all the detail stripped out.
+mapsymbol: G
+maplegend: Gallery
+biome: abstract
+exits:
+  south:
+    roomid: 603
+  north:
+    roomid: 605
+nouns:
+  outlines: The <ansi fg="itemname">outlines</ansi> are ghostly traces of objects that once had mass. Riley's silhouette is recognizable -- the ponytail, the posture -- but she's only lines now, a contour drawing with nothing inside. If you step into the outline, you feel a faint echo of the form it once held, like a memory of shape.
+  frames: The <ansi fg="itemname">frames</ansi> hang at precise intervals, each one containing a single geometric shape where complex art used to be. A landscape of San Francisco has become a series of overlapping triangles. A family portrait is five colored circles of different sizes. The abstraction has reduced everything to its simplest possible representation.
+spawninfo:
+- mobid: 48
+  message: A <ansi fg="mobname">perspective shifter</ansi> unfolds from a frame on the wall, stretching between dimensions.
+  respawnrate: 7 real minutes
+idlemessages:
+- An outline on the floor shifts, as if the absent sculpture is trying to remember its shape.
+- A frame rotates on the wall, and the shape inside it simplifies from a triangle to a line.
+- You walk through what used to be a pillar. It feels like pushing through a curtain of static.
+- The floor ripples and for an instant you can see the gallery from directly above, then the perspective snaps back.
+- Colors in the frames shift -- red becomes the idea of red, then returns.

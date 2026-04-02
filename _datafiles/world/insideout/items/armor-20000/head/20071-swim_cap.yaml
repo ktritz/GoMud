@@ -1,0 +1,13 @@
+itemid: 20071
+name: swim cap
+namesimple: cap
+description: A tight-fitting silicone swim cap in school colors. It smells like chlorine and determination.
+type: head
+subtype: wearable
+uses: 0
+damage:
+  diceroll: 0d0
+defense: 0
+statmods:
+  speed: 1
+value: 15

@@ -1,0 +1,21 @@
+roomid: 402
+zone: Imagination Land
+title: French Fry Forest
+description: A forest of towering golden fries stretches in every direction, each one a crispy, salt-dusted pillar rising twenty feet into the air. The canopy overhead is a lattice of crossed fries that filters warm, golden light down to the forest floor, which is covered in a soft layer of sea salt and what appears to be powdered cheese. The trees are warm to the touch and smell incredible -- the entire forest is basically a deep-fried paradise that no amount of growing up can make you stop loving. Pools of ketchup collect in natural depressions between the fry-trunks, and somewhere deeper in the forest you can hear the sizzle of new fries growing in.
+mapsymbol: F
+maplegend: Fries
+biome: land
+exits:
+  north:
+    roomid: 401
+  south:
+    roomid: 403
+nouns:
+  fries: The <ansi fg="itemname">fries</ansi> are structurally perfect -- golden brown, uniformly crispy on the outside, fluffy on the inside. Each one is about the circumference of a tree trunk and rises straight up into the canopy. They are warm, they smell like the best drive-through in the universe, and yes, they are technically edible, though eating the structural supports of a forest seems inadvisable.
+  trees: The fry <ansi fg="itemname">trees</ansi> grow in clusters, their golden surfaces glistening with salt crystals. Some have curly fry branches spiraling out from their trunks. Others are straight-cut, tall and proud. A few waffle fry specimens grow near the edges, their latticed surfaces creating natural windows. The forest is a complete taxonomy of fried potato varieties, and every single one of them smells amazing.
+idlemessages:
+- A fresh fry sprouts from the ground with a gentle sizzle, already golden and perfect.
+- Salt crystals fall from the canopy like warm, savory snow.
+- You step in a ketchup puddle. It is exactly as warm and satisfying as you would expect.
+- The forest sways gently, releasing a wave of deep-fried fragrance.
+- A curly fry branch uncurls slightly, reaching toward the golden light above.

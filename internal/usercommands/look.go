@@ -484,28 +484,16 @@ func lookRoom(user *users.UserRecord, roomId int, secretLook bool) {
 			c.OverrideSymbol(roomId, '@', `You`)
 
 			output := zMapper.GetLimitedMap(room.RoomId, c)
+			// Ephemeral room copies can occasionally miss the center-room override.
+			output.Render[c.Height>>1][c.Width>>1] = '@'
+			legend := output.GetLegend(keywords.GetAllLegendAliases(room.Zone))
+
 			tinyMap := []string{}
 			tinyMap = append(tinyMap, `╔═════╗`)
 			for _, mapLine := range output.Render {
-				tinyMap = append(tinyMap, `║`+string(mapLine)+`║`)
+				tinyMap = append(tinyMap, `║`+mapper.RenderANSILine(mapLine, legend)+`║`)
 			}
 			tinyMap = append(tinyMap, `╚═════╝`)
-			// This additional check is for ephemeral room copies,
-			// which can slightly mess with the map render of the @
-			if tinyMap[3][3] != '@' {
-				youLine := []rune(tinyMap[3])
-				youLine[3] = '@'
-				tinyMap[3] = string(youLine)
-			}
-
-			legend := output.GetLegend(keywords.GetAllLegendAliases(room.Zone))
-
-			for i := 1; i <= c.Height; i++ {
-				for sym, txtLegend := range legend {
-					txtLc := strings.ToLower(txtLegend)
-					tinyMap[i] = strings.Replace(tinyMap[i], string(sym), fmt.Sprintf(`<ansi fg="map-room"><ansi fg="map-%s" bg="mapbg-%s">%c</ansi></ansi>`, txtLc, txtLc, sym), -1)
-				}
-			}
 
 			details = rooms.GetDetails(room, user, tinyMap)
 

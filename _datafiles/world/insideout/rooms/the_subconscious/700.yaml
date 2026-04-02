@@ -1,0 +1,23 @@
+roomid: 700
+zone: The Subconscious
+title: Subconscious Gate
+description: A massive iron gate stands before you, riveted with bolts the size of fists and streaked with rust that looks disturbingly like dried blood in the dim light. The words "DO NOT OPEN" have been scratched into the metal from the inside, and someone on this side has added "SERIOUSLY" in yellow paint. A heavy padlock shaped like a clown nose secures the gate, and cold air seeps through the gaps between the bars, carrying with it the unmistakable smell of old rubber and stale birthday cake. Beyond the gate, a corridor descends into a darkness so complete it seems to push back against any light that tries to enter. Whatever is locked in here wants out, and whatever locked it in here had very good reasons.
+mapsymbol: G
+maplegend: Gate
+biome: dungeon
+exits:
+  south:
+    roomid: 315
+    lock:
+      difficulty: 20
+  north:
+    roomid: 701
+nouns:
+  gate: The <ansi fg="itemname">gate</ansi> is a slab of riveted iron set directly into the stone of the mind. Scratch marks cover the interior side -- long, desperate gouges from things that tried to claw their way out. The hinges are massive and well-oiled, which is somehow worse than if they were rusted shut. Someone maintains this gate. Someone expects it to be used.
+  padlock: The <ansi fg="itemname">padlock</ansi> is shaped like a grotesque clown nose, bright red and slightly rubbery to the touch. It is far heavier than it looks and faintly warm, as though something on the other side is breathing on it. The keyhole is shaped like a tiny, grinning mouth.
+idlemessages:
+- Something behind the gate shifts heavily, and the bars vibrate with a low hum.
+- A faint, high-pitched giggle drifts through the gaps in the gate and then abruptly stops.
+- The padlock sways on its own, as if nudged by something you cannot see.
+- Cold air pulses through the gate in slow, rhythmic waves, like breathing.
+- The scratch marks on the gate seem to have multiplied since you last looked.

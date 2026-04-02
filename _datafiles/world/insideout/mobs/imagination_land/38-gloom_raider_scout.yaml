@@ -1,0 +1,28 @@
+mobid: 38
+zone: Imagination Land
+itemdropchance: 20
+hostile: true
+nocorpse: true
+deathmessage: '{name} snarls and retreats into the shadows between memories.'
+maxwander: 5
+activitylevel: 25
+groups:
+- fear
+idlecommands:
+- emote scans the area with quick, jerking movements of its shadowy head.
+- emote lets out a low hiss.
+- wander
+- ''
+character:
+  name: gloom raider scout
+  description: A faster, more aggressive variant of the gloom raider, built lean and angular where its larger counterpart is amorphous. It darts between the colorful structures of Imagination Land, scanning for areas rich in emotional energy to drain. Its dim blue aura flickers rapidly, and it lets out a low, rattling hiss when it senses something worth consuming.
+  level: 7
+  gold: 23
+  raceid: 5
+  stats:
+    strength:
+      training: 4
+    speed:
+      training: 2
+    vitality:
+      training: 5

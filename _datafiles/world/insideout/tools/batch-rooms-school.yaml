@@ -1,0 +1,847 @@
+zone: school
+zone_config:
+  name: School
+  roomid: 100
+  autoscale: {minimum: 3, maximum: 6}
+  defaultbiome: city
+
+rooms:
+  # ── SCHOOL FRONT ENTRANCE ──────────────────────────────────────────
+  - id: 100
+    title: "School Front Entrance"
+    desc: >-
+      Wide concrete steps lead up to a pair of heavy <ansi fg="itemname">glass double doors</ansi>
+      plastered with spirit week flyers and a faded "GO FOGHORNS!" banner. A row of
+      <ansi fg="itemname">bike racks</ansi> lines the sidewalk to the left, most of them
+      claimed by a tangle of locks and cables. The school name is etched into a stone
+      plaque above the entrance, and a flagpole out front snaps a California state flag
+      in the bay breeze. Kids stream in and out between bells, backpacks slung over one
+      shoulder, earbuds in, eyes on their phones. The whole building has that institutional
+      beige look that says "built in the nineties, renovated never."
+    biome: city
+    symbol: E
+    legend: Entrance
+    exits:
+      south: 12
+      north: 101
+    nouns:
+      doors: >-
+        The <ansi fg="itemname">glass double doors</ansi> are smudged with a thousand
+        fingerprints and held open during passing period by a rubber doorstop that
+        someone keeps kicking away. A laminated sign taped to one door reads "ALL
+        VISITORS MUST CHECK IN AT THE FRONT OFFICE." Another sign below it reads
+        "PLEASE STOP TAPING SIGNS TO THE DOOR."
+      bike racks: >-
+        The <ansi fg="itemname">bike racks</ansi> are a metallic knot of locked bikes,
+        scooters, and one very optimistic unicycle. Half the locks look like they
+        haven't been opened since last semester. A lonely helmet dangles from a
+        handlebar, slowly spinning in the wind.
+      banner: >-
+        The <ansi fg="itemname">school banner</ansi> reads "HOME OF THE FOGHORNS" in
+        blue and gold letters. It's been up so long the colors have faded to gray and
+        beige, but nobody has the heart -- or the budget -- to replace it.
+    idle:
+      - A kid on a skateboard ollies up the curb and nearly wipes out on the steps.
+      - The school bell rings in the distance and a wave of students pours through the doors.
+      - Someone's phone blasts music from a backpack pocket as they jog up the steps.
+      - A parent in an SUV honks twice and waves frantically at a kid who pretends not to know them.
+      - The flagpole rope clangs against the metal pole in the wind with a steady ping-ping-ping.
+
+  # ── MAIN HALLWAY ───────────────────────────────────────────────────
+  - id: 101
+    title: "Main Hallway"
+    desc: >-
+      A long corridor stretches under buzzing <ansi fg="itemname">fluorescent lights</ansi>,
+      its linoleum floor scuffed by a decade of sneakers. Rows of dented
+      <ansi fg="itemname">lockers</ansi> line both walls in the school's blue and gold
+      colors, most of them decorated with stickers and sharpie doodles from previous
+      owners. A big glass <ansi fg="itemname">trophy case</ansi> stands against one wall,
+      displaying dusty trophies, team photos, and a hand-lettered sign that reads "FOGHORN
+      PRIDE." Classroom doors branch off in both directions, and the hallway carries the
+      permanent smell of floor wax and whatever the cafeteria is cooking. This is the
+      central artery of the school -- everything connects through here.
+    biome: city
+    symbol: H
+    legend: Hall
+    exits:
+      south: 100
+      east: 102
+      west: 103
+      north: 106
+      northeast: 111
+      northwest: 109
+    nouns:
+      trophy case: >-
+        The <ansi fg="itemname">trophy case</ansi> is a shrine to school history. A few
+        dusty track trophies from the nineties share shelf space with a more recent
+        debate team plaque and a framed photo of last year's basketball team. Someone
+        has tucked a rubber duck behind the basketball trophy and nobody has noticed --
+        or nobody cares enough to remove it.
+      lockers: >-
+        The <ansi fg="itemname">lockers</ansi> are standard-issue school metal, painted
+        blue and gold but chipped in a hundred places. Most have combination locks on
+        them, some have stickers, and one near the end has a piece of duct tape over
+        it labeled "BROKEN -- DO NOT USE (seriously this time)."
+      lights: >-
+        The <ansi fg="itemname">fluorescent lights</ansi> hum with that specific pitch
+        that burrows into your skull during sixth period. One of them flickers in a
+        pattern that's either random or Morse code for "help me."
+    idle:
+      - A kid sprints down the hallway clutching a hall pass like a relay baton.
+      - A locker slams shut somewhere and the sound echoes off the linoleum.
+      - The PA system crackles with feedback, says something unintelligible, and goes silent.
+      - Two kids lean against the lockers, deep in conversation about something on a phone screen.
+      - The fluorescent light above you flickers twice and then steadies, as if it changed its mind.
+
+  # ── CLASSROOM 101 - ENGLISH ────────────────────────────────────────
+  - id: 102
+    title: "Classroom 101 - English"
+    desc: >-
+      <ansi fg="mobname">Ms. Parker</ansi>'s English classroom is the kind of room where
+      the walls do most of the teaching. <ansi fg="itemname">Posters</ansi> about literary
+      devices, famous authors, and the importance of the Oxford comma compete for space
+      with student work pinned up on a corkboard. Rows of <ansi fg="itemname">desks</ansi>
+      face a large <ansi fg="itemname">whiteboard</ansi> covered in today's vocabulary words
+      and a quote of the week -- something by Maya Angelou that half the class copied
+      into their notebooks and the other half photographed with their phones. A worn copy
+      of "To Kill a Mockingbird" sits on the edge of the teacher's desk, bristling with
+      sticky tabs.
+    biome: city
+    symbol: "1"
+    legend: English
+    exits:
+      west: 101
+    nouns:
+      whiteboard: >-
+        The <ansi fg="itemname">whiteboard</ansi> is divided into sections with careful
+        dry-erase borders. Today's vocab includes "ephemeral," "juxtaposition," and
+        "ennui" -- that last one underlined twice. A corner of the board reads "ESSAY
+        DUE FRIDAY -- NO EXCUSES" in red marker. Below it, someone has faintly written
+        "what if my dog ate it" in pencil.
+      desks: >-
+        The <ansi fg="itemname">desks</ansi> are the standard one-piece chair-and-desk
+        combos that are comfortable for approximately zero human body types. Most have
+        initials or tiny drawings carved into the surface by generations of bored
+        students. One desk in the back has "I WAS HERE" scratched into it, which is
+        technically a complete sentence.
+      posters: >-
+        The <ansi fg="itemname">posters</ansi> are a mix of inspirational and educational.
+        "READ OR DIE" features a dramatic illustration of a dragon made of books. A
+        Shakespearean insult chart hangs near the door. One poster just says "WORDS
+        MATTER" in forty different fonts, which kind of proves its own point.
+    idle:
+      - A pencil rolls off a desk and clatters to the floor in the silence.
+      - The whiteboard marker squeaks as someone adds to the vocabulary list.
+      - A page turns somewhere in the room -- someone actually doing the reading.
+      - The clock on the wall ticks loudly, each second stretching longer than the last.
+
+  # ── CLASSROOM 202 - MATH ───────────────────────────────────────────
+  - id: 103
+    title: "Classroom 202 - Math"
+    desc: >-
+      This math classroom has the stark, no-nonsense energy of a room dedicated entirely
+      to numbers. The <ansi fg="itemname">equations</ansi> on the whiteboard are dense
+      enough to make your eyes cross -- something about quadratics that trails off into
+      a forest of x's and y's. A few graphing <ansi fg="itemname">calculators</ansi> sit
+      in a charging station near the teacher's desk, each one labeled with a number in
+      masking tape. The desks are arranged in strict rows, perfectly aligned, because the
+      math teacher is the kind of person who would notice if one was off by an inch. A
+      poster on the wall reads "MATH IS NOT A SPECTATOR SPORT" next to a picture of
+      Einstein sticking out his tongue.
+    biome: city
+    symbol: "2"
+    legend: Math
+    exits:
+      east: 101
+    nouns:
+      equations: >-
+        The <ansi fg="itemname">equations</ansi> sprawl across the whiteboard in three
+        colors of dry-erase marker. The main problem is a quadratic formula that's been
+        worked out step by step, each step more terrifying than the last. Someone has
+        drawn a tiny crying face next to the final answer.
+      calculator: >-
+        The graphing <ansi fg="itemname">calculators</ansi> are the expensive kind that
+        the school guards like gold bars. Each one has its number written on it in three
+        different places, plus a sticker that says "PROPERTY OF SFUSD." Half of them
+        have games secretly loaded onto them. The other half have games that were
+        secretly loaded and then secretly deleted by the teacher.
+    idle:
+      - Someone sighs deeply from the back of the room, the universal sound of math class.
+      - A calculator beeps once and the whole room flinches.
+      - The teacher taps the whiteboard with a marker, right next to the part everyone got wrong.
+      - A kid sneaks their phone under the desk and types something frantically.
+
+  # ── SCIENCE LAB ────────────────────────────────────────────────────
+  - id: 104
+    title: "Science Lab"
+    desc: >-
+      The science lab smells like a permanent combination of hand sanitizer and whatever
+      chemical they used last period. Black-topped lab tables are arranged in pairs, each
+      one equipped with a small sink and a gas nozzle that everyone is forbidden from
+      touching. <ansi fg="itemname">Beakers</ansi> and graduated cylinders line the
+      shelves along the back wall, and a massive <ansi fg="itemname">periodic table</ansi>
+      poster dominates the space above the whiteboard. A row of <ansi fg="itemname">microscopes</ansi>
+      sits in a locked cabinet, and a human skeleton model named "Mr. Bones" stands in
+      the corner wearing a pair of sunglasses that the teacher gave up trying to remove.
+    biome: city
+    symbol: S
+    legend: Science
+    exits:
+      south: 111
+    nouns:
+      beakers: >-
+        The <ansi fg="itemname">beakers</ansi> come in every size, from tiny sample cups
+        to ones big enough to hold a suspicious amount of liquid. Most are clean, but a
+        few in the back still have residue from an experiment that turned an unexpected
+        shade of purple. A label on one reads "DO NOT DRINK" which raises the question
+        of why that label was necessary.
+      periodic table: >-
+        The <ansi fg="itemname">periodic table</ansi> is enormous, taking up most of the
+        front wall. Someone has circled "Au" and written "goals" next to it. The noble
+        gases section has a tiny crown drawn over it. Oganesson has a question mark
+        next to it and the note "is this even real?"
+      microscope: >-
+        The <ansi fg="itemname">microscopes</ansi> are decent quality but clearly battle-worn
+        from years of student use. One has a cracked eyepiece held together with tape.
+        The focus knobs are stiff from students cranking them like they're opening a
+        submarine hatch. A sign reads "GENTLE adjustments. GENTLE."
+    idle:
+      - A Bunsen burner hisses somewhere, its blue flame dancing in a draft.
+      - Mr. Bones stares at you from the corner, sunglasses slightly askew.
+      - Something bubbles in a beaker on the back shelf. It's probably fine.
+      - The fume hood fan kicks on with a low hum, startling nobody except you.
+      - A poster of the scientific method flutters as the ventilation system cycles.
+
+  # ── ART ROOM ───────────────────────────────────────────────────────
+  - id: 105
+    title: "Art Room"
+    desc: >-
+      The art room is the most colorful disaster zone in the entire school. Paint-splattered
+      <ansi fg="itemname">tables</ansi> are scattered around the room at odd angles, each
+      one a canvas of accidental masterpieces from years of spilled acrylics. Works in
+      progress sit on <ansi fg="itemname">easels</ansi> around the perimeter -- a half-finished
+      portrait, an abstract that might be a sunset or might be a pizza, and something
+      involving a lot of glitter that nobody wants to claim. Shelves overflow with
+      <ansi fg="itemname">supplies</ansi> -- tubes of paint, jars of brushes, palettes
+      crusted with dried color. The air smells like turpentine and possibility. A drying
+      rack near the window holds ceramic projects in various stages of completion, and
+      every surface has at least one handprint on it.
+    biome: city
+    symbol: A
+    legend: Art
+    exits:
+      north: 109
+    nouns:
+      easels: >-
+        The <ansi fg="itemname">easels</ansi> hold a gallery of student ambition. One canvas
+        shows a surprisingly good landscape of the Golden Gate Bridge in fog. Another is
+        an abstract explosion of red and orange that the artist insists represents "the
+        duality of existence" but looks suspiciously like they knocked over the paint cups.
+        A third is completely blank except for a single dot in the center -- either a
+        bold artistic statement or someone who gave up immediately.
+      paintings: >-
+        The <ansi fg="itemname">paintings</ansi> around the room represent every skill level
+        from "future museum exhibit" to "enthusiastic attempt." A few are genuinely
+        beautiful, capturing light and shadow in ways that make you stop and stare. Most
+        are fine. One is a still life of a banana that somehow looks angry.
+      supplies: >-
+        The <ansi fg="itemname">art supplies</ansi> are organized in theory but chaotic
+        in practice. Paint tubes are sorted by color but squeezed from every possible
+        angle. Brush jars hold everything from fine-tip detail brushes to one that looks
+        like it was used to paint a house. A bin labeled "SCISSORS" contains three
+        scissors and about forty glue sticks.
+    idle:
+      - A paintbrush rolls off a table and clatters to the paint-speckled floor.
+      - The smell of wet clay drifts from the ceramics corner.
+      - Someone left the cap off a marker and the room smells faintly of Sharpie.
+      - A piece of student art catches the sunlight from the window and glows with color.
+
+  # ── CAFETERIA ──────────────────────────────────────────────────────
+  - id: 106
+    title: "Cafeteria"
+    desc: >-
+      The cafeteria is a cavernous room of long <ansi fg="itemname">tables</ansi> with
+      attached benches, the kind you have to swing your legs over to sit down. The lunch
+      line snakes along the far wall past a sneeze guard and a series of warming trays
+      that hold today's questionable offerings. A <ansi fg="itemname">vending machine</ansi>
+      hums in the corner, its glass front displaying chips, candy bars, and a granola bar
+      that's been stuck on the top row since September. The <ansi fg="itemname">menu board</ansi>
+      above the serving counter lists today's options in removable letters, though someone
+      has rearranged a few to spell something inappropriate that the lunch staff hasn't
+      noticed yet. The noise level in here is a wall of sound -- laughter, arguments about
+      nothing, and the constant clatter of plastic trays.
+    biome: city
+    symbol: C
+    legend: Cafeteria
+    exits:
+      south: 101
+      east: 107
+      west: 116
+    nouns:
+      tables: >-
+        The <ansi fg="itemname">tables</ansi> are long, beige, and bolted to the floor.
+        Each one seats about twelve kids and has its own social ecosystem. The popular
+        table is near the windows. The quiet table is in the corner. The table near the
+        trash cans is for people who showed up late and lost the seating lottery. Every
+        surface is slightly sticky no matter how recently it was wiped.
+      vending machine: >-
+        The <ansi fg="itemname">vending machine</ansi> takes bills, coins, and an
+        unreasonable amount of patience. Its selection is about sixty percent chips,
+        twenty percent candy, and twenty percent "healthy options" that nobody buys.
+        The granola bar on row A7 has been there so long it might qualify as a historical
+        artifact. A handwritten note taped to the side reads "MACHINE ATE MY DOLLAR --
+        YOU OWE ME, VENDING ROBOT."
+      menu board: >-
+        The <ansi fg="itemname">menu board</ansi> reads "TODAY: CHICKEN NUGGETS / VEGGIE
+        WRAP / MYSTERY CASSEROLE" in white plastic letters. The "mystery" part is not
+        an official menu term -- someone just swapped the letters around. Friday always
+        says "PIZZA" because even institutional food service knows not to mess with
+        Friday pizza.
+    idle:
+      - The cafeteria erupts in laughter from a table near the windows.
+      - Someone drops a tray and the whole room goes "OHHHHH" in unison.
+      - The smell of reheated chicken nuggets and industrial ketchup wafts from the lunch line.
+      - A kid at the vending machine bangs on the glass, trying to shake loose a bag of chips.
+      - The lunch monitor blows a whistle and points at a table that's getting too rowdy.
+
+  # ── GYM ────────────────────────────────────────────────────────────
+  - id: 107
+    title: "Gym"
+    desc: >-
+      The gym is a vast echoing box of polished hardwood floors and impossibly high
+      ceilings. A basketball <ansi fg="itemname">court</ansi> is painted on the main
+      floor, its lines faded and repainted so many times you can see ghost outlines of
+      previous layouts underneath. Wooden <ansi fg="itemname">bleachers</ansi> fold out
+      from the far wall, and a championship <ansi fg="itemname">banner</ansi> from 2003
+      hangs from the rafters -- the most recent one, which the PE teacher mentions at
+      least twice a week. The air smells permanently like rubber and floor polish, and
+      every sound bounces around the space in an endless echo. A Coach's whistle blast
+      cuts through the noise at regular intervals, sharp enough to make your fillings
+      vibrate.
+    biome: city
+    symbol: G
+    legend: Gym
+    exits:
+      west: 106
+      south: 108
+      north: 117
+    nouns:
+      court: >-
+        The basketball <ansi fg="itemname">court</ansi> is regulation size, or close
+        enough for a public school. The free throw lines are worn pale from a thousand
+        PE classes. Someone has scuffed a smiley face into the paint near half court.
+        The hoops at each end have chain nets that rattle when the ball goes through,
+        which sounds way cooler than nylon.
+      bleachers: >-
+        The <ansi fg="itemname">bleachers</ansi> are wooden, creaky, and designed to be
+        maximally uncomfortable. They fold out from the wall on a mechanical track that
+        makes a terrifying grinding noise. The back rows are where everyone actually
+        wants to sit. Decades of initials, hearts, and regrettable statements are carved
+        into every surface.
+      banner: >-
+        The <ansi fg="itemname">championship banner</ansi> reads "SFUSD DISTRICT CHAMPS
+        2003 -- BOYS BASKETBALL." It hangs alone in the rafters, which is either a
+        testament to that team's greatness or a commentary on everything since. The
+        fabric is starting to fade, but the PE teacher would fight anyone who suggested
+        taking it down.
+    idle:
+      - A basketball bounces somewhere in the gym, the echoes multiplying the sound.
+      - A whistle blows sharply and a coach's voice barks "HUSTLE!"
+      - Sneakers squeak on the polished floor as someone cuts hard on a layup.
+      - The bleachers creak under their own weight as the building settles.
+      - A dodgeball rolls out from under the bleachers and comes to rest at your feet.
+
+  # ── GYM STORAGE ────────────────────────────────────────────────────
+  - id: 108
+    title: "Gym Storage"
+    desc: >-
+      A dim, cluttered storage room packed floor to ceiling with the accumulated sports
+      <ansi fg="itemname">equipment</ansi> of decades. Mesh bags of dodgeballs hang from
+      hooks on the wall, and a rack of basketball carts is shoved into the corner. The
+      overhead light is burned out -- it's been burned out for a while -- so the only
+      illumination comes from the crack under the door and a faint, unsettling glow from
+      somewhere behind the equipment racks. <ansi fg="itemname">Shadows</ansi> pool in the
+      corners and seem to shift when you're not looking directly at them. The air is stale
+      and thick, and the room has that forgotten feeling of a place nobody checks on very
+      often. Something back here doesn't feel right.
+    biome: city
+    symbol: D
+    legend: Storage
+    exits:
+      north: 107
+    spawns:
+      - {mob: 13, rate: "5 real minutes", msg: "A <ansi fg=\"mobname\">doubt shadow</ansi> coalesces from the darkness behind the equipment rack."}
+    nouns:
+      equipment: >-
+        The sports <ansi fg="itemname">equipment</ansi> is a disorganized mountain of
+        rubber, metal, and nylon. Deflated footballs, cracked hockey sticks, a volleyball
+        net tangled beyond salvation, and jump ropes coiled like snakes. Half of this
+        stuff probably hasn't been used since the Clinton administration. Something
+        rattles in the back when you look away.
+      shadows: >-
+        The <ansi fg="itemname">shadows</ansi> in the corners are darker than they should
+        be, given the crack of light from the door. They seem to have weight and texture,
+        pooling like liquid in the spaces between the equipment racks. If you stare long
+        enough, you could swear they're breathing.
+    idle:
+      - Something shifts in the darkness at the back of the room.
+      - A dodgeball rolls off a shelf by itself and thumps to the floor.
+      - The shadows in the corner ripple, like the surface of dark water disturbed by something underneath.
+      - A faint whisper reaches you from behind the equipment racks -- too quiet to make out the words.
+      - The air grows noticeably colder for a moment, then returns to normal.
+
+  # ── LIBRARY ────────────────────────────────────────────────────────
+  - id: 109
+    title: "Library"
+    desc: >-
+      The school library is a surprisingly peaceful island in the chaos of the hallways.
+      Tall rows of <ansi fg="itemname">bookshelves</ansi> divide the room into quiet aisles,
+      their shelves packed with everything from dog-eared paperbacks to reference
+      encyclopedias that nobody has opened since the internet was invented. A cluster of
+      <ansi fg="itemname">computers</ansi> sits on a long desk near the entrance, all of
+      them displaying the school's homepage with a filter that blocks approximately
+      everything interesting. A cozy <ansi fg="itemname">reading nook</ansi> with beanbag
+      chairs is tucked into the far corner, perpetually claimed by the same three kids.
+      The librarian's desk is a fortress of returned books, overdue notices, and a mug
+      that says "Shhh... I'm reading." The carpet is that weird institutional blue-gray
+      that absorbs all sound and most of your will to leave.
+    biome: city
+    symbol: L
+    legend: Library
+    exits:
+      south: 105
+      southeast: 101
+    nouns:
+      bookshelves: >-
+        The <ansi fg="itemname">bookshelves</ansi> hold a surprisingly solid collection.
+        The fiction section is well-loved, with spines cracked and covers worn soft from
+        years of checkouts. The nonfiction section is mostly untouched except for the
+        books about animals and space, which are beaten to shreds. A small "STAFF PICKS"
+        shelf near the front displays titles that the librarian is personally campaigning
+        for, each one with a handwritten review card.
+      computers: >-
+        The <ansi fg="itemname">computers</ansi> are functional but ancient by tech
+        standards -- thick monitors, sticky keyboards, and a startup time measured in
+        geological epochs. The browser has so many blocked sites that the filter
+        basically functions as a "you can use Google and that's it" machine. Someone has
+        changed the desktop wallpaper on one to a picture of a cat wearing a graduation
+        cap. The librarian lets it stay.
+      reading nook: >-
+        The <ansi fg="itemname">reading nook</ansi> is a pair of oversized beanbag chairs
+        and a floor lamp tucked into a corner between two bookshelves. It's the most
+        fought-over real estate in the entire school. Unspoken rules govern its use --
+        first come, first served, no homework allowed, reading only. A hand-lettered
+        sign above it reads "THE QUIET ZONE" with a drawing of a sleeping owl.
+    idle:
+      - Pages turn softly somewhere in the stacks.
+      - The librarian looks up from her desk and silently points at a "QUIET PLEASE" sign.
+      - A computer makes the Windows error sound and someone whispers a frustrated apology.
+      - A kid in the reading nook has fallen asleep with a book on their face.
+      - The heating vent clicks on and warm air rustles the pages of an open book on a table.
+
+  # ── PRINCIPAL'S OFFICE ─────────────────────────────────────────────
+  - id: 110
+    title: "Principal's Office"
+    desc: >-
+      The principal's office radiates the specific energy of a room you never want to be
+      called into. A heavy wooden <ansi fg="itemname">desk</ansi> dominates the space,
+      impeccably organized with a pen cup, a lamp, and a <ansi fg="itemname">nameplate</ansi>
+      that reads "PRINCIPAL VASQUEZ." <ansi fg="itemname">Motivational posters</ansi> line
+      the walls -- "INTEGRITY IS DOING THE RIGHT THING WHEN NOBODY IS WATCHING" and
+      "EVERY DAY IS A CHANCE TO BE BETTER" -- the kind that feel encouraging or threatening
+      depending on why you're here. Two uncomfortable chairs face the desk for students
+      who are definitely in trouble. A framed diploma from Stanford hangs on the wall next
+      to photos of every graduating class going back fifteen years.
+    biome: city
+    symbol: P
+    legend: Principal
+    exits:
+      west: 112
+    nouns:
+      desk: >-
+        Principal Vasquez's <ansi fg="itemname">desk</ansi> is the cleanest surface in
+        the entire school. Everything is squared off and organized with military precision.
+        A small cactus sits in the corner of the desk -- the only personal touch. A manila
+        folder labeled "DISCIPLINARY ACTIONS - CURRENT" sits in the center, thick enough
+        to be concerning.
+      nameplate: >-
+        The <ansi fg="itemname">nameplate</ansi> reads "PRINCIPAL R. VASQUEZ" in engraved
+        brass letters on dark wood. It's positioned perfectly at the front of the desk,
+        angled to be readable from the student chairs. There's something about seeing
+        your name carved in brass that says "I am not messing around."
+      posters: >-
+        The <ansi fg="itemname">motivational posters</ansi> are the standard-issue
+        inspirational variety, but someone -- presumably Vasquez -- has added handwritten
+        notes to a few of them. "BELIEVE IN YOURSELF" has "and also study for your tests"
+        written below it in neat cursive. "TEAMWORK MAKES THE DREAM WORK" has "but
+        individual accountability makes the grade" added underneath.
+    idle:
+      - The desk chair swivels slightly, as if Principal Vasquez just stepped out.
+      - A phone on the desk rings twice and then goes silent.
+      - The motivational posters stare down at you with aggressive encouragement.
+      - A pen rolls slowly across the desk and stops at the exact edge without falling.
+
+  # ── LOCKER HALLWAY NORTH ───────────────────────────────────────────
+  - id: 111
+    title: "Locker Hallway North"
+    desc: >-
+      A secondary hallway branches off from the main corridor, its walls lined with
+      rows of blue <ansi fg="itemname">lockers</ansi> that stretch in both directions.
+      The hall is narrower here, forcing students to squeeze past each other between
+      classes in an awkward shuffle of backpacks and elbows. Combination locks dangle
+      from most doors, and a few lockers stand slightly ajar, their contents -- textbooks,
+      crumpled papers, a forgotten lunch bag -- visible through the gap. The overhead
+      lights hum at a slightly different pitch than the main hallway, and the floor has a
+      noticeable scuff trail from the constant foot traffic between the science wing and
+      the music room.
+    biome: city
+    symbol: ">"
+    legend: North Lockers
+    exits:
+      southwest: 101
+      north: 104
+      east: 113
+      south: 112
+    containers:
+      locker:
+        lock:
+          difficulty: 5
+    nouns:
+      lockers: >-
+        The <ansi fg="itemname">lockers</ansi> are identical blue metal boxes, three
+        high and stretching down the entire hallway. Some are personalized with stickers,
+        photos taped inside the doors, and magnetic mirrors. A few have been decorated
+        for someone's birthday with streamers and a sign. One locker near the middle is
+        dented so badly it won't close all the way -- the victim of someone who got their
+        exam grade back and expressed their feelings physically.
+    idle:
+      - A locker door swings open and a textbook tumbles out onto the floor.
+      - Two students bump into each other rounding the corner and mumble apologies without making eye contact.
+      - The clatter of a combination lock spinning echoes down the hall.
+      - A kid struggles with their locker for a solid ten seconds before it finally pops open.
+      - Someone shoves their entire backpack into a locker and forces it shut through sheer willpower.
+
+  # ── LOCKER HALLWAY SOUTH ───────────────────────────────────────────
+  - id: 112
+    title: "Locker Hallway South"
+    desc: >-
+      The south end of the locker hallway is quieter than its northern counterpart,
+      tucked away from the main flow of student traffic. More <ansi fg="itemname">lockers</ansi>
+      line the walls here, these ones slightly newer -- replaced after a water pipe burst
+      a few years back. A bulletin board on one wall is pinned with club sign-up sheets,
+      a lost-and-found flyer for someone's retainer (with a photo, unfortunately), and a
+      poster for the upcoming school dance. The hallway connects to the administrative
+      wing to the east and opens out toward the courtyard to the west. A faded "EXIT" sign
+      glows above the courtyard door.
+    biome: city
+    symbol: "<"
+    legend: South Lockers
+    exits:
+      north: 111
+      east: 110
+      south: 114
+      west: 116
+    nouns:
+      lockers: >-
+        These <ansi fg="itemname">lockers</ansi> are marginally nicer than the ones in
+        the north hallway -- fewer dents, less graffiti, and the paint is only chipping
+        in a few places. The replacement lockers have slightly different handles, which
+        drives the custodial staff crazy for reasons nobody else understands.
+      bulletin board: >-
+        The <ansi fg="itemname">bulletin board</ansi> is a layered archaeology of school
+        announcements. Peel back the top layer and you'll find sign-up sheets from three
+        semesters ago. Current postings include Drama Club auditions, a Mathletes
+        recruitment flyer with zero names on it, and someone selling a "slightly used"
+        graphing calculator. A hand-drawn flyer for the school dance has hearts on it
+        and the theme "ENCHANTED EVENING" which someone has edited to "ENCHANTED EVENING
+        (of awkward slow dancing)."
+    idle:
+      - A student speed-walks past, clearly late for something.
+      - The courtyard door opens and a gust of cool bay air sweeps through the hall.
+      - A flyer peels off the bulletin board and drifts to the floor.
+      - Someone tests their locker combination three times before realizing they're at the wrong locker.
+
+  # ── MUSIC ROOM ─────────────────────────────────────────────────────
+  - id: 113
+    title: "Music Room"
+    desc: >-
+      The music room is a chaotic symphony of cases, stands, and the lingering ghost of
+      every wrong note ever played within its walls. A battered upright <ansi fg="itemname">piano</ansi>
+      sits against the far wall, its keys yellowed but functional. Music stands are
+      scattered around in a rough semicircle, most of them holding crumpled
+      <ansi fg="itemname">sheet music</ansi> from last period. A cabinet along one wall
+      holds an assortment of <ansi fg="itemname">instruments</ansi> -- trumpets, clarinets,
+      a tuba that takes up an unreasonable amount of space, and a xylophone missing two
+      bars. Sound-dampening panels on the walls do their best, but you can still hear
+      the band from the hallway. Riley's been spending more time here lately, working on
+      something she won't talk about yet.
+    biome: city
+    symbol: M
+    legend: Music
+    exits:
+      west: 111
+    nouns:
+      piano: >-
+        The <ansi fg="itemname">piano</ansi> is an old upright that's been in this room
+        longer than anyone currently at the school. A few keys stick, the sustain pedal
+        is temperamental, and someone has carved "THIS MACHINE KILLS BOREDOM" into the
+        side in tiny letters. Despite its age, it still sounds surprisingly warm when
+        someone who knows what they're doing sits down to play.
+      instruments: >-
+        The instrument cabinet is a brass-and-woodwind menagerie. Trumpets with dented
+        bells, clarinets missing their reeds, a french horn that looks like it survived
+        a war. Each one has a number tag and a sign-out sheet, though the system was
+        abandoned around week three of the school year. The tuba in the corner has its
+        own chair because it's too heavy for the shelf.
+      sheet music: >-
+        The <ansi fg="itemname">sheet music</ansi> is a mess of concert pieces, warm-up
+        scales, and someone's attempt at arranging a pop song for full band. Pencil
+        marks cover the margins -- measure numbers, breath marks, and the occasional
+        doodle of a stick figure playing drums. A few pages have coffee rings on them
+        from the band teacher's mug.
+    idle:
+      - Someone plunks out a tentative melody on the piano, pauses, and starts over.
+      - A trumpet case snaps open and the metallic echo rings through the room.
+      - Sheet music rustles as a draft from the hallway sneaks under the door.
+      - The faint vibration of a tuning fork hums through the air and slowly fades.
+      - A metronome on the piano clicks steadily, keeping time for nobody in particular.
+
+  # ── BATHROOM ───────────────────────────────────────────────────────
+  - id: 114
+    title: "Bathroom"
+    desc: >-
+      A standard-issue school bathroom with all the charm you'd expect. Fluorescent
+      lights buzz overhead, giving everything a sickly pale cast. The tile walls are
+      that specific shade of institutional green that exists nowhere in nature. Two of
+      the three stall doors actually lock. The mirrors above the sinks are scratched
+      with initials and the soap dispensers are either empty or dispense a mysterious
+      pink liquid that doesn't really feel like soap. A hand dryer on the wall is the
+      jet-engine variety that sounds like a small aircraft taking off. Someone has written
+      "YOU'RE DOING GREAT" on the inside of the main stall door in Sharpie, which is
+      either vandalism or the most supportive graffiti you've ever seen.
+    biome: city
+    symbol: B
+    legend: Bathroom
+    exits:
+      north: 112
+    idle:
+      - Someone drops their books outside and you cringe sympathetically.
+      - The hand dryer startles you with its sudden roar.
+      - A faucet drips steadily into the silence -- plip, plip, plip.
+      - The fluorescent light flickers and for a second you catch your own startled expression in the mirror.
+      - Someone in the hallway laughs loudly and you wonder if it's about you. It's probably not. Probably.
+
+  # ── TEACHER'S LOUNGE ───────────────────────────────────────────────
+  - id: 115
+    title: "Teacher's Lounge"
+    desc: >-
+      The mythical teacher's lounge, forbidden territory for students and therefore
+      the most interesting room in the school. A <ansi fg="itemname">coffee machine</ansi>
+      dominates the counter, surrounded by a graveyard of mismatched mugs and a bowl of
+      creamer packets. Comfortable but aging chairs are arranged around a low table
+      covered in newspapers, crossword puzzles, and someone's abandoned lunch container
+      from three days ago. A <ansi fg="itemname">bulletin board</ansi> on the wall holds
+      staff memos, a sign-up sheet for potluck Friday, and a passive-aggressive note
+      about labeling your food in the fridge. The vibe in here is "exhausted adults
+      pretending to recharge in twenty-two minutes."
+    biome: city
+    symbol: T
+    legend: Teachers
+    exits:
+      south: 116
+    nouns:
+      coffee machine: >-
+        The <ansi fg="itemname">coffee machine</ansi> is the most important object in
+        the entire school, at least according to the faculty. It's an industrial-grade
+        brewer that runs approximately sixteen hours a day. The coffee it produces is
+        strong enough to strip paint, and the teachers drink it like water. A handwritten
+        label on the pot reads "DECAF IS FOR QUITTERS." Someone has added "and people
+        who want to sleep, Karen" underneath.
+      bulletin board: >-
+        The staff <ansi fg="itemname">bulletin board</ansi> is a window into the hidden
+        world of teacher politics. Meeting schedules, professional development reminders,
+        and a sign-up sheet for "WELLNESS WEDNESDAY (mandatory fun)" are pinned alongside
+        a passive-aggressive note that reads "To whoever keeps taking my yogurt from the
+        fridge: I know who you are. -- G.P." Below it, someone has pinned a response:
+        "Prove it."
+    idle:
+      - The coffee machine gurgles and dispenses another cup of liquid determination.
+      - Muffled conversation drifts from behind a newspaper -- teachers talking about students, probably.
+      - Someone sighs the deep, existential sigh of a person grading essays on a Friday.
+      - A phone alarm goes off and a teacher mutters "already?" before standing up reluctantly.
+      - The microwave beeps three times and nobody gets up to check it.
+
+  # ── COURTYARD ──────────────────────────────────────────────────────
+  - id: 116
+    title: "Courtyard"
+    desc: >-
+      The school courtyard is a square of open air surrounded by building walls on three
+      sides, with a row of picnic <ansi fg="itemname">tables</ansi> scattered across a
+      concrete pad. A single <ansi fg="itemname">tree</ansi> grows from a square of dirt
+      in the center, stubbornly alive despite decades of students carving their initials
+      into its bark. A small <ansi fg="itemname">fountain</ansi> sits near the far wall,
+      its basin usually half-full of pennies and the occasional homework assignment that
+      blew in on the wind. This is where people come to eat lunch outside, gossip between
+      classes, and have the kind of conversations that feel world-ending at fifteen and
+      irrelevant by sixteen. The bay breeze funnels through the courtyard in unpredictable
+      gusts, scattering napkins and flipping textbook pages.
+    biome: city
+    symbol: Y
+    legend: Courtyard
+    exits:
+      east: 106
+      northeast: 112
+      north: {roomid: 115, lock: 15}
+      south: 118
+    nouns:
+      tree: >-
+        The <ansi fg="itemname">tree</ansi> is a coast live oak that's been growing here
+        since before the school was built. Its trunk is covered in carved initials,
+        hearts, and at least three class years. The branches spread wide enough to shade
+        two of the picnic tables, and someone has tied a friendship bracelet to one of
+        the lower limbs. It's the unofficial social center of the courtyard.
+      tables: >-
+        The picnic <ansi fg="itemname">tables</ansi> are weathered wood bolted to the
+        concrete, each one a palimpsest of Sharpie tags, carved names, and sticker
+        residue. Some kids eat lunch here, some do homework, and some just sit in
+        small groups talking about nothing and everything. The table closest to the
+        tree is prime real estate.
+      fountain: >-
+        The <ansi fg="itemname">fountain</ansi> is a modest concrete basin with a
+        trickle of water running from a pipe in the center. The water is clear but the
+        bottom is paved with pennies -- wishes from years of students hoping for good
+        grades, first kisses, and snow days that never come in San Francisco. A few
+        nickels suggest someone wished extra hard.
+    idle:
+      - A gust of wind sweeps through the courtyard and sends a napkin spiraling into the air.
+      - Two kids sit under the tree, sharing earbuds and nodding along to the same song.
+      - A squirrel runs along the top of the courtyard wall, pauses, and judges everyone below.
+      - Someone tosses a penny into the fountain and closes their eyes for a moment.
+      - The wind carries the muffled sound of a bell ringing inside the school.
+
+  # ── BEHIND THE BLEACHERS ───────────────────────────────────────────
+  - id: 117
+    title: "Behind the Bleachers"
+    desc: >-
+      The narrow space behind the folded-up bleachers is dim, dusty, and exactly the kind
+      of place where things happen that teachers pretend don't happen. Old gym mats are
+      stacked against the wall, and the floor is littered with forgotten water bottles and
+      the occasional lost earring. The metal framework of the bleachers looms overhead like
+      a cage, and the sounds from the gym are muffled to a distant, dreamlike echo. The air
+      feels heavier here, thick with dust motes and an anxious energy that makes your chest
+      tight. Nervous whispers seem to come from everywhere and nowhere, and the shadows
+      between the bleacher supports twist in ways that don't match the dim light.
+    biome: city
+    symbol: "?"
+    legend: Bleachers
+    exits:
+      south: 107
+    spawns:
+      - {mob: 14, rate: "5 real minutes", msg: "An <ansi fg=\"mobname\">anxiety spiral</ansi> manifests from the nervous energy behind the bleachers, spinning into form."}
+    nouns:
+      mats: >-
+        The old gym <ansi fg="itemname">mats</ansi> are stacked haphazardly against the
+        wall, their blue vinyl cracked and peeling. They smell like sweat and rubber
+        and every awkward gymnastics unit since the school opened. Something skitters
+        behind them when you look away.
+      bottles: >-
+        Lost <ansi fg="itemname">water bottles</ansi> are scattered across the floor like
+        the aftermath of a very hydrated battle. Most are empty. A few have names written
+        on them in Sharpie -- "TYLER," "MADISON K. (NOT MADISON R.)," and one that just
+        says "HELP."
+    idle:
+      - A nervous whisper echoes between the bleacher supports, too faint to understand.
+      - The distant thud of a basketball hitting the gym floor sounds strangely ominous from back here.
+      - Dust motes drift through a thin shaft of light, spinning in slow, anxious circles.
+      - The metal bleacher frame creaks and groans, settling with a sound like a deep breath.
+      - Your own heartbeat seems louder back here, thudding in your ears for no good reason.
+
+  # ── SCHOOL ROOF ACCESS ─────────────────────────────────────────────
+  - id: 118
+    title: "School Roof Access"
+    desc: >-
+      A concrete stairwell leads up from the courtyard to a heavy metal
+      <ansi fg="itemname">door</ansi> marked "ROOF ACCESS -- AUTHORIZED PERSONNEL ONLY."
+      The <ansi fg="itemname">stairs</ansi> are bare and utilitarian, the kind of space
+      that exists purely to connect point A to point B with zero architectural ambition.
+      Graffiti tags dot the walls, layered over years of paint, and the air gets cooler
+      as you climb. Through a narrow window on the landing, you can see a sliver of
+      <ansi fg="itemname">sky</ansi> and the tops of buildings stretching toward the bay.
+      The door at the top is propped open with a brick -- someone has been up here
+      recently. Beyond it, you can hear the wind and the distant hum of the city. It
+      feels like standing at the edge of something.
+    biome: city
+    symbol: R
+    legend: Roof
+    exits:
+      north: 116
+      up: {roomid: 118, secret: true}
+    nouns:
+      stairs: >-
+        The <ansi fg="itemname">stairs</ansi> are poured concrete with metal railings,
+        echoing with every footstep. Someone has drawn an arrow on each landing pointing
+        up, like breadcrumbs for anyone brave enough to follow them. The steps are
+        chipped at the edges and the railing is cold to the touch.
+      door: >-
+        The metal <ansi fg="itemname">door</ansi> at the top of the stairs is heavy-gauge
+        steel with a push bar, the kind designed to keep people out. The "AUTHORIZED
+        PERSONNEL ONLY" sign is official, but the brick propping it open suggests the
+        rules are flexible. Through the gap, you can see open sky and feel the wind
+        pulling at you.
+      sky: >-
+        Through the narrow window, the <ansi fg="itemname">sky</ansi> opens up into the
+        wide, foggy expanse above San Francisco. You can see the tops of nearby buildings,
+        a water tower on a distant roof, and the gray-white layer of marine fog rolling
+        in from the coast. From up here, school feels very small and the world feels
+        very big.
+    idle:
+      - Wind howls down the stairwell, rattling the metal door at the top.
+      - Your footsteps echo off the concrete walls with a hollow, lonely sound.
+      - A pigeon coos from somewhere above, its voice amplified by the stairwell acoustics.
+      - The door at the top creaks open another inch and you catch a glimpse of open sky.
+
+  # ── JANITOR'S CLOSET ───────────────────────────────────────────────
+  - id: 119
+    title: "Janitor's Closet"
+    desc: >-
+      A tiny, cramped closet crammed with <ansi fg="itemname">mops</ansi>, a wheeled
+      <ansi fg="itemname">bucket</ansi>, and enough cleaning supplies to sterilize a
+      small hospital. Shelves on both walls hold bottles of industrial cleaner, rolls
+      of paper towels, and a box of rubber gloves. The single bulb overhead casts a
+      harsh yellow light that makes everything look slightly jaundiced. The space smells
+      aggressively of pine cleaner and lemon floor polish. But there's something else
+      in here -- in the back wall, partially hidden behind a mop rack, there's a
+      <ansi fg="itemname">crack</ansi> in the plaster that shouldn't be there. It's
+      too straight, too deliberate, and if you press your eye to it, you can see a faint
+      prismatic light pulsing on the other side. The air near the crack hums with a
+      frequency you feel in your teeth more than your ears.
+    biome: city
+    symbol: J
+    legend: Janitor
+    exits:
+      west: 112
+      crack in wall: {roomid: 300, secret: true}
+    nouns:
+      mops: >-
+        The <ansi fg="itemname">mops</ansi> are the industrial string variety, well-used
+        and slightly damp. They lean against the wall in a cluster, their handles
+        crossing like a tiny forest of cleaning implements. One of them has a strip of
+        duct tape around the handle with "CARL'S -- DO NOT TOUCH" written on it.
+      bucket: >-
+        The wheeled <ansi fg="itemname">bucket</ansi> is bright yellow with a wringer
+        attachment and a permanent ring of gray water at the bottom. It's the kind of
+        bucket that has mopped every hallway in this school a thousand times. One wheel
+        squeaks. It always squeaks.
+      crack: >-
+        The <ansi fg="itemname">crack</ansi> in the back wall runs from about knee height
+        to just above your head, perfectly straight and slightly wider than a finger.
+        Pressing close, you can feel warm air flowing through it, and the faint prismatic
+        light on the other side shifts through colors that don't quite match anything in
+        the visible spectrum. It smells like ozone and old memories. This isn't a crack
+        in a wall -- it's a crack in something else entirely.
+    idle:
+      - The crack in the wall pulses with a faint, shifting light -- gold, blue, purple.
+      - A mop handle slides against the wall and clatters to the floor.
+      - The air near the back wall hums at a frequency just below hearing, making your skin prickle.
+      - A cleaning supply bottle rattles on its shelf as something vibrates behind the wall.
+      - For just a moment, you hear distant music through the crack -- a melody that feels like a memory you can't quite place.

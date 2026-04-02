@@ -1,0 +1,23 @@
+mobid: 50
+zone: The Subconscious
+itemdropchance: 20
+hostile: true
+nocorpse: true
+deathmessage: '{name} curls its legs inward and dissolves into a puff of cold dread.'
+maxwander: 4
+activitylevel: 20
+groups:
+- fear
+character:
+  name: fear spider
+  description: A spider the size of a large dog, its body made of crystallized fear that refracts light into sickly, prismatic patterns. Each of its eight legs ends in a needle-thin point that clicks against the ground like tapping fingers. Its web is woven from strands of pure anxiety -- sticky, clinging threads that tighten when you struggle and whisper worst-case scenarios directly into your mind. Its bite doesn't inject venom; it injects dread.
+  level: 14
+  gold: 44
+  raceid: 5
+  stats:
+    strength:
+      training: 14
+    speed:
+      training: 10
+    vitality:
+      training: 18

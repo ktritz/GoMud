@@ -1,0 +1,8 @@
+buffid: 0
+name: Meditating
+description: 'You are meditating, preparing to leave this world.'
+triggerrate: 5 rounds
+triggercount: 1
+flags:
+- cancel-on-action
+- cancel-on-combat

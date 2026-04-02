@@ -1,0 +1,27 @@
+roomid: 16
+zone: Rileys Neighborhood
+title: Sidewalk Crossing
+description: A four-way intersection where two residential streets cross under a blinking yellow traffic light. Faded crosswalk stripes are painted on the asphalt in every direction. To the north, the park's tree line is visible over the rooftops. To the south, a narrow alley dips between the buildings. The busier Oak Street runs east-west here, and the side streets are quieter, shaded by old trees. A fire hydrant on the corner has been painted to look like a little person by someone with more enthusiasm than skill.
+mapsymbol: +
+maplegend: Crossing
+biome: city
+exits:
+  north:
+    roomid: 10
+  south:
+    roomid: 13
+  east:
+    roomid: 18
+  path:
+    roomid: 9
+nouns:
+  hydrant: The <ansi fg="itemname">fire hydrant</ansi> has been painted to look like a tiny firefighter, complete with a yellow helmet on the top cap and little arms on the side nozzles. The face is a bit lopsided. It's actually kind of charming.
+idlemessages:
+- The traffic light blinks yellow, then yellow, then yellow.
+- A car stops at the intersection, waits for no one, then drives through.
+- Someone walks their dog across the crosswalk. The dog stops to sniff the fire hydrant.
+- A skateboarder rolls through the intersection without slowing down.
+spawninfo:
+- mobid: 1
+  message: A thought worm oozes up through a crack in the crosswalk.
+  respawnrate: 3 real minutes

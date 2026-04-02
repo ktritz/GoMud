@@ -1,0 +1,9 @@
+itemid: 20057
+name: abstract ward
+namesimple: ward
+description: 'A small buckler that exists in a state of quantum uncertainty. It blocks
+  attacks that shouldn''t be blockable.'
+type: offhand
+subtype: wearable
+damagereduction: 5
+value: 200

@@ -1,0 +1,6 @@
+name: Imagination Land
+roomid: 400
+autoscale:
+  minimum: 6
+  maximum: 9
+defaultbiome: land

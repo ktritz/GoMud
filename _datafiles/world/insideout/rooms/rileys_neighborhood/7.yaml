@@ -1,0 +1,26 @@
+roomid: 7
+zone: Rileys Neighborhood
+title: Park Entrance
+description: A wrought-iron gate marks the entrance to Andersen Heights Park. The gate is always open -- the latch broke years ago and nobody bothered fixing it. Old oak trees tower on either side, their branches reaching across to form a natural archway. A wooden sign reads "Andersen Heights Park - Est. 1952" in carved letters. The path splits ahead, leading north toward the playground and east toward the community garden. You can hear kids and the squeak of swing chains from deeper inside.
+mapsymbol: G
+maplegend: Gate
+biome: city
+exits:
+  south:
+    roomid: 6
+  north:
+    roomid: 8
+  east:
+    roomid: 19
+nouns:
+  gate: The <ansi fg="itemname">wrought-iron gate</ansi> is old and decorative, with curling metal vines worked into the design. Green paint is flaking off in patches, showing rust underneath. The latch hangs loose -- you could swing the gate back and forth if you wanted to, but it would make a terrible screech.
+  trees: The <ansi fg="itemname">oak trees</ansi> flanking the entrance are massive, with trunks wider than you could wrap your arms around. Their roots have buckled the path in places. Someone has hung a birdhouse in one of them, and it actually seems to be occupied.
+idlemessages:
+- A squirrel darts across the path and scrambles up one of the oak trees.
+- The gate creaks faintly as a breeze pushes it an inch or two.
+- Faint laughter and the sound of kids playing drift from deeper in the park.
+- A pigeon struts along the top of the gate like it's on patrol.
+spawninfo:
+- mobid: 1
+  message: A thought worm wriggles out from under the park gate.
+  respawnrate: 4 real minutes

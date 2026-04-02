@@ -1,0 +1,28 @@
+roomid: 512
+zone: Dream Productions
+title: Nightmare Wing
+description: 'The lighting shifts from theatrical to genuinely unsettling as you cross into the Nightmare Wing. The walls are darker here, a deep bruised purple, and the set pieces are built to disturb rather than entertain. Cages hold writhing shadow props. A corridor of doors opens onto scenes from Riley''s worst fears -- the empty school hallway, the unfamiliar city, the void where the floor should be. The air is colder and carries a faint electrical charge, like the moment before a bad dream goes really bad. Warning signs are posted everywhere: "AUTHORIZED NIGHTMARE PERSONNEL ONLY." The ceiling is lost in darkness above, and things move up there that you can hear but can''t see.'
+mapsymbol: N
+maplegend: Nightmare
+biome: dreamset
+exits:
+  south:
+    roomid: 503
+  east:
+    roomid: 513
+nouns:
+  set pieces: The <ansi fg="itemname">set pieces</ansi> are designed to tap into primal fears. A perfectly normal classroom that's somehow wrong in every detail. A hallway that stretches when you walk through it. A phone that rings but produces no sound when you answer. Each one is meticulously crafted to make the dreamer feel exactly the right amount of dread.
+  signs: 'The <ansi fg="itemname">warning signs</ansi> are scattered everywhere. "CAUTION: UNCONTAINED ANXIETY BEYOND THIS POINT." "DO NOT FEED THE NIGHTMARES." "If you hear your name whispered, it''s part of the production. Probably." The signs themselves look slightly wrong -- the letters shift when you''re not looking directly at them.'
+spawninfo:
+- mobid: 41
+  message: A <ansi fg="mobname">dream nightmare</ansi> coalesces from the darkness between set pieces.
+  respawnrate: 3 real minutes
+- mobid: 44
+  message: A <ansi fg="mobname">shadow lurker</ansi> detaches from the ceiling and drops silently to the floor.
+  respawnrate: 5 real minutes
+idlemessages:
+- Something skitters across the ceiling, just out of sight.
+- A door on one of the nightmare sets creaks open on its own, revealing only darkness.
+- The temperature drops a few degrees and your breath fogs briefly in the air.
+- A whisper that sounds almost like your name echoes from somewhere in the wing.
+- The shadows between the set pieces seem to breathe, expanding and contracting slowly.

@@ -1,0 +1,25 @@
+roomid: 420
+zone: Imagination Land
+title: Pirate Ship Deck
+description: An enormous imaginary pirate ship is anchored at the far edge of Imagination Land, its wooden hull creaking and its tattered sails snapping in a wind that smells like salt water and adventure. The deck is a chaos of coiled rope, treasure chests, and cannons made from painted cardboard tubes. A crow's nest at the top of the mast offers views across all of Imagination Land and back toward the distant glow of Long Term Memory. A plank extends over the edge of the world. The Jolly Roger flies overhead, though someone has drawn a smiley face on the skull. The whole ship vibrates with the swashbuckling energy of every pirate story ever told at bedtime, and the crew is not entirely friendly.
+mapsymbol: J
+maplegend: Pirates
+biome: land
+exits:
+  north:
+    roomid: 419
+  west:
+    roomid: 400
+nouns:
+  pirate ship: The <ansi fg="itemname">pirate ship</ansi> is the real deal -- or the imaginary real deal, which in Imagination Land is the same thing. Its hull is scarred from a hundred imaginary sea battles. Its wheel spins freely. Its hold is rumored to contain treasure beyond counting, though the treasure is probably imaginary gold, which spends the same as real gold here.
+  sails: The <ansi fg="itemname">sails</ansi> are tattered in the most dramatic way possible, with just enough holes to look cool without actually affecting sailing performance. Each one is painted with a different insignia -- a skull and crossbones, a treasure map, and one that just says "ARRRR" in enormous letters.
+spawninfo:
+- mobid: 36
+  message: A <ansi fg="mobname">corrupted imaginary friend</ansi> swings down from the rigging, landing on the deck with a hollow thud, button eyes blazing.
+  respawnrate: 5 real minutes
+idlemessages:
+- The ship creaks and sways as an imaginary wave rolls beneath the hull.
+- A cannon made of painted cardboard fires a puff of confetti over the rail.
+- The Jolly Roger snaps in the wind, its smiley-face skull grinning at the sky.
+- Somewhere below deck, something clatters and a voice yells "AVAST!" followed by giggling.
+- The plank extends over the void, daring someone to walk it. There are no takers.

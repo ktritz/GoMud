@@ -1,0 +1,20 @@
+roomid: 305
+zone: Long Term Memory
+title: Green Memory Corridor
+description: A sharp, discerning green light fills this corridor, cast by the disgust memories that line the shelves in neat, almost prissy rows. Unlike the other corridors, these orbs are arranged with unusual precision -- sorted by intensity, subcategory, and what appears to be a personal rating system using tiny sticker labels. The green light has an acerbic quality, making everything look slightly overexposed and unforgiving. The air smells faintly of broccoli and moral superiority. A passage continues south toward the Mind Worker Break Room.
+mapsymbol: G
+maplegend: Green
+biome: mindscape
+exits:
+  north:
+    roomid: 304
+  south:
+    roomid: 309
+nouns:
+  disgust memories: The <ansi fg="itemname">disgust memories</ansi> are meticulously catalogued. One captures the moment of biting into something unexpectedly slimy. Another shows a fashion choice so bad it apparently warranted its own containment bracket. The sticker rating system goes from one to five green faces, with five being "Absolutely Not."
+idlemessages:
+- A green orb flashes and you catch a brief whiff of something deeply unappetizing.
+- The sticker labels on the shelves flutter as if a disapproving breeze just passed through.
+- You notice an orb labeled with five green faces sitting in its own quarantine bracket.
+- The corridor's green light makes your skin look slightly sickly, which somehow feels intentional.
+- A faint "ugh" echoes from somewhere in the shelves, though there is nobody else here.

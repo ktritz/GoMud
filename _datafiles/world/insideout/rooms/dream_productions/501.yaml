@@ -1,0 +1,28 @@
+roomid: 501
+zone: Dream Productions
+title: The Backlot
+description: A sprawling open-air lot stretches in every direction, cluttered with half-built sets and towering facades that lead to absolutely nothing behind them. A fake mountain range made of painted plywood leans against a tropical beach backdrop, and a medieval castle front sits next to a cardboard spaceship. Rolling equipment carts loaded with props and lighting rigs crowd the pathways between soundstages. The ground is a mess of cables, tape marks, and chalk outlines where actors are supposed to stand. Everything has that peculiar dream logic to it -- a door opens onto a wall, a staircase leads sideways, and nobody finds any of it unusual.
+mapsymbol: B
+maplegend: Backlot
+biome: dreamset
+exits:
+  south:
+    roomid: 500
+  north:
+    roomid: 502
+  east:
+    roomid: 505
+  west:
+    roomid: 506
+  up:
+    roomid: 515
+    secret: true
+nouns:
+  sets: The <ansi fg="itemname">sets</ansi> are a magnificent mess of recycled dream material. A school hallway facade has lockers that open into a forest. A kitchen set has a fridge full of rubber chickens. One set is just labeled "THAT DREAM WHERE YOU'RE LATE FOR SOMETHING" and it's suspiciously well-worn.
+  carts: 'The <ansi fg="itemname">equipment carts</ansi> are loaded with dream-making gear: fog machines, emotion-tinted lights, bottles labeled "FALLING SENSATION," and a box of rubber teeth marked "FOR THE TEETH DREAM -- HANDLE WITH CARE."'
+idlemessages:
+- A set piece topples over with a dramatic crash, then quietly stands itself back up.
+- A crew member in a beret rushes past carrying an armful of fake clouds.
+- The lighting shifts from golden hour to moonlight and back in the span of a few seconds.
+- Someone yells "CUT!" from one of the soundstages, followed by muffled arguing.
+- A cardboard tree falls over, revealing another cardboard tree behind it.

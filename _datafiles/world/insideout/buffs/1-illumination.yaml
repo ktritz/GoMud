@@ -1,0 +1,7 @@
+buffid: 1
+name: Illumination
+description: 'A soft light surrounds you, pushing back the darkness.'
+triggerrate: 5 real minutes
+triggercount: 1
+flags:
+- lightsource

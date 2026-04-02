@@ -1,0 +1,14 @@
+itemid: 10013
+name: emotion amplifier wand
+namesimple: wand
+description: 'A slender wand topped with a multi-colored gemstone that resonates with
+  emotional energy. It amplifies the wielder''s feelings into raw magical force.'
+type: weapon
+hands: 1
+subtype: bludgeoning
+uses: 0
+damage:
+  diceroll: 1d6+2
+statmods:
+  mysticism: 5
+value: 200

@@ -1,0 +1,25 @@
+roomid: 810
+zone: Memory Dump
+title: Colorless Expanse
+description: All color has been drained from this section of the dump, leaving a landscape of absolute gray that extends in every direction without feature or variation. The memory orbs here have been forgotten so completely that even their emotional residue is gone -- no gold, no blue, no red, no green, no purple. Just gray. The light has no apparent source and casts no shadows, creating a flat, dimensionless space that plays tricks on your sense of depth and distance. The ground is indistinguishable from the sky, and the sky is indistinguishable from the ground, and you are somewhere in the middle of an emptiness that is so complete it becomes its own kind of presence. This is what total forgetting looks like.
+mapsymbol: ' '
+maplegend: Expanse
+biome: dungeon
+exits:
+  south:
+    roomid: 809
+  north:
+    roomid: 811
+nouns:
+  gray: The <ansi fg="itemname">gray</ansi> is not a color here -- it is the absence of color so thorough it has become a substance. It coats everything, replaces everything, is everything. There is no warm gray or cool gray or light gray or dark gray. There is just gray. The single, final, irreducible gray that remains when everything else has been forgotten.
+  ground: The <ansi fg="itemname">ground</ansi> is indistinguishable from the environment above and around it. You know it is the ground because you are standing on it, but if you look straight down, there is no horizon line, no color shift, no texture change to confirm it. You are standing on the concept of ground, and the concept is thinning.
+spawninfo:
+- mobid: 55
+  message: A <ansi fg="mobname">memory wraith</ansi> materializes from the colorless void, a stitched-together shape of half-forgotten faces and empty names.
+  respawnrate: 5 real minutes
+idlemessages:
+- The gray shifts imperceptibly and you are not certain you moved or the world moved.
+- A shape in the distance might be something or might be nothing. By the time you decide, it is gone.
+- Your own hands look gray and indistinct, as if the colorlessness is seeping into you.
+- The flatness of the space makes you feel simultaneously very large and impossibly small.
+- Sound dies the instant it leaves your mouth, swallowed by the gray before it reaches the ground.

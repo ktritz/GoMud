@@ -1,0 +1,11 @@
+itemid: 20051
+name: memory handler gloves
+namesimple: gloves
+description: Special gloves worn by Mind Workers when handling delicate memories.
+  They tingle with residual emotional energy.
+type: gloves
+subtype: wearable
+damagereduction: 3
+statmods:
+  perception: 2
+value: 120

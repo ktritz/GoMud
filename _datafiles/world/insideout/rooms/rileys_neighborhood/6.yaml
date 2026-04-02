@@ -1,0 +1,34 @@
+roomid: 6
+zone: Rileys Neighborhood
+title: Andersen Sidewalk
+description: A tree-lined residential sidewalk stretches east toward the busier streets. The concrete is cracked in places where old tree roots have pushed through, and someone has drawn a hopscotch grid in faded chalk. A row of mailboxes stands at attention along the curb, some with little red flags up. A neighbor's orange tabby cat sits in a sunny patch of sidewalk, watching you with supreme disinterest.
+mapsymbol: '='
+maplegend: Sidewalk
+biome: city
+exits:
+  west:
+    roomid: 1
+  east:
+    roomid: 15
+  north:
+    roomid: 7
+  south:
+    roomid: 10
+nouns:
+  tree: Mature trees arch over the sidewalk, their branches forming a leafy canopy that filters the light into shifting green patterns on the pavement. A few have initials carved into them. One has a knothole that looks suspiciously like a face.
+  mailboxes: The <ansi fg="itemname">mailboxes</ansi> are a mismatched collection -- one plain black, one painted to look like a little barn, and one with a "NO JUNK MAIL" sticker that clearly isn't working because junk mail is sticking out of it.
+  cat: The <ansi fg="itemname">tabby cat</ansi> is a big, well-fed orange tom with a torn ear and a collar that says "Mr. Briggs." He looks at you like he owns the entire block, which, to be fair, he probably thinks he does.
+idlemessages:
+- The orange cat stretches languidly and resettles in its sunny spot.
+- A mail carrier rounds the corner, bag slung over one shoulder, headphones in.
+- A kid on a scooter zips past on the other side of the street.
+- A sprinkler starts up in someone's front yard with a tch-tch-tch-tch sound.
+- Mr. Briggs the cat yawns, showing every single one of his teeth.
+
+spawninfo:
+- mobid: 1
+  message: A <ansi fg="mobname">thought worm</ansi> wriggles out of nowhere.
+  respawnrate: 2 real minutes
+- mobid: 1
+  message: Another <ansi fg="mobname">thought worm</ansi> squirms into view.
+  respawnrate: 3 real minutes

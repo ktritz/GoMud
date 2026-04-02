@@ -1,0 +1,23 @@
+raceid: 20
+name: orb
+description: 'A small, floating orb of light. It hums softly.'
+defaultalignment: 0
+size: small
+unarmedname: zap
+tnlscale: 1
+selectable: false
+knowsfirstaid: false
+tameable: false
+damage:
+  diceroll: 1d1
+disabledslots:
+- weapon
+- offhand
+- head
+- neck
+- body
+- belt
+- gloves
+- ring
+- legs
+- feet

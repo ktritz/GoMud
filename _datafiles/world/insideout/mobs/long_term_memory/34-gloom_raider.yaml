@@ -1,0 +1,29 @@
+mobid: 34
+zone: Long Term Memory
+itemdropchance: 20
+hostile: true
+nocorpse: true
+deathmessage: '{name} howls and dissolves into a smear of shadow.'
+maxwander: 4
+activitylevel: 20
+groups:
+- fear
+idlecommands:
+- emote drifts silently between the shelves, trailing wisps of dark mist.
+- emote passes a row of memory orbs, and their colors briefly drain to gray.
+- ''
+angrycommands:
+- emote pulses with dark blue energy.
+character:
+  name: gloom raider
+  description: A shadowy creature that feeds on sadness, hovering low to the ground on wisps of dark mist. It is surrounded by a dim blue aura that pulses like a slow, sorrowful heartbeat. Where it passes, happy memories temporarily turn gray, their colors draining until it drifts away. Its form is vaguely humanoid but indistinct, as if grief itself decided to get up and walk around.
+  level: 7
+  gold: 23
+  raceid: 5
+  stats:
+    strength:
+      training: 4
+    speed:
+      training: 2
+    vitality:
+      training: 5

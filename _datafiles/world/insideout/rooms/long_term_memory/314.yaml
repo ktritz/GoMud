@@ -1,0 +1,27 @@
+roomid: 314
+zone: Long Term Memory
+title: Deep Memory Shelf
+description: The shelves close in tight and the light drops to a dim, uncertain glow as you push deeper into Long Term Memory. The orbs here are old, many of them partially faded, their scenes playing in slow, dreamlike loops that skip and repeat. The air is cold and damp, and dark patches on the shelves mark places where orbs have already crumbled away. Strange scratch marks score the shelf frames, as if something has been clawing at the structure. A low, guttural sound echoes from somewhere in the darkness ahead -- something that lives down here and feeds on what is left behind.
+mapsymbol: X
+maplegend: Deep
+biome: mindscape
+exits:
+  north:
+    roomid: 313
+  south:
+    roomid: 315
+nouns:
+  scratch marks: The <ansi fg="itemname">scratch marks</ansi> are deep gouges in the dark shelf material, made by something with claws. They are concentrated around the darker, more faded orbs, as if whatever made them was trying to pry the last light from dying memories. Some of the scratches are fresh.
+spawninfo:
+- mobid: 34
+  message: A <ansi fg="mobname">gloom raider</ansi> slinks out from the deep shadows between the shelves, its dark form barely visible.
+  respawnrate: 5 real minutes
+- mobid: 35
+  message: A <ansi fg="mobname">fading memory</ansi> peels away from a darkened orb and drifts into the corridor, formless and searching.
+  respawnrate: 6 real minutes
+idlemessages:
+- A faded orb sputters and something in the darkness shifts toward it.
+- The scratch marks on a nearby shelf glisten with a faint, oily residue.
+- A low growl reverberates through the shelves, too deep to pinpoint.
+- Cold air rolls across the floor in a slow wave, carrying the smell of decay.
+- An orb cracks with a sharp snap and its feeble light is snuffed out instantly.

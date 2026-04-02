@@ -323,11 +323,7 @@ func (g *GMCPCharModule) buildAndSendGMCPPayload(e events.Event) events.Listener
 
 			payload, moduleName := g.GetCharNode(user, requestedId)
 
-			events.AddToQueue(GMCPOut{
-				UserId:  evt.UserId,
-				Module:  moduleName,
-				Payload: payload,
-			})
+			gmcpModule.queueGMCPEvent(evt.UserId, moduleName, payload)
 
 		}
 

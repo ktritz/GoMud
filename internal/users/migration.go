@@ -28,7 +28,7 @@ func DoFilenameMigrationV1() error {
 
 	var errorResult error = nil
 
-	SearchOfflineUsers(func(u *UserRecord) bool {
+	if err := SearchOfflineUsers(func(u *UserRecord) bool {
 
 		oldUserPath := util.FilePath(string(configs.GetFilePathsConfig().DataFiles), `/`, `users`, `/`, strings.ToLower(u.Username)+`.yaml`)
 		newUserPath := util.FilePath(string(configs.GetFilePathsConfig().DataFiles), `/`, `users`, `/`, strconv.Itoa(u.UserId)+`.yaml`)
@@ -75,7 +75,9 @@ func DoFilenameMigrationV1() error {
 		}
 
 		return true
-	})
+	}); err != nil && errorResult == nil {
+		errorResult = err
+	}
 
 	return errorResult
 }

@@ -1,0 +1,11 @@
+itemid: 20061
+name: hockey pants
+namesimple: pants
+description: Heavy padded hockey breezers with built-in hip and thigh guards. Not exactly a fashion statement, but Riley never cared about that on the ice.
+type: legs
+subtype: wearable
+uses: 0
+damage:
+  diceroll: 0d0
+defense: 2
+value: 35

@@ -1,0 +1,18 @@
+mobid: 11
+zone: School
+hostile: false
+maxwander: 0
+activitylevel: 20
+groups:
+- school-npc
+idlecommands:
+- emote reviews a thick stack of documents, frowning slightly.
+- emote adjusts his tie with practiced precision.
+- emote surveys the hallway with a look that could silence a cafeteria.
+- ''
+- ''
+character:
+  name: principal
+  description: The school principal is a tall, broad-shouldered man in a pressed suit who carries himself with the quiet authority of someone who has heard every excuse in the book. His expression defaults to stern, but there is a fairness in his eyes that students eventually come to respect, even if they never quite stop being nervous around him.
+  level: 20
+  raceid: 1

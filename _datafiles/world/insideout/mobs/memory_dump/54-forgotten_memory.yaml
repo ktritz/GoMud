@@ -1,0 +1,23 @@
+mobid: 54
+zone: Memory Dump
+itemdropchance: 20
+hostile: true
+nocorpse: true
+deathmessage: '{name} crumbles into gray dust and drifts away on a wind that is not there.'
+maxwander: 4
+activitylevel: 20
+groups:
+- forgotten
+character:
+  name: forgotten memory
+  description: A faded humanoid figure that barely exists anymore. Its outline wavers like a reflection in disturbed water, features smudged beyond recognition -- was it someone you knew? Something you did? The details have been eaten away by time and neglect until only the faintest impression remains. It reaches toward you with translucent hands, grasping at anything solid, desperately trying to be remembered by something, anything, before it dissolves entirely.
+  level: 17
+  gold: 53
+  raceid: 7
+  stats:
+    strength:
+      training: 20
+    speed:
+      training: 15
+    vitality:
+      training: 25

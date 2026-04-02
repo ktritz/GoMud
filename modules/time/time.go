@@ -39,8 +39,8 @@ func init() {
 	//
 	// Add the embedded filesystem
 	//
-	if err := plug.AttachFileSystem(files); err != nil {
-		panic(err)
+	if plugins.LogInitError("time", plug.AttachFileSystem(files)) {
+		return
 	}
 	//
 	// Register any user/mob commands

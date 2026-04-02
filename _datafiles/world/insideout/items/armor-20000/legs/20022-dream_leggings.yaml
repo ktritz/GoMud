@@ -1,0 +1,9 @@
+itemid: 20022
+name: dream leggings
+namesimple: leggings
+description: 'Flexible leggings from Dream Productions that shimmer with a surreal,
+  dreamlike pattern. Perfect for running through nightmares.'
+type: legs
+subtype: wearable
+damagereduction: 3
+value: 100

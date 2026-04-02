@@ -1,0 +1,24 @@
+mobid: 33
+zone: Long Term Memory
+hostile: false
+maxwander: 0
+activitylevel: 30
+groups:
+- imaginary
+idlecommands:
+- say Who's your friend who likes to play? Bing Bong, Bing Bong!
+- emote wipes a tear from his eye.
+- emote reaches into his bottomless bag and pulls out... nothing. He puts it back.
+- say I sure do miss Riley sometimes.
+- emote hums a little tune to himself.
+- ''
+scripttag: questgiver
+questflags:
+- 2-start
+- 2-collect
+- 2-end
+character:
+  name: bing bong
+  description: Bing Bong is Riley's old imaginary friend -- part cat, part elephant, part dolphin, and made entirely of cotton candy. His body is a soft, faded pink, with a long elephant trunk, delicate cat whiskers, and small dolphin fins sprouting from his back. He carries a bottomless bag slung over one shoulder and wears a tiny bowler hat perched between his mismatched ears. He used to power a rocket wagon with song, soaring through Riley's imagination on adventures that felt bigger than the whole world. Now he lives here in Long Term Memory, wandering the endless shelves and keeping himself busy, though there is a loneliness in his eyes that no amount of cheerfulness can quite hide. He still believes, with every fiber of his cotton candy heart, that Riley will come back for him someday.
+  level: 99
+  raceid: 6

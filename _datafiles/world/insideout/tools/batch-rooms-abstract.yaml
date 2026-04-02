@@ -1,0 +1,629 @@
+zone: abstract_thought
+zone_config:
+  name: "Abstract Thought"
+  roomid: 600
+  autoscale: {minimum: 10, maximum: 14}
+  defaultbiome: abstract
+
+rooms:
+  # ── CHAMBER OF REASON (Stage 0 - Normal) ────────────────────────────
+  - id: 600
+    title: "Chamber of Reason"
+    desc: >-
+      A clean, well-lit antechamber marks the entrance to Abstract Thought.
+      The walls are smooth white stone, the floor is polished marble in a
+      precise checkerboard pattern, and everything is arranged with geometric
+      perfection. A brass <ansi fg="itemname">plaque</ansi> mounted beside the
+      entrance reads "ABSTRACT THOUGHT -- CAUTION: REALITY BECOMES SUBJECTIVE
+      BEYOND THIS POINT." Crystal <ansi fg="itemname">pillars</ansi> stand at
+      each corner, humming with a low vibration that you feel in your teeth.
+      Everything here still makes sense. Everything is still recognizable, solid,
+      and real. Enjoy that while it lasts.
+    biome: abstract
+    symbol: R
+    legend: Reason
+    exits:
+      south: 315
+      north: 601
+    nouns:
+      plaque: >-
+        The <ansi fg="itemname">plaque</ansi> is engraved in precise, no-nonsense
+        lettering. Below the main warning, smaller text reads: "Abstract Thought
+        processes concrete ideas into their purest forms. Side effects may include
+        loss of dimension, involuntary deconstruction, and existential confusion.
+        Proceed at own risk. Management is not responsible for anyone who becomes
+        a line segment."
+      pillars: >-
+        The <ansi fg="itemname">crystal pillars</ansi> are flawless and transparent,
+        each one vibrating at a slightly different frequency. Together they produce a
+        chord that hovers at the edge of hearing -- the sound of structured thought
+        holding itself together. Hairline cracks near the tops suggest that even here,
+        at the entrance, abstraction is trying to creep in.
+    idle:
+      - The crystal pillars hum in harmony, a reassuring chord of pure reason.
+      - The checkerboard floor gleams under the even lighting, every tile perfectly square.
+      - A faint shimmer passes through the air ahead, like heat haze over pavement.
+      - The brass plaque catches the light and the warning text seems to sharpen, as if emphasizing itself.
+      - Something in the next room shifts audibly -- a sound like geometry rearranging.
+
+  # ── THE FACTUAL HALLWAY (Stage 0 - Normal) ──────────────────────────
+  - id: 601
+    title: "The Factual Hallway"
+    desc: >-
+      A long, straight corridor stretches before you, its walls lined with
+      neatly organized <ansi fg="itemname">displays</ansi> of factual information
+      rendered in perfect three-dimensional dioramas. A miniature solar system
+      orbits silently in one alcove. A periodic table glows on the opposite wall,
+      each element represented by a tiny floating cube of the actual substance.
+      The floor is solid, the ceiling is where it should be, and the lighting
+      comes from a logical source. <ansi fg="itemname">Labels</ansi> beneath each
+      display are written in clean, legible text. This is the last place in
+      Abstract Thought where information presents itself in a way that a normal
+      mind would consider "correct." The hallway ahead shimmers slightly, as if
+      reality is starting to loosen.
+    biome: abstract
+    symbol: F
+    legend: Facts
+    exits:
+      south: 600
+      north: 602
+    nouns:
+      displays: >-
+        The <ansi fg="itemname">displays</ansi> are textbook-perfect representations
+        of Riley's stored knowledge. The solar system model has all the planets in the
+        right order, though Pluto is hovering at the edge, unsure if it belongs. A DNA
+        helix rotates slowly in another case. A map of the United States has Minnesota
+        and California highlighted in gold.
+      labels: >-
+        The <ansi fg="itemname">labels</ansi> are crisp and informative. "THE SUN:
+        A star. Approximately 93 million miles away. Hot." "GRAVITY: The reason things
+        fall down. Also the reason Riley can't dunk." Perfectly factual, if occasionally
+        editorial.
+    idle:
+      - The miniature solar system continues its silent orbit, Jupiter's tiny moons trailing behind.
+      - A display flickers and updates itself, adding a new fact Riley learned today.
+      - The hallway ahead warps for a split second, then snaps back to normal. Probably nothing.
+      - The periodic table glows brighter at carbon, as if something organic is thinking nearby.
+      - A label rewrites itself slightly, trading clinical language for something more casual.
+
+  # ── PERSPECTIVE SHIFT ROOM (Stage 1 - Distortion Begins) ────────────
+  - id: 602
+    title: "Perspective Shift Room"
+    desc: >-
+      Something is wrong here, but it takes a moment to figure out what. The
+      room is shaped like a normal room, except the <ansi fg="itemname">angles</ansi>
+      are all slightly off -- corners that should be ninety degrees are eighty-seven
+      or ninety-three instead. The floor tilts differently depending on where you
+      stand. <ansi fg="itemname">Objects</ansi> in the room are recognizable but
+      their proportions have shifted: a chair is slightly too tall, a table is
+      slightly too wide, a door frame leans two degrees to the left. Your own
+      shadow falls in a direction that doesn't match the light source. Everything
+      is still identifiable, but the certainty you had about what things look like
+      has started to slip. This is Stage One: perspective is no longer reliable.
+    biome: abstract
+    symbol: P
+    legend: Perspective
+    exits:
+      south: 601
+      north: 603
+    nouns:
+      angles: >-
+        The <ansi fg="itemname">angles</ansi> of the room refuse to be what they
+        should be. You can see them being wrong -- that corner is definitely not a
+        right angle -- but your brain keeps trying to correct them, filling in the
+        geometry it expects. The effort of maintaining that correction is subtly
+        exhausting, like reading a book where every word is misspelled by one letter.
+      objects: >-
+        The <ansi fg="itemname">objects</ansi> are all real things -- a chair, a
+        table, a lamp -- but their proportions are dreamlike. The chair would fit
+        someone six inches taller than you. The lamp casts light that's slightly
+        the wrong color. The table has five legs. You keep wanting to count them
+        again because five doesn't seem right, but it is.
+    spawns:
+      - {mob: 48, rate: "6 real minutes", msg: "A <ansi fg=\"mobname\">perspective shifter</ansi> flickers into existence, its form constantly changing viewpoint."}
+    idle:
+      - The room tilts two degrees to the left. Or maybe you tilted. Hard to be sure.
+      - Your shadow slides a few inches to the right, independent of your movement.
+      - The chair in the corner grows an inch taller, then settles back. You think.
+      - A straight line on the wall develops a subtle curve that straightens when you look directly at it.
+      - The door frame leans the other direction for a moment, then corrects itself with a soft click.
+
+  # ── TWO-DIMENSIONAL CORRIDOR (Stage 2 - Flattening) ─────────────────
+  - id: 603
+    title: "Two-Dimensional Corridor"
+    desc: >-
+      Depth vanishes. The corridor ahead has flattened into something your eyes
+      struggle to process -- <ansi fg="itemname">walls</ansi> that are perfectly
+      visible but have no thickness, a floor that extends in length and width but
+      has forgotten what height means. Your own body feels thinner, compressed,
+      as if someone is slowly closing a book with you inside it. The colors
+      are still present but they've simplified, reduced to flat fields with
+      hard <ansi fg="itemname">edges</ansi> and no gradient, no shadow, no
+      depth cue. Things that were behind other things are now beside them.
+      Perspective is a memory. This is Stage Two: the third dimension is
+      being politely but firmly removed.
+    biome: abstract
+    symbol: "2"
+    legend: 2D
+    exits:
+      south: 602
+      north: 604
+    nouns:
+      walls: >-
+        The <ansi fg="itemname">walls</ansi> exist in a way that shouldn't work but
+        does. They have color and texture and you can touch them, but they have no
+        thickness. Running your hand along one is like touching a projection -- it's
+        there, you can feel it, but there's no "behind" to it. It's a surface without
+        a solid, a face without a head.
+      edges: >-
+        The <ansi fg="itemname">edges</ansi> between surfaces are razor-sharp, not
+        because they're dangerous but because there's no curve to soften the transition.
+        Every line is perfectly straight, every boundary absolute. The world has become
+        a paper cutout of itself.
+    spawns:
+      - {mob: 46, rate: "5 real minutes", msg: "A <ansi fg=\"mobname\">geometric fragment</ansi> peels off the wall, its flat form rotating impossibly in two dimensions."}
+    idle:
+      - The corridor flattens further for a moment, and you feel your own depth compress slightly.
+      - A color field shifts from blue to red with no transition, no blending -- just an instant change.
+      - The floor ripples like a sheet of paper being shaken, then goes flat and still.
+      - Your shadow disappears entirely. In two dimensions, there's nowhere for it to fall.
+      - Something moves along the wall -- not on it, but in it, like a figure drawn on paper.
+
+  # ── FLATTENED GALLERY (Stage 2) ─────────────────────────────────────
+  - id: 604
+    title: "Flattened Gallery"
+    desc: >-
+      An exhibition space that has been ironed flat by abstraction. What were
+      once three-dimensional sculptures are now <ansi fg="itemname">outlines</ansi>
+      -- perfect contours of their former selves, pressed into the floor and
+      walls like botanical specimens in a book. A statue of Riley exists only
+      as a silhouette. A model of Headquarters is a floor plan with no walls.
+      <ansi fg="itemname">Frames</ansi> hang on the walls but they contain shapes
+      rather than images -- a red square where a portrait used to be, a blue
+      circle where a landscape once hung. You can walk through objects because
+      they're only edges now. The gallery is beautiful in a stark, alien way,
+      like a blueprint of the world with all the detail stripped out.
+    biome: abstract
+    symbol: G
+    legend: Gallery
+    exits:
+      south: 603
+      north: 605
+    nouns:
+      outlines: >-
+        The <ansi fg="itemname">outlines</ansi> are ghostly traces of objects that
+        once had mass. Riley's silhouette is recognizable -- the ponytail, the
+        posture -- but she's only lines now, a contour drawing with nothing inside.
+        If you step into the outline, you feel a faint echo of the form it once held,
+        like a memory of shape.
+      frames: >-
+        The <ansi fg="itemname">frames</ansi> hang at precise intervals, each one
+        containing a single geometric shape where complex art used to be. A landscape
+        of San Francisco has become a series of overlapping triangles. A family portrait
+        is five colored circles of different sizes. The abstraction has reduced
+        everything to its simplest possible representation.
+    spawns:
+      - {mob: 48, rate: "7 real minutes", msg: "A <ansi fg=\"mobname\">perspective shifter</ansi> unfolds from a frame on the wall, stretching between dimensions."}
+    idle:
+      - An outline on the floor shifts, as if the absent sculpture is trying to remember its shape.
+      - A frame rotates on the wall, and the shape inside it simplifies from a triangle to a line.
+      - You walk through what used to be a pillar. It feels like pushing through a curtain of static.
+      - The floor ripples and for an instant you can see the gallery from directly above, then the perspective snaps back.
+      - Colors in the frames shift -- red becomes the idea of red, then returns.
+
+  # ── DECONSTRUCTED HALL (Stage 3 - Breaking Apart) ───────────────────
+  - id: 605
+    title: "Deconstructed Hall"
+    desc: >-
+      The flatness of Stage Two shatters here into Stage Three: deconstruction.
+      Nothing is whole anymore. The <ansi fg="itemname">walls</ansi> have
+      fractured into floating panels that drift slowly apart, revealing glimpses
+      of raw mathematical void between them. The floor is a mosaic of disconnected
+      <ansi fg="itemname">tiles</ansi> suspended at slightly different heights,
+      each one a different texture and color that no longer relates to its neighbors.
+      Objects have separated into their component parts -- a chair is four legs, a
+      seat, and a back, all floating independently with no interest in being a chair
+      anymore. Shapes drift past like debris in zero gravity. The concept of "room"
+      is becoming optional. You are standing in the place where meaning comes apart.
+    biome: abstract
+    symbol: "3"
+    legend: Decon
+    exits:
+      south: 604
+      north: 606
+    nouns:
+      walls: >-
+        The <ansi fg="itemname">walls</ansi> have given up on being walls. Rectangular
+        panels float at odd angles, some still bearing fragments of color or texture --
+        a patch of wallpaper here, a scrap of paint there -- but none of them connect.
+        You can reach between them and feel nothing. The spaces between are not darkness
+        or emptiness; they're the absence of the concept of space itself.
+      tiles: >-
+        The <ansi fg="itemname">tiles</ansi> beneath your feet are each a small island
+        of certainty in an increasingly uncertain room. One is warm wood. The next is
+        cold stone. A third is something that feels like an emotion rather than a
+        material -- stepping on it makes you briefly nostalgic. They hover at different
+        heights and walking across them requires trust that the next one will be there.
+    spawns:
+      - {mob: 45, rate: "5 real minutes", msg: "An <ansi fg=\"mobname\">abstract form</ansi> assembles itself from floating fragments, its shape constantly rearranging."}
+    idle:
+      - A wall panel drifts away from its neighbors, revealing a gap of pure mathematical nothing.
+      - A chair leg floats past at eye level, slowly rotating. The rest of the chair is elsewhere.
+      - The tile beneath your left foot rises an inch. The one under your right drops an inch.
+      - Two fragments of color collide in midair and merge into a new color that doesn't have a name.
+      - The concept of "up" flickers. For a moment, you're not sure which direction it is.
+
+  # ── SCATTERED FRAGMENTS (Stage 3) ───────────────────────────────────
+  - id: 606
+    title: "Scattered Fragments"
+    desc: >-
+      Pieces of what used to be reality float in a slow, silent orbit around
+      nothing in particular. A <ansi fg="itemname">fragment</ansi> of a face
+      drifts past -- just the smile, disconnected from any mouth. A triangle
+      of blue sky hangs in the air next to a rectangle of grass, but they don't
+      connect to form a landscape. <ansi fg="itemname">Sounds</ansi> have
+      deconstructed too: you hear vowels without consonants, rhythms without
+      melody, the emotional weight of music without any actual notes. Gravity
+      is a suggestion that's been politely declined. You can still walk, but
+      only because some part of your mind insists that walking is a thing that
+      makes sense. The fragments are beautiful -- each one a perfect piece of
+      something -- but they refuse to become a whole.
+    biome: abstract
+    symbol: F
+    legend: Fragments
+    exits:
+      south: 605
+      north: 607
+    nouns:
+      fragment: >-
+        The <ansi fg="itemname">fragments</ansi> are hypnotic. One is a piece of
+        laughter -- not the sound, but the shape of it, the curve a mouth makes. Another
+        is the color of a sunset without any sky to hold it. A third is the feeling of
+        déjà vu made visible: a shimmering, recursive loop about the size of your fist.
+        Each fragment was once part of something whole, and each one has forgotten what.
+      sounds: >-
+        The <ansi fg="itemname">sounds</ansi> here exist in pieces. You hear the
+        bass note of a heartbeat without the beat itself. A whisper arrives as pure
+        sibilance, all hiss and no words. Somewhere, the emotional core of a song
+        plays -- you feel it in your chest like longing -- but there's no melody, no
+        lyrics, no instrument. Just the feeling.
+    idle:
+      - A smile fragment drifts past, curving gently in midair like a Cheshire cat's last act.
+      - Two fragments brush against each other and briefly form something recognizable before separating.
+      - A piece of sky rotates slowly, showing clouds from an angle that shouldn't exist.
+      - The sound of a word floats by -- not the word itself, just the feeling of almost understanding it.
+      - Gravity reasserts itself for two seconds, then lets go again with an almost apologetic shrug.
+
+  # ── NON-FIGURATIVE CORE (Stage 4 - Pure Abstraction) ────────────────
+  - id: 607
+    title: "Non-Figurative Core"
+    desc: >-
+      Language fails here. Not because the place is indescribable, but because
+      description requires reference to things, and there are no things here
+      anymore. There are <ansi fg="itemname">shapes</ansi> that are not shapes
+      but the relationships between where shapes would be. There are
+      <ansi fg="itemname">colors</ansi> that exist as pure wavelength, unattached
+      to any surface, visible without being seen. Movement happens without
+      anything moving. Space exists without distance. You are still here, somehow,
+      but "here" is a generous interpretation of a place that has moved beyond
+      the need for places. This is Stage Four: the absolute core of abstraction,
+      where thought is stripped to its barest possible state. It is terrifying
+      and transcendent in equal measure.
+    biome: abstract
+    symbol: "4"
+    legend: Core
+    exits:
+      south: 606
+      north: 608
+    nouns:
+      shapes: >-
+        The <ansi fg="itemname">shapes</ansi> resist examination. Looking at one
+        directly causes it to become something else -- not a different shape, but
+        a different category of existence entirely. A triangle becomes the concept
+        of three-ness. A circle becomes continuity without beginning. A line becomes
+        the idea of direction, pointing everywhere and nowhere. You understand them
+        perfectly for the split second before your brain tries to name them.
+      colors: >-
+        The <ansi fg="itemname">colors</ansi> are unmoored from anything that could
+        be colored. Red floats as pure emotion -- urgency, warmth, anger -- without
+        a surface to sit on. Blue drifts as the feeling of distance and depth. A color
+        you've never seen before and can't remember afterward pulses in the space
+        between the others. It might be the most beautiful thing that doesn't exist.
+    spawns:
+      - {mob: 45, rate: "4 real minutes", msg: "An <ansi fg=\"mobname\">abstract form</ansi> manifests from pure mathematical probability, its existence a theorem proving itself."}
+    idle:
+      - A shape that has no name rotates through dimensions you can't count.
+      - Color separates from wavelength for a moment, and you experience hue as a sound.
+      - Something that might be a thought drifts past. It feels like Tuesday.
+      - The space between two points changes without either point moving.
+      - You briefly understand something profound about existence, then immediately forget it.
+
+  # ── THE SHAPE CHAMBER (Boss Area) ───────────────────────────────────
+  - id: 608
+    title: "The Shape Chamber"
+    desc: >-
+      A vast spherical space -- or the idea of a vast spherical space -- opens
+      around you, its boundaries defined not by walls but by the limit of how
+      far thought can extend before it curves back on itself. At the center
+      floats a roiling <ansi fg="itemname">mass</ansi> of pure geometric chaos:
+      shapes colliding, merging, splitting, and reforming in patterns that are
+      almost recognizable but never quite resolve into anything you could name.
+      <ansi fg="itemname">Equations</ansi> burn in the air around the mass like
+      orbital satellites, each one describing an impossible relationship between
+      concepts that were never meant to meet. The air -- if it is air -- vibrates
+      at a frequency that makes your thoughts feel heavy. Something very old and
+      very abstract lives at the heart of this chamber, and it has noticed you.
+    biome: abstract
+    symbol: "!"
+    legend: Boss
+    exits:
+      south: 607
+      north: 609
+    nouns:
+      mass: >-
+        The <ansi fg="itemname">mass</ansi> at the center of the chamber is
+        hypnotic and horrifying. It cycles through every geometric form in
+        rapid succession -- cube, sphere, tetrahedron, hypercube, things that
+        have no name in three-dimensional language -- never settling, always
+        becoming. Staring at it too long causes your own thoughts to start
+        simplifying, as if the abstraction is contagious.
+      equations: >-
+        The <ansi fg="itemname">equations</ansi> orbit the central mass like a
+        protective shell of pure mathematics. Most of them are beyond comprehension,
+        relating variables that represent emotions to constants that represent physical
+        laws. One equation seems to solve for the exact weight of a memory. Another
+        calculates the half-life of a forgotten name.
+    spawns:
+      - {mob: 47, rate: "10 real minutes", msg: "The central mass shudders and a <ansi fg=\"mobname\">non-figurative horror</ansi> tears itself free, screaming in frequencies that bypass your ears entirely."}
+    idle:
+      - The central mass pulses and a shockwave of pure concept ripples outward through the chamber.
+      - An equation in the air solves itself, and the answer is a color that makes you feel homesick.
+      - The chamber contracts slightly, as if the idea of space is reconsidering its boundaries.
+      - A shape breaks free from the mass, drifts a few feet, and is pulled back in.
+      - Your thoughts echo back to you slightly altered, as if the chamber is editing them.
+
+  # ── LINE SEGMENT PASSAGE ────────────────────────────────────────────
+  - id: 609
+    title: "Line Segment Passage"
+    desc: >-
+      Beyond the Shape Chamber, abstraction has reached its most minimal state.
+      This passage consists of <ansi fg="itemname">lines</ansi> -- nothing more.
+      Parallel lines define a path forward. Perpendicular lines suggest walls.
+      A single diagonal line overhead implies a ceiling. There is no color, no
+      texture, no mass -- only geometry in its most reduced form, the skeleton
+      of a corridor with all the flesh removed. You move along the lines because
+      they suggest movement, and your mind fills in everything else: the sense
+      of floor, the feeling of enclosure, the impression of direction. The
+      <ansi fg="itemname">intersections</ansi> where lines cross glow faintly,
+      the only points of emphasis in this wireframe world.
+    biome: abstract
+    symbol: "-"
+    legend: Lines
+    exits:
+      south: 608
+      north: 610
+    nouns:
+      lines: >-
+        The <ansi fg="itemname">lines</ansi> are pure geometry -- one-dimensional
+        objects extended through space. They have position and direction but no
+        width, no depth, no color. Your mind paints them white against black out
+        of habit, but they're neither. They are simply the concept of "between
+        two points" made as real as a concept can get.
+      intersections: >-
+        The <ansi fg="itemname">intersections</ansi> glow where lines cross,
+        creating vertices of faint light. Each one is a decision point in the
+        most literal sense -- a place where directions meet and choices are made.
+        Standing at one, you can feel the pull of every direction the lines extend.
+    idle:
+      - A line extends a few inches further, then retracts, as if testing a boundary.
+      - An intersection brightens and dims in a slow pulse, like a geometric heartbeat.
+      - The parallel lines defining the floor shift a fraction of a degree closer together.
+      - A new line appears, crosses two existing ones, then fades to nothing.
+      - The wireframe world flickers, and for one instant you see a fully rendered corridor before it strips back down.
+
+  # ── THE DOT (Singularity) ───────────────────────────────────────────
+  - id: 610
+    title: "The Dot"
+    desc: >-
+      Everything converges here. The lines narrow, the geometry compresses,
+      and all of Abstract Thought collapses down to a single
+      <ansi fg="itemname">point</ansi> of light hovering in absolute void.
+      The Dot is zero-dimensional -- no length, no width, no height -- and
+      yet it contains everything that was removed on the journey here. All
+      the shapes, colors, textures, dimensions, and meaning that abstraction
+      stripped away are compressed into this infinitesimal singularity. It
+      pulses once per second with a light that isn't light, in a space that
+      isn't space. Standing before it feels like standing at the center of
+      every thought Riley has ever had, reduced to its purest, most essential
+      truth: that something exists rather than nothing.
+    biome: abstract
+    symbol: "."
+    legend: Dot
+    exits:
+      south: 609
+      north: 611
+    nouns:
+      point: >-
+        The <ansi fg="itemname">point</ansi> is impossibly small and impossibly
+        significant. Leaning close, you can almost perceive the compressed
+        information within it -- every memory, every dream, every fear and joy
+        and idle thought, all folded down to a single coordinate in the mind.
+        It hums with the fundamental frequency of Riley's consciousness. Touching
+        it would be unwise. Touching it would be everything. You don't touch it.
+    idle:
+      - The Dot pulses, and for a fraction of a second the entire void around you flashes with compressed meaning.
+      - A single thought emerges from the point, expands into full complexity, and collapses back in.
+      - The void around the Dot is not darkness -- it's the complete absence of dimension.
+      - You feel every abstracted thing you've passed through resonating in that single point.
+      - The Dot doesn't move. Everything else does, orbiting it at a distance of zero.
+
+  # ── RECONSTRUCTION PATH (Reality Rebuilds) ──────────────────────────
+  - id: 611
+    title: "Reconstruction Path"
+    desc: >-
+      Reality begins to rebuild. The path forward accretes detail like a painting
+      being finished in fast-forward -- first <ansi fg="itemname">lines</ansi>
+      sketch themselves into existence, then <ansi fg="itemname">surfaces</ansi>
+      fill in between them, then color bleeds into the surfaces like watercolor
+      on wet paper. Dimension returns in stages: a flat path gains height, walls
+      rise up and thicken, the ceiling develops depth instead of being a mere
+      suggestion. Texture creeps back -- rough stone, smooth metal, the grain
+      of wood. By the time you reach the far end of the path, objects have
+      shadows again, light comes from a source, and the relief of existing in
+      three dimensions is almost overwhelming.
+    biome: abstract
+    symbol: "+"
+    legend: Rebuild
+    exits:
+      south: 610
+      north: 612
+    nouns:
+      lines: >-
+        The <ansi fg="itemname">lines</ansi> are the skeleton of reality,
+        sketching themselves into the void like an architect's first draft.
+        They define edges, suggest corners, propose the idea of a room that
+        is slowly voting itself into existence. Watching them appear is like
+        seeing a wireframe render in real-time.
+      surfaces: >-
+        The <ansi fg="itemname">surfaces</ansi> fill in between the lines with
+        visible effort, color spreading like ink on blotting paper. Some surfaces
+        try on several colors before settling. A wall starts as blue, shifts to
+        gray, and finally decides on white. The floor experiments with tile,
+        then wood, then settles on stone with a small satisfied click.
+    idle:
+      - A wall section fills in with color, starting as watercolor wash and solidifying to opaque.
+      - Shadows appear beneath objects that only just acquired enough dimension to cast them.
+      - A sound gains its consonants back, becoming a recognizable word: "almost."
+      - The floor gains texture -- the cold, reliable grit of stone beneath your feet.
+      - Something that was a concept becomes a thing, and the difference is like waking up.
+
+  # ── LOGICAL PARADOX ROOM ────────────────────────────────────────────
+  - id: 612
+    title: "Logical Paradox Room"
+    desc: >-
+      A room that shouldn't work but does. Four <ansi fg="itemname">doors</ansi>
+      lead out, each clearly labeled with a direction, but the directions don't
+      correspond to where they actually go. An Escher-esque <ansi fg="itemname">staircase</ansi>
+      in the center climbs upward and somehow arrives back at its own base.
+      Water flows uphill in a narrow channel along one wall. A clock runs forward
+      and backward simultaneously, its two sets of hands crossing and uncrossing
+      in an endless dance. A sign on the wall reads "THIS STATEMENT IS FALSE"
+      and the letters rearrange themselves every time you read it. The room
+      functions perfectly despite violating every rule it can find. Abstraction's
+      last joke before letting you leave.
+    biome: abstract
+    symbol: "?"
+    legend: Paradox
+    exits:
+      south: 611
+      north: 613
+      west: 603
+    nouns:
+      doors: >-
+        The <ansi fg="itemname">doors</ansi> are clearly labeled but the labels
+        are lies. "North" leads south. "Exit" leads deeper in. One door is labeled
+        "This door does not exist" and yet you can open it. Another is labeled
+        "Entrance" from both sides. The doors work fine; it's the concept of
+        direction that's having an off day.
+      staircase: >-
+        The <ansi fg="itemname">staircase</ansi> is a perfect Penrose construction
+        -- four flights of stairs that each go up and yet form a closed loop that
+        arrives where it started. Walking it is disorienting but not unpleasant.
+        Someone has left a small sign at the base: "Great exercise. Infinite cardio."
+    idle:
+      - The staircase completes another impossible loop, and a small breeze swirls at its base.
+      - The clock's two sets of hands meet, and time pauses for exactly zero seconds.
+      - Water flows uphill, pauses at the top, and flows uphill again from there.
+      - A door opens and closes simultaneously, which is fine if you don't think about it.
+      - The paradox sign rearranges to read "THIS STATEMENT IS TRUE" then back again.
+
+  # ── ABSTRACT OVERLOOK ───────────────────────────────────────────────
+  - id: 613
+    title: "Abstract Overlook"
+    desc: >-
+      A wide <ansi fg="itemname">platform</ansi> extends over the edge of
+      Abstract Thought, offering a panoramic view of Riley's inner mindscape.
+      From this vantage point, you can see the distant glow of Headquarters
+      above and to the north, the warm lights of Dream Productions to the
+      west, and the endless shelves of Long Term Memory stretching south.
+      The <ansi fg="itemname">railing</ansi> is solid here -- fully
+      reconstructed, real, three-dimensional -- and leaning against it feels
+      like returning to shore after being lost at sea. The air is clear, the
+      light is natural, and everything makes sense again. Below the overlook,
+      the abstract zones shimmer like heat haze, their impossible geometries
+      visible but safely distant. A <ansi fg="itemname">telescope</ansi>
+      mounted on a swivel stand lets you survey the landscape.
+    biome: abstract
+    symbol: O
+    legend: Overlook
+    exits:
+      south: 612
+      east: 614
+    nouns:
+      platform: >-
+        The <ansi fg="itemname">platform</ansi> is reassuringly solid. Real stone,
+        real metal, real geometry. After the journey through abstraction, the
+        reliability of a flat surface you can trust is almost moving.
+      railing: >-
+        The <ansi fg="itemname">railing</ansi> is cold iron, bolted firmly to the
+        platform. It has height, width, and depth, and it exists in exactly one
+        location. After the Non-Figurative Core, this is luxury.
+      telescope: >-
+        The <ansi fg="itemname">telescope</ansi> is a brass instrument on a smooth
+        swivel. Through it, you can see Dream Productions' spotlights sweeping, the
+        warm glow of Headquarters' Console Room, and far below, Mind Workers shuffling
+        memory orbs along the shelves. A placard reads "You are here. Everything else
+        is there. Isn't that nice?"
+    idle:
+      - The distant spotlights of Dream Productions sweep across the mindscape like searchlights.
+      - A warm glow from Headquarters pulses once, as if Riley just had a happy thought.
+      - The abstract zones below shimmer, their geometries visible but safely incomprehensible from here.
+      - Through the telescope, you can see a Mind Worker waving, or possibly just shelving an orb.
+      - A breeze carries the faint scent of something real -- grass, or rain, or home.
+
+  # ── ESCAPE CHUTE ────────────────────────────────────────────────────
+  - id: 614
+    title: "Escape Chute"
+    desc: >-
+      A wide, smooth <ansi fg="itemname">chute</ansi> angles steeply downward,
+      its interior walls polished to a mirror finish and lit by strips of calm
+      blue light. A sign above the entrance reads "EMERGENCY EXIT -- RETURNS
+      TO LONG TERM MEMORY. Please keep arms and existential crises inside the
+      chute at all times." The chute is clearly designed as a quick escape route
+      for anyone who has gone too deep into abstraction and needs to get back
+      to concrete reality fast. A rubber <ansi fg="itemname">mat</ansi> at the
+      entrance provides a place to sit before sliding, and a basket of
+      <ansi fg="itemname">helmets</ansi> sits nearby with a note: "Optional
+      but recommended. The landing is mostly soft." The blue lights pulse in
+      a gentle downward pattern, inviting you to let go and slide.
+    biome: abstract
+    symbol: ">"
+    legend: Chute
+    exits:
+      west: 613
+      chute: 315
+    nouns:
+      chute: >-
+        The <ansi fg="itemname">chute</ansi> is a masterwork of mental engineering.
+        Its polished interior is frictionless and the angle is precisely calculated
+        for a ride that's fast enough to be thrilling but controlled enough to be
+        safe. Blue lights line the interior in a steady downward cascade, and the
+        faint scent of ozone gives way to the familiar dusty smell of Long Term
+        Memory as the chute descends. The trip takes about ten seconds and deposits
+        you gently into the memory stacks.
+      mat: >-
+        The <ansi fg="itemname">rubber mat</ansi> is worn smooth from years of
+        abstract refugees sitting down and preparing for the ride back to reality.
+        Several messages are scratched into the rubber: "I was a line segment for
+        ten minutes" and "5 stars, would deconstruct again."
+      helmets: >-
+        The <ansi fg="itemname">helmets</ansi> are colorful and slightly oversized.
+        Each one has "ABSTRACT THOUGHT SURVIVOR" printed on the front and a sticker
+        chart on the back tracking how many trips through the zone the wearer has
+        survived. One helmet has seventeen stickers. That person has seen things.
+    idle:
+      - The blue lights pulse downward in a steady, inviting rhythm.
+      - A faint whoosh echoes up the chute as something -- or someone -- arrives at the bottom.
+      - The helmets rattle in the basket as a breeze from the chute swirls through the room.
+      - A small sign beside the chute flips between "OPEN" and "WHEEE" at regular intervals.
+      - The scent of old books and dust drifts up from the chute -- Long Term Memory, calling you back.

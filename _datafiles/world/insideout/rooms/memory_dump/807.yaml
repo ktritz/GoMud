@@ -1,0 +1,21 @@
+roomid: 807
+zone: Memory Dump
+title: Ancient Memory Fragment
+description: 'A cluster of enormous memory fragments juts from the dust like the ruins of a collapsed building, each one the size of a car and far older than anything else in the dump. These are Riley''s earliest memories -- the ones formed before language, before conscious thought, before she had words for what she was experiencing. The fragments are massive and deeply eroded, their scenes reduced to pure color and sensation: a wash of gold warmth that might be her mother''s arms, a blur of blue cold that could be a first winter, a flash of red that was probably her first cry. They are beautiful and incomprehensible, monuments to a time when every experience was brand new and absolutely overwhelming. Ancient symbols are carved into the fragment surfaces -- Riley''s pre-verbal mind trying to record what it could not yet name.'
+mapsymbol: '#'
+maplegend: Ancient
+biome: dungeon
+exits:
+  south:
+    roomid: 806
+  north:
+    roomid: 808
+nouns:
+  memory fragments: 'The <ansi fg="itemname">memory fragments</ansi> are monolithic, towering over you like standing stones in a forgotten temple. Each one radiates a faint warmth that feels like safety -- the deep, preverbal safety of being held when you are too small to understand anything except that you are loved. The scenes inside them are not scenes at all, just colors and feelings: gold warmth, blue curiosity, green discomfort, purple startle. They are the foundations of everything Riley became.'
+  symbols: The <ansi fg="itemname">symbols</ansi> carved into the fragments are not any language -- they are a baby's attempt to mark experience. Circles that might mean "face." Wavy lines that might mean "sound." A shape like a star that might mean "light" or "love" or both, because at that age they were the same thing.
+idlemessages:
+- A fragment radiates a pulse of gold warmth and you feel a wordless sense of being safe.
+- The symbols on a fragment glow briefly, and you experience a sensation you have no name for -- something from before you had names.
+- Two fragments lean toward each other like ancient trees, their eroded surfaces barely touching.
+- A wash of pure blue feeling emanates from the largest fragment -- the memory of curiosity before you knew what curiosity was.
+- The dust around the fragments is a slightly warmer shade of gray, as if even forgetting has a harder time with memories this deep.

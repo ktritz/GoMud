@@ -1,0 +1,24 @@
+roomid: 407
+zone: Imagination Land
+title: Imaginary Boyfriend Generator
+description: 'A massive, ridiculous machine dominates this clearing, all chrome pipes, blinking lights, and a conveyor belt that feeds into a heart-shaped archway. The machine''s purpose is printed in enormous pink letters on the side: "IMAGINARY BOYFRIEND GENERATOR -- Now With 40% More Emotional Availability." A control panel offers options for height, hair color, and "willingness to share feelings on a scale of 1 to 10 (all options are 10)." The conveyor belt hums and occasionally produces an imaginary boyfriend who steps through the archway, immediately says something supportive, and gazes into the middle distance with perfect cheekbones.'
+mapsymbol: H
+maplegend: Boyfriends
+biome: land
+exits:
+  north:
+    roomid: 406
+  south:
+    roomid: 408
+nouns:
+  machine: 'The <ansi fg="itemname">machine</ansi> is equal parts absurd and impressive. Its inner workings are visible through glass panels -- gears shaped like hearts, pistons that move in the rhythm of a slow dance, and a central furnace that burns with the exact shade of pink you see in a sunset. A warning label reads "CAUTION: Imaginary boyfriends are not real. They will, however, always text back."'
+spawninfo:
+- mobid: 37
+  message: The machine hums to life and an <ansi fg="mobname">imaginary boyfriend</ansi> steps through the heart-shaped archway, hair perfect, smile genuine.
+  respawnrate: 3 real minutes
+idlemessages:
+- An <ansi fg="mobname">imaginary boyfriend</ansi> steps off the conveyor and says "I just think you're really brave."
+- The machine whirs and produces a boyfriend who immediately offers to carry something heavy.
+- '"I wrote you a poem," announces a freshly generated boyfriend. "It''s about your eyes."'
+- An <ansi fg="mobname">imaginary boyfriend</ansi> leans against the machine and says "I cleared my whole schedule. For you."
+- The machine briefly malfunctions and produces two boyfriends who compete to see who can be more supportive.

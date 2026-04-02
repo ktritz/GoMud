@@ -1,0 +1,21 @@
+roomid: 912
+zone: The Back of the Mind
+title: Deep Breath Chamber
+description: After the clinical intensity of the rest of the Back of the Mind, this room is a startling oasis of warmth and softness. The walls are curved and organic, tinted a gentle lavender that pulses slowly in time with a calm, steady breathing rhythm. The floor is cushioned and yielding, and the air is infused with a subtle warmth that loosens the tension in your shoulders the moment you step inside. Soft chimes ring at intervals that seem designed to slow your heart rate. This chamber was built as a counterbalance to the suppression -- a place where even the Back of the Mind acknowledges that you need to feel something, even if it is just peace. Spending time here feels like the first real breath after holding one for too long.
+mapsymbol: +
+maplegend: Breath
+biome: dungeon
+exits:
+  south:
+    roomid: 911
+  north:
+    roomid: 913
+nouns:
+  lavender: The <ansi fg="itemname">lavender</ansi> tint is not paint -- it radiates from the walls themselves, a soft bioluminescence that responds to your presence. When you are tense, it glows warmer. When you start to relax, it brightens gently, as if the room is pleased. The color is the exact shade of a sunset you once saw and felt completely at peace with the world.
+  chimes: The <ansi fg="itemname">chimes</ansi> are small crystalline bells suspended from the ceiling on invisible threads. They ring without being touched, producing a tone that resonates in your chest and makes your breathing slow to match. Each chime is tuned to a slightly different frequency, and together they create a harmony that sounds like someone saying "it is okay to feel."
+idlemessages:
+- The lavender walls pulse gently and you feel your breathing slow to match the rhythm.
+- A chime rings softly and the tension in your shoulders eases a fraction.
+- The air warms briefly, like a hug from someone who knows you need one.
+- The breathing rhythm of the walls stutters for a moment -- then catches and steadies, like someone choosing calm.
+- A faint golden light blooms in the center of the room, the ghost of joy finding its way even here.

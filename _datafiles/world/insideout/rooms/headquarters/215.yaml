@@ -1,0 +1,22 @@
+roomid: 215
+zone: Headquarters
+title: Headquarters Balcony
+description: The open-air balcony extends out from the edge of Headquarters into the vast, dizzying expanse of Riley's mind. A railing is the only thing between you and a drop that seems to go on forever, descending past the towering shelves of Long Term Memory that stretch into the distance like an endless library built by giants. The shelves glow faintly with millions of stored memory orbs, their combined light creating a soft aurora effect in the air below. A narrow stairway carved into the outer wall of Headquarters winds downward, connecting to the memory shelves far below. The wind up here carries fragments of old memories -- a snatch of a lullaby, the smell of cookies baking, the echo of a friend's laugh. It's beautiful and a little terrifying.
+mapsymbol: B
+maplegend: Balcony
+biome: mindscape
+exits:
+  west:
+    roomid: 203
+  stairway:
+    roomid: 300
+nouns:
+  railing: The railing is sturdy but looking over it makes your stomach drop. The distance to the memory shelves below is staggering. A small sign on the railing reads "Please do not drop memories over the edge. We lost a whole month of 3rd grade that way."
+  shelves: The Long Term Memory shelves stretch as far as the eye can see, row after row of towering structures holding millions of memory orbs. Some sections glow brightly -- frequently accessed memories. Other sections are dim and dusty, their contents slowly fading with time.
+  stairway: The narrow stairway winds down the outer wall of Headquarters in a tight spiral, eventually reaching the top level of the Long Term Memory shelves. It's a long way down. Someone has helpfully painted arrows on the steps with notes like "You're almost there!" and "Okay maybe not almost."
+idlemessages:
+- A warm breeze carries the faint smell of a birthday cake from somewhere deep in memory.
+- Far below, a section of memory shelves flickers as an old memory is accessed.
+- The aurora effect from the memory orbs below shifts from blue to gold and back again.
+- A fragment of a song drifts up from the shelves -- Riley's favorite song from when she was eight.
+- The stairway creaks faintly in the wind, but it seems solid enough. Probably.

@@ -1,0 +1,11 @@
+raceid: 8
+name: vermin
+description: Small pests and critters.
+defaultalignment: 0
+size: small
+unarmedname: bite
+tnlscale: 1
+selectable: false
+tameable: false
+damage:
+  diceroll: 1d2

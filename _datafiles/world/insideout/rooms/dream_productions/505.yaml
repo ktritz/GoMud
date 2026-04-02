@@ -1,0 +1,22 @@
+roomid: 505
+zone: Dream Productions
+title: Director's Office
+description: 'A cluttered office sits behind a door with a gold star and the nameplate "DREAM DIRECTOR." The walls are covered in framed dream posters -- past productions with titles like "Flying Over San Francisco III: This Time It''s Turbulent" and "Why Are My Teeth Falling Out: A Thriller." A massive oak desk dominates the center, buried under scripts, storyboards, and a half-eaten sandwich that might be from last week''s dream. A director''s chair sits behind the desk, monogrammed with a tiny sleeping face logo. Awards line a shelf -- golden pillows inscribed with "Best Recurring Dream" and "Most Effective Anxiety Sequence."'
+mapsymbol: D
+maplegend: Director
+biome: dreamset
+exits:
+  west:
+    roomid: 501
+nouns:
+  posters: 'The <ansi fg="itemname">dream posters</ansi> are a highlight reel of Riley''s subconscious cinema. "The Dog Who Could Talk: Director''s Cut" has five stars. "Running In Place: Why Won''t My Legs Work" won Best Nightmare three years running. "Bing Bong: A Retrospective" has a small sticker reading "Staff Pick."'
+  desk: The <ansi fg="itemname">desk</ansi> is organized chaos. Scripts are stacked in piles labeled "TONIGHT," "THIS WEEK," and "WHEN RILEY EATS CHEESE BEFORE BED." A phone with twelve lines sits in the corner -- all of them are blinking. A coffee mug reads "I'd Rather Be Dreaming."
+spawninfo:
+- mobid: 40
+  message: The <ansi fg="mobname">Dream Director</ansi> sweeps in through a side door, already mid-sentence about tonight's lineup.
+  respawnrate: 8 real minutes
+idlemessages:
+- One of the phone lines rings, goes unanswered, and stops. Then a different line rings.
+- A script page slides off the desk and drifts to the floor, face-up on a scene about flying.
+- The golden pillow award on the shelf gleams as if freshly polished by a proud hand.
+- A storyboard pinned to the wall rearranges itself, swapping the second and third acts.

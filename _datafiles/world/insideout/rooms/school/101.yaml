@@ -1,0 +1,35 @@
+roomid: 101
+zone: School
+title: Main Hallway
+description: A long corridor stretches under buzzing fluorescent lights, its linoleum floor scuffed by a decade of sneakers. Rows of dented lockers line both walls in the school's blue and gold colors, most of them decorated with stickers and sharpie doodles from previous owners. A big glass trophy case stands against one wall, displaying dusty trophies, team photos, and a hand-lettered sign that reads "FOGHORN PRIDE." Classroom doors branch off in both directions, and the hallway carries the permanent smell of floor wax and whatever the cafeteria is cooking. This is the central artery of the school -- everything connects through here.
+mapsymbol: H
+maplegend: Hall
+biome: city
+exits:
+  south:
+    roomid: 100
+  east:
+    roomid: 102
+  west:
+    roomid: 103
+  north:
+    roomid: 106
+  northeast:
+    roomid: 111
+  northwest:
+    roomid: 109
+nouns:
+  trophy case: The <ansi fg="itemname">trophy case</ansi> is a shrine to school history. A few dusty track trophies from the nineties share shelf space with a more recent debate team plaque and a framed photo of last year's basketball team. Someone has tucked a rubber duck behind the basketball trophy and nobody has noticed -- or nobody cares enough to remove it.
+  lockers: The <ansi fg="itemname">lockers</ansi> are standard-issue school metal, painted blue and gold but chipped in a hundred places. Most have combination locks on them, some have stickers, and one near the end has a piece of duct tape over it labeled "BROKEN -- DO NOT USE (seriously this time)."
+  lights: The <ansi fg="itemname">fluorescent lights</ansi> hum with that specific pitch that burrows into your skull during sixth period. One of them flickers in a pattern that's either random or Morse code for "help me."
+idlemessages:
+- A kid sprints down the hallway clutching a hall pass like a relay baton.
+- A locker slams shut somewhere and the sound echoes off the linoleum.
+- The PA system crackles with feedback, says something unintelligible, and goes silent.
+- Two kids lean against the lockers, deep in conversation about something on a phone screen.
+- The fluorescent light above you flickers twice and then steadies, as if it changed its mind.
+
+spawninfo:
+- mobid: 17
+  message: A <ansi fg="mobname">school bully</ansi> swaggers in from around the corner.
+  respawnrate: 3 real minutes

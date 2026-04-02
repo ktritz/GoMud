@@ -1,0 +1,16 @@
+roomid: 27
+zone: Rileys Neighborhood
+title: Linen Closet
+description: A narrow closet packed floor to ceiling with towels, sheets, and the kind of household supplies that accumulate over years. The shelves are slightly bowed under the weight. There's a system here that only Mom understands -- beach towels on the left, bath towels in the middle, guest sheets on the right, and a mysterious top shelf of things that haven't been touched since the move from Minnesota. It smells like laundry detergent and cedar sachets.
+mapsymbol: c
+maplegend: Closet
+biome: city
+exits:
+  east:
+    roomid: 24
+nouns:
+  towels: The <ansi fg="itemname">towels</ansi> are folded in that specific way Mom insists on -- thirds, not halves. Some are fluffy and new, others are thin and faded from years of washing. Riley's towel has a hockey team logo on it. There's one beach towel with a cartoon whale that everyone fights over in the summer.
+  shelf: The <ansi fg="itemname">top shelf</ansi> holds boxes that haven't been opened since the move. One is labeled "WINTER STUFF" in Sharpie. Another says "RILEY - BABY CLOTHES (KEEP)." There's also a box with no label that rattles when you bump the shelf. Nobody knows what's in it. Nobody has checked.
+idlemessages:
+- A towel slides off the stack and lands in a heap on the floor.
+- The cedar sachets release a faint woody scent.

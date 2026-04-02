@@ -1,0 +1,15 @@
+itemid: 10012
+name: void shard blade
+namesimple: blade
+description: 'A blade forged from the crystallized darkness of the Memory Dump. It''s
+  heavier than it looks, and the void-black edge seems to drink in the light around
+  it.'
+type: weapon
+hands: 1
+subtype: slashing
+uses: 0
+damage:
+  diceroll: 2d6
+statmods:
+  strength: 2
+value: 500

@@ -1,0 +1,28 @@
+roomid: 116
+zone: School
+title: Courtyard
+description: The school courtyard is a square of open air surrounded by building walls on three sides, with a row of picnic tables scattered across a concrete pad. A single tree grows from a square of dirt in the center, stubbornly alive despite decades of students carving their initials into its bark. A small fountain sits near the far wall, its basin usually half-full of pennies and the occasional homework assignment that blew in on the wind. This is where people come to eat lunch outside, gossip between classes, and have the kind of conversations that feel world-ending at fifteen and irrelevant by sixteen. The bay breeze funnels through the courtyard in unpredictable gusts, scattering napkins and flipping textbook pages.
+mapsymbol: Y
+maplegend: Courtyard
+biome: city
+exits:
+  south:
+    roomid: 106
+  north:
+    roomid: 115
+    lock:
+      difficulty: 15
+  west:
+    roomid: 118
+  east:
+    roomid: 112
+nouns:
+  tree: The <ansi fg="itemname">tree</ansi> is a coast live oak that's been growing here since before the school was built. Its trunk is covered in carved initials, hearts, and at least three class years. The branches spread wide enough to shade two of the picnic tables, and someone has tied a friendship bracelet to one of the lower limbs. It's the unofficial social center of the courtyard.
+  tables: The picnic <ansi fg="itemname">tables</ansi> are weathered wood bolted to the concrete, each one a palimpsest of Sharpie tags, carved names, and sticker residue. Some kids eat lunch here, some do homework, and some just sit in small groups talking about nothing and everything. The table closest to the tree is prime real estate.
+  fountain: The <ansi fg="itemname">fountain</ansi> is a modest concrete basin with a trickle of water running from a pipe in the center. The water is clear but the bottom is paved with pennies -- wishes from years of students hoping for good grades, first kisses, and snow days that never come in San Francisco. A few nickels suggest someone wished extra hard.
+idlemessages:
+- A gust of wind sweeps through the courtyard and sends a napkin spiraling into the air.
+- Two kids sit under the tree, sharing earbuds and nodding along to the same song.
+- A squirrel runs along the top of the courtyard wall, pauses, and judges everyone below.
+- Someone tosses a penny into the fountain and closes their eyes for a moment.
+- The wind carries the muffled sound of a bell ringing inside the school.

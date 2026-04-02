@@ -1,0 +1,24 @@
+mobid: 27
+zone: Headquarters
+hostile: false
+maxwander: 0
+activitylevel: 15
+groups:
+- headquarters-emotion
+idlecommands:
+- emote sighs so dramatically that the very air seems to get heavier.
+- emote scrolls through her phone without any change in expression.
+- say Whatever.
+- say I would care about that, but it seems like a lot of effort.
+- emote somehow manages to slouch even further into the couch.
+- say Is this still happening? Can we not?
+- ''
+- ''
+- ''
+combatcommands:
+- callforhelp 5:emotion:sighs and halfheartedly calls for help.
+character:
+  name: ennui
+  description: Ennui is a large, languid, indigo-blue emotion who appears to be in a permanent state of exhaustion despite never actually doing anything. She is draped across the nearest available surface at all times, her heavy- lidded eyes barely open, a phone perpetually in hand as she scrolls with glacial slowness. Her deep, monotone voice makes everything sound like the most boring thing that has ever been said. She operates the console from the couch by texting commands, which drives Joy absolutely insane. Despite her complete lack of enthusiasm for anything, Ennui somehow manages to be one of the funniest presences in Headquarters, her utter indifference a perfect foil to the frantic energy of everyone around her.
+  level: 99
+  raceid: 2

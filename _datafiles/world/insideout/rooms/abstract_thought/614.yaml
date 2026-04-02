@@ -1,0 +1,22 @@
+roomid: 614
+zone: Abstract Thought
+title: Escape Chute
+description: 'A wide, smooth chute angles steeply downward, its interior walls polished to a mirror finish and lit by strips of calm blue light. A sign above the entrance reads "EMERGENCY EXIT -- RETURNS TO LONG TERM MEMORY. Please keep arms and existential crises inside the chute at all times." The chute is clearly designed as a quick escape route for anyone who has gone too deep into abstraction and needs to get back to concrete reality fast. A rubber mat at the entrance provides a place to sit before sliding, and a basket of helmets sits nearby with a note: "Optional but recommended. The landing is mostly soft." The blue lights pulse in a gentle downward pattern, inviting you to let go and slide.'
+mapsymbol: '>'
+maplegend: Chute
+biome: abstract
+exits:
+  west:
+    roomid: 613
+  chute:
+    roomid: 315
+nouns:
+  chute: The <ansi fg="itemname">chute</ansi> is a masterwork of mental engineering. Its polished interior is frictionless and the angle is precisely calculated for a ride that's fast enough to be thrilling but controlled enough to be safe. Blue lights line the interior in a steady downward cascade, and the faint scent of ozone gives way to the familiar dusty smell of Long Term Memory as the chute descends. The trip takes about ten seconds and deposits you gently into the memory stacks.
+  mat: 'The <ansi fg="itemname">rubber mat</ansi> is worn smooth from years of abstract refugees sitting down and preparing for the ride back to reality. Several messages are scratched into the rubber: "I was a line segment for ten minutes" and "5 stars, would deconstruct again."'
+  helmets: The <ansi fg="itemname">helmets</ansi> are colorful and slightly oversized. Each one has "ABSTRACT THOUGHT SURVIVOR" printed on the front and a sticker chart on the back tracking how many trips through the zone the wearer has survived. One helmet has seventeen stickers. That person has seen things.
+idlemessages:
+- The blue lights pulse downward in a steady, inviting rhythm.
+- A faint whoosh echoes up the chute as something -- or someone -- arrives at the bottom.
+- The helmets rattle in the basket as a breeze from the chute swirls through the room.
+- A small sign beside the chute flips between "OPEN" and "WHEEE" at regular intervals.
+- The scent of old books and dust drifts up from the chute -- Long Term Memory, calling you back.

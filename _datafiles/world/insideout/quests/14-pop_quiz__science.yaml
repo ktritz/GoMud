@@ -1,0 +1,18 @@
+questid: 14
+name: 'Pop Quiz: Science'
+description: Dr. Reeves is testing your science knowledge.
+steps:
+- id: start
+  description: Answer Dr. Reeves' science quiz questions.
+  hint: Go to the Science Lab and ask Dr. Reeves about the quiz.
+- id: q1
+  description: Answer question 1.
+- id: q2
+  description: Answer question 2.
+- id: q3
+  description: Answer question 3.
+- id: end
+  description: You passed the Science pop quiz!
+rewards:
+  experience: 600
+  gold: 50

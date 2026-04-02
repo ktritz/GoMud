@@ -1,0 +1,8 @@
+spellid: mm
+name: Memory Missile
+description: Hurls a concentrated memory fragment for 1d6+2 damage
+type: harmsingle
+school: conjuration
+cost: 6
+waitrounds: 1
+difficulty: 75

@@ -1,0 +1,25 @@
+roomid: 713
+zone: The Subconscious
+title: The Locked Ward
+description: The corridor narrows and the walls close in, reinforced with heavy steel plates bolted over the stone. This is the high- security wing of the Subconscious, where the fears too dangerous to keep in ordinary cells are contained behind multiple layers of mental locks. Every surface is covered in warning signs -- "MAXIMUM CONTAINMENT," "DO NOT ENGAGE," "IF YOU CAN READ THIS YOU ARE ALREADY TOO CLOSE." The lights here are industrial halogens that hum at a frequency designed to keep things awake, and the air tastes metallic and sharp, like the moment before a lightning strike. Something behind one of the steel plates is tapping in a slow, patient rhythm.
+mapsymbol: W
+maplegend: Ward
+biome: dungeon
+exits:
+  south:
+    roomid: 712
+  north:
+    roomid: 714
+nouns:
+  plates: The steel <ansi fg="itemname">plates</ansi> are half an inch thick and covered in scratch marks from both sides. Some of the bolts are bent outward, stressed by whatever is pushing against them from behind. One plate has been dented so severely it has buckled inward, and through the gap you can see absolute darkness and feel cold air flowing out.
+  signs: The warning <ansi fg="itemname">signs</ansi> escalate in urgency as you go deeper. The first few are standard -- "AUTHORIZED PERSONNEL ONLY." Then they get specific -- "DO NOT MAKE EYE CONTACT." Then desperate -- "PLEASE LEAVE." The last one, bolted crookedly to the wall near the end of the corridor, just says "RUN."
+spawninfo:
+- mobid: 51
+  message: A <ansi fg="mobname">darkness creeper</ansi> oozes out from beneath a buckled steel plate, a patch of shadow that is somehow darker than everything around it.
+  respawnrate: 4 real minutes
+idlemessages:
+- The tapping from behind a steel plate stops, as if whatever is inside heard you.
+- A bolt on one of the plates pops loose and clatters to the floor.
+- The halogen lights flicker and you see something dark pressed against the gap in a buckled plate.
+- The metallic taste in the air intensifies and your skin prickles with static.
+- The tapping resumes in a new rhythm -- faster, closer to the door.

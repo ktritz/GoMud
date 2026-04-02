@@ -1,0 +1,11 @@
+itemid: 20058
+name: void barrier
+namesimple: barrier
+description: 'A massive shield made from compressed void energy. It''s impossibly
+  dark and absorbs incoming attacks like they never happened.'
+type: offhand
+subtype: wearable
+damagereduction: 7
+statmods:
+  vitality: 2
+value: 500

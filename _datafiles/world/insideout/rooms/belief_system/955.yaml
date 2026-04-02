@@ -1,0 +1,25 @@
+roomid: 955
+zone: Belief System
+title: Confidence Bridge
+description: A long, narrow bridge spans a dizzying gap between the inner Belief System and the Personality Islands beyond. The bridge is made of translucent material that glows gold when you step on it with certainty and dims to gray when doubt creeps in. The surface is solid -- mostly -- but it sways with every step, and looking down reveals a churning void of unresolved feelings far below. Halfway across, the railing bears deep scratches where someone gripped it during a crisis of confidence. The bridge connects to both the positive and negative corridors behind you and stretches forward toward the Personality Islands ahead. It is, in every sense, the path between who Riley believes she is and who she shows the world.
+mapsymbol: '='
+maplegend: Bridge
+biome: mindscape
+exits:
+  west:
+    roomid: 952
+  north:
+    roomid: 956
+nouns:
+  bridge: The <ansi fg="itemname">bridge</ansi> responds to emotional state. Confident steps make it glow bright gold and feel rock-solid. Hesitant steps turn it gray and slightly transparent, as if doubt could make it less real. The bridge has never actually collapsed, but it has come close -- during Riley's first week in San Francisco, it nearly went dark entirely. It held. Bridges made of confidence always look more fragile than they are.
+  railing: The <ansi fg="itemname">railing</ansi> tells a story in scratches and grip marks. Some are shallow -- brief moments of self-doubt that passed quickly. Others are deep, carved by white-knuckle grips during real crises. One section is worn smooth, as if someone held on here for a very long time. Near the center, a small inscription reads "You made it across. -- Joy."
+spawninfo:
+- mobid: 63
+  message: An <ansi fg="mobname">identity guardian</ansi> materializes on the bridge, its form a shimmering composite of Riley's strongest beliefs.
+  respawnrate: 12 real minutes
+idlemessages:
+- The bridge pulses gold as a wave of confidence ripples through Riley's mind.
+- A section of the bridge dims to gray, then slowly brightens as the doubt passes.
+- The void below churns with unresolved feelings, their colors murky and blending.
+- The railing vibrates faintly under your hand, humming with the tension of self-belief.
+- A step rings out with a clear, bell-like tone -- the sound of walking with certainty.

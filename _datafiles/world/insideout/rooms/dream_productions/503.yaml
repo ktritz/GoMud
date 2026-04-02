@@ -1,0 +1,30 @@
+roomid: 503
+zone: Dream Productions
+title: Soundstage B - Horror
+description: The temperature drops the moment you step through the heavy soundstage door. This set is dedicated to nightmares, and the production team has gone all out. Fog clings to the floor in thick, unnatural sheets, lit from below by flickering red lights that make every shadow look alive. A crumbling haunted school hallway stretches across the main stage, its lockers hanging open to reveal darkness that seems deeper than it should be. Fake cobwebs cover everything, though some of them feel disturbingly real. A sign near the entrance reads "NIGHTMARE DEPARTMENT -- Fear Approved, Joy Tolerated." The unsettling part is that the set feels less like a set and more like somewhere you've actually been in a bad dream.
+mapsymbol: H
+maplegend: Horror
+biome: dreamset
+exits:
+  west:
+    roomid: 502
+  east:
+    roomid: 504
+  north:
+    roomid: 512
+nouns:
+  lights: The <ansi fg="itemname">flickering red lights</ansi> are embedded in the floor, casting everything in a sinister upward glow. A label on one reads "ANXIETY SPECIAL -- Triple intensity, extra flicker. Approved for use in 'showing up to school in underwear' dreams and above."
+  hallway: The <ansi fg="itemname">haunted school hallway</ansi> is an uncanny recreation of Riley's middle school, but wrong. The lockers are numbered in reverse, the clock on the wall runs backward, and the classroom doors open onto brick walls. It's the kind of place where you run and run but never reach the end.
+spawninfo:
+- mobid: 41
+  message: A <ansi fg="mobname">dream nightmare</ansi> seeps out of a locker, trailing dark fog.
+  respawnrate: 4 real minutes
+- mobid: 41
+  message: A <ansi fg="mobname">dream nightmare</ansi> materializes from beneath the stage floor.
+  respawnrate: 6 real minutes
+idlemessages:
+- A locker door slams shut on its own and the echo lingers far too long.
+- The fog on the floor churns and for a moment you can almost see a face in it.
+- The hallway seems to stretch a few feet longer when you're not looking directly at it.
+- A distant school bell rings, muffled and distorted, from deep within the set.
+- One of the red lights dies, plunging a corner into absolute darkness. Then it flickers back.

@@ -1,0 +1,17 @@
+questid: 1
+name: The Missing Homework
+description: 'Your homework blew away in the wind. Find it before class starts!'
+steps:
+- id: start
+  description: Find your homework assignment before class.
+  hint: 'Check the neighborhood. The wind might have carried it to the park or a neighbor''s
+    yard.'
+- id: found
+  description: 'You found the homework! Return it to the teacher.'
+  hint: The teacher is in Classroom 101 at school.
+- id: end
+  description: 'You turned in the homework just in time!'
+rewards:
+  experience: 1000
+  gold: 50
+  itemid: 20001

@@ -1,0 +1,67 @@
+zone: belief_system
+zone_config:
+  name: "Belief System"
+mobs:
+  - id: 61
+    name: toxic thought
+    desc: >-
+      A dark, whispered phrase that has clawed its way into physical form -- a
+      hunched, shadowy figure that speaks in a voice uncomfortably close to your
+      own. "You're not good enough." "Nobody likes you." "You'll never fit in."
+      The words drip from it like tar, poisoning the ground where they fall and
+      leaving black stains that take a long time to fade. It moves with a
+      predatory patience, circling its target and whispering until the words
+      start to feel true.
+    level: 12
+    race: 5
+    hostile: true
+    wander: 3
+    activity: 20
+    drop: 20
+    groups: [fear, toxic]
+    idle:
+      - "whisper You're not good enough..."
+      - "emote pulses with dark energy, its whispers growing louder."
+      - ""
+    combat: ["backstab"]
+
+  - id: 62
+    name: crumbling belief
+    desc: >-
+      A belief that is literally falling apart. It might have been something solid
+      once -- a conviction, a truth you held close -- but self-doubt has eaten
+      away at its edges until pieces crumble off with every step. Fragments of
+      what it used to be drift to the ground like ash, dissolving before they
+      land. It still moves forward with a desperate, shuddering determination,
+      but it's only a matter of time before there's nothing left.
+    level: 11
+    race: 4
+    hostile: true
+    wander: 2
+    activity: 15
+    drop: 15
+    groups: [abstract]
+    idle:
+      - "emote sheds fragments of itself, pieces dissolving before they hit the ground."
+      - ""
+
+  - id: 63
+    name: identity guardian
+    desc: >-
+      A luminous protector of the personality islands, standing tall with a
+      posture that radiates quiet, unwavering resolve. Its form shifts colors
+      depending on which island is nearest -- warm gold near Goofball, deep
+      blue near Family, fierce red near Hockey. It carries no weapon but glows
+      with a light that feels like certainty, like knowing exactly who you are
+      on your best day. It watches the islands with the fierce tenderness of
+      someone guarding something irreplaceable.
+    level: 14
+    race: 2
+    hostile: false
+    wander: 3
+    activity: 20
+    groups: [headquarters-emotion]
+    idle:
+      - "emote glows protectively, its colors shifting with quiet intensity."
+      - "say These islands are who Riley is. I won't let them fall."
+      - ""

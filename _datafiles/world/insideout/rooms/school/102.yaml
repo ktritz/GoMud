@@ -1,0 +1,23 @@
+roomid: 102
+zone: School
+title: Classroom 101 - English
+description: Ms. Parker's English classroom is the kind of room where the walls do most of the teaching. Posters about literary devices, famous authors, and the importance of the Oxford comma compete for space with student work pinned up on a corkboard. Rows of desks face a large whiteboard covered in today's vocabulary words and a quote of the week -- something by Maya Angelou that half the class copied into their notebooks and the other half photographed with their phones. A worn copy of "To Kill a Mockingbird" sits on the edge of the teacher's desk, bristling with sticky tabs.
+mapsymbol: '1'
+maplegend: English
+biome: city
+exits:
+  west:
+    roomid: 101
+nouns:
+  whiteboard: The <ansi fg="itemname">whiteboard</ansi> is divided into sections with careful dry-erase borders. Today's vocab includes "ephemeral," "juxtaposition," and "ennui" -- that last one underlined twice. A corner of the board reads "ESSAY DUE FRIDAY -- NO EXCUSES" in red marker. Below it, someone has faintly written "what if my dog ate it" in pencil.
+  desks: The <ansi fg="itemname">desks</ansi> are the standard one-piece chair-and-desk combos that are comfortable for approximately zero human body types. Most have initials or tiny drawings carved into the surface by generations of bored students. One desk in the back has "I WAS HERE" scratched into it, which is technically a complete sentence.
+  posters: The <ansi fg="itemname">posters</ansi> are a mix of inspirational and educational. "READ OR DIE" features a dramatic illustration of a dragon made of books. A Shakespearean insult chart hangs near the door. One poster just says "WORDS MATTER" in forty different fonts, which kind of proves its own point.
+spawninfo:
+- mobid: 10
+  message: <ansi fg="mobname">Ms. Parker</ansi> settles into her desk chair and uncaps her red pen.
+  respawnrate: 5 real minutes
+idlemessages:
+- A pencil rolls off a desk and clatters to the floor in the silence.
+- The whiteboard marker squeaks as someone adds to the vocabulary list.
+- A page turns somewhere in the room -- someone actually doing the reading.
+- The clock on the wall ticks loudly, each second stretching longer than the last.

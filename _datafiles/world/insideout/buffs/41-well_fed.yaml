@@ -1,0 +1,7 @@
+buffid: 41
+name: Well Fed
+description: 'A warm, full feeling spreads through you. That pizza was amazing.'
+triggerrate: 3 rounds
+triggercount: 5
+statmods:
+  vitality: 5

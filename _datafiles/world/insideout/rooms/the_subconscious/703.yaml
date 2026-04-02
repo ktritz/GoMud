@@ -1,0 +1,20 @@
+roomid: 703
+zone: The Subconscious
+title: Cell Block B
+description: The second cell block is older and less maintained than the first, its iron bars tarnished to a dull black and its walls covered in a network of hairline cracks that pulse faintly with a sickly purple light. The cells here hold the deeper fears -- the ones Riley does not even know she has. There are no labels on these doors, just tally marks scratched into the metal by whatever is inside. The air is heavier here, thick with the psychic weight of accumulated dread, and the fluorescent lights have given up entirely, replaced by a dim bioluminescent glow that seeps from the cracks in the walls like something alive. The passage continues deeper, past cells that nobody has checked in a very long time.
+mapsymbol: B
+maplegend: Block-B
+biome: dungeon
+exits:
+  south:
+    roomid: 702
+  east:
+    roomid: 708
+nouns:
+  walls: The <ansi fg="itemname">walls</ansi> are laced with cracks that glow a faint, diseased purple. If you press your ear to the stone, you can hear whispers -- not words, exactly, but the emotional essence of every fear that has ever been locked away down here. The sound is like a crowd of people all holding their breath at the same time.
+idlemessages:
+- The purple glow in the wall cracks intensifies, then fades like a slow heartbeat.
+- Tally marks appear on a nearby cell door with a soft scratching sound. There was no one inside a moment ago.
+- The air pressure shifts and your ears pop, as if something large just exhaled in the dark.
+- A cell door at the far end of the block swings open an inch, then slowly creaks shut on its own.
+- The bioluminescent glow flickers and for a split second you see something standing in the corridor ahead. Then it is gone.

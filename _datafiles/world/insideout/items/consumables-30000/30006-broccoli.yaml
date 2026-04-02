@@ -1,0 +1,11 @@
+itemid: 30006
+name: broccoli
+namesimple: broccoli
+description: A stalk of raw broccoli. Disgust is already judging you for even considering
+  eating this.
+type: food
+subtype: drinkable
+uses: 1
+value: 5
+buffids:
+- 45

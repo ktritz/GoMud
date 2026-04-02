@@ -1,0 +1,726 @@
+zone: rileys_neighborhood
+zone_config:
+  name: "Riley's Neighborhood"
+  roomid: 1
+  autoscale: {minimum: 1, maximum: 3}
+  defaultbiome: city
+
+rooms:
+  - id: 1
+    title: "Riley's Street"
+    desc: >-
+      A quiet suburban street winds through a row of painted <ansi fg="itemname">Victorian houses</ansi>,
+      their pastel facades softened by a thin veil of <ansi fg="itemname">San Francisco fog</ansi>.
+      Overhead wires crisscross between wooden utility poles, and a few parked cars line
+      the curb with their windows fogged over. A weathered <ansi fg="itemname">neighborhood sign</ansi>
+      stands near the sidewalk with a simple map of the area. The air smells like eucalyptus
+      and damp pavement, and somewhere down the block a dog is barking at nothing.
+    biome: city
+    symbol: S
+    legend: Start
+    exits: {north: 2, east: 6, south: 12}
+    nouns:
+      sign: >-
+        The <ansi fg="itemname">neighborhood sign</ansi> reads "Welcome to Andersen Heights"
+        in faded blue letters. Below it, a simple map shows the nearby streets, the park
+        to the north, and the bus stop to the south. Someone has drawn a tiny hockey stick
+        in marker next to the park.
+      houses: >-
+        The <ansi fg="itemname">Victorian houses</ansi> are a mix of cheerful colors --
+        pale yellow, dusty rose, seafoam green. Most have bay windows and narrow front
+        steps. A few have bicycles chained to the railings. They look like they have been
+        here for over a hundred years, which they probably have.
+      fog: >-
+        The <ansi fg="itemname">fog</ansi> drifts in low wisps across the street, curling
+        around the lampposts and settling into the gutters. It is the kind of fog that
+        makes everything feel a little quieter and a little further away than it really is.
+    idle:
+      - A jogger in bright yellow sneakers passes by with a quick wave.
+      - A neighbor across the street checks their mailbox and shuffles back inside.
+      - A hybrid car glides silently down the street, barely disturbing the fog.
+      - Somewhere nearby, a garage door rattles open and then closed again.
+      - A gray tabby cat watches you from a windowsill, tail flicking back and forth.
+
+  - id: 2
+    title: "Riley's Front Yard"
+    desc: >-
+      A short brick walkway leads up to a cheerful <ansi fg="itemname">yellow house</ansi>
+      with a bright <ansi fg="itemname">red door</ansi>. The front yard is small but well-kept,
+      with a patchy lawn and a little <ansi fg="itemname">garden</ansi> of wildflowers along
+      the fence. An old <ansi fg="itemname">swing set</ansi> sits off to one side, its
+      chains slightly rusted -- it looks like it hasn't been used in a couple of years,
+      but nobody has gotten around to taking it down. A welcome mat at the front door says
+      "The Andersens" in cheerful script.
+    biome: city
+    symbol: "Y"
+    legend: Yard
+    exits: {south: 1, north: 3, east: 4}
+    nouns:
+      garden: >-
+        The <ansi fg="itemname">garden</ansi> is a little wild, with black-eyed Susans
+        and California poppies growing in no particular order. A ceramic garden gnome
+        with a chipped nose stands guard among the flowers. Mom planted these when they
+        first moved in from Minnesota.
+      swing: >-
+        The <ansi fg="itemname">swing set</ansi> is a faded red metal frame with two
+        rubber seats hanging from rusty chains. One of the seats hangs a little crooked.
+        You remember spending hours on this thing when you were younger. Now it just
+        makes you feel a weird mix of happy and sad at the same time.
+      swingset: ":swing"
+      door: >-
+        The <ansi fg="itemname">red door</ansi> is the kind of red that Mom specifically
+        picked out from about forty paint samples. It has a brass knocker shaped like
+        a sun and a peephole at adult height. The paint is starting to chip a little
+        around the edges.
+    idle:
+      - The swing set creaks faintly in the breeze.
+      - A hummingbird hovers over the garden for a moment before darting away.
+      - The porch light flickers on, then off again. Dad still hasn't fixed that.
+      - A leaf tumbles across the walkway and gets stuck against the welcome mat.
+
+  - id: 3
+    title: "Riley's Bedroom"
+    desc: >-
+      This is your room, and it looks like it. <ansi fg="itemname">Band posters</ansi>
+      cover most of the walls -- some from bands you still listen to, some from ones you
+      would rather forget. A <ansi fg="itemname">desk</ansi> sits under the window, buried
+      under homework, empty chip bags, and a laptop with too many stickers on it.
+      <ansi fg="itemname">Hockey gear</ansi> spills out of a half-open closet. The
+      <ansi fg="itemname">bed</ansi> is unmade, obviously, and from somewhere underneath
+      it a faint <ansi fg="itemname">shimmering light</ansi> pulses with a strange,
+      warm glow that doesn't seem to have any source. It's been doing that for a few
+      days now. You keep meaning to look into it.
+    biome: city
+    symbol: "B"
+    legend: Bedroom
+    exits: {south: 2, west: 4}
+    nouns:
+      bed: >-
+        The <ansi fg="itemname">bed</ansi> is a mess of tangled sheets, a flat pillow,
+        and a stuffed elephant you would deny owning if anyone asked. The strange glow
+        is definitely coming from under here. If you crouch down, you can see the light
+        shifting in slow, hypnotic patterns -- gold, blue, green, red, purple -- like
+        something alive is breathing down there.
+      desk: >-
+        The <ansi fg="itemname">desk</ansi> is a disaster zone. There's a half-finished
+        math worksheet, three pens (none of which work), a phone charger with no phone
+        attached, and a framed photo of the old hockey team from Minnesota. The laptop
+        has a "San Francisco or Bust" sticker peeling off the corner.
+      posters: >-
+        The <ansi fg="itemname">band posters</ansi> are a timeline of your music taste
+        over the last few years. There's an embarrassing boy band one partially hidden
+        behind a newer indie rock poster. A Kezha poster is pinned up with hockey tape.
+        One corner of the wall has glow-in-the-dark stars that you put up in middle school.
+      hockey: >-
+        Your <ansi fg="itemname">hockey gear</ansi> is mostly stuffed in the closet --
+        shin guards, gloves, a helmet with a cracked visor you keep forgetting to replace.
+        Your stick leans against the wall by the door, wrapped in fresh tape. At least
+        you take care of that.
+      gear: ":hockey"
+      light: >-
+        The <ansi fg="itemname">shimmering light</ansi> under the bed pulses gently,
+        cycling through colors that feel strangely familiar -- a warm gold, a deep blue,
+        a fiery red, a soft purple, a sharp green. It doesn't illuminate the room so much
+        as it seems to pull at something inside your chest. It started a few days ago and
+        it's getting brighter. Part of you wants to crawl under there and find out what
+        it is. Part of you really, really doesn't.
+      shimmer: ":light"
+    idle:
+      - The shimmering light under the bed pulses brighter for a moment, casting colored shadows on the wall.
+      - A faint hum drifts up from beneath the bed, just at the edge of hearing.
+      - The glow under the bed shifts from gold to deep blue and back again.
+      - Your phone buzzes on the desk. Probably a group chat you've been ignoring.
+      - The light flares briefly with a warm purple glow, and you feel a tug behind your eyes.
+
+  - id: 4
+    title: "Riley's Living Room"
+    desc: >-
+      A cozy living room with hardwood floors and a big bay window letting in gray
+      San Francisco light. Dad's oversized <ansi fg="itemname">recliner</ansi> sits in
+      the corner next to a reading lamp and a stack of books about fly fishing. The
+      <ansi fg="itemname">couch</ansi> is soft and broken-in, covered in throw pillows
+      Mom picked out. A flat-screen <ansi fg="itemname">TV</ansi> is mounted on the wall,
+      and the mantle above the fireplace is lined with <ansi fg="itemname">family photos</ansi> --
+      Minnesota winters, a trip to the Grand Canyon, Riley's first hockey game.
+    biome: city
+    symbol: L
+    legend: Living Room
+    exits: {west: 3, south: 5, east: 2}
+    nouns:
+      photos: >-
+        The <ansi fg="itemname">family photos</ansi> tell the whole story. There's the
+        Andersen family bundled up in parkas by a frozen lake. Riley as a toddler covered
+        in birthday cake. Mom and Dad's wedding photo where Dad's tie is crooked. A recent
+        one from a Giants game where everyone looks happy. The newest photo is from
+        Riley's first San Francisco hockey game.
+      tv: >-
+        The <ansi fg="itemname">TV</ansi> is off right now. The remote is wedged between
+        the couch cushions as usual. There's a smudge on the screen from the last time
+        someone ate nachos while watching a movie.
+      couch: >-
+        The <ansi fg="itemname">couch</ansi> is the kind that swallows you whole when
+        you sit down. It's got about six throw pillows too many and a fleece blanket
+        stuffed into one corner. If you dig around in the cushions you'd probably find
+        the remote, some popcorn kernels, and maybe a dollar fifty in change.
+    spawns:
+      - {mob: 2, rate: "5 real minutes", msg: "Riley's Dad wanders in from the kitchen, holding a coffee mug."}
+    idle:
+      - The house settles with a quiet creak.
+      - A car passes outside, headlights briefly sweeping across the bay window.
+      - The fridge hums from the kitchen.
+      - A draft from somewhere makes the curtains shift slightly.
+
+  - id: 5
+    title: "Riley's Kitchen"
+    desc: >-
+      A bright, modern kitchen with white tile and butcher-block countertops. The
+      <ansi fg="itemname">counter</ansi> is cluttered with the usual stuff -- a fruit bowl,
+      a toaster, and a half-empty bag of chips someone forgot to clip shut. The
+      <ansi fg="itemname">fridge</ansi> is covered in magnets, takeout menus, and a couple
+      of <ansi fg="itemname">drawings</ansi> from when Riley was little. There's a lingering
+      smell of coffee and whatever Mom made for dinner last night. A window above the
+      sink looks out into the tiny backyard.
+    biome: city
+    symbol: K
+    legend: Kitchen
+    exits: {north: 4}
+    nouns:
+      fridge: >-
+        The <ansi fg="itemname">fridge</ansi> is a museum of the Andersen family's life.
+        Alphabet magnets spell out something that might have once been "RILEY ROCKS" but
+        now reads "RILE OCKS." There's a coupon for pizza, a dentist appointment card,
+        and a photo of the family dog they had in Minnesota. Inside, you know there's
+        leftover broccoli pizza that nobody wants.
+      counter: >-
+        The <ansi fg="itemname">counter</ansi> has a cutting board with a few bread crumbs,
+        a jar of peanut butter with the lid off, and three mugs in various states of being
+        washed. Mom's "World's Okayest Cook" mug is front and center.
+      drawings: >-
+        The <ansi fg="itemname">drawings</ansi> on the fridge are from when Riley was
+        maybe five or six. One shows a yellow house with a red door and a smiling sun.
+        Another is a crayon portrait of the family with arms way too long and heads way
+        too big. They're curling at the edges but nobody would ever think of taking them down.
+    spawns:
+      - {mob: 3, rate: "5 real minutes", msg: "Riley's Mom comes in and starts wiping down the counter."}
+    idle:
+      - The coffee maker gurgles and hisses.
+      - A magnet slides down the fridge and clatters onto the floor.
+      - Something in the fruit bowl is probably past its prime.
+
+  - id: 6
+    title: "Andersen Sidewalk"
+    desc: >-
+      A tree-lined residential sidewalk stretches east toward the busier streets. The
+      concrete is cracked in places where old <ansi fg="itemname">tree</ansi> roots have
+      pushed through, and someone has drawn a hopscotch grid in faded chalk. A row of
+      <ansi fg="itemname">mailboxes</ansi> stands at attention along the curb, some with
+      little red flags up. A neighbor's orange <ansi fg="itemname">tabby cat</ansi> sits
+      in a sunny patch of sidewalk, watching you with supreme disinterest.
+    biome: city
+    symbol: "="
+    legend: Sidewalk
+    exits: {west: 1, east: 10, north: 7}
+    nouns:
+      tree: >-
+        Mature trees arch over the sidewalk, their branches forming a leafy canopy
+        that filters the light into shifting green patterns on the pavement. A few have
+        initials carved into them. One has a knothole that looks suspiciously like a face.
+      mailboxes: >-
+        The <ansi fg="itemname">mailboxes</ansi> are a mismatched collection -- one plain
+        black, one painted to look like a little barn, and one with a "NO JUNK MAIL"
+        sticker that clearly isn't working because junk mail is sticking out of it.
+      cat: >-
+        The <ansi fg="itemname">tabby cat</ansi> is a big, well-fed orange tom with a
+        torn ear and a collar that says "Mr. Briggs." He looks at you like he owns the
+        entire block, which, to be fair, he probably thinks he does.
+    idle:
+      - The orange cat stretches languidly and resettles in its sunny spot.
+      - A mail carrier rounds the corner, bag slung over one shoulder, headphones in.
+      - A kid on a scooter zips past on the other side of the street.
+      - A sprinkler starts up in someone's front yard with a tch-tch-tch-tch sound.
+      - Mr. Briggs the cat yawns, showing every single one of his teeth.
+
+  - id: 7
+    title: "Park Entrance"
+    desc: >-
+      A wrought-iron <ansi fg="itemname">gate</ansi> marks the entrance to Andersen Heights
+      Park. The gate is always open -- the latch broke years ago and nobody bothered fixing
+      it. Old <ansi fg="itemname">oak trees</ansi> tower on either side, their branches
+      reaching across to form a natural archway. A wooden sign reads "Andersen Heights
+      Park - Est. 1952" in carved letters. The path splits ahead, leading north toward
+      the playground and east toward the community garden. You can hear kids and the
+      squeak of swing chains from deeper inside.
+    biome: city
+    symbol: "G"
+    legend: Gate
+    exits: {south: 6, north: 8, east: 19}
+    nouns:
+      gate: >-
+        The <ansi fg="itemname">wrought-iron gate</ansi> is old and decorative, with curling
+        metal vines worked into the design. Green paint is flaking off in patches, showing
+        rust underneath. The latch hangs loose -- you could swing the gate back and forth
+        if you wanted to, but it would make a terrible screech.
+      trees: >-
+        The <ansi fg="itemname">oak trees</ansi> flanking the entrance are massive, with
+        trunks wider than you could wrap your arms around. Their roots have buckled the
+        path in places. Someone has hung a birdhouse in one of them, and it actually
+        seems to be occupied.
+    idle:
+      - A squirrel darts across the path and scrambles up one of the oak trees.
+      - The gate creaks faintly as a breeze pushes it an inch or two.
+      - Faint laughter and the sound of kids playing drift from deeper in the park.
+      - A pigeon struts along the top of the gate like it's on patrol.
+
+  - id: 8
+    title: "Park Playground"
+    desc: >-
+      The playground is a colorful sprawl of <ansi fg="itemname">swings</ansi>, a tall
+      <ansi fg="itemname">slide</ansi>, and a set of <ansi fg="itemname">monkey bars</ansi>
+      with chipped paint. The ground is covered in that spongy rubber stuff that's supposed
+      to make falling hurt less (it doesn't, really). A few younger kids are running around
+      and yelling at full volume. The whole place has that nostalgic pull -- you spent a lot
+      of afternoons here when the family first moved to San Francisco, back when making
+      friends felt impossible and the swings were the only place that felt normal.
+    biome: city
+    symbol: "P"
+    legend: Playground
+    exits: {south: 7, east: 9}
+    nouns:
+      swings: >-
+        The <ansi fg="itemname">swings</ansi> are the classic kind -- rubber seats on long
+        chains, worn smooth by thousands of kids. One of them goes higher than the others
+        if you pump just right. You remember figuring that out your first week here and
+        feeling like you'd cracked some kind of code.
+      slide: >-
+        The <ansi fg="itemname">slide</ansi> is a tall metal one, the kind that gets
+        scorching hot in summer and static-charged in winter. A kid just went down it
+        and their hair is standing straight up.
+      monkey: >-
+        The <ansi fg="itemname">monkey bars</ansi> stretch in a long arc, painted red and
+        yellow. The paint is chipping and the metal is cold to the touch. You used to be
+        able to cross them without stopping. You're not sure if you still can, but you're
+        not about to find out with kids watching.
+      bars: ":monkey"
+    idle:
+      - A kid shrieks with delight as they launch off a swing at peak height.
+      - The chains on the empty swings clink together in the breeze.
+      - Two kids are arguing about whose turn it is on the slide.
+      - A parent on a bench nearby looks up from their phone, checks on their kid, looks back down.
+      - The monkey bars rattle as a kid hangs from them by their knees.
+
+  - id: 9
+    title: "Park Bench Area"
+    desc: >-
+      A quiet spot tucked away from the playground noise. Two wooden <ansi fg="itemname">benches</ansi>
+      sit under the wide canopy of a massive old <ansi fg="itemname">oak tree</ansi>, its
+      branches reaching out in every direction like it's trying to hug the whole park.
+      Dappled sunlight filters through the leaves and makes shifting patterns on the ground.
+      It's the kind of place where people come to think, or read, or just sit and watch
+      the world go by for a while. Someone has left a paperback on one of the benches.
+    biome: city
+    symbol: "."
+    legend: Bench
+    exits: {west: 8, south: 16}
+    nouns:
+      bench: >-
+        The <ansi fg="itemname">benches</ansi> are old wood-and-iron park benches with
+        backs worn smooth by years of sitting. Someone has carved "J+K" inside a heart
+        on one of them. The paperback left behind is a beat-up copy of a mystery novel
+        with the last fifty pages missing.
+      oak: >-
+        The <ansi fg="itemname">oak tree</ansi> is ancient and enormous, its trunk gnarled
+        and twisted with age. You could probably fit three people inside the hollow where
+        two massive roots diverge from the base. The bark is thick and deeply ridged, and
+        if you look closely you can see ants marching in a line up toward the canopy.
+      tree: ":oak"
+    idle:
+      - A jogger passes through, breathing hard, gives you a nod.
+      - A person walks by with a golden retriever that wants to say hi to everyone.
+      - A leaf spirals down from the oak tree and lands on the bench.
+      - The breeze picks up for a moment, rustling through the oak's canopy like a whispered conversation.
+
+  - id: 10
+    title: "Oak Street"
+    desc: >-
+      Oak Street is busier than the residential blocks behind you. <ansi fg="itemname">Cars</ansi>
+      rumble past at irregular intervals, and the sidewalk is wider, lined with a few
+      small shops and awnings. You can see the corner store up ahead to the east and
+      the familiar rooftops of the neighborhood stretching out to the west. A yellow
+      school bus route sign is bolted to a lamppost. The street has that in-between feel --
+      not quite downtown, not quite suburban, just a regular city street trying its best.
+    biome: city
+    symbol: "="
+    legend: Street
+    exits: {west: 6, east: 11, south: 16}
+    nouns:
+      cars: >-
+        The <ansi fg="itemname">cars</ansi> parked along Oak Street are a mix of
+        sensible hybrids and beat-up older models. A few have parking tickets tucked
+        under their windshield wipers. One has a bumper sticker that reads "My Other
+        Car Is Also Stuck In Traffic."
+      sign: >-
+        The yellow <ansi fg="itemname">school bus sign</ansi> marks a stop on the route
+        to Riley's school. The schedule posted on the lamppost below it is sun-faded
+        and basically unreadable.
+    idle:
+      - A car honks somewhere up the block and someone yells something back.
+      - A yellow school bus rumbles past, windows full of bored faces.
+      - A delivery truck double-parks and the driver hops out with a stack of boxes.
+      - Someone on a bicycle weaves between parked cars.
+
+  - id: 11
+    title: "Corner Store"
+    desc: >-
+      A cramped little convenience store with fluorescent lighting and aisles packed
+      too tightly together. The <ansi fg="itemname">shelves</ansi> are stocked with
+      everything from candy bars to canned soup to phone chargers. A glass
+      <ansi fg="itemname">counter</ansi> near the door holds a display of lottery tickets
+      and cheap sunglasses. The air smells like coffee from the self-serve machine in
+      the back and the synthetic cherry of air freshener. A handwritten sign behind the
+      register reads "You Break It, You Buy It. Seriously."
+    biome: city
+    symbol: "$"
+    legend: Store
+    exits: {west: 10, south: 17}
+    nouns:
+      shelves: >-
+        The <ansi fg="itemname">shelves</ansi> are crammed with an impressive variety
+        of junk food, school supplies, and random household items. There's a whole
+        section dedicated to different flavors of chips. The top shelf has a fine layer
+        of dust on items that haven't moved in years.
+      counter: >-
+        The glass <ansi fg="itemname">counter</ansi> has scratch-off lottery tickets
+        fanned out behind it and a jar of individually wrapped candies with a sign that
+        says "25 cents each, honor system." The cash register looks like it's from the
+        1990s and it probably is.
+      snacks: >-
+        The <ansi fg="itemname">snacks</ansi> section is the real draw. Gummy worms,
+        trail mix, beef jerky, those weird Japanese candy kits, and at least four kinds
+        of hot chips. This is where most of your allowance goes.
+    spawns:
+      - {mob: 4, rate: "5 real minutes", msg: "The shopkeeper emerges from the back room, adjusting their apron."}
+    idle:
+      - The shopkeeper rearranges something behind the counter.
+      - A bell jingles as someone pushes through the front door.
+      - The self-serve coffee machine makes a gurgling noise.
+      - A kid deliberates intensely between two candy bars.
+
+  - id: 12
+    title: "Bus Stop"
+    desc: >-
+      A city bus stop with a scratched-up plexiglass shelter and a metal <ansi fg="itemname">bench</ansi>
+      that's always either too hot or too cold. A posted <ansi fg="itemname">schedule</ansi>
+      is taped behind plastic, half of it faded beyond legibility. This is the connection
+      to the rest of San Francisco -- the bus that goes to school stops here every morning.
+      The shelter has a faded advertisement for a museum exhibit that ended two months ago.
+      To the east, a pedestrian bridge arches over toward the bay.
+    biome: city
+    symbol: "#"
+    legend: Bus Stop
+    exits:
+      north: 1
+      east: 20
+      bus: {roomid: 100, secret: true}
+    nouns:
+      bench: >-
+        The metal <ansi fg="itemname">bench</ansi> is bolted to the concrete and covered
+        in those armrest dividers designed to stop people from lying down. Someone has
+        stuck a piece of gum underneath it. Actually, several someones have stuck several
+        pieces of gum underneath it.
+      schedule: >-
+        The <ansi fg="itemname">bus schedule</ansi> is mostly unreadable from sun damage,
+        but you can make out that the #38 bus runs every 15 minutes during school hours.
+        Someone has drawn a mustache on the smiling bus driver in the header illustration.
+    idle:
+      - A bus pulls up with a hydraulic hiss, pauses, and pulls away again.
+      - Someone checks their phone, looks up the street for the bus, checks their phone again.
+      - A crumpled bus transfer ticket tumbles across the sidewalk.
+      - The digital arrival sign flickers between "3 MIN" and "----" like it can't decide.
+      - Exhaust from a passing bus hangs in the foggy air for a moment.
+
+  - id: 13
+    title: "Back Alley"
+    desc: >-
+      A narrow alley cuts between the backs of buildings, lined with overflowing
+      <ansi fg="itemname">dumpsters</ansi> and stacked recycling bins. The walls on either
+      side are brick, streaked with grime, and decorated with layers of <ansi fg="itemname">graffiti</ansi>
+      ranging from elaborate murals to hastily sprayed tags. The ground is damp and littered
+      with fast food wrappers and crushed cans. It's not exactly dangerous, but it's the
+      kind of place where weird things skitter in the shadows. Something about the air
+      here feels heavier, like bad thoughts tend to collect in places like this.
+    biome: city
+    symbol: "!"
+    legend: Alley
+    exits: {north: 16, south: 14}
+    nouns:
+      dumpsters: >-
+        The <ansi fg="itemname">dumpsters</ansi> are industrial green and overflowing
+        with black garbage bags. One lid is propped open by a broken wooden pallet.
+        Something in there smells terrible. You don't want to investigate further.
+      graffiti: >-
+        The <ansi fg="itemname">graffiti</ansi> is layered thick on the alley walls.
+        There's a pretty good mural of a whale, mostly covered by newer tags. Someone
+        wrote "FEAR IS A LIAR" in wobbly red spray paint near the ground. Below that,
+        someone else wrote "no it isn't" in marker.
+    spawns:
+      - {mob: 1, rate: "2 real minutes", msg: "A <ansi fg=\"mobname\">thought worm</ansi> squirms out of a crack in the pavement."}
+      - {mob: 1, rate: "2 real minutes", msg: "Another <ansi fg=\"mobname\">thought worm</ansi> wriggles out from behind a dumpster."}
+    idle:
+      - Something rustles behind one of the dumpsters.
+      - A rat peeks out from a gap in the bricks, twitches its nose, and disappears.
+      - Water drips from a pipe somewhere above, counting out seconds.
+      - A gust of wind sends a crumpled newspaper tumbling down the alley.
+
+  - id: 14
+    title: "Dumpster Area"
+    desc: >-
+      The alley dead-ends here in a cluster of battered <ansi fg="itemname">dumpsters</ansi>
+      and broken pallets. The walls close in on three sides, streaked with rust and old
+      <ansi fg="itemname">graffiti</ansi>. A single buzzing light fixture clings to the
+      wall above, casting a sickly yellow glow that makes the shadows jump. It's weirdly
+      dark for a suburban neighborhood -- the kind of dead-end corner that feels forgotten
+      by the rest of the block. The air is thick and smells like wet cardboard and something
+      faintly sour. Things move in the shadows here. Small things, mostly.
+    biome: city
+    symbol: "X"
+    legend: Dead End
+    exits: {north: 13}
+    nouns:
+      dumpsters: >-
+        The <ansi fg="itemname">dumpsters</ansi> back here are dented and rusted, shoved
+        against the dead-end wall at crooked angles. One is lying on its side with its
+        lid hanging open like a mouth. The smell is genuinely impressive in the worst
+        possible way.
+      graffiti: >-
+        The <ansi fg="itemname">graffiti</ansi> back here is less artistic and more
+        unsettling. Strange spiral patterns, a crude drawing of something with too many
+        eyes, and the word "FORGET" written over and over in small letters along the
+        base of the wall. A chill runs through you looking at it.
+    spawns:
+      - {mob: 1, rate: "3 real minutes", msg: "A <ansi fg=\"mobname\">thought worm</ansi> oozes out from under a toppled dumpster."}
+      - {mob: 1, rate: "3 real minutes", msg: "A <ansi fg=\"mobname\">thought worm</ansi> drops from a crack in the wall above."}
+    idle:
+      - Something heavy shifts inside one of the dumpsters. You'd rather not know what.
+      - The buzzing light flickers, and for a second the alley goes completely dark.
+      - A cold draft pushes through the alley from nowhere in particular.
+      - You hear a faint scratching sound from inside the overturned dumpster.
+
+  - id: 15
+    title: "Neighbor's Yard"
+    desc: >-
+      You've wandered into a neighbor's overgrown front yard. The <ansi fg="itemname">fence</ansi>
+      is leaning and half-hidden behind untrimmed <ansi fg="itemname">bushes</ansi> that
+      have gone completely wild. The lawn hasn't been mowed in what looks like months,
+      and dandelions have taken over in a big way. A ceramic <ansi fg="itemname">garden gnome</ansi>
+      with a faded red hat stands in the middle of the chaos, smiling with unsettling
+      cheerfulness. A rusted wind chime hangs from the porch awning, barely turning.
+      Somebody lives here, but they clearly have other priorities than yard work.
+    biome: city
+    symbol: "~"
+    legend: Yard
+    exits: {west: 6}
+    nouns:
+      fence: >-
+        The <ansi fg="itemname">fence</ansi> is a wooden picket fence that was probably
+        white about a decade ago. Now it's gray and splintering, with several pickets
+        missing entirely. A section near the sidewalk is being slowly consumed by an
+        aggressive hedge.
+      bushes: >-
+        The <ansi fg="itemname">bushes</ansi> have grown into a tangled mass of branches
+        and leaves that would make any HOA weep. There are some interesting things caught
+        in the branches -- a deflated basketball, a plastic grocery bag, and what might
+        be a lost homework assignment with a big red "C-" on it.
+      gnome: >-
+        The <ansi fg="itemname">garden gnome</ansi> is about two feet tall with a faded
+        red pointy hat, a white beard, and an expression that can only be described as
+        knowing. Its paint is chipping, one eye is more closed than the other, and it's
+        holding a tiny fishing rod. It has definitely seen some things.
+    idle:
+      - The wind chime on the porch gives a single, lonely clang.
+      - A crow lands on the fence, caws once, and flies off.
+      - The garden gnome stares at you. It's probably just your imagination.
+
+  - id: 16
+    title: "Sidewalk Crossing"
+    desc: >-
+      A four-way intersection where two residential streets cross under a blinking
+      yellow traffic light. Faded crosswalk stripes are painted on the asphalt in every
+      direction. To the north, the park's tree line is visible over the rooftops. To the
+      south, a narrow alley dips between the buildings. The busier Oak Street runs east-west
+      here, and the side streets are quieter, shaded by old trees. A fire hydrant on the
+      corner has been painted to look like a little person by someone with more enthusiasm
+      than skill.
+    biome: city
+    symbol: "+"
+    legend: Crossing
+    exits: {north: 9, south: 13, west: 10, east: 18}
+    nouns:
+      hydrant: >-
+        The <ansi fg="itemname">fire hydrant</ansi> has been painted to look like a tiny
+        firefighter, complete with a yellow helmet on the top cap and little arms on the
+        side nozzles. The face is a bit lopsided. It's actually kind of charming.
+    idle:
+      - The traffic light blinks yellow, then yellow, then yellow.
+      - A car stops at the intersection, waits for no one, then drives through.
+      - Someone walks their dog across the crosswalk. The dog stops to sniff the fire hydrant.
+      - A skateboarder rolls through the intersection without slowing down.
+
+  - id: 17
+    title: "Pizza Parlor"
+    desc: >-
+      The pizza place. THE pizza place. A neighborhood institution with red vinyl booths,
+      checkered tablecloths, and the warm, overwhelming smell of baking dough and melted
+      cheese. A glass <ansi fg="itemname">counter</ansi> displays slices of every variety,
+      including the controversial San Francisco special with <ansi fg="itemname">broccoli</ansi>
+      on it. A chalkboard <ansi fg="itemname">menu</ansi> hangs on the wall behind the
+      register. The floor is slightly sticky in the way all good pizza places are. An
+      old jukebox in the corner plays something from the '80s that nobody asked for.
+    biome: city
+    symbol: "P"
+    legend: Pizza
+    exits: {north: 11}
+    nouns:
+      menu: >-
+        The <ansi fg="itemname">menu</ansi> is written in colorful chalk on a big
+        blackboard. Cheese, pepperoni, Hawaiian (crossed out and re-added at least three
+        times), veggie, meat lovers, and of course the "San Francisco Special" -- which
+        is pizza with broccoli. It has its own section. There are strong opinions about it.
+      pizza: >-
+        The <ansi fg="itemname">pizza</ansi> in the display case looks incredible. Golden
+        crust, perfectly melted cheese, all the good stuff. And then there's the San
+        Francisco Special sitting right in the middle, bright green broccoli florets
+        arranged on top of the cheese like little trees. It's polarizing. People have
+        reportedly moved away over this pizza.
+      counter: >-
+        The <ansi fg="itemname">counter</ansi> is scuffed from years of sliding pizza
+        trays across it. A tip jar sits next to the register with a sign that says
+        "Tips help us put even weirder stuff on pizza." There's a stack of paper plates
+        and a dispenser of red pepper flakes.
+      broccoli: >-
+        The <ansi fg="itemname">broccoli</ansi>. It's on the pizza. Bright green florets
+        sitting right there on top of melted mozzarella like they belong there. The
+        people of San Francisco are deeply divided on this issue. Riley's family had a
+        full dinner conversation about it the first week they moved here. Dad said it
+        was "an abomination." Mom tried to keep an open mind. Nobody ordered it again.
+    idle:
+      - The smell of fresh pizza wafts out from the kitchen and it's honestly unfair.
+      - Two people at a booth are having a heated debate about whether broccoli belongs on pizza.
+      - The jukebox switches to a song you almost recognize but can't quite place.
+      - A cook in the back tosses pizza dough in the air and catches it with practiced ease.
+      - Someone takes a bite of the San Francisco Special and pauses to reconsider their life choices.
+
+  - id: 18
+    title: "Hockey Rink"
+    desc: >-
+      The Andersen Heights Ice Rink is a small indoor facility with that unmistakable
+      cold, clean smell of <ansi fg="itemname">ice</ansi> and zamboni fumes. The rink
+      itself gleams under bright overhead lights, its surface freshly resurfaced with
+      smooth parallel lines. Metal <ansi fg="itemname">bleachers</ansi> line one side,
+      and a pair of <ansi fg="itemname">goals</ansi> sit at either end of the ice. A
+      banner on the wall reads "GO FOGHORNS!" in the local team's colors. There's a small
+      equipment window near the entrance where you can talk to the coach. This place
+      feels like home in a way the rest of San Francisco is still figuring out.
+    biome: city
+    symbol: "H"
+    legend: Rink
+    exits: {west: 16}
+    nouns:
+      ice: >-
+        The <ansi fg="itemname">ice</ansi> is freshly resurfaced and almost mirror-smooth.
+        You can see the faint reflection of the overhead lights on its surface. The red
+        and blue lines are crisp and bright. Your fingers itch for your stick just
+        looking at it.
+      goals: >-
+        The <ansi fg="itemname">goals</ansi> are regulation size with fresh white netting.
+        Both have puck marks on the crossbars and posts from years of practice shots.
+        The left goal has a water bottle perched on top of it -- the classic target.
+      bleachers: >-
+        The metal <ansi fg="itemname">bleachers</ansi> are cold even through your clothes.
+        They seat maybe a hundred people on a good day. There are a few lost mittens and
+        a forgotten scarf draped over the railing. During games, the parents get
+        surprisingly loud for such a small space.
+    spawns:
+      - {mob: 5, rate: "5 real minutes", msg: "The <ansi fg=\"mobname\">hockey coach</ansi> steps out of the equipment room, clipboard in hand."}
+    idle:
+      - The sound of skate blades cutting ice echoes through the rink.
+      - Someone's hockey stick clatters against the boards.
+      - The zamboni sits in the corner, waiting patiently for its next resurfacing run.
+      - A kid wobbles across the ice on rental skates, arms windmilling.
+
+  - id: 19
+    title: "Community Garden"
+    desc: >-
+      A peaceful patch of green tucked behind the park, divided into small plots separated
+      by wooden borders and gravel paths. <ansi fg="itemname">Flowers</ansi> of every color
+      bloom alongside rows of <ansi fg="itemname">vegetables</ansi> and fragrant
+      <ansi fg="itemname">herbs</ansi>. Each plot has a little handmade sign with the
+      gardener's name -- "Mrs. Chen," "The Kowalskis," "Plot 7 (Bernie)." A couple of
+      raised beds have chicken wire around them to keep the rabbits out. The air here is
+      warm and earthy and green, a small pocket of calm in the middle of the city. Bees
+      drift lazily between the blooms.
+    biome: city
+    symbol: "f"
+    legend: Garden
+    exits: {west: 7}
+    nouns:
+      flowers: >-
+        The <ansi fg="itemname">flowers</ansi> are a riotous mix of marigolds, sunflowers,
+        zinnias, and some purple things you don't know the name of but that the bees
+        seem crazy about. Mrs. Chen's plot has the most impressive display -- she clearly
+        takes this very seriously.
+      herbs: >-
+        Several plots have <ansi fg="itemname">herb</ansi> sections with little markers.
+        Basil, rosemary, mint, thyme, and something labeled "lemon balm" that smells
+        incredible when you brush against it. Bernie's plot is mostly just a massive
+        rosemary bush that has taken over half his allotted space.
+      vegetables: >-
+        The <ansi fg="itemname">vegetable</ansi> plots have tomatoes on stakes, climbing
+        bean vines, heads of lettuce, and a few ambitious squash plants that are sprawling
+        well beyond their borders. One plot has broccoli, which feels pointed somehow.
+    idle:
+      - A fat bumblebee drifts from one flower to the next with an audible buzz.
+      - A bird lands on a tomato stake and chirps at you like you're trespassing.
+      - The herbs release a wave of fragrance as a breeze passes through the garden.
+      - A butterfly settles on a marigold and opens its wings to the sun.
+      - Somewhere in the garden, a wind chime made of old spoons tinkles softly.
+
+  - id: 20
+    title: "Bridge Overlook"
+    desc: >-
+      A pedestrian bridge arches over the roadway below, opening up to a stunning
+      <ansi fg="itemname">view</ansi> of the San Francisco <ansi fg="itemname">bay</ansi>.
+      The <ansi fg="itemname">Golden Gate Bridge</ansi> rises in the distance, its orange
+      towers half-swallowed by the rolling fog. The water below is steel-gray and choppy,
+      dotted with sailboats and the occasional ferry. The wind is stronger up here, tugging
+      at your clothes and carrying the salt smell of the ocean. It's the kind of view
+      that makes you stop and just stand there for a minute, even if you've seen it a
+      hundred times. The railing is lined with locks that couples have attached -- a
+      tradition that someone keeps trying to stop and no one listens.
+    biome: city
+    symbol: "^"
+    legend: Overlook
+    exits: {west: 12}
+    nouns:
+      view: >-
+        The <ansi fg="itemname">view</ansi> is genuinely spectacular. The bay stretches
+        out to the horizon, gray-blue water meeting gray-white sky. Alcatraz sits out
+        there looking appropriately gloomy. The hills of Marin County rise on the far
+        side, green and hazy. On a clear day you can supposedly see all the way to the
+        Farallon Islands, but today isn't that day.
+      bridge: >-
+        The <ansi fg="itemname">Golden Gate Bridge</ansi> stands in the distance, its
+        International Orange towers cutting through the fog like they were built to do
+        exactly that. Even half-hidden, it's impossible to miss. You still remember the
+        first time you saw it after the move from Minnesota. It didn't feel real.
+      bay: >-
+        The <ansi fg="itemname">bay</ansi> is alive with movement -- whitecaps on the
+        chop, sailboats tacking against the wind, a container ship inching toward the
+        port. The water changes color depending on the light, shifting between green
+        and gray and sometimes a surprising blue. Seagulls wheel and dive, screaming
+        at each other over fish.
+    idle:
+      - Fog rolls in slowly across the bay, swallowing the base of the Golden Gate Bridge.
+      - A sailboat tacks across the wind, its white sail bright against the gray water.
+      - The wind picks up, whistling through the railings of the bridge overlook.
+      - A seagull lands on the railing, eyes you hopefully, then launches itself back into the wind.
+      - The fog horn sounds somewhere in the distance, low and mournful.

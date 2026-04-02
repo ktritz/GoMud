@@ -1,0 +1,23 @@
+# Auto-generated grid layout
+#
+# y+2:                          [956]   [957]   [958]   [959]   [960]   [961]   [962]   [963]   [964]
+# y+1:  [953]   [951]   [952]   [955]
+# y+0:  [954]   [950]
+#
+
+grid:
+  "0,0": 950    # Belief System Gateway
+  "0,1": 951    # The Foundation
+  "1,1": 952    # Positive Belief Corridor
+  "-1,1": 953    # Negative Belief Corridor
+  "-1,0": 954    # The Self-Image Chamber
+  "2,1": 955    # Confidence Bridge
+  "2,2": 956    # Identity Island - Hockey
+  "3,2": 957    # Identity Island - Family
+  "4,2": 958    # Identity Island - Friendship
+  "5,2": 959    # Identity Island - Honesty
+  "6,2": 960    # Identity Island - Music
+  "7,2": 961    # The Crumbling Edge
+  "8,2": 962    # Belief Forge
+  "9,2": 963    # Toxic Thought Pool
+  "10,2": 964    # Sense of Self Core

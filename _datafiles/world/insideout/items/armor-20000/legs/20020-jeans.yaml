@@ -1,0 +1,9 @@
+itemid: 20020
+name: jeans
+namesimple: jeans
+description: A pair of well-worn blue jeans. They have a small tear at one knee that
+  you definitely put there on purpose.
+type: legs
+subtype: wearable
+damagereduction: 1
+value: 10

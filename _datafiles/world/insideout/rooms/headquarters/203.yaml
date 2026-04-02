@@ -1,0 +1,23 @@
+roomid: 203
+zone: Headquarters
+title: Personality Islands Overlook
+description: A wide balcony juts out from the edge of Headquarters, offering a breathtaking panoramic view of the Personality Islands floating in the vast mindscape below. Each island is a towering structure of impossible architecture powered by Riley's core memories. Family Island glows warm with a cozy house perched on top. Hockey Island gleams with an ice rink that never melts. Friendship Island buzzes with connected pathways and shared spaces. Honesty Island stands solid and angular, built from transparent crystal. And the newest addition, Music Island, pulses with rhythm and streams colorful sound waves into the sky. The gaps between the islands reveal the dizzying drop to the memory shelves far, far below.
+mapsymbol: O
+maplegend: Overlook
+biome: mindscape
+exits:
+  south:
+    roomid: 200
+  east:
+    roomid: 215
+nouns:
+  islands: The Personality Islands float like enormous platforms over the abyss, each one tethered to Headquarters by bridges of light. They shift and glow based on Riley's current activities -- when she's with friends, Friendship Island blazes bright, and the others dim slightly.
+  family island: Family Island is warm and inviting, topped with a miniature version of Riley's childhood home. Soft golden light spills from its windows and the whole structure radiates safety and belonging.
+  hockey island: Hockey Island is all sharp angles and gleaming ice, with a full rink spinning slowly at its peak. The sounds of skates on ice and cheering crowds drift across the gap.
+  music island: The newest island pulses with vibrant energy. Enormous speakers and instruments sprout from its surface like a living concert stage, and waves of color ripple outward with every beat.
+idlemessages:
+- Family Island flares golden as Riley thinks about home.
+- Hockey Island dims slightly -- Riley must not be thinking about sports right now.
+- Music Island sends a ripple of purple and blue sound waves arcing across the sky.
+- Friendship Island lights up and you can faintly hear laughter drifting from it.
+- Far below, the memory shelves stretch to the horizon, millions of orbs glowing softly.

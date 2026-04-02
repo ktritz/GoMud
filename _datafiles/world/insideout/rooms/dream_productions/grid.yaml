@@ -1,0 +1,43 @@
+# Auto-generated grid layout
+#
+# y+3:                  [512]   [513]   [514]
+# y+2:          [502]   [503]   [504]
+# y+1:  [506]   [501]   [505]
+# y+0:  [507]   [508]
+# y-1:          [509]   [510]
+# y-2:                  [511]
+#
+
+grid:
+  "0,0": 500    # The Green Room
+  "0,1": 501    # The Backlot
+  "0,2": 502    # Soundstage A - Romance
+  "1,2": 503    # Soundstage B - Horror
+  "2,2": 504    # Soundstage C - Action
+  "1,1": 505    # Director's Office
+  "-1,1": 506    # Costume Department
+  "-1,0": 507    # Props Room
+  "0,0": 508    # The Green Room
+  "0,-1": 509    # Screening Room
+  "1,-1": 510    # Special Effects Lab
+  "1,-2": 511    # Actor's Trailer
+  "1,3": 512    # Nightmare Wing
+  "2,3": 513    # Script Archive
+  "3,3": 514    # Broadcast Tower
+
+special_exits:
+  500:
+    tunnel:
+      roomid: 204
+  501:
+    up:
+      roomid: 515
+      secret: true
+  514:
+    up:
+      roomid: 515
+  515:
+    down:
+      roomid: 514
+    ladder:
+      roomid: 501

@@ -1,0 +1,25 @@
+raceid: 7
+name: forgotten memory
+description: 'A translucent, fading figure that flickers in and out of existence.
+  What it once was is impossible to tell anymore.'
+defaultalignment: -10
+size: medium
+unarmedname: fading grasp
+tnlscale: 1
+selectable: false
+knowsfirstaid: false
+tameable: false
+stats:
+  mysticism:
+    base: 1
+damage:
+  diceroll: 1d4
+disabledslots:
+- weapon
+- offhand
+- gloves
+- belt
+- ring
+- legs
+- feet
+- neck

@@ -1,0 +1,19 @@
+mobid: 71
+zone: School
+scripttag: questgiver
+hostile: false
+maxwander: 0
+activitylevel: 25
+groups:
+- school-npc
+idlecommands:
+- emote adjusts her safety goggles and peers into a beaker.
+- say Science isn't about memorizing facts. It's about asking why.
+- emote scribbles observations in a lab notebook.
+- ''
+- ''
+character:
+  name: dr. reeves
+  description: Dr. Reeves is the Science Lab teacher, a tall woman with wild curly hair barely contained by a lab clip, safety goggles perpetually pushed up on her forehead, and a lab coat with at least three suspicious stains. She speaks with the kind of infectious excitement that makes dissecting a frog sound like the adventure of a lifetime. Her desk is covered in specimens, beakers, and a small cactus named "Control Group."
+  level: 15
+  raceid: 1

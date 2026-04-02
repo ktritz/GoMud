@@ -1,0 +1,31 @@
+mobid: 13
+zone: School
+itemdropchance: 15
+hostile: true
+nocorpse: true
+deathmessage: '{name} flickers violently and dissolves into nothing.'
+maxwander: 2
+activitylevel: 20
+groups:
+- fear
+idlecommands:
+- emote flickers at the edge of your vision, barely there.
+- emote whispers something you can almost hear, something unkind.
+- ''
+- ''
+- ''
+angrycommands:
+- emote grows darker and larger.
+character:
+  name: doubt shadow
+  description: A small, flickering shadow that clings to the edges of the hallway, barely visible unless you look directly at it. It has no solid form, just a dark, wavering silhouette that whispers half-heard insecurities in a voice that sounds uncomfortably like your own. It is the kind of creeping thought that makes you feel like you don't belong, like everyone is watching and judging. It feeds on hesitation and grows bolder in the dark.
+  level: 5
+  raceid: 5
+  gold: 10
+  stats:
+    strength:
+      training: 2
+    speed:
+      training: 0
+    vitality:
+      training: 3

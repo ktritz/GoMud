@@ -88,13 +88,7 @@ func (g *GMCPPartyModule) onUpdateVitals(e events.Event) events.ListenerReturn {
 	payload, moduleName := g.GetPartyNode(party, `Party.Vitals`)
 
 	for _, userId := range party.GetMembers() {
-
-		events.AddToQueue(GMCPOut{
-			UserId:  userId,
-			Module:  moduleName,
-			Payload: payload,
-		})
-
+		gmcpModule.queueGMCPEvent(userId, moduleName, payload)
 	}
 
 	return events.Continue
@@ -134,21 +128,9 @@ func (g *GMCPPartyModule) onPartyChange(e events.Event) events.ListenerReturn {
 	for _, userId := range evt.UserIds {
 
 		if _, ok := inParty[userId]; ok {
-
-			events.AddToQueue(GMCPOut{
-				UserId:  userId,
-				Module:  moduleName,
-				Payload: payload,
-			})
-
+			gmcpModule.queueGMCPEvent(userId, moduleName, payload)
 		} else {
-
-			events.AddToQueue(GMCPOut{
-				UserId:  userId,
-				Module:  `Party`,
-				Payload: GMCPPartyModule_Payload{},
-			})
-
+			gmcpModule.queueGMCPEvent(userId, `Party`, GMCPPartyModule_Payload{})
 		}
 
 	}

@@ -1,0 +1,20 @@
+roomid: 19
+zone: Rileys Neighborhood
+title: Community Garden
+description: A peaceful patch of green tucked behind the park, divided into small plots separated by wooden borders and gravel paths. Flowers of every color bloom alongside rows of vegetables and fragrant herbs. Each plot has a little handmade sign with the gardener's name -- "Mrs. Chen," "The Kowalskis," "Plot 7 (Bernie)." A couple of raised beds have chicken wire around them to keep the rabbits out. The air here is warm and earthy and green, a small pocket of calm in the middle of the city. Bees drift lazily between the blooms.
+mapsymbol: f
+maplegend: Garden
+biome: city
+exits:
+  west:
+    roomid: 7
+nouns:
+  flowers: The <ansi fg="itemname">flowers</ansi> are a riotous mix of marigolds, sunflowers, zinnias, and some purple things you don't know the name of but that the bees seem crazy about. Mrs. Chen's plot has the most impressive display -- she clearly takes this very seriously.
+  herbs: Several plots have <ansi fg="itemname">herb</ansi> sections with little markers. Basil, rosemary, mint, thyme, and something labeled "lemon balm" that smells incredible when you brush against it. Bernie's plot is mostly just a massive rosemary bush that has taken over half his allotted space.
+  vegetables: The <ansi fg="itemname">vegetable</ansi> plots have tomatoes on stakes, climbing bean vines, heads of lettuce, and a few ambitious squash plants that are sprawling well beyond their borders. One plot has broccoli, which feels pointed somehow.
+idlemessages:
+- A fat bumblebee drifts from one flower to the next with an audible buzz.
+- A bird lands on a tomato stake and chirps at you like you're trespassing.
+- The herbs release a wave of fragrance as a breeze passes through the garden.
+- A butterfly settles on a marigold and opens its wings to the sun.
+- Somewhere in the garden, a wind chime made of old spoons tinkles softly.

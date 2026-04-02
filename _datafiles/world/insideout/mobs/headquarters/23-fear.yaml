@@ -1,0 +1,27 @@
+mobid: 23
+zone: Headquarters
+hostile: false
+maxwander: 0
+activitylevel: 30
+groups:
+- headquarters-emotion
+idlecommands:
+- emote glances nervously at every exit, cataloging escape routes.
+- emote startles violently at absolutely nothing.
+- say Did you hear that? WHAT WAS THAT? Oh... nothing. It was nothing. Probably.
+- say I have a list of all the things that could go wrong today. It's... it's a long list.
+- emote mutters something about worst-case scenarios while wringing his hands.
+- ''
+- ''
+combatcommands:
+- callforhelp 5:emotion:shrieks in terror and calls for help.
+scripttag: questgiver
+questflags:
+- 6-start
+- 6-return
+- 6-end
+character:
+  name: fear
+  description: Fear is a tall, impossibly thin, purple-skinned emotion with enormous wide eyes that dart around constantly, scanning for threats real and imagined. He wears a tiny plaid bow tie and a houndstooth sweater vest that does nothing to make him look less terrified. His wild, wiry hair stands on end as if permanently electrified by his own anxiety. Every sudden noise makes him leap several feet into the air, and his long, spindly fingers are always clutching something for support. He keeps a mental catalog of every possible worst-case scenario and is eager to share them with anyone who will listen. Despite his constant state of panic, Fear's vigilance has saved Riley from countless scraped knees, bad decisions, and at least one very suspicious-looking dog.
+  level: 99
+  raceid: 2

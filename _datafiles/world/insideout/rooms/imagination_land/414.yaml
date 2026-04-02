@@ -1,0 +1,22 @@
+roomid: 414
+zone: Imagination Land
+title: Rainbow Bridge
+description: A spectacular bridge of pure prismatic light arcs through the sky, connecting the far-flung regions of Imagination Land. Each stripe of the rainbow is a walkable surface, and stepping on different colors produces different sensations -- red is warm, blue is cool, yellow tickles, green smells like fresh grass, and violet makes you hear distant music. The bridge has no railings because railings are boring and this is Imagination Land. The view from the apex is staggering -- you can see Cloud Town, the French Fry Forest, the distant towers of the Princess Dream Castle, and territories of imagination that have not been explored yet, shimmering on the horizon like a promise.
+mapsymbol: R
+maplegend: Rainbow
+biome: land
+exits:
+  north:
+    roomid: 413
+  west:
+    roomid: 401
+  south:
+    roomid: 415
+nouns:
+  bridge: The <ansi fg="itemname">bridge</ansi> is a physical rainbow, solid enough to walk on and vivid enough to make your eyes water. Each color band is about three feet wide and radiates its corresponding wavelength as warmth, sound, or scent. Walking across it is a full sensory experience. The bridge curves gracefully through the sky, connecting areas that would otherwise require hours of walking. There are no railings. There will never be railings.
+idlemessages:
+- You step on the red band and warmth floods up through your feet.
+- The violet stripe hums with a melody you have never heard but somehow know by heart.
+- A gust of wind sends a spray of rainbow mist off the edge of the bridge.
+- The view from up here makes the whole of Imagination Land look like a painting in progress.
+- The yellow stripe tickles your feet and you hear a distant, delighted giggle.

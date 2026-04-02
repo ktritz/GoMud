@@ -1,0 +1,7 @@
+buffid: 32
+name: Focused Thought
+description: Your mind feels sharp and clear, like a memory orb in perfect focus.
+triggerrate: 3 rounds
+triggercount: 3
+statmods:
+  perception: 5

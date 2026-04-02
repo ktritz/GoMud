@@ -1,0 +1,19 @@
+mobid: 74
+zone: School
+scripttag: questgiver
+hostile: false
+maxwander: 0
+activitylevel: 25
+groups:
+- school-npc
+idlecommands:
+- emote unfolds a large map and traces a route with her finger.
+- say Can anyone point to Uzbekistan? No? Just me then.
+- emote spins a small globe on her desk.
+- ''
+- ''
+character:
+  name: ms. walsh
+  description: Ms. Walsh is the geography teacher, a well-traveled woman with a collection of scarves from countries most students can't find on a map. She has a globe on her desk that she spins dramatically when making a point, and her walls are covered in maps with pushpins marking everywhere she's been. She once spent a summer teaching English in Nepal and won't let anyone forget it.
+  level: 15
+  raceid: 1

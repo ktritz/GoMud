@@ -1,0 +1,22 @@
+roomid: 509
+zone: Dream Productions
+title: Screening Room
+description: A private theater with a dozen velvet seats faces an enormous screen that stretches wall to wall. This is where dream productions are reviewed before broadcast, and right now a reel of recent dreams plays on loop -- fragments of flying, snippets of school, a brief clip of a dog wearing a graduation cap. The projector behind you hums and clicks, casting dancing light across the ceiling. Boxes of discarded dream reels are stacked along the walls, each one labeled with a date and a title. The room smells like movie theater popcorn and the unique ozone tang of pure imagination running through a projector.
+mapsymbol: S
+maplegend: Screening
+biome: dreamset
+exits:
+  north:
+    roomid: 508
+  east:
+    roomid: 510
+nouns:
+  screen: The <ansi fg="itemname">screen</ansi> is playing a montage of recent dream footage. A clip of Riley flying over the Golden Gate Bridge dissolves into a scene of her locker opening to reveal a tropical beach. The production quality varies wildly -- some scenes are cinematic masterpieces and others look like they were filmed on a potato.
+  seats: The <ansi fg="itemname">velvet seats</ansi> are deep red and each has a small brass nameplate. "JOY -- Head of Approval," "FEAR -- Content Warnings," and "DISGUST -- Quality Control (Self-Appointed)." One seat labeled "ANGER" has scorch marks on the armrests.
+  reels: 'The discarded <ansi fg="itemname">dream reels</ansi> are a fascinating archive. One is labeled "Dream #4,517: Riding a Giant Hamster to School -- SHELVED." Another reads "Dream #2,203: Actually Good At Math -- TOO UNREALISTIC." A thick reel at the bottom of the pile is simply marked "THE TEETH ONE. AGAIN."'
+idlemessages:
+- The screen flickers to a dream about showing up to a test completely unprepared.
+- The projector clicks and hums, casting swirling light patterns across the ceiling.
+- A dream reel rolls off a stack and across the floor, unspooling a few feet of film.
+- The screen briefly shows a puppy, and the whole room seems warmer for a moment.
+- Faint laughter from a dream plays through the speakers, then cuts to static.

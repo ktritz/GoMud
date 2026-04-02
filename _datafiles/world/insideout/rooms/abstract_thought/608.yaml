@@ -1,0 +1,25 @@
+roomid: 608
+zone: Abstract Thought
+title: The Shape Chamber
+description: 'A vast spherical space -- or the idea of a vast spherical space -- opens around you, its boundaries defined not by walls but by the limit of how far thought can extend before it curves back on itself. At the center floats a roiling mass of pure geometric chaos: shapes colliding, merging, splitting, and reforming in patterns that are almost recognizable but never quite resolve into anything you could name. Equations burn in the air around the mass like orbital satellites, each one describing an impossible relationship between concepts that were never meant to meet. The air -- if it is air -- vibrates at a frequency that makes your thoughts feel heavy. Something very old and very abstract lives at the heart of this chamber, and it has noticed you.'
+mapsymbol: '!'
+maplegend: Boss
+biome: abstract
+exits:
+  south:
+    roomid: 607
+  north:
+    roomid: 609
+nouns:
+  mass: The <ansi fg="itemname">mass</ansi> at the center of the chamber is hypnotic and horrifying. It cycles through every geometric form in rapid succession -- cube, sphere, tetrahedron, hypercube, things that have no name in three-dimensional language -- never settling, always becoming. Staring at it too long causes your own thoughts to start simplifying, as if the abstraction is contagious.
+  equations: The <ansi fg="itemname">equations</ansi> orbit the central mass like a protective shell of pure mathematics. Most of them are beyond comprehension, relating variables that represent emotions to constants that represent physical laws. One equation seems to solve for the exact weight of a memory. Another calculates the half-life of a forgotten name.
+spawninfo:
+- mobid: 47
+  message: The central mass shudders and a <ansi fg="mobname">non-figurative horror</ansi> tears itself free, screaming in frequencies that bypass your ears entirely.
+  respawnrate: 10 real minutes
+idlemessages:
+- The central mass pulses and a shockwave of pure concept ripples outward through the chamber.
+- An equation in the air solves itself, and the answer is a color that makes you feel homesick.
+- The chamber contracts slightly, as if the idea of space is reconsidering its boundaries.
+- A shape breaks free from the mass, drifts a few feet, and is pulled back in.
+- Your thoughts echo back to you slightly altered, as if the chamber is editing them.

@@ -1,0 +1,17 @@
+questid: 22
+name: 'PE Challenge: Advanced'
+description: Coach Davis has his toughest challenges yet.
+steps:
+- id: start
+  description: Complete Coach Davis's advanced challenges.
+- id: q1
+  description: Complete challenge 1.
+- id: q2
+  description: Complete challenge 2.
+- id: q3
+  description: Complete challenge 3.
+- id: end
+  description: You passed the advanced PE challenges!
+rewards:
+  experience: 5000
+  gold: 500

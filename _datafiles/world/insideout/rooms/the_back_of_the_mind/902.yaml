@@ -1,0 +1,28 @@
+roomid: 902
+zone: The Back of the Mind
+title: Vault Antechamber
+description: The suppression corridor opens into a wider space that serves as the staging area for the Emotion Vault beyond. Clinical white cabinets line the walls, filled with neatly organized tools of emotional suppression -- rolls of gray dampening tape, jars of neutralizing solution, and stacks of forms labeled "EMOTION PROCESSING AND CONTAINMENT REPORT." A heavy desk sits in the center of the room, covered in paperwork and a half-empty bottle of antacid tablets. The air here crackles with nervous energy -- this is where Anxiety's plan was executed, where feelings were processed and filed and locked away with ruthless efficiency. The vault door to the north looms heavy and final.
+mapsymbol: A
+maplegend: Antechamber
+biome: dungeon
+exits:
+  south:
+    roomid: 901
+  north:
+    roomid: 903
+nouns:
+  cabinets: 'The <ansi fg="itemname">cabinets</ansi> are organized with obsessive precision. Each drawer is labeled in Anxiety''s handwriting -- tight, cramped letters that get smaller as the labels get longer. "SADNESS: TOOLS FOR SUPPRESSION," "JOY: DAMPENING SUPPLIES," "ANGER: CONTAINMENT PROTOCOL 7B." The drawers for "EMBARRASSMENT" are suspiciously overstocked.'
+  desk: The <ansi fg="itemname">desk</ansi> is a monument to anxious overwork. Every inch is covered in papers, charts, and contingency plans. A whiteboard behind the desk has "WHAT IF RILEY FEELS TOO MUCH?" written at the top, followed by a flowchart so complex it loops back on itself seventeen times. The antacid bottle is nearly empty.
+spawninfo:
+- mobid: 58
+  message: An <ansi fg="mobname">anxiety spiral</ansi> uncoils from a cabinet, spinning into the room in a blur of tangled, half-formed thoughts.
+  respawnrate: 5 real minutes
+- mobid: 60
+  message: A <ansi fg="mobname">suppression guard</ansi> steps out from behind a cabinet, its blank visor scanning the room.
+  respawnrate: 6 real minutes
+idlemessages:
+- A cabinet drawer slides open on its own, then slams shut.
+- The paperwork on the desk rustles as if caught in a draft of pure nervous energy.
+- A jar of neutralizing solution bubbles despite being sealed.
+- The whiteboard behind the desk adds a new branch to its flowchart. Nobody is holding the marker.
+- An antacid tablet rolls off the desk and dissolves on the floor with a quiet fizz.

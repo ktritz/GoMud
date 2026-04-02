@@ -465,21 +465,21 @@ func GetMap(mapRoomId int, zoomLevel int, mapHeight int, mapWidth int, mapName s
 	legend := mapOutput.GetLegend(keywords.GetAllLegendAliases(room.Zone))
 
 	displayLines := []string{}
-	for i, line := range mapOutput.Render {
-		displayLines = append(displayLines, string(line))
-		for sym, txtLegend := range legend {
-			txtLc := strings.ToLower(txtLegend)
-			displayLines[i] = strings.Replace(displayLines[i], string(sym), fmt.Sprintf(`<ansi fg="map-room"><ansi fg="map-%s" bg="mapbg-%s">%c</ansi></ansi>`, txtLc, txtLc, sym), -1)
+	width := 0
+	for _, line := range mapOutput.Render {
+		if width == 0 {
+			width = runewidth.StringWidth(string(line))
 		}
+		displayLines = append(displayLines, mapper.RenderANSILine(line, legend))
 	}
 
 	mapData := map[string]any{
 		"Title":        mapName,
 		"DisplayLines": displayLines,
 		"Height":       len(displayLines),
-		"Width":        runewidth.StringWidth(string(displayLines[0])),
+		"Width":        width,
 		"Legend":       legend,
-		"LegendWidth":  runewidth.StringWidth(string(displayLines[0])),
+		"LegendWidth":  width,
 		"LeftBorder": map[string]any{
 			"Top":    ".-=~=-.",
 			"Mid":    []string{"( _ __)", "(__  _)"},

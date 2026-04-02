@@ -1,0 +1,26 @@
+roomid: 301
+zone: Long Term Memory
+title: Yellow Memory Corridor
+description: A warm golden glow suffuses this corridor, radiating from shelves packed entirely with joy memories. Every orb here shines a rich, buttery yellow, and the light they cast makes the narrow passage feel like a sun-drenched afternoon that never ends. The air itself seems warmer, and you catch fragments of laughter and music leaking from the orbs as you pass. Occasional bright flares mark particularly intense happy memories, momentarily washing the corridor in blinding gold. A side passage branches off toward the fading sections to the west.
+mapsymbol: Y
+maplegend: Yellow
+biome: mindscape
+exits:
+  north:
+    roomid: 300
+  south:
+    roomid: 302
+  west:
+    roomid: 306
+nouns:
+  joy memories: The <ansi fg="itemname">joy memories</ansi> glow with an infectious warmth. Peering into one reveals a birthday party, candles blazing. Another shows a dog licking someone's face. A third captures the exact moment of hearing your favorite song for the first time. Each one makes you want to smile.
+idlemessages:
+- A nearby orb flares golden and the sound of a child's laughter echoes briefly through the corridor.
+- The warm glow intensifies for a moment, as if a cluster of happy memories are being recalled at once.
+- You catch a whiff of birthday cake drifting from one of the shelves.
+- A golden orb rolls to the edge of its shelf, glowing brighter, then settles back into place.
+- The sound of distant applause leaks from an orb somewhere above you.
+spawninfo:
+- mobid: 31
+  message: A memory leech oozes along the golden memory shelf.
+  respawnrate: 4 real minutes

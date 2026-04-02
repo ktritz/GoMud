@@ -1,0 +1,12 @@
+itemid: 20006
+name: 'jangles'' party hat'
+namesimple: hat
+description: 'A grotesque party hat taken from Jangles the Clown. It''s slightly damp,
+  covered in confetti, and occasionally honks softly. Terrifying.'
+type: head
+subtype: wearable
+damagereduction: 6
+statmods:
+  perception: 3
+  speed: -2
+value: 300

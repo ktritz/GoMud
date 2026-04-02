@@ -13,6 +13,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"io"
 	"net"
 	"net/http"
 	"strconv"
@@ -29,10 +30,23 @@ var (
 	initialized bool
 	waitMutex   sync.RWMutex
 	waitUntil   time.Time
+	discordHTTP = &http.Client{
+		Transport: &http.Transport{
+			Dial: (&net.Dialer{
+				Timeout:   3 * time.Second,
+				KeepAlive: 3 * time.Second,
+			}).Dial,
+			TLSHandshakeTimeout:   3 * time.Second,
+			ResponseHeaderTimeout: 3 * time.Second,
+			ExpectContinueTimeout: 1 * time.Second,
+		},
+	}
+	sendQueue chan []byte
 )
 
 const (
 	RequestFailureBackoffSeconds = 30
+	sendQueueSize                = 64
 )
 
 // Initializes and sets the webhook so we can send messages to discord
@@ -43,18 +57,21 @@ func Init(webhookUrl string) {
 	}
 
 	WebhookUrl = webhookUrl
+	sendQueue = make(chan []byte, sendQueueSize)
+	go sendWorker()
 	registerListeners()
 	initialized = true
 }
 
 func registerListeners() {
-	events.RegisterListener(events.PlayerSpawn{}, HandlePlayerSpawn)
-	events.RegisterListener(events.PlayerDespawn{}, HandlePlayerDespawn)
-	events.RegisterListener(events.Log{}, HandleLogs)
-	events.RegisterListener(events.LevelUp{}, HandleLevelup)
-	events.RegisterListener(events.PlayerDeath{}, HandleDeath)
-	events.RegisterListener(events.Broadcast{}, HandleBroadcast)
-	events.RegisterListener(`AuctionUpdate`, HandleAuctionUpdate)
+	events.RegisterTransportListener(events.PlayerSpawn{}, HandlePlayerSpawn)
+	events.RegisterTransportListener(events.PlayerDespawn{}, HandlePlayerDespawn)
+	events.RegisterTransportListener(events.Log{}, HandleLogs)
+	events.RegisterTransportListener(events.LevelUp{}, HandleLevelup)
+	events.RegisterTransportListener(events.PlayerDeath{}, HandleDeath)
+	events.RegisterTransportListener(events.Broadcast{}, HandleBroadcast)
+	events.RegisterTransportListener(`AuctionUpdate`, HandleAuctionUpdate)
+	events.RegisterTransportListener(webhookEvent{}, handleWebhookEvent)
 }
 
 // Sends an embed message to discord which includes a colored bar to the left
@@ -80,7 +97,7 @@ func SendRichMessage(message string, color Color) {
 		return
 	}
 
-	send(marshalled)
+	queueWebhookPayload(marshalled)
 
 }
 
@@ -101,7 +118,7 @@ func SendMessage(message string) {
 		return
 	}
 
-	send(marshalled)
+	queueWebhookPayload(marshalled)
 }
 
 // Sends a simple message to discord
@@ -117,7 +134,22 @@ func SendPayload(payload webHookPayload) {
 		return
 	}
 
-	send(marshalled)
+	queueWebhookPayload(marshalled)
+}
+
+func queueWebhookPayload(marshalled []byte) {
+	events.AddToQueue(webhookEvent{Payload: append([]byte(nil), marshalled...)})
+}
+
+func handleWebhookEvent(e events.Event) events.ListenerReturn {
+	evt, ok := e.(webhookEvent)
+	if !ok {
+		mudlog.Error(`discord`, `error`, "Expected DiscordWebhook event")
+		return events.Cancel
+	}
+
+	send(evt.Payload)
+	return events.Continue
 }
 
 func send(marshalled []byte) {
@@ -126,39 +158,51 @@ func send(marshalled []byte) {
 		return
 	}
 
-	go func() {
-		request, err := http.NewRequest("POST", WebhookUrl, bytes.NewReader(marshalled))
-		request.Header.Set("Content-Type", "application/json; charset=UTF-8")
+	payload := append([]byte(nil), marshalled...)
 
-		client := &http.Client{
-			Transport: &http.Transport{
-				Dial: (&net.Dialer{
-					Timeout:   3 * time.Second,
-					KeepAlive: 3 * time.Second,
-				}).Dial,
-				TLSHandshakeTimeout:   3 * time.Second,
-				ResponseHeaderTimeout: 3 * time.Second,
-				ExpectContinueTimeout: 1 * time.Second,
-			},
-		}
-		response, err := client.Do(request)
-		if err != nil {
+	select {
+	case sendQueue <- payload:
+	default:
+		mudlog.Warn(`discord`, `error`, "Discord webhook queue full, dropping payload.")
+	}
 
-			doRequestBackoff()
+}
 
-			mudlog.Error(`discord`, `error`, err)
-			return
-		}
+func sendWorker() {
+	for payload := range sendQueue {
+		sendNow(payload)
+	}
+}
 
-		// Expect 204 No Content reply
-		if response.StatusCode != 204 {
+func sendNow(marshalled []byte) {
+	request, err := http.NewRequest("POST", WebhookUrl, bytes.NewReader(marshalled))
+	if err != nil {
+		doRequestBackoff()
+		mudlog.Error(`discord`, `error`, err)
+		return
+	}
 
-			doRequestBackoff()
+	request.Header.Set("Content-Type", "application/json; charset=UTF-8")
 
-			mudlog.Error(`discord`, `error`, fmt.Sprintf("Expected discord to send status code 204, got %v.", response.StatusCode))
-			return
-		}
-	}()
+	response, err := discordHTTP.Do(request)
+	if err != nil {
+
+		doRequestBackoff()
+
+		mudlog.Error(`discord`, `error`, err)
+		return
+	}
+	defer response.Body.Close()
+	io.Copy(io.Discard, response.Body)
+
+	// Expect 204 No Content reply
+	if response.StatusCode != 204 {
+
+		doRequestBackoff()
+
+		mudlog.Error(`discord`, `error`, fmt.Sprintf("Expected discord to send status code 204, got %v.", response.StatusCode))
+		return
+	}
 
 }
 

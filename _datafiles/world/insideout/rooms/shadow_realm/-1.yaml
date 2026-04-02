@@ -1,0 +1,10 @@
+roomid: -1
+zone: Shadow Realm
+title: The Space Between Thoughts
+description: You float in a quiet, empty space between Riley's thoughts. There is no color here, no sound, no feeling -- just a gentle, weightless nothing. It's the pause between one idea and the next, the moment before a memory forms. Faint echoes of emotions drift past like distant music, too far away to recognize. It feels peaceful, in a strange way. Like the world is holding its breath, waiting for you to think of something.
+exits:
+  drift:
+    roomid: -1
+idlemessages:
+- Type <ansi fg="command">look</ansi> to look around.
+- Type <ansi fg="command">help</ansi> to see help topics.

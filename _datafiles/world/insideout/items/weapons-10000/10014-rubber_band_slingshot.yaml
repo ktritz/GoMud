@@ -1,0 +1,12 @@
+itemid: 10014
+name: rubber band slingshot
+namesimple: slingshot
+description: A classic Y-shaped slingshot made from a tree branch and thick rubber
+  bands. Perfect for launching memory orb fragments at things that annoy you.
+type: weapon
+hands: 1
+subtype: shooting
+uses: 0
+damage:
+  diceroll: 1d3
+value: 10

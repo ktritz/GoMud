@@ -329,7 +329,7 @@ func LoadUser(username string, skipValidation ...bool) (*UserRecord, error) {
 
 	loadedUser := &UserRecord{}
 	if err := yaml.Unmarshal([]byte(userFileTxt), loadedUser); err != nil {
-		mudlog.Error("LoadUser", "error", err.Error())
+		return nil, err
 	}
 
 	if len(skipValidation) == 0 || !skipValidation[0] {
@@ -350,11 +350,19 @@ func LoadUser(username string, skipValidation ...bool) (*UserRecord, error) {
 
 // Loads all user recvords and runs against a function.
 // Stops searching if false is returned.
-func SearchOfflineUsers(searchFunc func(u *UserRecord) bool) {
+func SearchOfflineUsers(searchFunc func(u *UserRecord) bool) error {
 
 	basePath := util.FilePath(string(configs.GetFilePathsConfig().DataFiles), `/`, `users`)
+	if _, err := os.Stat(basePath); err != nil {
+		if os.IsNotExist(err) {
+			return nil
+		}
+		return err
+	}
 
-	filepath.Walk(basePath, func(path string, info os.FileInfo, err error) error {
+	searchDone := errors.New(`done searching`)
+
+	err := filepath.Walk(basePath, func(path string, info os.FileInfo, err error) error {
 
 		if err != nil {
 			return err
@@ -389,12 +397,17 @@ func SearchOfflineUsers(searchFunc func(u *UserRecord) bool) {
 			}
 
 			if res := searchFunc(&uRecord); !res {
-				return errors.New(`done searching`)
+				return searchDone
 			}
 		}
 		return nil
 	})
 
+	if err != nil && !errors.Is(err, searchDone) {
+		return err
+	}
+
+	return nil
 }
 
 func ValidateName(name string) error {
@@ -446,7 +459,7 @@ func CharacterNameSearch(nameToFind string) (foundUserId int, foundUserName stri
 	foundUserId = 0
 	foundUserName = ``
 
-	SearchOfflineUsers(func(u *UserRecord) bool {
+	if err := SearchOfflineUsers(func(u *UserRecord) bool {
 
 		if strings.EqualFold(u.Character.Name, nameToFind) {
 			foundUserId = u.UserId
@@ -465,7 +478,9 @@ func CharacterNameSearch(nameToFind string) (foundUserId int, foundUserName stri
 		}
 
 		return true
-	})
+	}); err != nil {
+		mudlog.Error("CharacterNameSearch", "error", err.Error())
+	}
 
 	return foundUserId, foundUserName
 }
@@ -533,14 +548,16 @@ func GetUniqueUserId() int {
 	} else {
 
 		// Check all user id's of offline users
-		SearchOfflineUsers(func(u *UserRecord) bool {
+		if err := SearchOfflineUsers(func(u *UserRecord) bool {
 
 			if u.UserId > highestUserId {
 				highestUserId = u.UserId
 			}
 
 			return true
-		})
+		}); err != nil {
+			mudlog.Error("GetUniqueUserId", "error", err.Error())
+		}
 
 		// Check all user id's of online users
 		for _, u := range GetAllActiveUsers() {

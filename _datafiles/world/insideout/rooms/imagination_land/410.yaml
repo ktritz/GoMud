@@ -1,0 +1,21 @@
+roomid: 410
+zone: Imagination Land
+title: Building Block Fortress
+description: A massive fortress constructed entirely from giant building blocks rises in primary-colored splendor. Red, blue, yellow, and green blocks the size of cars are stacked in thick walls with crenellations along the top. Arrow slits are just gaps where blocks do not quite line up. The main gate is two blocks leaning against each other, and somehow the whole structure is both architecturally unsound and completely indestructible. Inside the walls, a courtyard holds a toy chest the size of a small building, its lid propped open to reveal a jumble of oversized toys and imagination supplies. The fortress smells like new plastic and the faint ozone of creative energy.
+mapsymbol: '#'
+maplegend: Fort
+biome: land
+exits:
+  north:
+    roomid: 409
+  south:
+    roomid: 411
+nouns:
+  fortress: The <ansi fg="itemname">fortress</ansi> defies every law of physics and architecture. Blocks that should topple stay perfectly balanced. Walls that should collapse hold firm against any force. It is built with the absolute confidence of a child who does not know that buildings can fall down, and in Imagination Land, that confidence is structural integrity.
+  toy chest: The enormous <ansi fg="itemname">toy chest</ansi> is overflowing. Giant action figures, rubber balls the size of boulders, a jump rope that could lasso a building, and sets of jacks that could puncture a tire. Everything in it is scaled up to the exaggerated proportions of childhood memory, when every toy felt as big as the world.
+idlemessages:
+- A building block at the top of the wall wobbles, then settles firmly back into place.
+- The toy chest lid creaks open another inch, as if something inside wants out.
+- A giant rubber ball bounces out of the courtyard and rolls to a stop against the wall.
+- The fortress hums with a low, satisfied vibration, proud of its own impossible existence.
+- A block changes color from red to blue. Nobody built it that way. It just decided.

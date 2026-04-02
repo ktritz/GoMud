@@ -1,0 +1,661 @@
+zone: dream_productions
+zone_config:
+  name: "Dream Productions"
+  roomid: 500
+  autoscale: {minimum: 8, maximum: 11}
+  defaultbiome: dreamset
+
+rooms:
+  # ── STUDIO ENTRANCE GATE ────────────────────────────────────────────
+  - id: 500
+    title: "Studio Entrance Gate"
+    desc: >-
+      A massive wrought-iron gate towers before you, emblazoned with the words
+      <ansi fg="itemname">DREAM PRODUCTIONS</ansi> in gleaming marquee letters
+      that flicker between gold and silver like old Hollywood signage. Two
+      enormous spotlights sweep the perpetually twilight sky above, casting
+      dramatic beams through a faint haze of stage fog. A velvet rope blocks the
+      main entrance, but the turnstile beside it clicks invitingly. Beyond the
+      gate, the sprawling backlot stretches out under a sky that can't decide if
+      it's sunset or sunrise -- because in dreams, it's always both.
+    biome: dreamset
+    symbol: G
+    legend: Gate
+    exits:
+      tunnel: 204
+      north: 501
+    nouns:
+      gate: >-
+        The <ansi fg="itemname">gate</ansi> is pure Hollywood excess. The iron
+        scrollwork includes tiny film reels, shooting stars, and what appears to
+        be a sleeping face with a thought bubble. The marquee letters buzz with
+        electric warmth, and a small plaque at the base reads "Established the
+        night Riley was born. We've been making dreams ever since."
+      spotlights: >-
+        The <ansi fg="itemname">spotlights</ansi> sweep in lazy arcs, illuminating
+        nothing in particular but making everything feel important. Occasionally
+        they cross paths and create a brilliant star burst in the haze above. A
+        label on one reads "PROPERTY OF DREAM PRODUCTIONS -- DO NOT AIM AT
+        SUBCONSCIOUS."
+      rope: >-
+        The <ansi fg="itemname">velvet rope</ansi> is a rich purple, strung between
+        two brass posts. A small sign hangs from it reading "VIP ACCESS ONLY -- All
+        Emotions, Mind Workers, and Anyone Who's Currently Asleep." So, basically
+        everyone.
+    idle:
+      - The marquee letters flicker and briefly spell "NOW DREAMING" before resetting.
+      - A spotlight catches a wisp of stage fog, creating a ghostly silhouette that dissolves instantly.
+      - The turnstile clicks and spins on its own, admitting nobody in particular.
+      - Faint orchestral music swells from somewhere beyond the gate, then fades to silence.
+      - A ticket stub tumbles past on a breeze that smells like popcorn and déjà vu.
+
+  # ── THE BACKLOT ─────────────────────────────────────────────────────
+  - id: 501
+    title: "The Backlot"
+    desc: >-
+      A sprawling open-air lot stretches in every direction, cluttered with
+      half-built <ansi fg="itemname">sets</ansi> and towering facades that lead
+      to absolutely nothing behind them. A fake mountain range made of painted
+      plywood leans against a tropical beach backdrop, and a medieval castle
+      front sits next to a cardboard spaceship. Rolling <ansi fg="itemname">equipment
+      carts</ansi> loaded with props and lighting rigs crowd the pathways between
+      soundstages. The ground is a mess of cables, tape marks, and chalk outlines
+      where actors are supposed to stand. Everything has that peculiar dream logic
+      to it -- a door opens onto a wall, a staircase leads sideways, and nobody
+      finds any of it unusual.
+    biome: dreamset
+    symbol: B
+    legend: Backlot
+    exits:
+      south: 500
+      north: 502
+      east: 505
+      west: 506
+      up: {roomid: 515, secret: true}
+    nouns:
+      sets: >-
+        The <ansi fg="itemname">sets</ansi> are a magnificent mess of recycled dream
+        material. A school hallway facade has lockers that open into a forest. A
+        kitchen set has a fridge full of rubber chickens. One set is just labeled
+        "THAT DREAM WHERE YOU'RE LATE FOR SOMETHING" and it's suspiciously well-worn.
+      carts: >-
+        The <ansi fg="itemname">equipment carts</ansi> are loaded with dream-making
+        gear: fog machines, emotion-tinted lights, bottles labeled "FALLING SENSATION,"
+        and a box of rubber teeth marked "FOR THE TEETH DREAM -- HANDLE WITH CARE."
+    idle:
+      - A set piece topples over with a dramatic crash, then quietly stands itself back up.
+      - A crew member in a beret rushes past carrying an armful of fake clouds.
+      - The lighting shifts from golden hour to moonlight and back in the span of a few seconds.
+      - Someone yells "CUT!" from one of the soundstages, followed by muffled arguing.
+      - A cardboard tree falls over, revealing another cardboard tree behind it.
+
+  # ── SOUNDSTAGE A - ROMANCE ──────────────────────────────────────────
+  - id: 502
+    title: "Soundstage A - Romance"
+    desc: >-
+      Pink and red lights bathe this cavernous soundstage in the warm glow of
+      manufactured love. A <ansi fg="itemname">balcony set</ansi> dominates the
+      center, complete with plastic roses, a painted moon backdrop that's slightly
+      crooked, and a wind machine pointed at a spot marked "STAND HERE FOR HAIR
+      FLOWING." Racks of hilariously overdramatic <ansi fg="itemname">costumes</ansi>
+      line one wall -- puffy sleeves, sparkly gowns, and at least three different
+      prince outfits. A boom box in the corner is permanently set to play soft
+      saxophone music. The whole set radiates the kind of cheesy romance that makes
+      you cringe and secretly enjoy it at the same time.
+    biome: dreamset
+    symbol: R
+    legend: Romance
+    exits:
+      south: 501
+      east: 503
+    nouns:
+      balcony: >-
+        The <ansi fg="itemname">balcony set</ansi> is peak melodrama. The railing is
+        made of spray-painted pool noodles, the roses are obviously plastic, and the
+        moon backdrop has a visible seam down the middle. A director's note taped to
+        the railing reads "MORE YEARNING. The audience can tell you're not yearning
+        hard enough."
+      costumes: >-
+        The <ansi fg="itemname">costumes</ansi> are gloriously terrible. There's a
+        ball gown made entirely of doilies, a suit of armor with a heart painted on
+        the chest, and a leather jacket labeled "BAD BOY LOVE INTEREST -- ONE SIZE
+        FITS ALL." A sticky note on the rack reads "Disgust has requested we burn
+        all of these. Request denied -- Joy."
+    idle:
+      - The wind machine kicks on, sending a cascade of fake rose petals across the stage.
+      - Soft saxophone music swells dramatically, then a record scratch kills it.
+      - A spotlight snaps on, illuminating the balcony set in an absurdly flattering glow.
+      - Two mannequins in the corner almost look like they're gazing into each other's eyes.
+      - A crew member adjusts the moon backdrop, making it even more crooked than before.
+
+  # ── SOUNDSTAGE B - HORROR ───────────────────────────────────────────
+  - id: 503
+    title: "Soundstage B - Horror"
+    desc: >-
+      The temperature drops the moment you step through the heavy soundstage
+      door. This set is dedicated to nightmares, and the production team has
+      gone all out. Fog clings to the floor in thick, unnatural sheets, lit
+      from below by <ansi fg="itemname">flickering red lights</ansi> that make
+      every shadow look alive. A crumbling <ansi fg="itemname">haunted school
+      hallway</ansi> stretches across the main stage, its lockers hanging open
+      to reveal darkness that seems deeper than it should be. Fake cobwebs cover
+      everything, though some of them feel disturbingly real. A sign near the
+      entrance reads "NIGHTMARE DEPARTMENT -- Fear Approved, Joy Tolerated." The
+      unsettling part is that the set feels less like a set and more like
+      somewhere you've actually been in a bad dream.
+    biome: dreamset
+    symbol: H
+    legend: Horror
+    exits:
+      west: 502
+      east: 504
+      north: 512
+    nouns:
+      lights: >-
+        The <ansi fg="itemname">flickering red lights</ansi> are embedded in the
+        floor, casting everything in a sinister upward glow. A label on one reads
+        "ANXIETY SPECIAL -- Triple intensity, extra flicker. Approved for use in
+        'showing up to school in underwear' dreams and above."
+      hallway: >-
+        The <ansi fg="itemname">haunted school hallway</ansi> is an uncanny recreation
+        of Riley's middle school, but wrong. The lockers are numbered in reverse, the
+        clock on the wall runs backward, and the classroom doors open onto brick walls.
+        It's the kind of place where you run and run but never reach the end.
+    spawns:
+      - {mob: 41, rate: "4 real minutes", msg: "A <ansi fg=\"mobname\">dream nightmare</ansi> seeps out of a locker, trailing dark fog."}
+      - {mob: 41, rate: "6 real minutes", msg: "A <ansi fg=\"mobname\">dream nightmare</ansi> materializes from beneath the stage floor."}
+    idle:
+      - A locker door slams shut on its own and the echo lingers far too long.
+      - The fog on the floor churns and for a moment you can almost see a face in it.
+      - The hallway seems to stretch a few feet longer when you're not looking directly at it.
+      - A distant school bell rings, muffled and distorted, from deep within the set.
+      - One of the red lights dies, plunging a corner into absolute darkness. Then it flickers back.
+
+  # ── SOUNDSTAGE C - ACTION ───────────────────────────────────────────
+  - id: 504
+    title: "Soundstage C - Action"
+    desc: >-
+      Everything in this soundstage is turned up to eleven. A partially destroyed
+      <ansi fg="itemname">city block</ansi> set fills the main stage, complete
+      with overturned cars made of foam, breakaway walls, and a fire hydrant that
+      shoots real water on a timer. <ansi fg="itemname">Pyrotechnic rigs</ansi>
+      line the ceiling, each one labeled with helpful notes like "SMALL BOOM,"
+      "MEDIUM BOOM," and "RILEY JUST ATE SPICY FOOD." A stunt mat the size of a
+      swimming pool cushions the floor beneath a zip line that runs the full length
+      of the stage. Somewhere a countdown is always running, and something is always
+      about to explode. This is where the dreams that make you wake up with your
+      heart pounding are born.
+    biome: dreamset
+    symbol: A
+    legend: Action
+    exits:
+      west: 503
+    nouns:
+      city block: >-
+        The <ansi fg="itemname">city block</ansi> is impressively detailed despite
+        being entirely fake. The overturned cars are foam but painted to look like
+        real wreckage. One building facade has a hole shaped suspiciously like a
+        person who was thrown through it. A movie slate on the ground reads "CHASE
+        DREAM #847 -- Take 1."
+      pyrotechnics: >-
+        The <ansi fg="itemname">pyrotechnic rigs</ansi> are an elaborate network of
+        launchers, sparklers, and smoke canisters. A safety manual is duct-taped to
+        the wall, opened to a page that just says "Eh, it's a dream, what's the
+        worst that could happen?" Signed by the Dream Director.
+    idle:
+      - A pyrotechnic rig fires a burst of sparks across the ceiling with a satisfying CRACK.
+      - A foam car flips over in slow motion, lands, then resets itself for the next take.
+      - The fire hydrant erupts, spraying water everywhere before shutting off just as suddenly.
+      - An explosion rocks the far end of the stage and a crew member holds up a sign reading "COOL."
+      - The zip line whirs as an invisible stunt double zips across the soundstage.
+
+  # ── DIRECTOR'S OFFICE ───────────────────────────────────────────────
+  - id: 505
+    title: "Director's Office"
+    desc: >-
+      A cluttered office sits behind a door with a gold star and the nameplate
+      "<ansi fg="mobname">DREAM DIRECTOR</ansi>." The walls are covered in framed
+      <ansi fg="itemname">dream posters</ansi> -- past productions with titles like
+      "Flying Over San Francisco III: This Time It's Turbulent" and "Why Are My
+      Teeth Falling Out: A Thriller." A massive oak <ansi fg="itemname">desk</ansi>
+      dominates the center, buried under scripts, storyboards, and a half-eaten
+      sandwich that might be from last week's dream. A director's chair sits behind
+      the desk, monogrammed with a tiny sleeping face logo. Awards line a shelf --
+      golden pillows inscribed with "Best Recurring Dream" and "Most Effective
+      Anxiety Sequence."
+    biome: dreamset
+    symbol: D
+    legend: Director
+    exits:
+      west: 501
+    nouns:
+      posters: >-
+        The <ansi fg="itemname">dream posters</ansi> are a highlight reel of Riley's
+        subconscious cinema. "The Dog Who Could Talk: Director's Cut" has five stars.
+        "Running In Place: Why Won't My Legs Work" won Best Nightmare three years
+        running. "Bing Bong: A Retrospective" has a small sticker reading "Staff Pick."
+      desk: >-
+        The <ansi fg="itemname">desk</ansi> is organized chaos. Scripts are stacked in
+        piles labeled "TONIGHT," "THIS WEEK," and "WHEN RILEY EATS CHEESE BEFORE BED."
+        A phone with twelve lines sits in the corner -- all of them are blinking. A
+        coffee mug reads "I'd Rather Be Dreaming."
+    spawns:
+      - {mob: 40, rate: "8 real minutes", msg: "The <ansi fg=\"mobname\">Dream Director</ansi> sweeps in through a side door, already mid-sentence about tonight's lineup."}
+    idle:
+      - One of the phone lines rings, goes unanswered, and stops. Then a different line rings.
+      - A script page slides off the desk and drifts to the floor, face-up on a scene about flying.
+      - The golden pillow award on the shelf gleams as if freshly polished by a proud hand.
+      - A storyboard pinned to the wall rearranges itself, swapping the second and third acts.
+
+  # ── COSTUME DEPARTMENT ──────────────────────────────────────────────
+  - id: 506
+    title: "Costume Department"
+    desc: >-
+      Racks upon racks of <ansi fg="itemname">dream costumes</ansi> fill this
+      enormous wardrobe department, stretching back into what feels like an
+      impossible amount of space. Every outfit Riley's subconscious has ever
+      conjured hangs here -- astronaut suits next to medieval armor next to a
+      disturbingly accurate recreation of what she wore on the first day of
+      school. Full-length <ansi fg="itemname">mirrors</ansi> stand between the
+      racks, and each one reflects you in a slightly different outfit, because
+      that's just how dream mirrors work. A sewing station in the corner is
+      manned by busy hands, stitching together tonight's wardrobe. Bolts of
+      fabric in impossible colors -- colors that don't exist when you're awake
+      -- lean against every surface.
+    biome: dreamset
+    symbol: C
+    legend: Costumes
+    exits:
+      east: 501
+      south: 507
+    nouns:
+      costumes: >-
+        The <ansi fg="itemname">dream costumes</ansi> range from mundane to
+        magnificent. There's a perfectly normal school uniform hanging next to a
+        full suit of crystal armor. A section labeled "EMBARRASSMENT WARDROBE"
+        contains nothing but underwear and pajamas. The "HERO SECTION" has capes
+        in every color and a leather jacket that makes you feel cool just looking
+        at it.
+      mirrors: >-
+        The <ansi fg="itemname">mirrors</ansi> are disconcerting. One shows you
+        in a ball gown. Another shows you in hockey gear. A third shows you in
+        something you definitely wore in a dream once but can't quite remember.
+        None of them show what you're actually wearing right now.
+    spawns:
+      - {mob: 43, rate: "10 real minutes", msg: "A <ansi fg=\"mobname\">stage hand</ansi> appears from behind a costume rack, pushing a cart of freshly pressed outfits."}
+    idle:
+      - A costume falls off its hanger and lands in a dramatically perfect pose on the floor.
+      - The mirrors flicker and every reflection changes outfits simultaneously.
+      - A sewing machine whirs to life on its own, stitching something sparkly at incredible speed.
+      - You catch a mirror showing you in an outfit you've never seen before. It looks great, honestly.
+
+  # ── PROPS ROOM ──────────────────────────────────────────────────────
+  - id: 507
+    title: "Props Room"
+    desc: >-
+      Floor-to-ceiling <ansi fg="itemname">shelves</ansi> packed with every
+      conceivable prop crowd this room into a labyrinth of dream artifacts. Foam
+      swords lean against rubber chickens. A jar labeled "TEETH (for the teeth
+      dream)" sits next to a box of "GRAVITY -- REDUCED." One shelf holds nothing
+      but <ansi fg="itemname">doorknobs</ansi> that each open onto a different
+      dream. A workbench in the center is covered in half-finished props -- someone
+      is building a new giant pencil and what appears to be a talking sandwich.
+      Everything here is designed to look real enough for a dream but falls apart
+      the moment you examine it too closely. Which is, of course, exactly how
+      dreams work.
+    biome: dreamset
+    symbol: P
+    legend: Props
+    exits:
+      north: 506
+      east: 508
+    nouns:
+      shelves: >-
+        The <ansi fg="itemname">shelves</ansi> are a treasure trove of dream logic.
+        One section is labeled "THINGS THAT SHOULDN'T BE ABLE TO FLY (BUT DO)." Another
+        holds "PHONES THAT DON'T WORK WHEN YOU NEED THEM." A third is just rows and rows
+        of slightly wrong versions of everyday objects -- clocks with 13 hours, books with
+        blank pages, shoes that are always the wrong size.
+      doorknobs: >-
+        The <ansi fg="itemname">doorknobs</ansi> are fascinating. Each one is a different
+        style -- brass, crystal, wooden, one that appears to be made of chocolate. A small
+        card beneath each one describes where it leads: "Childhood bedroom," "That classroom
+        you've never actually been in," "Underwater but you can breathe."
+    spawns:
+      - {mob: 43, rate: "10 real minutes", msg: "A <ansi fg=\"mobname\">stage hand</ansi> backs through the door carrying a prop that's clearly too big for them."}
+    idle:
+      - A rubber chicken on the top shelf honks softly for no reason whatsoever.
+      - A prop sword falls off a shelf, bounces, and somehow lands perfectly balanced on its tip.
+      - The jar of teeth rattles. You decide not to think about it.
+      - A doorknob on the shelf turns on its own, and you hear the distant sound of the ocean.
+      - Someone's left a half-eaten prop sandwich on the workbench. Wait, it might be a real sandwich.
+
+  # ── THE GREEN ROOM ──────────────────────────────────────────────────
+  - id: 508
+    title: "The Green Room"
+    desc: >-
+      A wave of deep comfort washes over you the moment you step inside. This
+      is where dream actors rest between takes, and the room is designed for
+      maximum relaxation. Plush <ansi fg="itemname">couches</ansi> in soft greens
+      and golds form cozy clusters around low tables stacked with dream magazines.
+      A refreshment table along one wall offers snacks that taste like whatever
+      you want them to -- one bite and it's your favorite food, whatever that
+      happens to be right now. Warm, indirect lighting fills the room with a
+      soothing amber glow, and the faint hum of white noise generators smooths
+      every sharp edge off reality. A sign on the wall reads "Rest well. You
+      dream again in thirty minutes."
+    biome: dreamset
+    symbol: +
+    legend: Rest
+    exits:
+      west: 507
+      south: 509
+    nouns:
+      couches: >-
+        The <ansi fg="itemname">couches</ansi> are impossibly comfortable -- the kind
+        of furniture that only exists in dreams, which makes sense because that's
+        literally where you are. The cushions seem to adjust to whoever sits on them,
+        and they're warm without being hot. A couch this good in the waking world would
+        cost a fortune.
+      snacks: >-
+        The <ansi fg="itemname">refreshment table</ansi> is stocked with dream snacks
+        that defy description. Each one tastes different depending on who's eating it.
+        A label reads "Flavor: Yes." There are also drinks in unmarked cups that are
+        simultaneously hot cocoa and cold lemonade.
+    idle:
+      - The couches seem to exhale softly, settling deeper into their own comfort.
+      - A warm breeze drifts through the room carrying the smell of freshly baked cookies.
+      - The white noise generators shift to the sound of gentle rain, then back again.
+      - A dream magazine flips its own pages to an article titled "Top 10 Flying Dreams of the Year."
+      - The amber lighting dims and brightens in a slow, soothing rhythm, like breathing.
+
+  # ── SCREENING ROOM ──────────────────────────────────────────────────
+  - id: 509
+    title: "Screening Room"
+    desc: >-
+      A private theater with a dozen velvet <ansi fg="itemname">seats</ansi>
+      faces an enormous <ansi fg="itemname">screen</ansi> that stretches wall
+      to wall. This is where dream productions are reviewed before broadcast,
+      and right now a reel of recent dreams plays on loop -- fragments of flying,
+      snippets of school, a brief clip of a dog wearing a graduation cap. The
+      projector behind you hums and clicks, casting dancing light across the
+      ceiling. Boxes of discarded dream reels are stacked along the walls, each
+      one labeled with a date and a title. The room smells like movie theater
+      popcorn and the unique ozone tang of pure imagination running through a
+      projector.
+    biome: dreamset
+    symbol: S
+    legend: Screening
+    exits:
+      north: 508
+      east: 510
+    nouns:
+      screen: >-
+        The <ansi fg="itemname">screen</ansi> is playing a montage of recent dream
+        footage. A clip of Riley flying over the Golden Gate Bridge dissolves into a
+        scene of her locker opening to reveal a tropical beach. The production quality
+        varies wildly -- some scenes are cinematic masterpieces and others look like
+        they were filmed on a potato.
+      seats: >-
+        The <ansi fg="itemname">velvet seats</ansi> are deep red and each has a small
+        brass nameplate. "JOY -- Head of Approval," "FEAR -- Content Warnings," and
+        "DISGUST -- Quality Control (Self-Appointed)." One seat labeled "ANGER" has
+        scorch marks on the armrests.
+      reels: >-
+        The discarded <ansi fg="itemname">dream reels</ansi> are a fascinating archive.
+        One is labeled "Dream #4,517: Riding a Giant Hamster to School -- SHELVED."
+        Another reads "Dream #2,203: Actually Good At Math -- TOO UNREALISTIC." A
+        thick reel at the bottom of the pile is simply marked "THE TEETH ONE. AGAIN."
+    idle:
+      - The screen flickers to a dream about showing up to a test completely unprepared.
+      - The projector clicks and hums, casting swirling light patterns across the ceiling.
+      - A dream reel rolls off a stack and across the floor, unspooling a few feet of film.
+      - The screen briefly shows a puppy, and the whole room seems warmer for a moment.
+      - Faint laughter from a dream plays through the speakers, then cuts to static.
+
+  # ── SPECIAL EFFECTS LAB ─────────────────────────────────────────────
+  - id: 510
+    title: "Special Effects Lab"
+    desc: >-
+      A mad scientist's workshop if the scientist exclusively studied dreams.
+      Bubbling <ansi fg="itemname">vats</ansi> of luminescent liquid line one
+      wall, each a different color -- one swirls with the iridescent shimmer of
+      flying dreams, another crackles with the electric blue of anxiety nightmares.
+      Workstations covered in strange <ansi fg="itemname">equipment</ansi> fill the
+      room: a machine that bottled déjà vu, a centrifuge for separating dream logic
+      from regular logic, and a device labeled "EMOTIONAL AMPLIFIER -- USE SPARINGLY."
+      Chalkboards on the walls are covered in formulas that mix neuroscience with pure
+      nonsense. This is where the really weird dream effects are invented, tested, and
+      occasionally unleashed on an unsuspecting Riley.
+    biome: dreamset
+    symbol: E
+    legend: Effects
+    exits:
+      west: 509
+      south: 511
+    nouns:
+      vats: >-
+        The <ansi fg="itemname">vats</ansi> bubble with concentrated dream essence.
+        The gold one labeled "EUPHORIA" smells like birthday cake and summer vacation.
+        The purple one labeled "UNEASE" makes your skin crawl if you stand too close.
+        A small vat in the corner labeled "THAT FEELING WHEN YOU MISS A STEP ON THE
+        STAIRS" is sealed shut with extra locks.
+      equipment: >-
+        The <ansi fg="itemname">equipment</ansi> is equal parts genius and absurdity.
+        A "Gravity Dial" can adjust the weight of anything in a dream. A "Narrative
+        Coherence Meter" is permanently stuck at 15%. A printer in the corner is
+        spitting out pages of dream logic that read like dadaist poetry.
+    idle:
+      - A vat of golden dream essence bubbles over and the spill evaporates into tiny butterflies.
+      - The Gravity Dial spins on its own, and everything in the room briefly floats an inch upward.
+      - A chalkboard equation rewrites itself, replacing numbers with emotions and colors.
+      - The déjà vu machine hums. The déjà vu machine hums. Wait, did that already happen?
+      - A spark jumps between two machines and for an instant the room smells like childhood.
+
+  # ── ACTOR'S TRAILER ─────────────────────────────────────────────────
+  - id: 511
+    title: "Actor's Trailer"
+    desc: >-
+      A surprisingly luxurious trailer that would make any real-world actor
+      jealous. A lit <ansi fg="itemname">vanity mirror</ansi> surrounded by
+      warm bulbs dominates one wall, its counter cluttered with makeup, wigs,
+      and jars of "Instant Emotion" in assorted colors. A plush
+      <ansi fg="itemname">chaise lounge</ansi> draped in silk takes up most of
+      the floor space, and a small fridge hums in the corner, stocked with
+      sparkling water and what the label claims is "Liquid Charisma." Framed
+      headshots of dream characters cover every inch of wall space -- the
+      recurring cast of Riley's subconscious. A star on the door reads
+      "DREAM ACTOR -- Please Knock (Twice, Dramatically)."
+    biome: dreamset
+    symbol: T
+    legend: Trailer
+    exits:
+      north: 510
+    nouns:
+      mirror: >-
+        The <ansi fg="itemname">vanity mirror</ansi> is ringed with warm bulbs that
+        cast the most flattering light imaginable. The counter below is a mess of
+        greasepaint, spirit gum, and a wig stand holding a wig that looks exactly
+        like Riley's hair. A note taped to the mirror reads "REMEMBER: You're not
+        really Riley. You just play her in dreams. Stay in character."
+      lounge: >-
+        The <ansi fg="itemname">chaise lounge</ansi> is draped in shimmering silk that
+        changes color depending on the angle. It's the kind of furniture that demands
+        you recline dramatically and deliver a monologue. A script is open on one arm,
+        lines highlighted in yellow.
+      headshots: >-
+        The <ansi fg="itemname">headshots</ansi> show the regular cast of Riley's dreams.
+        There's "Generic Authority Figure," "That Kid From Camp She Can't Quite Remember,"
+        "Dog But It's Also A Person Somehow," and a headshot that's just a mirror because
+        Riley often dreams about herself in the third person.
+    spawns:
+      - {mob: 42, rate: "8 real minutes", msg: "A <ansi fg=\"mobname\">dream actor</ansi> lounges in from the back of the trailer, already half in costume."}
+    idle:
+      - The vanity lights flicker in a dramatic sequence, as if announcing someone's entrance.
+      - A wig on the stand shifts slightly, adjusting its own part.
+      - The script on the chaise lounge flips to a new page on its own. Tonight's lines, presumably.
+      - A headshot falls off the wall and another one immediately takes its place.
+
+  # ── NIGHTMARE WING ──────────────────────────────────────────────────
+  - id: 512
+    title: "Nightmare Wing"
+    desc: >-
+      The lighting shifts from theatrical to genuinely unsettling as you cross
+      into the Nightmare Wing. The walls are darker here, a deep bruised purple,
+      and the <ansi fg="itemname">set pieces</ansi> are built to disturb rather
+      than entertain. Cages hold writhing shadow props. A corridor of doors opens
+      onto scenes from Riley's worst fears -- the empty school hallway, the
+      unfamiliar city, the void where the floor should be. The air is colder and
+      carries a faint electrical charge, like the moment before a bad dream goes
+      really bad. <ansi fg="itemname">Warning signs</ansi> are posted everywhere:
+      "AUTHORIZED NIGHTMARE PERSONNEL ONLY." The ceiling is lost in darkness above,
+      and things move up there that you can hear but can't see.
+    biome: dreamset
+    symbol: N
+    legend: Nightmare
+    exits:
+      south: 503
+      east: 513
+    nouns:
+      set pieces: >-
+        The <ansi fg="itemname">set pieces</ansi> are designed to tap into primal
+        fears. A perfectly normal classroom that's somehow wrong in every detail. A
+        hallway that stretches when you walk through it. A phone that rings but
+        produces no sound when you answer. Each one is meticulously crafted to make
+        the dreamer feel exactly the right amount of dread.
+      signs: >-
+        The <ansi fg="itemname">warning signs</ansi> are scattered everywhere.
+        "CAUTION: UNCONTAINED ANXIETY BEYOND THIS POINT." "DO NOT FEED THE NIGHTMARES."
+        "If you hear your name whispered, it's part of the production. Probably." The
+        signs themselves look slightly wrong -- the letters shift when you're not
+        looking directly at them.
+    spawns:
+      - {mob: 41, rate: "3 real minutes", msg: "A <ansi fg=\"mobname\">dream nightmare</ansi> coalesces from the darkness between set pieces."}
+      - {mob: 44, rate: "5 real minutes", msg: "A <ansi fg=\"mobname\">shadow lurker</ansi> detaches from the ceiling and drops silently to the floor."}
+    idle:
+      - Something skitters across the ceiling, just out of sight.
+      - A door on one of the nightmare sets creaks open on its own, revealing only darkness.
+      - The temperature drops a few degrees and your breath fogs briefly in the air.
+      - A whisper that sounds almost like your name echoes from somewhere in the wing.
+      - The shadows between the set pieces seem to breathe, expanding and contracting slowly.
+
+  # ── SCRIPT ARCHIVE ──────────────────────────────────────────────────
+  - id: 513
+    title: "Script Archive"
+    desc: >-
+      Towering <ansi fg="itemname">filing cabinets</ansi> fill this room from
+      floor to ceiling, each drawer stuffed with scripts from every dream Riley
+      has ever had. The cabinets are organized by year, then by emotion, then by
+      a system that seems to involve color-coded stickers that nobody fully
+      understands. A reading <ansi fg="itemname">table</ansi> in the center
+      holds a few scripts pulled for review, their pages yellowed and curling at
+      the edges. The oldest scripts, from Riley's toddler years, are simple --
+      "Warm. Bright. Mom." The newer ones are thick, complex, full of subtext
+      and anxiety. A card catalog system with thousands of tiny drawers sits
+      against the far wall, cross-referencing dreams by theme, recurring element,
+      and "how weird was it on a scale of 1-10."
+    biome: dreamset
+    symbol: L
+    legend: Archive
+    exits:
+      west: 512
+      east: 514
+    nouns:
+      cabinets: >-
+        The <ansi fg="itemname">filing cabinets</ansi> contain Riley's entire dream
+        history. The "Age 3" drawer is thin and full of simple, bright scripts. The
+        "Age 13" drawer is overflowing with complex emotional narratives and barely
+        contained anxiety dreams. The "Recurring" section has its own cabinet, with
+        "The Teeth One" having an entire drawer to itself.
+      table: >-
+        The <ansi fg="itemname">reading table</ansi> holds a few scripts open for
+        review. One describes a dream where Riley gives a presentation but all her
+        notes are in a language she can't read. Another is a surprisingly touching
+        dream about her old dog. A red stamp on one script reads "APPROVED FOR
+        TONIGHT." A note in the margin says "Add more flying -- Joy."
+    idle:
+      - A filing cabinet drawer slides open on its own and a script floats out, as if summoned.
+      - Pages of an old dream script flutter despite the absence of any breeze.
+      - The card catalog clicks and whirs as it automatically indexes tonight's new dreams.
+      - A script from the "Age 5" section glows faintly gold, still warm with childhood joy.
+      - You hear the faint sound of a story being told, as if the scripts are reading themselves.
+
+  # ── BROADCAST TOWER ─────────────────────────────────────────────────
+  - id: 514
+    title: "Broadcast Tower"
+    desc: >-
+      A spiraling <ansi fg="itemname">antenna</ansi> rises through the center
+      of this circular room, punching through the ceiling and extending upward
+      toward Riley's sleeping consciousness. Control panels ring the base of the
+      antenna, covered in dials, switches, and a single large <ansi fg="itemname">broadcast
+      lever</ansi> labeled "SEND DREAM." Screens mounted on the walls show the
+      current dream feed -- what Riley is experiencing right now as she sleeps.
+      The antenna hums with a low, resonant frequency that you feel in your
+      chest more than hear with your ears. Cables snake across the floor,
+      connecting the tower to every soundstage, set, and effects lab in Dream
+      Productions. This is the final step -- where finished dreams become the
+      movies that play behind Riley's closed eyes.
+    biome: dreamset
+    symbol: ^
+    legend: Tower
+    exits:
+      west: 513
+      up: 515
+    nouns:
+      antenna: >-
+        The <ansi fg="itemname">antenna</ansi> is a twisting spire of crystallized
+        dream energy, humming with power. It translates finished dream productions into
+        the neural signal that Riley's sleeping brain interprets as experience. Up
+        close, you can see tiny scenes flickering inside the crystal -- fragments of
+        tonight's dreams, queued and ready.
+      lever: >-
+        The <ansi fg="itemname">broadcast lever</ansi> is big, red, and satisfying-
+        looking. A sign above it reads "PULL TO BROADCAST. Warning: Once sent, dreams
+        cannot be recalled. If the dream involves teeth falling out, please verify
+        this is intentional." A counter below tracks total dreams broadcast: 47,832.
+    idle:
+      - The antenna hums louder for a moment as a dream sequence is transmitted to Riley.
+      - Screens flicker and show Riley tossing slightly in her sleep as a dream takes hold.
+      - A cable on the floor sparks with dream energy, sending a brief flash of color into the air.
+      - The broadcast counter ticks up by one. Another dream, successfully delivered.
+      - The antenna's crystal core pulses brighter, cycling through the colors of Riley's emotions.
+
+  # ── CATWALKS ABOVE STAGE ────────────────────────────────────────────
+  - id: 515
+    title: "Catwalks Above Stage"
+    desc: >-
+      Narrow metal <ansi fg="itemname">catwalks</ansi> crisscross high above the
+      soundstages, offering a dizzying bird's-eye view of Dream Productions in
+      its entirety. From up here, you can see all three soundstages at once --
+      the pink glow of Romance, the red flicker of Horror, the explosive flashes
+      of Action -- all operating simultaneously like a three-ring circus of the
+      subconscious. <ansi fg="itemname">Spotlights</ansi> hang from the rigging
+      beside you, their massive housings warm to the touch. Ropes, pulleys, and
+      sandbags dangle overhead, part of the elaborate rigging system that makes
+      dream effects possible. The catwalk sways gently with every step, and
+      looking down through the metal grating sends a thrill of vertigo through
+      your stomach. A ladder on the far end descends toward the backlot below.
+    biome: dreamset
+    symbol: ~
+    legend: Catwalks
+    exits:
+      down: 514
+      ladder: 501
+    nouns:
+      catwalks: >-
+        The <ansi fg="itemname">catwalks</ansi> are a web of narrow metal walkways
+        suspended by cables from the unseen ceiling above. They creak and sway with
+        every step, and the guardrails are disturbingly low. Stagehands have left
+        notes clipped to the railing: "DON'T LOOK DOWN" and "Seriously, don't."
+      spotlights: >-
+        The <ansi fg="itemname">spotlights</ansi> are enormous up close, each one
+        the size of a small car. Their lenses are tinted with emotional colors --
+        warm gold for joy scenes, deep blue for sad scenes, harsh red for nightmares.
+        One spotlight has a sticky note reading "Aim at protagonist. NOT the audience.
+        We talked about this."
+    idle:
+      - The catwalks sway gently as something shifts in the rigging far above.
+      - A spotlight below sweeps across Soundstage A, briefly illuminating the romance set in pink.
+      - The metal grating beneath your feet vibrates with the bass from an explosion on the action stage.
+      - A sandbag swings past on a rope, narrowly missing a lighting rig.
+      - From up here, you can see a crew member on the backlot below, no bigger than a thumb.

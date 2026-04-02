@@ -1,0 +1,11 @@
+itemid: 20014
+name: abstract plate
+namesimple: plate
+description: Armor that looks like an M.C. Escher drawing come to life. Stairs go
+  up and down simultaneously across its surface. Somehow it provides excellent protection.
+type: body
+subtype: wearable
+damagereduction: 6
+statmods:
+  vitality: 3
+value: 250

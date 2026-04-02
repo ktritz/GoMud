@@ -1,0 +1,28 @@
+mobid: 47
+zone: Abstract Thought
+itemdropchance: 25
+hostile: true
+nocorpse: true
+deathmessage: '{name} screams in a frequency beyond hearing and implodes into nothing.'
+maxwander: 0
+activitylevel: 25
+groups:
+- abstract
+combatcommands:
+- backstab
+- cast mm
+angrycommands:
+- emote becomes something your mind refuses to process.
+character:
+  name: non-figurative horror
+  description: 'Something that has completely abandoned all recognizable form. It isn''t a shape so much as an absence of shape -- the visual equivalent of a word on the tip of your tongue that you can never quite say. Looking at it triggers a deep, primal unease, the sensation of forgetting what you look like, of reaching for your own reflection and finding nothing there. It occupies space the way a headache occupies your skull: undeniably present, impossible to pin down. The air around it warps and buckles, as though reality itself is flinching away.'
+  level: 15
+  gold: 47
+  raceid: 4
+  stats:
+    strength:
+      training: 14
+    speed:
+      training: 10
+    vitality:
+      training: 18

@@ -1,0 +1,11 @@
+# Auto-generated grid layout
+#
+# y+0:  [9900]  [9901]
+# y-1:  [9903]  [9902]
+#
+
+grid:
+  "0,0": 9900    # Riley's First Thought
+  "1,0": 9901    # The Mirror of Self
+  "1,-1": 9902    # The Thought Arena
+  "0,-1": 9903    # Ready to Feel

@@ -1,0 +1,21 @@
+roomid: 806
+zone: Memory Dump
+title: The Fading Path
+description: A narrow trail of compressed memory dust winds through the dump, marked by faded signposts that point in directions that may or may not still exist. The path itself is disappearing -- its leading edge dissolves into the surrounding dust plain even as you walk on it, as if the concept of "a way forward" is itself being forgotten. The signposts are gray wooden stakes with hand-painted arrows and labels that have mostly washed away. One reads "BACK T---" with the rest dissolved. Another says "THIS W-- TO --WHER-" which is not helpful. The path narrows with each step, the dump closing in around you, and you begin to understand that getting lost here does not mean losing your way. It means losing the idea that there was ever a way to begin with.
+mapsymbol: '-'
+maplegend: Path
+biome: dungeon
+exits:
+  south:
+    roomid: 805
+  north:
+    roomid: 807
+nouns:
+  trail: The <ansi fg="itemname">trail</ansi> is a strip of memory dust that has been compressed by the passage of something -- mind workers, perhaps, or the memories themselves on their way down. It is a slightly darker shade of gray than the surrounding plain, which is the only way to tell it exists at all. The edges blur and shift as you watch, the path literally forgetting where it goes.
+  signposts: The <ansi fg="itemname">signposts</ansi> are relics of a time when the Memory Dump was maintained and navigable. Now they point in contradictory directions and their labels have faded to near-illegibility. One sign has been turned upside down. Another has been snapped in half, its arrow pointing straight into the ground. A third, the oldest, has dissolved to a smooth gray stick with no text at all.
+idlemessages:
+- The path ahead fades a shade lighter, losing another inch of itself to the forgetting.
+- A signpost leans further to one side, its arrow now pointing at the ground.
+- Your footprints disappear behind you almost immediately, the dust filling them in like water.
+- The trail narrows and you feel a moment of vertigo, as if "forward" is a concept that is dissolving.
+- A faded sign reads "REMEMBER TO--" and the rest is gone. You are not sure what you were supposed to remember.

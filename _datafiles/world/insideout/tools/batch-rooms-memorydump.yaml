@@ -1,0 +1,659 @@
+zone: memory_dump
+zone_config:
+  name: "Memory Dump"
+  roomid: 800
+  autoscale: {minimum: 16, maximum: 20}
+  defaultbiome: dungeon
+  idlemessages:
+    - "The gray silence presses in from every direction."
+    - "Something that was once a memory crumbles to dust nearby."
+
+rooms:
+  # ── EDGE OF FORGETTING ─────────────────────────────────────────────
+  - id: 800
+    title: "Edge of Forgetting"
+    desc: >-
+      The service ladder from Long Term Memory ends at a narrow
+      <ansi fg="itemname">ledge</ansi> jutting out over an abyss so vast
+      it swallows all sense of scale. You stand on the lip of the Memory
+      Dump -- the bottomless pit where Riley's forgotten memories come to
+      dissolve into nothing. The air is thin and bone-dry, carrying a fine
+      gray <ansi fg="itemname">dust</ansi> that coats everything in a layer
+      of erasure. The walls of the chasm rise around you, smooth and featureless,
+      carved by the slow erosion of discarded thoughts. Far below, enormous
+      mounds of gray rubble stretch to the horizon -- the accumulated remains
+      of everything Riley has ever forgotten. The silence here is not just
+      the absence of sound; it is the presence of forgetting, a pressure
+      against your mind that makes recent memories feel suddenly fragile.
+    biome: dungeon
+    symbol: E
+    legend: Edge
+    exits:
+      up: 316
+      north: 801
+    nouns:
+      ledge: >-
+        The <ansi fg="itemname">ledge</ansi> is barely wide enough for two people
+        to stand side by side. The stone is worn smooth by the passage of memories
+        rolling over the edge and plummeting into the void below. Deep grooves are
+        cut into the rock where countless orbs have bounced and tumbled on their
+        final journey. The edge has no railing. Nothing down here cares about safety.
+      dust: >-
+        The gray <ansi fg="itemname">dust</ansi> is what memories become after they
+        have been forgotten completely -- a fine, weightless powder that clings to
+        everything. It has no smell, no taste, no temperature. It is the physical
+        residue of nothing. If you hold a handful up to the light, you might catch
+        the faintest ghost of a scene playing in the motes -- a face, a place, a
+        feeling -- but it fades before you can focus on it.
+    idle:
+      - A faded memory orb rolls off the ledge above and tumbles into the abyss, its last flicker of color winking out.
+      - Gray dust swirls up in a slow spiral, carrying the ghost of someone's name that you almost recognize.
+      - The silence deepens until you can hear the sound of memories dissolving far below -- a soft, continuous whisper of loss.
+      - The chasm wall beside you is perfectly smooth, as if even the stone has forgotten what it used to be.
+      - A cold updraft carries a flake of something that used to be golden, now bleached entirely gray.
+
+  # ── CRUMBLING MEMORY LEDGE ─────────────────────────────────────────
+  - id: 801
+    title: "Crumbling Memory Ledge"
+    desc: >-
+      The ledge narrows as it descends along the chasm wall, its surface
+      increasingly unstable. Chunks of <ansi fg="itemname">stone</ansi>
+      have broken away and fallen into the void, leaving gaps that require
+      careful steps to cross. Memory orbs are wedged into cracks in the
+      rock, half-dissolved and barely glowing -- they rolled off the shelves
+      above and got stuck here on their way down, clinging to the wall like
+      the last grip of a thought you are trying not to lose. The orbs are
+      too far gone to read clearly, their scenes reduced to blurred shapes
+      and muted sounds. A section of the ledge ahead has collapsed entirely,
+      replaced by a precarious bridge of compressed memory <ansi fg="itemname">fragments</ansi>
+      that shifts under your weight.
+    biome: dungeon
+    symbol: "~"
+    legend: Ledge
+    exits:
+      south: 800
+      north: 802
+    nouns:
+      stone: >-
+        The <ansi fg="itemname">stone</ansi> of the ledge is the same material as
+        the chasm walls, but here it has been weakened by constant exposure to the
+        forgetting process. It crumbles at the edges when you touch it, shedding
+        fine gray dust. You can see the geological layers of the mind in the exposed
+        cross-section -- striations of color representing different periods of Riley's
+        life, all slowly fading to uniform gray.
+      fragments: >-
+        The compressed memory <ansi fg="itemname">fragments</ansi> that form the
+        makeshift bridge are a mosaic of forgotten moments -- tiny scenes frozen
+        mid-action, faces with features erased, words with letters missing. They
+        have been packed together by the pressure of the void below, forming a
+        surface that is surprisingly solid but deeply unsettling to walk across.
+        Every step reveals a new fragment of something someone once cared about.
+    idle:
+      - A chunk of ledge breaks free and tumbles into the abyss without a sound.
+      - A half-dissolved orb in the rock wall flickers once -- the ghost of a birthday party -- then goes dark forever.
+      - The fragment bridge shifts under its own weight and a tiny scene of a family dinner slides into the void.
+      - Gray dust sifts down from above like silent snow, coating your shoulders.
+      - You step on a fragment and for a split second remember something that was never yours, then it is gone.
+
+  # ── THE GRAY FOG ───────────────────────────────────────────────────
+  - id: 802
+    title: "The Gray Fog"
+    desc: >-
+      The ledge descends into a thick, formless <ansi fg="itemname">fog</ansi>
+      that reduces visibility to a few feet in every direction. The fog is
+      not water vapor -- it is the collective exhalation of billions of
+      dissolving memories, a gray mist of lost experiences so dense you can
+      feel it against your skin. Shapes move in the fog -- slow, drifting
+      <ansi fg="itemname">silhouettes</ansi> that might be the remnants of
+      forgotten people, places, and things, wandering the dump in search
+      of someone who still remembers them. The ground here levels off into
+      a flat plain of compressed memory dust, soft and yielding underfoot.
+      Sound behaves strangely in the fog; voices seem to come from every
+      direction at once, always just too quiet to understand.
+    biome: dungeon
+    symbol: "#"
+    legend: Fog
+    exits:
+      south: 801
+      north: 803
+    nouns:
+      fog: >-
+        The <ansi fg="itemname">fog</ansi> is thick enough to taste -- and it
+        tastes like nothing. Absolute nothing. It is the flavor of a word on
+        the tip of your tongue that you will never remember. If you wave your
+        hand through it, the mist parts reluctantly and you can see faces
+        forming and dissolving in the currents -- a teacher you had in second
+        grade, a neighbor's dog, the name of your first friend.
+      silhouettes: >-
+        The <ansi fg="itemname">silhouettes</ansi> drift through the fog with
+        no apparent purpose or destination. They are the outlines of forgotten
+        memories given just enough form to wander but not enough to exist. One
+        silhouette raises a hand as if waving, but the gesture dissolves before
+        it completes. Another turns toward you with a face that is nothing but
+        smooth gray where features should be.
+    idle:
+      - A silhouette drifts past in the fog, reaching toward you with fingers that dissolve before they make contact.
+      - The fog thickens and you feel the memory of a childhood pet tug at the edge of your mind, then slip away.
+      - A voice whispers your name from somewhere in the gray. When you turn, there is only fog.
+      - The ground gives slightly beneath your feet, soft with the compressed dust of a million forgotten moments.
+      - A silhouette in the fog stops and turns toward you, its blank face tilted as if it is trying to remember what you are.
+    spawns:
+      - {mob: 57, rate: "5 real minutes", msg: "A <ansi fg=\"mobname\">dissolving shade</ansi> coalesces from the fog, its half-formed face struggling to hold a shape as it drifts toward you."}
+
+  # ── BING BONG'S FINAL STAND ────────────────────────────────────────
+  - id: 803
+    title: "Bing Bong's Final Stand"
+    desc: >-
+      The fog thins here, opening into a small, still clearing that carries
+      a weight of memory the rest of the dump has lost. This is the place
+      where Bing Bong -- Riley's imaginary friend, part cat, part elephant,
+      part dolphin, all cotton candy -- made his last sacrifice. He jumped
+      from the rocket wagon so Joy could fly free, and he dissolved here,
+      slowly, piece by piece, asking only that Riley be taken to the moon
+      for him. A faint <ansi fg="itemname">impression</ansi> remains in
+      the dust where he stood at the end, shaped like oversized shoes and
+      a long, curling trunk. Scattered around it are the last traces of
+      him -- a few strands of faded pink <ansi fg="itemname">cotton candy</ansi>,
+      the ghost of a song, and the lingering warmth of a love that was
+      never reciprocated but never once regretted. The air here smells
+      faintly of cotton candy and tastes like saying goodbye.
+    biome: dungeon
+    symbol: B
+    legend: Bing Bong
+    exits:
+      south: 802
+      north: 804
+    nouns:
+      impression: >-
+        The <ansi fg="itemname">impression</ansi> in the dust is unmistakably
+        Bing Bong's -- the outline of two oversized shoes, the drag mark of a
+        long trunk, and the shallow depression where he sat down at the very end.
+        The dust inside the impression is faintly pink, the last chemical trace
+        of cotton candy slowly fading to gray. If you kneel beside it and listen,
+        you can almost hear him: "Take her to the moon for me." Almost.
+      cotton candy: >-
+        A few strands of faded pink <ansi fg="itemname">cotton candy</ansi> cling
+        to the dust, the last physical remains of Bing Bong's body. They are
+        gossamer-thin and nearly transparent, barely holding their color against the
+        relentless gray of the dump. If you touch one, it dissolves between your
+        fingers and for one vivid, heartbreaking moment you feel the pure, uncomplicated
+        joy of a four-year-old making up an imaginary friend. Then it fades, and
+        you understand what was lost here.
+    idle:
+      - The impression in the dust glows faintly pink, then fades, like a heartbeat slowing down.
+      - A wisp of cotton candy scent drifts through the air and you feel a sudden, aching fondness for someone you never met.
+      - The ghost of a melody plays -- just four notes of "Who's your friend who likes to play" -- then dissolves into silence.
+      - The dust around the impression stirs, as if something is trying to reform from sheer force of love. It cannot. It tries anyway.
+      - A single tear-shaped drop of pink light falls from the air above the impression, lands in the dust, and is absorbed. The ground glows warmer for a moment.
+
+  # ── FORGOTTEN TOY GRAVEYARD ────────────────────────────────────────
+  - id: 804
+    title: "Forgotten Toy Graveyard"
+    desc: >-
+      The dust plain is littered with the remains of Riley's forgotten
+      <ansi fg="itemname">toys</ansi> -- childhood companions that were
+      once the center of her world and are now dissolving into gray
+      anonymity at the bottom of her mind. A stuffed bear with one eye
+      sits propped against a fading block tower. A tea set missing most
+      of its pieces is arranged in a circle, as if the toys had one last
+      party before the forgetting took them. Action figures stand in frozen
+      poses, their paint chipping away to reveal the gray nothing underneath.
+      A half-deflated <ansi fg="itemname">ball</ansi> rests in a shallow
+      crater, still bearing the faded logo of a team Riley used to love.
+      Everything here is in the process of being unmade, slowly, gently,
+      and with absolute finality.
+    biome: dungeon
+    symbol: "T"
+    legend: Toys
+    exits:
+      south: 803
+      north: 805
+    nouns:
+      toys: >-
+        The <ansi fg="itemname">toys</ansi> are heartbreaking in their specificity.
+        The stuffed bear's name was Mr. Buttons and Riley slept with him every night
+        until she was seven. The tea set was a birthday present from her grandmother.
+        The action figures were from a cartoon she watched every Saturday morning. Each
+        toy is fading -- colors washing out, shapes softening, details dissolving --
+        but they maintain their positions, as if waiting for someone to play with them
+        one more time.
+      ball: >-
+        The <ansi fg="itemname">ball</ansi> is a small soccer ball with a logo that
+        is barely visible, the name of Riley's first team dissolved to a few scattered
+        letters. It is half-deflated and covered in gray dust, but when you pick it up,
+        it still has a faint bounce. Something in it remembers what it was for, even
+        if Riley does not.
+    idle:
+      - The stuffed bear tips over slowly, its remaining eye catching the light as it falls.
+      - A block in the tower crumbles to dust and the remaining blocks settle lower.
+      - The tea set clinks softly, as if invisible guests are having one more cup before the end.
+      - An action figure's arm breaks off and dissolves before it hits the ground.
+      - The ball rolls an inch on its own, propelled by the memory of being kicked.
+
+  # ── DISSOLVING MEMORY FIELD ────────────────────────────────────────
+  - id: 805
+    title: "Dissolving Memory Field"
+    desc: >-
+      A vast, flat expanse of gray dust stretches in every direction, broken
+      by hundreds of memory <ansi fg="itemname">orbs</ansi> in various stages
+      of dissolution. The freshest arrivals still glow faintly -- pale versions
+      of their original colors that pulse weakly like dying stars. The older ones
+      have faded to translucent gray, their scenes reduced to static and white
+      noise. The oldest are barely there at all, just faint spherical distortions
+      in the air where something used to be. The field hums with a low, subsonic
+      <ansi fg="itemname">vibration</ansi> -- the sound of memories breaking
+      down at the molecular level, releasing their stored emotion back into the
+      void. Walking through this field feels like wading through loss.
+    biome: dungeon
+    symbol: "."
+    legend: Field
+    exits:
+      south: 804
+      north: 806
+    nouns:
+      orbs: >-
+        The <ansi fg="itemname">orbs</ansi> are memories in their final hours.
+        A pale gold orb shows a blurred scene of someone laughing, but the face
+        is gone and the sound is muted to a whisper. A blue orb barely holds the
+        shape of a rainy window, the drops frozen mid-fall. A red orb has cooled
+        to pink, its anger forgotten. You can touch them, but they crumble at
+        the slightest pressure, releasing a puff of gray dust and one last,
+        fading feeling.
+      vibration: >-
+        The <ansi fg="itemname">vibration</ansi> is the sound of forgetting made
+        physical. It resonates in your bones and makes your thoughts feel slippery,
+        as if your own memories are being loosened by proximity. The closer you get
+        to the oldest orbs, the stronger the vibration, and the harder it is to
+        remember why you came here in the first place.
+    idle:
+      - A pale orb collapses inward and dissolves into gray dust with a soft sigh.
+      - The vibration intensifies and you momentarily forget what you had for breakfast. The memory comes back. Probably.
+      - Two orbs drift together, merge briefly into a confused jumble of scenes, then both dissolve.
+      - A newly arrived orb hits the dust and bounces once, its color visibly draining with each second.
+      - The field hums lower and a wave of forgetting passes over you like a cold breeze.
+    spawns:
+      - {mob: 54, rate: "3 real minutes", msg: "A <ansi fg=\"mobname\">forgotten memory</ansi> rises from the dust, its translucent form grasping at the air as it searches for someone who remembers."}
+      - {mob: 54, rate: "4 real minutes", msg: "A <ansi fg=\"mobname\">forgotten memory</ansi> pulls itself together from scattered dust, flickering with the ghost of a face that was once familiar."}
+
+  # ── THE FADING PATH ────────────────────────────────────────────────
+  - id: 806
+    title: "The Fading Path"
+    desc: >-
+      A narrow <ansi fg="itemname">trail</ansi> of compressed memory dust winds
+      through the dump, marked by faded signposts that point in directions
+      that may or may not still exist. The path itself is disappearing --
+      its leading edge dissolves into the surrounding dust plain even as
+      you walk on it, as if the concept of "a way forward" is itself being
+      forgotten. The <ansi fg="itemname">signposts</ansi> are gray wooden
+      stakes with hand-painted arrows and labels that have mostly washed
+      away. One reads "BACK T---" with the rest dissolved. Another says
+      "THIS W-- TO --WHER-" which is not helpful. The path narrows with
+      each step, the dump closing in around you, and you begin to understand
+      that getting lost here does not mean losing your way. It means losing
+      the idea that there was ever a way to begin with.
+    biome: dungeon
+    symbol: "-"
+    legend: Path
+    exits:
+      south: 805
+      north: 807
+    nouns:
+      trail: >-
+        The <ansi fg="itemname">trail</ansi> is a strip of memory dust that has
+        been compressed by the passage of something -- mind workers, perhaps, or
+        the memories themselves on their way down. It is a slightly darker shade
+        of gray than the surrounding plain, which is the only way to tell it
+        exists at all. The edges blur and shift as you watch, the path literally
+        forgetting where it goes.
+      signposts: >-
+        The <ansi fg="itemname">signposts</ansi> are relics of a time when the
+        Memory Dump was maintained and navigable. Now they point in contradictory
+        directions and their labels have faded to near-illegibility. One sign
+        has been turned upside down. Another has been snapped in half, its arrow
+        pointing straight into the ground. A third, the oldest, has dissolved to
+        a smooth gray stick with no text at all.
+    idle:
+      - The path ahead fades a shade lighter, losing another inch of itself to the forgetting.
+      - A signpost leans further to one side, its arrow now pointing at the ground.
+      - Your footprints disappear behind you almost immediately, the dust filling them in like water.
+      - The trail narrows and you feel a moment of vertigo, as if "forward" is a concept that is dissolving.
+      - A faded sign reads "REMEMBER TO--" and the rest is gone. You are not sure what you were supposed to remember.
+
+  # ── ANCIENT MEMORY FRAGMENT ────────────────────────────────────────
+  - id: 807
+    title: "Ancient Memory Fragment"
+    desc: >-
+      A cluster of enormous <ansi fg="itemname">memory fragments</ansi> juts
+      from the dust like the ruins of a collapsed building, each one the size
+      of a car and far older than anything else in the dump. These are Riley's
+      earliest memories -- the ones formed before language, before conscious
+      thought, before she had words for what she was experiencing. The fragments
+      are massive and deeply eroded, their scenes reduced to pure color and
+      sensation: a wash of gold warmth that might be her mother's arms, a blur
+      of blue cold that could be a first winter, a flash of red that was
+      probably her first cry. They are beautiful and incomprehensible, monuments
+      to a time when every experience was brand new and absolutely overwhelming.
+      Ancient <ansi fg="itemname">symbols</ansi> are carved into the fragment
+      surfaces -- Riley's pre-verbal mind trying to record what it could not
+      yet name.
+    biome: dungeon
+    symbol: "#"
+    legend: Ancient
+    exits:
+      south: 806
+      north: 808
+    nouns:
+      memory fragments: >-
+        The <ansi fg="itemname">memory fragments</ansi> are monolithic, towering
+        over you like standing stones in a forgotten temple. Each one radiates a
+        faint warmth that feels like safety -- the deep, preverbal safety of being
+        held when you are too small to understand anything except that you are loved.
+        The scenes inside them are not scenes at all, just colors and feelings:
+        gold warmth, blue curiosity, green discomfort, purple startle. They are
+        the foundations of everything Riley became.
+      symbols: >-
+        The <ansi fg="itemname">symbols</ansi> carved into the fragments are not
+        any language -- they are a baby's attempt to mark experience. Circles that
+        might mean "face." Wavy lines that might mean "sound." A shape like a star
+        that might mean "light" or "love" or both, because at that age they were
+        the same thing.
+    idle:
+      - A fragment radiates a pulse of gold warmth and you feel a wordless sense of being safe.
+      - The symbols on a fragment glow briefly, and you experience a sensation you have no name for -- something from before you had names.
+      - Two fragments lean toward each other like ancient trees, their eroded surfaces barely touching.
+      - A wash of pure blue feeling emanates from the largest fragment -- the memory of curiosity before you knew what curiosity was.
+      - The dust around the fragments is a slightly warmer shade of gray, as if even forgetting has a harder time with memories this deep.
+
+  # ── THE VOID'S EDGE ────────────────────────────────────────────────
+  - id: 808
+    title: "The Void's Edge"
+    desc: >-
+      The Memory Dump drops away into a secondary <ansi fg="itemname">abyss</ansi>
+      here, a void within the void where forgetting becomes something worse --
+      not just the loss of a memory but the loss of the fact that you ever had
+      one. The edge is a sharp line between gray dust and absolute black, and
+      staring over it produces a vertigo that is not physical but existential.
+      The <ansi fg="itemname">air</ansi> at the edge vibrates with a frequency
+      that makes your thoughts stutter, and the darkness below does not reflect
+      light so much as consume it. Things that fall over this edge do not just
+      disappear. They become things that never existed. Even the gray dust
+      avoids the edge, piling up in a ridge as if the ground itself is trying
+      to pull back from the nothingness.
+    biome: dungeon
+    symbol: "!"
+    legend: Void
+    exits:
+      south: 807
+      north: 809
+    nouns:
+      abyss: >-
+        The <ansi fg="itemname">abyss</ansi> is not dark in the way a cave is
+        dark. It is dark in the way that the space before you were born is dark --
+        a nothingness so complete it is not the absence of something but the absence
+        of the concept of something. Looking into it does not make you feel afraid.
+        It makes you feel like you might never have existed, and that the difference
+        between having existed and not is smaller than you thought.
+      air: >-
+        The <ansi fg="itemname">air</ansi> at the edge is thin and wrong, vibrating
+        at a frequency that interferes with thought itself. Standing here makes it
+        hard to hold onto ideas -- they come and go like soap bubbles, popping before
+        you can examine them. Even the simple thought "I should step back" takes
+        effort to assemble and hold.
+    idle:
+      - The edge of the void shimmers and a section of dust slides silently into the black, ceasing to exist.
+      - Your thoughts skip like a scratched record, losing a beat, then catching up.
+      - The void produces no sound, but the absence of sound is so absolute that it presses against your ears.
+      - A memory orb rolls past your feet and drops over the edge. There is no sound of impact. There never was an orb.
+      - The ridge of dust at the edge grows slightly higher, as if the ground is building a levee against nothingness.
+    spawns:
+      - {mob: 55, rate: "5 real minutes", msg: "A <ansi fg=\"mobname\">memory wraith</ansi> rises from the edge of the void, its form stitched together from fragments of memories that have already been half-erased."}
+
+  # ── PILE OF LOST NAMES ─────────────────────────────────────────────
+  - id: 809
+    title: "Pile of Lost Names"
+    desc: >-
+      An enormous mound of gray <ansi fg="itemname">dust</ansi> rises from the
+      floor of the dump, higher than your head and stretching wide in every
+      direction. This is where names go when they are forgotten -- the names
+      of classmates, teachers, neighbors, characters from books, the person
+      who held the door open for you that one time. Faint <ansi fg="itemname">letters</ansi>
+      surface in the dust and dissolve before you can read them, syllables of
+      names that once meant something to someone. The pile shifts and settles
+      constantly, new names arriving from above in a slow, silent rain. If
+      you stand still long enough, you can feel names leaving you too --
+      the ones you have been meaning to remember and the ones you already lost
+      without noticing.
+    biome: dungeon
+    symbol: N
+    legend: Names
+    exits:
+      south: 808
+      north: 810
+    nouns:
+      dust: >-
+        The <ansi fg="itemname">dust</ansi> of the name pile has a different
+        quality than the rest of the dump -- it whispers. Not words, exactly, but
+        the shapes of words, the mouth-feel of syllables that no longer attach to
+        anyone. If you plunge your hand in, names surface on your skin for a moment
+        -- "Sarah," "Mr. K--," "that kid from camp" -- before dissolving back into
+        anonymous gray.
+      letters: >-
+        The <ansi fg="itemname">letters</ansi> that surface in the dust are
+        fragmentary and fleeting. An "M" appears, followed by an "a" and an "r" --
+        then dissolves before the name completes. Was it Marcus? Maria? Margaret?
+        It does not matter anymore. The name is gone and the person it belonged to
+        will never be recalled by this mind again.
+    idle:
+      - Letters surface in the dust -- J, A, M, E -- and dissolve before you can read the name.
+      - You suddenly remember someone's name with perfect clarity. A second later, it is gone.
+      - The pile shifts as new names arrive from above, settling into the mass with a soft whisper.
+      - A name almost surfaces -- you can feel it on the tip of your tongue. Then it sinks back forever.
+      - The dust whispers syllables that almost form words but never quite connect.
+
+  # ── COLORLESS EXPANSE ──────────────────────────────────────────────
+  - id: 810
+    title: "Colorless Expanse"
+    desc: >-
+      All color has been drained from this section of the dump, leaving a
+      landscape of absolute <ansi fg="itemname">gray</ansi> that extends in
+      every direction without feature or variation. The memory orbs here have
+      been forgotten so completely that even their emotional residue is gone --
+      no gold, no blue, no red, no green, no purple. Just gray. The light
+      has no apparent source and casts no shadows, creating a flat,
+      dimensionless space that plays tricks on your sense of depth and distance.
+      The <ansi fg="itemname">ground</ansi> is indistinguishable from the sky,
+      and the sky is indistinguishable from the ground, and you are somewhere
+      in the middle of an emptiness that is so complete it becomes its own
+      kind of presence. This is what total forgetting looks like.
+    biome: dungeon
+    symbol: " "
+    legend: Expanse
+    exits:
+      south: 809
+      north: 811
+    nouns:
+      gray: >-
+        The <ansi fg="itemname">gray</ansi> is not a color here -- it is the
+        absence of color so thorough it has become a substance. It coats everything,
+        replaces everything, is everything. There is no warm gray or cool gray
+        or light gray or dark gray. There is just gray. The single, final,
+        irreducible gray that remains when everything else has been forgotten.
+      ground: >-
+        The <ansi fg="itemname">ground</ansi> is indistinguishable from the
+        environment above and around it. You know it is the ground because you
+        are standing on it, but if you look straight down, there is no horizon
+        line, no color shift, no texture change to confirm it. You are standing
+        on the concept of ground, and the concept is thinning.
+    idle:
+      - The gray shifts imperceptibly and you are not certain you moved or the world moved.
+      - A shape in the distance might be something or might be nothing. By the time you decide, it is gone.
+      - Your own hands look gray and indistinct, as if the colorlessness is seeping into you.
+      - The flatness of the space makes you feel simultaneously very large and impossibly small.
+      - Sound dies the instant it leaves your mouth, swallowed by the gray before it reaches the ground.
+    spawns:
+      - {mob: 55, rate: "5 real minutes", msg: "A <ansi fg=\"mobname\">memory wraith</ansi> materializes from the colorless void, a stitched-together shape of half-forgotten faces and empty names."}
+
+  # ── MEMORY DUST BASIN ──────────────────────────────────────────────
+  - id: 811
+    title: "Memory Dust Basin"
+    desc: >-
+      The ground drops into a shallow <ansi fg="itemname">basin</ansi> filled
+      with memory dust so deep it reaches your knees. This is the true bottom
+      of the Memory Dump -- the lowest point in Riley's mind, where the
+      heaviest, most completely forgotten memories eventually settle. The dust
+      here is warm and slightly luminous, heated by the compressed weight of
+      a lifetime of discarded experiences. Wading through it produces a
+      strange sensation: brief flashes of emotion that do not belong to you --
+      a moment of joy from a birthday you never had, a pang of sadness from a
+      goodbye you never said, a spike of fear from a nightmare you never
+      dreamed. The <ansi fg="itemname">basin</ansi> is a repository of pure,
+      free-floating feeling, detached from any memory or context.
+    biome: dungeon
+    symbol: "U"
+    legend: Basin
+    exits:
+      south: 810
+      north: 812
+    nouns:
+      basin: >-
+        The <ansi fg="itemname">basin</ansi> is a natural depression in the floor
+        of the dump, shaped like a bowl and filled with the densest concentration
+        of memory dust anywhere in Riley's mind. The dust at the bottom has been
+        compressed into something almost solid -- a sedimentary record of forgetting,
+        with the oldest, deepest memories forming a warm, glowing stratum beneath
+        your feet. If you stand still, you sink slowly, and the emotions get stronger.
+    idle:
+      - The dust shifts around your legs and you feel a flash of joy so pure it catches in your throat.
+      - A wave of unfamiliar sadness washes through you, then recedes, leaving you with the memory of a feeling but not its cause.
+      - The warm glow from the deep dust pulses, and for a moment the basin looks almost golden.
+      - You wade through a pocket of compressed fear and your heart races for three seconds, then calms.
+      - The dust releases a bubble of laughter -- a child's laugh, sourceless and fading.
+
+  # ── THE LAST SONG ──────────────────────────────────────────────────
+  - id: 812
+    title: "The Last Song"
+    desc: >-
+      The dust basin rises on the far side into a clearing where the air is
+      different -- warmer, softer, tinged with a faint <ansi fg="itemname">pink</ansi>
+      glow that has no visible source. This is where Bing Bong's song still
+      echoes -- the one he sang to power the rocket wagon, the one Riley sang
+      with him on imaginary adventures to the moon. The melody loops endlessly,
+      each repetition a little fainter, a little more distant, but still
+      unmistakably present. "Who's your friend who likes to play? Bing Bong,
+      Bing Bong." The song has been here since he dissolved, and somehow, in
+      a place where everything fades, it has not faded completely. It is the
+      most stubborn memory in the dump -- a song too loved to fully forget,
+      echoing at the bottom of the mind like a heartbeat that refuses to stop.
+    biome: dungeon
+    symbol: S
+    legend: Song
+    exits:
+      south: 811
+      north: 813
+    nouns:
+      pink: >-
+        The <ansi fg="itemname">pink</ansi> glow is cotton candy pink -- Bing Bong
+        pink. It radiates from the air itself, as if the song has left a permanent
+        stain on the space it occupies. The glow is warm and slightly sweet, and
+        standing in it makes you feel the way you felt when you believed absolutely
+        everything was possible, before you learned the word "impossible" and started
+        applying it to yourself.
+    idle:
+      - The melody loops again, fainter but unwavering -- who's your friend who likes to play...
+      - The pink glow pulses in time with the song, brightening on the chorus.
+      - The echo carries a familiar refrain -- Bing Bong, Bing Bong -- warm with the love of a friend who asked for nothing in return.
+      - Your eyes sting and you are not sure why. You are sure why.
+      - The song reaches the part about going to the moon and the pink glow flares, golden at the edges, then fades back to pink.
+      - A voice, barely audible, sings about a rocket that makes you yell hooray. The words are held together by love and nothing else.
+
+  # ── CORRUPTED CORE ─────────────────────────────────────────────────
+  - id: 813
+    title: "Corrupted Core"
+    desc: >-
+      The heart of the Memory Dump is a pulsing, unstable mass of corrupted
+      <ansi fg="itemname">core memory</ansi> that has absorbed so many forgotten
+      experiences it has become something new and dangerous. The core hovers a
+      few feet above the ground, a sphere of roiling dark energy shot through
+      with veins of color that flash and die -- gold, blue, red, green, purple --
+      each one a core memory that fell too far and was consumed. The air around
+      it crackles with psychic static, and the ground beneath it has been
+      scorched clean, the memory dust vaporized by the intensity of so much
+      concentrated loss. This is what happens when memories do not just fade
+      but break -- they become angry, confused, and desperate, lashing out
+      at anything that still has the coherence they have lost. The corrupted
+      core is the Memory Dump's only permanent resident, and it has been
+      growing.
+    biome: dungeon
+    symbol: "X"
+    legend: Core
+    exits:
+      south: 812
+      north: 814
+    nouns:
+      core memory: >-
+        The corrupted <ansi fg="itemname">core memory</ansi> is a sphere of pure
+        psychic anguish, roughly six feet across and growing. Its surface is a
+        chaotic swirl of every emotion simultaneously -- joy curdled into mania,
+        sadness deepened into despair, anger concentrated into fury, fear amplified
+        into terror. Faces press against the surface from the inside -- dozens of
+        them, the faces of forgotten people trying to be remembered one last time.
+        The core pulses with a rhythm that opposes your heartbeat, and standing
+        near it makes you feel like everything you love is already lost.
+    idle:
+      - The corrupted core pulses and a face presses against its surface -- mouth open, eyes desperate -- then sinks back in.
+      - A vein of golden light races across the core's surface and dies, the last flicker of someone's happiest memory.
+      - The psychic static intensifies and for a moment you forget your own name. It comes back. But slower than it should.
+      - The core grows a fraction larger, absorbing another forgotten memory into its mass.
+      - A scream of color erupts from the core -- red fury, blue grief, gold joy -- all tangled together in a sound that is not a sound.
+    spawns:
+      - {mob: 56, rate: "10 real minutes", wander: 0, msg: "The corrupted core pulses violently and expels a <ansi fg=\"mobname\">corrupted core memory</ansi>, a writhing mass of tangled emotions that hits the ground and rises, furious and incoherent."}
+
+  # ── THE WAY BACK UP ────────────────────────────────────────────────
+  - id: 814
+    title: "The Way Back Up"
+    desc: >-
+      Beyond the corrupted core, a narrow <ansi fg="itemname">passage</ansi>
+      climbs steeply upward through the wall of the dump, carved by mind
+      workers as an emergency escape route for anyone foolish enough to
+      descend this far. The passage is lined with <ansi fg="itemname">handholds</ansi>
+      driven into the rock at regular intervals, and faint guide
+      <ansi fg="itemname">lights</ansi> are embedded in the walls, each
+      one a tiny, warm point of gold that flickers like a candle flame.
+      The climb is steep and the passage is narrow, but the air improves
+      with every upward step -- warmer, more colorful, more alive. After
+      the bleakness of the dump, the faint glow of Long Term Memory above
+      is the most beautiful thing you have ever seen. The passage narrows
+      to a final squeeze before opening onto the familiar shelves. You
+      made it back. You remember.
+    biome: dungeon
+    symbol: "^"
+    legend: Way Up
+    exits:
+      south: 813
+      up: 316
+    nouns:
+      passage: >-
+        The <ansi fg="itemname">passage</ansi> is carved from raw mindstone, rough
+        and unfinished, clearly dug in haste by workers who prioritized function
+        over aesthetics. It is wide enough for one person and slopes at an aggressive
+        forty-five degree angle. The walls are scarred with tool marks and the
+        occasional panicked message scratched by previous climbers: "KEEP GOING."
+        "ALMOST THERE." "DO NOT LOOK BACK."
+      handholds: >-
+        The <ansi fg="itemname">handholds</ansi> are iron spikes driven into the
+        rock, spaced just close enough for an average reach. They are worn smooth
+        by the grip of everyone who has climbed out of the dump, and each one is
+        faintly warm, as if the act of escaping the Memory Dump leaves a residue
+        of hope on everything you touch.
+      lights: >-
+        The guide <ansi fg="itemname">lights</ansi> are tiny golden bulbs embedded
+        in the passage walls. They are the only source of color in the deepest
+        parts of the dump, and their warm light is shockingly vivid after the
+        relentless gray below. Each light is labeled with a tiny plaque: "You are
+        real." "Your memories matter." "Keep climbing."
+    idle:
+      - A guide light flickers and you feel a surge of determination to keep climbing.
+      - The air grows warmer as a draft from Long Term Memory above reaches you, carrying the scent of stored memories.
+      - A handhold radiates warmth under your grip, left by the hope of the last person who climbed out.
+      - The golden glow of the shelves above grows brighter, pulling you upward.
+      - You hear the distant, organized hum of Long Term Memory and it sounds like coming home.

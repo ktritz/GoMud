@@ -1,0 +1,31 @@
+roomid: 8
+zone: Rileys Neighborhood
+title: Park Playground
+description: The playground is a colorful sprawl of swings, a tall slide, and a set of monkey bars with chipped paint. The ground is covered in that spongy rubber stuff that's supposed to make falling hurt less (it doesn't, really). A few younger kids are running around and yelling at full volume. The whole place has that nostalgic pull -- you spent a lot of afternoons here when the family first moved to San Francisco, back when making friends felt impossible and the swings were the only place that felt normal.
+mapsymbol: P
+maplegend: Playground
+biome: city
+exits:
+  south:
+    roomid: 7
+  east:
+    roomid: 9
+nouns:
+  swings: The <ansi fg="itemname">swings</ansi> are the classic kind -- rubber seats on long chains, worn smooth by thousands of kids. One of them goes higher than the others if you pump just right. You remember figuring that out your first week here and feeling like you'd cracked some kind of code.
+  slide: The <ansi fg="itemname">slide</ansi> is a tall metal one, the kind that gets scorching hot in summer and static-charged in winter. A kid just went down it and their hair is standing straight up.
+  monkey: The <ansi fg="itemname">monkey bars</ansi> stretch in a long arc, painted red and yellow. The paint is chipping and the metal is cold to the touch. You used to be able to cross them without stopping. You're not sure if you still can, but you're not about to find out with kids watching.
+  bars: :monkey
+idlemessages:
+- A kid shrieks with delight as they launch off a swing at peak height.
+- The chains on the empty swings clink together in the breeze.
+- Two kids are arguing about whose turn it is on the slide.
+- A parent on a bench nearby looks up from their phone, checks on their kid, looks back down.
+- The monkey bars rattle as a kid hangs from them by their knees.
+
+spawninfo:
+- mobid: 1
+  message: A <ansi fg="mobname">thought worm</ansi> wriggles out of nowhere.
+  respawnrate: 2 real minutes
+- mobid: 1
+  message: Another <ansi fg="mobname">thought worm</ansi> squirms into view.
+  respawnrate: 3 real minutes

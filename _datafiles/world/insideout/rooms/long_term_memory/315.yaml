@@ -1,0 +1,24 @@
+roomid: 315
+zone: Long Term Memory
+title: Twisted Memory Path
+description: The orderly grid of shelves breaks down here, the passages twisting and doubling back on themselves in ways that defy the logic of any filing system. Shelves lean at odd angles, some fused together where memories have cross-contaminated, creating dead ends and loops that bring you back to where you started. The labels on the shelves are smeared and contradictory -- "SCHOOL" next to "VACATION" next to "THAT DREAM ABOUT SCHOOL ON VACATION." The light shifts unpredictably between colors as you walk past orbs from every emotional category jammed together in confused clusters. It is easy to get lost here. Many have.
+mapsymbol: '?'
+maplegend: Twisted
+biome: mindscape
+exits:
+  north:
+    roomid: 314
+  west:
+    roomid: 306
+  south:
+    roomid: 317
+  gate:
+    roomid: 700
+nouns:
+  labels: The <ansi fg="itemname">labels</ansi> are a mess. Someone has tried to recategorize this section multiple times, each attempt layered over the last. "BIRTHDAY PARTIES" is crossed out and relabeled "TUESDAYS" which is crossed out and relabeled "THINGS WITH FROSTING." The organizational logic has completely collapsed.
+idlemessages:
+- You turn a corner and find yourself back where you were a moment ago. Or were you?
+- Two orbs on adjacent shelves glow the same scene from different perspectives.
+- A label peels off a shelf and drifts to the floor, revealing three more labels underneath.
+- The corridor ahead bends in a direction that should not exist.
+- You hear your own footsteps echoing from somewhere you have not walked yet.

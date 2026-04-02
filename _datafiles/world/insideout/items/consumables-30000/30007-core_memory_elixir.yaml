@@ -1,0 +1,11 @@
+itemid: 30007
+name: core memory elixir
+namesimple: elixir
+description: A rare elixir infused with the essence of a core memory. The liquid glows
+  with shifting colors and tastes like your happiest moment.
+type: potion
+subtype: drinkable
+uses: 1
+value: 100
+buffids:
+- 46

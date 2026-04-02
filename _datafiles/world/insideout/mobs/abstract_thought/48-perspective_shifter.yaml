@@ -1,0 +1,23 @@
+mobid: 48
+zone: Abstract Thought
+itemdropchance: 20
+hostile: true
+nocorpse: true
+deathmessage: '{name} snaps between viewpoints one last time and winks out of existence.'
+maxwander: 3
+activitylevel: 20
+groups:
+- abstract
+character:
+  name: perspective shifter
+  description: A disorienting entity that warps your perception just by being nearby. Up tilts sideways, the floor feels like it's receding, and distances stop meaning anything -- a wall that looked ten feet away is suddenly right in front of you, then impossibly far again. The shifter itself is hard to focus on, a shimmering distortion in the air like heat haze, always seeming to be somewhere slightly other than where it actually is.
+  level: 11
+  gold: 35
+  raceid: 4
+  stats:
+    strength:
+      training: 8
+    speed:
+      training: 6
+    vitality:
+      training: 12

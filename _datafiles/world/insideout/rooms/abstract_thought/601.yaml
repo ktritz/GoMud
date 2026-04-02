@@ -1,0 +1,21 @@
+roomid: 601
+zone: Abstract Thought
+title: The Factual Hallway
+description: A long, straight corridor stretches before you, its walls lined with neatly organized displays of factual information rendered in perfect three-dimensional dioramas. A miniature solar system orbits silently in one alcove. A periodic table glows on the opposite wall, each element represented by a tiny floating cube of the actual substance. The floor is solid, the ceiling is where it should be, and the lighting comes from a logical source. Labels beneath each display are written in clean, legible text. This is the last place in Abstract Thought where information presents itself in a way that a normal mind would consider "correct." The hallway ahead shimmers slightly, as if reality is starting to loosen.
+mapsymbol: F
+maplegend: Facts
+biome: abstract
+exits:
+  south:
+    roomid: 600
+  north:
+    roomid: 602
+nouns:
+  displays: The <ansi fg="itemname">displays</ansi> are textbook-perfect representations of Riley's stored knowledge. The solar system model has all the planets in the right order, though Pluto is hovering at the edge, unsure if it belongs. A DNA helix rotates slowly in another case. A map of the United States has Minnesota and California highlighted in gold.
+  labels: 'The <ansi fg="itemname">labels</ansi> are crisp and informative. "THE SUN: A star. Approximately 93 million miles away. Hot." "GRAVITY: The reason things fall down. Also the reason Riley can''t dunk." Perfectly factual, if occasionally editorial.'
+idlemessages:
+- The miniature solar system continues its silent orbit, Jupiter's tiny moons trailing behind.
+- A display flickers and updates itself, adding a new fact Riley learned today.
+- The hallway ahead warps for a split second, then snaps back to normal. Probably nothing.
+- The periodic table glows brighter at carbon, as if something organic is thinking nearby.
+- A label rewrites itself slightly, trading clinical language for something more casual.

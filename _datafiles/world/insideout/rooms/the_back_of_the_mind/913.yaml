@@ -1,0 +1,23 @@
+roomid: 913
+zone: The Back of the Mind
+title: Belief Thread Workshop
+description: 'A cluttered workshop strung with thousands of luminous threads that connect the Back of the Mind to the Belief System beyond. The threads are living things -- glowing filaments of self-perception that carry Riley''s beliefs about herself between her conscious and suppressed minds. Each thread hums with a different conviction: "I am brave," "I am not enough," "I can do hard things," "Nobody really understands me." Workbenches line the walls, covered in tools for repairing damaged threads and spinning new ones. Some threads are bright and strong. Others are frayed, their messages garbled by suppression. A few have been cut entirely, their severed ends sparking weakly.'
+mapsymbol: T
+maplegend: Threads
+biome: dungeon
+exits:
+  south:
+    roomid: 912
+  north:
+    roomid: 914
+  east:
+    roomid: 950
+nouns:
+  threads: The <ansi fg="itemname">threads</ansi> are mesmerizing up close. Each one is thinner than a hair but impossibly strong, glowing with the color of whatever emotion anchors the belief it carries. A golden thread hums "I am loved" and vibrates with warmth. A frayed blue thread whispers "I don't belong here" in a voice that cracks. An orange thread, newer than the others, buzzes with "What if I'm not ready?" The threads that have been cut dangle in the air, their beliefs lost to static.
+  tools: 'The <ansi fg="itemname">tools</ansi> are specialized instruments for belief maintenance -- tiny spindles for spinning new threads, delicate scissors for trimming frayed ones, spools of raw emotional fiber in every color. A magnifying lamp is clamped to one bench, positioned over a thread so damaged it is nearly transparent. The repair manual open beside it reads: "Belief restoration is a gradual process. Rushing it will only create a belief that feels hollow."'
+idlemessages:
+- A golden thread flares brighter and hums "I am brave" in a voice that sounds like it means it.
+- A frayed thread snaps with a tiny ping, and a whispered belief dissolves into static.
+- The tools on a workbench rattle as a particularly strong belief thread vibrates with conviction.
+- A new thread begins spinning itself from raw emotional fiber, glowing a tentative pink.
+- The threads hum in chorus for a moment, creating a harmony that sounds like every version of Riley agreeing on something.

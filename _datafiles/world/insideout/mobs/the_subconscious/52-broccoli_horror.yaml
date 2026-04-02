@@ -1,0 +1,26 @@
+mobid: 52
+zone: The Subconscious
+itemdropchance: 20
+hostile: true
+nocorpse: true
+deathmessage: '{name} wilts dramatically, lets out a vegetable death rattle, and crumbles into soggy green mush.'
+maxwander: 3
+activitylevel: 20
+groups:
+- fear
+idlecommands:
+- emote wobbles menacingly on its stalk.
+- ''
+character:
+  name: broccoli horror
+  description: It's a six-foot-tall piece of broccoli and it is furious. Riley's childhood dinner-table trauma has taken on a life of its own down here in the Subconscious, growing thick and green and deeply, personally offended. It wobbles toward you on its stalk with a menacing determination that would be funny if it weren't also trying to kill you.
+  level: 12
+  gold: 38
+  raceid: 5
+  stats:
+    strength:
+      training: 10
+    speed:
+      training: 7
+    vitality:
+      training: 14

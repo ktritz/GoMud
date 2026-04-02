@@ -1,0 +1,18 @@
+questid: 19
+name: 'Pop Quiz: PE'
+description: Coach Davis is testing your health and fitness knowledge.
+steps:
+- id: start
+  description: Answer Coach Davis's PE quiz questions.
+  hint: Find Coach Davis in the Gym.
+- id: q1
+  description: Answer question 1.
+- id: q2
+  description: Answer question 2.
+- id: q3
+  description: Answer question 3.
+- id: end
+  description: You passed the PE pop quiz!
+rewards:
+  experience: 1600
+  gold: 175

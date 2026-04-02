@@ -1,0 +1,7 @@
+itemid: 15
+name: void compass
+namesimple: compass
+description: 'A compass that points toward the strongest memories in an area. In the
+  Memory Dump, it spins wildly, then slowly settles on the deepest point.'
+type: object
+value: 75

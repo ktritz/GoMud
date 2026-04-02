@@ -60,8 +60,8 @@ type Config struct {
 }
 
 func AddOverlayOverrides(dotMap map[string]any) error {
-	configDataLock.RLock()
-	defer configDataLock.RUnlock()
+	configDataLock.Lock()
+	defer configDataLock.Unlock()
 
 	for k, v := range dotMap {
 

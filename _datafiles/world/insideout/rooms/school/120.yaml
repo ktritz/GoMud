@@ -1,0 +1,23 @@
+roomid: 120
+zone: School
+title: Computer Lab
+description: A room full of beige desktop computers arranged in rows, each one humming quietly and displaying a login screen that takes forever to load. The keyboards are sticky from years of kids eating lunch while typing, and at least three mice have their scroll wheels jammed. A whiteboard at the front has "NO GAMING DURING CLASS" written on it, which everyone ignores. The teacher's desk has a newer computer and a mug that says "There's no place like 127.0.0.1." Motivational tech posters line the walls with slogans like "CODE IS POETRY" and "HAVE YOU TRIED TURNING IT OFF AND ON AGAIN?"
+mapsymbol: C
+maplegend: Comp-Lab
+biome: city
+exits:
+  west:
+    roomid: 109
+nouns:
+  computers: The <ansi fg="itemname">computers</ansi> are old enough to be considered retro but not old enough to be considered cool. They run an operating system three versions behind current, and opening more than two browser tabs is an act of faith. Someone has changed the desktop wallpaper on one to a picture of a cat wearing sunglasses. The IT department will fix it eventually. They always do.
+  whiteboard: 'The <ansi fg="itemname">whiteboard</ansi> has today''s lesson plan: "Introduction to Python (the programming language, NOT the snake)." Below it someone has drawn a very detailed snake. Below that, someone else has written "sssssssyntax error."'
+  mug: 'The <ansi fg="itemname">mug</ansi> reads "There''s no place like 127.0.0.1" and has a picture of a house on it. Only the teacher thinks it''s funny, and she thinks it''s VERY funny.'
+idlemessages:
+- A computer fan whirs louder than usual, then settles down.
+- Someone's computer makes the Windows error sound and the whole room winces.
+- The printer in the corner makes a grinding noise but doesn't actually print anything.
+- A student rapidly alt-tabs away from something that is definitely not homework.
+spawninfo:
+- mobid: 77
+  message: <ansi fg="mobname">Ms. Tanaka</ansi> sits down at the teacher's computer.
+  respawnrate: 5 real minutes

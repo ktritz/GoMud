@@ -1,0 +1,26 @@
+mobid: 62
+zone: Belief System
+itemdropchance: 15
+hostile: true
+nocorpse: true
+deathmessage: '{name} cracks apart like old plaster and dissolves into motes of fading light.'
+maxwander: 2
+activitylevel: 15
+groups:
+- abstract
+idlecommands:
+- emote sheds fragments of itself, pieces dissolving before they hit the ground.
+- ''
+character:
+  name: crumbling belief
+  description: A belief that is literally falling apart. It might have been something solid once -- a conviction, a truth you held close -- but self-doubt has eaten away at its edges until pieces crumble off with every step. Fragments of what it used to be drift to the ground like ash, dissolving before they land. It still moves forward with a desperate, shuddering determination, but it's only a matter of time before there's nothing left.
+  level: 11
+  gold: 35
+  raceid: 4
+  stats:
+    strength:
+      training: 8
+    speed:
+      training: 6
+    vitality:
+      training: 12

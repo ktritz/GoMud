@@ -1,0 +1,9 @@
+itemid: 20032
+name: imagination boots
+namesimple: boots
+description: 'Boots that change style based on whatever adventure you''re imagining.
+  Right now they look like space boots. Wait, now they''re cowboy boots.'
+type: feet
+subtype: wearable
+damagereduction: 3
+value: 90

@@ -1,0 +1,21 @@
+roomid: 606
+zone: Abstract Thought
+title: Scattered Fragments
+description: 'Pieces of what used to be reality float in a slow, silent orbit around nothing in particular. A fragment of a face drifts past -- just the smile, disconnected from any mouth. A triangle of blue sky hangs in the air next to a rectangle of grass, but they don''t connect to form a landscape. Sounds have deconstructed too: you hear vowels without consonants, rhythms without melody, the emotional weight of music without any actual notes. Gravity is a suggestion that''s been politely declined. You can still walk, but only because some part of your mind insists that walking is a thing that makes sense. The fragments are beautiful -- each one a perfect piece of something -- but they refuse to become a whole.'
+mapsymbol: F
+maplegend: Fragments
+biome: abstract
+exits:
+  south:
+    roomid: 605
+  north:
+    roomid: 607
+nouns:
+  fragment: 'The <ansi fg="itemname">fragments</ansi> are hypnotic. One is a piece of laughter -- not the sound, but the shape of it, the curve a mouth makes. Another is the color of a sunset without any sky to hold it. A third is the feeling of déjà vu made visible: a shimmering, recursive loop about the size of your fist. Each fragment was once part of something whole, and each one has forgotten what.'
+  sounds: The <ansi fg="itemname">sounds</ansi> here exist in pieces. You hear the bass note of a heartbeat without the beat itself. A whisper arrives as pure sibilance, all hiss and no words. Somewhere, the emotional core of a song plays -- you feel it in your chest like longing -- but there's no melody, no lyrics, no instrument. Just the feeling.
+idlemessages:
+- A smile fragment drifts past, curving gently in midair like a Cheshire cat's last act.
+- Two fragments brush against each other and briefly form something recognizable before separating.
+- A piece of sky rotates slowly, showing clouds from an angle that shouldn't exist.
+- The sound of a word floats by -- not the word itself, just the feeling of almost understanding it.
+- Gravity reasserts itself for two seconds, then lets go again with an almost apologetic shrug.

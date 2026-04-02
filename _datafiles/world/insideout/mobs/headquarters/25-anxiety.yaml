@@ -1,0 +1,25 @@
+mobid: 25
+zone: Headquarters
+hostile: false
+maxwander: 0
+activitylevel: 35
+groups:
+- headquarters-emotion
+idlecommands:
+- emote paces back and forth in a frantic, tight circle.
+- emote scribbles furiously on a notepad, making yet another contingency plan.
+- say Okay okay okay, so what if everything goes wrong? I need a plan for that. And a plan for THAT plan.
+- say What if they don't like us? What if we say the wrong thing? What if we say the RIGHT thing but in the WRONG way?
+- emote fidgets with her hair, which crackles with static electricity.
+- say I'm not panicking. This is just... very aggressive preparedness.
+- ''
+combatcommands:
+- callforhelp 5:emotion:screams and frantically calls for help.
+scripttag: dialog
+questflags:
+- 8-key
+character:
+  name: anxiety
+  description: Anxiety is a wiry, orange-skinned emotion with a manic, electric energy that fills any room she enters. Her wild orange hair literally stands straight up, crackling with nervous static, and her enormous eyes are always slightly too wide, as if she's permanently caffeinated. She talks at roughly twice the speed of anyone else, her words tumbling over each other in a breathless torrent of worst-case planning and contingency strategies. She fidgets constantly -- wringing her hands, pacing in tight circles, compulsively making lists on a notepad she pulls from thin air. Unlike Fear, who reacts to immediate danger, Anxiety is fixated on the future and all the terrible things that might happen. She genuinely means well and desperately wants to protect Riley, but her well-intentioned planning has a tendency to spiral into full catastrophic overdrive.
+  level: 99
+  raceid: 2

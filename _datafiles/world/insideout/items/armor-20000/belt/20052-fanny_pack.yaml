@@ -1,0 +1,11 @@
+itemid: 20052
+name: fanny pack
+namesimple: pack
+description: 'A retro fanny pack. Embarrassment would die if they saw you wearing
+  this, but it''s surprisingly practical.'
+type: belt
+subtype: wearable
+damagereduction: 0
+statmods:
+  speed: 1
+value: 10

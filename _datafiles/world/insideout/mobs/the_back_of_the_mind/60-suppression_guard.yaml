@@ -1,0 +1,29 @@
+mobid: 60
+zone: The Back of the Mind
+itemdropchance: 25
+hostile: true
+nocorpse: true
+deathmessage: '{name} sparks and powers down, collapsing into inert components that dissolve.'
+maxwander: 0
+activitylevel: 25
+groups:
+- abstract
+- guard
+combatcommands:
+- backstab
+- cast mm
+angrycommands:
+- emote activates defense protocols, plates shifting and locking into combat configuration.
+character:
+  name: suppression guard
+  description: A mechanical, emotionless guardian created by Anxiety to protect the vault at the back of the mind. It stands perfectly still until something approaches, then activates with a sharp click and a whir of internal mechanisms. Its body is angular and utilitarian, built from rigid geometric plates that interlock like armor. It has no face, just a smooth, featureless panel where a face should be, and it moves with the precise, soulless efficiency of something that was never alive and never will be.
+  level: 18
+  gold: 56
+  raceid: 4
+  stats:
+    strength:
+      training: 22
+    speed:
+      training: 16
+    vitality:
+      training: 28

@@ -1,0 +1,21 @@
+roomid: 714
+zone: The Subconscious
+title: Guard Station
+description: An abandoned guard post sits at the junction of two corridors, its desk still covered in paperwork that no one will ever finish. A chair is overturned behind the desk, and a cold cup of coffee sits untouched next to a half-eaten sandwich that has been here so long it has become something new and disturbing. Whoever was stationed here left in a hurry -- the drawers are open, a clipboard is on the floor, and the security monitors mounted to the wall show nothing but static on every channel. A calendar pinned to the wall is open to a date that has not happened yet.
+mapsymbol: S
+maplegend: Guard
+biome: dungeon
+exits:
+  south:
+    roomid: 713
+  north:
+    roomid: 715
+nouns:
+  desk: 'The <ansi fg="itemname">desk</ansi> is a heavy metal affair bolted to the floor, covered in unfinished incident reports. Most are routine -- "Cell 14: Occupant moaning. Applied standard ignoring protocol." But the last report, still in the typewriter, reads "Something is wrong with Cell 23. The door is open but nothing came out. I repeat, nothing came o" and then it stops.'
+  chair: The <ansi fg="itemname">chair</ansi> is a standard-issue office chair lying on its side. The wheels are still spinning slowly, as though someone just knocked it over. But the dust on the seat suggests it has been here for a very long time. Both things cannot be true, and yet.
+idlemessages:
+- The security monitors flicker and for one frame you see something staring into the camera.
+- The overturned chair's wheels spin faster, then slow to a stop.
+- A page turns on the desk, moved by a draft that you cannot feel.
+- The coffee on the desk is still warm. It should not still be warm.
+- Static on the monitors resolves into a pattern that looks like a face, then dissolves.

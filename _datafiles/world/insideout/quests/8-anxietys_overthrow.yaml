@@ -1,0 +1,31 @@
+questid: 8
+name: 'Anxiety''s Overthrow'
+description: 'Anxiety has gone too far, locking the original emotions in the Back
+  of the Mind and trying to control Riley. Help restore balance.'
+steps:
+- id: start
+  description: Find a way into the Back of the Mind.
+  hint: Anxiety sealed the entrance. Look for clues in Headquarters and the Belief
+    System.
+- id: key
+  description: 'Obtain the key to Anxiety''s vault.'
+  hint: The Belief System zone may hold the key to unlocking the vault.
+- id: enter
+  description: 'Enter Anxiety''s vault in the Back of the Mind.'
+  hint: Use the suppression key on the vault door.
+- id: clear
+  description: Clear out the Suppression Guards protecting the vault.
+  hint: Fight through the Back of the Mind to reach the Emotion Vault.
+- id: free
+  description: Free the trapped emotions from the vault.
+  hint: Interact with the Emotion Vault room.
+- id: end
+  description: 'Balance is restored. Anxiety learns that it''s okay to not control
+    everything.'
+rewards:
+  playermessage: The emotions work together again. Riley feels more like herself than
+    ever.
+  roommessage: A wave of emotional balance washes through Headquarters.
+  experience: 12000
+  gold: 1500
+  itemid: 20015

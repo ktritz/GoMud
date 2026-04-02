@@ -1,0 +1,23 @@
+questid: 4
+name: Dream Gone Wrong
+description: A dream has gone off-script and become a nightmare. The Dream Director
+  needs help getting it under control.
+steps:
+- id: start
+  description: Investigate the corrupted soundstage in Dream Productions.
+  hint: Check Soundstage B - the horror set.
+- id: clear
+  description: Clear out the nightmare creatures from the soundstage.
+  hint: Kill dream nightmares in the Nightmare Wing and soundstages.
+- id: script
+  description: Find the corrupted dream script that caused the nightmares.
+  hint: Search the Script Archive in Dream Productions.
+- id: return
+  description: Return the corrupted script to the Dream Director.
+  hint: 'The Dream Director is in the Director''s Office.'
+- id: end
+  description: 'The dream is back on script! Riley will sleep better tonight.'
+rewards:
+  experience: 6000
+  gold: 500
+  itemid: 20004

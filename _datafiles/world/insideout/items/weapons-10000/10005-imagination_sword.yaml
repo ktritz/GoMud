@@ -1,0 +1,12 @@
+itemid: 10005
+name: imagination sword
+namesimple: sword
+description: A brilliantly colored sword that seems to be made of pure imagination.
+  It shifts between crayon-bright colors and sometimes sprouts sparkles.
+type: weapon
+hands: 1
+subtype: slashing
+uses: 0
+damage:
+  diceroll: 1d6
+value: 75

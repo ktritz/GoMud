@@ -1,0 +1,6 @@
+name: Headquarters
+roomid: 200
+autoscale:
+  minimum: 1
+  maximum: 20
+defaultbiome: mindscape

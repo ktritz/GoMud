@@ -1,0 +1,23 @@
+roomid: 952
+zone: Belief System
+title: Positive Belief Corridor
+description: 'A wide, luminous hallway stretches forward, its walls aglow with inscriptions that radiate warmth and light. Every surface carries one of Riley''s positive beliefs about herself, carved in letters that pulse with emotional color and throw patterns across the polished floor like stained glass. The air in here feels lighter, easier to breathe, charged with the quiet confidence of someone who has started to figure out who they are. Memory fragments float in alcoves along the walls -- tiny scenes that prove each belief true: a goal scored, a friend defended, a hard truth spoken. The corridor hums with the collected evidence of Riley''s best self.'
+mapsymbol: +
+maplegend: Positive
+biome: mindscape
+exits:
+  west:
+    roomid: 951
+  east:
+    roomid: 955
+nouns:
+  walls: The <ansi fg="itemname">walls</ansi> are inscribed with beliefs that glow from within. "<ansi fg="yellow-bold">I am kind</ansi>" shines in warm gold, its letters carved deep and filled with light from a hundred small acts of compassion. "<ansi fg="cyan-bold">I am brave</ansi>" blazes in bright blue, fueled by every time Riley stood up despite being afraid. "<ansi fg="green-bold">I am creative</ansi>" swirls in green and gold, fed by every drawing, every idea, every moment of imagination.
+  memory fragments: The <ansi fg="itemname">memory fragments</ansi> float like tiny snow globes, each one containing a moment that reinforced a positive belief. One shows Riley helping a new kid find their classroom. Another captures the exact second she landed a difficult hockey maneuver. A third holds the sound of her mom saying "I'm proud of you" after a tough day. Each fragment is warm to the touch.
+  kind: The inscription "<ansi fg="yellow-bold">I am kind</ansi>" glows steadily. Looking at it, you can feel the weight of every small kindness Riley has shown -- holding a door, sharing lunch, sending a text to check on a friend. It's not the loudest belief, but it might be the most consistent.
+  brave: '"<ansi fg="cyan-bold">I am brave</ansi>" burns with intensity. This belief was forged in specific moments -- the first day at a new school, the first time standing up to someone bigger, every time fear said stop and Riley said not yet. The letters flicker like a flame that refuses to go out.'
+idlemessages:
+- The inscription "I am kind" brightens as a new memory of compassion reinforces it.
+- A memory fragment drifts from its alcove and hovers near you, showing Riley laughing with friends.
+- The corridor hums with quiet confidence, the collected evidence of a person worth being.
+- Golden light ripples across the floor as "I am brave" pulses with renewed strength.
+- A new inscription begins to etch itself into the wall, letter by letter -- I am enough.

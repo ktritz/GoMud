@@ -1,0 +1,21 @@
+roomid: 908
+zone: The Back of the Mind
+title: Repression Hall
+description: A long, straight hallway that stretches farther than it should, its perspective lines converging on a vanishing point that you never seem to reach. The walls are lined with identical gray panels set at precise intervals, each one a sealed compartment containing a repressed experience. Small indicator lights on each panel glow in muted colors -- the faded ghosts of whatever emotion the experience originally carried. The hallway is perfectly climate-controlled, perfectly lit, and perfectly silent, which makes the occasional muffled thump from behind a panel all the more jarring. Walking down this hall feels like scrolling through a list of things you have decided not to think about.
+mapsymbol: '='
+maplegend: Hall
+biome: dungeon
+exits:
+  south:
+    roomid: 907
+  north:
+    roomid: 909
+nouns:
+  panels: The gray <ansi fg="itemname">panels</ansi> are numbered but not labeled -- the contents have been deliberately anonymized, as if even naming them might let them loose. Pressing your ear to one, you can hear a muffled conversation. Another vibrates with what feels like held-back tears. A third is warm to the touch and pulses with a faint red glow. None of them open.
+  lights: The indicator <ansi fg="itemname">lights</ansi> are small LEDs that glow in washed-out versions of emotion colors. Faded gold for suppressed joy. Pale blue for buried sadness. Dim red for swallowed anger. The lights pulse at different rates, and if you watch long enough, you realize the pulses are synced to Riley's heartbeat.
+idlemessages:
+- A panel thumps from the inside, and its indicator light flashes bright before dimming again.
+- The hallway seems to stretch longer ahead of you, though you have been walking for a while.
+- A muffled laugh leaks from one panel, followed by abrupt silence as the suppression field clamps down.
+- The indicator lights along the hall pulse in a slow wave, like a heartbeat rolling down the corridor.
+- You pass a panel that is warm to the touch. Something inside is still fighting.

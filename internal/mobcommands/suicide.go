@@ -3,6 +3,7 @@ package mobcommands
 import (
 	"fmt"
 	"math"
+	"strings"
 
 	"github.com/GoMudEngine/GoMud/internal/buffs"
 	"github.com/GoMudEngine/GoMud/internal/combat"
@@ -63,9 +64,15 @@ func Suicide(rest string, mob *mobs.Mob, room *rooms.Room) (bool, error) {
 	}
 
 	// Send a death msg to everyone in the room.
-	room.SendText(
-		fmt.Sprintf(`<ansi fg="mobname">%s</ansi> has died.`, mob.Character.Name),
-	)
+	if mob.DeathMessage != `` {
+		room.SendText(
+			strings.ReplaceAll(mob.DeathMessage, `{name}`, `<ansi fg="mobname">`+mob.Character.Name+`</ansi>`),
+		)
+	} else {
+		room.SendText(
+			fmt.Sprintf(`<ansi fg="mobname">%s</ansi> has died.`, mob.Character.Name),
+		)
+	}
 
 	// Special handling of "The Guide"
 	// Mark this moment to prevent an immediate respawn
@@ -334,7 +341,7 @@ func Suicide(rest string, mob *mobs.Mob, room *rooms.Room) (bool, error) {
 
 	config := configs.GetGamePlayConfig()
 
-	if config.Death.CorpsesEnabled {
+	if bool(config.Death.CorpsesEnabled) && !mob.NoCorpse {
 		room.AddCorpse(rooms.Corpse{
 			MobId:        int(mob.MobId),
 			Character:    mob.Character,

@@ -1,0 +1,126 @@
+zone: long_term_memory
+zone_config:
+  name: "Long Term Memory"
+mobs:
+  - id: 31
+    name: memory leech
+    desc: >-
+      A slug-like creature that feeds on fading memories, growing brighter as it
+      absorbs them. Its semi-transparent body ripples with stolen colors --
+      fragments of birthday parties, old songs, half-remembered faces -- all
+      swirling beneath its slick skin. It leaves a trail of gray residue wherever
+      it oozes, bleaching the color from the shelves it crawls across.
+    level: 5
+    race: 7
+    hostile: true
+    wander: 3
+    activity: 15
+    drop: 15
+    groups: [forgotten]
+    idle:
+      - "emote oozes slowly along a shelf, leaving a trail of gray residue behind it."
+      - "emote latches onto a fading memory orb and pulses brighter as it feeds."
+      - ""
+    combat: ["backstab"]
+
+  - id: 32
+    name: mind worker
+    desc: >-
+      A small, blue-suited worker in a yellow hardhat, carrying a clipboard and
+      a pen tucked behind one ear. He moves with the brisk efficiency of someone
+      who has filed ten thousand memory orbs and intends to file ten thousand
+      more before his shift ends. He takes his job extremely seriously, even
+      though nobody has ever once thanked him for it.
+    level: 8
+    race: 3
+    hostile: false
+    wander: 5
+    activity: 25
+    groups: [mind-worker]
+    idle:
+      - "emote checks something off on his clipboard and nods curtly."
+      - "emote reorganizes a shelf of memory orbs, nudging each one into perfect alignment."
+      - "emote whistles a workman's tune while sorting through a bin of faded orbs."
+      - "wander"
+    shop:
+      - itemid: 30003
+        qty: 5
+      - itemid: 10004
+        qty: 2
+
+  - id: 33
+    name: bing bong
+    desc: >-
+      Bing Bong is Riley's old imaginary friend -- part cat, part elephant, part
+      dolphin, and made entirely of cotton candy. His body is a soft, faded pink,
+      with a long elephant trunk, delicate cat whiskers, and small dolphin fins
+      sprouting from his back. He carries a bottomless bag slung over one shoulder
+      and wears a tiny bowler hat perched between his mismatched ears. He used to
+      power a rocket wagon with song, soaring through Riley's imagination on
+      adventures that felt bigger than the whole world. Now he lives here in Long
+      Term Memory, wandering the endless shelves and keeping himself busy, though
+      there is a loneliness in his eyes that no amount of cheerfulness can quite
+      hide. He still believes, with every fiber of his cotton candy heart, that
+      Riley will come back for him someday.
+    level: 99
+    race: 6
+    hostile: false
+    wander: 0
+    activity: 30
+    groups: [imaginary]
+    script: questgiver
+    questflags: ["2-start", "2-collect", "2-end"]
+    idle:
+      - "say Who's your friend who likes to play? Bing Bong, Bing Bong!"
+      - "emote wipes a tear from his eye."
+      - "emote reaches into his bottomless bag and pulls out... nothing. He puts it back."
+      - "say I sure do miss Riley sometimes."
+      - "emote hums a little tune to himself."
+      - ""
+
+  - id: 34
+    name: gloom raider
+    desc: >-
+      A shadowy creature that feeds on sadness, hovering low to the ground on
+      wisps of dark mist. It is surrounded by a dim blue aura that pulses like
+      a slow, sorrowful heartbeat. Where it passes, happy memories temporarily
+      turn gray, their colors draining until it drifts away. Its form is vaguely
+      humanoid but indistinct, as if grief itself decided to get up and walk
+      around.
+    level: 7
+    race: 5
+    hostile: true
+    wander: 4
+    activity: 20
+    drop: 20
+    groups: [fear]
+    idle:
+      - "emote drifts silently between the shelves, trailing wisps of dark mist."
+      - "emote passes a row of memory orbs, and their colors briefly drain to gray."
+      - ""
+    combat: ["backstab"]
+    angry:
+      - "emote pulses with dark blue energy."
+
+  - id: 35
+    name: fading memory
+    desc: >-
+      A translucent humanoid figure that has lost most of its detail, flickering
+      in and out of visibility like a dying lightbulb. You can almost make out a
+      face -- the suggestion of a smile, the ghost of someone's eyes -- but then
+      it shifts and blurs into nothing. It moves with a desperate, grasping
+      urgency, reaching for anything solid as if trying to remember what it was.
+      It attacks instinctively, clutching at the living as though contact alone
+      might make it real again.
+    level: 6
+    race: 7
+    hostile: true
+    wander: 3
+    activity: 15
+    drop: 15
+    groups: [forgotten]
+    idle:
+      - "emote flickers violently, nearly disappearing for a moment before solidifying again."
+      - "emote reaches for something that isn't there."
+      - ""
+    combat: ["backstab"]

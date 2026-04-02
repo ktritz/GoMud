@@ -1,0 +1,26 @@
+roomid: 28
+zone: Rileys Neighborhood
+title: Basement
+description: The basement is unfinished and slightly damp, with exposed pipes running along the ceiling and a concrete floor that's always cold. A single bare bulb hangs from a pull chain, casting harsh shadows. Dad's workbench sits against one wall, covered in tools and half-finished projects -- a birdhouse, a wobbly shelf bracket, things that will definitely get done "this weekend." Boxes from the Minnesota move are stacked in the far corner, still taped shut. The furnace hums in its alcove, and the water heater ticks quietly. It's the kind of place where you go to get something and come back upstairs as quickly as possible.
+mapsymbol: B
+maplegend: Basement
+biome: city
+exits:
+  ground floor:
+    roomid: 5
+nouns:
+  workbench: Dad's <ansi fg="itemname">workbench</ansi> is a monument to good intentions. There's a birdhouse with three walls, a shelf bracket that's been "drying" for a month, and a toolbox that's actually pretty well organized. A pegboard on the wall has outlines drawn for each tool, and most of them are actually hanging in the right spots. Dad's one organized space.
+  boxes: The <ansi fg="itemname">Minnesota boxes</ansi> are still sealed with packing tape and labeled in Mom's handwriting. "Kitchen - misc," "Riley's old room," "FRAGILE - Grandma's dishes." They've been here since the move and at this point they're basically furniture. Opening them would mean admitting they're never going back.
+  furnace: The <ansi fg="itemname">furnace</ansi> is a hulking metal box that makes alarming noises but has never actually broken down. It kicks on with a deep WHUMP that you can feel through the floor upstairs. Dad says it's fine. He says that about everything.
+spawninfo:
+- mobid: 7
+  message: A <ansi fg="mobname">basement rat</ansi> squeezes out from behind the water heater, whiskers twitching.
+  respawnrate: 3 real minutes
+- mobid: 7
+  message: A <ansi fg="mobname">basement rat</ansi> emerges from a gap between the Minnesota boxes.
+  respawnrate: 4 real minutes
+idlemessages:
+- The furnace kicks on with a low rumble that vibrates through the floor.
+- A pipe drips somewhere in the darkness beyond the bulb's reach.
+- Something shifts in the stack of Minnesota boxes. Probably settling. Probably.
+- The bare bulb flickers for just a moment.

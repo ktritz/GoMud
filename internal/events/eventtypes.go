@@ -98,6 +98,14 @@ type Communication struct {
 
 func (m Communication) Type() string { return `Communication` }
 
+type OnlinePlayerSnapshot struct {
+	UserId      int
+	Name        string
+	Role        string
+	Level       int
+	ConnectTime time.Time
+}
+
 // Special commands that only the webclient is equipped to handle
 type WebClientCommand struct {
 	ConnectionId uint64
@@ -194,6 +202,8 @@ func (s ScriptedEvent) Type() string { return `ScriptedEvent` }
 type PlayerSpawn struct {
 	UserId        int
 	ConnectionId  uint64
+	ViaWebsocket  bool
+	OnlinePlayers []OnlinePlayerSnapshot
 	RoomId        int
 	Username      string
 	CharacterName string
@@ -204,6 +214,7 @@ func (p PlayerSpawn) Type() string { return `PlayerSpawn` }
 // Left the world
 type PlayerDespawn struct {
 	UserId        int
+	OnlinePlayers []OnlinePlayerSnapshot
 	RoomId        int
 	Username      string
 	CharacterName string

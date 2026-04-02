@@ -1,0 +1,12 @@
+itemid: 10015
+name: broccoli flail
+namesimple: flail
+description: 'A morning star made entirely of broccoli. It''s as disgusting as it
+  is effective. Disgust would NOT approve.'
+type: weapon
+hands: 1
+subtype: bludgeoning
+uses: 0
+damage:
+  diceroll: 1d6
+value: 80

@@ -1,0 +1,12 @@
+itemid: 10007
+name: abstract edge
+namesimple: edge
+description: 'A weapon that shouldn''t exist in three dimensions but somehow does.
+  Its blade is a geometric impossibility - a Penrose triangle sharpened to a point.'
+type: weapon
+hands: 1
+subtype: slashing
+uses: 0
+damage:
+  diceroll: 1d8
+value: 150

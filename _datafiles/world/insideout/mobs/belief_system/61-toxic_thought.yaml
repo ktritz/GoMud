@@ -1,0 +1,28 @@
+mobid: 61
+zone: Belief System
+itemdropchance: 20
+hostile: true
+nocorpse: true
+deathmessage: '{name} crumbles into dark dust that evaporates before hitting the ground.'
+maxwander: 3
+activitylevel: 20
+groups:
+- fear
+- toxic
+idlecommands:
+- whisper You're not good enough...
+- emote pulses with dark energy, its whispers growing louder.
+- ''
+character:
+  name: toxic thought
+  description: A dark, whispered phrase that has clawed its way into physical form -- a hunched, shadowy figure that speaks in a voice uncomfortably close to your own. "You're not good enough." "Nobody likes you." "You'll never fit in." The words drip from it like tar, poisoning the ground where they fall and leaving black stains that take a long time to fade. It moves with a predatory patience, circling its target and whispering until the words start to feel true.
+  level: 12
+  gold: 38
+  raceid: 5
+  stats:
+    strength:
+      training: 10
+    speed:
+      training: 7
+    vitality:
+      training: 14

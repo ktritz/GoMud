@@ -1,0 +1,21 @@
+roomid: 403
+zone: Imagination Land
+title: Trophy Town
+description: 'Every surface in this gleaming plaza is covered with trophies. Giant golden cups, towering silver columns, enormous ribbons in first-place blue -- they line the streets, fill the windows of every building, and stack on top of each other in precarious towers that catch the light and throw it in brilliant flashes across the whole area. The trophies are for everything imaginable: "BEST AT HOCKEY," "MOST LIKELY TO BE AWESOME," "WINNER OF EVERYTHING ALWAYS." Inspirational banners hang from every lamppost, each one more aggressively motivational than the last. The whole town radiates the unshakeable confidence of a child who has not yet learned what second place feels like.'
+mapsymbol: T
+maplegend: Trophies
+biome: land
+exits:
+  north:
+    roomid: 402
+  south:
+    roomid: 404
+nouns:
+  trophies: The <ansi fg="itemname">trophies</ansi> are magnificent in their shameless self-celebration. A ten-foot golden cup is engraved "WORLD'S GREATEST KID -- No Contest." A silver column reads "CHAMPION OF CHAMPIONS OF CHAMPIONS." One small trophy in the back just says "GOOD JOB EXISTING" which, honestly, is the most motivational one here.
+  banners: The <ansi fg="itemname">banners</ansi> are relentless. "YOU CAN DO ANYTHING!" "THE LIMIT DOES NOT EXIST!" "BELIEVE IN YOURSELF AND ALSO IN TROPHIES!" One banner has been edited in crayon to read "YOU CAN DO MOST THINGS (with practice)" which has a distinctly more mature energy.
+idlemessages:
+- A trophy catches the light and sends a blinding golden flash across the plaza.
+- A banner unfurls from a lamppost reading "TODAY IS YOUR DAY! (And also tomorrow!)"
+- Somewhere in Trophy Town, a victory fanfare plays on invisible trumpets.
+- A new trophy materializes on a pedestal, inscribed "AWARD FOR READING THIS AWARD."
+- The trophies gleam so aggressively that the reflections have reflections.

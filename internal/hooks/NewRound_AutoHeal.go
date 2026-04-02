@@ -1,11 +1,8 @@
 package hooks
 
 import (
-	"fmt"
-
 	"github.com/GoMudEngine/GoMud/internal/configs"
 	"github.com/GoMudEngine/GoMud/internal/events"
-	"github.com/GoMudEngine/GoMud/internal/rooms"
 	"github.com/GoMudEngine/GoMud/internal/users"
 )
 
@@ -42,17 +39,7 @@ func AutoHeal(e events.Event) events.ListenerReturn {
 
 		if user.Character.Health < 1 {
 
-			if user.Character.Health <= -10 {
-
-				user.Command(`suicide`) // suicide drops all money/items and transports to land of the dead.
-
-			} else {
-				user.Character.Health--
-				user.SendText(`<ansi fg="red">you are bleeding out!</ansi>`)
-				if room := rooms.LoadRoom(user.Character.RoomId); room != nil {
-					room.SendText(fmt.Sprintf(`<ansi fg="username">%s</ansi> is <ansi fg="red">bleeding out</ansi>! Somebody needs to provide aid!`, user.Character.Name), user.UserId)
-				}
-			}
+			user.Command(`suicide`) // Death at 0 HP, no bleedout.
 
 		} else {
 

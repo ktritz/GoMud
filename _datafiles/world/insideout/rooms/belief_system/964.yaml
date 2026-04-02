@@ -1,0 +1,19 @@
+roomid: 964
+zone: Belief System
+title: Sense of Self Core
+description: 'At the very heart of Riley''s Belief System, past every corridor of doubt and conviction, past the forge and the toxic pool, lies this: a quiet, luminous chamber where Riley''s truest sense of self resides. A single thread of braided light hangs suspended in the center of the room, woven from every color, every emotion, every experience that makes Riley who she is. It''s not large -- it''s about the size of a person -- and it pulses with a rhythm that matches Riley''s heartbeat exactly. The walls of the chamber are smooth and dark, like the inside of a geode, studded with tiny points of light that are individual memories -- not the big ones, but the small, defining moments that collectively answer the question "Who am I?" The room is warm. The room is safe. The room is her.'
+mapsymbol: '@'
+maplegend: Core
+biome: mindscape
+exits:
+  west:
+    roomid: 963
+nouns:
+  thread: The <ansi fg="itemname">thread</ansi> is Riley's sense of self in its most essential form. Every strand represents a piece of her identity -- gold for the joy that defines her outlook, blue for the sadness that gives her depth, red for the anger that protects what she loves, green for the standards she holds, purple for the caution that keeps her safe. Newer strands -- orange anxiety, pink embarrassment, teal ennui -- are woven in too, still finding their place in the braid. The thread is imperfect, asymmetrical, still being woven. It is, without question, beautiful.
+  memories: The <ansi fg="itemname">memories</ansi> embedded in the walls are not the core memories -- those live in the vault in Headquarters. These are quieter. The first time Riley tied her own shoes. The taste of hot chocolate on a snow day. The sound of her dad's laugh. The way it felt to score a goal when nobody expected her to. A conversation with a friend where she said exactly the right thing. Individually, they're small. Together, they're everything.
+idlemessages:
+- The thread pulses in time with Riley's heartbeat, steady and sure.
+- A new strand of light weaves itself into the braid -- a piece of identity still forming.
+- The memory points in the walls glow in a slow cascade, like a constellation waking up.
+- The chamber fills with warmth that feels like self-acceptance, fragile and fierce at once.
+- The thread brightens, and for a moment you can feel exactly who Riley is. Then the feeling fades, leaving only its echo.

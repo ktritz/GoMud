@@ -1,0 +1,11 @@
+buffid: 52
+name: Joyful Inspiration
+description: 'Joy''s encouragement fills you with golden light. Everything feels possible!'
+triggerrate: 5 rounds
+triggercount: 10
+statmods:
+  strength: 3
+  speed: 3
+  smarts: 3
+  vitality: 3
+  perception: 3

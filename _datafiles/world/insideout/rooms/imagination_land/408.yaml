@@ -1,0 +1,25 @@
+roomid: 408
+zone: Imagination Land
+title: Stuffed Animal Zoo
+description: An open-air zoo where the exhibits hold enormous stuffed animals the size of actual animals. Giant teddy bears lumber behind velvet ropes. A plush giraffe stretches its neck toward fake felt leaves. A massive stuffed elephant sprays imaginary water from its trunk. Most of the animals are cheerful and bright, but a few in the far enclosures have gone wrong -- their stitching is unraveling, their button eyes glow with an unsettling light, and their stuffing has been replaced with something darker. A sign at the entrance reads "PLEASE DO NOT FEED THE IMAGINATION ANIMALS" and below it, in smaller letters, "Especially the ones in the back."
+mapsymbol: Z
+maplegend: Zoo
+biome: land
+exits:
+  north:
+    roomid: 407
+  south:
+    roomid: 409
+nouns:
+  stuffed animals: The <ansi fg="itemname">stuffed animals</ansi> are wonderfully absurd at this scale. A teddy bear the size of an actual grizzly sits in its enclosure, button eyes gleaming, a permanent smile stitched across its face. A plush lion yawns silently, revealing a mouth full of felt teeth. They move with the slow, deliberate grace of things that are not quite alive but not quite not.
+  stitching: The corrupted animals in the back enclosures have stitching that writhes and shifts on its own. Thread that was once bright red or blue has darkened to black, and the seams pulse with a faint, unsettling glow. Whatever happened to these imaginary friends, it happened slowly, and it is not over yet.
+spawninfo:
+- mobid: 36
+  message: A <ansi fg="mobname">corrupted imaginary friend</ansi> tears free from its enclosure, button eyes glowing an angry red, stitching writhing.
+  respawnrate: 4 real minutes
+idlemessages:
+- A giant teddy bear waves slowly from its enclosure. Its smile does not waver.
+- The plush giraffe bends down to examine you with enormous button eyes.
+- A corrupted stuffed animal in the back enclosure shifts, its unraveling stitching twitching.
+- A stuffed penguin waddles past the fence line, realizes its mistake, and waddles back.
+- You hear a low growl from the dark enclosure in the back. Stuffed animals should not growl.

@@ -1,0 +1,27 @@
+mobid: 41
+zone: Dream Productions
+itemdropchance: 20
+hostile: true
+nocorpse: true
+deathmessage: '{name} shrieks and unravels like a bad dream dissolving at dawn.'
+maxwander: 3
+activitylevel: 20
+groups:
+- fear
+- nightmare
+idlecommands:
+- emote shifts into something unsettling.
+- ''
+character:
+  name: dream nightmare
+  description: A flickering dark shape that refuses to hold a single form, shifting between half-rendered horrors with sickening speed -- a test you forgot to study for, showing up to school in your pajamas, your teeth crumbling out of your mouth one by one. Each image is just detailed enough to trigger a lurch of dread before it melts into the next. It smells faintly of cold sweat and Monday mornings.
+  level: 10
+  gold: 32
+  raceid: 5
+  stats:
+    strength:
+      training: 7
+    speed:
+      training: 5
+    vitality:
+      training: 10

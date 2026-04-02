@@ -1,0 +1,25 @@
+roomid: 605
+zone: Abstract Thought
+title: Deconstructed Hall
+description: 'The flatness of Stage Two shatters here into Stage Three: deconstruction. Nothing is whole anymore. The walls have fractured into floating panels that drift slowly apart, revealing glimpses of raw mathematical void between them. The floor is a mosaic of disconnected tiles suspended at slightly different heights, each one a different texture and color that no longer relates to its neighbors. Objects have separated into their component parts -- a chair is four legs, a seat, and a back, all floating independently with no interest in being a chair anymore. Shapes drift past like debris in zero gravity. The concept of "room" is becoming optional. You are standing in the place where meaning comes apart.'
+mapsymbol: '3'
+maplegend: Decon
+biome: abstract
+exits:
+  south:
+    roomid: 604
+  north:
+    roomid: 606
+nouns:
+  walls: The <ansi fg="itemname">walls</ansi> have given up on being walls. Rectangular panels float at odd angles, some still bearing fragments of color or texture -- a patch of wallpaper here, a scrap of paint there -- but none of them connect. You can reach between them and feel nothing. The spaces between are not darkness or emptiness; they're the absence of the concept of space itself.
+  tiles: The <ansi fg="itemname">tiles</ansi> beneath your feet are each a small island of certainty in an increasingly uncertain room. One is warm wood. The next is cold stone. A third is something that feels like an emotion rather than a material -- stepping on it makes you briefly nostalgic. They hover at different heights and walking across them requires trust that the next one will be there.
+spawninfo:
+- mobid: 45
+  message: An <ansi fg="mobname">abstract form</ansi> assembles itself from floating fragments, its shape constantly rearranging.
+  respawnrate: 5 real minutes
+idlemessages:
+- A wall panel drifts away from its neighbors, revealing a gap of pure mathematical nothing.
+- A chair leg floats past at eye level, slowly rotating. The rest of the chair is elsewhere.
+- The tile beneath your left foot rises an inch. The one under your right drops an inch.
+- Two fragments of color collide in midair and merge into a new color that doesn't have a name.
+- The concept of "up" flickers. For a moment, you're not sure which direction it is.

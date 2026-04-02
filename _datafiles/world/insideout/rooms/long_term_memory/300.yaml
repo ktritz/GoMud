@@ -1,0 +1,23 @@
+roomid: 300
+zone: Long Term Memory
+title: Memory Shelf Entrance
+description: The Recall Tube deposits you at the top of Long Term Memory with a faint pneumatic hiss. Towering shelves stretch in every direction, rising hundreds of feet overhead and vanishing into a dim haze below. Each shelf holds thousands of memory orbs arranged in neat rows, their soft glow painting the narrow corridors in shifting pastel light. A spiral stairway from the Headquarters Balcony arrives here as well, its final step worn smooth by generations of mind workers. The air is cool and still, carrying the faint hum of a billion stored moments.
+mapsymbol: E
+maplegend: Entrance
+biome: mindscape
+exits:
+  tube:
+    roomid: 205
+  stairway:
+    roomid: 215
+  south:
+    roomid: 301
+nouns:
+  orbs: The <ansi fg="itemname">memory orbs</ansi> nearest the entrance are some of the most recently stored. Each one is a perfect sphere about the size of a softball, glowing with the color of its dominant emotion. You can see tiny scenes playing inside them -- a classroom lecture, a text conversation, a slice of pepperoni pizza.
+  shelves: The shelves are built from a smooth, dark material that seems to absorb sound. They stretch so far in every direction that the far ends dissolve into a faint luminous haze. Small labels mark each section, though the organizational system is incomprehensible to anyone who isn't a mind worker.
+idlemessages:
+- A memory orb rolls slightly on its shelf, its tiny scene flickering as if replaying a dream.
+- The hum of stored memories rises and falls like slow breathing.
+- Somewhere deep in the shelves, a faint golden light flares and then fades.
+- A cool draft drifts up from the lower levels, carrying the musty smell of old thoughts.
+- The Recall Tube above lets out a soft whoosh as a memory is summoned back to Headquarters.

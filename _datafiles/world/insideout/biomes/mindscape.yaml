@@ -1,0 +1,11 @@
+biomeid: mindscape
+name: Mindscape
+symbol: ◈
+description: The interior landscape of Riley's mind. Reality follows emotional
+  logic here, not physical laws. Colors are brighter, feelings have weight,
+  and memories take physical form.
+darkarea: false
+litarea: true
+requireditemid: 0
+usesitem: false
+burns: false

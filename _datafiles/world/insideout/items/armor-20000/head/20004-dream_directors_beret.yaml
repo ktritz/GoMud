@@ -1,0 +1,11 @@
+itemid: 20004
+name: 'dream director''s beret'
+namesimple: beret
+description: A stylish black beret worn by the directors at Dream Productions. It
+  has a small golden megaphone pin on it and makes you feel creative.
+type: head
+subtype: wearable
+damagereduction: 4
+statmods:
+  perception: 2
+value: 120

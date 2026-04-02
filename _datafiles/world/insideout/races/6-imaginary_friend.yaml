@@ -1,0 +1,22 @@
+raceid: 6
+name: imaginary friend
+description: 'A whimsical creature made partly of cotton candy, partly of forgotten
+  birthday wishes, and entirely of imagination.'
+defaultalignment: 15
+size: medium
+unarmedname: whimsy punch
+tnlscale: 1
+selectable: false
+knowsfirstaid: false
+tameable: false
+angrycommands:
+- emote puffs up indignantly.
+- 'say Hey, that''s not very imaginative of you!'
+stats:
+  vitality:
+    base: 1
+  perception:
+    base: 1
+damage:
+  diceroll: 1d4
+disabledslots: []

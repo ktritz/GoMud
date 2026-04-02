@@ -1,0 +1,26 @@
+mobid: 51
+zone: The Subconscious
+itemdropchance: 15
+hostile: true
+nocorpse: true
+deathmessage: '{name} hisses and melts back into the darkness it came from.'
+maxwander: 3
+activitylevel: 15
+groups:
+- fear
+idlecommands:
+- emote melts into the shadows, becoming nearly invisible.
+- ''
+character:
+  name: darkness creeper
+  description: A shapeless dark mass that clings to shadows the way moss clings to stone. It has no face, no limbs, no features at all -- just an area of darkness that is somehow darker than the darkness around it. You only know it's there when you feel it watching you, when the hair on the back of your neck stands up and the silence gets a little too thick. It moves without sound and leaves no trace except a lingering feeling that you are not alone and never were.
+  level: 13
+  gold: 41
+  raceid: 5
+  stats:
+    strength:
+      training: 12
+    speed:
+      training: 8
+    vitality:
+      training: 16

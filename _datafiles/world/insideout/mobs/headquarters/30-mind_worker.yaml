@@ -1,0 +1,25 @@
+mobid: 30
+zone: Headquarters
+hostile: false
+maxwander: 0
+activitylevel: 20
+groups:
+- headquarters-worker
+idlecommands:
+- emote checks items off a clipboard with meticulous precision.
+- emote adjusts his hardhat and surveys the Supply Closet.
+- say Supply Closet is fully stocked. Mostly. Don't tell management about the gum situation.
+- say type <ansi fg="command">list</ansi> to see what I've got in stock.
+- ''
+- ''
+combatcommands:
+- callforhelp 5:emotion:blows a whistle and calls for backup.
+character:
+  name: mind worker
+  description: This hardhat-wearing mind worker is one of the diligent crew that keeps Riley's mental infrastructure running. He wears a blue jumpsuit, a yellow hardhat, and carries a clipboard that he consults with bureaucratic seriousness. He runs the Supply Closet, making sure the emotions and anyone else passing through Headquarters has access to basic necessities. He takes his job very seriously, even if nobody else seems to.
+  level: 99
+  raceid: 3
+  shop:
+  - quantitymax: 10
+  - quantitymax: 5
+  - quantitymax: 5

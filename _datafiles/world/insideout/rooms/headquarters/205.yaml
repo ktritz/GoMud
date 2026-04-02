@@ -1,0 +1,20 @@
+roomid: 205
+zone: Headquarters
+title: The Recall Tube
+description: A massive pneumatic tube system dominates this room, its transparent cylinders stretching from floor to ceiling before vanishing into the walls and downward into the depths of the mind. The main tube is wide enough for a memory orb -- or even a person, if they were brave enough. A control panel with a single large button sits beside the tube, labeled "RECALL" in bold letters. Smaller tubes branch off in every direction, each one labeled with a category of memory. The whole system whooshes and hisses with compressed air as memories are sent and received at dizzying speed.
+mapsymbol: T
+maplegend: Tube
+biome: mindscape
+exits:
+  east:
+    roomid: 201
+  tube:
+    roomid: 300
+nouns:
+  tube: The main recall tube is an engineering marvel of the subconscious. It connects Headquarters directly to the Long Term Memory shelves far below. When activated, it can pull any specific memory back up to Headquarters in seconds, or send someone hurtling down into the labyrinth of stored memories.
+  button: The big red RECALL button is slightly worn from use. A small sign beneath it reads "Please specify memory before pressing. Last time someone hit this without thinking, we got 400 memories about breakfast."
+idlemessages:
+- A memory orb shoots up through the tube with a satisfying THWOOMP and rolls to a stop.
+- The tubes hiss and rattle as something is recalled from deep storage.
+- A small label on one of the side tubes reads "SONG LYRICS -- CAUTION -- EXTREMELY FULL."
+- The recall system burps out a dusty orb that nobody seems to have requested.

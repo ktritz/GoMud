@@ -1,0 +1,34 @@
+roomid: 109
+zone: School
+title: Library
+description: The school library is a surprisingly peaceful island in the chaos of the hallways. Tall rows of bookshelves divide the room into quiet aisles, their shelves packed with everything from dog-eared paperbacks to reference encyclopedias that nobody has opened since the internet was invented. A cluster of computers sits on a long desk near the entrance, all of them displaying the school's homepage with a filter that blocks approximately everything interesting. A cozy reading nook with beanbag chairs is tucked into the far corner, perpetually claimed by the same three kids. The librarian's desk is a fortress of returned books, overdue notices, and a mug that says "Shhh... I'm reading." The carpet is that weird institutional blue-gray that absorbs all sound and most of your will to leave.
+mapsymbol: L
+maplegend: Library
+biome: city
+exits:
+  south:
+    roomid: 105
+  southeast:
+    roomid: 101
+  east:
+    roomid: 120
+nouns:
+  bookshelves: The <ansi fg="itemname">bookshelves</ansi> hold a surprisingly solid collection. The fiction section is well-loved, with spines cracked and covers worn soft from years of checkouts. The nonfiction section is mostly untouched except for the books about animals and space, which are beaten to shreds. A small "STAFF PICKS" shelf near the front displays titles that the librarian is personally campaigning for, each one with a handwritten review card.
+  computers: The <ansi fg="itemname">computers</ansi> are functional but ancient by tech standards -- thick monitors, sticky keyboards, and a startup time measured in geological epochs. The browser has so many blocked sites that the filter basically functions as a "you can use Google and that's it" machine. Someone has changed the desktop wallpaper on one to a picture of a cat wearing a graduation cap. The librarian lets it stay.
+  reading nook: The <ansi fg="itemname">reading nook</ansi> is a pair of oversized beanbag chairs and a floor lamp tucked into a corner between two bookshelves. It's the most fought-over real estate in the entire school. Unspoken rules govern its use -- first come, first served, no homework allowed, reading only. A hand-lettered sign above it reads "THE QUIET ZONE" with a drawing of a sleeping owl.
+idlemessages:
+- Pages turn softly somewhere in the stacks.
+- The librarian looks up from her desk and silently points at a "QUIET PLEASE" sign.
+- A computer makes the Windows error sound and someone whispers a frustrated apology.
+- A kid in the reading nook has fallen asleep with a book on their face.
+- The heating vent clicks on and warm air rustles the pages of an open book on a table.
+spawninfo:
+- mobid: 13
+  message: A doubt shadow seeps out from between the library bookshelves.
+  respawnrate: 6 real minutes
+- mobid: 74
+  message: <ansi fg="mobname">Ms. Walsh</ansi> arrives with a stack of atlases.
+  respawnrate: 5 real minutes
+- mobid: 75
+  message: <ansi fg="mobname">Mr. Grant</ansi> strides in, bow tie perfectly knotted.
+  respawnrate: 5 real minutes

@@ -1,0 +1,11 @@
+itemid: 20065
+name: gym belt
+namesimple: belt
+description: A stretchy athletic belt with a small zippered pouch. The kind of thing you wear to gym class when you don't have pockets but still need somewhere to put your stuff.
+type: belt
+subtype: wearable
+uses: 0
+damage:
+  diceroll: 0d0
+defense: 0
+value: 15

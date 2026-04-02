@@ -1,0 +1,25 @@
+roomid: 11
+zone: Rileys Neighborhood
+title: Corner Store
+description: A cramped little convenience store with fluorescent lighting and aisles packed too tightly together. The shelves are stocked with everything from candy bars to canned soup to phone chargers. A glass counter near the door holds a display of lottery tickets and cheap sunglasses. The air smells like coffee from the self-serve machine in the back and the synthetic cherry of air freshener. A handwritten sign behind the register reads "You Break It, You Buy It. Seriously."
+mapsymbol: $
+maplegend: Store
+biome: city
+exits:
+  west:
+    roomid: 10
+  south:
+    roomid: 17
+nouns:
+  shelves: The <ansi fg="itemname">shelves</ansi> are crammed with an impressive variety of junk food, school supplies, and random household items. There's a whole section dedicated to different flavors of chips. The top shelf has a fine layer of dust on items that haven't moved in years.
+  counter: The glass <ansi fg="itemname">counter</ansi> has scratch-off lottery tickets fanned out behind it and a jar of individually wrapped candies with a sign that says "25 cents each, honor system." The cash register looks like it's from the 1990s and it probably is.
+  snacks: The <ansi fg="itemname">snacks</ansi> section is the real draw. Gummy worms, trail mix, beef jerky, those weird Japanese candy kits, and at least four kinds of hot chips. This is where most of your allowance goes.
+spawninfo:
+- mobid: 4
+  message: The shopkeeper emerges from the back room, adjusting their apron.
+  respawnrate: 5 real minutes
+idlemessages:
+- The shopkeeper rearranges something behind the counter.
+- A bell jingles as someone pushes through the front door.
+- The self-serve coffee machine makes a gurgling noise.
+- A kid deliberates intensely between two candy bars.

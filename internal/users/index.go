@@ -107,13 +107,21 @@ func (idx *UserIndex) Rebuild() error {
 
 	// Example: Append each offline user record. The function SearchOfflineUsers
 	// and the type UserRecord are assumed to be defined elsewhere.
-	SearchOfflineUsers(func(u *UserRecord) bool {
+	var rebuildErr error
+	if err := SearchOfflineUsers(func(u *UserRecord) bool {
 		// Use the AppendUserRecord method to add the record.
 		if err := idx.AddUser(u.UserId, u.Username); err != nil {
-			// Handle error somehow?
+			rebuildErr = err
+			return false
 		}
 		return true
-	})
+	}); err != nil {
+		return err
+	}
+
+	if rebuildErr != nil {
+		return rebuildErr
+	}
 
 	return nil
 }

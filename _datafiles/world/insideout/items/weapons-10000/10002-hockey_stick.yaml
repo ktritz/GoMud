@@ -1,0 +1,12 @@
+itemid: 10002
+name: hockey stick
+namesimple: stick
+description: A sturdy composite hockey stick with tape wrapped around the blade. Riley
+  would approve.
+type: weapon
+hands: 2
+subtype: bludgeoning
+uses: 0
+damage:
+  diceroll: 1d4
+value: 25

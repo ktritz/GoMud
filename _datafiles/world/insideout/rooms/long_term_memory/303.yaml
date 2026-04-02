@@ -1,0 +1,20 @@
+roomid: 303
+zone: Long Term Memory
+title: Red Memory Corridor
+description: The temperature climbs sharply as you enter the red memory corridor. The anger memories packed into these shelves burn with a fierce, ruddy glow that makes the walls look like they are lit by an underground furnace. Some orbs pulse erratically, as if the fury inside them is still simmering years later. The air is dry and warm, carrying a faint smell of scorched metal. The shelves here are reinforced with extra bracing, and a few orbs sit in special containment brackets -- memories so intense they might roll right off the shelf without them. You can almost hear teeth grinding.
+mapsymbol: R
+maplegend: Red
+biome: mindscape
+exits:
+  north:
+    roomid: 302
+  south:
+    roomid: 304
+nouns:
+  anger memories: The <ansi fg="itemname">anger memories</ansi> are hot to the touch. One shows a slammed door. Another captures the white-hot moment of being accused of something you did not do. A third replays an argument on loop, each repetition making the orb glow brighter. The containment brackets on the most intense ones are slightly warped from the heat.
+idlemessages:
+- A red orb flares violently, casting sharp shadows that jump across the walls.
+- The temperature spikes and you feel a sudden urge to clench your fists.
+- Something inside a nearby orb makes a sound like a door slamming.
+- The reinforced shelves creak under the strain of particularly furious memories.
+- A faint smell of smoke drifts from the deeper sections of the corridor.

@@ -1,0 +1,11 @@
+itemid: 20007
+name: void-touched hood
+namesimple: hood
+description: 'A deep black hood woven from threads of forgotten memories. It seems
+  to absorb light and sound around it, sharpening your senses in the void.'
+type: head
+subtype: wearable
+damagereduction: 7
+statmods:
+  perception: 4
+value: 450

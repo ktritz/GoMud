@@ -1,0 +1,8 @@
+spellid: curepoison
+name: Purify Thought
+description: Cleanses toxic thoughts and poisons from the mind
+type: helpsingle
+school: restoration
+cost: 4
+waitrounds: 1
+difficulty: 0

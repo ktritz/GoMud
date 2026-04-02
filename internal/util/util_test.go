@@ -317,6 +317,40 @@ func TestSplitString(t *testing.T) {
 				`符。`,
 			},
 		},
+		{
+			"SplitString with ansi tags not counted toward width",
+			args{
+				`A stunning <ansi fg="itemname">view</ansi> of the bay.`,
+				40,
+			},
+			[]string{
+				`A stunning <ansi fg="itemname">view</ansi> of the bay.`,
+			},
+		},
+		{
+			"SplitString wraps with ansi tags preserved",
+			args{
+				`Look at the <ansi fg="itemname">ancient sword</ansi> on the table here.`,
+				20,
+			},
+			// Tags stay attached to their adjacent text; only visible
+			// characters count toward the 20-char line width.
+			[]string{
+				`Look at the <ansi fg="itemname">ancient`,
+				`sword</ansi> on the table`,
+				`here.`,
+			},
+		},
+		{
+			"SplitString multiple ansi tags",
+			args{
+				`The <ansi fg="red">red</ansi> and <ansi fg="blue">blue</ansi> flags wave.`,
+				40,
+			},
+			[]string{
+				`The <ansi fg="red">red</ansi> and <ansi fg="blue">blue</ansi> flags wave.`,
+			},
+		},
 	}
 
 	for _, tt := range tests {

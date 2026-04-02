@@ -1,0 +1,21 @@
+roomid: 513
+zone: Dream Productions
+title: Script Archive
+description: Towering filing cabinets fill this room from floor to ceiling, each drawer stuffed with scripts from every dream Riley has ever had. The cabinets are organized by year, then by emotion, then by a system that seems to involve color-coded stickers that nobody fully understands. A reading table in the center holds a few scripts pulled for review, their pages yellowed and curling at the edges. The oldest scripts, from Riley's toddler years, are simple -- "Warm. Bright. Mom." The newer ones are thick, complex, full of subtext and anxiety. A card catalog system with thousands of tiny drawers sits against the far wall, cross-referencing dreams by theme, recurring element, and "how weird was it on a scale of 1-10."
+mapsymbol: L
+maplegend: Archive
+biome: dreamset
+exits:
+  west:
+    roomid: 512
+  east:
+    roomid: 514
+nouns:
+  cabinets: The <ansi fg="itemname">filing cabinets</ansi> contain Riley's entire dream history. The "Age 3" drawer is thin and full of simple, bright scripts. The "Age 13" drawer is overflowing with complex emotional narratives and barely contained anxiety dreams. The "Recurring" section has its own cabinet, with "The Teeth One" having an entire drawer to itself.
+  table: The <ansi fg="itemname">reading table</ansi> holds a few scripts open for review. One describes a dream where Riley gives a presentation but all her notes are in a language she can't read. Another is a surprisingly touching dream about her old dog. A red stamp on one script reads "APPROVED FOR TONIGHT." A note in the margin says "Add more flying -- Joy."
+idlemessages:
+- A filing cabinet drawer slides open on its own and a script floats out, as if summoned.
+- Pages of an old dream script flutter despite the absence of any breeze.
+- The card catalog clicks and whirs as it automatically indexes tonight's new dreams.
+- A script from the "Age 5" section glows faintly gold, still warm with childhood joy.
+- You hear the faint sound of a story being told, as if the scripts are reading themselves.

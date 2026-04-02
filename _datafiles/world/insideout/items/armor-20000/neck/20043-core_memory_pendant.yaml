@@ -1,0 +1,12 @@
+itemid: 20043
+name: core memory pendant
+namesimple: pendant
+description: 'A pendant containing a tiny, perfectly preserved core memory. It glows
+  warmly against your chest and fills you with confidence.'
+type: neck
+subtype: wearable
+damagereduction: 3
+statmods:
+  smarts: 4
+  perception: 3
+value: 450

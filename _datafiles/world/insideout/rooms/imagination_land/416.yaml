@@ -1,0 +1,20 @@
+roomid: 416
+zone: Imagination Land
+title: House of Cards
+description: A towering structure of giant playing cards rises around you, each card the size of a door and leaning against its neighbor in precarious balance. The house is enormous -- corridors, rooms, and staircases all made from cards that tremble with every footstep and sway in every draft. Face cards peer down from the walls with painted expressions that seem to follow you. The entire structure should have collapsed a thousand times over, and the air is thick with the tension of something that knows it is defying gravity and is getting nervous about it. Every surface vibrates with a faint, anxious energy. Walk carefully.
+mapsymbol: V
+maplegend: Cards
+biome: land
+exits:
+  north:
+    roomid: 415
+  south:
+    roomid: 417
+nouns:
+  cards: The <ansi fg="itemname">cards</ansi> are standard playing cards scaled up to absurd proportions. Kings, queens, and jacks stare from the walls with regal indifference. Number cards form the floors and ceilings, their pips slightly worn from foot traffic. If you lean on one, the entire corridor shifts half an inch and every card in the building holds its breath.
+idlemessages:
+- A card wall shudders and leans a degree further. The whole building creaks in sympathy.
+- The King of Spades on the wall narrows his painted eyes at you. Or maybe the card just shifted.
+- A card from the upper floors flutters down, and the structure compensates with a nervous wobble.
+- The floor vibrates faintly under your feet. Every step is a negotiation with collapse.
+- A draft passes through and every card in the building sways in unison, then stills. Barely.

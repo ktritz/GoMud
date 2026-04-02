@@ -1,0 +1,30 @@
+mobid: 7
+zone: Rileys Neighborhood
+hostile: true
+nocorpse: true
+deathmessage: '{name} squeaks indignantly and scurries into a crack in the wall.'
+maxwander: 0
+activitylevel: 15
+groups:
+- vermin
+idlecommands:
+- emote sniffs at something in the corner.
+- emote scratches at the concrete floor.
+- ''
+- ''
+- ''
+angrycommands:
+- emote hisses and bares its teeth.
+character:
+  name: basement rat
+  description: A fat, bold rat with dusty gray fur and beady black eyes that reflect the bare bulb light. It has clearly been living down here for a while, judging by the nest of shredded newspaper and insulation it has built behind the water heater. It watches you with more annoyance than fear, like you're the one trespassing.
+  level: 2
+  raceid: 8
+  gold: 5
+  stats:
+    speed:
+      training: 2
+    strength:
+      training: -5
+    vitality:
+      training: -3

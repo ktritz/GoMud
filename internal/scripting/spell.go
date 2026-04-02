@@ -114,7 +114,7 @@ func TrySpellScriptEvent(eventName string, sourceUserId int, sourceMobInstanceId
 			argValue = vmw.VM.ToValue(stringArg)
 		}
 
-		tmr := time.AfterFunc(scriptItemTimeout, func() {
+		tmr := time.AfterFunc(scriptSpellTimeout, func() {
 			vmw.VM.Interrupt(errTimeout)
 		})
 		res, err := onCommandFunc(goja.Undefined(),

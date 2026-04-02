@@ -1,0 +1,13 @@
+itemid: 20083
+name: karate belt
+namesimple: belt
+description: A white karate belt that's been tied and retied enough times that the knot is second nature. Everyone starts with white. That's the whole point.
+type: belt
+subtype: wearable
+uses: 0
+damage:
+  diceroll: 0d0
+defense: 0
+statmods:
+  strength: 1
+value: 25

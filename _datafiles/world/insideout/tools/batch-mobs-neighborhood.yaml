@@ -1,0 +1,164 @@
+zone: rileys_neighborhood
+zone_config:
+  name: "Riley's Neighborhood"
+mobs:
+  - id: 1
+    name: thought worm
+    desc: >-
+      A translucent, writhing worm made of stray, unfinished thoughts that
+      never quite became memories. Its pale gray body pulses with faint,
+      half-formed images -- a face without features, a word without meaning,
+      a feeling without a name. It squirms erratically across the ground,
+      leaving a faint smear of static in its wake, drawn mindlessly toward
+      anything with coherent thought.
+    level: 1
+    race: 7
+    hostile: true
+    wander: 3
+    activity: 15
+    dropchance: 10
+    groups: [forgotten]
+    idle:
+      - "emote squirms and writhes, flickering with half-formed images."
+      - "emote wriggles aimlessly across the ground, leaving a faint trail of static."
+      - "wander"
+      - ""
+      - ""
+      - ""
+      - ""
+      - ""
+
+  - id: 2
+    name: riley's dad
+    desc: >-
+      Riley's Dad is a tall, warm-eyed man with a slightly goofy mustache and
+      the unmistakable air of someone who thinks he's much funnier than he
+      actually is. He wears a comfortable flannel shirt and has the relaxed
+      posture of a guy who'd rather be watching hockey than doing almost
+      anything else. He moved the family from Minnesota to San Francisco for
+      work, and he's doing his best to keep everyone happy -- mostly through
+      an endless supply of terrible puns and a genuine, if occasionally
+      clueless, devotion to his family. His inner emotions are famously
+      preoccupied with hockey and classic rock.
+    level: 20
+    race: 1
+    hostile: false
+    wander: 0
+    activity: 20
+    groups: [neighborhood-npc]
+    idle:
+      - "say Hey, who wants to hear a joke? ...Okay, here it is anyway."
+      - "say Did you see the game last night? Unbelievable. Un. Believable."
+      - "emote chuckles to himself about something that is almost certainly a pun."
+      - "say How was school today? Learn anything? No? That's my girl."
+      - "emote leans back and pretends to watch TV."
+      - ""
+      - ""
+
+  - id: 3
+    name: riley's mom
+    desc: >-
+      Riley's Mom is a kind, put-together woman with warm brown eyes and a
+      gentle smile that can shift to quiet concern in an instant. She wears
+      comfortable but stylish clothes and always seems to be multitasking --
+      cooking, checking her phone, and worrying about Riley all at the same
+      time. She uprooted her life to support the family's move to San
+      Francisco and carries a quiet worry about whether Riley is adjusting
+      okay. Her inner emotions spend a lot of time thinking about that cool
+      helicopter pilot from Brazil, but outwardly she's the steady, caring
+      anchor of the Anderson family.
+    level: 20
+    race: 1
+    hostile: false
+    wander: 0
+    activity: 20
+    groups: [neighborhood-npc]
+    idle:
+      - "emote stirs something on the stove that smells like home."
+      - "say How was school today, sweetie? Did you make any new friends?"
+      - "emote glances at her phone, then puts it down with a small sigh."
+      - "say I just want to make sure you're settling in okay. This move has been a lot for everyone."
+      - "emote hums softly while tidying up the kitchen."
+      - ""
+      - ""
+
+  - id: 4
+    name: shopkeeper
+    desc: >-
+      A friendly corner store owner with an easy smile and a clean apron. He
+      knows every regular by name and always has a kind word and a well-stocked
+      shelf. His small shop is a neighborhood fixture, the kind of place where
+      you can grab a juice box and end up chatting for twenty minutes about
+      absolutely nothing important.
+    level: 10
+    race: 1
+    hostile: false
+    wander: 0
+    activity: 20
+    groups: [neighborhood-npc]
+    idle:
+      - "emote restocks the shelves, humming a tune."
+      - "say Welcome in! Let me know if you need anything."
+      - "say type <ansi fg=\"command\">list</ansi> to see what's on the shelves."
+      - "emote wipes down the counter with a well-worn rag."
+      - ""
+      - ""
+    shop:
+      - itemid: 10001
+        qty: 5
+      - itemid: 30001
+        qty: 10
+      - itemid: 1
+        qty: 1
+
+  - id: 5
+    name: hockey coach
+    desc: >-
+      A tough but encouraging coach with a whistle around his neck and a
+      clipboard perpetually tucked under one arm. He wears a team windbreaker
+      and has the kind of voice that carries across an entire ice rink without
+      effort. He pushes his players hard but always follows it up with genuine
+      encouragement, firmly believing that hockey builds character and that
+      every kid deserves a shot on the ice.
+    level: 15
+    race: 1
+    hostile: false
+    wander: 0
+    activity: 20
+    groups: [neighborhood-npc]
+    idle:
+      - "emote blows his whistle sharply and points at the ice."
+      - "say Hustle! Hustle! You can rest when you're old!"
+      - "say Good effort out there. Now do it again, but better."
+      - "emote scribbles something on his clipboard and nods approvingly."
+      - "say Hockey isn't just a sport, it's a way of life. Now lace up."
+      - ""
+      - ""
+    shop:
+      - itemid: 10002
+        qty: 3
+      - itemid: 20011
+        qty: 2
+
+  - id: 6
+    name: neighbor kid
+    desc: >-
+      A friendly neighborhood kid with scraped knees, a backwards baseball
+      cap, and the boundless energy of someone with absolutely no
+      responsibilities. He's always outside kicking a ball, riding a bike,
+      or just wandering around looking for something to do. He talks about
+      school the way most people talk about jury duty.
+    level: 3
+    race: 1
+    hostile: false
+    maxwander: 10
+    activity: 20
+    groups: [neighborhood-npc]
+    idle:
+      - "emote kicks a ball against the wall and catches it on the rebound."
+      - "say School was so boring today. We had to do fractions. FRACTIONS."
+      - "emote wanders around aimlessly, looking for something interesting."
+      - "say Wanna hang out? I've got nothing to do until dinner."
+      - "wander"
+      - ""
+      - ""

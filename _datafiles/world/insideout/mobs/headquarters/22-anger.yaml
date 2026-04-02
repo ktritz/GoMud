@@ -1,0 +1,25 @@
+mobid: 22
+zone: Headquarters
+hostile: false
+maxwander: 0
+activitylevel: 25
+groups:
+- headquarters-emotion
+idlecommands:
+- emote flips furiously through the pages of the Mind Reader.
+- emote grumbles something about the unfairness of it all.
+- emote steams visibly from the top of his head, tiny flames flickering.
+- say Congratulations, San Francisco, you've ruined pizza! First you put broccoli on pizza, now THIS?
+- say I don't want to hear another word about feelings. I AM a feeling!
+- ''
+- ''
+combatcommands:
+- callforhelp 5:emotion:roars for backup, flames erupting from his head.
+character:
+  name: anger
+  description: Anger is a short, stocky, brick-shaped emotion with deep crimson skin that darkens to near-purple when he's really worked up. He wears a rumpled white dress shirt with a loosened tie, looking like an accountant who's been stuck in traffic for three hours. The top of his flat head literally erupts into flames when he gets upset, which is often. His underbite gives him a permanent scowl, and his tiny fists are always clenched. He reads the Mind Reader newspaper obsessively and gets furious at every headline. Despite his volatile exterior, Anger genuinely cares about fairness and making sure Riley isn't taken advantage of -- he just expresses it by yelling and occasionally catching things on fire.
+  level: 99
+  raceid: 2
+  shop:
+  - quantitymax: 5
+  - quantitymax: 10

@@ -1,0 +1,25 @@
+roomid: 12
+zone: Rileys Neighborhood
+title: Bus Stop
+description: A city bus stop with a scratched-up plexiglass shelter and a metal bench that's always either too hot or too cold. A posted schedule is taped behind plastic, half of it faded beyond legibility. This is the connection to the rest of San Francisco -- the bus that goes to school stops here every morning. The shelter has a faded advertisement for a museum exhibit that ended two months ago. To the east, a pedestrian bridge arches over toward the bay.
+mapsymbol: '#'
+maplegend: Bus-Stop
+biome: city
+exits:
+  north:
+    roomid: 1
+  east:
+    roomid: 20
+  bus:
+    roomid: 100
+    secret: true
+nouns:
+  bench: The metal <ansi fg="itemname">bench</ansi> is bolted to the concrete and covered in those armrest dividers designed to stop people from lying down. Someone has stuck a piece of gum underneath it. Actually, several someones have stuck several pieces of gum underneath it.
+  schedule: 'The <ansi fg="itemname">bus schedule</ansi> is mostly unreadable from sun damage, but you can make out that the #38 bus runs every 15 minutes during school hours. Someone has drawn a mustache on the smiling bus driver in the header illustration.'
+  bus: 'A big yellow <ansi fg="itemname">school bus</ansi> idles at the curb, its doors open with a pneumatic hiss. The route sign above the windshield reads "#38 - RILEY''S SCHOOL" in blocky orange letters. You could board the <ansi fg="exit-secret">bus</ansi> to head to school.'
+idlemessages:
+- A bus pulls up with a hydraulic hiss, pauses, and pulls away again.
+- Someone checks their phone, looks up the street for the bus, checks their phone again.
+- A crumpled bus transfer ticket tumbles across the sidewalk.
+- The digital arrival sign flickers between "3 MIN" and "----" like it can't decide.
+- Exhaust from a passing bus hangs in the foggy air for a moment.

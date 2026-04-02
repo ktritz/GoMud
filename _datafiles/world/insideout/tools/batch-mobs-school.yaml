@@ -1,0 +1,177 @@
+zone: school
+zone_config:
+  name: School
+mobs:
+  - id: 10
+    name: teacher
+    desc: >-
+      Ms. Parker is Riley's English teacher, a warm but firm woman with kind
+      eyes and a no-nonsense demeanor that somehow makes students want to try
+      harder. She always has a towering stack of papers tucked under one arm and
+      a red pen behind her ear, ready to scribble encouraging notes in the
+      margins. She genuinely cares about every student who walks through her
+      door, and has a knack for knowing exactly when someone needs a word of
+      encouragement or a gentle push in the right direction.
+    level: 15
+    race: 1
+    hostile: false
+    wander: 0
+    activity: 25
+    groups: [school-npc]
+    questflags: ["1-start", "1-found", "1-end"]
+    script: questgiver
+    idle:
+      - "emote grades a stack of papers, occasionally circling something in red ink."
+      - "emote writes a vocabulary word on the whiteboard in neat cursive."
+      - "say Keep at it, you're doing better than you think."
+      - "emote straightens the papers on her desk and picks up the next one."
+      - ""
+      - ""
+
+  - id: 11
+    name: principal
+    desc: >-
+      The school principal is a tall, broad-shouldered man in a pressed suit
+      who carries himself with the quiet authority of someone who has heard
+      every excuse in the book. His expression defaults to stern, but there is
+      a fairness in his eyes that students eventually come to respect, even if
+      they never quite stop being nervous around him.
+    level: 20
+    race: 1
+    hostile: false
+    wander: 0
+    activity: 20
+    groups: [school-npc]
+    idle:
+      - "emote reviews a thick stack of documents, frowning slightly."
+      - "emote adjusts his tie with practiced precision."
+      - "emote surveys the hallway with a look that could silence a cafeteria."
+      - ""
+      - ""
+
+  - id: 12
+    name: classmate
+    desc: >-
+      A friendly classmate with a backpack slung over one shoulder and the
+      easy, restless energy of someone who would rather be anywhere but in
+      class. She wanders the hallways between periods, always ready with a
+      smile and a half-finished story about something that happened over the
+      weekend.
+    level: 5
+    race: 1
+    hostile: false
+    wander: 10
+    activity: 20
+    groups: [school-npc]
+    idle:
+      - "emote checks her phone and smirks at something on the screen."
+      - "say So this weekend, right, you won't even believe what happened."
+      - "say Ugh, did you finish the homework? I totally forgot."
+      - "wander"
+      - ""
+      - ""
+
+  - id: 13
+    name: doubt shadow
+    desc: >-
+      A small, flickering shadow that clings to the edges of the hallway,
+      barely visible unless you look directly at it. It has no solid form,
+      just a dark, wavering silhouette that whispers half-heard insecurities
+      in a voice that sounds uncomfortably like your own. It is the kind of
+      creeping thought that makes you feel like you don't belong, like everyone
+      is watching and judging. It feeds on hesitation and grows bolder in the
+      dark.
+    level: 5
+    race: 5
+    hostile: true
+    wander: 2
+    activity: 20
+    drop: 15
+    groups: [fear]
+    idle:
+      - "emote flickers at the edge of your vision, barely there."
+      - "emote whispers something you can almost hear, something unkind."
+      - ""
+      - ""
+      - ""
+    combat: ["backstab"]
+    angry:
+      - "emote grows darker and larger."
+
+  - id: 14
+    name: anxiety spiral
+    desc: >-
+      A spinning vortex of tangled, half-formed thoughts that hovers a few
+      feet off the ground, crackling with nervous energy. Fragments of worried
+      words swirl through it -- what if, but maybe, you should have -- too fast
+      to read but impossible to ignore. It pulls at your attention like a
+      whirlpool, making everything feel urgent and overwhelming all at once.
+      It is slightly larger and more agitated than the doubt shadows that lurk
+      in the same corners.
+    level: 6
+    race: 5
+    hostile: true
+    wander: 2
+    activity: 25
+    drop: 15
+    groups: [fear]
+    idle:
+      - "emote spins faster, fragments of worried words whirling through its form."
+      - "emote pulses with nervous energy, the air around it growing tense."
+      - ""
+      - ""
+      - ""
+    combat: ["backstab"]
+    angry:
+      - "emote expands with a rush of panicked energy."
+
+  - id: 15
+    name: lunch lady
+    desc: >-
+      The cafeteria lunch lady is a stout, no-nonsense woman in a hairnet
+      and stained apron who wields a soup ladle like a scepter. Her gruff
+      exterior and booming voice could clear a lunch line in seconds, but
+      she always sneaks an extra helping onto the plate of anyone who looks
+      like they're having a rough day.
+    level: 10
+    race: 1
+    hostile: false
+    wander: 0
+    activity: 20
+    groups: [school-npc]
+    idle:
+      - "emote ladles a thick serving of soup into a waiting bowl."
+      - "emote wipes down the counter with a damp rag."
+      - "say Next!"
+      - "say type <ansi fg=\"command\">list</ansi> to see what's on the menu."
+      - ""
+      - ""
+    shop:
+      - itemid: 30002
+        qty: 10
+      - itemid: 30006
+        qty: 5
+      - itemid: 30001
+        qty: 10
+
+  - id: 16
+    name: janitor
+    desc: >-
+      The school janitor is a quiet, weathered man in gray coveralls who moves
+      through the hallways with an unhurried calm, as if he knows something
+      about this building that nobody else does. He pushes a yellow mop bucket
+      that squeaks with every step and nods politely to anyone who bothers to
+      notice him, which most people don't.
+    level: 10
+    race: 1
+    hostile: false
+    wander: 5
+    activity: 15
+    groups: [school-npc]
+    items: [3]
+    idle:
+      - "emote pushes his mop across the floor in slow, methodical strokes."
+      - "emote checks a door handle, rattling it once before moving on."
+      - "emote whistles a quiet, meandering tune under his breath."
+      - ""
+      - ""

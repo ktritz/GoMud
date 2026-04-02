@@ -1,0 +1,127 @@
+buffs:
+  - id: 0
+    name: Meditating
+    desc: You are meditating, preparing to leave this world.
+    rate: 5 rounds
+    count: 1
+    flags: [cancel-on-action, cancel-on-combat]
+
+  - id: 1
+    name: Illumination
+    desc: A soft light surrounds you, pushing back the darkness.
+    rate: 5 real minutes
+    count: 1
+    flags: [emits-light]
+
+  - id: 24
+    name: Death Recovery
+    desc: You are recovering from a close brush with oblivion.
+    rate: 1 round
+    count: 10
+    statmods:
+      strength: -10
+      speed: -10
+
+  - id: 40
+    name: Juice Box Healing
+    desc: The apple juice is refreshing you from the inside out.
+    rate: 2 rounds
+    count: 3
+
+  - id: 41
+    name: Well Fed
+    desc: A warm, full feeling spreads through you. That pizza was amazing.
+    rate: 3 rounds
+    count: 5
+    statmods:
+      vitality: 5
+
+  - id: 42
+    name: Memory Clarity
+    desc: Your mind feels sharp and focused, memories coming into crystal clear focus.
+    rate: 3 rounds
+    count: 4
+    statmods:
+      perception: 10
+
+  - id: 43
+    name: Imaginative
+    desc: Your thoughts are racing with creative possibilities and wild ideas.
+    rate: 3 rounds
+    count: 4
+    statmods:
+      smarts: 10
+
+  - id: 44
+    name: Dreamlike Focus
+    desc: A dreamy calm settles over you, and your mental energy replenishes.
+    rate: 2 rounds
+    count: 5
+
+  - id: 45
+    name: Broccoli Boost
+    desc: The broccoli is... actually making you stronger? But it still tastes terrible.
+    rate: 2 rounds
+    count: 3
+    statmods:
+      strength: 10
+      speed: -5
+
+  - id: 46
+    name: Core Restoration
+    desc: The essence of a core memory pulses through you, restoring your vitality.
+    rate: 2 rounds
+    count: 5
+
+  - id: 47
+    name: Minty Fresh
+    desc: "Triple Dent Gum will make you smile! Triple Dent Gum, it lasts a while! The jingle won't leave your head, but your feet feel faster."
+    rate: 3 rounds
+    count: 4
+    statmods:
+      speed: 15
+
+  - id: 48
+    name: Anxious Awareness
+    desc: Your senses are heightened to an almost uncomfortable degree. You notice EVERYTHING.
+    rate: 3 rounds
+    count: 4
+    statmods:
+      perception: 15
+      vitality: -5
+
+  - id: 49
+    name: Nostalgic Warmth
+    desc: A bittersweet warmth fills you as half-remembered good times play through your mind.
+    rate: 2 rounds
+    count: 4
+
+  - id: 50
+    name: Deconstructing
+    desc: Reality is breaking down around you. You feel yourself becoming... simpler.
+    rate: 2 rounds
+    count: -1
+    statmods:
+      strength: -3
+      speed: -3
+
+  - id: 51
+    name: Fear Aura
+    desc: An overwhelming sense of dread seeps into your bones, making it hard to think clearly.
+    rate: 2 rounds
+    count: 3
+    statmods:
+      strength: -10
+      perception: -10
+
+  - id: 52
+    name: Joyful Inspiration
+    desc: Joy's encouragement fills you with golden light. Everything feels possible!
+    rate: 5 rounds
+    count: 10
+    statmods:
+      strength: 3
+      speed: 3
+      smarts: 3
+      vitality: 3
+      perception: 3

@@ -1,0 +1,28 @@
+roomid: 805
+zone: Memory Dump
+title: Dissolving Memory Field
+description: A vast, flat expanse of gray dust stretches in every direction, broken by hundreds of memory orbs in various stages of dissolution. The freshest arrivals still glow faintly -- pale versions of their original colors that pulse weakly like dying stars. The older ones have faded to translucent gray, their scenes reduced to static and white noise. The oldest are barely there at all, just faint spherical distortions in the air where something used to be. The field hums with a low, subsonic vibration -- the sound of memories breaking down at the molecular level, releasing their stored emotion back into the void. Walking through this field feels like wading through loss.
+mapsymbol: .
+maplegend: Field
+biome: dungeon
+exits:
+  south:
+    roomid: 804
+  north:
+    roomid: 806
+nouns:
+  orbs: The <ansi fg="itemname">orbs</ansi> are memories in their final hours. A pale gold orb shows a blurred scene of someone laughing, but the face is gone and the sound is muted to a whisper. A blue orb barely holds the shape of a rainy window, the drops frozen mid-fall. A red orb has cooled to pink, its anger forgotten. You can touch them, but they crumble at the slightest pressure, releasing a puff of gray dust and one last, fading feeling.
+  vibration: The <ansi fg="itemname">vibration</ansi> is the sound of forgetting made physical. It resonates in your bones and makes your thoughts feel slippery, as if your own memories are being loosened by proximity. The closer you get to the oldest orbs, the stronger the vibration, and the harder it is to remember why you came here in the first place.
+spawninfo:
+- mobid: 54
+  message: A <ansi fg="mobname">forgotten memory</ansi> rises from the dust, its translucent form grasping at the air as it searches for someone who remembers.
+  respawnrate: 3 real minutes
+- mobid: 54
+  message: A <ansi fg="mobname">forgotten memory</ansi> pulls itself together from scattered dust, flickering with the ghost of a face that was once familiar.
+  respawnrate: 4 real minutes
+idlemessages:
+- A pale orb collapses inward and dissolves into gray dust with a soft sigh.
+- The vibration intensifies and you momentarily forget what you had for breakfast. The memory comes back. Probably.
+- Two orbs drift together, merge briefly into a confused jumble of scenes, then both dissolve.
+- A newly arrived orb hits the dust and bounces once, its color visibly draining with each second.
+- The field hums lower and a wave of forgetting passes over you like a cold breeze.

@@ -1,0 +1,11 @@
+itemid: 20003
+name: imagination crown
+namesimple: crown
+description: 'A crown crafted from pure imagination. It shifts between a princess
+  tiara, a pirate hat, and a superhero mask depending on your mood.'
+type: head
+subtype: wearable
+damagereduction: 3
+statmods:
+  smarts: 2
+value: 80

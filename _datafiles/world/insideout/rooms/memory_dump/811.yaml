@@ -1,0 +1,20 @@
+roomid: 811
+zone: Memory Dump
+title: Memory Dust Basin
+description: 'The ground drops into a shallow basin filled with memory dust so deep it reaches your knees. This is the true bottom of the Memory Dump -- the lowest point in Riley''s mind, where the heaviest, most completely forgotten memories eventually settle. The dust here is warm and slightly luminous, heated by the compressed weight of a lifetime of discarded experiences. Wading through it produces a strange sensation: brief flashes of emotion that do not belong to you -- a moment of joy from a birthday you never had, a pang of sadness from a goodbye you never said, a spike of fear from a nightmare you never dreamed. The basin is a repository of pure, free-floating feeling, detached from any memory or context.'
+mapsymbol: U
+maplegend: Basin
+biome: dungeon
+exits:
+  south:
+    roomid: 810
+  north:
+    roomid: 812
+nouns:
+  basin: The <ansi fg="itemname">basin</ansi> is a natural depression in the floor of the dump, shaped like a bowl and filled with the densest concentration of memory dust anywhere in Riley's mind. The dust at the bottom has been compressed into something almost solid -- a sedimentary record of forgetting, with the oldest, deepest memories forming a warm, glowing stratum beneath your feet. If you stand still, you sink slowly, and the emotions get stronger.
+idlemessages:
+- The dust shifts around your legs and you feel a flash of joy so pure it catches in your throat.
+- A wave of unfamiliar sadness washes through you, then recedes, leaving you with the memory of a feeling but not its cause.
+- The warm glow from the deep dust pulses, and for a moment the basin looks almost golden.
+- You wade through a pocket of compressed fear and your heart races for three seconds, then calms.
+- The dust releases a bubble of laughter -- a child's laugh, sourceless and fading.

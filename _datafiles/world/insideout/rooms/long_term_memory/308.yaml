@@ -1,0 +1,21 @@
+roomid: 308
+zone: Long Term Memory
+title: The Forgetting Shelf
+description: This is the last stop before oblivion. The shelves here hold orbs that are little more than hollow shells -- translucent, colorless spheres with nothing playing inside them. Many have crumbled entirely, leaving only piles of gray dust where memories once sat. The shelves themselves are cracked and leaning, as if the structure of Long Term Memory is giving up on this section. A cold draft rises from a dark opening in the floor where the shelves have collapsed, revealing the vast emptiness of the Memory Dump far below. The silence here is absolute.
+mapsymbol: '!'
+maplegend: Forget
+biome: mindscape
+exits:
+  north:
+    roomid: 307
+  south:
+    roomid: 316
+nouns:
+  piles: The <ansi fg="itemname">piles of gray dust</ansi> are all that remain of thousands of memories. Each pile was once a moment in someone's life -- a Tuesday afternoon, a stranger's face, the name of a song heard only once. They are gone now, and nobody misses them, because nobody remembers them.
+  opening: The <ansi fg="itemname">opening</ansi> in the floor reveals a dizzying drop into darkness. Far, far below, the Memory Dump sprawls like a gray wasteland. You can see the outlines of enormous piles of discarded memory fragments, the final resting place of everything the mind decides to let go.
+idlemessages:
+- An orb shell collapses inward with a soft crunch, releasing a puff of gray dust.
+- The draft from the opening below carries a faint, formless whisper -- lost words from lost memories.
+- A section of shelf gives way with a groan, sending a cascade of dust to the floor.
+- The absolute silence presses against your ears like something solid.
+- A translucent orb rolls off its shelf and shatters on the floor, releasing nothing at all.

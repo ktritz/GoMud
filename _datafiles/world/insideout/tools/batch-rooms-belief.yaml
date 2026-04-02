@@ -1,0 +1,708 @@
+zone: belief_system
+zone_config:
+  name: "Belief System"
+  roomid: 950
+  autoscale: {minimum: 10, maximum: 14}
+  defaultbiome: mindscape
+
+rooms:
+  # ── BELIEF SYSTEM GATEWAY ───────────────────────────────────────────
+  - id: 950
+    title: "Belief System Gateway"
+    desc: >-
+      A soaring archway of braided light marks the entrance to Riley's Belief
+      System. The <ansi fg="itemname">arch</ansi> is woven from strands of
+      every emotional color -- gold, blue, red, green, purple, and the newer
+      shades that arrived with puberty: orange anxiety, pink embarrassment,
+      teal ennui. Beyond the threshold, the air shimmers with a warmth that
+      feels deeply personal, like the inside of a thought you've had about
+      yourself a thousand times. <ansi fg="itemname">Inscriptions</ansi> run
+      along both sides of the archway, fragments of beliefs both old and new,
+      layered over each other like graffiti on a bridge. This is where Riley's
+      sense of self begins -- the bedrock on which everything else is built.
+    biome: mindscape
+    symbol: G
+    legend: Gateway
+    exits:
+      north: 951
+    nouns:
+      arch: >-
+        The <ansi fg="itemname">arch</ansi> is a living structure, its braided
+        strands of light slowly shifting and rearranging as Riley's beliefs
+        evolve. Some strands are thick and bright -- core beliefs that have been
+        reinforced for years. Others are thin and flickering, new beliefs still
+        finding their strength. Where two strands cross, they fuse and glow
+        brighter, as if beliefs become stronger when they connect.
+      inscriptions: >-
+        The <ansi fg="itemname">inscriptions</ansi> layer over each other in
+        Riley's own mental handwriting. "I'm a good person" is written in
+        confident gold. "I don't fit in" is scratched in anxious orange beneath
+        it, partially faded. "I matter" glows steady and warm. Some inscriptions
+        have been crossed out and rewritten, evidence of a mind constantly
+        revising its understanding of itself.
+    idle:
+      - A strand of gold light in the archway brightens, pulsing with a belief reinforced.
+      - The inscriptions shift slightly, a new phrase appearing at the edge: "I'm figuring it out."
+      - A warm breeze carries the feeling of recognition, like catching your own reflection unexpectedly.
+      - The archway hums with a frequency that feels like your own name spoken kindly.
+      - A thin strand of orange light flickers anxiously, then steadies as a gold strand wraps around it.
+
+  # ── THE FOUNDATION ──────────────────────────────────────────────────
+  - id: 951
+    title: "The Foundation"
+    desc: >-
+      Solid ground stretches beneath your feet -- not stone or metal, but
+      something that feels like certainty made physical. The floor is a deep,
+      warm amber, smooth and unyielding, and <ansi fg="itemname">inscriptions</ansi>
+      are carved directly into its surface: Riley's oldest, most fundamental
+      beliefs, the ones that everything else stands on. "I am loved." "I am
+      safe." "I belong." They glow with a soft, steady light that has never
+      once flickered. <ansi fg="itemname">Pillars</ansi> rise from the foundation
+      at regular intervals, each one carved from a different emotional crystal,
+      supporting the vast chamber above. The ceiling is lost in a gentle golden
+      haze. This place feels ancient -- not in years, but in certainty. These
+      beliefs were here before Riley could speak, and they've held firm ever since.
+    biome: mindscape
+    symbol: F
+    legend: Foundation
+    exits:
+      south: 950
+      east: 952
+      west: 953
+    nouns:
+      inscriptions: >-
+        The <ansi fg="itemname">inscriptions</ansi> in the foundation are the
+        deepest beliefs Riley holds. "I am loved" is carved in letters a foot
+        deep, filled with warm gold light. "I am safe" glows beside it in
+        steady blue. "I belong" radiates in purple and green intertwined.
+        These carvings can't be scratched, chipped, or erased -- they've been
+        reinforced by thousands of moments, from the first time her parents
+        held her to last night's family dinner.
+      pillars: >-
+        The <ansi fg="itemname">pillars</ansi> are beautiful and structurally
+        essential. One is pure golden crystal -- Joy's influence made solid,
+        warm to the touch. Another is deep blue and cool, the sadness that
+        gives depth to happiness. A red one radiates faint heat, the righteous
+        anger that protects what matters. Together they hold up the entire
+        belief structure. Remove one and the ceiling would sag.
+    idle:
+      - The inscription "I am loved" pulses with warmth, as if Riley just felt it again.
+      - A pillar of golden crystal catches the light and sends warm beams across the chamber.
+      - The foundation beneath your feet vibrates gently, solid as bedrock, steady as a heartbeat.
+      - New cracks of light appear in the floor as a fresh experience reinforces an old belief.
+      - The golden haze above stirs and parts briefly, revealing the vast architecture of self above.
+
+  # ── POSITIVE BELIEF CORRIDOR ────────────────────────────────────────
+  - id: 952
+    title: "Positive Belief Corridor"
+    desc: >-
+      A wide, luminous hallway stretches forward, its <ansi fg="itemname">walls</ansi>
+      aglow with inscriptions that radiate warmth and light. Every surface
+      carries one of Riley's positive beliefs about herself, carved in
+      letters that pulse with emotional color and throw patterns across the
+      polished floor like stained glass. The air in here feels lighter, easier
+      to breathe, charged with the quiet confidence of someone who has started
+      to figure out who they are. <ansi fg="itemname">Memory fragments</ansi>
+      float in alcoves along the walls -- tiny scenes that prove each belief
+      true: a goal scored, a friend defended, a hard truth spoken. The corridor
+      hums with the collected evidence of Riley's best self.
+    biome: mindscape
+    symbol: +
+    legend: Positive
+    exits:
+      west: 951
+      east: 955
+    nouns:
+      walls: >-
+        The <ansi fg="itemname">walls</ansi> are inscribed with beliefs that glow
+        from within. "<ansi fg="yellow-bold">I am kind</ansi>" shines in warm gold,
+        its letters carved deep and filled with light from a hundred small acts of
+        compassion. "<ansi fg="cyan-bold">I am brave</ansi>" blazes in bright blue,
+        fueled by every time Riley stood up despite being afraid.
+        "<ansi fg="green-bold">I am creative</ansi>" swirls in green and gold,
+        fed by every drawing, every idea, every moment of imagination.
+      memory fragments: >-
+        The <ansi fg="itemname">memory fragments</ansi> float like tiny snow globes,
+        each one containing a moment that reinforced a positive belief. One shows
+        Riley helping a new kid find their classroom. Another captures the exact
+        second she landed a difficult hockey maneuver. A third holds the sound of
+        her mom saying "I'm proud of you" after a tough day. Each fragment is warm
+        to the touch.
+      kind: >-
+        The inscription "<ansi fg="yellow-bold">I am kind</ansi>" glows steadily.
+        Looking at it, you can feel the weight of every small kindness Riley has
+        shown -- holding a door, sharing lunch, sending a text to check on a friend.
+        It's not the loudest belief, but it might be the most consistent.
+      brave: >-
+        "<ansi fg="cyan-bold">I am brave</ansi>" burns with intensity. This belief
+        was forged in specific moments -- the first day at a new school, the first
+        time standing up to someone bigger, every time fear said stop and Riley said
+        not yet. The letters flicker like a flame that refuses to go out.
+    idle:
+      - The inscription "I am kind" brightens as a new memory of compassion reinforces it.
+      - A memory fragment drifts from its alcove and hovers near you, showing Riley laughing with friends.
+      - The corridor hums with quiet confidence, the collected evidence of a person worth being.
+      - Golden light ripples across the floor as "I am brave" pulses with renewed strength.
+      - A new inscription begins to etch itself into the wall, letter by letter: "I am enough."
+
+  # ── NEGATIVE BELIEF CORRIDOR ────────────────────────────────────────
+  - id: 953
+    title: "Negative Belief Corridor"
+    desc: >-
+      The light dims here. The corridor narrows, its <ansi fg="itemname">walls</ansi>
+      a darker shade of gray that absorbs warmth rather than reflecting it.
+      Inscriptions cover every surface, but these are different -- jagged,
+      scratched into the stone as if by anxious fingernails, their letters
+      flickering with the uncertain light of beliefs that hurt but feel true.
+      "<ansi fg="red">I'm not good enough</ansi>" stretches across the largest
+      wall, its letters deeper than any other inscription here, fed by years of
+      comparison and self-doubt. <ansi fg="itemname">Shadows</ansi> pool in the
+      corners, thick and almost tangible, whispering in voices that sound
+      uncomfortably like Riley's own. This corridor exists because every mind
+      has one. The beliefs here aren't facts. But they feel like facts, and
+      sometimes that's worse.
+    biome: mindscape
+    symbol: "-"
+    legend: Negative
+    exits:
+      east: 951
+      south: 954
+    nouns:
+      walls: >-
+        The <ansi fg="itemname">walls</ansi> bear the beliefs that keep Riley up
+        at night. "<ansi fg="red">I'm not good enough</ansi>" dominates, its
+        letters carved deep by every perceived failure and unfavorable comparison.
+        "<ansi fg="208">Everyone is watching and judging</ansi>" flickers in anxious
+        orange. "<ansi fg="magenta">I don't really belong here</ansi>" is scratched
+        small and low, as if it's trying to hide. Some inscriptions have been partially
+        filled in -- attempted repairs by Joy and the other emotions -- but the letters
+        keep resurfacing.
+      shadows: >-
+        The <ansi fg="itemname">shadows</ansi> in the corners are more than darkness.
+        They have weight and whisper in Riley's internal voice -- the one she uses
+        when she's being hardest on herself. "Remember that time you..." they begin,
+        always trailing off before finishing, letting anxiety fill in the worst possible
+        ending. They can't hurt you physically, but standing near them makes your
+        chest tight.
+    spawns:
+      - {mob: 61, rate: "4 real minutes", msg: "A <ansi fg=\"mobname\">toxic thought</ansi> crystallizes from the dark inscriptions on the wall, humming with self-doubt."}
+    idle:
+      - The inscription "I'm not good enough" darkens for a moment, as if fed by a passing insecurity.
+      - A shadow in the corner shifts and whispers something that sounds like a bad memory starting.
+      - The walls seem to close in slightly, then relax. The corridor breathes with Riley's anxiety.
+      - A faint scratching sound comes from somewhere, as if a new negative belief is being carved.
+      - One of the dimmer inscriptions flickers out entirely. A small victory, maybe.
+
+  # ── THE SELF-IMAGE CHAMBER ──────────────────────────────────────────
+  - id: 954
+    title: "The Self-Image Chamber"
+    desc: >-
+      A circular room dominated by an enormous <ansi fg="itemname">mirror</ansi>
+      that stretches from floor to ceiling, filling the entire far wall. But
+      this isn't a normal mirror -- it reflects not how Riley looks, but how
+      she sees herself, and the image shifts constantly. One moment the
+      reflection stands tall, confident, surrounded by golden light. The next
+      it shrinks, shoulders hunched, the light turning gray and uncertain.
+      Smaller <ansi fg="itemname">mirrors</ansi> ring the room at various
+      angles, each one showing a different version: Riley as her friends see
+      her, Riley as her parents see her, Riley as she fears strangers see her.
+      The floor is polished to a reflective sheen, creating the disorienting
+      sense of being surrounded by selves on every side. At the center of the
+      room, a slowly rotating <ansi fg="itemname">crystal</ansi> projects all
+      the reflections at once, trying to reconcile them into a single truth.
+    biome: mindscape
+    symbol: M
+    legend: Mirror
+    exits:
+      north: 953
+      east: 955
+    nouns:
+      mirror: >-
+        The great <ansi fg="itemname">mirror</ansi> is Riley's self-image in
+        real-time. Right now the reflection shifts between confident and uncertain
+        every few seconds, as if the mirror can't decide which version is more
+        accurate. The confident Riley stands straight, eyes bright, radiating
+        competence. The uncertain one looks smaller, as if trying to take up
+        less space. Both are true. That's the hard part.
+      mirrors: >-
+        The smaller <ansi fg="itemname">mirrors</ansi> show Riley through others'
+        eyes. The "Friends" mirror shows someone funny, reliable, a little weird
+        in a good way. The "Parents" mirror shows someone still young enough to
+        protect but old enough to respect. The "Strangers" mirror is the cruelest --
+        it shows what Riley imagines others think, which is almost certainly worse
+        than reality.
+      crystal: >-
+        The rotating <ansi fg="itemname">crystal</ansi> at the center of the room
+        is trying to solve an impossible problem: combining every version of how
+        Riley is perceived into a single, coherent self-image. It spins and
+        refracts light in conflicting directions, and occasionally it stutters,
+        caught between two versions that can't both be true. It will probably
+        never stop spinning. That's okay. That's what growing up looks like.
+    idle:
+      - The great mirror flickers between confident and uncertain, searching for which Riley is real.
+      - A smaller mirror labeled "How Classmates See You" adjusts its image after a social interaction.
+      - The central crystal stutters and sends a prism of fractured light across every surface.
+      - The reflection in the floor and the reflection in the mirror disagree for a moment, then align.
+      - The "Parents" mirror glows warm and steady. Some reflections are easier to trust than others.
+
+  # ── CONFIDENCE BRIDGE ───────────────────────────────────────────────
+  - id: 955
+    title: "Confidence Bridge"
+    desc: >-
+      A long, narrow <ansi fg="itemname">bridge</ansi> spans a dizzying gap
+      between the inner Belief System and the Personality Islands beyond. The
+      bridge is made of translucent material that glows gold when you step
+      on it with certainty and dims to gray when doubt creeps in. The surface
+      is solid -- mostly -- but it sways with every step, and looking down
+      reveals a churning void of unresolved feelings far below. Halfway across,
+      the <ansi fg="itemname">railing</ansi> bears deep scratches where someone
+      gripped it during a crisis of confidence. The bridge connects to both
+      the positive and negative corridors behind you and stretches forward
+      toward the Personality Islands ahead. It is, in every sense, the
+      path between who Riley believes she is and who she shows the world.
+    biome: mindscape
+    symbol: "="
+    legend: Bridge
+    exits:
+      west: 952
+      south: 954
+      north: 956
+    nouns:
+      bridge: >-
+        The <ansi fg="itemname">bridge</ansi> responds to emotional state. Confident
+        steps make it glow bright gold and feel rock-solid. Hesitant steps turn it
+        gray and slightly transparent, as if doubt could make it less real. The
+        bridge has never actually collapsed, but it has come close -- during Riley's
+        first week in San Francisco, it nearly went dark entirely. It held. Bridges
+        made of confidence always look more fragile than they are.
+      railing: >-
+        The <ansi fg="itemname">railing</ansi> tells a story in scratches and grip
+        marks. Some are shallow -- brief moments of self-doubt that passed quickly.
+        Others are deep, carved by white-knuckle grips during real crises. One section
+        is worn smooth, as if someone held on here for a very long time. Near the
+        center, a small inscription reads "You made it across. -- Joy."
+    spawns:
+      - {mob: 63, rate: "12 real minutes", msg: "An <ansi fg=\"mobname\">identity guardian</ansi> materializes on the bridge, its form a shimmering composite of Riley's strongest beliefs."}
+    idle:
+      - The bridge pulses gold as a wave of confidence ripples through Riley's mind.
+      - A section of the bridge dims to gray, then slowly brightens as the doubt passes.
+      - The void below churns with unresolved feelings, their colors murky and blending.
+      - The railing vibrates faintly under your hand, humming with the tension of self-belief.
+      - A step rings out with a clear, bell-like tone -- the sound of walking with certainty.
+
+  # ── IDENTITY ISLAND - HOCKEY ────────────────────────────────────────
+  - id: 956
+    title: "Identity Island - Hockey"
+    desc: >-
+      The bridge gives way to solid ground, and suddenly you're standing on
+      a miniature world built entirely from Riley's love of hockey. A gleaming
+      <ansi fg="itemname">ice rink</ansi> dominates the center, its surface
+      perpetually frozen and smooth, etched with the marks of a thousand
+      practice sessions. The boards are covered in <ansi fg="itemname">team
+      photos</ansi> and pennants from every team Riley has played on -- the
+      Prairie Dogs back in Minnesota and her current San Francisco team.
+      The air is crisp and cold and smells like fresh ice and rubber puck.
+      Sticks lean against every surface and a scoreboard overhead reads HOME
+      in bright letters, because this part of Riley's identity has always
+      felt like coming home.
+    biome: mindscape
+    symbol: H
+    legend: Hockey
+    exits:
+      south: 955
+      east: 957
+    nouns:
+      rink: >-
+        The <ansi fg="itemname">ice rink</ansi> is perfect -- exactly the way
+        Riley pictures it in her best memories. The ice is fresh-cut and gleaming,
+        the lines painted crisp and bright. If you listen closely, you can hear
+        the ghost of skates carving through ice, the crack of a puck against a
+        stick, the roar of a crowd that exists only in Riley's happiest moments
+        on the ice.
+      photos: >-
+        The <ansi fg="itemname">team photos</ansi> chronicle Riley's entire hockey
+        journey. A tiny kid in oversized gear grinning with the Prairie Dogs. A
+        more confident player wearing her San Francisco jersey. In every photo,
+        Riley is smiling the same smile -- the one that means she's exactly where
+        she belongs.
+    idle:
+      - The ice rink gleams as an invisible skater carves a perfect figure eight across its surface.
+      - A hockey stick falls against the boards with a familiar clatter, then rights itself.
+      - The scoreboard flickers and displays a highlight reel of Riley's best goals.
+      - The crisp air carries the distant sound of a crowd chanting Riley's name.
+      - A puck slides across the ice on its own, banking perfectly off the boards.
+
+  # ── IDENTITY ISLAND - FAMILY ────────────────────────────────────────
+  - id: 957
+    title: "Identity Island - Family"
+    desc: >-
+      Warmth envelops you like a hug you didn't know you needed. This island
+      is built from every memory of home -- the Anderson family's love made
+      into architecture. A miniature <ansi fg="itemname">yellow house</ansi>
+      with a red door sits at the center, glowing from within with golden
+      light. A <ansi fg="itemname">dinner table</ansi> is set for three, and
+      the place settings shift subtly -- Minnesota dishes, San Francisco dishes,
+      the good plates from holidays. Family photos float in the air like
+      gentle constellations. The whole island smells like Mom's cooking and
+      Dad's terrible coffee, and it radiates the foundational warmth of being
+      known completely by the people who matter most. Even the ground here
+      feels warmer than everywhere else.
+    biome: mindscape
+    symbol: F
+    legend: Family
+    exits:
+      west: 956
+      east: 958
+    nouns:
+      house: >-
+        The <ansi fg="itemname">yellow house</ansi> is a perfect miniature of
+        the Anderson family home, complete with the red door Mom picked the paint
+        for and the porch light Dad still hasn't fixed. Through the windows, warm
+        golden light spills out, and you can see shadows moving inside -- not real
+        people, but the feeling of people, the sense of belonging that Riley
+        carries with her everywhere.
+      table: >-
+        The <ansi fg="itemname">dinner table</ansi> is always set and always
+        welcoming. The chairs are mismatched the same way they are at home. A
+        crayon drawing Riley made at age four is framed above the table. The
+        food on the plates keeps changing -- Minnesota hotdish, San Francisco
+        takeout, Dad's legendary burnt pancakes -- but the warmth of sitting
+        together never wavers.
+    idle:
+      - The yellow house glows brighter, its windows pulsing with the warmth of a family evening.
+      - The dinner table sets itself for a meal, and the smell of comfort food drifts outward.
+      - A family photo drifts past showing the Andersons mid-laugh at something Dad said.
+      - The porch light on the miniature house flickers. Still broken, still perfect.
+      - Warmth radiates from the island's core, the irreducible heat of being loved unconditionally.
+
+  # ── IDENTITY ISLAND - FRIENDSHIP ────────────────────────────────────
+  - id: 958
+    title: "Identity Island - Friendship"
+    desc: >-
+      This island buzzes with energy and connection. Crisscrossing
+      <ansi fg="itemname">pathways</ansi> link dozens of small platforms,
+      each one representing a friendship or connection Riley has built. Some
+      paths are wide and well-worn -- the close friends she talks to every
+      day. Others are thinner, older, connecting to platforms from Minnesota
+      that still glow faintly. <ansi fg="itemname">Message boards</ansi>
+      covered in inside jokes, shared memes, and remembered conversations
+      stand at every intersection. The air is full of <ansi fg="itemname">laughter</ansi>
+      -- not recorded, but the remembered feeling of laughing so hard your
+      stomach hurts. Friendship bracelets the size of bridges connect the
+      largest platforms, their beads spelling out names and inside jokes.
+    biome: mindscape
+    symbol: R
+    legend: Friendship
+    exits:
+      west: 957
+      east: 959
+    nouns:
+      pathways: >-
+        The <ansi fg="itemname">pathways</ansi> are a map of Riley's social world.
+        The widest path leads to her best friend's platform, bright and warm and
+        practically glowing with daily use. Other paths branch to teammates, school
+        friends, and the people she hasn't talked to in a while but still thinks
+        about. A few paths from Minnesota are thin and fading, but none have
+        disappeared entirely. Riley doesn't forget people.
+      boards: >-
+        The <ansi fg="itemname">message boards</ansi> are covered in the language
+        of friendship. Inside jokes that would make no sense to anyone else.
+        Screenshots of ridiculous group chat moments. A drawing of a stick figure
+        labeled "us" doing something absurd. One board just has "remember that
+        time--" written fifty different ways, because shared memories are the
+        currency of connection.
+      laughter: >-
+        The <ansi fg="itemname">laughter</ansi> that fills this island isn't a
+        sound so much as a feeling. It's the specific physical sensation of
+        laughing with someone who gets you -- the ache in your stomach, the tears
+        in your eyes, the helpless feeling of not being able to stop. It comes
+        in waves, each one from a different friendship, a different moment.
+    idle:
+      - A burst of laughter rings across the island, the memory of a joke that still lands.
+      - A friendship bracelet bridge brightens as Riley thinks about a friend.
+      - A pathway widens slightly -- a friendship growing stronger with every interaction.
+      - The message boards update with a new inside joke. Nobody else would understand it.
+      - A thin path from Minnesota glows briefly. Old friends aren't forgotten, just far away.
+
+  # ── IDENTITY ISLAND - HONESTY ───────────────────────────────────────
+  - id: 959
+    title: "Identity Island - Honesty"
+    desc: >-
+      Everything here is transparent. The ground beneath your feet is
+      <ansi fg="itemname">crystal</ansi> -- clear, flawless, hiding nothing.
+      The structures on this island are built from glass-like material that
+      lets you see through walls, through floors, through everything. There
+      are no hidden rooms, no locked doors, no secrets. A central
+      <ansi fg="itemname">pillar</ansi> of pure white light rises from the
+      island's core, representing the belief that truth matters even when it's
+      hard. <ansi fg="itemname">Inscriptions</ansi> in the crystal record
+      moments when Riley chose honesty over comfort -- telling the truth about
+      breaking a vase, admitting she was struggling at school, saying how she
+      really felt instead of pretending everything was fine. The island hums
+      with the clean, clear frequency of a mind that values authenticity.
+    biome: mindscape
+    symbol: T
+    legend: Honesty
+    exits:
+      west: 958
+      east: 960
+    nouns:
+      crystal: >-
+        The <ansi fg="itemname">crystal</ansi> ground is mesmerizing. Through it,
+        you can see the island's internal structure -- layers of honest moments
+        stacked like geological strata, each one adding strength. The oldest
+        layers, from early childhood, are simple: "I did it. I'm sorry." The
+        newer ones are more complex, more nuanced, more brave.
+      pillar: >-
+        The central <ansi fg="itemname">pillar</ansi> of light is honesty in its
+        purest form -- the belief that being truthful is part of who Riley is, even
+        when the truth is inconvenient or scary. It doesn't waver or flicker. It
+        simply is, steady and constant, the backbone of integrity.
+      inscriptions: >-
+        The <ansi fg="itemname">inscriptions</ansi> in the crystal are a record of
+        courageous truth-telling. "I told Mom I was homesick." "I admitted I needed
+        help with math." "I said sorry and meant it." Each one was hard in the moment
+        and strengthened the island afterward. The newest inscription is still being
+        carved -- honesty is always in progress.
+    idle:
+      - The crystal ground brightens as a truth is acknowledged somewhere in Riley's mind.
+      - The central pillar pulses once, clean and white, a heartbeat of integrity.
+      - An inscription deepens in the crystal, reinforced by a moment of difficult honesty.
+      - The transparent walls reflect nothing -- they have nothing to hide, and neither does Riley.
+      - A clear tone rings across the island, the sound of a truth spoken plainly.
+
+  # ── IDENTITY ISLAND - MUSIC ─────────────────────────────────────────
+  - id: 960
+    title: "Identity Island - Music"
+    desc: >-
+      The newest island pulses with vibrant, electric energy. Unlike the others,
+      which have the settled feel of long-held beliefs, this one is still being
+      built -- <ansi fg="itemname">scaffolding</ansi> of sound and light frames
+      structures that are half-formed but undeniably alive. Enormous
+      <ansi fg="itemname">speakers</ansi> sprout from the ground like chrome
+      flowers, each one broadcasting a different genre that somehow harmonizes
+      into a single, evolving soundtrack. A <ansi fg="itemname">stage</ansi>
+      occupies the center, scattered with instruments that play themselves --
+      guitar riffs, drum fills, piano melodies, all channeling Riley's
+      newly discovered passion for music. The ground vibrates with bass,
+      the air shimmers with treble, and the whole island radiates the
+      specific joy of finding something new that feels like it was always yours.
+    biome: mindscape
+    symbol: "~"
+    legend: Music
+    exits:
+      west: 959
+      east: 961
+    nouns:
+      scaffolding: >-
+        The <ansi fg="itemname">scaffolding</ansi> is fascinating -- an island
+        actively under construction. New platforms extend outward as Riley discovers
+        new music. A section labeled "INDIE ROCK" was just added last week, still
+        bright with fresh energy. An older section, "CHILDHOOD SONGS," is smaller
+        but deeply rooted, its foundations sunk into the island's core. The whole
+        structure grows a little every day.
+      speakers: >-
+        The <ansi fg="itemname">speakers</ansi> are works of art -- chrome and
+        crystal, each one tuned to a genre that's part of Riley's musical identity.
+        One plays the pop songs she blasts in her room. Another plays the folk music
+        Dad always had on in the car. A tiny speaker near the ground plays a lullaby
+        Mom used to sing, barely audible but impossibly strong.
+      stage: >-
+        The <ansi fg="itemname">stage</ansi> is where Riley's musical identity
+        performs for an audience of one. Instruments play themselves in shifting
+        arrangements, sometimes perfectly in sync, sometimes clashing experimentally.
+        A microphone stands at center stage, humming with potential. The stage is
+        still finding its sound, and that's what makes it exciting.
+    idle:
+      - A speaker erupts with a guitar riff that Riley just heard for the first time today.
+      - The stage instruments shift into a new arrangement, trying on a style Riley hasn't explored yet.
+      - The scaffolding extends another few feet as a new song becomes a new favorite.
+      - Bass vibrates through the island's foundation, a heartbeat of newly discovered passion.
+      - A melody from childhood weaves through a newer song, connecting who Riley was to who she's becoming.
+
+  # ── THE CRUMBLING EDGE ──────────────────────────────────────────────
+  - id: 961
+    title: "The Crumbling Edge"
+    desc: >-
+      The solid ground of the Personality Islands gives way here to a
+      <ansi fg="itemname">precipice</ansi> of fractured stone and fading light.
+      This is where islands collapse when Riley outgrows them -- chunks of
+      abandoned identity falling away into the abyss below. Cracks spider-web
+      through the ground, and entire sections have already broken off, leaving
+      jagged gaps that reveal the churning void beneath. <ansi fg="itemname">Rubble</ansi>
+      from fallen platforms litters the edge -- fragments of old interests,
+      outdated beliefs, and phases that passed. A section that once held "Boy
+      Band Island" is nothing but a few crumbling columns. Another that might
+      have been "Dinosaur Phase Island" is a single forlorn tooth of rock. The
+      edge is where the self sheds what it no longer needs, and the process
+      is neither gentle nor pretty.
+    biome: mindscape
+    symbol: "!"
+    legend: Edge
+    exits:
+      west: 960
+      east: 962
+    nouns:
+      precipice: >-
+        The <ansi fg="itemname">precipice</ansi> drops away into a swirling void
+        that's part memory dump, part emotional recycling center. Looking over the
+        edge, you can see fragments of collapsed islands still falling -- slowly,
+        like leaves, glowing faintly with the remnants of who Riley used to be.
+        It's sad and necessary in equal measure. Growing up means letting go.
+      rubble: >-
+        The <ansi fg="itemname">rubble</ansi> is a graveyard of outgrown identities.
+        A crumbled pillar still bears the inscription "PRINCESS PHASE." A shattered
+        platform fragment reads "REALLY INTO DINOSAURS, AGE 7." Some rubble still
+        glows faintly -- not quite gone, not quite forgotten, just no longer load-
+        bearing in the architecture of self.
+    spawns:
+      - {mob: 62, rate: "4 real minutes", msg: "A <ansi fg=\"mobname\">crumbling belief</ansi> tears itself from the fractured ground, shedding fragments of outdated identity."}
+    idle:
+      - A section of ground cracks and a chunk falls away into the void, glowing as it tumbles.
+      - The rubble shifts and settles, old identities making room for whatever comes next.
+      - A faint echo rises from the abyss -- the ghost of an interest Riley barely remembers having.
+      - The edge groans as another crack appears, widening slowly but steadily.
+      - A fragment from Boy Band Island crumbles to dust with a faint chord of a song Riley used to love.
+
+  # ── BELIEF FORGE ────────────────────────────────────────────────────
+  - id: 962
+    title: "Belief Forge"
+    desc: >-
+      Heat and light radiate from this chamber where new beliefs are
+      literally forged into existence. A massive <ansi fg="itemname">anvil</ansi>
+      carved from crystallized emotion sits at the center, its surface scarred
+      with the marks of countless beliefs hammered into shape. A
+      <ansi fg="itemname">furnace</ansi> of pure emotional fire burns behind
+      it, fed by experiences and fueled by the intensity of feeling. Tools
+      line the walls -- not hammers and tongs, but instruments of self-reflection:
+      <ansi fg="itemname">journals</ansi>, mirrors, question marks forged in
+      iron. This is where the raw material of experience is heated, shaped,
+      and cooled into the beliefs that define who Riley is. The air shimmers
+      with creative heat, and every surface bears the glow of a belief recently
+      made or remade.
+    biome: mindscape
+    symbol: "*"
+    legend: Forge
+    exits:
+      west: 961
+      east: 963
+    nouns:
+      anvil: >-
+        The <ansi fg="itemname">anvil</ansi> is ancient and essential. Its surface
+        is covered in the impressions of beliefs forged here -- you can see the
+        faint outline of "I can handle this" and the deeper mark of "I'm stronger
+        than I think." Every belief leaves a mark, and the anvil remembers them all.
+        It vibrates faintly, ready for the next piece of raw experience to be shaped
+        upon it.
+      furnace: >-
+        The <ansi fg="itemname">furnace</ansi> burns with emotional fire in every
+        color -- golden joy, blue sorrow, red anger, all swirling together. The
+        intensity depends on the belief being forged. Small beliefs need a gentle
+        heat. The beliefs that change who you are require an inferno. Right now the
+        furnace burns at a steady orange, processing something new.
+      journals: >-
+        The <ansi fg="itemname">journals</ansi> that line the walls are the tools
+        of self-examination. Each one contains questions rather than answers: "What
+        did you learn from that?" "Why did that hurt?" "What do you want to be true
+        about yourself?" The pages fill themselves as Riley reflects, and the
+        answers become raw material for the forge.
+    idle:
+      - The furnace flares as a new experience is fed into it, ready to become a belief.
+      - A fresh belief cools on the anvil, its surface hardening from molten emotion to solid conviction.
+      - The journals on the wall rustle their pages, as if Riley is thinking something through.
+      - Sparks fly from the anvil as a belief is tested, hammered, and tested again.
+      - The forge glows brighter -- something significant is being processed in Riley's mind.
+
+  # ── TOXIC THOUGHT POOL ──────────────────────────────────────────────
+  - id: 963
+    title: "Toxic Thought Pool"
+    desc: >-
+      A sunken chamber where the worst thoughts pool like contaminated water.
+      A dark <ansi fg="itemname">pool</ansi> fills the center of the room,
+      its surface thick and sluggish, reflecting nothing. The liquid is
+      the color of bruised purple and sickly orange, and it churns slowly
+      with currents that seem to move against each other. Toxic thoughts
+      rise to the surface as <ansi fg="itemname">bubbles</ansi> that pop
+      with whispered cruelties -- fragments of self-criticism, echoes of
+      unkind words others have said, and the special venom of thoughts you
+      have about yourself at three in the morning. The walls are slick with
+      condensation that stains everything it touches. A narrow path of
+      dry stone rings the pool, just wide enough to walk if you're careful.
+      This is where Riley's mind sends the thoughts that serve no purpose
+      but to wound.
+    biome: mindscape
+    symbol: "X"
+    legend: Toxic
+    exits:
+      west: 962
+      east: 964
+    nouns:
+      pool: >-
+        The <ansi fg="itemname">pool</ansi> is deep -- deeper than it should be.
+        Its surface is opaque and oily, refusing to show what lies beneath. If you
+        lean close, you can hear fragments of toxic thoughts churning below: "They're
+        just pretending to like you." "You'll never be as good as--." "Everyone
+        noticed." The pool can't be drained. It can only be managed, kept from
+        overflowing, its toxicity diluted by the stronger beliefs forged next door.
+      bubbles: >-
+        The <ansi fg="itemname">bubbles</ansi> that rise from the pool are small
+        mercies -- they release pressure that would otherwise build to something
+        worse. Each one pops with a quiet hiss and a fragment of cruel self-talk
+        that dissolves into the air. "You looked stupid." Pop. "They were laughing
+        at you." Pop. "You'll never--." Pop. The pool processes these thoughts so
+        Riley doesn't have to carry them all at once.
+    spawns:
+      - {mob: 61, rate: "3 real minutes", msg: "A <ansi fg=\"mobname\">toxic thought</ansi> rises from the dark pool, dripping with concentrated self-doubt."}
+      - {mob: 64, rate: "6 real minutes", msg: "A <ansi fg=\"mobname\">doubt shadow</ansi> peels itself from the wall, whispering criticisms in Riley's own voice."}
+    idle:
+      - A bubble rises from the toxic pool and pops with a whispered "you're not enough."
+      - The pool churns and its surface darkens briefly before settling back to its usual sick purple.
+      - The condensation on the walls drips in slow, heavy drops that sizzle when they hit the stone.
+      - A toxic thought surfaces, half-formed, then sinks back down before fully materializing.
+      - The narrow path around the pool seems slightly narrower than the last time you looked.
+
+  # ── SENSE OF SELF CORE ──────────────────────────────────────────────
+  - id: 964
+    title: "Sense of Self Core"
+    desc: >-
+      At the very heart of Riley's Belief System, past every corridor of doubt
+      and conviction, past the forge and the toxic pool, lies this: a quiet,
+      luminous chamber where Riley's truest sense of self resides. A single
+      <ansi fg="itemname">thread</ansi> of braided light hangs suspended in the
+      center of the room, woven from every color, every emotion, every experience
+      that makes Riley who she is. It's not large -- it's about the size of a
+      person -- and it pulses with a rhythm that matches Riley's heartbeat
+      exactly. The walls of the chamber are smooth and dark, like the inside
+      of a geode, studded with tiny points of light that are individual
+      <ansi fg="itemname">memories</ansi> -- not the big ones, but the small,
+      defining moments that collectively answer the question "Who am I?" The
+      room is warm. The room is safe. The room is her.
+    biome: mindscape
+    symbol: "@"
+    legend: Core
+    exits:
+      west: 963
+    nouns:
+      thread: >-
+        The <ansi fg="itemname">thread</ansi> is Riley's sense of self in its
+        most essential form. Every strand represents a piece of her identity --
+        gold for the joy that defines her outlook, blue for the sadness that gives
+        her depth, red for the anger that protects what she loves, green for the
+        standards she holds, purple for the caution that keeps her safe. Newer
+        strands -- orange anxiety, pink embarrassment, teal ennui -- are woven in
+        too, still finding their place in the braid. The thread is imperfect,
+        asymmetrical, still being woven. It is, without question, beautiful.
+      memories: >-
+        The <ansi fg="itemname">memories</ansi> embedded in the walls are not the
+        core memories -- those live in the vault in Headquarters. These are quieter.
+        The first time Riley tied her own shoes. The taste of hot chocolate on a
+        snow day. The sound of her dad's laugh. The way it felt to score a goal
+        when nobody expected her to. A conversation with a friend where she said
+        exactly the right thing. Individually, they're small. Together, they're
+        everything.
+    idle:
+      - The thread pulses in time with Riley's heartbeat, steady and sure.
+      - A new strand of light weaves itself into the braid -- a piece of identity still forming.
+      - The memory points in the walls glow in a slow cascade, like a constellation waking up.
+      - The chamber fills with warmth that feels like self-acceptance, fragile and fierce at once.
+      - The thread brightens, and for a moment you can feel exactly who Riley is. Then the feeling fades, leaving only its echo.

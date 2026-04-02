@@ -1,0 +1,11 @@
+itemid: 30004
+name: imagination smoothie
+namesimple: smoothie
+description: A smoothie blended from ingredients that only exist in Imagination Land.
+  It tastes like birthday cake and possibility.
+type: potion
+subtype: drinkable
+uses: 1
+value: 35
+buffids:
+- 43

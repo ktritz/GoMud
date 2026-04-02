@@ -244,7 +244,11 @@ func CreatePromptHandler(steps []*PromptStep, onComplete CompletionFunc) connect
 		}
 
 		if connections.IsWebsocket(clientInput.ConnectionId) {
-			connections.SendTo(clientInput.Buffer, clientInput.ConnectionId) // Echo newline
+			if currentStep.MaskInput {
+				connections.SendTo([]byte(strings.Repeat("*", len(clientInput.Buffer))), clientInput.ConnectionId)
+			} else {
+				connections.SendTo(clientInput.Buffer, clientInput.ConnectionId)
+			}
 		}
 
 		// Enter Pressed: Process Input

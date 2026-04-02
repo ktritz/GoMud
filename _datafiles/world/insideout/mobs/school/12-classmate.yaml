@@ -1,0 +1,19 @@
+mobid: 12
+zone: School
+hostile: false
+maxwander: 10
+activitylevel: 20
+groups:
+- school-npc
+idlecommands:
+- emote checks her phone and smirks at something on the screen.
+- say So this weekend, right, you won't even believe what happened.
+- say Ugh, did you finish the homework? I totally forgot.
+- wander
+- ''
+- ''
+character:
+  name: classmate
+  description: A friendly classmate with a backpack slung over one shoulder and the easy, restless energy of someone who would rather be anywhere but in class. She wanders the hallways between periods, always ready with a smile and a half-finished story about something that happened over the weekend.
+  level: 5
+  raceid: 1

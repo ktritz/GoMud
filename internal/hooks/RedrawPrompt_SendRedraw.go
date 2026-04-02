@@ -5,11 +5,18 @@ import (
 	"github.com/GoMudEngine/GoMud/internal/events"
 	"github.com/GoMudEngine/GoMud/internal/mudlog"
 	"github.com/GoMudEngine/GoMud/internal/templates"
+	"github.com/GoMudEngine/GoMud/internal/transport"
 	"github.com/GoMudEngine/GoMud/internal/users"
 )
 
-// Checks whether their level is too high for a guide
-func RedrawPrompt_SendRedraw(e events.Event) events.ListenerReturn {
+type promptDeliveryPlan struct {
+	ConnectionId connections.ConnectionId
+	Prompt       string
+}
+
+func (p promptDeliveryPlan) Type() string { return `PromptDeliveryPlan` }
+
+func RedrawPrompt_PlanDelivery(e events.Event) events.ListenerReturn {
 
 	evt, typeOk := e.(events.RedrawPrompt)
 	if !typeOk {
@@ -35,10 +42,33 @@ func RedrawPrompt_SendRedraw(e events.Event) events.ListenerReturn {
 
 		}
 
-		pTxt := templates.AnsiParse(newCmdPrompt)
-		connections.SendTo([]byte(pTxt), user.ConnectionId())
+		events.AddToQueue(promptDeliveryPlan{
+			ConnectionId: user.ConnectionId(),
+			Prompt:       newCmdPrompt,
+		})
 
 	}
+
+	return events.Continue
+}
+
+// Checks whether their level is too high for a guide
+func RedrawPrompt_SendRedraw(e events.Event) events.ListenerReturn {
+
+	plan, typeOk := e.(promptDeliveryPlan)
+	if !typeOk {
+		mudlog.Error("Event", "Expected Type", "PromptDeliveryPlan", "Actual Type", e.Type())
+		return events.Cancel
+	}
+
+	if plan.ConnectionId == 0 {
+		return events.Continue
+	}
+
+	transport.Queue(transport.Delivery{
+		ConnectionIds: []connections.ConnectionId{plan.ConnectionId},
+		Payload:       []byte(templates.AnsiParse(plan.Prompt)),
+	})
 
 	return events.Continue
 }

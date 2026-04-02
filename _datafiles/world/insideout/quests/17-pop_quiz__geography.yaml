@@ -1,0 +1,18 @@
+questid: 17
+name: 'Pop Quiz: Geography'
+description: Ms. Walsh wants to test your geography knowledge.
+steps:
+- id: start
+  description: Answer Ms. Walsh's geography quiz questions.
+  hint: Find Ms. Walsh in the Library.
+- id: q1
+  description: Answer question 1.
+- id: q2
+  description: Answer question 2.
+- id: q3
+  description: Answer question 3.
+- id: end
+  description: You passed the Geography pop quiz!
+rewards:
+  experience: 1200
+  gold: 125

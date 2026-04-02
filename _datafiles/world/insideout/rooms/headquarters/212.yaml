@@ -1,0 +1,20 @@
+roomid: 212
+zone: Headquarters
+title: Anxiety's Workstation
+description: This is less a room and more a command center that got out of hand. Anxiety's workstation is a sprawling desk buried under cascading piles of lists, plans, backup plans, backup plans for the backup plans, and contingency protocols for scenarios that have a 0.001% chance of occurring. Multiple screens are mounted on adjustable arms, each showing a different "what if" scenario playing out in real-time simulation. String connects pushpins on a massive corkboard, mapping out every possible social interaction Riley might have tomorrow. A coffee maker in the corner has been running nonstop for what looks like weeks. The chair has wheels but it's clear Anxiety never sits still long enough to use them.
+mapsymbol: X
+maplegend: Anxiety
+biome: mindscape
+exits:
+  north:
+    roomid: 211
+nouns:
+  screens: 'The screens cycle through an overwhelming array of worst-case simulations. One shows "What If Riley Says Something Weird At Lunch," another runs "Probability Analysis: Will They Laugh AT Her Or WITH Her," and a third is just a countdown to the next school presentation with the label "DAYS OF DREAD REMAINING."'
+  corkboard: The corkboard is a conspiracy theorist's dream. Colored string connects dozens of pushpins, mapping out branching paths of social consequences. "Say hi to new kid" branches into "they say hi back (37%)" and "they don't hear you (41%)" and "you accidentally say 'hi' too loud and everyone looks (22%)." Each branch has further branches. It goes on for a while.
+  lists: The lists are endless. "Things That Could Go Wrong Today," "Things That Could Go Wrong Tomorrow," "Things That Could Go Wrong In General," and the ominously thick "Things That Could Go Wrong That We Haven't Even Thought Of Yet." Each list has sub-lists. The sub-lists have footnotes.
+idlemessages:
+- A new "what if" scenario pops up on one of the screens with an urgent ping.
+- The coffee maker gurgles and produces another cup that nobody will drink.
+- A list falls off the desk, revealing another list underneath it. It's lists all the way down.
+- One of the screens flashes "NEW CONCERN DETECTED" in orange block letters.
+- The string on the corkboard vibrates slightly, as if new connections are being made.

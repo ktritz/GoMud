@@ -1,0 +1,25 @@
+roomid: 113
+zone: School
+title: Music Room
+description: The music room is a chaotic symphony of cases, stands, and the lingering ghost of every wrong note ever played within its walls. A battered upright piano sits against the far wall, its keys yellowed but functional. Music stands are scattered around in a rough semicircle, most of them holding crumpled sheet music from last period. A cabinet along one wall holds an assortment of instruments -- trumpets, clarinets, a tuba that takes up an unreasonable amount of space, and a xylophone missing two bars. Sound-dampening panels on the walls do their best, but you can still hear the band from the hallway. Riley's been spending more time here lately, working on something she won't talk about yet.
+mapsymbol: M
+maplegend: Music
+biome: city
+exits:
+  west:
+    roomid: 111
+nouns:
+  piano: The <ansi fg="itemname">piano</ansi> is an old upright that's been in this room longer than anyone currently at the school. A few keys stick, the sustain pedal is temperamental, and someone has carved "THIS MACHINE KILLS BOREDOM" into the side in tiny letters. Despite its age, it still sounds surprisingly warm when someone who knows what they're doing sits down to play.
+  instruments: The instrument cabinet is a brass-and-woodwind menagerie. Trumpets with dented bells, clarinets missing their reeds, a french horn that looks like it survived a war. Each one has a number tag and a sign-out sheet, though the system was abandoned around week three of the school year. The tuba in the corner has its own chair because it's too heavy for the shelf.
+  sheet music: The <ansi fg="itemname">sheet music</ansi> is a mess of concert pieces, warm-up scales, and someone's attempt at arranging a pop song for full band. Pencil marks cover the margins -- measure numbers, breath marks, and the occasional doodle of a stick figure playing drums. A few pages have coffee rings on them from the band teacher's mug.
+idlemessages:
+- Someone plunks out a tentative melody on the piano, pauses, and starts over.
+- A trumpet case snaps open and the metallic echo rings through the room.
+- Sheet music rustles as a draft from the hallway sneaks under the door.
+- The faint vibration of a tuning fork hums through the air and slowly fades.
+- A metronome on the piano clicks steadily, keeping time for nobody in particular.
+
+spawninfo:
+- mobid: 73
+  message: <ansi fg="mobname">Mr. Ortiz</ansi> strolls in carrying a guitar case.
+  respawnrate: 5 real minutes

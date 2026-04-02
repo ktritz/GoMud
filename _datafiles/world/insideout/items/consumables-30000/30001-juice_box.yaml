@@ -1,0 +1,11 @@
+itemid: 30001
+name: juice box
+namesimple: juice
+description: 'A small box of apple juice with a tiny straw. It''s the good kind -
+  100% juice, no concentrate.'
+type: potion
+subtype: drinkable
+uses: 1
+value: 10
+buffids:
+- 40

@@ -1,0 +1,23 @@
+roomid: 702
+zone: The Subconscious
+title: Cell Block A
+description: The corridor opens into a wide chamber lined with heavy iron cells on both sides, their bars thick enough to hold back whatever Riley's mind decided was too frightening to roam free. Most of the cells are dark and quiet, their occupants either sleeping or long since dissolved, but a few contain shapes that shift restlessly in the shadows. Faded labels are bolted to each cell door -- "THAT NOISE IN THE ATTIC," "THE THING UNDER THE BED," "SUBSTITUTE TEACHER WITH THE LAZY EYE." The floor is scuffed with drag marks leading deeper into the prison. Fluorescent lights overhead flicker in an arrhythmic pattern that is deeply, specifically unsettling.
+mapsymbol: A
+maplegend: Block-A
+biome: dungeon
+exits:
+  south:
+    roomid: 701
+  north:
+    roomid: 703
+  east:
+    roomid: 704
+nouns:
+  cells: The <ansi fg="itemname">cells</ansi> are built from reinforced iron and something that looks like hardened thought-stuff. Most are empty, their doors hanging open, but a few are sealed shut with extra padlocks. One cell contains what appears to be an extremely large spider made of shadow. Another holds a shape that looks like a dentist's chair. A third is completely dark except for two faintly glowing eyes at the back.
+  labels: The <ansi fg="itemname">labels</ansi> are typed on little brass plates in a clinical font. Some are mundane -- "LOSING A TOOTH," "FORGETTING HOMEWORK." Others are more specific and alarming -- "THAT TIME THE ESCALATOR STOPPED AND NOBODY KNEW WHAT TO DO," "THE POSSIBILITY THAT DOGS DON'T ACTUALLY LIKE YOU."
+idlemessages:
+- Something in one of the sealed cells throws itself against the bars with a heavy clang.
+- The fluorescent lights flicker off for exactly two seconds, then snap back on.
+- A low moan drifts from the darkest cell at the end of the row, then trails off into silence.
+- One of the cell labels spins on its bolt, clicking softly as it rotates.
+- You hear the distinct sound of something dragging itself across a stone floor deeper in the block.

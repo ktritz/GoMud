@@ -1,0 +1,21 @@
+roomid: 417
+zone: Imagination Land
+title: Cookie Factory
+description: A whimsical factory that produces imagination cookies on an industrial scale. Conveyor belts carry trays of cookies in impossible flavors through ovens shaped like smiling faces. The air is thick with the smell of baking -- chocolate chip, snickerdoodle, peanut butter, and flavors that can only exist in someone's head, like "the smell of a snow day" and "the feeling of winning." Frosting pipes dispense decoration in every color, and a quality control station manned by nobody rejects cookies that are not fun enough. The whole operation runs on pure creative energy and produces far more cookies than any mind could ever consume. There are always more cookies.
+mapsymbol: K
+maplegend: Cookies
+biome: land
+exits:
+  north:
+    roomid: 416
+  south:
+    roomid: 418
+nouns:
+  factory: The <ansi fg="itemname">factory</ansi> is a Willy Wonka fever dream scaled for a child's expectations. The machinery is all bright colors and rounded edges, with no safety hazards because the concept of safety hazards has not been imagined here. Gears turn, belts roll, and ovens bake, all powered by the simple belief that cookies should exist in unlimited quantities.
+  cookies: The <ansi fg="itemname">cookies</ansi> come in every variety, real and imagined. Classic chocolate chip sits next to "Rocket Ship Crunch" and "Purple Flavor." Each one is warm, perfectly baked, and tastes exactly as good as you imagined it would. The flavors are memories as much as they are food -- one tastes like a birthday party, another like the first day of summer vacation.
+idlemessages:
+- A fresh batch of cookies rolls out of a smiling oven, filling the air with impossibly good smells.
+- The quality control station rejects a cookie for being "not whimsical enough." It is replaced instantly.
+- A frosting pipe dispenses a rainbow spiral onto a cookie the size of a dinner plate.
+- The factory hums with the satisfied energy of a place that knows exactly what it is for.
+- A cookie shaped like a star floats off the conveyor belt and drifts toward you, still warm.

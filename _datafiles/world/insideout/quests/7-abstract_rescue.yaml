@@ -1,0 +1,24 @@
+questid: 7
+name: Abstract Rescue
+description: 'A Mind Worker got trapped in Abstract Thought and is being deconstructed.
+  Save them before they become a dot!'
+steps:
+- id: start
+  description: Enter Abstract Thought and find the missing Mind Worker.
+  hint: Abstract Thought is a dangerous zone. The worker was last seen near the entrance.
+- id: find
+  description: Navigate through the deconstructing chambers to find the Mind Worker.
+  hint: Go deeper. The worker is being reduced to their simplest form.
+- id: rescue
+  description: Help reconstruct the Mind Worker using the abstract thought fragment.
+  hint: Use the abstract thought fragment you found in the zone.
+- id: return
+  description: Escort the Mind Worker back to safety.
+  hint: Return to the Memory Sorting Station in Long Term Memory.
+- id: end
+  description: 'The Mind Worker is safe! They''ll be sticking to Long Term Memory
+    from now on.'
+rewards:
+  experience: 8000
+  gold: 600
+  itemid: 20005

@@ -1,0 +1,221 @@
+quests:
+  - id: 1
+    name: The Missing Homework
+    desc: "Your homework blew away in the wind. Find it before class starts!"
+    steps:
+      - id: start
+        desc: Find your homework assignment before class.
+        hint: "Check the neighborhood. The wind might have carried it to the park or a neighbor's yard."
+      - id: found
+        desc: "You found the homework! Return it to the teacher."
+        hint: The teacher is in Classroom 101 at school.
+      - id: end
+        desc: "You turned in the homework just in time!"
+    rewards:
+      xp: 1000
+      gold: 50
+      item: 20001
+
+  - id: 2
+    name: "Bing Bong's Rocket Fuel"
+    desc: "Bing Bong needs special rocket fuel to power his wagon. Help him gather it from Imagination Land."
+    steps:
+      - id: start
+        desc: Gather rocket fuel from Imagination Land for Bing Bong.
+        hint: "The French Fry Forest and Cookie Factory in Imagination Land may have what you need."
+      - id: collect
+        desc: Return the rocket fuel to Bing Bong.
+        hint: "Bing Bong is hiding out in Long Term Memory."
+      - id: end
+        desc: "Bing Bong's rocket wagon is fueled up! He gives you his candy cane as thanks."
+    rewards:
+      xp: 3000
+      gold: 200
+      item: 10009
+
+  - id: 3
+    name: "Joy's Missing Core Memory"
+    desc: "A golden core memory has gone missing from the vault. Joy needs your help to find it."
+    steps:
+      - id: start
+        desc: Search Long Term Memory for the missing golden core memory.
+        hint: Check the fading memory aisles and the deep memory shelf.
+      - id: search
+        desc: "A Memory Leech seems to have absorbed the core memory! Defeat Memory Leeches until you recover it."
+        hint: Memory Leeches lurk in the fading memory aisles of Long Term Memory.
+      - id: return
+        desc: Return the golden core memory to Joy in Headquarters.
+        hint: Joy is in the Console Room at Headquarters.
+      - id: end
+        desc: "The core memory is safely back in the vault!"
+    rewards:
+      xp: 4000
+      gold: 300
+
+  - id: 4
+    name: Dream Gone Wrong
+    desc: "A dream has gone off-script and become a nightmare. The Dream Director needs help getting it under control."
+    steps:
+      - id: start
+        desc: Investigate the corrupted soundstage in Dream Productions.
+        hint: "Check Soundstage B - the horror set."
+      - id: clear
+        desc: Clear out the nightmare creatures from the soundstage.
+        hint: Kill dream nightmares in the Nightmare Wing and soundstages.
+      - id: script
+        desc: Find the corrupted dream script that caused the nightmares.
+        hint: Search the Script Archive in Dream Productions.
+      - id: return
+        desc: Return the corrupted script to the Dream Director.
+        hint: "The Dream Director is in the Director's Office."
+      - id: end
+        desc: "The dream is back on script! Riley will sleep better tonight."
+    rewards:
+      xp: 6000
+      gold: 500
+      item: 20004
+
+  - id: 5
+    name: Sadness Has a Point
+    desc: "Sadness feels like she doesn't belong. Help her understand her importance by recoloring some memories."
+    steps:
+      - id: start
+        desc: "Sadness needs your help. Visit the Emotional Tag Station in Long Term Memory."
+        hint: The Emotional Tag Station is deep in the Long Term Memory zone.
+      - id: tag
+        desc: Help recolor a memory at the Emotional Tag Station.
+        hint: Look around the Tag Station and interact with the equipment there.
+      - id: return
+        desc: Tell Sadness what you discovered.
+        hint: Sadness is in her room in Headquarters.
+      - id: end
+        desc: "Sadness smiles through her tears. She knows she matters."
+    rewards:
+      xp: 2000
+      gold: 150
+
+  - id: 6
+    name: Face Your Fears
+    desc: "Fear has detected something stirring in the Subconscious. Something has riled up the creatures there."
+    steps:
+      - id: start
+        desc: Enter the Subconscious and investigate the disturbance.
+        hint: "The Subconscious entrance is accessible from the deepest parts of Long Term Memory."
+      - id: investigate
+        desc: Find the source of the disturbance in the Subconscious.
+        hint: "Go deeper into the Subconscious. Something big is in there."
+      - id: defeat
+        desc: "Defeat Jangles the Clown!"
+        hint: "Jangles is on his stage deep in the Subconscious. Prepare well - he's powerful."
+      - id: return
+        desc: Return to Fear in Headquarters and tell him the news.
+        hint: "Fear is in his room in Headquarters."
+      - id: end
+        desc: "Fear is relieved. The Subconscious is calm again... for now."
+    rewards:
+      xp: 10000
+      gold: 1000
+      item: 10010
+
+  - id: 7
+    name: Abstract Rescue
+    desc: "A Mind Worker got trapped in Abstract Thought and is being deconstructed. Save them before they become a dot!"
+    steps:
+      - id: start
+        desc: "Enter Abstract Thought and find the missing Mind Worker."
+        hint: "Abstract Thought is a dangerous zone. The worker was last seen near the entrance."
+      - id: find
+        desc: Navigate through the deconstructing chambers to find the Mind Worker.
+        hint: "Go deeper. The worker is being reduced to their simplest form."
+      - id: rescue
+        desc: Help reconstruct the Mind Worker using the abstract thought fragment.
+        hint: Use the abstract thought fragment you found in the zone.
+      - id: return
+        desc: Escort the Mind Worker back to safety.
+        hint: Return to the Memory Sorting Station in Long Term Memory.
+      - id: end
+        desc: "The Mind Worker is safe! They'll be sticking to Long Term Memory from now on."
+    rewards:
+      xp: 8000
+      gold: 600
+      item: 20005
+
+  - id: 8
+    name: "Anxiety's Overthrow"
+    desc: "Anxiety has gone too far, locking the original emotions in the Back of the Mind and trying to control Riley. Help restore balance."
+    steps:
+      - id: start
+        desc: Find a way into the Back of the Mind.
+        hint: "Anxiety sealed the entrance. Look for clues in Headquarters and the Belief System."
+      - id: key
+        desc: "Obtain the key to Anxiety's vault."
+        hint: The Belief System zone may hold the key to unlocking the vault.
+      - id: enter
+        desc: "Enter Anxiety's vault in the Back of the Mind."
+        hint: Use the suppression key on the vault door.
+      - id: clear
+        desc: Clear out the Suppression Guards protecting the vault.
+        hint: Fight through the Back of the Mind to reach the Emotion Vault.
+      - id: free
+        desc: Free the trapped emotions from the vault.
+        hint: "Interact with the Emotion Vault room."
+      - id: end
+        desc: "Balance is restored. Anxiety learns that it's okay to not control everything."
+    rewards:
+      msg: "The emotions work together again. Riley feels more like herself than ever."
+      roommsg: "A wave of emotional balance washes through Headquarters."
+      xp: 12000
+      gold: 1500
+      item: 20015
+
+  - id: 9
+    name: The Belief Rewrite
+    desc: "A toxic belief - 'I'm not good enough' - has taken root in Riley's Belief System. Help replace it with something better."
+    steps:
+      - id: start
+        desc: Enter the Belief System and find the toxic belief.
+        hint: The Belief System is connected from Headquarters and the Back of the Mind.
+      - id: find
+        desc: Find and confront the toxic belief.
+        hint: Look in the Negative Belief Corridor.
+      - id: defeat
+        desc: Clear out the toxic thoughts protecting the false belief.
+        hint: Defeat the toxic thoughts in the area around the negative beliefs.
+      - id: forge
+        desc: Forge a new positive belief at the Belief Forge.
+        hint: "Combine a belief thread with a core memory at the Belief Forge."
+      - id: plant
+        desc: Plant the new belief in the Sense of Self Core.
+        hint: "Take the forged belief to the deepest room of the Belief System."
+      - id: end
+        desc: "The toxic belief crumbles. 'I AM good enough' takes its place."
+    rewards:
+      msg: "Riley stands a little taller. She knows who she is now."
+      xp: 8000
+      gold: 800
+      item: 20055
+
+  - id: 10
+    name: Into the Void
+    desc: "Memories are being corrupted at an alarming rate. Something in the Memory Dump is pulling everything in. Stop it."
+    steps:
+      - id: start
+        desc: Descend into the Memory Dump and find the source of the corruption.
+        hint: The Memory Dump is accessible from the bottom of Long Term Memory.
+      - id: descend
+        desc: Navigate through the Memory Dump to reach the corruption source.
+        hint: "Follow the path deeper. Bring supplies - this is dangerous territory."
+      - id: boss
+        desc: "Defeat the Corrupted Core Memory."
+        hint: "The Corrupted Core Memory is in the deepest part of the Memory Dump. It's incredibly powerful."
+      - id: return
+        desc: Return to Headquarters and tell Joy the threat has been eliminated.
+        hint: "Joy is in the Console Room."
+      - id: end
+        desc: "Riley's mind is clear again. Balance has been fully restored."
+    rewards:
+      msg: "Riley's mind feels clearer than ever. Balance has been restored."
+      roommsg: "A sense of peace and clarity washes over the entire mindscape."
+      xp: 15000
+      gold: 2000
+      item: 20016

@@ -1,0 +1,660 @@
+zone: headquarters
+zone_config:
+  name: Headquarters
+  roomid: 200
+  autoscale: {minimum: 1, maximum: 20}
+  defaultbiome: mindscape
+
+rooms:
+  # ── THE CONSOLE ROOM (Main Hub) ──────────────────────────────────────
+  - id: 200
+    title: "The Console Room"
+    desc: >-
+      The heart of Riley's mind stretches out before you, a vast circular chamber
+      dominated by the <ansi fg="itemname">console</ansi> -- a sprawling control
+      panel covered in hundreds of colorful buttons, sliders, and levers that
+      pulse with soft light. A massive <ansi fg="itemname">screen</ansi> mounted
+      on the far wall shows Riley's point of view in real-time, the image shifting
+      as she goes about her day. Five emotion stations ring the console, each
+      tinted a different color and worn smooth from years of use. The floor is a
+      polished surface that subtly shifts hue depending on Riley's current mood,
+      and the domed ceiling above glows with a warm ambient light that makes
+      everything feel alive and important. This is where every feeling starts.
+    biome: mindscape
+    symbol: C
+    legend: Console
+    exits:
+      south: 201
+      east: 206
+      west: 211
+      north: 203
+      up: 204
+      southeast: 213
+      southwest: 214
+    nouns:
+      console: >-
+        The console is a magnificent arc of controls stretching nearly wall to wall.
+        Its surface is dotted with buttons in every color imaginable -- golden yellows,
+        deep blues, fiery reds, sickly greens, and vivid purples. Some buttons glow
+        steadily while others flicker, waiting to be pressed. A faint hum of energy
+        radiates from it.
+      screen: >-
+        The massive screen shows Riley's live perspective. Right now she seems to be
+        at school, the image slightly unfocused as if she's daydreaming. Occasionally
+        the feed sharpens when something catches her attention.
+      buttons: >-
+        Hundreds of buttons cover the console in neat clusters. Each group controls
+        a different aspect of Riley's emotional response. Some are well-worn from
+        frequent use, while others look barely touched. A few have sticky notes
+        attached reading things like "DO NOT PRESS DURING MATH CLASS."
+    idle:
+      - The console flickers through a rapid sequence of golden and blue lights.
+      - A button on the console presses itself and a brief giggle echoes through the room.
+      - The screen shifts and Riley's perspective blurs for a moment as she blinks.
+      - The floor beneath your feet ripples from cool blue to warm yellow and back again.
+      - Somewhere in the room, a faint melody plays -- a half-remembered song from childhood.
+
+  # ── MEMORY INTAKE ────────────────────────────────────────────────────
+  - id: 201
+    title: "Memory Intake"
+    desc: >-
+      A cavernous room hums with constant activity as the memory intake system
+      processes Riley's daily experiences. A long <ansi fg="itemname">conveyor</ansi>
+      belt winds through the center of the chamber, carrying freshly formed memory
+      <ansi fg="itemname">orbs</ansi> that glow in every color -- golden joy, blue
+      sadness, red anger, purple fear, and green disgust. The orbs roll gently along
+      the belt, each one a perfect sphere containing a tiny scene that plays on loop
+      inside it. Sorting chutes line the walls, labeled with categories like
+      "School," "Family," "Friends," and the suspiciously full "Embarrassing Moments."
+      The air smells faintly of new experiences.
+    biome: mindscape
+    symbol: M
+    legend: Memory
+    exits:
+      north: 200
+      east: 202
+      west: 205
+    nouns:
+      orbs: >-
+        The memory orbs are mesmerizing up close. Each one is about the size of a
+        softball and perfectly smooth, glowing from within with the color of whatever
+        emotion dominated that memory. If you look closely, you can see tiny scenes
+        playing inside -- a lunch table conversation, a homework problem, a dog
+        spotted on the walk home.
+      conveyor: >-
+        The conveyor belt is an ingenious piece of mental machinery, all gleaming
+        rails and gentle curves. It carries orbs from the intake port near the
+        ceiling down through a series of sorting stations before depositing them
+        into the proper chutes. Occasionally an orb rolls off-track and a small
+        mechanical arm nudges it back into place.
+    idle:
+      - A bright golden orb rolls down the conveyor, glowing with the warmth of a good memory.
+      - A blue-tinged orb wobbles along the belt, its tiny scene showing a rainy afternoon.
+      - Two orbs bump into each other on the conveyor and briefly flash with mixed colors.
+      - A mechanical arm reaches out and redirects a stray orb back onto the conveyor belt.
+
+  # ── CORE MEMORY VAULT ────────────────────────────────────────────────
+  - id: 202
+    title: "Core Memory Vault"
+    desc: >-
+      This sacred chamber is smaller and quieter than the rest of Headquarters,
+      bathed in a reverent glow that radiates from the core memories themselves.
+      Five ornate pedestals stand in a semicircle, each holding an orb that burns
+      brighter and larger than any ordinary memory. The <ansi fg="itemname">golden orb</ansi>
+      pulses with Joy's warmth, the <ansi fg="itemname">blue orb</ansi> shimmers
+      with bittersweet depth, the <ansi fg="itemname">red orb</ansi> crackles with
+      fierce intensity, the <ansi fg="itemname">green orb</ansi> gleams with sharp
+      clarity, and the <ansi fg="itemname">purple orb</ansi> flickers with cautious
+      energy. Together they power the Personality Islands and define who Riley is.
+      The walls are reinforced and the temperature is carefully controlled -- these
+      memories are irreplaceable.
+    biome: mindscape
+    symbol: V
+    legend: Vault
+    exits:
+      west: 201
+    nouns:
+      golden orb: >-
+        The golden core memory radiates pure happiness. Inside, a young Riley scores
+        her first hockey goal, her parents cheering from the stands. The scene loops
+        endlessly, each replay just as warm as the last.
+      blue orb: >-
+        The blue core memory is surprisingly beautiful in its sadness. It shows Riley
+        crying on her first day at a new school, and then being comforted by her
+        parents. The sadness and the love are inseparable.
+      red orb: >-
+        The red core memory burns hot. Inside, Riley stands up to a bully who was
+        picking on her friend, her face flushed with righteous anger. The memory
+        practically vibrates with intensity.
+      green orb: >-
+        The green core memory has a sharp, discerning quality. It captures the moment
+        Riley first developed her own sense of style, rejecting an outfit her mom
+        picked out with absolute certainty. Standards were established that day.
+      purple orb: >-
+        The purple core memory pulses nervously. It shows Riley's first time on
+        stage at a school play, terrified but pushing through. The fear made the
+        triumph that followed mean something.
+    idle:
+      - The core memories pulse in unison for a moment, casting rainbow light across the vault walls.
+      - The golden orb flares brighter briefly, as if Riley just thought of something happy.
+      - A faint hum resonates from the pedestals, the sound of memories holding a mind together.
+
+  # ── PERSONALITY ISLANDS OVERLOOK ─────────────────────────────────────
+  - id: 203
+    title: "Personality Islands Overlook"
+    desc: >-
+      A wide balcony juts out from the edge of Headquarters, offering a breathtaking
+      panoramic view of the Personality Islands floating in the vast mindscape below.
+      Each island is a towering structure of impossible architecture powered by Riley's
+      core memories. Family Island glows warm with a cozy house perched on top. Hockey
+      Island gleams with an ice rink that never melts. Friendship Island buzzes with
+      connected pathways and shared spaces. Honesty Island stands solid and angular,
+      built from transparent crystal. And the newest addition, Music Island, pulses
+      with rhythm and streams colorful sound waves into the sky. The gaps between the
+      islands reveal the dizzying drop to the memory shelves far, far below.
+    biome: mindscape
+    symbol: O
+    legend: Overlook
+    exits:
+      south: 200
+      east: 215
+    nouns:
+      islands: >-
+        The Personality Islands float like enormous platforms over the abyss, each
+        one tethered to Headquarters by bridges of light. They shift and glow based
+        on Riley's current activities -- when she's with friends, Friendship Island
+        blazes bright, and the others dim slightly.
+      family island: >-
+        Family Island is warm and inviting, topped with a miniature version of Riley's
+        childhood home. Soft golden light spills from its windows and the whole
+        structure radiates safety and belonging.
+      hockey island: >-
+        Hockey Island is all sharp angles and gleaming ice, with a full rink spinning
+        slowly at its peak. The sounds of skates on ice and cheering crowds drift
+        across the gap.
+      music island: >-
+        The newest island pulses with vibrant energy. Enormous speakers and
+        instruments sprout from its surface like a living concert stage, and waves
+        of color ripple outward with every beat.
+    idle:
+      - Family Island flares golden as Riley thinks about home.
+      - Hockey Island dims slightly -- Riley must not be thinking about sports right now.
+      - Music Island sends a ripple of purple and blue sound waves arcing across the sky.
+      - Friendship Island lights up and you can faintly hear laughter drifting from it.
+      - Far below, the memory shelves stretch to the horizon, millions of orbs glowing softly.
+
+  # ── DREAM DUTY STATION ──────────────────────────────────────────────
+  - id: 204
+    title: "Dream Duty Station"
+    desc: >-
+      A cramped monitoring room sits above the main Console Room, packed with banks
+      of flickering screens that display live feeds from Dream Productions. Each
+      monitor shows a different dream-in-progress or a dream queued up for tonight's
+      lineup. A battered swivel chair sits in front of the main console, surrounded
+      by empty coffee cups and a clipboard with tonight's dream schedule. One screen
+      is labeled "RECURRING" and shows a dream where Riley walks into class without
+      shoes -- again. A dark tunnel in the far wall leads down toward the studio
+      backlots where dreams are actually filmed.
+    biome: mindscape
+    symbol: D
+    legend: Dreams
+    exits:
+      down: 200
+      tunnel: 500
+    nouns:
+      screens: >-
+        The screens show an overwhelming amount of dream content. One monitor displays
+        a dream about flying over San Francisco. Another shows Riley's teeth falling
+        out for the third time this week. A sticky note on one screen reads "ANXIETY
+        KEEPS SUBMITTING SCRIPTS -- STOP APPROVING THEM."
+      clipboard: >-
+        Tonight's dream schedule is scrawled in hasty handwriting. The lineup includes
+        "Flying Dream (popular request)," "That Thing You Said In Class Three Years
+        Ago (recurring)," and "Dog Who Can Talk?? (new concept, greenlit by Joy)."
+      chair: >-
+        The swivel chair is well-worn and slightly lopsided. Whoever sits dream duty
+        clearly spends a lot of time here. The armrests are covered in doodles.
+    idle:
+      - One of the dream monitors flickers and briefly shows Riley riding a giant pizza slice through space.
+      - A screen labeled "NIGHTMARE QUEUE" flashes red, then goes dark. Probably nothing.
+      - The dream schedule clipboard slides off the console and clatters to the floor.
+      - A faint echo of dramatic music drifts up from the tunnel to Dream Productions.
+
+  # ── THE RECALL TUBE ─────────────────────────────────────────────────
+  - id: 205
+    title: "The Recall Tube"
+    desc: >-
+      A massive pneumatic tube system dominates this room, its transparent cylinders
+      stretching from floor to ceiling before vanishing into the walls and downward
+      into the depths of the mind. The main tube is wide enough for a memory orb --
+      or even a person, if they were brave enough. A control panel with a single
+      large button sits beside the tube, labeled "RECALL" in bold letters. Smaller
+      tubes branch off in every direction, each one labeled with a category of
+      memory. The whole system whooshes and hisses with compressed air as memories
+      are sent and received at dizzying speed.
+    biome: mindscape
+    symbol: T
+    legend: Tube
+    exits:
+      east: 201
+      tube: 300
+    nouns:
+      tube: >-
+        The main recall tube is an engineering marvel of the subconscious. It connects
+        Headquarters directly to the Long Term Memory shelves far below. When
+        activated, it can pull any specific memory back up to Headquarters in seconds,
+        or send someone hurtling down into the labyrinth of stored memories.
+      button: >-
+        The big red RECALL button is slightly worn from use. A small sign beneath it
+        reads "Please specify memory before pressing. Last time someone hit this
+        without thinking, we got 400 memories about breakfast."
+    idle:
+      - A memory orb shoots up through the tube with a satisfying THWOOMP and rolls to a stop.
+      - The tubes hiss and rattle as something is recalled from deep storage.
+      - A small label on one of the side tubes reads "SONG LYRICS -- CAUTION: EXTREMELY FULL."
+      - The recall system burps out a dusty orb that nobody seems to have requested.
+
+  # ── JOY'S ROOM ──────────────────────────────────────────────────────
+  - id: 206
+    title: "Joy's Room"
+    desc: >-
+      Stepping through the doorway is like walking into bottled sunshine. The walls
+      of <ansi fg="mobname">Joy</ansi>'s room are painted in every shade of yellow
+      and gold, covered floor to ceiling with Riley's drawings, photos, and happy
+      memories pinned up with star-shaped tacks. A bed that looks like it's never
+      been slept in sits in the corner -- Joy has too much energy for sleep. Glitter
+      seems to hang permanently in the air, catching the light that radiates from
+      the room itself. A corkboard labeled "TOMORROW'S FUN IDEAS" is overflowing
+      with sticky notes, and a small shelf holds a collection of Riley's favorite
+      things: a hockey puck, a family photo, and a friendship bracelet. The whole
+      room practically vibrates with optimism.
+    biome: mindscape
+    symbol: J
+    legend: Joy
+    exits:
+      west: 200
+      south: 207
+    nouns:
+      drawings: >-
+        Riley's artwork covers every available surface. Some are from childhood --
+        crayon stick figures and lopsided houses -- and some are more recent sketches.
+        Joy has kept every single one, arranged in no particular order except
+        "all of them are the best."
+      corkboard: >-
+        The corkboard is stuffed beyond capacity with sticky notes, each one an idea
+        for making Riley's day better. "Compliment someone!" "Try that new song!"
+        "Suggest pizza for dinner!" Several notes have gold star stickers on them,
+        marking ideas that worked.
+      puck: >-
+        Riley's first hockey puck, scuffed and battered from hundreds of games. Joy
+        keeps it front and center on the shelf, polished to a shine.
+    idle:
+      - A burst of glitter drifts down from somewhere near the ceiling for no apparent reason.
+      - The drawings on the wall seem to glow a little brighter for a moment.
+      - A sticky note peels off the corkboard and flutters to the floor. It reads "SMILE MORE :)"
+      - The room pulses with golden warmth, as if Joy's optimism is a physical force.
+
+  # ── SADNESS'S ROOM ──────────────────────────────────────────────────
+  - id: 207
+    title: "Sadness's Room"
+    desc: >-
+      <ansi fg="mobname">Sadness</ansi>'s room is small, cozy, and perpetually dim,
+      like a rainy afternoon that never quite ends. The walls are painted in soft
+      blues and grays, and every surface is covered in plush pillows, fuzzy blankets,
+      and oversized stuffed animals. A gentle sound of rainfall plays from somewhere,
+      though there's no visible source. Rain-themed decorations hang from the ceiling
+      -- delicate glass teardrops that catch what little light there is and scatter
+      it in pale blue patterns. A well-worn reading nook is built into one wall,
+      stacked with books that all seem to have bittersweet endings. Despite the
+      melancholy, there's something deeply comforting about this room, like a good
+      cry that leaves you feeling lighter.
+    biome: mindscape
+    symbol: S
+    legend: Sadness
+    exits:
+      north: 206
+      south: 208
+    nouns:
+      pillows: >-
+        The pillows are impossibly soft, the kind that make you want to sink in and
+        never get up. Each one is a different shade of blue, from pale sky to deep
+        ocean. They smell faintly of chamomile.
+      books: >-
+        The reading nook is stacked with well-thumbed books. Titles include "The
+        Giving Tree," "Where the Red Fern Grows," and a dog-eared copy of "It's
+        Okay to Feel Sad: A Complete History." Several have tearstains on the pages.
+      teardrops: >-
+        The glass teardrops hanging from the ceiling are beautiful in their sadness,
+        each one perfectly formed and catching the soft blue light. They chime
+        gently when the air shifts, making a sound like a music box winding down.
+    idle:
+      - The sound of gentle rainfall grows slightly louder, then fades back to a whisper.
+      - One of the glass teardrops catches the light and sends a cascade of blue across the walls.
+      - A pillow slowly deflates with a soft sigh, as if the room itself is feeling blue.
+      - The books in the reading nook seem to rearrange themselves, putting the saddest ones on top.
+
+  # ── ANGER'S ROOM ────────────────────────────────────────────────────
+  - id: 208
+    title: "Anger's Room"
+    desc: >-
+      The temperature spikes the moment you step into <ansi fg="mobname">Anger</ansi>'s
+      room. The walls are a deep, smoldering red, and thin wisps of steam curl up
+      from vents in the floor. Newspapers are everywhere -- stacked on the desk,
+      pinned to the walls, crumpled in the corners -- each one with headlines about
+      things that are JUST NOT FAIR. A heavy punching bag hangs from the ceiling in
+      one corner, visibly dented and patched in several places. A bookshelf holds
+      nothing but complaint forms, grievance logs, and a single cookbook titled "Cooking
+      With Rage: 50 Recipes For When Everything Is Wrong." The room rumbles faintly,
+      like a volcano deciding whether today is the day.
+    biome: mindscape
+    symbol: A
+    legend: Anger
+    exits:
+      north: 207
+      south: 209
+    nouns:
+      newspapers: >-
+        The newspapers are covered in headlines that would make anyone's blood boil.
+        "BROCCOLI ON PIZZA DECLARED ACCEPTABLE." "HOMEWORK OVER BREAK: TEACHERS SAY
+        YES." "SCREEN TIME LIMITS LOWERED AGAIN." Several have angry red circles
+        drawn around the worst offenses.
+      punching bag: >-
+        The punching bag has taken an absolute beating. It's held together with duct
+        tape and sheer stubbornness, and it still swings slightly as if it was just
+        hit. A scorch mark on one side suggests Anger got particularly heated during
+        a recent session.
+      cookbook: >-
+        "Cooking With Rage" is surprisingly well-organized. Chapter titles include
+        "Stress Baking At 2 AM," "Chopping Vegetables Like They Wronged You," and
+        "How To Make Toast When The Toaster Betrays You Again." Several pages are
+        singed around the edges.
+    idle:
+      - A newspaper on the desk bursts into flames briefly, then smolders out.
+      - The room temperature ticks up a few degrees and steam hisses from the floor vents.
+      - The punching bag swings on its own, as if struck by an invisible fist.
+      - A distant rumble shakes the room. The volcano metaphor is maybe not a metaphor.
+      - One of the complaint forms on the shelf spontaneously fills itself out.
+
+  # ── FEAR'S ROOM ─────────────────────────────────────────────────────
+  - id: 209
+    title: "Fear's Room"
+    desc: >-
+      <ansi fg="mobname">Fear</ansi>'s room is the most organized space in all of
+      Headquarters -- obsessively, almost disturbingly so. Every surface is labeled,
+      every item catalogued, every potential hazard identified with a small warning
+      sticker. Emergency exit plans are posted on every wall, each one for a different
+      scenario: fire, flood, surprise quiz, awkward silence, "what if the sun just
+      doesn't come up one day." A massive filing cabinet dominates one wall, its
+      drawers labeled "Worst Case Scenarios A-F," "Worst Case Scenarios G-L," and
+      so on through the alphabet, with a supplementary cabinet for "Worst Case
+      Scenarios: Unlikely But You Never Know." A night light glows in every corner.
+      There are four of them.
+    biome: mindscape
+    symbol: F
+    legend: Fear
+    exits:
+      north: 208
+      south: 210
+    nouns:
+      filing cabinet: >-
+        The filing cabinet is stuffed to bursting. A quick glance at the tabs reveals
+        entries like "Bear Attack (School)," "Bear Attack (Home)," "Bear Attack
+        (Unlikely But What If Bears Learn To Open Doors)," and an entire section
+        dedicated to "Social Situations That Could Go Wrong." The last section takes
+        up three drawers.
+      exit plans: >-
+        The emergency exit plans are meticulous. Each one includes a color-coded map,
+        a numbered list of steps, and a "panic level" rating from 1 to 10. The plan
+        for "Someone Asks You A Question In Class" is rated an 8. The plan for
+        "Actual Emergency" is, ironically, only a 6.
+      night lights: >-
+        Four night lights glow softly in the four corners of the room. Each one is a
+        different color and each one has a backup battery taped to it, just in case.
+        A label on one reads "DO NOT UNPLUG. EVER."
+    idle:
+      - One of the night lights flickers and the room's ambient anxiety level spikes noticeably.
+      - The filing cabinet drawer labeled "NEW WORRIES" slides open slightly on its own.
+      - A small alarm clock on the desk goes off, labeled "REMINDER: WORRY ABOUT TOMORROW."
+      - Something creaks in the walls and the emergency exit plans all flutter at once.
+
+  # ── DISGUST'S ROOM ──────────────────────────────────────────────────
+  - id: 210
+    title: "Disgust's Room"
+    desc: >-
+      <ansi fg="mobname">Disgust</ansi>'s room is, naturally, flawless. The walls
+      are a perfectly coordinated palette of greens and teals, every shade chosen
+      with surgical precision. A full-length mirror takes up the entire far wall,
+      framed in brushed gold. Fashion magazines are fanned out on a glass coffee
+      table in an arrangement that is definitely intentional. A vanity station lines
+      one wall, stocked with products organized by category, season, and "level of
+      emergency." The closet door is slightly ajar, revealing a color-coordinated
+      wardrobe that would make a department store jealous. There is not a single speck
+      of dust anywhere. Disgust would never allow it.
+    biome: mindscape
+    symbol: G
+    legend: Disgust
+    exits:
+      north: 209
+    nouns:
+      mirror: >-
+        The mirror is absolutely enormous and spotlessly clean. It reflects everything
+        in the room with perfect clarity, and the lighting around it is calibrated to
+        be flattering from every angle. A small engraved plaque at the base reads
+        "Standards: Have Them."
+      magazines: >-
+        The fashion magazines are current issues, arranged by color on the glass table.
+        Titles include "What NOT To Wear: A Comprehensive Guide," "Broccoli: Still
+        Disgusting, A Visual Essay," and "101 Eye Rolls For Every Occasion." Several
+        pages are bookmarked with color-coded tabs.
+      vanity: >-
+        The vanity is a masterwork of organization. Every product has its place, every
+        brush is aligned, and a laminated chart explains the correct order of
+        operations. A sticky note reads "If you don't know what setting spray is,
+        please leave."
+    idle:
+      - The mirror catches the light and sends a perfectly angled gleam across the room.
+      - A magazine page turns on its own, revealing a fashion spread that meets Disgust's standards.
+      - The closet door drifts open another inch, revealing even more perfectly organized outfits.
+      - An almost imperceptible speck of dust lands on the coffee table and is immediately vaporized.
+
+  # ── NEW ARRIVALS WING ───────────────────────────────────────────────
+  - id: 211
+    title: "New Arrivals Wing"
+    desc: >-
+      This wing of Headquarters has a noticeably different energy -- newer, sharper,
+      a little more intense. When Riley hit puberty, the renovation crew showed up
+      overnight and built this entire section to house the new emotions. The walls
+      are a sleeker material than the rest of Headquarters, with a slightly more
+      angular design. Motivational posters line the hallway (most of them put up by
+      <ansi fg="mobname">Anxiety</ansi>, most of them about preparation). A large
+      welcome mat at the entrance reads "NEW EMOTIONS THIS WAY" with an arrow, though
+      someone has crossed out "welcome" and written "brace yourself" underneath. Doors
+      branch off toward the newer emotion quarters, and the air crackles with the
+      restless energy of a mind figuring out who it's becoming.
+    biome: mindscape
+    symbol: N
+    legend: New Wing
+    exits:
+      east: 200
+      south: 212
+    nouns:
+      posters: >-
+        The motivational posters are an interesting mix. "PREPARE FOR THE WORST, HOPE
+        FOR THE SLIGHTLY LESS WORST" hangs next to "You're Doing Fine (Probably)" and
+        "HAVE YOU CONSIDERED ALL POSSIBLE OUTCOMES? (You Haven't.)" One poster just
+        says "meh" in very small text -- that one is definitely Ennui's.
+      welcome mat: >-
+        The welcome mat has seen some editorial revisions. The original text reads
+        "WELCOME, NEW EMOTIONS!" but it's been annotated several times. Anxiety added
+        "Please review the safety protocols." Embarrassment added "(sorry for
+        existing)." Ennui didn't add anything, which somehow says everything.
+    idle:
+      - A poster peels slightly off the wall and then sticks itself back with anxious precision.
+      - The lights in the hallway flicker to a slightly more intense shade, then settle.
+      - A faint sigh drifts from somewhere down the hall. Ennui, probably.
+      - The welcome mat shifts slightly, as if embarrassed to be noticed.
+
+  # ── ANXIETY'S WORKSTATION ───────────────────────────────────────────
+  - id: 212
+    title: "Anxiety's Workstation"
+    desc: >-
+      This is less a room and more a command center that got out of hand.
+      <ansi fg="mobname">Anxiety</ansi>'s workstation is a sprawling desk buried
+      under cascading piles of lists, plans, backup plans, backup plans for the
+      backup plans, and contingency protocols for scenarios that have a 0.001%
+      chance of occurring. Multiple screens are mounted on adjustable arms, each
+      showing a different "what if" scenario playing out in real-time simulation.
+      String connects pushpins on a massive corkboard, mapping out every possible
+      social interaction Riley might have tomorrow. A coffee maker in the corner
+      has been running nonstop for what looks like weeks. The chair has wheels but
+      it's clear Anxiety never sits still long enough to use them.
+    biome: mindscape
+    symbol: X
+    legend: Anxiety
+    exits:
+      north: 211
+    nouns:
+      screens: >-
+        The screens cycle through an overwhelming array of worst-case simulations.
+        One shows "What If Riley Says Something Weird At Lunch," another runs
+        "Probability Analysis: Will They Laugh AT Her Or WITH Her," and a third
+        is just a countdown to the next school presentation with the label "DAYS
+        OF DREAD REMAINING."
+      corkboard: >-
+        The corkboard is a conspiracy theorist's dream. Colored string connects
+        dozens of pushpins, mapping out branching paths of social consequences.
+        "Say hi to new kid" branches into "they say hi back (37%)" and "they
+        don't hear you (41%)" and "you accidentally say 'hi' too loud and everyone
+        looks (22%)." Each branch has further branches. It goes on for a while.
+      lists: >-
+        The lists are endless. "Things That Could Go Wrong Today," "Things That
+        Could Go Wrong Tomorrow," "Things That Could Go Wrong In General," and
+        the ominously thick "Things That Could Go Wrong That We Haven't Even
+        Thought Of Yet." Each list has sub-lists. The sub-lists have footnotes.
+    idle:
+      - A new "what if" scenario pops up on one of the screens with an urgent ping.
+      - The coffee maker gurgles and produces another cup that nobody will drink.
+      - A list falls off the desk, revealing another list underneath it. It's lists all the way down.
+      - One of the screens flashes "NEW CONCERN DETECTED" in orange block letters.
+      - The string on the corkboard vibrates slightly, as if new connections are being made.
+
+  # ── THE PROJECTION SCREEN ───────────────────────────────────────────
+  - id: 213
+    title: "The Projection Screen"
+    desc: >-
+      A small theater-like room houses an enormous projection screen that takes up
+      the entire far wall, broadcasting Riley's current sensory experience in vivid
+      detail. Comfortable seats are arranged in a few short rows facing the screen,
+      as if the emotions sometimes gather here to watch Riley's life like a movie.
+      The image quality is crystal clear -- you can see exactly what Riley sees, hear
+      what she hears, even get a faint sense of what she's feeling. A control panel
+      below the screen has buttons labeled "REWIND" (stuck), "PAUSE" (broken), and
+      "SKIP" (also broken, with a note: "Nice try -- Fear"). The room is warm and
+      the seats are well-worn from years of emotional viewing parties.
+    biome: mindscape
+    symbol: P
+    legend: Screen
+    exits:
+      northwest: 200
+    nouns:
+      screen: >-
+        The projection screen shows Riley's world in stunning detail. Right now she
+        seems to be scrolling through her phone. The emotions probably have opinions
+        about what she's looking at.
+      seats: >-
+        The seats are mismatched but comfortable -- each one seems tailored to a
+        different emotion. One is bright yellow with extra cushioning. One is blue
+        and extra soft. One is red and slightly warm to the touch. One is purple with
+        a seatbelt. One is green with impeccable upholstery.
+      controls: >-
+        The control panel is mostly decorative at this point. The REWIND button is
+        jammed ("Stop trying to relive things" reads a note from Sadness). The VOLUME
+        knob goes up to 11, and someone -- probably Anger -- has cranked it there and
+        glued it in place.
+    idle:
+      - The screen shows Riley laughing at something on her phone. The room brightens.
+      - Riley's perspective shifts as she looks out a window, and clouds drift across the screen.
+      - The projection flickers as Riley zones out for a moment, the image going soft and dreamy.
+      - A snippet of music plays through the room's speakers as Riley puts her earbuds in.
+      - The screen shows Riley's hand doodling in the margin of a notebook during class.
+
+  # ── SUPPLY CLOSET ───────────────────────────────────────────────────
+  - id: 214
+    title: "Supply Closet"
+    desc: >-
+      What was once a simple storage closet has been converted into a small but
+      well-stocked supply shop run by the Mind Workers. Shelves line every wall from
+      floor to ceiling, packed with all the emotional supplies Headquarters could
+      ever need. Boxes of spare memory orbs (blank, ready for imprinting) sit next
+      to jars of emotional essence in every color. A rack holds "Emergency Feeling
+      Kits" for various situations, and a bin near the door is labeled "LOST AND
+      FOUND: Thoughts Riley Started But Never Finished." A small counter near the
+      entrance has a bell on it and a sign reading "Ring for service. Please be
+      patient, we are also managing an entire mind."
+    biome: mindscape
+    symbol: $
+    legend: Shop
+    exits:
+      northeast: 200
+    nouns:
+      shelves: >-
+        The shelves are surprisingly well-organized for a closet. Everything is labeled
+        in neat handwriting. "Memory Orbs (Blank)," "Emotional Essence (Assorted),"
+        "Dream Supplies," "Imagination Fuel," and a top shelf labeled "DO NOT TOUCH"
+        that appears to contain bottled abstract thoughts.
+      bell: >-
+        A small brass bell sits on the counter, polished to a shine. A note beneath
+        it reads "One ring for service. Two rings if urgent. Three rings if Anger
+        broke something again."
+      kits: >-
+        The Emergency Feeling Kits come in several varieties: "First Day Of School,"
+        "Awkward Family Dinner," "Unexpected Compliment," and the popular "Someone
+        Is Being Nice And You Don't Know Why." Each kit contains a carefully curated
+        mix of emotional responses.
+    idle:
+      - A box of blank memory orbs rattles on a shelf, as if eager to be filled.
+      - The bell on the counter dings softly, though nobody touched it.
+      - A jar of golden emotional essence glows warmly from its spot on the shelf.
+
+  # ── HEADQUARTERS BALCONY ────────────────────────────────────────────
+  - id: 215
+    title: "Headquarters Balcony"
+    desc: >-
+      The open-air balcony extends out from the edge of Headquarters into the vast,
+      dizzying expanse of Riley's mind. A railing is the only thing between you and
+      a drop that seems to go on forever, descending past the towering shelves of
+      Long Term Memory that stretch into the distance like an endless library built
+      by giants. The shelves glow faintly with millions of stored memory orbs, their
+      combined light creating a soft aurora effect in the air below. A narrow stairway
+      carved into the outer wall of Headquarters winds downward, connecting to the
+      memory shelves far below. The wind up here carries fragments of old memories --
+      a snatch of a lullaby, the smell of cookies baking, the echo of a friend's
+      laugh. It's beautiful and a little terrifying.
+    biome: mindscape
+    symbol: B
+    legend: Balcony
+    exits:
+      west: 203
+      stairway: 300
+    nouns:
+      railing: >-
+        The railing is sturdy but looking over it makes your stomach drop. The
+        distance to the memory shelves below is staggering. A small sign on the
+        railing reads "Please do not drop memories over the edge. We lost a whole
+        month of 3rd grade that way."
+      shelves: >-
+        The Long Term Memory shelves stretch as far as the eye can see, row after
+        row of towering structures holding millions of memory orbs. Some sections
+        glow brightly -- frequently accessed memories. Other sections are dim and
+        dusty, their contents slowly fading with time.
+      stairway: >-
+        The narrow stairway winds down the outer wall of Headquarters in a tight
+        spiral, eventually reaching the top level of the Long Term Memory shelves.
+        It's a long way down. Someone has helpfully painted arrows on the steps
+        with notes like "You're almost there!" and "Okay maybe not almost."
+    idle:
+      - A warm breeze carries the faint smell of a birthday cake from somewhere deep in memory.
+      - Far below, a section of memory shelves flickers as an old memory is accessed.
+      - The aurora effect from the memory orbs below shifts from blue to gold and back again.
+      - A fragment of a song drifts up from the shelves -- Riley's favorite song from when she was eight.
+      - The stairway creaks faintly in the wind, but it seems solid enough. Probably.

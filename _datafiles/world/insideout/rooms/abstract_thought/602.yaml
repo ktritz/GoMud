@@ -1,0 +1,25 @@
+roomid: 602
+zone: Abstract Thought
+title: Perspective Shift Room
+description: 'Something is wrong here, but it takes a moment to figure out what. The room is shaped like a normal room, except the angles are all slightly off -- corners that should be ninety degrees are eighty-seven or ninety-three instead. The floor tilts differently depending on where you stand. Objects in the room are recognizable but their proportions have shifted: a chair is slightly too tall, a table is slightly too wide, a door frame leans two degrees to the left. Your own shadow falls in a direction that doesn''t match the light source. Everything is still identifiable, but the certainty you had about what things look like has started to slip. This is Stage One: perspective is no longer reliable.'
+mapsymbol: P
+maplegend: Perspective
+biome: abstract
+exits:
+  south:
+    roomid: 601
+  north:
+    roomid: 603
+nouns:
+  angles: The <ansi fg="itemname">angles</ansi> of the room refuse to be what they should be. You can see them being wrong -- that corner is definitely not a right angle -- but your brain keeps trying to correct them, filling in the geometry it expects. The effort of maintaining that correction is subtly exhausting, like reading a book where every word is misspelled by one letter.
+  objects: The <ansi fg="itemname">objects</ansi> are all real things -- a chair, a table, a lamp -- but their proportions are dreamlike. The chair would fit someone six inches taller than you. The lamp casts light that's slightly the wrong color. The table has five legs. You keep wanting to count them again because five doesn't seem right, but it is.
+spawninfo:
+- mobid: 48
+  message: A <ansi fg="mobname">perspective shifter</ansi> flickers into existence, its form constantly changing viewpoint.
+  respawnrate: 6 real minutes
+idlemessages:
+- The room tilts two degrees to the left. Or maybe you tilted. Hard to be sure.
+- Your shadow slides a few inches to the right, independent of your movement.
+- The chair in the corner grows an inch taller, then settles back. You think.
+- A straight line on the wall develops a subtle curve that straightens when you look directly at it.
+- The door frame leans the other direction for a moment, then corrects itself with a soft click.

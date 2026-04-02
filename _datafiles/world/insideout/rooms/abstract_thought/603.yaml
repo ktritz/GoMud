@@ -1,0 +1,25 @@
+roomid: 603
+zone: Abstract Thought
+title: Two-Dimensional Corridor
+description: 'Depth vanishes. The corridor ahead has flattened into something your eyes struggle to process -- walls that are perfectly visible but have no thickness, a floor that extends in length and width but has forgotten what height means. Your own body feels thinner, compressed, as if someone is slowly closing a book with you inside it. The colors are still present but they''ve simplified, reduced to flat fields with hard edges and no gradient, no shadow, no depth cue. Things that were behind other things are now beside them. Perspective is a memory. This is Stage Two: the third dimension is being politely but firmly removed.'
+mapsymbol: '2'
+maplegend: 2D
+biome: abstract
+exits:
+  south:
+    roomid: 602
+  north:
+    roomid: 604
+nouns:
+  walls: The <ansi fg="itemname">walls</ansi> exist in a way that shouldn't work but does. They have color and texture and you can touch them, but they have no thickness. Running your hand along one is like touching a projection -- it's there, you can feel it, but there's no "behind" to it. It's a surface without a solid, a face without a head.
+  edges: The <ansi fg="itemname">edges</ansi> between surfaces are razor-sharp, not because they're dangerous but because there's no curve to soften the transition. Every line is perfectly straight, every boundary absolute. The world has become a paper cutout of itself.
+spawninfo:
+- mobid: 46
+  message: A <ansi fg="mobname">geometric fragment</ansi> peels off the wall, its flat form rotating impossibly in two dimensions.
+  respawnrate: 5 real minutes
+idlemessages:
+- The corridor flattens further for a moment, and you feel your own depth compress slightly.
+- A color field shifts from blue to red with no transition, no blending -- just an instant change.
+- The floor ripples like a sheet of paper being shaken, then goes flat and still.
+- Your shadow disappears entirely. In two dimensions, there's nowhere for it to fall.
+- Something moves along the wall -- not on it, but in it, like a figure drawn on paper.

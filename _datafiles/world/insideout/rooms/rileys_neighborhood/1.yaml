@@ -1,0 +1,24 @@
+roomid: 1
+zone: Rileys Neighborhood
+title: Riley's Street
+description: A quiet suburban street winds through a row of painted Victorian houses, their pastel facades softened by a thin veil of San Francisco fog. Overhead wires crisscross between wooden utility poles, and a few parked cars line the curb with their windows fogged over. A weathered neighborhood sign stands near the sidewalk with a simple map of the area. The air smells like eucalyptus and damp pavement, and somewhere down the block a dog is barking at nothing.
+mapsymbol: S
+maplegend: Start
+biome: city
+exits:
+  north:
+    roomid: 2
+  east:
+    roomid: 6
+  south:
+    roomid: 12
+nouns:
+  sign: The <ansi fg="itemname">neighborhood sign</ansi> reads "Welcome to Andersen Heights" in faded blue letters. Below it, a simple map shows the nearby streets, the park to the north, and the bus stop to the south. Someone has drawn a tiny hockey stick in marker next to the park.
+  houses: The <ansi fg="itemname">Victorian houses</ansi> are a mix of cheerful colors -- pale yellow, dusty rose, seafoam green. Most have bay windows and narrow front steps. A few have bicycles chained to the railings. They look like they have been here for over a hundred years, which they probably have.
+  fog: The <ansi fg="itemname">fog</ansi> drifts in low wisps across the street, curling around the lampposts and settling into the gutters. It is the kind of fog that makes everything feel a little quieter and a little further away than it really is.
+idlemessages:
+- A jogger in bright yellow sneakers passes by with a quick wave.
+- A neighbor across the street checks their mailbox and shuffles back inside.
+- A hybrid car glides silently down the street, barely disturbing the fog.
+- Somewhere nearby, a garage door rattles open and then closed again.
+- A gray tabby cat watches you from a windowsill, tail flicking back and forth.

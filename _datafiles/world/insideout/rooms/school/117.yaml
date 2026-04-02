@@ -1,0 +1,23 @@
+roomid: 117
+zone: School
+title: Behind the Bleachers
+description: The narrow space behind the folded-up bleachers is dim, dusty, and exactly the kind of place where things happen that teachers pretend don't happen. Old gym mats are stacked against the wall, and the floor is littered with forgotten water bottles and the occasional lost earring. The metal framework of the bleachers looms overhead like a cage, and the sounds from the gym are muffled to a distant, dreamlike echo. The air feels heavier here, thick with dust motes and an anxious energy that makes your chest tight. Nervous whispers seem to come from everywhere and nowhere, and the shadows between the bleacher supports twist in ways that don't match the dim light.
+mapsymbol: '?'
+maplegend: Bleachers
+biome: city
+exits:
+  south:
+    roomid: 107
+nouns:
+  mats: The old gym <ansi fg="itemname">mats</ansi> are stacked haphazardly against the wall, their blue vinyl cracked and peeling. They smell like sweat and rubber and every awkward gymnastics unit since the school opened. Something skitters behind them when you look away.
+  bottles: Lost <ansi fg="itemname">water bottles</ansi> are scattered across the floor like the aftermath of a very hydrated battle. Most are empty. A few have names written on them in Sharpie -- "TYLER," "MADISON K. (NOT MADISON R.)," and one that just says "HELP."
+spawninfo:
+- mobid: 14
+  message: An <ansi fg="mobname">anxiety spiral</ansi> manifests from the nervous energy behind the bleachers, spinning into form.
+  respawnrate: 5 real minutes
+idlemessages:
+- A nervous whisper echoes between the bleacher supports, too faint to understand.
+- The distant thud of a basketball hitting the gym floor sounds strangely ominous from back here.
+- Dust motes drift through a thin shaft of light, spinning in slow, anxious circles.
+- The metal bleacher frame creaks and groans, settling with a sound like a deep breath.
+- Your own heartbeat seems louder back here, thudding in your ears for no good reason.

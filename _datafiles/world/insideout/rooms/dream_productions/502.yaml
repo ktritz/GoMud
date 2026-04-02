@@ -1,0 +1,21 @@
+roomid: 502
+zone: Dream Productions
+title: Soundstage A - Romance
+description: Pink and red lights bathe this cavernous soundstage in the warm glow of manufactured love. A balcony set dominates the center, complete with plastic roses, a painted moon backdrop that's slightly crooked, and a wind machine pointed at a spot marked "STAND HERE FOR HAIR FLOWING." Racks of hilariously overdramatic costumes line one wall -- puffy sleeves, sparkly gowns, and at least three different prince outfits. A boom box in the corner is permanently set to play soft saxophone music. The whole set radiates the kind of cheesy romance that makes you cringe and secretly enjoy it at the same time.
+mapsymbol: R
+maplegend: Romance
+biome: dreamset
+exits:
+  south:
+    roomid: 501
+  east:
+    roomid: 503
+nouns:
+  balcony: The <ansi fg="itemname">balcony set</ansi> is peak melodrama. The railing is made of spray-painted pool noodles, the roses are obviously plastic, and the moon backdrop has a visible seam down the middle. A director's note taped to the railing reads "MORE YEARNING. The audience can tell you're not yearning hard enough."
+  costumes: The <ansi fg="itemname">costumes</ansi> are gloriously terrible. There's a ball gown made entirely of doilies, a suit of armor with a heart painted on the chest, and a leather jacket labeled "BAD BOY LOVE INTEREST -- ONE SIZE FITS ALL." A sticky note on the rack reads "Disgust has requested we burn all of these. Request denied -- Joy."
+idlemessages:
+- The wind machine kicks on, sending a cascade of fake rose petals across the stage.
+- Soft saxophone music swells dramatically, then a record scratch kills it.
+- A spotlight snaps on, illuminating the balcony set in an absurdly flattering glow.
+- Two mannequins in the corner almost look like they're gazing into each other's eyes.
+- A crew member adjusts the moon backdrop, making it even more crooked than before.

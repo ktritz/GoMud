@@ -1,0 +1,9 @@
+buffid: 45
+name: Broccoli Boost
+description: The broccoli is... actually making you stronger? But it still tastes
+  terrible.
+triggerrate: 2 rounds
+triggercount: 3
+statmods:
+  strength: 10
+  speed: -5

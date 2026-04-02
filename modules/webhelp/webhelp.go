@@ -42,8 +42,8 @@ func init() {
 	//
 	// Add the embedded filesystem
 	//
-	if err := w.plug.AttachFileSystem(files); err != nil {
-		panic(err)
+	if plugins.LogInitError("webhelp", w.plug.AttachFileSystem(files)) {
+		return
 	}
 
 	w.plug.Web.WebPage(`Help`, `/help`, `help.html`, true, w.getHelpCategories)

@@ -1,0 +1,7 @@
+roomid: 9900
+zone: Tutorial
+title: Riley's First Thought
+description: You blink into existence in a small, cozy space that feels brand new. The walls shimmer with soft colors -- golds and blues and greens -- like the inside of a freshly formed memory orb. A friendly glowing orb floats nearby, pulsing gently as if waiting for you to notice it. This is where it all begins -- your first moment inside Riley's world. The orb seems to want to teach you something.
+exits:
+  east:
+    roomid: 9901

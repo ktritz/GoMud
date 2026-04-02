@@ -1,0 +1,20 @@
+roomid: 213
+zone: Headquarters
+title: The Projection Screen
+description: 'A small theater-like room houses an enormous projection screen that takes up the entire far wall, broadcasting Riley''s current sensory experience in vivid detail. Comfortable seats are arranged in a few short rows facing the screen, as if the emotions sometimes gather here to watch Riley''s life like a movie. The image quality is crystal clear -- you can see exactly what Riley sees, hear what she hears, even get a faint sense of what she''s feeling. A control panel below the screen has buttons labeled "REWIND" (stuck), "PAUSE" (broken), and "SKIP" (also broken, with a note: "Nice try -- Fear"). The room is warm and the seats are well-worn from years of emotional viewing parties.'
+mapsymbol: P
+maplegend: Screen
+biome: mindscape
+exits:
+  northwest:
+    roomid: 200
+nouns:
+  screen: The projection screen shows Riley's world in stunning detail. Right now she seems to be scrolling through her phone. The emotions probably have opinions about what she's looking at.
+  seats: The seats are mismatched but comfortable -- each one seems tailored to a different emotion. One is bright yellow with extra cushioning. One is blue and extra soft. One is red and slightly warm to the touch. One is purple with a seatbelt. One is green with impeccable upholstery.
+  controls: The control panel is mostly decorative at this point. The REWIND button is jammed ("Stop trying to relive things" reads a note from Sadness). The VOLUME knob goes up to 11, and someone -- probably Anger -- has cranked it there and glued it in place.
+idlemessages:
+- The screen shows Riley laughing at something on her phone. The room brightens.
+- Riley's perspective shifts as she looks out a window, and clouds drift across the screen.
+- The projection flickers as Riley zones out for a moment, the image going soft and dreamy.
+- A snippet of music plays through the room's speakers as Riley puts her earbuds in.
+- The screen shows Riley's hand doodling in the margin of a notebook during class.

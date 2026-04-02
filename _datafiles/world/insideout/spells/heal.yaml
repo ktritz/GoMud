@@ -1,0 +1,8 @@
+spellid: heal
+name: Minor Heal
+description: Restores a small amount of health with a warm glow
+type: helpsingle
+school: restoration
+cost: 3
+waitrounds: 2
+difficulty: 0

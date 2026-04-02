@@ -1,0 +1,6 @@
+name: Long Term Memory
+roomid: 300
+autoscale:
+  minimum: 4
+  maximum: 7
+defaultbiome: mindscape

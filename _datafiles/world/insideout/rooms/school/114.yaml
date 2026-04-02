@@ -1,0 +1,20 @@
+roomid: 114
+zone: School
+title: Bathroom
+description: A standard-issue school bathroom with all the charm you'd expect. Fluorescent lights buzz overhead, giving everything a sickly pale cast. The tile walls are that specific shade of institutional green that exists nowhere in nature. Two of the three stall doors actually lock. The mirrors above the sinks are scratched with initials and the soap dispensers are either empty or dispense a mysterious pink liquid that doesn't really feel like soap. A hand dryer on the wall is the jet-engine variety that sounds like a small aircraft taking off. Someone has written "YOU'RE DOING GREAT" on the inside of the main stall door in Sharpie, which is either vandalism or the most supportive graffiti you've ever seen.
+mapsymbol: B
+maplegend: Bathroom
+biome: city
+exits:
+  north:
+    roomid: 112
+idlemessages:
+- Someone drops their books outside and you cringe sympathetically.
+- The hand dryer startles you with its sudden roar.
+- A faucet drips steadily into the silence -- plip, plip, plip.
+- The fluorescent light flickers and for a second you catch your own startled expression in the mirror.
+- Someone in the hallway laughs loudly and you wonder if it's about you. It's probably not. Probably.
+spawninfo:
+- mobid: 13
+  message: A doubt shadow flickers into existence near the bathroom mirror.
+  respawnrate: 5 real minutes

@@ -1,0 +1,11 @@
+itemid: 30010
+name: nostalgia cookie
+namesimple: cookie
+description: 'A homemade cookie that tastes exactly like the ones your grandma used
+  to make. Each bite brings a wave of warm, bittersweet memories.'
+type: food
+subtype: drinkable
+uses: 1
+value: 25
+buffids:
+- 49

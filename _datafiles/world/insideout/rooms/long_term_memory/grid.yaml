@@ -1,0 +1,57 @@
+# Auto-generated grid layout
+#
+# y+0:          [300]
+# y-1:  [306]   [301]
+# y-2:  [307]   [302]
+# y-3:  [308]   [303]
+# y-4:  [316]   [304]
+# y-5:          [305]
+# y-6:          [309]
+# y-7:          [310]
+# y-8:          [311]
+# y-9:          [312]
+# y-10:          [313]
+# y-11:          [314]
+# y-12:          [315]
+# y-13:          [317]
+# y-14:          [318]
+# y-15:          [319]
+# y-16:          [320]
+#
+
+grid:
+  "0,0": 300    # Memory Shelf Entrance
+  "0,-1": 301    # Yellow Memory Corridor
+  "0,-2": 302    # Blue Memory Corridor
+  "0,-3": 303    # Red Memory Corridor
+  "0,-4": 304    # Purple Memory Corridor
+  "0,-5": 305    # Green Memory Corridor
+  "-1,-1": 306    # Fading Memory Aisle
+  "-1,-2": 307    # Dusty Memory Corner
+  "-1,-3": 308    # The Forgetting Shelf
+  "0,-6": 309    # Mind Worker Break Room
+  "0,-7": 310    # Memory Sorting Station
+  "0,-8": 311    # Triple Dent Gum Alley
+  "0,-9": 312    # Bing Bong's Hideout
+  "0,-10": 313    # Childhood Memory Wing
+  "0,-11": 314    # Deep Memory Shelf
+  "0,-12": 315    # Twisted Memory Path
+  "-1,-4": 316    # Memory Dump Access
+  "0,-13": 317    # Mind Worker Patrol Route
+  "0,-14": 318    # Crumbling Memory Wall
+  "0,-15": 319    # Emotional Tag Station
+  "0,-16": 320    # Bridge to Imagination Land
+
+special_exits:
+  300:
+    stairway:
+      roomid: 215
+    tube:
+      roomid: 205
+  315:
+    gate:
+      roomid: 700
+  316:
+    down:
+      roomid: 800
+      lock: {'difficulty': 10}

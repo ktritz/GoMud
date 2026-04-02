@@ -1,0 +1,23 @@
+mobid: 40
+zone: Dream Productions
+hostile: false
+maxwander: 0
+activitylevel: 25
+groups:
+- dream-workers
+idlecommands:
+- shout CUT! CUT! That's all wrong!
+- emote adjusts his beret and peers through an imaginary viewfinder.
+- say We need more EMOTION in this scene!
+- ''
+scripttag: questgiver
+questflags:
+- 4-start
+- 4-script
+- 4-return
+- 4-end
+character:
+  name: dream director
+  description: A dramatic figure perched in a folding director's chair, wearing a black beret tilted at a rakish angle and oversized sunglasses indoors. He holds a battered megaphone in one hand and gestures wildly with the other, directing scenes that nobody asked for with the intensity of someone filming an epic. Every conversation is a screenplay, every moment a chance for a dramatic close-up. He takes his art very seriously, even if nobody else on set does.
+  level: 20
+  raceid: 3

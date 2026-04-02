@@ -1,0 +1,21 @@
+roomid: 210
+zone: Headquarters
+title: Disgust's Room
+description: Disgust's room is, naturally, flawless. The walls are a perfectly coordinated palette of greens and teals, every shade chosen with surgical precision. A full-length mirror takes up the entire far wall, framed in brushed gold. Fashion magazines are fanned out on a glass coffee table in an arrangement that is definitely intentional. A vanity station lines one wall, stocked with products organized by category, season, and "level of emergency." The closet door is slightly ajar, revealing a color-coordinated wardrobe that would make a department store jealous. There is not a single speck of dust anywhere. Disgust would never allow it.
+mapsymbol: G
+maplegend: Disgust
+biome: mindscape
+exits:
+  north:
+    roomid: 209
+  west:
+    roomid: 200
+nouns:
+  mirror: 'The mirror is absolutely enormous and spotlessly clean. It reflects everything in the room with perfect clarity, and the lighting around it is calibrated to be flattering from every angle. A small engraved plaque at the base reads "Standards: Have Them."'
+  magazines: 'The fashion magazines are current issues, arranged by color on the glass table. Titles include "What NOT To Wear: A Comprehensive Guide," "Broccoli: Still Disgusting, A Visual Essay," and "101 Eye Rolls For Every Occasion." Several pages are bookmarked with color-coded tabs.'
+  vanity: The vanity is a masterwork of organization. Every product has its place, every brush is aligned, and a laminated chart explains the correct order of operations. A sticky note reads "If you don't know what setting spray is, please leave."
+idlemessages:
+- The mirror catches the light and sends a perfectly angled gleam across the room.
+- A magazine page turns on its own, revealing a fashion spread that meets Disgust's standards.
+- The closet door drifts open another inch, revealing even more perfectly organized outfits.
+- An almost imperceptible speck of dust lands on the coffee table and is immediately vaporized.

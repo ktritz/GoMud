@@ -1,0 +1,23 @@
+roomid: 903
+zone: The Back of the Mind
+title: The Emotion Vault
+description: 'The vault is a circular chamber of polished steel and reinforced glass, designed with a single, terrible purpose: to contain Riley''s emotions so completely that she cannot feel them. Five empty containment pods stand in a ring around the room, each one shaped to hold a specific emotion -- Joy, Sadness, Anger, Fear, Disgust. The pods are open now, their restraints dangling loose, but the scuff marks on the floor and the dents in the steel walls tell the story of what happened here. A central console controls the suppression field, its screens still displaying emotional readouts that flatline one by one. This is where Anxiety tried to protect Riley by removing everything that made her feel. The room hums with residual energy and a profound, clinical emptiness.'
+mapsymbol: V
+maplegend: Vault
+biome: dungeon
+exits:
+  south:
+    roomid: 902
+  north:
+    roomid: 904
+    lock:
+      difficulty: 20
+nouns:
+  containment pods: The <ansi fg="itemname">containment pods</ansi> are transparent capsules sized for humanoid emotions. Joy's pod still has faint golden fingerprints on the inside of the glass where she pressed against it. Sadness's pod has a small puddle of blue at the bottom that never evaporates. Anger's pod is dented outward in several places. Fear's pod has scratch marks on the lock. Disgust's pod is the cleanest -- she refused to touch the walls.
+  console: 'The central <ansi fg="itemname">console</ansi> is Anxiety''s masterwork -- a sprawling control system that monitored and suppressed Riley''s emotional output in real time. Screens display graphs of emotional intensity, all trending toward zero. One screen still reads "OPERATION: PROTECT RILEY. STATUS: ACTIVE." Beneath it, someone -- maybe Joy, maybe Sadness -- has scratched "This isn''t protection."'
+idlemessages:
+- A containment pod hums and its restraints twitch, as if remembering the emotion they held.
+- The console beeps softly and an emotional readout flickers from flatline to a brief spike of blue.
+- Golden fingerprints on Joy's pod glow faintly, then fade.
+- The puddle of blue in Sadness's pod ripples, moved by a feeling too deep to suppress completely.
+- The suppression field hums louder for a moment and your emotions feel muffled, then the hum fades.

@@ -1,0 +1,22 @@
+roomid: 959
+zone: Belief System
+title: Identity Island - Honesty
+description: Everything here is transparent. The ground beneath your feet is crystal -- clear, flawless, hiding nothing. The structures on this island are built from glass-like material that lets you see through walls, through floors, through everything. There are no hidden rooms, no locked doors, no secrets. A central pillar of pure white light rises from the island's core, representing the belief that truth matters even when it's hard. Inscriptions in the crystal record moments when Riley chose honesty over comfort -- telling the truth about breaking a vase, admitting she was struggling at school, saying how she really felt instead of pretending everything was fine. The island hums with the clean, clear frequency of a mind that values authenticity.
+mapsymbol: T
+maplegend: Honesty
+biome: mindscape
+exits:
+  west:
+    roomid: 958
+  east:
+    roomid: 960
+nouns:
+  crystal: 'The <ansi fg="itemname">crystal</ansi> ground is mesmerizing. Through it, you can see the island''s internal structure -- layers of honest moments stacked like geological strata, each one adding strength. The oldest layers, from early childhood, are simple: "I did it. I''m sorry." The newer ones are more complex, more nuanced, more brave.'
+  pillar: The central <ansi fg="itemname">pillar</ansi> of light is honesty in its purest form -- the belief that being truthful is part of who Riley is, even when the truth is inconvenient or scary. It doesn't waver or flicker. It simply is, steady and constant, the backbone of integrity.
+  inscriptions: The <ansi fg="itemname">inscriptions</ansi> in the crystal are a record of courageous truth-telling. "I told Mom I was homesick." "I admitted I needed help with math." "I said sorry and meant it." Each one was hard in the moment and strengthened the island afterward. The newest inscription is still being carved -- honesty is always in progress.
+idlemessages:
+- The crystal ground brightens as a truth is acknowledged somewhere in Riley's mind.
+- The central pillar pulses once, clean and white, a heartbeat of integrity.
+- An inscription deepens in the crystal, reinforced by a moment of difficult honesty.
+- The transparent walls reflect nothing -- they have nothing to hide, and neither does Riley.
+- A clear tone rings across the island, the sound of a truth spoken plainly.

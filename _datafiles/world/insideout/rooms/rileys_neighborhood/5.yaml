@@ -1,0 +1,26 @@
+roomid: 5
+zone: Rileys Neighborhood
+title: Riley's Kitchen
+description: A bright, modern kitchen with white tile and butcher-block countertops. The counter is cluttered with the usual stuff -- a fruit bowl, a toaster, and a half-empty bag of chips someone forgot to clip shut. The fridge is covered in magnets, takeout menus, and a couple of drawings from when Riley was little. There's a lingering smell of coffee and whatever Mom made for dinner last night. A window above the sink looks out into the tiny backyard.
+mapsymbol: K
+maplegend: Kitchen
+biome: city
+exits:
+  west:
+    roomid: 4
+  south:
+    roomid: 22
+  basement:
+    roomid: 28
+nouns:
+  fridge: The <ansi fg="itemname">fridge</ansi> is a museum of the Andersen family's life. Alphabet magnets spell out something that might have once been "RILEY ROCKS" but now reads "RILE OCKS." There's a coupon for pizza, a dentist appointment card, and a photo of the family dog they had in Minnesota. Inside, you know there's leftover broccoli pizza that nobody wants.
+  counter: The <ansi fg="itemname">counter</ansi> has a cutting board with a few bread crumbs, a jar of peanut butter with the lid off, and three mugs in various states of being washed. Mom's "World's Okayest Cook" mug is front and center.
+  drawings: The <ansi fg="itemname">drawings</ansi> on the fridge are from when Riley was maybe five or six. One shows a yellow house with a red door and a smiling sun. Another is a crayon portrait of the family with arms way too long and heads way too big. They're curling at the edges but nobody would ever think of taking them down.
+spawninfo:
+- mobid: 3
+  message: Riley's Mom comes in and starts wiping down the counter.
+  respawnrate: 5 real minutes
+idlemessages:
+- The coffee maker gurgles and hisses.
+- A magnet slides down the fridge and clatters onto the floor.
+- Something in the fruit bowl is probably past its prime.

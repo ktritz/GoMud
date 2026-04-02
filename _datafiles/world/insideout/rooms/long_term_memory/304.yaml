@@ -1,0 +1,24 @@
+roomid: 304
+zone: Long Term Memory
+title: Purple Memory Corridor
+description: The light drops to a dim, flickering purple as you enter this section. The fear memories on these shelves give off an uncertain, jittery glow that never quite holds steady, casting twitching shadows that make the corridor feel like it is moving when you are not. The shelves seem to lean inward overhead, though that might just be a trick of the anxious light. The air is chilly and thin, and every small sound -- a settling shelf, a shifting orb -- is amplified into something that makes you want to look over your shoulder. The passage ahead is darker still.
+mapsymbol: P
+maplegend: Purple
+biome: mindscape
+exits:
+  north:
+    roomid: 303
+  south:
+    roomid: 305
+nouns:
+  fear memories: The <ansi fg="itemname">fear memories</ansi> flicker nervously. One shows a dark hallway at night. Another captures the moment before a test you did not study for. A third replays the split second of tripping in front of everyone. Looking at them too long makes your pulse quicken.
+idlemessages:
+- A purple orb sputters and the shadows around you lurch sideways.
+- You hear a faint creaking from somewhere deep in the shelves. It is probably nothing.
+- The temperature drops a few degrees and the hair on your arms stands up.
+- A memory orb rolls an inch on its shelf with a soft click that sounds deafening in the silence.
+- Something flickers at the edge of your vision, but when you turn there is nothing there.
+spawninfo:
+- mobid: 35
+  message: A fading memory flickers into view among the purple orbs.
+  respawnrate: 5 real minutes

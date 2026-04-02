@@ -1,0 +1,69 @@
+mobid: 5
+zone: Rileys Neighborhood
+hostile: false
+maxwander: 0
+activitylevel: 20
+groups:
+- neighborhood-npc
+idlecommands:
+- emote blows his whistle sharply and points at the ice.
+- say Hustle! Hustle! You can rest when you're old!
+- say Good effort out there. Now do it again, but better.
+- emote scribbles something on his clipboard and nods approvingly.
+- say Hockey isn't just a sport, it's a way of life. Now lace up.
+- ''
+- ''
+character:
+  name: hockey coach
+  description: A tough but encouraging coach with a whistle around his neck and a clipboard perpetually tucked under one arm. He wears a team windbreaker and has the kind of voice that carries across an entire ice rink without effort. He pushes his players hard but always follows it up with genuine encouragement, firmly believing that hockey builds character and that every kid deserves a shot on the ice.
+  level: 15
+  raceid: 1
+  shop:
+    - itemid: 10002
+      quantitymax: 2
+    - itemid: 10016
+      quantitymax: 2
+    - itemid: 10017
+      quantitymax: 2
+    - itemid: 10018
+      quantitymax: 2
+    - itemid: 20002
+      quantitymax: 2
+    - itemid: 20060
+      quantitymax: 2
+    - itemid: 20061
+      quantitymax: 2
+    - itemid: 20062
+      quantitymax: 2
+    - itemid: 20063
+      quantitymax: 3
+    - itemid: 20066
+      quantitymax: 2
+    - itemid: 20070
+      quantitymax: 2
+    - itemid: 20031
+      quantitymax: 2
+    - itemid: 20072
+      quantitymax: 2
+    - itemid: 20073
+      quantitymax: 1
+    - itemid: 20074
+      quantitymax: 3
+    - itemid: 20075
+      quantitymax: 2
+    - itemid: 20076
+      quantitymax: 3
+    - itemid: 20077
+      quantitymax: 3
+    - itemid: 20078
+      quantitymax: 2
+    - itemid: 20079
+      quantitymax: 2
+    - itemid: 20080
+      quantitymax: 1
+    - itemid: 20081
+      quantitymax: 3
+    - itemid: 20082
+      quantitymax: 2
+    - itemid: 20083
+      quantitymax: 2

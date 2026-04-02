@@ -1,0 +1,19 @@
+mobid: 72
+zone: School
+scripttag: questgiver
+hostile: false
+maxwander: 0
+activitylevel: 25
+groups:
+- school-npc
+idlecommands:
+- emote dabs paint on a canvas, tilting her head at the result.
+- say Every color is a feeling. What are you feeling today?
+- emote arranges brushes by size, then changes her mind and arranges them by color.
+- ''
+- ''
+character:
+  name: ms. flores
+  description: Ms. Flores is the art teacher, a vibrant woman who always has paint somewhere on her hands, her clothes, or her face. She wears flowing scarves and chunky jewelry she made herself, and her classroom smells like turpentine and possibility. She believes every student is an artist and has a gift for finding something genuinely good to say about even the most questionable finger painting.
+  level: 15
+  raceid: 1

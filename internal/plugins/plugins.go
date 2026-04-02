@@ -100,6 +100,15 @@ func New(name string, version string) *Plugin {
 	return p
 }
 
+func LogInitError(component string, err error) bool {
+	if err == nil {
+		return false
+	}
+
+	mudlog.Error("plugin init disabled", "component", component, "error", err)
+	return true
+}
+
 func (p pluginRegistry) GetExportedFunction(funcName string) (any, bool) {
 	for _, pItem := range registry {
 
@@ -394,11 +403,7 @@ func (p *Plugin) ReadIntoStruct(identifier string, out any) error {
 		return err
 	}
 
-	if err = yaml.Unmarshal(b, out); err == nil {
-		return err
-	}
-
-	return nil
+	return yaml.Unmarshal(b, out)
 }
 
 func Load(dataFilesPath string) {

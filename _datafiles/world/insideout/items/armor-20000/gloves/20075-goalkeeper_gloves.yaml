@@ -1,0 +1,11 @@
+itemid: 20075
+name: goalkeeper gloves
+namesimple: gloves
+description: Bulky goalkeeper gloves with foam padding and a sticky latex grip. Perfect for catching things thrown at your face.
+type: gloves
+subtype: wearable
+uses: 0
+damage:
+  diceroll: 0d0
+defense: 2
+value: 35

@@ -1,0 +1,21 @@
+roomid: 905
+zone: The Back of the Mind
+title: The Bottled-Up Room
+description: 'Floor-to-ceiling shelves hold hundreds of sealed glass bottles, each one containing a single suppressed emotion rendered visible as a swirling, luminous liquid. The bottles glow in every color -- golden joy, deep blue sadness, furious red anger, sharp green disgust, nervous purple fear, and newer colors too: soft pink embarrassment, teal envy, burnt orange nostalgia. Some bottles are calm, their contents drifting in gentle currents. Others vibrate on the shelf, their emotions straining against the glass with visible intensity. A few bottles have hairline cracks, leaking wisps of colored vapor that curl through the air before being recaptured by the suppression field. This is what happens when you tell yourself you are fine for too long.'
+mapsymbol: B
+maplegend: Bottled
+biome: dungeon
+exits:
+  south:
+    roomid: 904
+  north:
+    roomid: 906
+nouns:
+  bottles: 'The <ansi fg="itemname">bottles</ansi> are labeled in Anxiety''s meticulous handwriting. "JOY-4,872: The time Riley laughed so hard milk came out of her nose. SUPPRESSED: Too undignified." "SADNESS-891: Missing her old bedroom. SUPPRESSED: Not helpful." "ANGER-2,103: Being told she was overreacting. SUPPRESSED: Might cause a scene." Each label is clinical and precise, and each one is quietly heartbreaking.'
+  cracks: The <ansi fg="itemname">cracks</ansi> in the compromised bottles leak emotion in visible wisps of colored vapor. A golden wisp from a cracked joy bottle brushes against you and for a split second you remember exactly what it felt like to jump in puddles after rain. Then the suppression field pulls it back. A blue wisp carries the ghost of a good cry -- the kind that makes you feel better afterward. Then it too is recaptured.
+idlemessages:
+- A golden bottle vibrates on its shelf and a wisp of joy escapes through a hairline crack.
+- A blue bottle pulses slowly, its sadness pressing against the glass like a face against a window.
+- A red bottle rattles so hard it nearly falls, then settles back with a defiant clink.
+- Colored vapor wisps through the air -- gold, blue, red, green -- before the suppression field pulls them back.
+- You hear a faint laugh trapped inside a nearby bottle and for a moment you feel something. Then it is gone.

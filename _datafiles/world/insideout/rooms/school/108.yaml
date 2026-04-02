@@ -1,0 +1,23 @@
+roomid: 108
+zone: School
+title: Gym Storage
+description: A dim, cluttered storage room packed floor to ceiling with the accumulated sports equipment of decades. Mesh bags of dodgeballs hang from hooks on the wall, and a rack of basketball carts is shoved into the corner. The overhead light is burned out -- it's been burned out for a while -- so the only illumination comes from the crack under the door and a faint, unsettling glow from somewhere behind the equipment racks. Shadows pool in the corners and seem to shift when you're not looking directly at them. The air is stale and thick, and the room has that forgotten feeling of a place nobody checks on very often. Something back here doesn't feel right.
+mapsymbol: D
+maplegend: Storage
+biome: city
+exits:
+  north:
+    roomid: 107
+nouns:
+  equipment: The sports <ansi fg="itemname">equipment</ansi> is a disorganized mountain of rubber, metal, and nylon. Deflated footballs, cracked hockey sticks, a volleyball net tangled beyond salvation, and jump ropes coiled like snakes. Half of this stuff probably hasn't been used since the Clinton administration. Something rattles in the back when you look away.
+  shadows: The <ansi fg="itemname">shadows</ansi> in the corners are darker than they should be, given the crack of light from the door. They seem to have weight and texture, pooling like liquid in the spaces between the equipment racks. If you stare long enough, you could swear they're breathing.
+spawninfo:
+- mobid: 13
+  message: A <ansi fg="mobname">doubt shadow</ansi> coalesces from the darkness behind the equipment rack.
+  respawnrate: 5 real minutes
+idlemessages:
+- Something shifts in the darkness at the back of the room.
+- A dodgeball rolls off a shelf by itself and thumps to the floor.
+- The shadows in the corner ripple, like the surface of dark water disturbed by something underneath.
+- A faint whisper reaches you from behind the equipment racks -- too quiet to make out the words.
+- The air grows noticeably colder for a moment, then returns to normal.

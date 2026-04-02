@@ -1,0 +1,21 @@
+roomid: 514
+zone: Dream Productions
+title: Broadcast Tower
+description: A spiraling antenna rises through the center of this circular room, punching through the ceiling and extending upward toward Riley's sleeping consciousness. Control panels ring the base of the antenna, covered in dials, switches, and a single large broadcast lever labeled "SEND DREAM." Screens mounted on the walls show the current dream feed -- what Riley is experiencing right now as she sleeps. The antenna hums with a low, resonant frequency that you feel in your chest more than hear with your ears. Cables snake across the floor, connecting the tower to every soundstage, set, and effects lab in Dream Productions. This is the final step -- where finished dreams become the movies that play behind Riley's closed eyes.
+mapsymbol: ^
+maplegend: Tower
+biome: dreamset
+exits:
+  west:
+    roomid: 513
+  up:
+    roomid: 515
+nouns:
+  antenna: The <ansi fg="itemname">antenna</ansi> is a twisting spire of crystallized dream energy, humming with power. It translates finished dream productions into the neural signal that Riley's sleeping brain interprets as experience. Up close, you can see tiny scenes flickering inside the crystal -- fragments of tonight's dreams, queued and ready.
+  lever: 'The <ansi fg="itemname">broadcast lever</ansi> is big, red, and satisfying- looking. A sign above it reads "PULL TO BROADCAST. Warning: Once sent, dreams cannot be recalled. If the dream involves teeth falling out, please verify this is intentional." A counter below tracks total dreams broadcast: 47,832.'
+idlemessages:
+- The antenna hums louder for a moment as a dream sequence is transmitted to Riley.
+- Screens flicker and show Riley tossing slightly in her sleep as a dream takes hold.
+- A cable on the floor sparks with dream energy, sending a brief flash of color into the air.
+- The broadcast counter ticks up by one. Another dream, successfully delivered.
+- The antenna's crystal core pulses brighter, cycling through the colors of Riley's emotions.

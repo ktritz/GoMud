@@ -7,6 +7,7 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"sync"
 
 	"github.com/natefinch/lumberjack"
 )
@@ -14,6 +15,7 @@ import (
 var (
 	slogInstance *slog.Logger
 	logLevel     = new(slog.LevelVar) // goroutine safe way to change log levels
+	fallbackOnce sync.Once
 )
 
 type teeLogger interface {
@@ -79,18 +81,32 @@ func SetupLogger(inGameLogger teeLogger, logLevel string, logPath string, colorL
 
 }
 
+func ensureLogger() {
+	if slogInstance != nil {
+		return
+	}
+
+	fallbackOnce.Do(func() {
+		slogInstance = slog.New(getLogHandler(os.Stderr, nil, false))
+	})
+}
+
 func Debug(msg string, args ...any) {
+	ensureLogger()
 	slogInstance.Log(context.Background(), slog.LevelDebug, msg, args...)
 }
 
 func Info(msg string, args ...any) {
+	ensureLogger()
 	slogInstance.Log(context.Background(), slog.LevelInfo, msg, args...)
 }
 
 func Warn(msg string, args ...any) {
+	ensureLogger()
 	slogInstance.Log(context.Background(), slog.LevelWarn, msg, args...)
 }
 
 func Error(msg string, args ...any) {
+	ensureLogger()
 	slogInstance.Log(context.Background(), slog.LevelError, msg, args...)
 }

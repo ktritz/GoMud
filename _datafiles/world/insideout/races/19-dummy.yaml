@@ -1,0 +1,23 @@
+raceid: 19
+name: dummy
+description: 'A simple training dummy. It doesn''t fight back. Much.'
+defaultalignment: 0
+size: medium
+unarmedname: thud
+tnlscale: 1
+selectable: false
+knowsfirstaid: false
+tameable: false
+damage:
+  diceroll: 1d1
+disabledslots:
+- weapon
+- offhand
+- head
+- neck
+- body
+- belt
+- gloves
+- ring
+- legs
+- feet

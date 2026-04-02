@@ -1,0 +1,19 @@
+mobid: 73
+zone: School
+scripttag: questgiver
+hostile: false
+maxwander: 0
+activitylevel: 25
+groups:
+- school-npc
+idlecommands:
+- emote taps out a rhythm on the edge of his desk with two pencils.
+- say Music is just organized sound. And sometimes disorganized sound. Both are valid.
+- emote hums a melody that's either jazz or a commercial jingle, hard to tell.
+- ''
+- ''
+character:
+  name: mr. ortiz
+  description: Mr. Ortiz is the music teacher, a laid-back guy in his thirties who somehow makes a button-down shirt and khakis look like concert attire. He plays guitar, piano, drums, and "a little bit of everything else." His classroom is full of instruments in various states of being borrowed and never returned, and he has strong opinions about the difference between music and noise that he will share whether or not you asked.
+  level: 15
+  raceid: 1

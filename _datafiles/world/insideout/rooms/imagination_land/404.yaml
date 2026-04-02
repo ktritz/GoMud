@@ -1,0 +1,22 @@
+roomid: 404
+zone: Imagination Land
+title: Lava Floor Living Room
+description: A massive living room stretches before you, furnished with overstuffed couches, armchairs, and coffee tables -- all arranged in a chaotic obstacle course across a floor of bubbling, glowing lava. The furniture is the only safe ground. The lava itself is a vivid, cartoon orange, rolling in slow waves and occasionally belching a harmless puff of warm air. Throw pillows are scattered strategically as stepping stones between the larger pieces, and scorch marks on the furniture legs tell the story of countless daring leaps and narrow escapes. A massive sign on the wall reads "THE FLOOR IS LAVA" in dripping red letters, as if that needed clarification.
+mapsymbol: L
+maplegend: Lava
+biome: land
+exits:
+  north:
+    roomid: 403
+  south:
+    roomid: 405
+nouns:
+  couches: The <ansi fg="itemname">couches</ansi> are massive, well-worn, and positioned just far enough apart to make jumping between them a genuine challenge. Their cushions are slightly singed on the bottom edges. Each one wobbles when you land on it, adding to the thrill.
+  lava: The <ansi fg="itemname">lava</ansi> is warm but not actually dangerous -- this is Imagination Land, after all. If you fell in you would probably just feel embarrassed. But the RULES say it is lava, and in here, the rules of imagination are the only rules that matter. So do not touch the floor.
+  pillows: The throw <ansi fg="itemname">pillows</ansi> serve as stepping stones between the larger furniture pieces. They sink slightly into the lava when you step on them, giving you about two seconds before they go under. Speed and commitment are required.
+idlemessages:
+- The lava bubbles and a warm puff of air rises, smelling faintly of cinnamon.
+- A throw pillow drifts across the lava like a tiny raft, spinning slowly.
+- Someone -- or something -- leaps between couches in the distance with a triumphant yell.
+- The lava belches cheerfully and a couch wobbles on its perch.
+- A scorch mark appears on a coffee table leg. The lava is getting closer. Probably.

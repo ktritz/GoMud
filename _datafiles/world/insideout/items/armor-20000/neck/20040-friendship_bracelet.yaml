@@ -1,0 +1,11 @@
+itemid: 20040
+name: friendship bracelet
+namesimple: bracelet
+description: 'A braided friendship bracelet that Riley''s best friend from Minnesota
+  made her before the move. Worn around the neck on a string.'
+type: neck
+subtype: wearable
+damagereduction: 0
+statmods:
+  perception: 1
+value: 5

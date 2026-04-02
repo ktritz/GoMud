@@ -1,0 +1,16 @@
+mobid: 63
+zone: Belief System
+hostile: false
+maxwander: 3
+activitylevel: 20
+groups:
+- headquarters-emotion
+idlecommands:
+- emote glows protectively, its colors shifting with quiet intensity.
+- say These islands are who Riley is. I won't let them fall.
+- ''
+character:
+  name: identity guardian
+  description: A luminous protector of the personality islands, standing tall with a posture that radiates quiet, unwavering resolve. Its form shifts colors depending on which island is nearest -- warm gold near Goofball, deep blue near Family, fierce red near Hockey. It carries no weapon but glows with a light that feels like certainty, like knowing exactly who you are on your best day. It watches the islands with the fierce tenderness of someone guarding something irreplaceable.
+  level: 14
+  raceid: 2

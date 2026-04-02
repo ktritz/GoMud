@@ -1,0 +1,21 @@
+roomid: 914
+zone: The Back of the Mind
+title: The Release Valve
+description: At the far end of the Back of the Mind, a massive industrial valve is set into the wall, its wheel the size of a dining table and its pipes disappearing into the structure of Riley's mind in every direction. This is the pressure release for the entire suppression system -- the emergency mechanism that allows bottled emotions to vent safely back into conscious feeling. The valve is currently cracked open, a thin stream of colored vapor hissing from its seal, and the pressure gauge mounted above it reads just below the red zone. The air here is thick with escaped emotion -- wisps of joy, grief, anger, and fear all tangled together in a rich, overwhelming tapestry of feeling. It is a lot. It is supposed to be a lot. That is the whole point.
+mapsymbol: '>'
+maplegend: Valve
+biome: dungeon
+exits:
+  south:
+    roomid: 913
+  up:
+    roomid: 200
+nouns:
+  valve: 'The <ansi fg="itemname">valve</ansi> is a masterpiece of mental engineering, a physical metaphor made real. Its wheel requires significant effort to turn, and the resistance increases the more you open it -- as if the act of letting yourself feel requires more courage the further you go. The metal is warm to the touch and vibrates with the pressure of everything behind it. A small plaque reads "CAUTION: Opening this valve may result in experiencing your own emotions. Proceed with care and self-compassion."'
+  vapor: The colored <ansi fg="itemname">vapor</ansi> escaping from the valve is a visible stream of raw emotion returning to consciousness. Golden joy sparks and crackles. Blue sadness flows like water. Red anger hisses like steam. The vapors intertwine as they rise, mixing into something that is not any single emotion but all of them together -- the complicated, messy, beautiful experience of being a person who feels things.
+idlemessages:
+- The pressure gauge ticks up a notch and the valve hisses louder, releasing a burst of golden vapor.
+- A plume of blue sadness vents from the valve and you feel your eyes sting for a moment.
+- The valve wheel turns a fraction on its own as the pressure builds behind it.
+- Mixed emotion vapor swirls through the air and for a moment you feel everything at once -- then it settles.
+- The pressure gauge drops slightly and the room feels lighter, as if something that needed to be felt was finally felt.

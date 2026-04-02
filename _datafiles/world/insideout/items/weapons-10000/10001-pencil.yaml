@@ -1,0 +1,12 @@
+itemid: 10001
+name: pencil
+namesimple: pencil
+description: 'A well-sharpened #2 pencil. They say the pen is mightier than the sword,
+  and this is basically the same thing.'
+type: weapon
+hands: 1
+subtype: stabbing
+uses: 0
+damage:
+  diceroll: 1d2
+value: 5

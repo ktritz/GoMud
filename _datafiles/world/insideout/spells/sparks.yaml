@@ -1,0 +1,8 @@
+spellid: sparks
+name: Emotional Sparks
+description: A burst of raw emotion that damages all enemies for 1d3+1
+type: harmmulti
+school: conjuration
+cost: 10
+waitrounds: 1
+difficulty: 50

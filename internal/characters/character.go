@@ -773,7 +773,7 @@ func (c *Character) RecalculateStats() {
 
 	// Set HP/MP maxes
 	// This relies on the above stats so has to be calculated afterwards
-	c.HealthMax.SetMod(5 +
+	c.HealthMax.SetMod(10 +
 		c.StatMod(string(statmods.HealthMax)) + // Any sort of spell buffs etc. are just direct modifiers
 		c.Level + // For every level you get 1 hp
 		c.Stats.ActionValueAdj("MaxHealth")*4) // for every vitality you get 3hp

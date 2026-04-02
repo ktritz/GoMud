@@ -1,0 +1,11 @@
+itemid: 20073
+name: catcher's vest
+namesimple: vest
+description: A padded chest protector from the baseball diamond. Heavy but reassuring, like wearing a hug made of foam and hard plastic.
+type: body
+subtype: wearable
+uses: 0
+damage:
+  diceroll: 0d0
+defense: 3
+value: 40

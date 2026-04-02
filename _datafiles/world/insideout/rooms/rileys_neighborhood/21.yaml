@@ -1,0 +1,27 @@
+roomid: 21
+zone: Rileys Neighborhood
+title: Entryway
+description: A small entryway with a coat rack overflowing with jackets and a shoe rack that's more of a shoe pile. The hardwood floor is scuffed near the door from years of foot traffic. A mirror on the wall has a sticky note that says "KEYS!" in Mom's handwriting, stuck right at eye level. A staircase leads up to the second floor, and the rest of the ground floor opens up ahead.
+mapsymbol: E
+maplegend: Entry
+biome: city
+exits:
+  outside:
+    roomid: 2
+  north:
+    roomid: 4
+  east:
+    roomid: 22
+  west:
+    roomid: 23
+  upstairs:
+    roomid: 24
+nouns:
+  coats: The <ansi fg="itemname">coat rack</ansi> is a wooden stand that's carrying about three times what it was designed for. There's a parka from Minnesota that nobody wears anymore but can't throw away, two school hoodies, Dad's fishing vest, and a rain jacket with a broken zipper. Several coats have fallen off and nobody has picked them up.
+  shoes: The <ansi fg="itemname">shoe pile</ansi> has completely overwhelmed the shoe rack. Sneakers, flip-flops, Dad's hiking boots, Mom's garden clogs, and one roller skate that nobody can find the match to. There's a system here. Nobody can explain it.
+  mirror: The <ansi fg="itemname">mirror</ansi> is slightly tilted and has a crack in the lower corner from when someone swung a hockey stick in the house. The sticky note says "KEYS!" and underneath it someone has written "also PHONE" and underneath that "also LUNCH."
+  stairs: The <ansi fg="itemname">staircase</ansi> is narrow and carpeted with a pattern that was fashionable twenty years ago. The banister is smooth from use and there's a dent in the wall halfway up where someone tried to carry a mattress upstairs and lost the battle.
+idlemessages:
+- The coat rack creaks under its burden.
+- A draft from under the front door makes the coats sway slightly.
+- The stairs creak on their own, as old stairs do.

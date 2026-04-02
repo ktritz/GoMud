@@ -1,0 +1,21 @@
+roomid: 600
+zone: Abstract Thought
+title: Chamber of Reason
+description: 'A clean, well-lit antechamber marks the entrance to Abstract Thought. The walls are smooth white stone, the floor is polished marble in a precise checkerboard pattern, and everything is arranged with geometric perfection. A brass plaque mounted beside the entrance reads "ABSTRACT THOUGHT -- CAUTION: REALITY BECOMES SUBJECTIVE BEYOND THIS POINT." Crystal pillars stand at each corner, humming with a low vibration that you feel in your teeth. Everything here still makes sense. Everything is still recognizable, solid, and real. Enjoy that while it lasts.'
+mapsymbol: R
+maplegend: Reason
+biome: abstract
+exits:
+  south:
+    roomid: 315
+  north:
+    roomid: 601
+nouns:
+  plaque: 'The <ansi fg="itemname">plaque</ansi> is engraved in precise, no-nonsense lettering. Below the main warning, smaller text reads: "Abstract Thought processes concrete ideas into their purest forms. Side effects may include loss of dimension, involuntary deconstruction, and existential confusion. Proceed at own risk. Management is not responsible for anyone who becomes a line segment."'
+  pillars: The <ansi fg="itemname">crystal pillars</ansi> are flawless and transparent, each one vibrating at a slightly different frequency. Together they produce a chord that hovers at the edge of hearing -- the sound of structured thought holding itself together. Hairline cracks near the tops suggest that even here, at the entrance, abstraction is trying to creep in.
+idlemessages:
+- The crystal pillars hum in harmony, a reassuring chord of pure reason.
+- The checkerboard floor gleams under the even lighting, every tile perfectly square.
+- A faint shimmer passes through the air ahead, like heat haze over pavement.
+- The brass plaque catches the light and the warning text seems to sharpen, as if emphasizing itself.
+- Something in the next room shifts audibly -- a sound like geometry rearranging.

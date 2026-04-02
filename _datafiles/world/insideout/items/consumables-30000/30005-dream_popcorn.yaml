@@ -1,0 +1,11 @@
+itemid: 30005
+name: dream popcorn
+namesimple: popcorn
+description: 'Buttery popcorn from the Dream Productions concession stand. Eating
+  it makes you feel like you''re settling in for a good movie.'
+type: food
+subtype: drinkable
+uses: 1
+value: 25
+buffids:
+- 44

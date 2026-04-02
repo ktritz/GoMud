@@ -1,0 +1,22 @@
+roomid: 960
+zone: Belief System
+title: Identity Island - Music
+description: The newest island pulses with vibrant, electric energy. Unlike the others, which have the settled feel of long-held beliefs, this one is still being built -- scaffolding of sound and light frames structures that are half-formed but undeniably alive. Enormous speakers sprout from the ground like chrome flowers, each one broadcasting a different genre that somehow harmonizes into a single, evolving soundtrack. A stage occupies the center, scattered with instruments that play themselves -- guitar riffs, drum fills, piano melodies, all channeling Riley's newly discovered passion for music. The ground vibrates with bass, the air shimmers with treble, and the whole island radiates the specific joy of finding something new that feels like it was always yours.
+mapsymbol: '~'
+maplegend: Music
+biome: mindscape
+exits:
+  west:
+    roomid: 959
+  east:
+    roomid: 961
+nouns:
+  scaffolding: The <ansi fg="itemname">scaffolding</ansi> is fascinating -- an island actively under construction. New platforms extend outward as Riley discovers new music. A section labeled "INDIE ROCK" was just added last week, still bright with fresh energy. An older section, "CHILDHOOD SONGS," is smaller but deeply rooted, its foundations sunk into the island's core. The whole structure grows a little every day.
+  speakers: The <ansi fg="itemname">speakers</ansi> are works of art -- chrome and crystal, each one tuned to a genre that's part of Riley's musical identity. One plays the pop songs she blasts in her room. Another plays the folk music Dad always had on in the car. A tiny speaker near the ground plays a lullaby Mom used to sing, barely audible but impossibly strong.
+  stage: The <ansi fg="itemname">stage</ansi> is where Riley's musical identity performs for an audience of one. Instruments play themselves in shifting arrangements, sometimes perfectly in sync, sometimes clashing experimentally. A microphone stands at center stage, humming with potential. The stage is still finding its sound, and that's what makes it exciting.
+idlemessages:
+- A speaker erupts with a guitar riff that Riley just heard for the first time today.
+- The stage instruments shift into a new arrangement, trying on a style Riley hasn't explored yet.
+- The scaffolding extends another few feet as a new song becomes a new favorite.
+- Bass vibrates through the island's foundation, a heartbeat of newly discovered passion.
+- A melody from childhood weaves through a newer song, connecting who Riley was to who she's becoming.

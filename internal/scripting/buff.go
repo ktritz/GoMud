@@ -44,7 +44,7 @@ func TryBuffScriptEvent(eventName string, userId int, mobInstanceId int, buffId 
 		userTextWrap.Set(`buff-text`, ``, `cyan`, colorpatterns.Stretch)
 		roomTextWrap.Set(`buff-text`, ``, `cyan`, colorpatterns.Stretch)
 
-		tmr := time.AfterFunc(scriptRoomTimeout, func() {
+		tmr := time.AfterFunc(scriptBuffTimeout, func() {
 			vmw.VM.Interrupt(errTimeout)
 		})
 
@@ -101,7 +101,7 @@ func TryBuffCommand(cmd string, rest string, userId int, mobInstanceId int, buff
 
 	if onCommandFunc, ok := vmw.GetFunction(`onCommand_` + cmd); ok {
 
-		tmr := time.AfterFunc(scriptRoomTimeout, func() {
+		tmr := time.AfterFunc(scriptBuffTimeout, func() {
 			vmw.VM.Interrupt(errTimeout)
 		})
 		res, err := onCommandFunc(goja.Undefined(),
@@ -138,7 +138,7 @@ func TryBuffCommand(cmd string, rest string, userId int, mobInstanceId int, buff
 		sActor := GetActor(userId, mobInstanceId)
 		sRoom := GetRoom(sActor.GetRoomId())
 
-		tmr := time.AfterFunc(scriptRoomTimeout, func() {
+		tmr := time.AfterFunc(scriptBuffTimeout, func() {
 			vmw.VM.Interrupt(errTimeout)
 		})
 		res, err := onCommandFunc(goja.Undefined(),

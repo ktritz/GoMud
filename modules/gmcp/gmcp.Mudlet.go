@@ -4,6 +4,7 @@ import (
 	"embed"
 	"fmt"
 	"strings"
+	"sync"
 
 	"github.com/GoMudEngine/GoMud/internal/configs"
 	"github.com/GoMudEngine/GoMud/internal/events"
@@ -45,9 +46,10 @@ type MudletConfig struct {
 
 // GMCPMudletModule handles Mudlet-specific GMCP functionality
 type GMCPMudletModule struct {
-	plug        *plugins.Plugin
-	config      MudletConfig
-	mudletUsers map[int]bool // Track which users are using Mudlet clients
+	plug          *plugins.Plugin
+	config        MudletConfig
+	mudletUsers   map[int]bool // Track which users are using Mudlet clients
+	mudletUsersMu sync.RWMutex
 }
 
 // GMCPMudletDetected is an event fired when a Mudlet client is detected
@@ -60,7 +62,8 @@ func (g GMCPMudletDetected) Type() string { return `GMCPMudletDetected` }
 
 // GMCPDiscordStatusRequest is an event fired when a client requests Discord status information
 type GMCPDiscordStatusRequest struct {
-	UserId int
+	UserId   int
+	Messages []GMCPOut
 }
 
 func (g GMCPDiscordStatusRequest) Type() string { return `GMCPDiscordStatusRequest` }
@@ -68,22 +71,30 @@ func (g GMCPDiscordStatusRequest) Type() string { return `GMCPDiscordStatusReque
 // GMCPDiscordMessage is an event fired when a client sends a Discord-related GMCP message
 type GMCPDiscordMessage struct {
 	ConnectionId uint64
+	UserId       int
 	Command      string
 	Payload      []byte
 }
 
 func (g GMCPDiscordMessage) Type() string { return `GMCPDiscordMessage` }
 
+type mudletOutboundPlan struct {
+	Messages []GMCPOut
+}
+
+func (m mudletOutboundPlan) Type() string { return `MudletOutboundPlan` }
+
 func init() {
 	// Create module with basic structure
 	g := GMCPMudletModule{
-		plug:        plugins.New(`gmcp.Mudlet`, `1.0`),
-		mudletUsers: make(map[int]bool),
+		plug:          plugins.New(`gmcp.Mudlet`, `1.0`),
+		mudletUsers:   make(map[int]bool),
+		mudletUsersMu: sync.RWMutex{},
 	}
 
 	// Attach filesystem with proper error handling
-	if err := g.plug.AttachFileSystem(files); err != nil {
-		panic(err)
+	if plugins.LogInitError("gmcp.Mudlet", g.plug.AttachFileSystem(files)) {
+		return
 	}
 
 	// Register callbacks for load/save
@@ -92,12 +103,13 @@ func init() {
 
 	// Register event listeners
 	events.RegisterListener(events.PlayerSpawn{}, g.playerSpawnHandler)
-	events.RegisterListener(events.PlayerDespawn{}, g.playerDespawnHandler)
+	events.RegisterTransportListener(events.PlayerDespawn{}, g.playerDespawnHandler)
 	events.RegisterListener(GMCPMudletDetected{}, g.mudletDetectedHandler)
-	events.RegisterListener(GMCPDiscordStatusRequest{}, g.discordStatusRequestHandler)
+	events.RegisterTransportListener(GMCPDiscordStatusRequest{}, g.discordStatusRequestHandler)
 	events.RegisterListener(GMCPDiscordMessage{}, g.discordMessageHandler)
 	events.RegisterListener(events.RoomChange{}, g.roomChangeHandler)
 	events.RegisterListener(events.PartyUpdated{}, g.partyUpdateHandler)
+	events.RegisterTransportListener(mudletOutboundPlan{}, g.dispatchOutboundPlan)
 
 	// Register the Mudlet-specific user commands
 	g.plug.AddUserCommand("mudletmap", g.sendMapCommand, true, false)
@@ -143,9 +155,12 @@ func (g *GMCPMudletModule) isMudletClient(userId int) bool {
 	}
 
 	// First check our cache of known Mudlet users
+	g.mudletUsersMu.RLock()
 	if known, ok := g.mudletUsers[userId]; ok {
+		g.mudletUsersMu.RUnlock()
 		return known
 	}
+	g.mudletUsersMu.RUnlock()
 
 	// If not in cache, check the connection
 	connId := users.GetConnectionId(userId)
@@ -156,7 +171,9 @@ func (g *GMCPMudletModule) isMudletClient(userId int) bool {
 	// Check the cache to see if this is a Mudlet client
 	if gmcpData, ok := gmcpModule.cache.Get(connId); ok && gmcpData.Client.IsMudlet {
 		// Store for future reference
+		g.mudletUsersMu.Lock()
 		g.mudletUsers[userId] = true
+		g.mudletUsersMu.Unlock()
 		return true
 	}
 
@@ -175,16 +192,38 @@ func getUserBoolOption(user *users.UserRecord, key string, defaultValue bool) bo
 	return defaultValue
 }
 
-// Helper to send GMCP event
-func sendGMCP(userId int, module string, payload interface{}) {
-	if userId < 1 {
+func (g *GMCPMudletModule) dispatchOutboundPlan(e events.Event) events.ListenerReturn {
+	plan, typeOk := e.(mudletOutboundPlan)
+	if !typeOk {
+		mudlog.Error("Event", "Expected Type", "MudletOutboundPlan", "Actual Type", e.Type())
+		return events.Cancel
+	}
+
+	for _, msg := range plan.Messages {
+		gmcpModule.dispatchGMCP(msg)
+	}
+
+	return events.Continue
+}
+
+func queueMudletPlan(messages ...GMCPOut) {
+	filtered := make([]GMCPOut, 0, len(messages))
+	for _, msg := range messages {
+		if msg.ConnectionId == 0 || msg.UserId < 1 {
+			continue
+		}
+		filtered = append(filtered, msg)
+	}
+
+	if len(filtered) == 0 {
 		return
 	}
-	events.AddToQueue(GMCPOut{
-		UserId:  userId,
-		Module:  module,
-		Payload: payload,
-	})
+
+	events.AddToQueue(mudletOutboundPlan{Messages: filtered})
+}
+
+func buildMudletGMCP(userId int, module string, payload interface{}) (GMCPOut, bool) {
+	return gmcpModule.buildGMCPEvent(userId, module, payload)
 }
 
 // Helper function to create and send Discord Info message
@@ -213,7 +252,9 @@ func (g *GMCPMudletModule) sendDiscordInfo(userId int) {
 		InviteURL:     g.config.DiscordInviteURL,
 	}
 
-	sendGMCP(userId, "External.Discord.Info", payload)
+	if msg, ok := buildMudletGMCP(userId, "External.Discord.Info", payload); ok {
+		queueMudletPlan(msg)
+	}
 	mudlog.Debug("GMCP", "type", "Mudlet", "action", "Sent Discord Info", "userId", userId)
 }
 
@@ -304,7 +345,9 @@ func (g *GMCPMudletModule) sendDiscordStatus(userId int) {
 	}
 
 	// Send the Discord Status message
-	sendGMCP(userId, "External.Discord.Status", payload)
+	if msg, ok := buildMudletGMCP(userId, "External.Discord.Status", payload); ok {
+		queueMudletPlan(msg)
+	}
 	mudlog.Debug("GMCP", "type", "Mudlet", "action", "Sent Discord status update", "userId", userId, "zone", room.Zone)
 }
 
@@ -324,7 +367,9 @@ func (g *GMCPMudletModule) clearDiscordStatus(userId int) {
 		SmallImageKey: "",
 	}
 
-	sendGMCP(userId, "External.Discord.Status", payload)
+	if msg, ok := buildMudletGMCP(userId, "External.Discord.Status", payload); ok {
+		queueMudletPlan(msg)
+	}
 }
 
 // Send Mudlet map configuration
@@ -337,7 +382,9 @@ func (g *GMCPMudletModule) sendMudletMapConfig(userId int) {
 		"url": g.config.MapURL,
 	}
 
-	sendGMCP(userId, "Client.Map", mapConfig)
+	if msg, ok := buildMudletGMCP(userId, "Client.Map", mapConfig); ok {
+		queueMudletPlan(msg)
+	}
 	mudlog.Debug("GMCP", "type", "Mudlet", "action", "Sent Mudlet map config", "userId", userId)
 }
 
@@ -355,7 +402,9 @@ func (g *GMCPMudletModule) sendMudletUIInstall(userId int) {
 		URL:     g.config.UIURL,
 	}
 
-	sendGMCP(userId, "Client.GUI", payload)
+	if msg, ok := buildMudletGMCP(userId, "Client.GUI", payload); ok {
+		queueMudletPlan(msg)
+	}
 	mudlog.Debug("GMCP", "type", "Mudlet", "action", "Sent Mudlet UI install config", "userId", userId)
 }
 
@@ -371,7 +420,9 @@ func (g *GMCPMudletModule) sendMudletUIRemove(userId int) {
 		GoMudUI: "remove",
 	}
 
-	sendGMCP(userId, "Client.GUI", payload)
+	if msg, ok := buildMudletGMCP(userId, "Client.GUI", payload); ok {
+		queueMudletPlan(msg)
+	}
 	mudlog.Debug("GMCP", "type", "Mudlet", "action", "Sent Mudlet UI remove command", "userId", userId)
 }
 
@@ -387,7 +438,9 @@ func (g *GMCPMudletModule) sendMudletUIUpdate(userId int) {
 		GoMudUI: "update",
 	}
 
-	sendGMCP(userId, "Client.GUI", payload)
+	if msg, ok := buildMudletGMCP(userId, "Client.GUI", payload); ok {
+		queueMudletPlan(msg)
+	}
 	mudlog.Debug("GMCP", "type", "Mudlet", "action", "Sent Mudlet UI update command", "userId", userId)
 }
 
@@ -405,19 +458,26 @@ func (g *GMCPMudletModule) sendMudletConfig(userId int) {
 		Version: g.config.MapperVersion,
 		URL:     g.config.MapperURL,
 	}
-	sendGMCP(userId, "Client.GUI", payload)
+	messages := []GMCPOut{}
+	if msg, ok := buildMudletGMCP(userId, "Client.GUI", payload); ok {
+		messages = append(messages, msg)
+	}
 
 	// Get the user record
 	user := users.GetByUserId(userId)
 	if user == nil {
+		queueMudletPlan(messages...)
 		return
 	}
 
-	// Send Discord info if enabled
-	g.sendDiscordInfo(userId)
+	if infoMsg, ok := g.buildDiscordInfoMessage(userId, user); ok {
+		messages = append(messages, infoMsg)
+	}
+	if statusMsg, ok := g.buildDiscordStatusMessage(userId, user); ok {
+		messages = append(messages, statusMsg)
+	}
 
-	// Send Discord status
-	g.sendDiscordStatus(userId)
+	queueMudletPlan(messages...)
 
 	mudlog.Info("GMCP", "type", "Mudlet", "action", "Sent Mudlet package config", "userId", userId)
 }
@@ -449,7 +509,9 @@ func (g *GMCPMudletModule) playerDespawnHandler(e events.Event) events.ListenerR
 
 	// Clean up the mudletUsers map entry for this user
 	if evt.UserId > 0 {
+		g.mudletUsersMu.Lock()
 		delete(g.mudletUsers, evt.UserId)
+		g.mudletUsersMu.Unlock()
 		mudlog.Debug("GMCP", "type", "Mudlet", "action", "Cleaned up Mudlet user entry", "userId", evt.UserId)
 	}
 
@@ -479,9 +541,7 @@ func (g *GMCPMudletModule) discordStatusRequestHandler(e events.Event) events.Li
 		return events.Cancel
 	}
 
-	// Send both Discord info and status
-	g.sendDiscordInfo(evt.UserId)
-	g.sendDiscordStatus(evt.UserId)
+	g.dispatchOutboundPlan(mudletOutboundPlan{Messages: evt.Messages})
 
 	mudlog.Info("GMCP", "type", "Mudlet", "action", "Processed Discord status request", "userId", evt.UserId)
 	return events.Continue
@@ -495,32 +555,21 @@ func (g *GMCPMudletModule) discordMessageHandler(e events.Event) events.Listener
 		return events.Cancel
 	}
 
-	// Find the user ID for this connection
-	userId := 0
-	for _, user := range users.GetAllActiveUsers() {
-		if user.ConnectionId() == evt.ConnectionId {
-			userId = user.UserId
-			break
-		}
-	}
-
-	if userId == 0 {
+	if evt.UserId == 0 {
 		return events.Cancel
 	}
 
 	// Log the message
-	mudlog.Info("Mudlet GMCP Discord", "type", evt.Command, "userId", userId, "payload", string(evt.Payload))
+	mudlog.Info("Mudlet GMCP Discord", "type", evt.Command, "userId", evt.UserId, "payload", string(evt.Payload))
 
 	// Handle different Discord commands
 	switch evt.Command {
 	case "Hello":
-		g.sendDiscordInfo(userId)
+		g.sendDiscordInfo(evt.UserId)
 	case "Get":
-		user := users.GetByUserId(userId)
+		user := users.GetByUserId(evt.UserId)
 		if user != nil && user.Character != nil {
-			events.AddToQueue(GMCPDiscordStatusRequest{
-				UserId: userId,
-			})
+			g.queueDiscordStatusRequest(evt.UserId, user)
 		}
 	}
 
@@ -752,13 +801,15 @@ func (g *GMCPMudletModule) discordCommand(rest string, user *users.UserRecord, r
 			} else if args[1] == "off" {
 				g.handleToggleCommand(user, "discord_enable_info", false, "Discord.Info package sending disabled.", "")
 				// Send empty Discord.Info payload
-				sendGMCP(user.UserId, "External.Discord.Info", struct {
+				if msg, ok := buildMudletGMCP(user.UserId, "External.Discord.Info", struct {
 					ApplicationID string `json:"applicationid"`
 					InviteURL     string `json:"inviteurl"`
 				}{
 					ApplicationID: "",
 					InviteURL:     "",
-				})
+				}); ok {
+					queueMudletPlan(msg)
+				}
 			} else {
 				user.SendText("\nUsage: discord info on|off\n")
 			}
@@ -782,4 +833,115 @@ func (g *GMCPMudletModule) discordCommand(rest string, user *users.UserRecord, r
 	}
 
 	return true, nil
+}
+
+func (g *GMCPMudletModule) buildDiscordInfoMessage(userId int, user *users.UserRecord) (GMCPOut, bool) {
+	if userId < 1 || user == nil {
+		return GMCPOut{}, false
+	}
+
+	if !getUserBoolOption(user, "discord_enable_info", true) {
+		mudlog.Debug("GMCP", "type", "Mudlet", "action", "Discord.Info package sending disabled for user", "userId", userId)
+		return GMCPOut{}, false
+	}
+
+	payload := struct {
+		ApplicationID string `json:"applicationid"`
+		InviteURL     string `json:"inviteurl"`
+	}{
+		ApplicationID: g.config.DiscordApplicationID,
+		InviteURL:     g.config.DiscordInviteURL,
+	}
+
+	return buildMudletGMCP(userId, "External.Discord.Info", payload)
+}
+
+func (g *GMCPMudletModule) queueDiscordStatusRequest(userId int, user *users.UserRecord) {
+	messages := []GMCPOut{}
+
+	if infoMsg, ok := g.buildDiscordInfoMessage(userId, user); ok {
+		messages = append(messages, infoMsg)
+	}
+	if statusMsg, ok := g.buildDiscordStatusMessage(userId, user); ok {
+		messages = append(messages, statusMsg)
+	}
+
+	events.AddToQueue(GMCPDiscordStatusRequest{
+		UserId:   userId,
+		Messages: messages,
+	})
+}
+
+func (g *GMCPMudletModule) buildDiscordStatusMessage(userId int, user *users.UserRecord) (GMCPOut, bool) {
+	if userId < 1 || user == nil {
+		return GMCPOut{}, false
+	}
+
+	if !getUserBoolOption(user, "discord_enable_status", true) {
+		mudlog.Debug("GMCP", "type", "Mudlet", "action", "Discord.Status package sending disabled for user", "userId", userId)
+		return GMCPOut{}, false
+	}
+
+	room := rooms.LoadRoom(user.Character.RoomId)
+	if room == nil {
+		mudlog.Error("GMCP", "type", "Mudlet", "action", "Failed to get room for Discord status", "userId", userId, "roomId", user.Character.RoomId)
+		return GMCPOut{}, false
+	}
+
+	showArea := getUserBoolOption(user, "discord_show_area", true)
+	showParty := getUserBoolOption(user, "discord_show_party", true)
+	showName := getUserBoolOption(user, "discord_show_name", true)
+	showLevel := getUserBoolOption(user, "discord_show_level", true)
+
+	detailsStr := g.config.DiscordDetails
+	if showName || showLevel {
+		detailsStr = ""
+		if showName {
+			detailsStr = user.Character.Name
+		}
+		if showLevel {
+			if detailsStr != "" {
+				detailsStr += " "
+			}
+			if showName {
+				detailsStr += fmt.Sprintf("(lvl. %d)", user.Character.Level)
+			} else {
+				detailsStr += fmt.Sprintf("Level %d", user.Character.Level)
+			}
+		}
+	}
+
+	payload := struct {
+		Details       string `json:"details"`
+		State         string `json:"state"`
+		Game          string `json:"game"`
+		LargeImageKey string `json:"large_image_key"`
+		SmallImageKey string `json:"small_image_key"`
+		StartTime     int64  `json:"starttime"`
+		PartySize     int    `json:"partysize,omitempty"`
+		PartyMax      int    `json:"partymax,omitempty"`
+	}{
+		Details:       detailsStr,
+		State:         g.config.DiscordState,
+		Game:          configs.GetServerConfig().MudName.String(),
+		LargeImageKey: g.config.DiscordLargeImageKey,
+		SmallImageKey: g.config.DiscordSmallImageKey,
+		StartTime:     user.GetConnectTime().Unix(),
+	}
+
+	if showArea {
+		payload.State = fmt.Sprintf("Exploring %s", room.Zone)
+	}
+
+	if party := parties.Get(userId); party != nil && showParty {
+		payload.PartySize = len(party.GetMembers())
+		payload.PartyMax = 10
+		if showArea {
+			payload.State = fmt.Sprintf("Group in %s", room.Zone)
+		} else {
+			payload.State = "In group"
+		}
+	}
+
+	return buildMudletGMCP(userId, "External.Discord.Status", payload)
 }

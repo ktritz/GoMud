@@ -1,0 +1,28 @@
+roomid: 24
+zone: Rileys Neighborhood
+title: Upstairs Hallway
+description: A narrow hallway with family photos lining both walls, creating a timeline from Riley as a baby to last year's school picture. The carpet is worn thin in a path down the middle from years of back-and-forth to bedrooms and the bathroom. A nightlight shaped like a hockey puck is plugged into an outlet near the floor -- left over from when Riley was younger but nobody has unplugged it. Doors lead to the bedrooms and bathroom, and a pull-cord hangs from a ceiling panel leading to the attic.
+mapsymbol: H
+maplegend: Hall-2F
+biome: city
+exits:
+  downstairs:
+    roomid: 21
+  north:
+    roomid: 3
+  south:
+    roomid: 25
+  east:
+    roomid: 26
+  west:
+    roomid: 27
+  attic:
+    roomid: 29
+nouns:
+  photos: The <ansi fg="itemname">family photos</ansi> are arranged in rough chronological order. Baby Riley in a snowsuit. Toddler Riley with cake on her face. Kid Riley holding a hockey stick taller than she is. Tween Riley looking awkward at a school dance. Each one is slightly crooked and at a slightly different height, like they were hung one at a time over years without a plan.
+  nightlight: The <ansi fg="itemname">hockey puck nightlight</ansi> glows a faint orange. Riley stopped needing it years ago but it's become part of the hallway. Unplugging it would feel wrong somehow, like removing a load-bearing decoration.
+  cord: A <ansi fg="itemname">pull-cord</ansi> hangs from a ceiling panel, leading to the attic above. It looks like it hasn't been pulled in a while -- there's a thin layer of dust on the handle.
+idlemessages:
+- The nightlight flickers and steadies.
+- A floorboard creaks somewhere down the hall.
+- The house settles with a soft groan.

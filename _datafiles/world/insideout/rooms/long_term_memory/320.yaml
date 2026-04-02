@@ -1,0 +1,20 @@
+roomid: 320
+zone: Long Term Memory
+title: Bridge to Imagination Land
+description: The gray shelves of Long Term Memory give way to an explosion of color as a sweeping bridge arcs out from the edge of the shelf structure toward the impossible skyline of Imagination Land. The bridge is built from solidified daydreams -- its surface shifts between rainbow patterns, and the railings are sculpted from what looks like frozen candy. Below, the gap between memory and imagination yawns wide, filled with drifting clouds of creative energy in every color. Ahead, the towering structures of Imagination Land rise against a sky that is somehow every color at once. Behind you, the ordered shelves of Long Term Memory stretch into their quiet, glowing infinity. This is the border between what was and what could be.
+mapsymbol: '>'
+maplegend: Bridge
+biome: mindscape
+exits:
+  north:
+    roomid: 319
+  south:
+    roomid: 400
+nouns:
+  bridge: The <ansi fg="itemname">bridge</ansi> is a marvel of subconscious engineering. Its surface ripples with color when you step on it, and the railings are warm to the touch, as if made from solidified joy. Looking over the edge reveals clouds of creative energy drifting in the space between regions of the mind. Occasionally a half-formed idea floats past -- a castle, a dinosaur, a song that does not exist yet.
+idlemessages:
+- The bridge surface ripples with rainbow light under your feet.
+- A cloud of creative energy drifts past below, briefly taking the shape of a dragon before dissolving.
+- The colors of Imagination Land ahead shift and swirl like a living painting.
+- A warm breeze carries the faint sound of laughter and the smell of crayons from across the bridge.
+- The shelves of Long Term Memory behind you glow quietly, a vast library of everything that ever was.

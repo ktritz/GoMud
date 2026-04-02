@@ -1,0 +1,21 @@
+roomid: 804
+zone: Memory Dump
+title: Forgotten Toy Graveyard
+description: The dust plain is littered with the remains of Riley's forgotten toys -- childhood companions that were once the center of her world and are now dissolving into gray anonymity at the bottom of her mind. A stuffed bear with one eye sits propped against a fading block tower. A tea set missing most of its pieces is arranged in a circle, as if the toys had one last party before the forgetting took them. Action figures stand in frozen poses, their paint chipping away to reveal the gray nothing underneath. A half-deflated ball rests in a shallow crater, still bearing the faded logo of a team Riley used to love. Everything here is in the process of being unmade, slowly, gently, and with absolute finality.
+mapsymbol: T
+maplegend: Toys
+biome: dungeon
+exits:
+  south:
+    roomid: 803
+  north:
+    roomid: 805
+nouns:
+  toys: The <ansi fg="itemname">toys</ansi> are heartbreaking in their specificity. The stuffed bear's name was Mr. Buttons and Riley slept with him every night until she was seven. The tea set was a birthday present from her grandmother. The action figures were from a cartoon she watched every Saturday morning. Each toy is fading -- colors washing out, shapes softening, details dissolving -- but they maintain their positions, as if waiting for someone to play with them one more time.
+  ball: The <ansi fg="itemname">ball</ansi> is a small soccer ball with a logo that is barely visible, the name of Riley's first team dissolved to a few scattered letters. It is half-deflated and covered in gray dust, but when you pick it up, it still has a faint bounce. Something in it remembers what it was for, even if Riley does not.
+idlemessages:
+- The stuffed bear tips over slowly, its remaining eye catching the light as it falls.
+- A block in the tower crumbles to dust and the remaining blocks settle lower.
+- The tea set clinks softly, as if invisible guests are having one more cup before the end.
+- An action figure's arm breaks off and dissolves before it hits the ground.
+- The ball rolls an inch on its own, propelled by the memory of being kicked.

@@ -76,7 +76,7 @@ func Modify(rest string, user *users.UserRecord, room *rooms.Room, flags events.
 		}
 
 		if len(foundUsername) == 0 {
-			users.SearchOfflineUsers(func(u *users.UserRecord) bool {
+			if err := users.SearchOfflineUsers(func(u *users.UserRecord) bool {
 
 				if strings.EqualFold(searchUser, u.Username) {
 
@@ -101,7 +101,9 @@ func Modify(rest string, user *users.UserRecord, room *rooms.Room, flags events.
 				}
 
 				return true
-			})
+			}); err != nil {
+				return true, err
+			}
 		}
 
 		if len(foundUsername) > 0 {

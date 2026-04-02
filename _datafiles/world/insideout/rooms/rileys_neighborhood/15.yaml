@@ -1,0 +1,18 @@
+roomid: 15
+zone: Rileys Neighborhood
+title: Neighbor's Yard
+description: You've wandered into a neighbor's overgrown front yard. The fence is leaning and half-hidden behind untrimmed bushes that have gone completely wild. The lawn hasn't been mowed in what looks like months, and dandelions have taken over in a big way. A ceramic garden gnome with a faded red hat stands in the middle of the chaos, smiling with unsettling cheerfulness. A rusted wind chime hangs from the porch awning, barely turning. Somebody lives here, but they clearly have other priorities than yard work.
+mapsymbol: '~'
+maplegend: Yard
+biome: city
+exits:
+  west:
+    roomid: 6
+nouns:
+  fence: The <ansi fg="itemname">fence</ansi> is a wooden picket fence that was probably white about a decade ago. Now it's gray and splintering, with several pickets missing entirely. A section near the sidewalk is being slowly consumed by an aggressive hedge.
+  bushes: The <ansi fg="itemname">bushes</ansi> have grown into a tangled mass of branches and leaves that would make any HOA weep. There are some interesting things caught in the branches -- a deflated basketball, a plastic grocery bag, and what might be a lost homework assignment with a big red "C-" on it.
+  gnome: The <ansi fg="itemname">garden gnome</ansi> is about two feet tall with a faded red pointy hat, a white beard, and an expression that can only be described as knowing. Its paint is chipping, one eye is more closed than the other, and it's holding a tiny fishing rod. It has definitely seen some things.
+idlemessages:
+- The wind chime on the porch gives a single, lonely clang.
+- A crow lands on the fence, caws once, and flies off.
+- The garden gnome stares at you. It's probably just your imagination.

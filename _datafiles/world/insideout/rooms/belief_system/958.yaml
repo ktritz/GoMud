@@ -1,0 +1,22 @@
+roomid: 958
+zone: Belief System
+title: Identity Island - Friendship
+description: This island buzzes with energy and connection. Crisscrossing pathways link dozens of small platforms, each one representing a friendship or connection Riley has built. Some paths are wide and well-worn -- the close friends she talks to every day. Others are thinner, older, connecting to platforms from Minnesota that still glow faintly. Message boards covered in inside jokes, shared memes, and remembered conversations stand at every intersection. The air is full of laughter -- not recorded, but the remembered feeling of laughing so hard your stomach hurts. Friendship bracelets the size of bridges connect the largest platforms, their beads spelling out names and inside jokes.
+mapsymbol: R
+maplegend: Friendship
+biome: mindscape
+exits:
+  west:
+    roomid: 957
+  east:
+    roomid: 959
+nouns:
+  pathways: The <ansi fg="itemname">pathways</ansi> are a map of Riley's social world. The widest path leads to her best friend's platform, bright and warm and practically glowing with daily use. Other paths branch to teammates, school friends, and the people she hasn't talked to in a while but still thinks about. A few paths from Minnesota are thin and fading, but none have disappeared entirely. Riley doesn't forget people.
+  boards: The <ansi fg="itemname">message boards</ansi> are covered in the language of friendship. Inside jokes that would make no sense to anyone else. Screenshots of ridiculous group chat moments. A drawing of a stick figure labeled "us" doing something absurd. One board just has "remember that time--" written fifty different ways, because shared memories are the currency of connection.
+  laughter: The <ansi fg="itemname">laughter</ansi> that fills this island isn't a sound so much as a feeling. It's the specific physical sensation of laughing with someone who gets you -- the ache in your stomach, the tears in your eyes, the helpless feeling of not being able to stop. It comes in waves, each one from a different friendship, a different moment.
+idlemessages:
+- A burst of laughter rings across the island, the memory of a joke that still lands.
+- A friendship bracelet bridge brightens as Riley thinks about a friend.
+- A pathway widens slightly -- a friendship growing stronger with every interaction.
+- The message boards update with a new inside joke. Nobody else would understand it.
+- A thin path from Minnesota glows briefly. Old friends aren't forgotten, just far away.

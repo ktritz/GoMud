@@ -1,0 +1,28 @@
+roomid: 307
+zone: Long Term Memory
+title: Dusty Memory Corner
+description: A dead-end alcove where the shelves crowd close and the ceiling dips low, creating a cramped, claustrophobic space choked with gray dust. Nearly every orb here is dark or deeply faded, their scenes reduced to vague impressions -- a color, a feeling, the ghost of a face with no name attached. Cobweb-like strands of decayed memory stretch between the shelves, and the dust is thick enough to muffle your footsteps. A narrow gap between the shelves leads deeper into the fading sections. The air is so stale it almost crackles when you breathe.
+mapsymbol: D
+maplegend: Dusty
+biome: mindscape
+exits:
+  north:
+    roomid: 306
+  south:
+    roomid: 308
+nouns:
+  dust: The dust here is ankle-deep in places. It piles against the shelf bases in drifts of powdered memory. If you sift through it carefully you can occasionally find a tiny shard of an orb -- a fragment that holds one last second of a forgotten moment before dissolving in your fingers.
+  cobwebs: The strands connecting the shelves are not spider silk but the remnants of associations between memories. When one memory fades, the connections it had to other memories wither into these ghostly threads. Pull one and somewhere on a distant shelf, another memory dims slightly.
+spawninfo:
+- mobid: 31
+  message: A <ansi fg="mobname">memory leech</ansi> pulls itself from beneath a collapsed shelf, antennae twitching.
+  respawnrate: 5 real minutes
+- mobid: 35
+  message: A <ansi fg="mobname">fading memory</ansi> drifts out of a dark orb, barely visible in the gloom.
+  respawnrate: 6 real minutes
+idlemessages:
+- A strand of decayed memory snaps with a faint chime, and a distant orb flickers.
+- The dust shifts in a slow eddy, as if something just passed through unseen.
+- A dark orb on a high shelf crumbles silently, adding to the dust below.
+- You hear a faint wet sound from the shadows -- something feeding.
+- The air tastes like the moment after you forget what you were going to say.

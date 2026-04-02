@@ -1,0 +1,12 @@
+itemid: 10010
+name: 'jangles'' joy buzzer'
+namesimple: buzzer
+description: A giant novelty joy buzzer ripped from the hand of Jangles the Clown
+  himself. It crackles with residual terror and makes a horrible BZZZT sound on impact.
+type: weapon
+hands: 1
+subtype: bludgeoning
+uses: 0
+damage:
+  diceroll: 2d6
+value: 350

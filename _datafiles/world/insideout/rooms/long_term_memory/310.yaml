@@ -1,0 +1,25 @@
+roomid: 310
+zone: Long Term Memory
+title: Memory Sorting Station
+description: A bustling workstation where the real labor of Long Term Memory happens. Conveyor belts carry freshly stored memory orbs from the upper levels down to sorting trays, where mind workers examine each one and slot it into the correct section. A massive sorting board on the wall displays the current shelf map, with colored pins marking which sections are full and which have room. Tools of the trade hang on pegboards -- orb polishers, label makers, shelf extenders, and a device ominously labeled "Memory Compressor (USE WITH CAUTION)." The whole operation runs with the efficiency of a factory and the energy of a post office on a Monday.
+mapsymbol: S
+maplegend: Sorting
+biome: mindscape
+exits:
+  north:
+    roomid: 309
+  south:
+    roomid: 311
+nouns:
+  sorting board: The <ansi fg="itemname">sorting board</ansi> is an enormous map of the entire Long Term Memory system. Colored pins mark every section -- yellow for joy memories, blue for sadness, red for anger, and so on. Several sections are flagged with tiny warning signs reading "NEARLY FULL" or "NEEDS DEFRAGMENTATION." The embarrassing memories section is, predictably, the largest.
+  tools: The tools on the pegboard are specialized for memory maintenance. The orb polisher restores faded memories to temporary brightness. The label maker prints tiny categorization tags. The Memory Compressor apparently merges similar memories into single orbs, which explains why you can never remember which specific Tuesday something happened on.
+spawninfo:
+- mobid: 32
+  message: A <ansi fg="mobname">mind worker</ansi> trudges in from the shelves, clipboard in hand, ready to help.
+  respawnrate: 1 real minutes
+idlemessages:
+- A mind worker holds up an orb, squints at it, and drops it into a sorting tray labeled "Misc."
+- The conveyor belt lurches and a pile of fresh memory orbs tumbles into the sorting queue.
+- Someone accidentally drops an orb and it rolls under a table, playing a scene from gym class.
+- A mind worker stamps "PROCESSED" on an orb with a satisfying thunk.
+- The sorting board updates with a soft click as a new section is flagged full.

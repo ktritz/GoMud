@@ -1,0 +1,26 @@
+mobid: 58
+zone: The Back of the Mind
+itemdropchance: 20
+hostile: true
+nocorpse: true
+deathmessage: '{name} spins apart into frantic fragments that scatter and vanish.'
+maxwander: 3
+activitylevel: 20
+groups:
+- fear
+combatcommands:
+- backstab
+- cast mm
+character:
+  name: anxiety spiral
+  description: A spinning vortex of tangled, half-formed thoughts that has grown far beyond the small, agitated spirals found near the school. This one is a roaring cyclone of worried words and catastrophic projections, pulling everything nearby into its orbit. Fragments of panicked thought whip through it -- what if it all falls apart, what if they find out, what if this is as good as it gets -- spinning too fast to read but impossible to ignore. The air around it vibrates with a low, anxious hum that makes your chest tight.
+  level: 16
+  gold: 50
+  raceid: 5
+  stats:
+    strength:
+      training: 18
+    speed:
+      training: 13
+    vitality:
+      training: 22

@@ -1,0 +1,21 @@
+roomid: 801
+zone: Memory Dump
+title: Crumbling Memory Ledge
+description: The ledge narrows as it descends along the chasm wall, its surface increasingly unstable. Chunks of stone have broken away and fallen into the void, leaving gaps that require careful steps to cross. Memory orbs are wedged into cracks in the rock, half-dissolved and barely glowing -- they rolled off the shelves above and got stuck here on their way down, clinging to the wall like the last grip of a thought you are trying not to lose. The orbs are too far gone to read clearly, their scenes reduced to blurred shapes and muted sounds. A section of the ledge ahead has collapsed entirely, replaced by a precarious bridge of compressed memory fragments that shifts under your weight.
+mapsymbol: '~'
+maplegend: Ledge
+biome: dungeon
+exits:
+  south:
+    roomid: 800
+  north:
+    roomid: 802
+nouns:
+  stone: The <ansi fg="itemname">stone</ansi> of the ledge is the same material as the chasm walls, but here it has been weakened by constant exposure to the forgetting process. It crumbles at the edges when you touch it, shedding fine gray dust. You can see the geological layers of the mind in the exposed cross-section -- striations of color representing different periods of Riley's life, all slowly fading to uniform gray.
+  fragments: The compressed memory <ansi fg="itemname">fragments</ansi> that form the makeshift bridge are a mosaic of forgotten moments -- tiny scenes frozen mid-action, faces with features erased, words with letters missing. They have been packed together by the pressure of the void below, forming a surface that is surprisingly solid but deeply unsettling to walk across. Every step reveals a new fragment of something someone once cared about.
+idlemessages:
+- A chunk of ledge breaks free and tumbles into the abyss without a sound.
+- A half-dissolved orb in the rock wall flickers once -- the ghost of a birthday party -- then goes dark forever.
+- The fragment bridge shifts under its own weight and a tiny scene of a family dinner slides into the void.
+- Gray dust sifts down from above like silent snow, coating your shoulders.
+- You step on a fragment and for a split second remember something that was never yours, then it is gone.

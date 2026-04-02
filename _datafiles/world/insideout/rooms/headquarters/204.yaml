@@ -1,0 +1,21 @@
+roomid: 204
+zone: Headquarters
+title: Dream Duty Station
+description: A cramped monitoring room sits above the main Console Room, packed with banks of flickering screens that display live feeds from Dream Productions. Each monitor shows a different dream-in-progress or a dream queued up for tonight's lineup. A battered swivel chair sits in front of the main console, surrounded by empty coffee cups and a clipboard with tonight's dream schedule. One screen is labeled "RECURRING" and shows a dream where Riley walks into class without shoes -- again. A dark tunnel in the far wall leads down toward the studio backlots where dreams are actually filmed.
+mapsymbol: D
+maplegend: Dreams
+biome: mindscape
+exits:
+  down:
+    roomid: 200
+  tunnel:
+    roomid: 500
+nouns:
+  screens: The screens show an overwhelming amount of dream content. One monitor displays a dream about flying over San Francisco. Another shows Riley's teeth falling out for the third time this week. A sticky note on one screen reads "ANXIETY KEEPS SUBMITTING SCRIPTS -- STOP APPROVING THEM."
+  clipboard: Tonight's dream schedule is scrawled in hasty handwriting. The lineup includes "Flying Dream (popular request)," "That Thing You Said In Class Three Years Ago (recurring)," and "Dog Who Can Talk?? (new concept, greenlit by Joy)."
+  chair: The swivel chair is well-worn and slightly lopsided. Whoever sits dream duty clearly spends a lot of time here. The armrests are covered in doodles.
+idlemessages:
+- One of the dream monitors flickers and briefly shows Riley riding a giant pizza slice through space.
+- A screen labeled "NIGHTMARE QUEUE" flashes red, then goes dark. Probably nothing.
+- The dream schedule clipboard slides off the console and clatters to the floor.
+- A faint echo of dramatic music drifts up from the tunnel to Dream Productions.

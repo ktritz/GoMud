@@ -1,0 +1,22 @@
+roomid: 910
+zone: The Back of the Mind
+title: Anxiety's War Room
+description: This is where Anxiety orchestrated her takeover of Headquarters -- a cramped, intensely organized command center covered wall-to-wall with plans, maps, and contingency documents. A massive corkboard dominates one wall, connected by a spiderweb of orange string that links photos, notes, and newspaper clippings into an elaborate conspiracy of worry. A central table holds a detailed model of Headquarters with tiny figurines of each emotion, several of which have been moved to a box labeled "UNNECESSARY." The room smells of burnt coffee and deadline panic. Anxiety did not do this out of malice. Every note, every plan, every sleepless detail was done out of a desperate, misguided love for Riley. That makes it worse.
+mapsymbol: W
+maplegend: War-Room
+biome: dungeon
+exits:
+  south:
+    roomid: 909
+  north:
+    roomid: 911
+nouns:
+  plans: 'The <ansi fg="itemname">plans</ansi> are exhaustive. "PHASE 1: Identify all social threats to Riley''s high school career. PHASE 2: Develop comprehensive anxiety responses. PHASE 3: Remove emotions that interfere with self-protection. PHASE 4: Achieve total control of the console." Each phase has hundreds of sub-steps. Phase 4 is circled in red with a note: "For Riley''s own good. She''ll thank us later."'
+  maps: The <ansi fg="itemname">maps</ansi> chart every pathway through Riley's mind, annotated in Anxiety's cramped handwriting. Key locations are circled -- the Console, the Belief System, the Emotion Vault. Escape routes for each emotion are mapped and crossed out. One map shows the Back of the Mind itself, with a note reading "If they find this place, implement Protocol Omega." There is no document explaining what Protocol Omega is.
+  table: The <ansi fg="itemname">table</ansi> holds a scale model of Headquarters that is accurate down to the individual buttons on the console. Tiny figurines represent each emotion -- Joy, Sadness, Anger, Fear, Disgust, Anxiety, and the newer emotions. Joy's figurine has been placed in the "UNNECESSARY" box. Sadness is in there too. Anxiety's own figurine stands alone at the console, and someone has drawn a tiny crown on its head in orange marker.
+idlemessages:
+- An orange string on the corkboard snaps taut on its own, connecting two new pins.
+- The model of Headquarters on the table vibrates, and Joy's figurine inches toward the edge of the box.
+- A new note appears on the wall in Anxiety's handwriting. It just says "WHAT IF?"
+- The burnt coffee smell intensifies and a paper on the desk curls at the edges from stress.
+- A contingency document flips open to a page titled "What To Do If Everything Falls Apart" followed by thirty-seven numbered steps.

@@ -1,0 +1,8 @@
+buffid: 42
+name: Memory Clarity
+description: 'Your mind feels sharp and focused, memories coming into crystal clear
+  focus.'
+triggerrate: 3 rounds
+triggercount: 4
+statmods:
+  perception: 10

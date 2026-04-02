@@ -1,0 +1,18 @@
+roomid: 904
+zone: The Back of the Mind
+title: Echo Chamber
+description: A domed chamber of curved, reflective walls that bounce sound endlessly between them, creating an acoustic trap for the emotional echoes that leak through Anxiety's suppression field. The room resonates with fragments of feelings -- half-words, interrupted laughs, the beginning of a cry that never finishes. The reflective surfaces are not quite mirrors; they show distorted versions of the room that are slightly more colorful, slightly more alive, as if the emotions trapped in the echoes are trying to rebuild themselves from sound alone. The effect is disorienting and deeply sad, like hearing a conversation through a wall and knowing you are missing something important.
+mapsymbol: )
+maplegend: Echo
+biome: dungeon
+exits:
+  south:
+    roomid: 903
+  north:
+    roomid: 905
+idlemessages:
+- A fragment of Joy's laughter bounces off the walls, growing quieter with each reflection until it fades.
+- The echo of someone crying loops three times, each repetition losing more of its emotion.
+- A voice that sounds like Anger shouts something, but only the feeling of the words reaches you, not the meaning.
+- The reflective walls briefly show a room full of color before snapping back to muted gray.
+- An echo of Riley's voice says "I'm fine" and the room repeats it until the word "fine" sounds hollow.

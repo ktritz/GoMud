@@ -1,0 +1,54 @@
+spells:
+  - id: heal
+    name: Minor Heal
+    desc: Restores a small amount of health with a warm glow
+    type: helpsingle
+    school: restoration
+    cost: 3
+    wait: 2
+    difficulty: 0
+
+  - id: mm
+    name: Memory Missile
+    desc: Hurls a concentrated memory fragment for 1d6+2 damage
+    type: harmsingle
+    school: conjuration
+    cost: 6
+    wait: 1
+    difficulty: 75
+
+  - id: sparks
+    name: Emotional Sparks
+    desc: A burst of raw emotion that damages all enemies for 1d3+1
+    type: harmmulti
+    school: conjuration
+    cost: 10
+    wait: 1
+    difficulty: 50
+
+  - id: coreblast
+    name: Core Memory Blast
+    desc: Channels the power of a core memory for 2d6+1 damage
+    type: harmsingle
+    school: conjuration
+    cost: 8
+    wait: 2
+    difficulty: 40
+
+  - id: joyboost
+    name: "Joy's Encouragement"
+    desc: A warm golden light heals for 2d4+2
+    type: helpsingle
+    school: restoration
+    cost: 5
+    wait: 1
+    difficulty: 10
+
+  - id: curepoison
+    name: Purify Thought
+    desc: Cleanses toxic thoughts and poisons from the mind
+    type: helpsingle
+    school: restoration
+    cost: 4
+    wait: 1
+    difficulty: 0

@@ -1,0 +1,20 @@
+mobid: 16
+zone: School
+hostile: false
+maxwander: 5
+activitylevel: 15
+groups:
+- school-npc
+idlecommands:
+- emote pushes his mop across the floor in slow, methodical strokes.
+- emote checks a door handle, rattling it once before moving on.
+- emote whistles a quiet, meandering tune under his breath.
+- ''
+- ''
+character:
+  name: janitor
+  description: The school janitor is a quiet, weathered man in gray coveralls who moves through the hallways with an unhurried calm, as if he knows something about this building that nobody else does. He pushes a yellow mop bucket that squeaks with every step and nods politely to anyone who bothers to notice him, which most people don't.
+  level: 10
+  raceid: 1
+  items:
+  - itemid: 3

@@ -1,0 +1,13 @@
+itemid: 20081
+name: running shoes
+namesimple: shoes
+description: Lightweight running shoes with neon accents and responsive cushioning. The kind that make you want to sprint everywhere even when there's no reason to.
+type: feet
+subtype: wearable
+uses: 0
+damage:
+  diceroll: 0d0
+defense: 0
+statmods:
+  speed: 1
+value: 25

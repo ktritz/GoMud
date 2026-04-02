@@ -1,0 +1,653 @@
+weapons:
+  - id: 10001
+    name: pencil
+    simple: pencil
+    desc: "A well-sharpened #2 pencil. They say the pen is mightier than the sword, and this is basically the same thing."
+    damage: 1d2
+    subtype: stabbing
+    value: 5
+
+  - id: 10002
+    name: hockey stick
+    simple: stick
+    desc: "A sturdy composite hockey stick with tape wrapped around the blade. Riley would approve."
+    damage: 1d4
+    hands: 2
+    subtype: bludgeoning
+    value: 25
+
+  - id: 10003
+    name: textbook
+    simple: textbook
+    desc: "A heavy hardcover textbook on Advanced Algebra. Makes for surprisingly effective blunt-force education."
+    damage: 1d3
+    subtype: bludgeoning
+    value: 15
+
+  - id: 10004
+    name: memory orb shard
+    simple: shard
+    desc: "A jagged fragment of a shattered memory orb. It still glimmers with the ghost of whatever memory it once held, and its edges are razor sharp."
+    damage: 1d4+1
+    subtype: slashing
+    value: 40
+
+  - id: 10005
+    name: imagination sword
+    simple: sword
+    desc: "A brilliantly colored sword that seems to be made of pure imagination. It shifts between crayon-bright colors and sometimes sprouts sparkles."
+    damage: 1d6
+    subtype: slashing
+    value: 75
+
+  - id: 10006
+    name: dream prop blade
+    simple: blade
+    desc: "A surprisingly convincing prop sword from Dream Productions. Someone wrote 'HERO WEAPON' on the handle in marker, but it hits like the real thing."
+    damage: 1d6+1
+    subtype: slashing
+    value: 100
+
+  - id: 10007
+    name: abstract edge
+    simple: edge
+    desc: "A weapon that shouldn't exist in three dimensions but somehow does. Its blade is a geometric impossibility - a Penrose triangle sharpened to a point."
+    damage: 1d8
+    subtype: slashing
+    value: 150
+
+  - id: 10008
+    name: fear fang dagger
+    simple: dagger
+    desc: "A curved dagger forged from a crystallized fear. It's always slightly cold to the touch, and looking at it too long makes you uneasy."
+    damage: 1d8+1
+    subtype: stabbing
+    statmods: {speed: 1}
+    value: 200
+
+  - id: 10009
+    name: "bing bong's candy cane"
+    simple: cane
+    desc: "Bing Bong's oversized candy cane from his rocket wagon. It smells like cotton candy and bubblegum, and sparkles leave a trail wherever you swing it. Who's your friend who likes to play?"
+    damage: 2d4
+    hands: 2
+    subtype: bludgeoning
+    value: 120
+
+  - id: 10010
+    name: "jangles' joy buzzer"
+    simple: buzzer
+    desc: "A giant novelty joy buzzer ripped from the hand of Jangles the Clown himself. It crackles with residual terror and makes a horrible BZZZT sound on impact."
+    damage: 2d6
+    subtype: bludgeoning
+    value: 350
+
+  - id: 10011
+    name: core memory staff
+    simple: staff
+    desc: "A staff with a brilliant golden core memory orb set into its head. The orb pulses with warmth and light, and the whole weapon hums with the power of Riley's most important memories."
+    damage: 2d5
+    hands: 2
+    subtype: bludgeoning
+    statmods: {smarts: 3}
+    value: 400
+
+  - id: 10012
+    name: void shard blade
+    simple: blade
+    desc: "A blade forged from the crystallized darkness of the Memory Dump. It's heavier than it looks, and the void-black edge seems to drink in the light around it."
+    damage: 2d6
+    subtype: slashing
+    statmods: {strength: 2}
+    value: 500
+
+  - id: 10013
+    name: emotion amplifier wand
+    simple: wand
+    desc: "A slender wand topped with a multi-colored gemstone that resonates with emotional energy. It amplifies the wielder's feelings into raw magical force."
+    damage: 1d6+2
+    subtype: bludgeoning
+    statmods: {mysticism: 5}
+    value: 200
+
+  - id: 10014
+    name: rubber band slingshot
+    simple: slingshot
+    desc: "A classic Y-shaped slingshot made from a tree branch and thick rubber bands. Perfect for launching memory orb fragments at things that annoy you."
+    damage: 1d3
+    subtype: shooting
+    value: 10
+
+  - id: 10015
+    name: broccoli flail
+    simple: flail
+    desc: "A morning star made entirely of broccoli. It's as disgusting as it is effective. Disgust would NOT approve."
+    damage: 1d6
+    subtype: bludgeoning
+    value: 80
+
+armor:
+  # HEAD
+  - id: 20001
+    name: baseball cap
+    simple: cap
+    slot: head
+    desc: "A worn San Francisco Giants baseball cap. It's seen better days, but it still fits."
+    dr: 1
+    value: 10
+
+  - id: 20002
+    name: hockey helmet
+    simple: helmet
+    slot: head
+    desc: "A solid hockey helmet with a face cage. Riley's lucky helmet - she scored her first goal wearing one just like it."
+    dr: 2
+    statmods: {vitality: 1}
+    value: 30
+
+  - id: 20003
+    name: imagination crown
+    simple: crown
+    slot: head
+    desc: "A crown crafted from pure imagination. It shifts between a princess tiara, a pirate hat, and a superhero mask depending on your mood."
+    dr: 3
+    statmods: {smarts: 2}
+    value: 80
+
+  - id: 20004
+    name: "dream director's beret"
+    simple: beret
+    slot: head
+    desc: "A stylish black beret worn by the directors at Dream Productions. It has a small golden megaphone pin on it and makes you feel creative."
+    dr: 4
+    statmods: {perception: 2}
+    value: 120
+
+  - id: 20005
+    name: abstract thought helm
+    simple: helm
+    slot: head
+    desc: "A helmet that exists in multiple geometric states simultaneously. Looking at it gives you a headache, but wearing it clarifies abstract concepts."
+    dr: 5
+    statmods: {smarts: 3}
+    value: 200
+
+  - id: 20006
+    name: "jangles' party hat"
+    simple: hat
+    slot: head
+    desc: "A grotesque party hat taken from Jangles the Clown. It's slightly damp, covered in confetti, and occasionally honks softly. Terrifying."
+    dr: 6
+    statmods: {perception: 3, speed: -2}
+    value: 300
+
+  - id: 20007
+    name: void-touched hood
+    simple: hood
+    slot: head
+    desc: "A deep black hood woven from threads of forgotten memories. It seems to absorb light and sound around it, sharpening your senses in the void."
+    dr: 7
+    statmods: {perception: 4}
+    value: 450
+
+  # BODY
+  - id: 20010
+    name: school hoodie
+    simple: hoodie
+    slot: body
+    desc: "A comfortable gray hoodie with your school's logo on the front. It's got a kangaroo pocket and smells like the cafeteria."
+    dr: 1
+    value: 10
+
+  - id: 20011
+    name: varsity jacket
+    simple: jacket
+    slot: body
+    desc: "A red and white varsity jacket with a hockey patch on the chest. It makes you feel like you belong on the team."
+    dr: 2
+    statmods: {strength: 1}
+    value: 35
+
+  - id: 20012
+    name: memory weave shirt
+    simple: shirt
+    slot: body
+    desc: "A shirt woven from strands of happy memories. It shifts colors gently - gold, blue, green - and is warm to the touch even in the coldest parts of the mind."
+    dr: 3
+    statmods: {vitality: 2}
+    value: 90
+
+  - id: 20013
+    name: dream costume tunic
+    simple: tunic
+    slot: body
+    desc: "A theatrical tunic from the Dream Productions costume department. It's designed for the hero role and makes you feel like you're in an action movie."
+    dr: 4
+    statmods: {speed: 2}
+    value: 130
+
+  - id: 20014
+    name: abstract plate
+    simple: plate
+    slot: body
+    desc: "Armor that looks like an M.C. Escher drawing come to life. Stairs go up and down simultaneously across its surface. Somehow it provides excellent protection."
+    dr: 6
+    statmods: {vitality: 3}
+    value: 250
+
+  - id: 20015
+    name: shadow ward vest
+    simple: vest
+    slot: body
+    desc: "A vest woven from the suppressed thoughts that guard the Back of the Mind. It's heavy with the weight of things left unsaid, but incredibly protective."
+    dr: 7
+    statmods: {vitality: 4}
+    value: 380
+
+  - id: 20016
+    name: core memory armor
+    simple: armor
+    slot: body
+    desc: "Magnificent armor infused with the essence of Riley's core memories. It glows with shifting colors - golden joy, blue sadness, red anger, purple fear, green disgust - and thrums with emotional power."
+    dr: 9
+    statmods: {vitality: 5, strength: 3}
+    value: 600
+
+  # LEGS
+  - id: 20020
+    name: jeans
+    simple: jeans
+    slot: legs
+    desc: "A pair of well-worn blue jeans. They have a small tear at one knee that you definitely put there on purpose."
+    dr: 1
+    value: 10
+
+  - id: 20021
+    name: cargo pants
+    simple: pants
+    slot: legs
+    desc: "Cargo pants with extra pockets for carrying memory orb fragments and snacks. Function over fashion."
+    dr: 2
+    value: 40
+
+  - id: 20022
+    name: dream leggings
+    simple: leggings
+    slot: legs
+    desc: "Flexible leggings from Dream Productions that shimmer with a surreal, dreamlike pattern. Perfect for running through nightmares."
+    dr: 3
+    value: 100
+
+  - id: 20023
+    name: abstract legguards
+    simple: legguards
+    slot: legs
+    desc: "Legguards that phase between two and three dimensions. They look flat from one angle and solid from another."
+    dr: 5
+    value: 220
+
+  - id: 20024
+    name: void-forged greaves
+    simple: greaves
+    slot: legs
+    desc: "Heavy greaves forged in the depths of the Memory Dump. The dark metal is etched with patterns of memories that have been lost to time."
+    dr: 7
+    value: 480
+
+  # FEET
+  - id: 20030
+    name: sneakers
+    simple: sneakers
+    slot: feet
+    desc: "A pair of scuffed-up high-top sneakers. They've got personality, which is a nice way of saying they're old."
+    dr: 1
+    value: 10
+
+  - id: 20031
+    name: cleats
+    simple: cleats
+    slot: feet
+    desc: "Hockey-style cleats that give you great traction on any surface. Riley wore these to her first practice in San Francisco."
+    dr: 2
+    statmods: {speed: 1}
+    value: 30
+
+  - id: 20032
+    name: imagination boots
+    simple: boots
+    slot: feet
+    desc: "Boots that change style based on whatever adventure you're imagining. Right now they look like space boots. Wait, now they're cowboy boots."
+    dr: 3
+    value: 90
+
+  - id: 20033
+    name: dream dancing shoes
+    simple: shoes
+    slot: feet
+    desc: "Elegant shoes from Dream Productions that make you feel like you're dancing even when you're walking. They have a slight sparkle effect."
+    dr: 4
+    statmods: {speed: 2}
+    value: 130
+
+  - id: 20034
+    name: void walker boots
+    simple: boots
+    slot: feet
+    desc: "Boots that allow the wearer to walk across the dissolving ground of the Memory Dump without sinking. They leave no footprints."
+    dr: 6
+    statmods: {speed: 3}
+    value: 420
+
+  # NECK
+  - id: 20040
+    name: friendship bracelet
+    simple: bracelet
+    slot: neck
+    desc: "A braided friendship bracelet that Riley's best friend from Minnesota made her before the move. Worn around the neck on a string."
+    dr: 0
+    statmods: {perception: 1}
+    value: 5
+
+  - id: 20041
+    name: memory chain
+    simple: chain
+    slot: neck
+    desc: "A delicate chain with tiny memory orb fragments strung along it. Each one holds a faint echo of a different memory."
+    dr: 1
+    statmods: {smarts: 2}
+    value: 80
+
+  - id: 20042
+    name: dream amulet
+    simple: amulet
+    slot: neck
+    desc: "An amulet shaped like a crescent moon that Dream Productions gives to their best workers. It hums with dreamy energy."
+    dr: 2
+    statmods: {mysticism: 3}
+    value: 150
+
+  - id: 20043
+    name: core memory pendant
+    simple: pendant
+    slot: neck
+    desc: "A pendant containing a tiny, perfectly preserved core memory. It glows warmly against your chest and fills you with confidence."
+    dr: 3
+    statmods: {smarts: 4, perception: 3}
+    value: 450
+
+  # GLOVES
+  - id: 20050
+    name: rubber gloves
+    simple: gloves
+    slot: gloves
+    desc: "A pair of yellow rubber dishwashing gloves. Not exactly tactical gear, but they protect your hands."
+    dr: 1
+    value: 5
+
+  - id: 20051
+    name: memory handler gloves
+    simple: gloves
+    slot: gloves
+    desc: "Special gloves worn by Mind Workers when handling delicate memories. They tingle with residual emotional energy."
+    dr: 3
+    statmods: {perception: 2}
+    value: 120
+
+  # BELT
+  - id: 20052
+    name: fanny pack
+    simple: pack
+    slot: belt
+    desc: "A retro fanny pack. Embarrassment would die if they saw you wearing this, but it's surprisingly practical."
+    dr: 0
+    statmods: {speed: 1}
+    value: 10
+
+  - id: 20053
+    name: emotion belt
+    simple: belt
+    slot: belt
+    desc: "A belt studded with small emotion-colored gems. Each gem pulses with a different feeling - joy, sadness, anger, fear, disgust."
+    dr: 2
+    statmods: {vitality: 2}
+    value: 150
+
+  # RING
+  - id: 20054
+    name: mood ring
+    simple: ring
+    slot: ring
+    desc: "A classic mood ring that actually works in Riley's mind. It shifts colors based on the dominant emotion in the area."
+    dr: 0
+    statmods: {perception: 1}
+    value: 10
+
+  - id: 20055
+    name: core memory ring
+    simple: ring
+    slot: ring
+    desc: "A ring set with a miniature core memory stone. It pulses with golden light and fills you with a deep sense of self."
+    dr: 1
+    statmods: {smarts: 3}
+    value: 300
+
+  # OFFHAND
+  - id: 20056
+    name: imagination shield
+    simple: shield
+    slot: offhand
+    desc: "A shield that looks different to everyone who sees it. To you, it's the coolest shield you can imagine."
+    dr: 3
+    value: 75
+
+  - id: 20057
+    name: abstract ward
+    simple: ward
+    slot: offhand
+    desc: "A small buckler that exists in a state of quantum uncertainty. It blocks attacks that shouldn't be blockable."
+    dr: 5
+    value: 200
+
+  - id: 20058
+    name: void barrier
+    simple: barrier
+    slot: offhand
+    desc: "A massive shield made from compressed void energy. It's impossibly dark and absorbs incoming attacks like they never happened."
+    dr: 7
+    statmods: {vitality: 2}
+    value: 500
+
+consumables:
+  - id: 30001
+    name: juice box
+    simple: juice
+    desc: "A small box of apple juice with a tiny straw. It's the good kind - 100% juice, no concentrate."
+    uses: 1
+    value: 10
+    buffids: [40]
+
+  - id: 30002
+    name: pizza slice
+    simple: pizza
+    desc: "A slice of San Francisco style pizza. Yes, it has broccoli on it. Don't think about it too hard."
+    type: food
+    uses: 1
+    value: 15
+    buffids: [41]
+
+  - id: 30003
+    name: memory orb tonic
+    simple: tonic
+    desc: "A shimmering liquid distilled from fading memory orbs. Drinking it sharpens your mental focus to a razor's edge."
+    uses: 1
+    value: 30
+    buffids: [42]
+
+  - id: 30004
+    name: imagination smoothie
+    simple: smoothie
+    desc: "A smoothie blended from ingredients that only exist in Imagination Land. It tastes like birthday cake and possibility."
+    uses: 1
+    value: 35
+    buffids: [43]
+
+  - id: 30005
+    name: dream popcorn
+    simple: popcorn
+    desc: "Buttery popcorn from the Dream Productions concession stand. Eating it makes you feel like you're settling in for a good movie."
+    type: food
+    uses: 1
+    value: 25
+    buffids: [44]
+
+  - id: 30006
+    name: broccoli
+    simple: broccoli
+    desc: "A stalk of raw broccoli. Disgust is already judging you for even considering eating this."
+    type: food
+    uses: 1
+    value: 5
+    buffids: [45]
+
+  - id: 30007
+    name: core memory elixir
+    simple: elixir
+    desc: "A rare elixir infused with the essence of a core memory. The liquid glows with shifting colors and tastes like your happiest moment."
+    uses: 1
+    value: 100
+    buffids: [46]
+
+  - id: 30008
+    name: triple dent gum
+    simple: gum
+    desc: "Triple Dent Gum! It'll make you smile! Triple Dent Gum, it lasts a while! Great, now the jingle is stuck in your head again."
+    type: food
+    uses: 1
+    value: 8
+    buffids: [47]
+
+  - id: 30009
+    name: anxiety tea
+    simple: tea
+    desc: "A cup of herbal tea that Anxiety brews when she's trying to calm down. It makes you hyper-aware but also slightly jittery."
+    uses: 1
+    value: 20
+    buffids: [48]
+
+  - id: 30010
+    name: nostalgia cookie
+    simple: cookie
+    desc: "A homemade cookie that tastes exactly like the ones your grandma used to make. Each bite brings a wave of warm, bittersweet memories."
+    type: food
+    uses: 1
+    value: 25
+    buffids: [49]
+
+other:
+  - id: 1
+    name: "riley's phone"
+    simple: phone
+    desc: "Riley's smartphone. The lock screen shows a photo of her and her friends at the hockey rink. The notifications are mostly from group chats."
+    type: object
+    value: 0
+
+  - id: 2
+    name: homework assignment
+    simple: homework
+    desc: "A crumpled homework assignment for Ms. Parker's English class. It's a short essay about 'what makes you who you are.' Ironic."
+    type: object
+    value: 0
+
+  - id: 3
+    name: locker combination note
+    simple: note
+    desc: "A scrap of paper with a locker combination scribbled on it: 23-7-15. Whose locker is this for?"
+    type: object
+    value: 0
+
+  - id: 4
+    name: "bing bong's bag"
+    simple: bag
+    desc: "Bing Bong's bottomless bag, which he claims once held all of Riley's imaginary adventures. It smells faintly of cotton candy."
+    type: object
+    value: 0
+
+  - id: 5
+    name: "jangles' key"
+    simple: key
+    desc: "An oversized, colorful key dropped by something in the Subconscious. It's shaped like a clown nose and smells like old balloons."
+    type: key
+    keylock: "700-south"
+    value: 0
+
+  - id: 6
+    name: dream script
+    simple: script
+    desc: "A corrupted dream script from Dream Productions. The pages keep rewriting themselves with nightmare scenarios. The ink is smudged with fear."
+    type: object
+    value: 0
+
+  - id: 7
+    name: abstract thought fragment
+    simple: fragment
+    desc: "A piece of crystallized abstract thought. It's simultaneously a cube, a sphere, and something that doesn't have a name in three dimensions."
+    type: object
+    value: 0
+
+  - id: 8
+    name: core memory (gold)
+    simple: memory
+    desc: "A brilliant golden core memory orb. It radiates warmth and joy, and holding it fills you with an overwhelming sense of happiness."
+    type: object
+    value: 0
+
+  - id: 9
+    name: core memory (blue)
+    simple: memory
+    desc: "A deep blue core memory orb. It's cool to the touch, and holding it makes you feel a gentle, important sadness."
+    type: object
+    value: 0
+
+  - id: 10
+    name: suppression key
+    simple: key
+    desc: "A clinical-looking key made of compressed anxiety. It vibrates slightly in your hand, like it's worried about something."
+    type: key
+    keylock: "903-north"
+    value: 0
+
+  - id: 11
+    name: belief thread
+    simple: thread
+    desc: "A glowing thread pulled from Riley's Belief System. It hums with self-affirmation and is warm to the touch."
+    type: object
+    value: 0
+
+  - id: 12
+    name: "bing bong's rocket fuel"
+    simple: fuel
+    desc: "A jar of rainbow-colored rocket fuel for Bing Bong's rocket wagon. The label says 'POWERED BY SONG' in crayon."
+    type: object
+    value: 0
+
+  - id: 13
+    name: class schedule
+    simple: schedule
+    desc: "Your class schedule for the semester. Period 1: English (Room 102). Period 2: Math (Room 103). Period 3: Science (Room 104). Lunch. Period 4: Art (Room 105). Period 5: Gym (Room 107)."
+    type: object
+    value: 0
+
+  - id: 14
+    name: emotion detector
+    simple: detector
+    desc: "A small handheld device that vibrates and changes color when strong emotions are nearby. Anxiety built it as a 'preparedness tool.'"
+    type: object
+    uses: 10
+    value: 50
+
+  - id: 15
+    name: void compass
+    simple: compass
+    desc: "A compass that points toward the strongest memories in an area. In the Memory Dump, it spins wildly, then slowly settles on the deepest point."
+    type: object
+    value: 75

@@ -1,0 +1,26 @@
+questid: 10
+name: Into the Void
+description: Memories are being corrupted at an alarming rate. Something in the Memory
+  Dump is pulling everything in. Stop it.
+steps:
+- id: start
+  description: Descend into the Memory Dump and find the source of the corruption.
+  hint: The Memory Dump is accessible from the bottom of Long Term Memory.
+- id: descend
+  description: Navigate through the Memory Dump to reach the corruption source.
+  hint: Follow the path deeper. Bring supplies - this is dangerous territory.
+- id: boss
+  description: Defeat the Corrupted Core Memory.
+  hint: 'The Corrupted Core Memory is in the deepest part of the Memory Dump. It''s
+    incredibly powerful.'
+- id: return
+  description: Return to Headquarters and tell Joy the threat has been eliminated.
+  hint: Joy is in the Console Room.
+- id: end
+  description: 'Riley''s mind is clear again. Balance has been fully restored.'
+rewards:
+  playermessage: 'Riley''s mind feels clearer than ever. Balance has been restored.'
+  roommessage: A sense of peace and clarity washes over the entire mindscape.
+  experience: 15000
+  gold: 2000
+  itemid: 20016

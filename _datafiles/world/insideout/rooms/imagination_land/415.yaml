@@ -1,0 +1,21 @@
+roomid: 415
+zone: Imagination Land
+title: Imaginary Friend Nursery
+description: A soft, warm room where new imaginary friends are born. Incubation pods line the walls, each one a translucent bubble filled with swirling creative energy. Inside them, vague shapes are slowly forming -- a wing here, a tentacle there, a face that keeps changing its mind about how many eyes it wants. Some pods are nearly mature, containing recognizable figures that press against the walls of their bubbles. Others hold only a spark of an idea, a single trait like "funny" or "brave" or "can fly" waiting to grow into a full personality. A gentle humming fills the room, the sound of imagination at work, quietly building friends for a mind that needs them.
+mapsymbol: N
+maplegend: Nursery
+biome: land
+exits:
+  north:
+    roomid: 414
+  south:
+    roomid: 416
+nouns:
+  imaginary friends: The developing <ansi fg="itemname">imaginary friends</ansi> are fascinating to watch. One pod contains what appears to be a dragon made of pillows. Another holds a superhero whose costume keeps changing colors. A third has something that is half cat, half spaceship, and entirely confident about it. Each one is being built from scratch by the raw material of imagination.
+  humming: The <ansi fg="itemname">humming</ansi> is not mechanical -- it is the sound of creative energy doing its work. It changes pitch and tone based on what is being created. Dragon ideas make it rumble. Fairy ideas make it chime. The half-cat-half-spaceship makes it produce a sound that should not exist but does.
+idlemessages:
+- A pod near the wall pulses and the shape inside gains a pair of wings. Then loses them. Then gains four.
+- The humming shifts to a lower register as a new imaginary friend begins to take form.
+- A nearly-mature imaginary friend presses a hand against its pod wall and waves.
+- Creative energy swirls through the room in ribbons of color, feeding into the pods.
+- A pod pops open prematurely, releasing a half-formed idea that bounces off the walls before dissolving.

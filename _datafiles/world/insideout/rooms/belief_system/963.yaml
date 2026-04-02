@@ -1,0 +1,28 @@
+roomid: 963
+zone: Belief System
+title: Toxic Thought Pool
+description: A sunken chamber where the worst thoughts pool like contaminated water. A dark pool fills the center of the room, its surface thick and sluggish, reflecting nothing. The liquid is the color of bruised purple and sickly orange, and it churns slowly with currents that seem to move against each other. Toxic thoughts rise to the surface as bubbles that pop with whispered cruelties -- fragments of self-criticism, echoes of unkind words others have said, and the special venom of thoughts you have about yourself at three in the morning. The walls are slick with condensation that stains everything it touches. A narrow path of dry stone rings the pool, just wide enough to walk if you're careful. This is where Riley's mind sends the thoughts that serve no purpose but to wound.
+mapsymbol: X
+maplegend: Toxic
+biome: mindscape
+exits:
+  west:
+    roomid: 962
+  east:
+    roomid: 964
+nouns:
+  pool: 'The <ansi fg="itemname">pool</ansi> is deep -- deeper than it should be. Its surface is opaque and oily, refusing to show what lies beneath. If you lean close, you can hear fragments of toxic thoughts churning below: "They''re just pretending to like you." "You''ll never be as good as--." "Everyone noticed." The pool can''t be drained. It can only be managed, kept from overflowing, its toxicity diluted by the stronger beliefs forged next door.'
+  bubbles: The <ansi fg="itemname">bubbles</ansi> that rise from the pool are small mercies -- they release pressure that would otherwise build to something worse. Each one pops with a quiet hiss and a fragment of cruel self-talk that dissolves into the air. "You looked stupid." Pop. "They were laughing at you." Pop. "You'll never--." Pop. The pool processes these thoughts so Riley doesn't have to carry them all at once.
+spawninfo:
+- mobid: 61
+  message: A <ansi fg="mobname">toxic thought</ansi> rises from the dark pool, dripping with concentrated self-doubt.
+  respawnrate: 3 real minutes
+- mobid: 64
+  message: A <ansi fg="mobname">doubt shadow</ansi> peels itself from the wall, whispering criticisms in Riley's own voice.
+  respawnrate: 6 real minutes
+idlemessages:
+- A bubble rises from the toxic pool and pops with a whispered "you're not enough."
+- The pool churns and its surface darkens briefly before settling back to its usual sick purple.
+- The condensation on the walls drips in slow, heavy drops that sizzle when they hit the stone.
+- A toxic thought surfaces, half-formed, then sinks back down before fully materializing.
+- The narrow path around the pool seems slightly narrower than the last time you looked.

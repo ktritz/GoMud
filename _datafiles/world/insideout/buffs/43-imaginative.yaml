@@ -1,0 +1,7 @@
+buffid: 43
+name: Imaginative
+description: Your thoughts are racing with creative possibilities and wild ideas.
+triggerrate: 3 rounds
+triggercount: 4
+statmods:
+  smarts: 10

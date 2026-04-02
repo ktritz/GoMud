@@ -1,0 +1,25 @@
+roomid: 808
+zone: Memory Dump
+title: The Void's Edge
+description: The Memory Dump drops away into a secondary abyss here, a void within the void where forgetting becomes something worse -- not just the loss of a memory but the loss of the fact that you ever had one. The edge is a sharp line between gray dust and absolute black, and staring over it produces a vertigo that is not physical but existential. The air at the edge vibrates with a frequency that makes your thoughts stutter, and the darkness below does not reflect light so much as consume it. Things that fall over this edge do not just disappear. They become things that never existed. Even the gray dust avoids the edge, piling up in a ridge as if the ground itself is trying to pull back from the nothingness.
+mapsymbol: '!'
+maplegend: Void
+biome: dungeon
+exits:
+  south:
+    roomid: 807
+  north:
+    roomid: 809
+nouns:
+  abyss: The <ansi fg="itemname">abyss</ansi> is not dark in the way a cave is dark. It is dark in the way that the space before you were born is dark -- a nothingness so complete it is not the absence of something but the absence of the concept of something. Looking into it does not make you feel afraid. It makes you feel like you might never have existed, and that the difference between having existed and not is smaller than you thought.
+  air: The <ansi fg="itemname">air</ansi> at the edge is thin and wrong, vibrating at a frequency that interferes with thought itself. Standing here makes it hard to hold onto ideas -- they come and go like soap bubbles, popping before you can examine them. Even the simple thought "I should step back" takes effort to assemble and hold.
+spawninfo:
+- mobid: 55
+  message: A <ansi fg="mobname">memory wraith</ansi> rises from the edge of the void, its form stitched together from fragments of memories that have already been half-erased.
+  respawnrate: 5 real minutes
+idlemessages:
+- The edge of the void shimmers and a section of dust slides silently into the black, ceasing to exist.
+- Your thoughts skip like a scratched record, losing a beat, then catching up.
+- The void produces no sound, but the absence of sound is so absolute that it presses against your ears.
+- A memory orb rolls past your feet and drops over the edge. There is no sound of impact. There never was an orb.
+- The ridge of dust at the edge grows slightly higher, as if the ground is building a levee against nothingness.

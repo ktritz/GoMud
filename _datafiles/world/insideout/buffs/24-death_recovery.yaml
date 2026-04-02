@@ -1,0 +1,5 @@
+buffid: 24
+name: Death Recovery
+description: You are recovering from a close brush with oblivion.
+triggerrate: 1 round
+triggercount: 4

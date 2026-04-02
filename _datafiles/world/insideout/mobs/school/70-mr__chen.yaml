@@ -1,0 +1,19 @@
+mobid: 70
+zone: School
+scripttag: questgiver
+hostile: false
+maxwander: 0
+activitylevel: 25
+groups:
+- school-npc
+idlecommands:
+- emote writes an equation on the whiteboard and circles it twice.
+- say Numbers don't lie, people. Numbers never lie.
+- emote adjusts his glasses and peers at a student's work.
+- ''
+- ''
+character:
+  name: mr. chen
+  description: Mr. Chen is the kind of math teacher who genuinely believes algebra is beautiful and cannot understand why everyone doesn't see it. He's a compact man with wire-rimmed glasses, a short-sleeve dress shirt with a pocket protector he wears ironically (or does he?), and an enthusiasm for polynomials that borders on alarming. His whiteboard is always covered in equations, and he has a habit of saying "elegant" about solutions the way most people say "delicious" about food.
+  level: 15
+  raceid: 1

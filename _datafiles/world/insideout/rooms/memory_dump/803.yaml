@@ -1,0 +1,21 @@
+roomid: 803
+zone: Memory Dump
+title: Bing Bong's Final Stand
+description: The fog thins here, opening into a small, still clearing that carries a weight of memory the rest of the dump has lost. This is the place where Bing Bong -- Riley's imaginary friend, part cat, part elephant, part dolphin, all cotton candy -- made his last sacrifice. He jumped from the rocket wagon so Joy could fly free, and he dissolved here, slowly, piece by piece, asking only that Riley be taken to the moon for him. A faint impression remains in the dust where he stood at the end, shaped like oversized shoes and a long, curling trunk. Scattered around it are the last traces of him -- a few strands of faded pink cotton candy, the ghost of a song, and the lingering warmth of a love that was never reciprocated but never once regretted. The air here smells faintly of cotton candy and tastes like saying goodbye.
+mapsymbol: B
+maplegend: Bing-Bong
+biome: dungeon
+exits:
+  south:
+    roomid: 802
+  north:
+    roomid: 804
+nouns:
+  impression: 'The <ansi fg="itemname">impression</ansi> in the dust is unmistakably Bing Bong''s -- the outline of two oversized shoes, the drag mark of a long trunk, and the shallow depression where he sat down at the very end. The dust inside the impression is faintly pink, the last chemical trace of cotton candy slowly fading to gray. If you kneel beside it and listen, you can almost hear him: "Take her to the moon for me." Almost.'
+  cotton candy: A few strands of faded pink <ansi fg="itemname">cotton candy</ansi> cling to the dust, the last physical remains of Bing Bong's body. They are gossamer-thin and nearly transparent, barely holding their color against the relentless gray of the dump. If you touch one, it dissolves between your fingers and for one vivid, heartbreaking moment you feel the pure, uncomplicated joy of a four-year-old making up an imaginary friend. Then it fades, and you understand what was lost here.
+idlemessages:
+- The impression in the dust glows faintly pink, then fades, like a heartbeat slowing down.
+- A wisp of cotton candy scent drifts through the air and you feel a sudden, aching fondness for someone you never met.
+- The ghost of a melody plays -- just four notes of "Who's your friend who likes to play" -- then dissolves into silence.
+- The dust around the impression stirs, as if something is trying to reform from sheer force of love. It cannot. It tries anyway.
+- A single tear-shaped drop of pink light falls from the air above the impression, lands in the dust, and is absorbed. The ground glows warmer for a moment.

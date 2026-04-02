@@ -1,0 +1,91 @@
+-
+  Supported:
+    "anxiety": ["envy"]
+  Conversation:
+    - ["#1 say What if everyone likes other people more than Riley?"]
+    - ["#2 emote scrolls through her phone",
+       "#2 say They probably do. Have you seen Jordan's Instagram?"]
+    - ["#1 say NOT HELPING!"]
+    - ["#2 say I'm just saying. 847 likes on a Tuesday? That's not normal."]
+    - ["#1 emote starts hyperventilating",
+       "#1 say We need a STRATEGY!"]
+-
+  Supported:
+    "anxiety": ["ennui"]
+  Conversation:
+    - ["#1 say Aren't you worried about ANYTHING?!"]
+    - ["#2 emote doesn't look up from her phone",
+       "#2 say ...no."]
+    - ["#1 say HOW?! How is that possible?!"]
+    - ["#2 say It's a gift."]
+    - ["#1 say The science fair is in THREE DAYS and we don't have a TOPIC!"]
+    - ["#2 say Sounds like a you problem."]
+-
+  Supported:
+    "anxiety": ["fear"]
+  Conversation:
+    - ["#1 say I made a list of everything that could go wrong tomorrow."]
+    - ["#2 emote gulps",
+       "#2 say Oh no... how long is it?"]
+    - ["#1 say Seventeen pages. Single-spaced."]
+    - ["#2 say ...I need to sit down."]
+    - ["#1 say Page four alone is just different ways the fire alarm could go off during a presentation."]
+    - ["#2 emote starts trembling",
+       "#2 say Why would you TELL me that?!"]
+    - ["#1 say Because page five is what happens AFTER the fire alarm!"]
+-
+  Supported:
+    "anxiety": ["fear"]
+  Conversation:
+    - ["#1 say Did Riley remember to set her alarm? What if she oversleeps?"]
+    - ["#2 say I checked. Twice. Then I checked again. Then I had a nightmare about checking."]
+    - ["#1 say Good, good. But what if the POWER goes out?"]
+    - ["#2 say ...I hadn't thought of that."]
+    - ["#1 say What if there's a STORM and the power goes out and the alarm doesn't go off and she's LATE?!"]
+    - ["#2 say Why are we like this?!"]
+-
+  Supported:
+    "anxiety": ["embarrassment"]
+  Conversation:
+    - ["#1 say What if Riley says something weird in front of everyone at lunch?"]
+    - ["#2 emote covers face with both hands and whimpers"]
+    - ["#1 say What if she accidentally calls the teacher 'Mom' again?"]
+    - ["#2 emote curls up into a ball"]
+    - ["#1 say What if it happens during the INTERCOM ANNOUNCEMENT?!"]
+    - ["#2 emote makes a tiny, muffled sound of pure dread"]
+-
+  Supported:
+    "anxiety": ["nostalgia"]
+  Conversation:
+    - ["#1 say Things used to be so much simpler. No social media, no cliques, no--"]
+    - ["#2 emote sighs warmly",
+       "#2 say Oh honey, they really were. Remember kindergarten?"]
+    - ["#1 say Everyone was your friend in kindergarten! Nobody judged your lunch box!"]
+    - ["#2 say Little Riley with her animal crackers and grape juice..."]
+    - ["#1 say Now she has to worry about where she SITS and who she TALKS to and--"]
+    - ["#2 say Those were such sweet, gentle days."]
+    - ["#1 say I KNOW! AND THEY'RE GONE FOREVER!"]
+    - ["#2 emote dabs at her eyes with a lace handkerchief",
+       "#2 say There, there, dear. The memories live on."]
+-
+  Supported:
+    "anxiety": ["joy"]
+  Conversation:
+    - ["#1 say Joy, what if Riley doesn't get invited to the party this weekend?"]
+    - ["#2 say Of course she'll get invited! Everyone loves Riley!"]
+    - ["#1 say But what if they forgot? What if the invitation got lost? What if they're having a DIFFERENT party that we don't KNOW about?"]
+    - ["#2 say Then we'll throw our OWN party! With core memories and confetti!"]
+    - ["#1 say That's not how parties WORK, Joy!"]
+    - ["#2 emote puts a reassuring hand on Anxiety's shoulder",
+       "#2 say Hey. It's going to be okay. And if it's not okay, we'll figure it out together."]
+    - ["#1 emote takes a shaky breath",
+       "#1 say ...You really think so?"]
+    - ["#2 say I know so."]
+-
+  Supported:
+    "anxiety": ["*"]
+  Conversation:
+    - ["#1 emote paces back and forth nervously",
+       "#1 say Has anyone checked the long-range forecast? What about Riley's homework? Is her backpack packed?"]
+    - ["#2 say ...It's Saturday."]
+    - ["#1 say EXACTLY! Only two days until Monday! We're already behind!"]

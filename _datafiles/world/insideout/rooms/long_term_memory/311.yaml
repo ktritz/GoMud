@@ -1,0 +1,21 @@
+roomid: 311
+zone: Long Term Memory
+title: Triple Dent Gum Alley
+description: The instant you step into this alley between the shelves, it hits you -- the jingle. That catchy, inescapable, maddeningly repetitive Triple Dent Gum jingle, playing from an orb somewhere in these shelves on an infinite loop. The mind workers have tried everything to stop it. They have moved the orb. They have buried it under other orbs. They have filed formal complaints. Nothing works. The jingle persists. The walls of this narrow passage are plastered with faded Triple Dent Gum wrappers and someone has scratched "MAKE IT STOP" into the shelf frame. The orbs nearby have taken on a pinkish tint, as if even the neighboring memories have been infected.
+mapsymbol: T
+maplegend: Gum
+biome: mindscape
+exits:
+  north:
+    roomid: 310
+  south:
+    roomid: 312
+nouns:
+  jingle: 'The <ansi fg="itemname">jingle</ansi> is coming from a single, innocuous- looking pink orb wedged into a middle shelf. Inside it, a commercial plays on an eternal loop: smiling people chewing gum, a catchy tune, and the words "Triple Dent Gum will make you smile!" It is the catchiest thing you have ever heard and you already know it will be stuck in your head for days.'
+  wrappers: Faded Triple Dent Gum wrappers are stuck to the walls, shelves, and floor of this alley. They seem to multiply when you are not looking. Each one features the same grinning mascot and the slogan "You'll Never Forget The Taste!" which, given the location, is unfortunately accurate.
+idlemessages:
+- Triple Dent Gum, it makes you smile! Triple Dent Gum, it lasts a while!
+- The jingle restarts from the beginning. It never actually stopped.
+- A mind worker hurries through the alley with their hands over their ears.
+- Triple Dent Gum! Triple Dent Gum! Triple Dent Gum!
+- You catch yourself humming along and feel a deep sense of betrayal by your own brain.

@@ -1,0 +1,26 @@
+roomid: 312
+zone: Long Term Memory
+title: Bing Bong's Hideout
+description: Tucked behind a loose shelf panel is a cozy little nook that someone has turned into a home. A threadbare blanket is spread on the floor, and the walls are decorated with crayon drawings of a little girl and a large pink creature riding a red wagon through the sky. A battered satchel leans against the wall, overflowing with loose memories and candy wrappers. The space smells like cotton candy and something bittersweet that is hard to place. This is where Bing Bong has been hiding out among the shelves, waiting to be remembered. The drawings are fading at the edges, but the love in them is unmistakable.
+mapsymbol: '~'
+maplegend: Bing-Bong
+biome: mindscape
+exits:
+  north:
+    roomid: 311
+  south:
+    roomid: 313
+nouns:
+  blanket: The <ansi fg="itemname">blanket</ansi> is old and soft, patterned with faded stars and moons. It smells like a childhood bedroom -- a mix of baby shampoo, crayons, and imagination. It has been patched in several places with what appears to be candy wrappers and hope.
+  satchel: The <ansi fg="itemname">satchel</ansi> is stuffed to bursting. Inside are memory orbs of varying brightness, sticks of rainbow chalk, a deflated balloon, a crumpled drawing labeled "Me and Riley -- Best Friends," and an alarming number of candy wrappers. Everything in it tells the story of someone who refuses to be forgotten.
+  drawings: The crayon drawings show a pink elephant-cat-dolphin creature and a small girl having adventures together -- flying through clouds, exploring a jungle, building a tower of blocks. The newer drawings are bright and vivid. The older ones are fading, the crayon lines blurring into the wall.
+spawninfo:
+- mobid: 33
+  message: <ansi fg="mobname">Bing Bong</ansi> squeezes out from behind a shelf panel, brushing dust off his pink fur and grinning broadly.
+  respawnrate: 2 real minutes
+idlemessages:
+- A faint smell of cotton candy drifts through the hideout.
+- One of the crayon drawings on the wall seems to glow faintly, then fades.
+- A candy wrapper crinkles inside the satchel, though nothing appears to have moved it.
+- The blanket shifts slightly, as if someone just got up from sitting on it.
+- A half-remembered song -- something about a rocket -- plays faintly from a nearby orb.

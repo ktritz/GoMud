@@ -1,0 +1,20 @@
+roomid: 22
+zone: Rileys Neighborhood
+title: Dining Room
+description: A dining room that doubles as homework central. The table is a big oak thing with mismatched chairs, one of which wobbles. Half the table is set for dinner with placemats and napkins; the other half is buried under textbooks, a laptop, and a science project that's been "almost done" for two weeks. A china cabinet in the corner holds dishes that only come out on holidays and a collection of souvenir mugs from every family road trip. The overhead light has a dimmer switch that Dad is very particular about.
+mapsymbol: D
+maplegend: Dining
+biome: city
+exits:
+  west:
+    roomid: 21
+  north:
+    roomid: 5
+nouns:
+  table: The <ansi fg="itemname">table</ansi> is big enough for six but the Andersens are a family of three, so the extra space has been colonized by homework, mail, and a puzzle that someone started and nobody wants to finish. There are faint ring marks from cups placed without coasters -- a crime Mom has given up prosecuting.
+  cabinet: The <ansi fg="itemname">china cabinet</ansi> is glass-fronted and holds the "nice dishes" which are only used at Thanksgiving, Christmas, and the one time Grandma visited. The bottom shelf has mugs from Mount Rushmore, the Grand Canyon, Yellowstone, and a "I Left My Heart in San Francisco" mug that Mom bought the day they moved.
+  project: The <ansi fg="itemname">science project</ansi> is a model of the solar system made from styrofoam balls and wire hangers. Jupiter is way too small and Pluto is included, which will definitely start a debate. It's covered in a thin layer of dust.
+idlemessages:
+- The wobbling chair shifts slightly with a quiet tick.
+- The dimmer light flickers almost imperceptibly.
+- A page of homework slides off the pile and drifts to the floor.

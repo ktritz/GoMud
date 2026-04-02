@@ -1,0 +1,27 @@
+roomid: 706
+zone: The Subconscious
+title: Jangles' Stage
+description: A nightmarish recreation of a birthday party stage fills this cavernous chamber, complete with sagging streamers in colors that have bled together into a sickly brownish-pink and a cracked plastic banner that reads "HAPPY BIRTHDAY" in letters that drip like they are melting. The stage itself is a raised wooden platform stained with something that looks like cake frosting mixed with tears, and a single spotlight hangs from the ceiling, casting a harsh cone of yellowish light on the performance area. Deflated balloons litter the floor like shed skins. This is where Jangles holds court -- the clown king of Riley's deepest fears, performing for an audience of no one in an endless birthday party that was never fun to begin with. The air tastes like old frosting and bad decisions.
+mapsymbol: J
+maplegend: Jangles
+biome: dungeon
+exits:
+  south:
+    roomid: 705
+  east:
+    roomid: 707
+nouns:
+  stage: The <ansi fg="itemname">stage</ansi> is warped and splintered, bowed in the center from the weight of something very large jumping on it repeatedly. The boards are stained in layers -- frosting, greasepaint, and something darker that you choose not to investigate. Confetti is ground into every crack, fused there by years of stomping oversized shoes.
+  banner: The <ansi fg="itemname">banner</ansi> reads "HAPPY BIRTHDAY" but the letters are running, dripping down the plastic in long streaks that pool on the floor. The "H" has almost completely dissolved. Underneath, in smaller letters that someone has scratched into the plastic with a fingernail, it reads "every day is your birthday down here."
+  spotlight: The <ansi fg="itemname">spotlight</ansi> is a massive theatrical lamp bolted to the ceiling, casting a harsh yellowish cone onto the stage. It buzzes with a low electrical hum and flickers at irregular intervals. When it dims, the shadows at the edges of the room seem to lean inward, and when it flares back to full brightness, things have moved.
+spawninfo:
+- mobid: 49
+  message: <ansi fg="mobname">Jangles the Clown</ansi> lumbers onto the stage from behind a tattered curtain, his yellow eyes sweeping the room as his bicycle horn lets out a long, slow HONNNK.
+  respawnrate: 8 real minutes
+  maxwander: 0
+idlemessages:
+- The spotlight flickers and the shadows surge forward before snapping back into place.
+- A bicycle horn honks from the stage, though nothing visible pressed it.
+- The banner drips another letter onto the floor with a wet splat.
+- Deflated balloons on the floor inflate slightly, as if something is breathing into them from below.
+- The sound of enormous shoes squeaking on wood echoes through the chamber in a slow, deliberate rhythm.

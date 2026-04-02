@@ -1,0 +1,20 @@
+mobid: 32
+zone: Long Term Memory
+hostile: false
+maxwander: 5
+activitylevel: 25
+groups:
+- mind-worker
+idlecommands:
+- emote checks something off on his clipboard and nods curtly.
+- emote reorganizes a shelf of memory orbs, nudging each one into perfect alignment.
+- emote whistles a workman's tune while sorting through a bin of faded orbs.
+- wander
+character:
+  name: mind worker
+  description: A small, blue-suited worker in a yellow hardhat, carrying a clipboard and a pen tucked behind one ear. He moves with the brisk efficiency of someone who has filed ten thousand memory orbs and intends to file ten thousand more before his shift ends. He takes his job extremely seriously, even though nobody has ever once thanked him for it.
+  level: 8
+  raceid: 3
+  shop:
+  - quantitymax: 5
+  - quantitymax: 2

@@ -1,0 +1,24 @@
+roomid: 208
+zone: Headquarters
+title: Anger's Room
+description: 'The temperature spikes the moment you step into Anger''s room. The walls are a deep, smoldering red, and thin wisps of steam curl up from vents in the floor. Newspapers are everywhere -- stacked on the desk, pinned to the walls, crumpled in the corners -- each one with headlines about things that are JUST NOT FAIR. A heavy punching bag hangs from the ceiling in one corner, visibly dented and patched in several places. A bookshelf holds nothing but complaint forms, grievance logs, and a single cookbook titled "Cooking With Rage: 50 Recipes For When Everything Is Wrong." The room rumbles faintly, like a volcano deciding whether today is the day.'
+mapsymbol: A
+maplegend: Anger
+biome: mindscape
+exits:
+  north:
+    roomid: 207
+  south:
+    roomid: 209
+  east:
+    roomid: 200
+nouns:
+  newspapers: 'The newspapers are covered in headlines that would make anyone''s blood boil. "BROCCOLI ON PIZZA DECLARED ACCEPTABLE." "HOMEWORK OVER BREAK: TEACHERS SAY YES." "SCREEN TIME LIMITS LOWERED AGAIN." Several have angry red circles drawn around the worst offenses.'
+  punching bag: The punching bag has taken an absolute beating. It's held together with duct tape and sheer stubbornness, and it still swings slightly as if it was just hit. A scorch mark on one side suggests Anger got particularly heated during a recent session.
+  cookbook: '"Cooking With Rage" is surprisingly well-organized. Chapter titles include "Stress Baking At 2 AM," "Chopping Vegetables Like They Wronged You," and "How To Make Toast When The Toaster Betrays You Again." Several pages are singed around the edges.'
+idlemessages:
+- A newspaper on the desk bursts into flames briefly, then smolders out.
+- The room temperature ticks up a few degrees and steam hisses from the floor vents.
+- The punching bag swings on its own, as if struck by an invisible fist.
+- A distant rumble shakes the room. The volcano metaphor is maybe not a metaphor.
+- One of the complaint forms on the shelf spontaneously fills itself out.

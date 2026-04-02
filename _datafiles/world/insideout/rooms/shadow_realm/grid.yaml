@@ -1,0 +1,12 @@
+# Auto-generated grid layout
+#
+# y+0:   [-1]
+#
+
+grid:
+  "0,0": -1    # The Space Between Thoughts
+
+special_exits:
+  -1:
+    drift:
+      roomid: -1

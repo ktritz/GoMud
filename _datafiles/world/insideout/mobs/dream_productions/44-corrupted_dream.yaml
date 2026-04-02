@@ -1,0 +1,26 @@
+mobid: 44
+zone: Dream Productions
+itemdropchance: 20
+hostile: true
+nocorpse: true
+deathmessage: '{name} glitches violently and pixelates into nothing.'
+maxwander: 3
+activitylevel: 20
+groups:
+- nightmare
+idlecommands:
+- emote replays a distorted scene, the images tearing and reforming.
+- ''
+character:
+  name: corrupted dream
+  description: A dream that went wrong somewhere and never found its way back. It replays corrupted scenes on a stuttering loop -- fragments of birthday parties with no faces, laughter that comes out backwards, a door that opens onto nothing. The images glitch and tear like damaged film, stitching themselves together in combinations that were never meant to exist. It lurches forward with the jerky, broken motion of something that has forgotten how movement works.
+  level: 11
+  gold: 35
+  raceid: 7
+  stats:
+    strength:
+      training: 8
+    speed:
+      training: 6
+    vitality:
+      training: 12

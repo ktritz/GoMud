@@ -1,0 +1,21 @@
+roomid: 412
+zone: Imagination Land
+title: Preschool Playroom
+description: The imagination here is younger, simpler, and achingly sweet. This playroom is filled with the earliest forms of creative play -- finger paintings on the walls in bold, uncoordinated smears of color, a pile of wooden blocks that have been stacked and knocked over a thousand times, and a toy kitchen where plastic food is served with absolute seriousness. The colors are brighter here, more saturated, as if seen through the eyes of someone for whom everything is still new. A tiny table with tiny chairs sits in the center, set for a tea party that has been going on for years. The whole room radiates the fierce, uncomplicated imagination of a three-year-old.
+mapsymbol: o
+maplegend: Playroom
+biome: land
+exits:
+  north:
+    roomid: 411
+  south:
+    roomid: 413
+nouns:
+  finger paintings: The <ansi fg="itemname">finger paintings</ansi> are magnificent in their absolute lack of technique. Bold smears of red, blue, and yellow cover the walls in patterns that mean everything to the artist and nothing to anyone else. One is labeled "FAMLEE" in backwards letters. Another is just a handprint, small enough to break your heart.
+  kitchen: The toy <ansi fg="itemname">kitchen</ansi> is fully stocked with plastic food -- rubber fried eggs, foam bread, a wooden cake that weighs nothing. The stove makes no heat and the sink has no water, but the meals prepared here are served with the gravity of a five-star restaurant. A tiny menu on the counter offers "SOOP," "CAKE," and "SPSGETTI."
+idlemessages:
+- A stack of wooden blocks topples over with a cheerful clatter, then slowly rebuilds itself.
+- The tea party table resets its cups and saucers, ready for another round.
+- A finger painting on the wall shifts colors slightly, as if being painted over in real time.
+- The toy kitchen dings and produces a fresh plastic pie from its cardboard oven.
+- A tiny chair scoots back from the table on its own, inviting someone very small to sit down.

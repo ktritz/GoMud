@@ -45,7 +45,7 @@ func TryPlayerDownedEvent(mobInstanceId int, downedPlayerId int) (bool, error) {
 
 	if onCommandFunc, ok := vmw.GetFunction(`onPlayerDowned`); ok {
 
-		tmr := time.AfterFunc(scriptRoomTimeout, func() {
+		tmr := time.AfterFunc(scriptMobTimeout, func() {
 			vmw.VM.Interrupt(errTimeout)
 		})
 
@@ -104,7 +104,7 @@ func TryMobScriptEvent(eventName string, mobInstanceId int, sourceId int, source
 	}()
 	if onCommandFunc, ok := vmw.GetFunction(eventName); ok {
 
-		tmr := time.AfterFunc(scriptRoomTimeout, func() {
+		tmr := time.AfterFunc(scriptMobTimeout, func() {
 			vmw.VM.Interrupt(errTimeout)
 		})
 
@@ -177,7 +177,7 @@ func TryMobCommand(cmd string, rest string, mobInstanceId int, sourceId int, sou
 
 		sRoom := GetRoom(sMob.mobRecord.Character.RoomId)
 
-		tmr := time.AfterFunc(scriptRoomTimeout, func() {
+		tmr := time.AfterFunc(scriptMobTimeout, func() {
 			vmw.VM.Interrupt(errTimeout)
 		})
 		res, err := onCommandFunc(goja.Undefined(),
@@ -219,7 +219,7 @@ func TryMobCommand(cmd string, rest string, mobInstanceId int, sourceId int, sou
 
 		sRoom := GetRoom(sMob.GetRoomId())
 
-		tmr := time.AfterFunc(scriptRoomTimeout, func() {
+		tmr := time.AfterFunc(scriptMobTimeout, func() {
 			vmw.VM.Interrupt(errTimeout)
 		})
 		res, err := onCommandFunc(goja.Undefined(),

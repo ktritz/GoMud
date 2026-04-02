@@ -1,0 +1,11 @@
+itemid: 30008
+name: triple dent gum
+namesimple: gum
+description: 'Triple Dent Gum! It''ll make you smile! Triple Dent Gum, it lasts a
+  while! Great, now the jingle is stuck in your head again.'
+type: food
+subtype: drinkable
+uses: 1
+value: 8
+buffids:
+- 47

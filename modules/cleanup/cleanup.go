@@ -44,8 +44,8 @@ func init() {
 	//
 	// Add the embedded filesystem
 	//
-	if err := c.plug.AttachFileSystem(files); err != nil {
-		panic(err)
+	if plugins.LogInitError("cleanup", c.plug.AttachFileSystem(files)) {
+		return
 	}
 
 	//

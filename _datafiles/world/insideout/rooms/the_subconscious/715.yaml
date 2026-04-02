@@ -1,0 +1,21 @@
+roomid: 715
+zone: The Subconscious
+title: Nightmare Storage
+description: 'Floor-to-ceiling metal shelves line this long, narrow room, stacked with sealed containers of every size -- crates, jars, locked boxes, and vacuum-sealed bags, each one labeled with a date and a brief, clinical description of the nightmare inside. The containers hum and vibrate on the shelves, some rattling so hard they walk toward the edge before settling back. The lighting is harsh fluorescent that makes everything look sterile and clinical, like a hospital for bad dreams. A logistics board on the wall tracks inventory with obsessive precision: "NIGHTMARE #4,872: THE ONE WHERE YOUR TEETH FALL OUT. STATUS: CONTAINED. BARELY."'
+mapsymbol: N
+maplegend: Storage
+biome: dungeon
+exits:
+  south:
+    roomid: 714
+  north:
+    roomid: 716
+nouns:
+  shelves: The <ansi fg="itemname">shelves</ansi> are industrial-grade steel, bolted to the walls and floor with brackets rated for extreme containment. Despite this, several brackets are bent, and one shelf unit has been pushed back a full inch from the wall by the force of whatever is vibrating inside the containers on it.
+  containers: 'The <ansi fg="itemname">containers</ansi> are labeled with an efficient, joyless filing system. "NM-001: FALLING DREAM (RECURRING, HIGH INTENSITY)." "NM-347: SHOWING UP TO SCHOOL IN UNDERWEAR (CLASSIC, PERSISTENT)." "NM-1,204: THAT THING WITH THE STAIRS THAT GO NOWHERE (SURREAL, UNSETTLING)." One container near the bottom is just labeled "DO NOT" with no further description.'
+idlemessages:
+- A container on a high shelf rattles violently, then stops with a thud.
+- The fluorescent lights buzz louder and one of the sealed jars glows faintly from within.
+- A label peels off a container and you catch the words "the one where everyone is staring at you."
+- Something inside a crate scratches at the lid in a slow, deliberate pattern.
+- The logistics board updates itself with a soft click. A new entry reads "STATUS -- RESTLESS."

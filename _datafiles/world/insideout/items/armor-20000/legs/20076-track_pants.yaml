@@ -1,0 +1,13 @@
+itemid: 20076
+name: track pants
+namesimple: pants
+description: Lightweight athletic pants with a stripe down the side and a drawstring waist. The universal uniform of people who might need to run at any moment.
+type: legs
+subtype: wearable
+uses: 0
+damage:
+  diceroll: 0d0
+defense: 0
+statmods:
+  speed: 1
+value: 20

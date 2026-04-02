@@ -1,0 +1,21 @@
+roomid: 809
+zone: Memory Dump
+title: Pile of Lost Names
+description: An enormous mound of gray dust rises from the floor of the dump, higher than your head and stretching wide in every direction. This is where names go when they are forgotten -- the names of classmates, teachers, neighbors, characters from books, the person who held the door open for you that one time. Faint letters surface in the dust and dissolve before you can read them, syllables of names that once meant something to someone. The pile shifts and settles constantly, new names arriving from above in a slow, silent rain. If you stand still long enough, you can feel names leaving you too -- the ones you have been meaning to remember and the ones you already lost without noticing.
+mapsymbol: N
+maplegend: Names
+biome: dungeon
+exits:
+  south:
+    roomid: 808
+  north:
+    roomid: 810
+nouns:
+  dust: The <ansi fg="itemname">dust</ansi> of the name pile has a different quality than the rest of the dump -- it whispers. Not words, exactly, but the shapes of words, the mouth-feel of syllables that no longer attach to anyone. If you plunge your hand in, names surface on your skin for a moment -- "Sarah," "Mr. K--," "that kid from camp" -- before dissolving back into anonymous gray.
+  letters: The <ansi fg="itemname">letters</ansi> that surface in the dust are fragmentary and fleeting. An "M" appears, followed by an "a" and an "r" -- then dissolves before the name completes. Was it Marcus? Maria? Margaret? It does not matter anymore. The name is gone and the person it belonged to will never be recalled by this mind again.
+idlemessages:
+- Letters surface in the dust -- J, A, M, E -- and dissolve before you can read the name.
+- You suddenly remember someone's name with perfect clarity. A second later, it is gone.
+- The pile shifts as new names arrive from above, settling into the mass with a soft whisper.
+- A name almost surfaces -- you can feel it on the tip of your tongue. Then it sinks back forever.
+- The dust whispers syllables that almost form words but never quite connect.

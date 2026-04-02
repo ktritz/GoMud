@@ -1,0 +1,21 @@
+roomid: 718
+zone: The Subconscious
+title: Emergency Exit
+description: A narrow, hastily constructed tunnel punches through the back wall of the Subconscious, shored up with mismatched timber and corrugated metal panels that rattle with every tremor from the cracking floors behind you. A faded emergency sign bolted above the tunnel entrance reads "EMERGENCY EGRESS TO LONG TERM MEMORY -- USE ONLY IN CASE OF CATASTROPHIC FEAR BREACH." The tunnel angles sharply upward, climbing toward the distant glow of the memory shelves above. The air here is warmer and cleaner than the rest of the Subconscious, carrying the faint smell of stored memories and the promise of safety. After everything you have seen down here, the exit feels less like an architectural feature and more like a mercy.
+mapsymbol: E
+maplegend: Exit
+biome: dungeon
+exits:
+  south:
+    roomid: 717
+  up:
+    roomid: 315
+nouns:
+  panels: The corrugated metal <ansi fg="itemname">panels</ansi> are salvaged from various parts of the mind -- one has "DREAM PRODUCTIONS" stamped on it, another is painted with cheerful stripes from what was probably once a Personality Island support strut. They vibrate and rattle constantly but hold firm, testament to whoever built this escape route under pressure.
+  sign: 'The emergency <ansi fg="itemname">sign</ansi> is standard-issue mental infrastructure, the kind of thing mind workers bolt up and hope never gets used. The text is faded but legible, and someone has added in pen: "Tested once during the Jangles Incident of Year 4. Worked. Barely." Below that, another hand has written: "DO NOT let the broccoli follow you out."'
+idlemessages:
+- A tremor from the Subconscious sends dust cascading from the tunnel ceiling.
+- The metal panels rattle like drums and then settle back into an uneasy quiet.
+- A warm draft from the tunnel above carries the faint scent of stored memories.
+- The emergency sign flickers with its own dim internal light, beckoning you toward the exit.
+- You hear the distant, organized hum of Long Term Memory above, and it sounds like the best thing you have ever heard.

@@ -1,0 +1,21 @@
+questid: 12
+name: 'Pop Quiz: English'
+description: Ms. Parker is giving a pop quiz on vocabulary and reading comprehension.
+steps:
+- id: start
+  description: Answer Ms. Parker's English quiz questions.
+  hint: Go to Classroom 101 and ask Ms. Parker about the quiz.
+- id: q1
+  description: Answer question 1.
+  hint: Think about synonyms.
+- id: q2
+  description: Answer question 2.
+  hint: Think about what words mean.
+- id: q3
+  description: Answer question 3.
+  hint: Think about parts of a story.
+- id: end
+  description: You passed the English pop quiz!
+rewards:
+  experience: 200
+  gold: 15

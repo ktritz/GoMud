@@ -1,0 +1,30 @@
+mobid: 15
+zone: School
+hostile: false
+maxwander: 0
+activitylevel: 20
+groups:
+- school-npc
+idlecommands:
+- emote ladles a thick serving of soup into a waiting bowl.
+- emote wipes down the counter with a damp rag.
+- say Next!
+- say type <ansi fg="command">list</ansi> to see what's on the menu.
+- ''
+- ''
+character:
+  name: lunch lady
+  description: The cafeteria lunch lady is a stout, no-nonsense woman in a hairnet and stained apron who wields a soup ladle like a scepter. Her gruff exterior and booming voice could clear a lunch line in seconds, but she always sneaks an extra helping onto the plate of anyone who looks like they're having a rough day.
+  level: 10
+  raceid: 1
+  shop:
+    - itemid: 30001
+      quantitymax: 10
+    - itemid: 30002
+      quantitymax: 10
+    - itemid: 30006
+      quantitymax: 10
+    - itemid: 30008
+      quantitymax: 10
+    - itemid: 30009
+      quantitymax: 5

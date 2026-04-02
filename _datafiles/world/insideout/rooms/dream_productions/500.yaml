@@ -1,0 +1,22 @@
+roomid: 500
+zone: Dream Productions
+title: Studio Entrance Gate
+description: A massive wrought-iron gate towers before you, emblazoned with the words DREAM PRODUCTIONS in gleaming marquee letters that flicker between gold and silver like old Hollywood signage. Two enormous spotlights sweep the perpetually twilight sky above, casting dramatic beams through a faint haze of stage fog. A velvet rope blocks the main entrance, but the turnstile beside it clicks invitingly. Beyond the gate, the sprawling backlot stretches out under a sky that can't decide if it's sunset or sunrise -- because in dreams, it's always both.
+mapsymbol: G
+maplegend: Gate
+biome: dreamset
+exits:
+  tunnel:
+    roomid: 204
+  north:
+    roomid: 501
+nouns:
+  gate: The <ansi fg="itemname">gate</ansi> is pure Hollywood excess. The iron scrollwork includes tiny film reels, shooting stars, and what appears to be a sleeping face with a thought bubble. The marquee letters buzz with electric warmth, and a small plaque at the base reads "Established the night Riley was born. We've been making dreams ever since."
+  spotlights: The <ansi fg="itemname">spotlights</ansi> sweep in lazy arcs, illuminating nothing in particular but making everything feel important. Occasionally they cross paths and create a brilliant star burst in the haze above. A label on one reads "PROPERTY OF DREAM PRODUCTIONS -- DO NOT AIM AT SUBCONSCIOUS."
+  rope: The <ansi fg="itemname">velvet rope</ansi> is a rich purple, strung between two brass posts. A small sign hangs from it reading "VIP ACCESS ONLY -- All Emotions, Mind Workers, and Anyone Who's Currently Asleep." So, basically everyone.
+idlemessages:
+- The marquee letters flicker and briefly spell "NOW DREAMING" before resetting.
+- A spotlight catches a wisp of stage fog, creating a ghostly silhouette that dissolves instantly.
+- The turnstile clicks and spins on its own, admitting nobody in particular.
+- Faint orchestral music swells from somewhere beyond the gate, then fades to silence.
+- A ticket stub tumbles past on a breeze that smells like popcorn and déjà vu.

@@ -1,0 +1,23 @@
+roomid: 708
+zone: The Subconscious
+title: Basement Stairs
+description: A narrow stone staircase spirals downward into the deeper levels of the Subconscious, each step worn smooth by the passage of things that prefer to move in the dark. The walls are close enough to touch on both sides, and they are cold and slightly damp, covered in a thin film of condensation that makes everything slick. A single bare lightbulb hangs from a wire at the top of the stairs, swinging gently in a draft that comes from below, casting swaying shadows that make the stairs look like they are moving. The air gets colder with each step down, and the silence gets louder, if that makes any sense. It doesn't. That's the point.
+mapsymbol: <
+maplegend: Stairs
+biome: dungeon
+exits:
+  west:
+    roomid: 703
+  north:
+    roomid: 707
+  down:
+    roomid: 709
+nouns:
+  staircase: The <ansi fg="itemname">staircase</ansi> is carved directly into the stone of the mind, each step slightly uneven, as if they were formed by something other than tools. The center of each step is worn into a shallow depression by years of use. Some of the steps have claw marks at the edges, where something gripped for purchase on the way up -- or was dragged on the way down.
+  lightbulb: The <ansi fg="itemname">lightbulb</ansi> is a bare, dusty incandescent bulb that provides just enough light to make the shadows worse. It swings on its wire in a slow, pendulum arc, and every time it swings, the light shifts and the stairs seem to change shape. The wire it hangs from is frayed, and you cannot shake the feeling that it is going to go out at the worst possible moment.
+idlemessages:
+- The lightbulb swings and the shadows on the stairs shift like living things.
+- A cold draft rushes up from below, carrying a faint whiff of something ancient and wrong.
+- Your footstep echoes down the stairwell and comes back changed, as if something repeated it.
+- The lightbulb flickers twice. In the half-second of darkness, you hear breathing that is not yours.
+- A step beneath your foot shifts slightly, as if the stairs are settling deeper into the dark.

@@ -1,0 +1,11 @@
+mobid: 97
+zone: Tutorial
+itemdropchance: 0
+hostile: false
+maxwander: 0
+activitylevel: 10
+character:
+  name: orb of knowledge
+  description: A small, glowing orb that pulses with every color of emotion -- golden joy, blue sadness, red anger, purple fear, green disgust. It floats at eye level and hums softly, radiating warmth and patience. It feels like a memory that wants to teach you something.
+  raceid: 20
+  level: 1

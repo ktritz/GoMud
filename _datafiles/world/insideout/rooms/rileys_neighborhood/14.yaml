@@ -1,0 +1,25 @@
+roomid: 14
+zone: Rileys Neighborhood
+title: Dumpster Area
+description: The alley dead-ends here in a cluster of battered dumpsters and broken pallets. The walls close in on three sides, streaked with rust and old graffiti. A single buzzing light fixture clings to the wall above, casting a sickly yellow glow that makes the shadows jump. It's weirdly dark for a suburban neighborhood -- the kind of dead-end corner that feels forgotten by the rest of the block. The air is thick and smells like wet cardboard and something faintly sour. Things move in the shadows here. Small things, mostly.
+mapsymbol: X
+maplegend: Dead-End
+biome: city
+exits:
+  north:
+    roomid: 13
+nouns:
+  dumpsters: The <ansi fg="itemname">dumpsters</ansi> back here are dented and rusted, shoved against the dead-end wall at crooked angles. One is lying on its side with its lid hanging open like a mouth. The smell is genuinely impressive in the worst possible way.
+  graffiti: The <ansi fg="itemname">graffiti</ansi> back here is less artistic and more unsettling. Strange spiral patterns, a crude drawing of something with too many eyes, and the word "FORGET" written over and over in small letters along the base of the wall. A chill runs through you looking at it.
+spawninfo:
+- mobid: 1
+  message: A <ansi fg="mobname">thought worm</ansi> oozes out from under a toppled dumpster.
+  respawnrate: 3 real minutes
+- mobid: 1
+  message: A <ansi fg="mobname">thought worm</ansi> drops from a crack in the wall above.
+  respawnrate: 3 real minutes
+idlemessages:
+- Something heavy shifts inside one of the dumpsters. You'd rather not know what.
+- The buzzing light flickers, and for a second the alley goes completely dark.
+- A cold draft pushes through the alley from nowhere in particular.
+- You hear a faint scratching sound from inside the overturned dumpster.

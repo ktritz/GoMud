@@ -84,10 +84,7 @@ func (g *GMCPRoomModule) despawnHandler(e events.Event) events.ListenerReturn {
 			continue
 		}
 
-		events.AddToQueue(GMCPOut{
-			UserId:  uid,
-			Payload: fmt.Sprintf(`Room.RemovePlayer "%s"`, evt.CharacterName),
-		})
+		gmcpModule.queueGMCPEvent(uid, ``, fmt.Sprintf(`Room.RemovePlayer "%s"`, evt.CharacterName))
 
 	}
 
@@ -188,11 +185,7 @@ func (g *GMCPRoomModule) buildAndSendGMCPPayload(e events.Event) events.Listener
 
 			payload, moduleName := g.GetRoomNode(user, requestedId)
 
-			events.AddToQueue(GMCPOut{
-				UserId:  evt.UserId,
-				Module:  moduleName,
-				Payload: payload,
-			})
+			gmcpModule.queueGMCPEvent(evt.UserId, moduleName, payload)
 
 		}
 

@@ -1,0 +1,25 @@
+roomid: 9
+zone: Rileys Neighborhood
+title: Park Bench Area
+description: A quiet spot tucked away from the playground noise. Two wooden benches sit under the wide canopy of a massive old oak tree, its branches reaching out in every direction like it's trying to hug the whole park. Dappled sunlight filters through the leaves and makes shifting patterns on the ground. It's the kind of place where people come to think, or read, or just sit and watch the world go by for a while. Someone has left a paperback on one of the benches.
+mapsymbol: .
+maplegend: Bench
+biome: city
+exits:
+  west:
+    roomid: 8
+  path:
+    roomid: 16
+nouns:
+  bench: The <ansi fg="itemname">benches</ansi> are old wood-and-iron park benches with backs worn smooth by years of sitting. Someone has carved "J+K" inside a heart on one of them. The paperback left behind is a beat-up copy of a mystery novel with the last fifty pages missing.
+  oak: The <ansi fg="itemname">oak tree</ansi> is ancient and enormous, its trunk gnarled and twisted with age. You could probably fit three people inside the hollow where two massive roots diverge from the base. The bark is thick and deeply ridged, and if you look closely you can see ants marching in a line up toward the canopy.
+  tree: :oak
+idlemessages:
+- A jogger passes through, breathing hard, gives you a nod.
+- A person walks by with a golden retriever that wants to say hi to everyone.
+- A leaf spirals down from the oak tree and lands on the bench.
+- The breeze picks up for a moment, rustling through the oak's canopy like a whispered conversation.
+spawninfo:
+- mobid: 1
+  message: A thought worm squirms out from beneath a park bench.
+  respawnrate: 5 real minutes

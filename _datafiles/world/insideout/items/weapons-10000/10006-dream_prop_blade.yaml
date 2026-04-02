@@ -1,0 +1,12 @@
+itemid: 10006
+name: dream prop blade
+namesimple: blade
+description: 'A surprisingly convincing prop sword from Dream Productions. Someone
+  wrote ''HERO WEAPON'' on the handle in marker, but it hits like the real thing.'
+type: weapon
+hands: 1
+subtype: slashing
+uses: 0
+damage:
+  diceroll: 1d6+1
+value: 100

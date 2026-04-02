@@ -23,6 +23,7 @@ import (
 	"github.com/GoMudEngine/GoMud/internal/scripting"
 	"github.com/GoMudEngine/GoMud/internal/templates"
 	"github.com/GoMudEngine/GoMud/internal/term"
+	"github.com/GoMudEngine/GoMud/internal/transport"
 	"github.com/GoMudEngine/GoMud/internal/usercommands"
 	"github.com/GoMudEngine/GoMud/internal/users"
 	"github.com/GoMudEngine/GoMud/internal/util"
@@ -212,6 +213,7 @@ func (w *World) HandleSystemEvents(e events.Event) events.ListenerReturn {
 		if userInfo := users.GetByUserId(sys.Data.(int)); userInfo != nil {
 			events.AddToQueue(events.PlayerDespawn{
 				UserId:        userInfo.UserId,
+				OnlinePlayers: snapshotOnlinePlayers(),
 				RoomId:        userInfo.Character.RoomId,
 				Username:      userInfo.Username,
 				CharacterName: userInfo.Character.Name,
@@ -227,6 +229,7 @@ func (w *World) HandleSystemEvents(e events.Event) events.ListenerReturn {
 
 			events.AddToQueue(events.PlayerDespawn{
 				UserId:        user.UserId,
+				OnlinePlayers: snapshotOnlinePlayers(),
 				RoomId:        user.Character.RoomId,
 				Username:      user.Username,
 				CharacterName: user.Character.Name,
@@ -273,12 +276,29 @@ func (w *World) logOutUserByConnectionId(connectionId connections.ConnectionId) 
 	}
 }
 
+func snapshotOnlinePlayers() []events.OnlinePlayerSnapshot {
+	onlineUsers := users.GetAllActiveUsers()
+	snapshots := make([]events.OnlinePlayerSnapshot, 0, len(onlineUsers))
+	for _, user := range onlineUsers {
+		snapshots = append(snapshots, events.OnlinePlayerSnapshot{
+			UserId:      user.UserId,
+			Name:        user.Character.Name,
+			Role:        user.Role,
+			Level:       user.Character.Level,
+			ConnectTime: user.GetConnectTime(),
+		})
+	}
+	return snapshots
+}
+
 func (w *World) enterWorld(userId int, roomId int) {
 
 	if userInfo := users.GetByUserId(userId); userInfo != nil {
 		events.AddToQueue(events.PlayerSpawn{
 			UserId:        userInfo.UserId,
 			ConnectionId:  userInfo.ConnectionId(),
+			ViaWebsocket:  connections.IsWebsocket(userInfo.ConnectionId()),
+			OnlinePlayers: snapshotOnlinePlayers(),
 			RoomId:        userInfo.Character.RoomId,
 			Username:      userInfo.Username,
 			CharacterName: userInfo.Character.Name,
@@ -287,7 +307,7 @@ func (w *World) enterWorld(userId int, roomId int) {
 
 	w.UpdateStats()
 
-	// Put htme in the room
+	// Put them in the room
 	rooms.MoveToRoom(userId, roomId, true)
 }
 
@@ -723,9 +743,9 @@ func (w *World) MainWorker(shutdown chan bool, wg *sync.WaitGroup) {
 
 	roomUpdateTimer := time.NewTimer(roomMaintenancePeriod)
 	ansiAliasTimer := time.NewTimer(ansiAliasReloadPeriod)
-	eventLoopTimer := time.NewTimer(time.Millisecond)
 	turnTimer := time.NewTimer(time.Duration(c.Timing.TurnMs) * time.Millisecond)
 	statsTimer := time.NewTimer(time.Duration(10) * time.Second)
+	eventReady := events.NotifyChan()
 
 loop:
 	for {
@@ -781,13 +801,8 @@ loop:
 
 			ansiAliasTimer.Reset(ansiAliasReloadPeriod)
 
-		case <-eventLoopTimer.C:
-
-			eventLoopTimer.Reset(time.Millisecond)
-
-			util.LockMud()
+		case <-eventReady:
 			w.EventLoop()
-			util.UnlockMud()
 
 		case <-turnTimer.C:
 
@@ -820,6 +835,7 @@ loop:
 			if userInfo := users.GetByUserId(leaveWorldUserId); userInfo != nil {
 				events.AddToQueue(events.PlayerDespawn{
 					UserId:        userInfo.UserId,
+					OnlinePlayers: snapshotOnlinePlayers(),
 					RoomId:        userInfo.Character.RoomId,
 					Username:      userInfo.Username,
 					CharacterName: userInfo.Character.Name,
@@ -963,7 +979,10 @@ func (w *World) processInput(userId int, inputText string, flags events.EventFla
 
 	} else {
 		connId := user.ConnectionId()
-		connections.SendTo([]byte(templates.AnsiParse(user.GetCommandPrompt())), connId)
+		transport.Queue(transport.Delivery{
+			ConnectionIds: []connections.ConnectionId{connId},
+			Payload:       []byte(templates.AnsiParse(user.GetCommandPrompt())),
+		})
 	}
 
 	if !handled {
@@ -979,7 +998,10 @@ func (w *World) processInput(userId int, inputText string, flags events.EventFla
 	// If they had an input prompt, but now they don't, lets make sure to resend a status prompt
 	if hadPrompt || (!hadPrompt && user.GetPrompt() != nil) {
 		connId := user.ConnectionId()
-		connections.SendTo([]byte(templates.AnsiParse(user.GetCommandPrompt())), connId)
+		transport.Queue(transport.Delivery{
+			ConnectionIds: []connections.ConnectionId{connId},
+			Payload:       []byte(templates.AnsiParse(user.GetCommandPrompt())),
+		})
 	}
 	// Removing this as possibly redundant.
 	// Leaving in case I need to remember that I did it...
@@ -1081,7 +1103,27 @@ func (w *World) EventLoop() {
 
 	w.eventRequeue = w.eventRequeue[:0]
 
-	events.ProcessEvents()
+	// Activate any events deferred from the previous EventLoop pass.
+	// This must happen once per pass, not per-event, to avoid infinite loops
+	// when CancelAndRequeue events can't proceed until the next turn.
+	events.ActivateRequeues()
+
+	for events.ProcessSingle(func(e events.Event) events.ListenerReturn {
+		util.LockMud()
+		result, found := events.RunListenersForPhase(e, false)
+		util.UnlockMud()
+		if result != events.Continue {
+			return result
+		}
+
+		result, outsideFound := events.RunListenersForPhase(e, true)
+		if !found && !outsideFound {
+			events.NoteNoListeners(e)
+		}
+
+		return result
+	}) {
+	}
 
 	for _, e := range w.eventRequeue {
 		events.AddToQueue(e)

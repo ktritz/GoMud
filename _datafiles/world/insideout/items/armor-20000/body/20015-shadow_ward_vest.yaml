@@ -1,0 +1,11 @@
+itemid: 20015
+name: shadow ward vest
+namesimple: vest
+description: 'A vest woven from the suppressed thoughts that guard the Back of the
+  Mind. It''s heavy with the weight of things left unsaid, but incredibly protective.'
+type: body
+subtype: wearable
+damagereduction: 7
+statmods:
+  vitality: 4
+value: 380

@@ -1,0 +1,25 @@
+roomid: 4
+zone: Rileys Neighborhood
+title: Riley's Living Room
+description: A cozy living room with hardwood floors and a big bay window letting in gray San Francisco light. Dad's oversized recliner sits in the corner next to a reading lamp and a stack of books about fly fishing. The couch is soft and broken-in, covered in throw pillows Mom picked out. A flat-screen TV is mounted on the wall, and the mantle above the fireplace is lined with family photos -- Minnesota winters, a trip to the Grand Canyon, Riley's first hockey game.
+mapsymbol: L
+maplegend: Living-Room
+biome: city
+exits:
+  south:
+    roomid: 21
+  east:
+    roomid: 5
+nouns:
+  photos: The <ansi fg="itemname">family photos</ansi> tell the whole story. There's the Andersen family bundled up in parkas by a frozen lake. Riley as a toddler covered in birthday cake. Mom and Dad's wedding photo where Dad's tie is crooked. A recent one from a Giants game where everyone looks happy. The newest photo is from Riley's first San Francisco hockey game.
+  tv: The <ansi fg="itemname">TV</ansi> is off right now. The remote is wedged between the couch cushions as usual. There's a smudge on the screen from the last time someone ate nachos while watching a movie.
+  couch: The <ansi fg="itemname">couch</ansi> is the kind that swallows you whole when you sit down. It's got about six throw pillows too many and a fleece blanket stuffed into one corner. If you dig around in the cushions you'd probably find the remote, some popcorn kernels, and maybe a dollar fifty in change.
+spawninfo:
+- mobid: 2
+  message: Riley's Dad wanders in from the kitchen, holding a coffee mug.
+  respawnrate: 5 real minutes
+idlemessages:
+- The house settles with a quiet creak.
+- A car passes outside, headlights briefly sweeping across the bay window.
+- The fridge hums from the kitchen.
+- A draft from somewhere makes the curtains shift slightly.

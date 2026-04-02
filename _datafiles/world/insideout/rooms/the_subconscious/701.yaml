@@ -1,0 +1,18 @@
+roomid: 701
+zone: The Subconscious
+title: The Dark Corridor
+description: The corridor beyond the gate is swallowed by a darkness so thick it feels physical, pressing against your skin like cold water. The walls are rough stone that glistens with condensation, and the floor slopes steadily downward into the unseen depths of Riley's deepest fears. Without a light source, you can barely see your own hands. The silence is oppressive and total, broken only by the faint drip of water from somewhere far below and the persistent feeling that the darkness itself is watching you, patiently, the way a spider watches a fly that has just landed on the very edge of its web.
+mapsymbol: .
+maplegend: Dark
+biome: dungeon
+exits:
+  south:
+    roomid: 700
+  north:
+    roomid: 702
+idlemessages:
+- A drop of ice-cold water lands on the back of your neck from somewhere above.
+- The darkness ahead seems to shift and resettle, like something large just moved.
+- Your footsteps echo in ways that suggest the corridor is much larger than you thought.
+- The temperature drops so sharply your breath comes out in visible clouds -- then warms again.
+- A faint scraping sound comes from behind you, then stops when you turn around.

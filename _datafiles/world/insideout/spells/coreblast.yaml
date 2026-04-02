@@ -1,0 +1,8 @@
+spellid: coreblast
+name: Core Memory Blast
+description: Channels the power of a core memory for 2d6+1 damage
+type: harmsingle
+school: conjuration
+cost: 8
+waitrounds: 2
+difficulty: 40

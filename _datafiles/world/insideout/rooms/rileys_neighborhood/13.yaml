@@ -1,0 +1,27 @@
+roomid: 13
+zone: Rileys Neighborhood
+title: Back Alley
+description: A narrow alley cuts between the backs of buildings, lined with overflowing dumpsters and stacked recycling bins. The walls on either side are brick, streaked with grime, and decorated with layers of graffiti ranging from elaborate murals to hastily sprayed tags. The ground is damp and littered with fast food wrappers and crushed cans. It's not exactly dangerous, but it's the kind of place where weird things skitter in the shadows. Something about the air here feels heavier, like bad thoughts tend to collect in places like this.
+mapsymbol: '!'
+maplegend: Alley
+biome: city
+exits:
+  north:
+    roomid: 16
+  south:
+    roomid: 14
+nouns:
+  dumpsters: The <ansi fg="itemname">dumpsters</ansi> are industrial green and overflowing with black garbage bags. One lid is propped open by a broken wooden pallet. Something in there smells terrible. You don't want to investigate further.
+  graffiti: The <ansi fg="itemname">graffiti</ansi> is layered thick on the alley walls. There's a pretty good mural of a whale, mostly covered by newer tags. Someone wrote "FEAR IS A LIAR" in wobbly red spray paint near the ground. Below that, someone else wrote "no it isn't" in marker.
+spawninfo:
+- mobid: 1
+  message: A <ansi fg="mobname">thought worm</ansi> squirms out of a crack in the pavement.
+  respawnrate: 2 real minutes
+- mobid: 1
+  message: Another <ansi fg="mobname">thought worm</ansi> wriggles out from behind a dumpster.
+  respawnrate: 2 real minutes
+idlemessages:
+- Something rustles behind one of the dumpsters.
+- A rat peeks out from a gap in the bricks, twitches its nose, and disappears.
+- Water drips from a pipe somewhere above, counting out seconds.
+- A gust of wind sends a crumpled newspaper tumbling down the alley.

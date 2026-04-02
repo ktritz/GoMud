@@ -1,0 +1,7 @@
+itemid: 14
+name: emotion detector
+namesimple: detector
+description: 'A small handheld device that vibrates and changes color when strong
+  emotions are nearby. Anxiety built it as a ''preparedness tool.'''
+type: object
+value: 50

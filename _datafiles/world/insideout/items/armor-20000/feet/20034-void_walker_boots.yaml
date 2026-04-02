@@ -1,0 +1,11 @@
+itemid: 20034
+name: void walker boots
+namesimple: boots
+description: Boots that allow the wearer to walk across the dissolving ground of the
+  Memory Dump without sinking. They leave no footprints.
+type: feet
+subtype: wearable
+damagereduction: 6
+statmods:
+  speed: 3
+value: 420

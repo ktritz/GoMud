@@ -1,0 +1,21 @@
+mobid: 39
+zone: Imagination Land
+hostile: false
+activitylevel: 20
+groups:
+- imaginary
+idlecommands:
+- emote shapes a cloud into a bunny, admires it for a moment, then starts on a new one.
+- say Welcome to Imagination Land! Anything is possible here!
+- emote floats up a few inches, then settles back down.
+character:
+  name: cloud builder
+  description: A cheerful being made of solidified imagination, with a puffy white body that shifts shape slightly whenever you aren't looking directly at it. It floats a few inches off the ground and has a friendly, slightly vacant expression, as though its mind is always half in some other creative dimension. It builds and maintains Cloud Town with patient, dreamy enthusiasm.
+  level: 12
+  raceid: 6
+  shop:
+  - quantitymax: 2
+  - quantitymax: 2
+  - quantitymax: 2
+  - quantitymax: 2
+  - quantitymax: 5

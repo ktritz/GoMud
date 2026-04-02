@@ -1,0 +1,6 @@
+name: Belief System
+roomid: 950
+autoscale:
+  minimum: 10
+  maximum: 14
+defaultbiome: mindscape

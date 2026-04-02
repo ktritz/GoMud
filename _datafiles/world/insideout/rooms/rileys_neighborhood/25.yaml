@@ -1,0 +1,17 @@
+roomid: 25
+zone: Rileys Neighborhood
+title: Parents' Bedroom
+description: Mom and Dad's bedroom is the most put-together room in the house. The bed is actually made, with a quilt from Grandma draped over the foot. Matching nightstands hold matching lamps and very different reading material -- Mom's side has a novel with a bookmark two-thirds through, Dad's side has a fly-fishing magazine and his reading glasses. A dresser against the wall has a jewelry box, a framed wedding photo, and a dish of loose change. The room smells faintly of Mom's perfume and the eucalyptus candle she lights every evening.
+mapsymbol: P
+maplegend: Parents
+biome: city
+exits:
+  north:
+    roomid: 24
+nouns:
+  quilt: <ansi fg="itemname">Grandma's quilt</ansi> is hand-stitched in a pattern of interlocking rings, each made from fabric scraps with a story -- an old dress, a baby blanket, a flannel shirt that Grandpa used to wear. It's warm and heavy and smells like cedar from the chest it was kept in.
+  photo: The <ansi fg="itemname">wedding photo</ansi> shows Mom and Dad looking impossibly young and happy. Dad's tie is crooked -- apparently it was crooked all day and nobody told him. Mom's dress has a grass stain on the hem from dancing outside. They look like people who have no idea what's coming and are completely okay with that.
+  jewelry: Mom's <ansi fg="itemname">jewelry box</ansi> is wooden with a little ballerina that used to spin when you opened it but doesn't anymore. Inside are earrings she never wears, a charm bracelet from high school, and Riley's first lost tooth in a tiny envelope.
+idlemessages:
+- The eucalyptus candle on the nightstand has left a faint ring on the wood.
+- A book slides off the nightstand and lands open on the floor.
