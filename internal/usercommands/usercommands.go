@@ -9,6 +9,7 @@ import (
 	"github.com/GoMudEngine/GoMud/internal/events"
 	"github.com/GoMudEngine/GoMud/internal/keywords"
 	"github.com/GoMudEngine/GoMud/internal/mudlog"
+	"github.com/GoMudEngine/GoMud/internal/parser"
 	"github.com/GoMudEngine/GoMud/internal/rooms"
 	"github.com/GoMudEngine/GoMud/internal/scripting"
 	"github.com/GoMudEngine/GoMud/internal/users"
@@ -379,11 +380,21 @@ func TryCommand(cmd string, rest string, userId int, flags events.EventFlag) (bo
 				mudlog.Info("Admin Command", "cmd", cmd, "rest", rest, "userId", user.UserId)
 			}
 
+			// Parse the input into structured form and store for handler access
+			cmdClass := parser.GetCommandClass(cmd)
+			parsed := parser.Parse(cmd, rest, cmdClass)
+			parser.StoreParsedInput(user, parsed)
+
 			// Run the command here
 			handled, err := cmdInfo.Func(rest, user, room, flags)
 			return handled, err
 
 		}
+	}
+
+	// Try prefix matching before giving up
+	if prefixMatch := parser.TryPrefixMatch(cmd, GetCommandNames()); prefixMatch != "" {
+		return TryCommand(prefixMatch, rest, userId, flags)
 	}
 
 	if _, ok := emoteAliases[cmd]; ok {
@@ -411,6 +422,15 @@ func TryCommand(cmd string, rest string, userId int, flags events.EventFlag) (bo
 	// end "go" attempt
 
 	return false, nil
+}
+
+// GetCommandNames returns all registered command names for prefix matching.
+func GetCommandNames() []string {
+	names := make([]string, 0, len(userCommands))
+	for name := range userCommands {
+		names = append(names, name)
+	}
+	return names
 }
 
 // Register mob commands from outside of the package

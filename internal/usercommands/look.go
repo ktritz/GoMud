@@ -12,6 +12,7 @@ import (
 	"github.com/GoMudEngine/GoMud/internal/mapper"
 	"github.com/GoMudEngine/GoMud/internal/mobs"
 	"github.com/GoMudEngine/GoMud/internal/mudlog"
+	"github.com/GoMudEngine/GoMud/internal/parser"
 	"github.com/GoMudEngine/GoMud/internal/rooms"
 	"github.com/GoMudEngine/GoMud/internal/templates"
 	"github.com/GoMudEngine/GoMud/internal/users"
@@ -32,19 +33,11 @@ func Look(rest string, user *users.UserRecord, room *rooms.Room, flags events.Ev
 
 	isSneaking := user.Character.HasBuffFlag(buffs.Hidden)
 
-	// trim off some fluff
-	if len(rest) > 2 {
-		if rest[0:3] == `at ` {
-			rest = rest[3:]
-		}
-	}
-	if len(rest) > 3 {
-		if rest[0:4] == `the ` {
-			rest = rest[4:]
-		}
-	}
-
+	// Use parsed input for filler-stripped target
 	lookAt := rest
+	if parsed := parser.GetParsedInput(user); parsed != nil {
+		lookAt = parsed.Rest
+	}
 
 	events.AddToQueue(events.Looking{
 		UserId: user.UserId,

@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/GoMudEngine/GoMud/internal/buffs"
+	"github.com/GoMudEngine/GoMud/internal/parser"
 	"github.com/GoMudEngine/GoMud/internal/characters"
 	"github.com/GoMudEngine/GoMud/internal/events"
 	"github.com/GoMudEngine/GoMud/internal/mobs"
@@ -17,6 +18,11 @@ func Attack(rest string, user *users.UserRecord, room *rooms.Room, flags events.
 
 	attackPlayerId := 0
 	attackMobInstanceId := 0
+
+	// Use parsed target if available (strips fillers like "the")
+	if parsed := parser.GetParsedInput(user); parsed != nil && parsed.Rest != "" {
+		rest = parsed.Rest
+	}
 
 	if rest == `` {
 		// First check who's directly attacking this player

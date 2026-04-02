@@ -87,12 +87,14 @@ func Ask(rest string, user *users.UserRecord, room *rooms.Room, flags events.Eve
 			room.SendText(fmt.Sprintf(`<ansi fg="username">%s</ansi> asks <ansi fg="mobname">%s</ansi> about "%s"`, user.Character.Name, mob.Character.Name, strings.Join(args, ` `)), user.UserId)
 		}
 
-		// players may type "ask <mob> to <do something>"
-		if len(args) > 1 && strings.ToLower(args[0]) == `to` {
-			args = args[1:]
-		}
-		if len(args) > 1 && strings.ToLower(args[0]) == `about` {
-			args = args[1:]
+		// Strip filler words (to, about, the, a, etc.) from the beginning of the ask text
+		for len(args) > 1 {
+			lower := strings.ToLower(args[0])
+			if lower == `to` || lower == `about` || lower == `the` || lower == `a` || lower == `an` || lower == `at` {
+				args = args[1:]
+			} else {
+				break
+			}
 		}
 
 		if mob.Character.IsCharmed(user.UserId) {

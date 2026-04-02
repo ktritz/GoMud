@@ -9,6 +9,7 @@ import (
 	"github.com/GoMudEngine/GoMud/internal/events"
 	"github.com/GoMudEngine/GoMud/internal/items"
 	"github.com/GoMudEngine/GoMud/internal/mobs"
+	"github.com/GoMudEngine/GoMud/internal/parser"
 	"github.com/GoMudEngine/GoMud/internal/rooms"
 	"github.com/GoMudEngine/GoMud/internal/scripting"
 	"github.com/GoMudEngine/GoMud/internal/users"
@@ -17,49 +18,65 @@ import (
 
 func Give(rest string, user *users.UserRecord, room *rooms.Room, flags events.EventFlag) (bool, error) {
 
-	rest = util.StripPrepositions(rest)
+	parsed := parser.GetParsedInput(user)
 
-	args := util.SplitButRespectQuotes(strings.ToLower(rest))
+	var giveWhat string
+	var giveWho string
 
-	if len(args) < 2 {
-		user.SendText(`Give what? To whom? (<ansi fg="command">give {object-name} {receiver-name}</ansi>)`)
-		return true, nil
+	if parsed != nil && !parsed.Instrument.IsEmpty() {
+		// "give sword to merchant" -> Target=sword, Preposition=to, Instrument=merchant
+		giveWhat = parsed.Target.Noun
+		if parsed.Target.Quantity > 0 {
+			giveWhat = fmt.Sprintf("%d %s", parsed.Target.Quantity, parsed.Target.Noun)
+		}
+		giveWho = parsed.Instrument.Noun
+	} else {
+		// Fallback: "give sword merchant" -> last arg is recipient
+		rest = util.StripPrepositions(rest)
+		args := util.SplitButRespectQuotes(strings.ToLower(rest))
+		if len(args) < 2 {
+			user.SendText(`Give what? To whom? (<ansi fg="command">give {item} to {name}</ansi>)`)
+			return true, nil
+		}
+		giveWho = args[len(args)-1]
+		giveWhat = strings.Join(args[:len(args)-1], " ")
 	}
 
-	var giveWho string = args[len(args)-1]
-	args = args[:len(args)-1]
-	var giveWhat string = strings.Join(args, " ")
+	if giveWhat == "" || giveWho == "" {
+		user.SendText(`Give what? To whom? (<ansi fg="command">give {item} to {name}</ansi>)`)
+		return true, nil
+	}
 
 	var giveItem items.Item = items.Item{}
 	var giveGoldAmount int = 0
 
-	if len(giveWhat) > 4 && giveWhat[len(giveWhat)-4:] == "gold" {
-
+	// Check for gold: "5 gold", "gold", or parsed quantity
+	if parsed != nil && strings.ToLower(parsed.Target.Noun) == "gold" {
+		giveGoldAmount = parsed.Target.Quantity
+		if giveGoldAmount == 0 {
+			giveGoldAmount = user.Character.Gold // "give gold to X" = give all gold
+		}
+	} else if len(giveWhat) > 4 && giveWhat[len(giveWhat)-4:] == "gold" {
 		g, _ := strconv.ParseInt(giveWhat[0:len(giveWhat)-5], 10, 32)
 		giveGoldAmount = int(g)
+	}
 
+	if giveGoldAmount > 0 {
 		if giveGoldAmount < 0 {
 			user.SendText("You can't give a negative amount of gold.")
 			return true, nil
 		}
-
 		if giveGoldAmount > user.Character.Gold {
 			user.SendText("You don't have that much gold to give.")
 			return true, nil
 		}
-
 	} else {
-
-		var found bool = false
-
-		// Check whether the user has an item in their inventory that matches
+		var found bool
 		giveItem, found = user.Character.FindInBackpack(giveWhat)
-
 		if !found {
-			user.SendText(fmt.Sprintf(`You don't have a %s to give. (<ansi fg="command">give {object-name} {receiver-name}</ansi>)`, giveWhat))
+			user.SendText(fmt.Sprintf(`You don't have a %s to give. (<ansi fg="command">give {item} to {name}</ansi>)`, giveWhat))
 			return true, nil
 		}
-
 	}
 
 	playerId, mobId := room.FindByName(giveWho)

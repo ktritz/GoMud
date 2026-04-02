@@ -18,6 +18,7 @@ import (
 	"github.com/GoMudEngine/GoMud/internal/mobcommands"
 	"github.com/GoMudEngine/GoMud/internal/mobs"
 	"github.com/GoMudEngine/GoMud/internal/mudlog"
+	"github.com/GoMudEngine/GoMud/internal/parser"
 	"github.com/GoMudEngine/GoMud/internal/prompt"
 	"github.com/GoMudEngine/GoMud/internal/rooms"
 	"github.com/GoMudEngine/GoMud/internal/scripting"
@@ -965,7 +966,11 @@ func (w *World) processInput(userId int, inputText string, flags events.EventFla
 				}
 			}
 
-			if index := strings.Index(inputText, " "); index != -1 {
+			// Try multi-word command collapse (e.g., "pick up sword" -> get sword)
+			if verb, rest, ok := parser.TryMultiWordCollapse(inputText); ok {
+				command = verb
+				remains = rest
+			} else if index := strings.Index(inputText, " "); index != -1 {
 				command, remains = strings.ToLower(inputText[0:index]), inputText[index+1:]
 			} else {
 				command = inputText

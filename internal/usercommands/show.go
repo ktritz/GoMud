@@ -5,6 +5,7 @@ import (
 	"strings"
 
 	"github.com/GoMudEngine/GoMud/internal/buffs"
+	"github.com/GoMudEngine/GoMud/internal/parser"
 	"github.com/GoMudEngine/GoMud/internal/events"
 	"github.com/GoMudEngine/GoMud/internal/items"
 	"github.com/GoMudEngine/GoMud/internal/mobs"
@@ -16,21 +17,34 @@ import (
 
 func Show(rest string, user *users.UserRecord, room *rooms.Room, flags events.EventFlag) (bool, error) {
 
-	rest = util.StripPrepositions(rest)
+	parsed := parser.GetParsedInput(user)
 
-	args := util.SplitButRespectQuotes(strings.ToLower(rest))
+	var objectName string
+	var targetName string
 
-	if len(args) < 2 {
+	if parsed != nil && !parsed.Instrument.IsEmpty() {
+		// "show sword to merchant" -> Target=sword, Instrument=merchant
+		objectName = parsed.Target.Noun
+		targetName = parsed.Instrument.Noun
+	} else {
+		// Fallback: "show sword merchant" -> last arg is target
+		rest = util.StripPrepositions(rest)
+		args := util.SplitButRespectQuotes(strings.ToLower(rest))
+		if len(args) < 2 {
+			user.SendText("Show what? To whom?")
+			return true, nil
+		}
+		targetName = args[len(args)-1]
+		objectName = strings.Join(args[:len(args)-1], " ")
+	}
+
+	if objectName == "" || targetName == "" {
 		user.SendText("Show what? To whom?")
 		return true, nil
 	}
 
 	var showItem items.Item = items.Item{}
 	var found bool = false
-
-	var targetName string = args[len(args)-1]
-	args = args[:len(args)-1]
-	var objectName string = strings.Join(args, " ")
 
 	// Check whether the user has an item in their inventory that matches
 	showItem, found = user.Character.FindInBackpack(objectName)
