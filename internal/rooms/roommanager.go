@@ -343,6 +343,15 @@ func MoveToRoom(userId int, toRoomId int, isSpawn ...bool) error {
 		Unseen:     user.Character.HasBuffFlag(buffs.Hidden),
 	})
 
+	// Prefetch adjacent rooms so moves to unvisited rooms are instant
+	for _, exitInfo := range newRoom.Exits {
+		if exitInfo.RoomId > 0 && getRoomFromMemory(exitInfo.RoomId) == nil {
+			if adjRoom := LoadRoomInstance(exitInfo.RoomId); adjRoom != nil {
+				addRoomToMemory(adjRoom)
+			}
+		}
+	}
+
 	return nil
 }
 
