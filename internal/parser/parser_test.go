@@ -254,6 +254,91 @@ func TestParseWildcard(t *testing.T) {
 	}
 }
 
+func TestImplicitGive(t *testing.T) {
+	p := Parse("give", "sword merchant", ClassStructured)
+	if p.Target.Noun != "sword" {
+		t.Errorf("expected target 'sword', got '%s'", p.Target.Noun)
+	}
+	if p.Preposition != "to" {
+		t.Errorf("expected implicit preposition 'to', got '%s'", p.Preposition)
+	}
+	if p.Instrument.Noun != "merchant" {
+		t.Errorf("expected instrument 'merchant', got '%s'", p.Instrument.Noun)
+	}
+}
+
+func TestImplicitGiveWithAdjective(t *testing.T) {
+	p := Parse("give", "red sword merchant", ClassStructured)
+	if p.Target.Noun != "sword" {
+		t.Errorf("expected target 'sword', got '%s'", p.Target.Noun)
+	}
+	if len(p.Target.Adjectives) != 1 || p.Target.Adjectives[0] != "red" {
+		t.Errorf("expected target adj ['red'], got %v", p.Target.Adjectives)
+	}
+	if p.Instrument.Noun != "merchant" {
+		t.Errorf("expected instrument 'merchant', got '%s'", p.Instrument.Noun)
+	}
+}
+
+func TestImplicitGiveGold(t *testing.T) {
+	p := Parse("give", "5 gold merchant", ClassStructured)
+	if p.Target.Noun != "gold" {
+		t.Errorf("expected target 'gold', got '%s'", p.Target.Noun)
+	}
+	if p.Target.Quantity != 5 {
+		t.Errorf("expected quantity 5, got %d", p.Target.Quantity)
+	}
+	if p.Instrument.Noun != "merchant" {
+		t.Errorf("expected instrument 'merchant', got '%s'", p.Instrument.Noun)
+	}
+}
+
+func TestImplicitGiveSingleToken(t *testing.T) {
+	// "give sword" with no recipient — should NOT apply implicit split
+	p := Parse("give", "sword", ClassStructured)
+	if p.Target.Noun != "sword" {
+		t.Errorf("expected target 'sword', got '%s'", p.Target.Noun)
+	}
+	if !p.Instrument.IsEmpty() {
+		t.Errorf("expected no instrument for single token, got '%s'", p.Instrument.Noun)
+	}
+}
+
+func TestImplicitBuyFrom(t *testing.T) {
+	p := Parse("buy", "sword shopkeeper", ClassStructured)
+	if p.Target.Noun != "sword" {
+		t.Errorf("expected target 'sword', got '%s'", p.Target.Noun)
+	}
+	if p.Preposition != "from" {
+		t.Errorf("expected implicit preposition 'from', got '%s'", p.Preposition)
+	}
+	if p.Instrument.Noun != "shopkeeper" {
+		t.Errorf("expected instrument 'shopkeeper', got '%s'", p.Instrument.Noun)
+	}
+}
+
+func TestExplicitOverridesImplicit(t *testing.T) {
+	// Explicit "to" should take priority, implicit rule shouldn't interfere
+	p := Parse("give", "sword to merchant", ClassStructured)
+	if p.Target.Noun != "sword" {
+		t.Errorf("expected target 'sword', got '%s'", p.Target.Noun)
+	}
+	if p.Preposition != "to" {
+		t.Errorf("expected preposition 'to', got '%s'", p.Preposition)
+	}
+	if p.Instrument.Noun != "merchant" {
+		t.Errorf("expected instrument 'merchant', got '%s'", p.Instrument.Noun)
+	}
+}
+
+func TestNoImplicitForGet(t *testing.T) {
+	// "get" is NOT in implicitPrepositions, so "get sword chest" should NOT split
+	p := Parse("get", "sword chest", ClassStructured)
+	if !p.Instrument.IsEmpty() {
+		t.Errorf("expected no implicit split for get, got instrument '%s'", p.Instrument.Noun)
+	}
+}
+
 func TestParseAllFromContainer(t *testing.T) {
 	p := Parse("get", "all from chest", ClassStructured)
 	if !p.Target.All {

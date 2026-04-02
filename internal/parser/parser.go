@@ -128,10 +128,23 @@ func parseStructured(parsed *ParsedInput, rest string) *ParsedInput {
 		parsed.Instrument = parseNounPhrase(instrumentTokens)
 		parsed.Tokens = append(targetTokens, instrumentTokens...)
 	} else {
-		// No preposition — everything is the target
+		// No preposition found
 		cleanTokens := stripFillers(tokens)
-		parsed.Target = parseNounPhrase(cleanTokens)
-		parsed.Tokens = cleanTokens
+
+		// Check for implicit preposition (e.g., "give sword merchant" implies "to")
+		if implicitPrep, ok := implicitPrepositions[parsed.Verb]; ok && len(cleanTokens) >= 2 {
+			// Last token is the instrument, everything else is the target
+			targetTokens := cleanTokens[:len(cleanTokens)-1]
+			instrumentTokens := cleanTokens[len(cleanTokens)-1:]
+
+			parsed.Preposition = implicitPrep
+			parsed.Target = parseNounPhrase(targetTokens)
+			parsed.Instrument = parseNounPhrase(instrumentTokens)
+			parsed.Tokens = cleanTokens
+		} else {
+			parsed.Target = parseNounPhrase(cleanTokens)
+			parsed.Tokens = cleanTokens
+		}
 	}
 
 	// Rebuild rest string from cleaned tokens

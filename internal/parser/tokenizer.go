@@ -40,6 +40,16 @@ var structuralPrepositions = map[string]bool{
 	"for":     true,
 }
 
+// Implicit prepositions — when these verbs have 2+ tokens but no explicit
+// preposition, the last token is treated as the instrument (recipient/source).
+// E.g., "give sword merchant" implies "give sword to merchant".
+// For multi-word recipient names, use the explicit preposition: "give sword to old merchant"
+var implicitPrepositions = map[string]string{
+	"give": "to",
+	"show": "to",
+	"buy":  "from",
+}
+
 // Multi-word command collapses — checked before verb/rest split.
 var multiWordCommands = map[string]string{
 	"pick up":  "get",
