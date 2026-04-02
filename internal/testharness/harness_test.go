@@ -267,6 +267,113 @@ func TestSayCommand(t *testing.T) {
 	h.ExpectOutput("hello world")
 }
 
+// === Eat/Drink handler tests ===
+
+func TestEatNoArgs(t *testing.T) {
+	h := New(t)
+	handled, _ := h.Run("eat")
+	if !handled {
+		t.Error("expected eat to be handled")
+	}
+}
+
+func TestEatWithFillers(t *testing.T) {
+	h := New(t)
+	// "eat the potion" should strip "the" and try to find "potion"
+	handled, _ := h.Run("eat the potion")
+	if !handled {
+		t.Error("expected eat to be handled")
+	}
+	// Should say something about not having it (not "eat what")
+}
+
+func TestDrinkNoArgs(t *testing.T) {
+	h := New(t)
+	handled, _ := h.Run("drink")
+	if !handled {
+		t.Error("expected drink to be handled")
+	}
+}
+
+// === Equip handler tests ===
+
+func TestEquipNoArgs(t *testing.T) {
+	h := New(t)
+	handled, _ := h.Run("equip")
+	if !handled {
+		t.Error("expected equip to be handled")
+	}
+}
+
+func TestEquipWithFillers(t *testing.T) {
+	h := New(t)
+	// "wear the sword" should strip filler
+	handled, _ := h.Run("wear the sword")
+	if !handled {
+		t.Error("expected wear alias to be handled")
+	}
+}
+
+// === Buy handler tests ===
+
+func TestBuyNoArgs(t *testing.T) {
+	h := New(t)
+	handled, _ := h.Run("buy")
+	if !handled {
+		t.Error("expected buy to be handled")
+	}
+}
+
+// === Sell handler tests ===
+
+func TestSellNoArgs(t *testing.T) {
+	h := New(t)
+	handled, _ := h.Run("sell")
+	if !handled {
+		t.Error("expected sell to be handled")
+	}
+}
+
+// === Use handler tests ===
+
+func TestUseNoArgs(t *testing.T) {
+	h := New(t)
+	handled, _ := h.Run("use")
+	if !handled {
+		t.Error("expected use to be handled")
+	}
+}
+
+// === Stash handler tests ===
+
+func TestStashNoArgs(t *testing.T) {
+	h := New(t)
+	handled, _ := h.Run("stash")
+	if !handled {
+		t.Error("expected stash to be handled")
+	}
+}
+
+// === Read handler tests ===
+
+func TestReadNoArgs(t *testing.T) {
+	h := New(t)
+	handled, _ := h.Run("read")
+	if !handled {
+		t.Error("expected read to be handled")
+	}
+}
+
+// === Appraise handler tests ===
+
+func TestAppraiseNoArgs(t *testing.T) {
+	h := New(t)
+	handled, _ := h.Run("appraise")
+	if !handled {
+		t.Error("expected appraise to be handled")
+	}
+}
+
 func TestSayPreservesFillers(t *testing.T) {
 	h := New(t)
 	// Freeform commands should NOT strip fillers
