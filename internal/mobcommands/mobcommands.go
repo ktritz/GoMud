@@ -8,6 +8,7 @@ import (
 
 	"github.com/GoMudEngine/GoMud/internal/keywords"
 	"github.com/GoMudEngine/GoMud/internal/mobs"
+	"github.com/GoMudEngine/GoMud/internal/parser"
 	"github.com/GoMudEngine/GoMud/internal/rooms"
 	"github.com/GoMudEngine/GoMud/internal/util"
 )
@@ -136,6 +137,11 @@ func TryCommand(cmd string, rest string, mobId int) (bool, error) {
 		defer func() {
 			util.TrackTime(`mob-cmd[`+cmd+`]`, time.Since(start).Seconds())
 		}()
+
+		// Parse input and store for mob handler access
+		cmdClass := parser.GetCommandClass(cmd)
+		parsed := parser.Parse(cmd, rest, cmdClass)
+		parser.StoreParsedInputOn(mob, parsed)
 
 		handled, err := cmdInfo.Func(rest, mob, room)
 		return handled, err

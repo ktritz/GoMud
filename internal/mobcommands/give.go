@@ -3,30 +3,38 @@ package mobcommands
 import (
 	"fmt"
 	"strconv"
-	"strings"
 
 	"github.com/GoMudEngine/GoMud/internal/buffs"
 	"github.com/GoMudEngine/GoMud/internal/events"
 	"github.com/GoMudEngine/GoMud/internal/items"
 	"github.com/GoMudEngine/GoMud/internal/mobs"
+	"github.com/GoMudEngine/GoMud/internal/parser"
 	"github.com/GoMudEngine/GoMud/internal/rooms"
 	"github.com/GoMudEngine/GoMud/internal/users"
-	"github.com/GoMudEngine/GoMud/internal/util"
 )
 
 func Give(rest string, mob *mobs.Mob, room *rooms.Room) (bool, error) {
 
-	rest = util.StripPrepositions(rest)
+	parsed := parser.GetParsedInputFrom(mob)
 
-	args := util.SplitButRespectQuotes(strings.ToLower(rest))
+	var giveWhat string
+	var giveWho string
 
-	if len(args) < 2 {
-		return true, nil
+	if parsed != nil && !parsed.Instrument.IsEmpty() {
+		giveWhat = parsed.Target.Noun
+		if parsed.Target.Quantity > 0 {
+			giveWhat = fmt.Sprintf("%d %s", parsed.Target.Quantity, parsed.Target.Noun)
+		}
+		giveWho = parsed.Instrument.Noun
+	} else if parsed != nil && parsed.Rest != "" {
+		giveWhat = parsed.Rest
+	} else {
+		giveWhat = rest
 	}
 
-	var giveWho string = args[len(args)-1]
-	args = args[:len(args)-1]
-	var giveWhat string = strings.Join(args, " ")
+	if giveWhat == "" || giveWho == "" {
+		return true, nil
+	}
 
 	var giveItem items.Item = items.Item{}
 	var giveGoldAmount int = 0

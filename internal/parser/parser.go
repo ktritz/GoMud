@@ -175,9 +175,27 @@ func rebuildRest(parsed *ParsedInput) string {
 	return strings.Join(parts, " ")
 }
 
+// TempDataAccessor is any type with Get/SetTempData (UserRecord, Mob, etc.)
+type TempDataAccessor interface {
+	GetTempData(key string) any
+	SetTempData(key string, value any)
+}
+
 // GetParsedInput retrieves the parsed input from the user's temp data store.
 func GetParsedInput(user *users.UserRecord) *ParsedInput {
-	if data := user.GetTempData(tempDataKey); data != nil {
+	return getParsedFrom(user)
+}
+
+// GetParsedInputFrom retrieves parsed input from any TempDataAccessor.
+func GetParsedInputFrom(accessor TempDataAccessor) *ParsedInput {
+	return getParsedFrom(accessor)
+}
+
+func getParsedFrom(accessor TempDataAccessor) *ParsedInput {
+	if accessor == nil {
+		return nil
+	}
+	if data := accessor.GetTempData(tempDataKey); data != nil {
 		if pi, ok := data.(*ParsedInput); ok {
 			return pi
 		}
@@ -188,4 +206,9 @@ func GetParsedInput(user *users.UserRecord) *ParsedInput {
 // StoreParsedInput stores the parsed input on the user for handler access.
 func StoreParsedInput(user *users.UserRecord, parsed *ParsedInput) {
 	user.SetTempData(tempDataKey, parsed)
+}
+
+// StoreParsedInputOn stores parsed input on any TempDataAccessor.
+func StoreParsedInputOn(accessor TempDataAccessor, parsed *ParsedInput) {
+	accessor.SetTempData(tempDataKey, parsed)
 }

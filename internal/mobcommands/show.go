@@ -2,32 +2,35 @@ package mobcommands
 
 import (
 	"fmt"
-	"strings"
 
 	"github.com/GoMudEngine/GoMud/internal/buffs"
 	"github.com/GoMudEngine/GoMud/internal/items"
 	"github.com/GoMudEngine/GoMud/internal/mobs"
+	"github.com/GoMudEngine/GoMud/internal/parser"
 	"github.com/GoMudEngine/GoMud/internal/rooms"
 	"github.com/GoMudEngine/GoMud/internal/users"
-	"github.com/GoMudEngine/GoMud/internal/util"
 )
 
 func Show(rest string, mob *mobs.Mob, room *rooms.Room) (bool, error) {
 
-	rest = util.StripPrepositions(rest)
+	parsed := parser.GetParsedInputFrom(mob)
 
-	args := util.SplitButRespectQuotes(strings.ToLower(rest))
+	var objectName string
+	var targetName string
 
-	if len(args) < 2 {
+	if parsed != nil && !parsed.Instrument.IsEmpty() {
+		objectName = parsed.Target.Noun
+		targetName = parsed.Instrument.Noun
+	} else {
+		return true, nil
+	}
+
+	if objectName == "" || targetName == "" {
 		return true, nil
 	}
 
 	var showItem items.Item = items.Item{}
 	var found bool = false
-
-	var targetName string = args[len(args)-1]
-	args = args[:len(args)-1]
-	var objectName string = strings.Join(args, " ")
 
 	// Check whether the user has an item in their inventory that matches
 	showItem, found = mob.Character.FindInBackpack(objectName)
