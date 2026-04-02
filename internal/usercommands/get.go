@@ -7,12 +7,15 @@ import (
 	"github.com/GoMudEngine/GoMud/internal/buffs"
 	"github.com/GoMudEngine/GoMud/internal/events"
 	"github.com/GoMudEngine/GoMud/internal/items"
+	"github.com/GoMudEngine/GoMud/internal/parser"
 	"github.com/GoMudEngine/GoMud/internal/rooms"
 	"github.com/GoMudEngine/GoMud/internal/users"
 	"github.com/GoMudEngine/GoMud/internal/util"
 )
 
 func Get(rest string, user *users.UserRecord, room *rooms.Room, flags events.EventFlag) (bool, error) {
+
+	parsed := parser.GetParsedInput(user)
 
 	args := util.SplitButRespectQuotes(strings.ToLower(rest))
 
@@ -21,80 +24,101 @@ func Get(rest string, user *users.UserRecord, room *rooms.Room, flags events.Eve
 		return true, nil
 	}
 
-	if args[0] == "all" {
+	// Handle "get all" — check args first since recursive calls pass raw "rest"
+	// and the parsed data in tempStore would be stale
+	isAll := args[0] == "all"
+	if !isAll && parsed != nil && parsed.Target.All {
+		isAll = true
+	}
+	if isAll {
+		// Clear parsed data so recursive Get calls don't re-trigger "all"
+		parser.StoreParsedInput(user, nil)
 		if room.Gold > 0 {
 			Get(`gold`, user, room, flags)
 		}
-
 		if len(room.Items) > 0 {
 			iCopies := append([]items.Item{}, room.Items...)
-
 			for _, item := range iCopies {
 				Get(item.Name(), user, room, flags)
 			}
 		}
-
 		return true, nil
 	}
 
+	// Determine source using parser if available
 	getFromStash := false
 	containerName := ``
 	petUserId := 0
+	sourceName := ``
 
-	if len(args) >= 2 {
-		// Detect "stash" or "from stash" at end and remove it
-		if args[len(args)-1] == "stash" {
+	if parsed != nil && !parsed.Instrument.IsEmpty() {
+		sourceName = strings.ToLower(parsed.Instrument.Noun)
+		rest = parsed.Target.Noun
+		if len(parsed.Target.Adjectives) > 0 {
+			rest = strings.Join(parsed.Target.Adjectives, " ") + " " + rest
+		}
+	}
+
+	// Check source type
+	if sourceName == "stash" {
+		getFromStash = true
+	} else if sourceName == "ground" {
+		getFromStash = false
+	} else if sourceName != "" {
+		// Check container
+		containerName = room.FindContainerByName(sourceName)
+
+		// Check pet
+		if containerName == "" {
+			petUserId = room.FindByPetName(sourceName)
+			if petUserId == 0 && sourceName == "pet" && user.Character.Pet.Exists() {
+				petUserId = user.UserId
+			}
+		}
+	}
+
+	// Fallback: if parser didn't find a source, try old-style last-arg detection
+	if sourceName == "" && len(args) >= 2 {
+		lastArg := args[len(args)-1]
+		if lastArg == "stash" {
 			getFromStash = true
-			if args[len(args)-2] == "from" {
+			rest = strings.Join(args[0:len(args)-1], " ")
+			if len(args) >= 3 && args[len(args)-2] == "from" {
+				rest = strings.Join(args[0:len(args)-2], " ")
+			}
+		} else if lastArg == "ground" {
+			if len(args) >= 3 && args[len(args)-2] == "from" {
 				rest = strings.Join(args[0:len(args)-2], " ")
 			} else {
 				rest = strings.Join(args[0:len(args)-1], " ")
 			}
-		}
-
-		if args[len(args)-1] == "ground" {
-			getFromStash = false
-			if args[len(args)-2] == "from" {
-				rest = strings.Join(args[0:len(args)-2], " ")
-			} else {
+		} else {
+			cn := room.FindContainerByName(lastArg)
+			if cn != "" {
+				containerName = cn
 				rest = strings.Join(args[0:len(args)-1], " ")
-			}
-		}
-
-		containerName = room.FindContainerByName(args[len(args)-1])
-		if containerName != `` {
-			getFromStash = false
-			if args[len(args)-2] == "from" {
-				rest = strings.Join(args[0:len(args)-2], " ")
-			} else {
-				rest = strings.Join(args[0:len(args)-1], " ")
-			}
-		}
-
-		//
-		// Look for any pets in the room
-		//
-		petUserId = room.FindByPetName(args[len(args)-1])
-		if petUserId == 0 && args[len(args)-1] == `pet` && user.Character.Pet.Exists() {
-			petUserId = user.UserId
-		}
-		if petUserId > 0 {
-
-			if petUserId != user.UserId {
-				user.SendText(`You can't do that!`)
-				return true, nil
-			}
-
-			getFromStash = false
-			if petUser := users.GetByUserId(petUserId); petUser != nil {
-
-				if args[len(args)-2] == "from" {
+				if len(args) >= 3 && args[len(args)-2] == "from" {
 					rest = strings.Join(args[0:len(args)-2], " ")
-				} else {
+				}
+			} else {
+				pId := room.FindByPetName(lastArg)
+				if pId == 0 && lastArg == "pet" && user.Character.Pet.Exists() {
+					pId = user.UserId
+				}
+				if pId > 0 {
+					petUserId = pId
 					rest = strings.Join(args[0:len(args)-1], " ")
+					if len(args) >= 3 && args[len(args)-2] == "from" {
+						rest = strings.Join(args[0:len(args)-2], " ")
+					}
 				}
 			}
 		}
+	}
+
+	if petUserId > 0 && petUserId != user.UserId {
+		user.SendText(`You can't do that!`)
+		return true, nil
 	}
 
 	if petUserId == user.UserId {
