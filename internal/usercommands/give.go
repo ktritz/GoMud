@@ -13,7 +13,6 @@ import (
 	"github.com/GoMudEngine/GoMud/internal/rooms"
 	"github.com/GoMudEngine/GoMud/internal/scripting"
 	"github.com/GoMudEngine/GoMud/internal/users"
-	"github.com/GoMudEngine/GoMud/internal/util"
 )
 
 func Give(rest string, user *users.UserRecord, room *rooms.Room, flags events.EventFlag) (bool, error) {
@@ -30,16 +29,10 @@ func Give(rest string, user *users.UserRecord, room *rooms.Room, flags events.Ev
 			giveWhat = fmt.Sprintf("%d %s", parsed.Target.Quantity, parsed.Target.Noun)
 		}
 		giveWho = parsed.Instrument.Noun
+	} else if parsed != nil {
+		giveWhat = parsed.Rest
 	} else {
-		// Fallback: "give sword merchant" -> last arg is recipient
-		rest = util.StripPrepositions(rest)
-		args := util.SplitButRespectQuotes(strings.ToLower(rest))
-		if len(args) < 2 {
-			user.SendText(`Give what? To whom? (<ansi fg="command">give {item} to {name}</ansi>)`)
-			return true, nil
-		}
-		giveWho = args[len(args)-1]
-		giveWhat = strings.Join(args[:len(args)-1], " ")
+		giveWhat = rest
 	}
 
 	if giveWhat == "" || giveWho == "" {

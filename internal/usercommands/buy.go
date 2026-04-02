@@ -48,26 +48,8 @@ func Buy(rest string, user *users.UserRecord, room *rooms.Room, flags events.Eve
 		if len(parsed.Target.Adjectives) > 0 {
 			itemname = strings.Join(parsed.Target.Adjectives, " ") + " " + itemname
 		}
-	} else {
-		// Fallback: old-style "buy X from Y" detection
-		args := util.SplitButRespectQuotes(strings.ToLower(rest))
-		if len(args) >= 3 {
-			if args[len(args)-2] == `from` {
-				targetUserId, targetMobInstanceId = room.FindByName(args[len(args)-1])
-
-				if user.UserId == targetUserId {
-					user.SendText("You can't buy from yourself.")
-					return true, nil
-				}
-
-				if targetUserId == 0 && targetMobInstanceId == 0 {
-					user.SendText("Visit a merchant to purchase objects or services.")
-					return true, nil
-				}
-
-				itemname = strings.Join(args[0:len(args)-2], ` `)
-			}
-		}
+	} else if parsed != nil && parsed.Rest != "" {
+		itemname = parsed.Rest
 	}
 
 	success := false

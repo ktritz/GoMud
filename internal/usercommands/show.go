@@ -2,7 +2,6 @@ package usercommands
 
 import (
 	"fmt"
-	"strings"
 
 	"github.com/GoMudEngine/GoMud/internal/buffs"
 	"github.com/GoMudEngine/GoMud/internal/parser"
@@ -12,7 +11,6 @@ import (
 	"github.com/GoMudEngine/GoMud/internal/rooms"
 	"github.com/GoMudEngine/GoMud/internal/scripting"
 	"github.com/GoMudEngine/GoMud/internal/users"
-	"github.com/GoMudEngine/GoMud/internal/util"
 )
 
 func Show(rest string, user *users.UserRecord, room *rooms.Room, flags events.EventFlag) (bool, error) {
@@ -26,16 +24,6 @@ func Show(rest string, user *users.UserRecord, room *rooms.Room, flags events.Ev
 		// "show sword to merchant" -> Target=sword, Instrument=merchant
 		objectName = parsed.Target.Noun
 		targetName = parsed.Instrument.Noun
-	} else {
-		// Fallback: "show sword merchant" -> last arg is target
-		rest = util.StripPrepositions(rest)
-		args := util.SplitButRespectQuotes(strings.ToLower(rest))
-		if len(args) < 2 {
-			user.SendText("Show what? To whom?")
-			return true, nil
-		}
-		targetName = args[len(args)-1]
-		objectName = strings.Join(args[:len(args)-1], " ")
 	}
 
 	if objectName == "" || targetName == "" {
