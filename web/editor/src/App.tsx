@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { useAuth } from './stores/auth';
@@ -23,7 +24,19 @@ const queryClient = new QueryClient({
 });
 
 export default function App() {
-  const isAuthenticated = useAuth((s) => s.isAuthenticated);
+  const { isAuthenticated, loading, checkAuth } = useAuth();
+
+  useEffect(() => {
+    checkAuth();
+  }, [checkAuth]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-900 text-gray-400">
+        Loading...
+      </div>
+    );
+  }
 
   if (!isAuthenticated) {
     return <Login />;
