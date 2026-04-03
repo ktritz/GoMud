@@ -1,0 +1,43 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { useAuth } from './stores/auth';
+import { Login } from './pages/Login';
+import { Layout } from './components/Layout';
+import { Dashboard } from './pages/Dashboard';
+import { Rooms } from './pages/Rooms';
+import { Mobs } from './pages/Mobs';
+import { Items } from './pages/Items';
+import { Quests } from './pages/Quests';
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 30_000,
+      retry: 1,
+    },
+  },
+});
+
+export default function App() {
+  const isAuthenticated = useAuth((s) => s.isAuthenticated);
+
+  if (!isAuthenticated) {
+    return <Login />;
+  }
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/rooms" element={<Rooms />} />
+            <Route path="/mobs" element={<Mobs />} />
+            <Route path="/items" element={<Items />} />
+            <Route path="/quests" element={<Quests />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </QueryClientProvider>
+  );
+}
