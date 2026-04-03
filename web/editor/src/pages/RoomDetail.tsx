@@ -1,16 +1,31 @@
 import { useParams, Link } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
-import { rooms } from '../api/client';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { rooms, api } from '../api/client';
+import { EditableText } from '../components/EditableField';
 
 export function RoomDetail() {
   const { roomId } = useParams();
   const id = Number(roomId);
+  const queryClient = useQueryClient();
 
   const { data: room, isLoading, error } = useQuery({
     queryKey: ['rooms', id],
     queryFn: () => rooms.get(id),
     enabled: !isNaN(id),
   });
+
+  const updateMutation = useMutation({
+    mutationFn: (updates: Record<string, any>) =>
+      api.put(`/admin/rooms/${id}`, updates),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['rooms', id] });
+      queryClient.invalidateQueries({ queryKey: ['rooms'] });
+    },
+  });
+
+  const saveField = (field: string, value: any) => {
+    updateMutation.mutate({ [field]: value });
+  };
 
   if (isLoading) return <div className="text-gray-400">Loading...</div>;
   if (error) return <div className="text-red-400">Error: {(error as Error).message}</div>;
@@ -24,20 +39,43 @@ export function RoomDetail() {
         <span className="text-gray-300">#{room.RoomId}</span>
       </div>
 
-      <div className="flex items-center gap-4 mb-6">
-        <h1 className="text-2xl font-bold">{room.Title}</h1>
-        <span className="px-2 py-0.5 bg-gray-700 rounded text-sm text-gray-300">{room.Zone}</span>
-        {room.Biome && (
-          <span className="px-2 py-0.5 bg-blue-900/50 rounded text-sm text-blue-300">{room.Biome}</span>
-        )}
-      </div>
+      {updateMutation.isPending && (
+        <div className="bg-blue-900/30 border border-blue-700 text-blue-300 px-3 py-1 rounded mb-4 text-sm">
+          Saving...
+        </div>
+      )}
+      {updateMutation.isError && (
+        <div className="bg-red-900/30 border border-red-700 text-red-300 px-3 py-1 rounded mb-4 text-sm">
+          Error: {(updateMutation.error as Error).message}
+        </div>
+      )}
+      {updateMutation.isSuccess && (
+        <div className="bg-green-900/30 border border-green-700 text-green-300 px-3 py-1 rounded mb-4 text-sm">
+          Saved!
+        </div>
+      )}
 
-      {/* Description */}
-      <Section title="Description">
-        <p className="text-gray-300 whitespace-pre-wrap">{room.Description || 'No description'}</p>
+      <Section title="Title">
+        <EditableText value={room.Title || ''} onSave={(v) => saveField('Title', v)} label="Title" />
       </Section>
 
-      {/* Exits */}
+      <Section title="Zone / Biome">
+        <div className="flex gap-4">
+          <span className="px-2 py-0.5 bg-gray-700 rounded text-sm text-gray-300">{room.Zone}</span>
+          <EditableText value={room.Biome || ''} onSave={(v) => saveField('Biome', v)} label="Biome" />
+        </div>
+      </Section>
+
+      <Section title="Description">
+        <EditableText
+          value={room.Description || ''}
+          onSave={(v) => saveField('Description', v)}
+          label="Description"
+          multiline
+        />
+      </Section>
+
+      {/* Exits (read-only for now) */}
       <Section title="Exits">
         {room.Exits && Object.keys(room.Exits).length > 0 ? (
           <div className="grid grid-cols-2 gap-2">
@@ -50,9 +88,6 @@ export function RoomDetail() {
                 <span className="font-mono text-blue-400">{dir}</span>
                 <span className="text-gray-400">→ Room #{exit.RoomId}</span>
                 {exit.Secret && <span className="text-yellow-500 text-xs ml-2">secret</span>}
-                {exit.Lock?.Difficulty > 0 && (
-                  <span className="text-red-400 text-xs ml-2">locked ({exit.Lock.Difficulty})</span>
-                )}
               </Link>
             ))}
           </div>
@@ -61,7 +96,7 @@ export function RoomDetail() {
         )}
       </Section>
 
-      {/* Spawn Info */}
+      {/* Spawn Info (read-only for now) */}
       <Section title="Spawns">
         {room.SpawnInfo && room.SpawnInfo.length > 0 ? (
           <div className="space-y-2">
@@ -71,11 +106,6 @@ export function RoomDetail() {
                   {spawn.MobId > 0 && (
                     <Link to={`/mobs/${spawn.MobId}`} className="text-blue-400 hover:text-blue-300">
                       Mob #{spawn.MobId}
-                    </Link>
-                  )}
-                  {spawn.ItemId > 0 && (
-                    <Link to={`/items/${spawn.ItemId}`} className="text-green-400 hover:text-green-300">
-                      Item #{spawn.ItemId}
                     </Link>
                   )}
                   <span className="text-gray-500 text-sm">{spawn.RespawnRate}</span>
@@ -107,56 +137,21 @@ export function RoomDetail() {
         )}
       </Section>
 
-      {/* Items on floor */}
-      <Section title="Floor Items">
-        {room.Items && room.Items.length > 0 ? (
-          <div className="space-y-1">
-            {room.Items.map((item: any, i: number) => (
-              <div key={i} className="text-gray-300">
-                <Link to={`/items/${item.ItemId}`} className="text-green-400 hover:text-green-300">
-                  Item #{item.ItemId}
-                </Link>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p className="text-gray-500">No items</p>
-        )}
-        {room.Gold > 0 && <p className="text-yellow-400 mt-1">{room.Gold} gold on the floor</p>}
-      </Section>
-
-      {/* Idle Messages */}
-      <Section title="Idle Messages">
-        {room.IdleMessages && room.IdleMessages.length > 0 ? (
-          <ul className="space-y-1">
-            {room.IdleMessages.map((msg: string, i: number) => (
-              <li key={i} className="text-gray-400 text-sm">{stripAnsi(msg)}</li>
-            ))}
-          </ul>
-        ) : (
-          <p className="text-gray-500">None</p>
-        )}
-      </Section>
-
       {/* Map info */}
       <Section title="Map">
         <div className="grid grid-cols-3 gap-4 text-sm">
           <div>
-            <span className="text-gray-500">Symbol:</span>{' '}
-            <span className="font-mono text-white">{room.MapSymbol || '?'}</span>
+            <span className="text-gray-500">Symbol: </span>
+            <EditableText value={room.MapSymbol || ''} onSave={(v) => saveField('MapSymbol', v)} label="Symbol" />
           </div>
           <div>
-            <span className="text-gray-500">Legend:</span>{' '}
-            <span className="text-gray-300">{room.MapLegend || 'none'}</span>
-          </div>
-          <div>
-            <span className="text-gray-500">Biome:</span>{' '}
-            <span className="text-gray-300">{room.Biome || 'default'}</span>
+            <span className="text-gray-500">Legend: </span>
+            <EditableText value={room.MapLegend || ''} onSave={(v) => saveField('MapLegend', v)} label="Legend" />
           </div>
         </div>
       </Section>
 
-      {/* Raw JSON (dev helper) */}
+      {/* Raw JSON */}
       <Section title="Raw Data">
         <details>
           <summary className="text-gray-500 cursor-pointer hover:text-gray-300 text-sm">

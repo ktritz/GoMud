@@ -1,6 +1,7 @@
 package api
 
 import (
+	"encoding/json"
 	"net/http"
 	"sort"
 	"strconv"
@@ -76,8 +77,69 @@ func handleCreateRoom(w http.ResponseWriter, r *http.Request) {
 	writeError(w, http.StatusNotImplemented, "Not yet implemented")
 }
 
+// roomUpdateRequest contains the editable fields for a room.
+// JSON field names match the Go struct's exported field names.
+type roomUpdateRequest struct {
+	Title        *string            `json:"Title,omitempty"`
+	Description  *string            `json:"Description,omitempty"`
+	MapSymbol    *string            `json:"MapSymbol,omitempty"`
+	MapLegend    *string            `json:"MapLegend,omitempty"`
+	Biome        *string            `json:"Biome,omitempty"`
+	IdleMessages *[]string          `json:"IdleMessages,omitempty"`
+	Nouns        *map[string]string `json:"Nouns,omitempty"`
+}
+
 func handleUpdateRoom(w http.ResponseWriter, r *http.Request) {
-	writeError(w, http.StatusNotImplemented, "Not yet implemented")
+	roomId, err := strconv.Atoi(r.PathValue("roomId"))
+	if err != nil {
+		writeError(w, http.StatusBadRequest, "Invalid room ID")
+		return
+	}
+
+	room := rooms.LoadRoom(roomId)
+	if room == nil {
+		writeError(w, http.StatusNotFound, "Room not found")
+		return
+	}
+
+	var req roomUpdateRequest
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		writeError(w, http.StatusBadRequest, "Invalid JSON: "+err.Error())
+		return
+	}
+
+	// Apply partial updates
+	if req.Title != nil {
+		room.Title = *req.Title
+	}
+	if req.Description != nil {
+		room.Description = *req.Description
+	}
+	if req.MapSymbol != nil {
+		room.MapSymbol = *req.MapSymbol
+	}
+	if req.MapLegend != nil {
+		room.MapLegend = *req.MapLegend
+	}
+	if req.Biome != nil {
+		room.Biome = *req.Biome
+	}
+	if req.IdleMessages != nil {
+		room.IdleMessages = *req.IdleMessages
+	}
+	if req.Nouns != nil {
+		room.Nouns = *req.Nouns
+	}
+
+	// Save the template (strips runtime state, writes YAML, rebuilds maps)
+	if err := rooms.SaveRoomTemplate(*room); err != nil {
+		writeError(w, http.StatusInternalServerError, "Failed to save room: "+err.Error())
+		return
+	}
+
+	// Reload to get the fresh state
+	updated := rooms.LoadRoom(roomId)
+	writeJSON(w, http.StatusOK, updated)
 }
 
 func handleDeleteRoom(w http.ResponseWriter, r *http.Request) {
