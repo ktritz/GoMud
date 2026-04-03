@@ -1,12 +1,13 @@
 package api
 
 import (
-	"crypto/rand"
+	"crypto/sha256"
 	"encoding/json"
 	"fmt"
 	"net/http"
 	"time"
 
+	"github.com/GoMudEngine/GoMud/internal/configs"
 	"github.com/GoMudEngine/GoMud/internal/mudlog"
 	"github.com/GoMudEngine/GoMud/internal/users"
 	"github.com/golang-jwt/jwt/v5"
@@ -14,11 +15,15 @@ import (
 
 var jwtSigningKey []byte
 
-func init() {
-	jwtSigningKey = make([]byte, 32)
-	if _, err := rand.Read(jwtSigningKey); err != nil {
-		panic("failed to generate JWT signing key: " + err.Error())
+// InitJWT derives a stable signing key from the server seed.
+// Must be called after configs are loaded.
+func InitJWT() {
+	seed := configs.GetConfig().Server.Seed.String()
+	if seed == "" {
+		seed = "gomud-default-jwt-seed"
 	}
+	hash := sha256.Sum256([]byte("gomud-jwt-key:" + seed))
+	jwtSigningKey = hash[:]
 }
 
 const tokenExpiry = 2 * time.Hour

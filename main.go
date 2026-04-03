@@ -55,6 +55,7 @@ import (
 	"github.com/GoMudEngine/GoMud/internal/users"
 	"github.com/GoMudEngine/GoMud/internal/util"
 	"github.com/GoMudEngine/GoMud/internal/web"
+	"github.com/GoMudEngine/GoMud/internal/web/api"
 	_ "github.com/GoMudEngine/GoMud/modules"
 	textLang "golang.org/x/text/language"
 )
@@ -258,6 +259,7 @@ func main() {
 	serverAlive.Store(true)
 
 	mudlog.Info(`========================`)
+	api.InitJWT()
 	web.Listen(&wg, HandleWebSocketConnection)
 
 	allServerListeners := make([]net.Listener, 0, len(c.Network.TelnetPort))
