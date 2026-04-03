@@ -6,6 +6,7 @@ import (
 	"sort"
 	"strconv"
 
+	"github.com/GoMudEngine/GoMud/internal/exit"
 	"github.com/GoMudEngine/GoMud/internal/rooms"
 )
 
@@ -80,13 +81,15 @@ func handleCreateRoom(w http.ResponseWriter, r *http.Request) {
 // roomUpdateRequest contains the editable fields for a room.
 // JSON field names match the Go struct's exported field names.
 type roomUpdateRequest struct {
-	Title        *string            `json:"Title,omitempty"`
-	Description  *string            `json:"Description,omitempty"`
-	MapSymbol    *string            `json:"MapSymbol,omitempty"`
-	MapLegend    *string            `json:"MapLegend,omitempty"`
-	Biome        *string            `json:"Biome,omitempty"`
-	IdleMessages *[]string          `json:"IdleMessages,omitempty"`
-	Nouns        *map[string]string `json:"Nouns,omitempty"`
+	Title        *string                       `json:"Title,omitempty"`
+	Description  *string                       `json:"Description,omitempty"`
+	MapSymbol    *string                       `json:"MapSymbol,omitempty"`
+	MapLegend    *string                       `json:"MapLegend,omitempty"`
+	Biome        *string                       `json:"Biome,omitempty"`
+	IdleMessages *[]string                     `json:"IdleMessages,omitempty"`
+	Nouns        *map[string]string            `json:"Nouns,omitempty"`
+	Exits        *map[string]exit.RoomExit     `json:"Exits,omitempty"`
+	SpawnInfo    *[]rooms.SpawnInfo            `json:"SpawnInfo,omitempty"`
 }
 
 func handleUpdateRoom(w http.ResponseWriter, r *http.Request) {
@@ -129,6 +132,12 @@ func handleUpdateRoom(w http.ResponseWriter, r *http.Request) {
 	}
 	if req.Nouns != nil {
 		room.Nouns = *req.Nouns
+	}
+	if req.Exits != nil {
+		room.Exits = *req.Exits
+	}
+	if req.SpawnInfo != nil {
+		room.SpawnInfo = *req.SpawnInfo
 	}
 
 	// Save the template (strips runtime state, writes YAML, rebuilds maps)

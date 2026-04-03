@@ -2,6 +2,8 @@ import { useParams, Link } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { rooms, api } from '../api/client';
 import { EditableText } from '../components/EditableField';
+import { ExitEditor } from '../components/ExitEditor';
+import { SpawnEditor } from '../components/SpawnEditor';
 
 export function RoomDetail() {
   const { roomId } = useParams();
@@ -75,50 +77,20 @@ export function RoomDetail() {
         />
       </Section>
 
-      {/* Exits (read-only for now) */}
+      {/* Exits */}
       <Section title="Exits">
-        {room.Exits && Object.keys(room.Exits).length > 0 ? (
-          <div className="grid grid-cols-2 gap-2">
-            {Object.entries(room.Exits).map(([dir, exit]: [string, any]) => (
-              <Link
-                key={dir}
-                to={`/rooms/${exit.RoomId}`}
-                className="flex items-center justify-between bg-gray-800 rounded px-3 py-2 hover:bg-gray-700 transition-colors"
-              >
-                <span className="font-mono text-blue-400">{dir}</span>
-                <span className="text-gray-400">→ Room #{exit.RoomId}</span>
-                {exit.Secret && <span className="text-yellow-500 text-xs ml-2">secret</span>}
-              </Link>
-            ))}
-          </div>
-        ) : (
-          <p className="text-gray-500">No exits</p>
-        )}
+        <ExitEditor
+          exits={room.Exits || {}}
+          onSave={(exits) => saveField('Exits', exits)}
+        />
       </Section>
 
-      {/* Spawn Info (read-only for now) */}
+      {/* Spawns */}
       <Section title="Spawns">
-        {room.SpawnInfo && room.SpawnInfo.length > 0 ? (
-          <div className="space-y-2">
-            {room.SpawnInfo.map((spawn: any, i: number) => (
-              <div key={i} className="bg-gray-800 rounded px-3 py-2">
-                <div className="flex items-center gap-2">
-                  {spawn.MobId > 0 && (
-                    <Link to={`/mobs/${spawn.MobId}`} className="text-blue-400 hover:text-blue-300">
-                      Mob #{spawn.MobId}
-                    </Link>
-                  )}
-                  <span className="text-gray-500 text-sm">{spawn.RespawnRate}</span>
-                </div>
-                {spawn.Message && (
-                  <p className="text-gray-400 text-sm mt-1">{stripAnsi(spawn.Message)}</p>
-                )}
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p className="text-gray-500">No spawns</p>
-        )}
+        <SpawnEditor
+          spawns={room.SpawnInfo || []}
+          onSave={(spawns) => saveField('SpawnInfo', spawns)}
+        />
       </Section>
 
       {/* Nouns */}
