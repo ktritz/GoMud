@@ -2,6 +2,7 @@ package api
 
 import (
 	"net/http"
+	"sort"
 	"strconv"
 
 	"github.com/GoMudEngine/GoMud/internal/rooms"
@@ -46,6 +47,8 @@ func handleListRooms(w http.ResponseWriter, r *http.Request) {
 			ExitCount: len(room.Exits),
 		})
 	}
+
+	sort.Slice(result, func(i, j int) bool { return result[i].RoomId < result[j].RoomId })
 
 	writeJSON(w, http.StatusOK, map[string]any{
 		"rooms": result,

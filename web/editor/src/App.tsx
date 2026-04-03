@@ -11,6 +11,7 @@ import { MobDetail } from './pages/MobDetail';
 import { Items } from './pages/Items';
 import { ItemDetail } from './pages/ItemDetail';
 import { Quests } from './pages/Quests';
+import { Zones } from './pages/Zones';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -34,6 +35,7 @@ export default function App() {
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<Dashboard />} />
+            <Route path="/zones" element={<Zones />} />
             <Route path="/rooms" element={<Rooms />} />
             <Route path="/rooms/:roomId" element={<RoomDetail />} />
             <Route path="/mobs" element={<Mobs />} />

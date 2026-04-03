@@ -2,6 +2,7 @@ package api
 
 import (
 	"net/http"
+	"sort"
 	"strings"
 
 	"github.com/GoMudEngine/GoMud/internal/buffs"
@@ -16,11 +17,14 @@ import (
 
 func handleListZones(w http.ResponseWriter, r *http.Request) {
 	zones := rooms.GetAllZoneNames()
+	sort.Strings(zones)
 	result := []map[string]any{}
 
 	for _, zone := range zones {
+		roomIds := rooms.GetAllZoneRoomsIds(zone)
 		result = append(result, map[string]any{
-			"name": zone,
+			"name":      zone,
+			"roomCount": len(roomIds),
 		})
 	}
 

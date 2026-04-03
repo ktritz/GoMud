@@ -2,6 +2,7 @@ package api
 
 import (
 	"net/http"
+	"sort"
 	"strconv"
 
 	"github.com/GoMudEngine/GoMud/internal/mobs"
@@ -38,6 +39,8 @@ func handleListMobs(w http.ResponseWriter, r *http.Request) {
 		})
 	}
 
+	sort.Slice(result, func(i, j int) bool { return result[i].MobId < result[j].MobId })
+
 	writeJSON(w, http.StatusOK, map[string]any{
 		"mobs":  result,
 		"total": len(result),
@@ -57,7 +60,11 @@ func handleGetMob(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	writeJSON(w, http.StatusOK, mob)
+	// Resolve cached description hash to actual text
+	mobCopy := *mob
+	mobCopy.Character.Description = mob.Character.GetDescription()
+
+	writeJSON(w, http.StatusOK, mobCopy)
 }
 
 func handleCreateMob(w http.ResponseWriter, r *http.Request) {

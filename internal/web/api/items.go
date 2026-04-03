@@ -2,6 +2,7 @@ package api
 
 import (
 	"net/http"
+	"sort"
 	"strconv"
 
 	"github.com/GoMudEngine/GoMud/internal/items"
@@ -37,6 +38,8 @@ func handleListItems(w http.ResponseWriter, r *http.Request) {
 			Value:   item.Value,
 		})
 	}
+
+	sort.Slice(result, func(i, j int) bool { return result[i].ItemId < result[j].ItemId })
 
 	writeJSON(w, http.StatusOK, map[string]any{
 		"items": result,
