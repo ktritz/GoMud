@@ -18,6 +18,7 @@ import (
 
 	"github.com/GoMudEngine/GoMud/internal/configs"
 	"github.com/GoMudEngine/GoMud/internal/mudlog"
+	"github.com/GoMudEngine/GoMud/internal/web/api"
 	"github.com/GoMudEngine/GoMud/internal/util"
 	"github.com/gorilla/websocket"
 )
@@ -267,6 +268,9 @@ func Listen(wg *sync.WaitGroup, webSocketHandler func(*websocket.Conn)) {
 		slog.Error(`Web`, "error", "No ports defined. No web server will be started.")
 		return
 	}
+
+	// Register REST API routes
+	api.RegisterRoutes()
 
 	// Routing
 	// Basic homepage

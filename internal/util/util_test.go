@@ -978,25 +978,7 @@ func TestQuantizeTens(t *testing.T) {
 	}
 }
 
-// TestStripPrepositions ensures words like 'the', 'onto', 'to' etc. are stripped.
-func TestStripPrepositions(t *testing.T) {
-	tests := []struct {
-		in   string
-		want string
-	}{
-		{"onto the table", "table"},
-		{"with my sword", "sword"},
-		{"pick up the item", "pick up item"},
-		{"none match", "none match"},
-		{"", ""},
-	}
-	for _, tt := range tests {
-		got := StripPrepositions(tt.in)
-		if got != tt.want {
-			t.Errorf("StripPrepositions(%q) = %q, want %q", tt.in, got, tt.want)
-		}
-	}
-}
+// StripPrepositions has been removed — functionality moved to internal/parser package.
 
 // TestConvertColorShortTags verifies the replacement logic of {fg:bg} tags.
 func TestConvertColorShortTags(t *testing.T) {
