@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface Column<T> {
   key: string;
@@ -16,6 +16,8 @@ interface EntityListProps<T> {
   idField: string;
   searchPlaceholder?: string;
   onSearch?: (query: string) => void;
+  onCreate?: () => void;
+  initialSearch?: string;
 }
 
 export function EntityList<T extends Record<string, any>>({
@@ -27,8 +29,15 @@ export function EntityList<T extends Record<string, any>>({
   idField,
   searchPlaceholder = 'Search...',
   onSearch,
+  onCreate,
+  initialSearch,
 }: EntityListProps<T>) {
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState(initialSearch || '');
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (initialSearch !== undefined) setSearch(initialSearch);
+  }, [initialSearch]);
 
   const filtered = data?.filter((item) => {
     if (!search) return true;
@@ -44,6 +53,14 @@ export function EntityList<T extends Record<string, any>>({
       <div className="flex items-center justify-between mb-4">
         <h1 className="text-2xl font-bold">{title}</h1>
         <div className="flex gap-2">
+          {onCreate && (
+            <button
+              onClick={onCreate}
+              className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-sm rounded font-medium"
+            >
+              + New
+            </button>
+          )}
           <input
             type="text"
             placeholder={searchPlaceholder}
@@ -74,22 +91,12 @@ export function EntityList<T extends Record<string, any>>({
             {filtered?.map((item) => (
               <tr
                 key={item[idField]}
-                className="border-b border-gray-800 hover:bg-gray-800/50 transition-colors"
+                onClick={() => navigate(`${linkPrefix}/${item[idField]}`)}
+                className="border-b border-gray-800 hover:bg-gray-800/50 transition-colors cursor-pointer"
               >
                 {columns.map((col) => (
                   <td key={col.key} className="py-2 px-3">
-                    {col.key === columns[0].key ? (
-                      <Link
-                        to={`${linkPrefix}/${item[idField]}`}
-                        className="text-blue-400 hover:text-blue-300"
-                      >
-                        {col.render ? col.render(item) : item[col.key]}
-                      </Link>
-                    ) : col.render ? (
-                      col.render(item)
-                    ) : (
-                      item[col.key]
-                    )}
+                    {col.render ? col.render(item) : item[col.key]}
                   </td>
                 ))}
               </tr>

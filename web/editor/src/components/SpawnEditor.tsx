@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
+import { mobs, items, type MobSummary, type ItemSummary } from '../api/client';
+import { EntityPicker } from './EntityPicker';
 
 interface SpawnInfo {
   MobId?: number;
@@ -21,6 +24,12 @@ function stripAnsi(text: string): string {
 export function SpawnEditor({ spawns, onSave }: SpawnEditorProps) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState<SpawnInfo[]>([]);
+
+  // Fetch names for read-only display
+  const { data: mobData } = useQuery({ queryKey: ['mobs'], queryFn: () => mobs.list(), staleTime: 60_000 });
+  const { data: itemData } = useQuery({ queryKey: ['items'], queryFn: () => items.list(), staleTime: 60_000 });
+  const mobNames = new Map((mobData?.mobs || []).map((m: MobSummary) => [m.mobId, m.name]));
+  const itemNames = new Map((itemData?.items || []).map((it: ItemSummary) => [it.itemId, it.name]));
 
   const startEdit = () => {
     setDraft(JSON.parse(JSON.stringify(spawns || [])));
@@ -56,12 +65,12 @@ export function SpawnEditor({ spawns, onSave }: SpawnEditorProps) {
                 <div className="flex items-center gap-2">
                   {spawn.MobId ? (
                     <Link to={`/mobs/${spawn.MobId}`} className="text-blue-400 hover:text-blue-300">
-                      Mob #{spawn.MobId}
+                      #{spawn.MobId} {mobNames.get(spawn.MobId) || 'Mob'}
                     </Link>
                   ) : null}
                   {spawn.ItemId ? (
                     <Link to={`/items/${spawn.ItemId}`} className="text-green-400 hover:text-green-300">
-                      Item #{spawn.ItemId}
+                      #{spawn.ItemId} {itemNames.get(spawn.ItemId) || 'Item'}
                     </Link>
                   ) : null}
                   <span className="text-gray-500 text-sm">{spawn.RespawnRate}</span>
@@ -90,19 +99,19 @@ export function SpawnEditor({ spawns, onSave }: SpawnEditorProps) {
       {draft.map((spawn, i) => (
         <div key={i} className="bg-gray-800 rounded px-3 py-3 space-y-2">
           <div className="flex items-center gap-2">
-            <label className="text-sm text-gray-400 w-16">Mob ID</label>
-            <input
-              type="number"
-              value={spawn.MobId || ''}
-              onChange={(e) => updateSpawn(i, 'MobId', parseInt(e.target.value) || 0)}
-              className="w-20 px-2 py-1 bg-gray-700 border border-gray-600 rounded text-white text-sm"
+            <label className="text-sm text-gray-400 w-16">Mob</label>
+            <EntityPicker
+              type="mob"
+              value={spawn.MobId || 0}
+              onChange={(id) => updateSpawn(i, 'MobId', id)}
+              className="w-56"
             />
-            <label className="text-sm text-gray-400 w-16 ml-4">Item ID</label>
-            <input
-              type="number"
-              value={spawn.ItemId || ''}
-              onChange={(e) => updateSpawn(i, 'ItemId', parseInt(e.target.value) || 0)}
-              className="w-20 px-2 py-1 bg-gray-700 border border-gray-600 rounded text-white text-sm"
+            <label className="text-sm text-gray-400 w-16 ml-2">Item</label>
+            <EntityPicker
+              type="item"
+              value={spawn.ItemId || 0}
+              onChange={(id) => updateSpawn(i, 'ItemId', id)}
+              className="w-56"
             />
             <button
               onClick={() => removeSpawn(i)}

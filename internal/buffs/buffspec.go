@@ -225,6 +225,29 @@ func (b *BuffSpec) GetScriptPath() string {
 	return util.FilePath(fullScriptPath)
 }
 
+func SaveBuff(b *BuffSpec) error {
+	saveModes := []fileloader.SaveOption{}
+	if configs.GetFilePathsConfig().CarefulSaveFiles {
+		saveModes = append(saveModes, fileloader.SaveCareful)
+	}
+	return fileloader.SaveFlatFile[*BuffSpec](string(configs.GetFilePathsConfig().DataFiles)+`/buffs`, b, saveModes...)
+}
+
+func CreateNewBuff(b BuffSpec) (int, error) {
+	nextId := 1
+	for _, existing := range buffs {
+		if existing.BuffId >= nextId {
+			nextId = existing.BuffId + 1
+		}
+	}
+	b.BuffId = nextId
+	if err := SaveBuff(&b); err != nil {
+		return 0, err
+	}
+	buffs[nextId] = &b
+	return nextId, nil
+}
+
 // file self loads due to init()
 func LoadDataFiles() {
 

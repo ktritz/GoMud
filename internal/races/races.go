@@ -176,6 +176,21 @@ func (r *Race) Save() error {
 	return nil
 }
 
+func CreateNewRace(r Race) (int, error) {
+	nextId := 1
+	for _, existing := range races {
+		if existing.RaceId >= nextId {
+			nextId = existing.RaceId + 1
+		}
+	}
+	r.RaceId = nextId
+	if err := r.Save(); err != nil {
+		return 0, err
+	}
+	races[nextId] = &r
+	return nextId, nil
+}
+
 // file self loads due to init()
 func LoadDataFiles() {
 

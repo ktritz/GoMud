@@ -183,6 +183,28 @@ func (s *SpellData) GetScriptPath() string {
 	return strings.Replace(string(configs.GetFilePathsConfig().DataFiles)+`/spells/`+s.Filepath(), `.yaml`, `.js`, 1)
 }
 
+func SaveSpell(s *SpellData) error {
+	saveModes := []fileloader.SaveOption{}
+	if configs.GetFilePathsConfig().CarefulSaveFiles {
+		saveModes = append(saveModes, fileloader.SaveCareful)
+	}
+	return fileloader.SaveFlatFile[*SpellData](string(configs.GetFilePathsConfig().DataFiles)+`/spells`, s, saveModes...)
+}
+
+func CreateNewSpell(s SpellData) (string, error) {
+	if s.SpellId == "" {
+		return "", fmt.Errorf("SpellId is required")
+	}
+	if _, exists := allSpells[s.SpellId]; exists {
+		return "", fmt.Errorf("spell '%s' already exists", s.SpellId)
+	}
+	if err := SaveSpell(&s); err != nil {
+		return "", err
+	}
+	allSpells[s.SpellId] = &s
+	return s.SpellId, nil
+}
+
 func LoadSpellFiles() {
 
 	start := time.Now()

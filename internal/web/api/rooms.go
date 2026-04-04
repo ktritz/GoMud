@@ -3,9 +3,11 @@ package api
 import (
 	"encoding/json"
 	"net/http"
+	"os"
 	"sort"
 	"strconv"
 
+	"github.com/GoMudEngine/GoMud/internal/configs"
 	"github.com/GoMudEngine/GoMud/internal/exit"
 	"github.com/GoMudEngine/GoMud/internal/rooms"
 )
@@ -74,22 +76,59 @@ func handleGetRoom(w http.ResponseWriter, r *http.Request) {
 	writeJSON(w, http.StatusOK, room)
 }
 
+type roomCreateRequest struct {
+	Zone        string `json:"Zone"`
+	Title       string `json:"Title,omitempty"`
+	Description string `json:"Description,omitempty"`
+}
+
 func handleCreateRoom(w http.ResponseWriter, r *http.Request) {
-	writeError(w, http.StatusNotImplemented, "Not yet implemented")
+	var req roomCreateRequest
+	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+		writeError(w, http.StatusBadRequest, "Invalid JSON: "+err.Error())
+		return
+	}
+
+	if req.Zone == "" {
+		writeError(w, http.StatusBadRequest, "Zone is required")
+		return
+	}
+
+	room := rooms.NewRoom(req.Zone)
+	if req.Title != "" {
+		room.Title = req.Title
+	}
+	if req.Description != "" {
+		room.Description = req.Description
+	}
+
+	if err := rooms.SaveRoomTemplate(*room); err != nil {
+		writeError(w, http.StatusInternalServerError, "Failed to save room: "+err.Error())
+		return
+	}
+
+	writeJSON(w, http.StatusCreated, room)
 }
 
 // roomUpdateRequest contains the editable fields for a room.
 // JSON field names match the Go struct's exported field names.
 type roomUpdateRequest struct {
-	Title        *string                       `json:"Title,omitempty"`
-	Description  *string                       `json:"Description,omitempty"`
-	MapSymbol    *string                       `json:"MapSymbol,omitempty"`
-	MapLegend    *string                       `json:"MapLegend,omitempty"`
-	Biome        *string                       `json:"Biome,omitempty"`
-	IdleMessages *[]string                     `json:"IdleMessages,omitempty"`
-	Nouns        *map[string]string            `json:"Nouns,omitempty"`
-	Exits        *map[string]exit.RoomExit     `json:"Exits,omitempty"`
-	SpawnInfo    *[]rooms.SpawnInfo            `json:"SpawnInfo,omitempty"`
+	Title           *string                              `json:"Title,omitempty"`
+	Description     *string                              `json:"Description,omitempty"`
+	MapSymbol       *string                              `json:"MapSymbol,omitempty"`
+	MapLegend       *string                              `json:"MapLegend,omitempty"`
+	Biome           *string                              `json:"Biome,omitempty"`
+	IsBank          *bool                                `json:"IsBank,omitempty"`
+	IsStorage       *bool                                `json:"IsStorage,omitempty"`
+	IsCharacterRoom *bool                                `json:"IsCharacterRoom,omitempty"`
+	Pvp             *bool                                `json:"Pvp,omitempty"`
+	MusicFile       *string                              `json:"MusicFile,omitempty"`
+	IdleMessages    *[]string                            `json:"IdleMessages,omitempty"`
+	Nouns           *map[string]string                   `json:"Nouns,omitempty"`
+	Exits           *map[string]exit.RoomExit            `json:"Exits,omitempty"`
+	SpawnInfo       *[]rooms.SpawnInfo                   `json:"SpawnInfo,omitempty"`
+	Signs           *[]rooms.Sign                        `json:"Signs,omitempty"`
+	SkillTraining   *map[string]rooms.TrainingRange      `json:"SkillTraining,omitempty"`
 }
 
 func handleUpdateRoom(w http.ResponseWriter, r *http.Request) {
@@ -127,6 +166,21 @@ func handleUpdateRoom(w http.ResponseWriter, r *http.Request) {
 	if req.Biome != nil {
 		room.Biome = *req.Biome
 	}
+	if req.IsBank != nil {
+		room.IsBank = *req.IsBank
+	}
+	if req.IsStorage != nil {
+		room.IsStorage = *req.IsStorage
+	}
+	if req.IsCharacterRoom != nil {
+		room.IsCharacterRoom = *req.IsCharacterRoom
+	}
+	if req.Pvp != nil {
+		room.Pvp = *req.Pvp
+	}
+	if req.MusicFile != nil {
+		room.MusicFile = *req.MusicFile
+	}
 	if req.IdleMessages != nil {
 		room.IdleMessages = *req.IdleMessages
 	}
@@ -138,6 +192,12 @@ func handleUpdateRoom(w http.ResponseWriter, r *http.Request) {
 	}
 	if req.SpawnInfo != nil {
 		room.SpawnInfo = *req.SpawnInfo
+	}
+	if req.Signs != nil {
+		room.Signs = *req.Signs
+	}
+	if req.SkillTraining != nil {
+		room.SkillTraining = *req.SkillTraining
 	}
 
 	// Save the template (strips runtime state, writes YAML, rebuilds maps)
@@ -152,5 +212,32 @@ func handleUpdateRoom(w http.ResponseWriter, r *http.Request) {
 }
 
 func handleDeleteRoom(w http.ResponseWriter, r *http.Request) {
-	writeError(w, http.StatusNotImplemented, "Not yet implemented")
+	roomId, err := strconv.Atoi(r.PathValue("roomId"))
+	if err != nil {
+		writeError(w, http.StatusBadRequest, "Invalid room ID")
+		return
+	}
+
+	room := rooms.LoadRoom(roomId)
+	if room == nil {
+		writeError(w, http.StatusNotFound, "Room not found")
+		return
+	}
+
+	dataDir := configs.GetFilePathsConfig().DataFiles.String()
+
+	// Delete the room template file
+	roomPath := dataDir + "/rooms/" + room.Filepath()
+	if err := os.Remove(roomPath); err != nil && !os.IsNotExist(err) {
+		writeError(w, http.StatusInternalServerError, "Failed to delete room file: "+err.Error())
+		return
+	}
+
+	// Also delete any instance file
+	instancePath := dataDir + "/rooms.instances/" + room.Filepath()
+	os.Remove(instancePath) // best-effort, ignore errors
+
+	rooms.LoadDataFiles()
+
+	writeJSON(w, http.StatusOK, map[string]any{"deleted": true})
 }

@@ -1,9 +1,13 @@
 import { useParams, Link } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { rooms, api } from '../api/client';
-import { EditableText } from '../components/EditableField';
+import { EditableText, EditableBoolean, EditableList, EditableMap, Section, SaveStatus } from '../components/EditableField';
 import { ExitEditor } from '../components/ExitEditor';
 import { SpawnEditor } from '../components/SpawnEditor';
+import { useRoomValidation, ValidationPanel } from '../hooks/useValidation';
+import { useRoomReferences } from '../hooks/useReferences';
+import { ReferencesPanel } from '../components/ReferencesPanel';
+import { DetailActions } from '../components/DetailActions';
 
 export function RoomDetail() {
   const { roomId } = useParams();
@@ -29,6 +33,9 @@ export function RoomDetail() {
     updateMutation.mutate({ [field]: value });
   };
 
+  const warnings = useRoomValidation(room);
+  const references = useRoomReferences(id);
+
   if (isLoading) return <div className="text-gray-400">Loading...</div>;
   if (error) return <div className="text-red-400">Error: {(error as Error).message}</div>;
   if (!room) return <div className="text-gray-400">Room not found</div>;
@@ -41,21 +48,21 @@ export function RoomDetail() {
         <span className="text-gray-300">#{room.RoomId}</span>
       </div>
 
-      {updateMutation.isPending && (
-        <div className="bg-blue-900/30 border border-blue-700 text-blue-300 px-3 py-1 rounded mb-4 text-sm">
-          Saving...
-        </div>
-      )}
-      {updateMutation.isError && (
-        <div className="bg-red-900/30 border border-red-700 text-red-300 px-3 py-1 rounded mb-4 text-sm">
-          Error: {(updateMutation.error as Error).message}
-        </div>
-      )}
-      {updateMutation.isSuccess && (
-        <div className="bg-green-900/30 border border-green-700 text-green-300 px-3 py-1 rounded mb-4 text-sm">
-          Saved!
-        </div>
-      )}
+      <DetailActions
+        entityType="rooms"
+        entityId={id}
+        entityName={room.Title}
+        listPath="/rooms"
+        detailPath="/rooms"
+        duplicateData={{ Zone: room.Zone, Title: `${room.Title} (Copy)`, Description: room.Description }}
+      />
+      <ValidationPanel warnings={warnings} />
+      <SaveStatus
+        isPending={updateMutation.isPending}
+        isError={updateMutation.isError}
+        isSuccess={updateMutation.isSuccess}
+        error={updateMutation.error as Error}
+      />
 
       <Section title="Title">
         <EditableText value={room.Title || ''} onSave={(v) => saveField('Title', v)} label="Title" />
@@ -95,18 +102,32 @@ export function RoomDetail() {
 
       {/* Nouns */}
       <Section title="Nouns">
-        {room.Nouns && Object.keys(room.Nouns).length > 0 ? (
-          <div className="space-y-2">
-            {Object.entries(room.Nouns).map(([noun, desc]: [string, any]) => (
-              <div key={noun} className="bg-gray-800 rounded px-3 py-2">
-                <span className="font-mono text-yellow-400">{noun}</span>
-                <p className="text-gray-400 text-sm mt-1">{stripAnsi(String(desc)).slice(0, 120)}...</p>
-              </div>
-            ))}
+        <EditableMap
+          value={room.Nouns || {}}
+          onSave={(v) => saveField('Nouns', v)}
+        />
+      </Section>
+
+      {/* Flags */}
+      <Section title="Flags">
+        <div className="flex gap-4">
+          <div className="flex items-center gap-2 text-sm">
+            <span className="text-gray-500">Bank:</span>
+            <EditableBoolean value={room.IsBank || false} onSave={(v) => saveField('IsBank', v)} />
           </div>
-        ) : (
-          <p className="text-gray-500">No nouns</p>
-        )}
+          <div className="flex items-center gap-2 text-sm">
+            <span className="text-gray-500">Storage:</span>
+            <EditableBoolean value={room.IsStorage || false} onSave={(v) => saveField('IsStorage', v)} />
+          </div>
+          <div className="flex items-center gap-2 text-sm">
+            <span className="text-gray-500">PvP:</span>
+            <EditableBoolean value={room.Pvp || false} onSave={(v) => saveField('Pvp', v)} />
+          </div>
+          <div className="flex items-center gap-2 text-sm">
+            <span className="text-gray-500">Character Room:</span>
+            <EditableBoolean value={room.IsCharacterRoom || false} onSave={(v) => saveField('IsCharacterRoom', v)} />
+          </div>
+        </div>
       </Section>
 
       {/* Map info */}
@@ -123,6 +144,47 @@ export function RoomDetail() {
         </div>
       </Section>
 
+      {/* Idle Messages */}
+      <Section title="Idle Messages">
+        <EditableList
+          value={room.IdleMessages || []}
+          onSave={(v) => saveField('IdleMessages', v)}
+          placeholder="Add idle message..."
+        />
+      </Section>
+
+      {/* Signs */}
+      <Section title="Signs">
+        <EditableList
+          value={(room.Signs || []).map((s: any) => s.DisplayText)}
+          onSave={(texts) => saveField('Signs', texts.map((t: string) => ({ DisplayText: t })))}
+          placeholder="Add sign text..."
+        />
+      </Section>
+
+      {/* Skill Training */}
+      <Section title="Skill Training">
+        {room.SkillTraining && Object.keys(room.SkillTraining).length > 0 ? (
+          <div className="space-y-1 text-sm">
+            {Object.entries(room.SkillTraining).map(([skill, range]: [string, any]) => (
+              <div key={skill} className="flex items-center gap-2">
+                <span className="text-gray-400 font-mono w-24">{skill}</span>
+                <span className="text-gray-300">Level {range.Min}-{range.Max}</span>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <p className="text-gray-500">No skill training</p>
+        )}
+      </Section>
+
+      {/* Music */}
+      <Section title="Music">
+        <EditableText value={room.MusicFile || ''} onSave={(v) => saveField('MusicFile', v)} />
+      </Section>
+
+      <ReferencesPanel references={references} />
+
       {/* Raw JSON */}
       <Section title="Raw Data">
         <details>
@@ -136,19 +198,4 @@ export function RoomDetail() {
       </Section>
     </div>
   );
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <section className="mb-6">
-      <h2 className="text-lg font-semibold text-gray-200 mb-2 border-b border-gray-700 pb-1">
-        {title}
-      </h2>
-      {children}
-    </section>
-  );
-}
-
-function stripAnsi(text: string): string {
-  return text.replace(/<\/?ansi[^>]*>/g, '');
 }

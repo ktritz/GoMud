@@ -49,16 +49,35 @@ func RegisterRoutes() {
 	// Buffs
 	http.Handle("GET /api/admin/buffs", cors(jwtAuth(http.HandlerFunc(withReadLock(handleListBuffs)))))
 	http.Handle("GET /api/admin/buffs/{buffId}", cors(jwtAuth(http.HandlerFunc(withReadLock(handleGetBuff)))))
+	http.Handle("POST /api/admin/buffs", cors(jwtAuth(http.HandlerFunc(withWriteLock(handleCreateBuff)))))
+	http.Handle("PUT /api/admin/buffs/{buffId}", cors(jwtAuth(http.HandlerFunc(withWriteLock(handleUpdateBuff)))))
+	http.Handle("DELETE /api/admin/buffs/{buffId}", cors(jwtAuth(http.HandlerFunc(withWriteLock(handleDeleteBuff)))))
 
 	// Spells
 	http.Handle("GET /api/admin/spells", cors(jwtAuth(http.HandlerFunc(withReadLock(handleListSpells)))))
 	http.Handle("GET /api/admin/spells/{spellId}", cors(jwtAuth(http.HandlerFunc(withReadLock(handleGetSpell)))))
+	http.Handle("POST /api/admin/spells", cors(jwtAuth(http.HandlerFunc(withWriteLock(handleCreateSpell)))))
+	http.Handle("PUT /api/admin/spells/{spellId}", cors(jwtAuth(http.HandlerFunc(withWriteLock(handleUpdateSpell)))))
+	http.Handle("DELETE /api/admin/spells/{spellId}", cors(jwtAuth(http.HandlerFunc(withWriteLock(handleDeleteSpell)))))
 
 	// Races
 	http.Handle("GET /api/admin/races", cors(jwtAuth(http.HandlerFunc(withReadLock(handleListRaces)))))
 	http.Handle("GET /api/admin/races/{raceId}", cors(jwtAuth(http.HandlerFunc(withReadLock(handleGetRace)))))
+	http.Handle("POST /api/admin/races", cors(jwtAuth(http.HandlerFunc(withWriteLock(handleCreateRace)))))
+	http.Handle("PUT /api/admin/races/{raceId}", cors(jwtAuth(http.HandlerFunc(withWriteLock(handleUpdateRace)))))
+	http.Handle("DELETE /api/admin/races/{raceId}", cors(jwtAuth(http.HandlerFunc(withWriteLock(handleDeleteRace)))))
 
 	// Server
 	http.Handle("POST /api/admin/reload", cors(jwtAuth(http.HandlerFunc(withWriteLock(handleReload)))))
 	http.Handle("GET /api/admin/stats", cors(jwtAuth(http.HandlerFunc(withReadLock(handleStats)))))
+
+	// Cross-references
+	http.Handle("GET /api/admin/references/{type}/{id}", cors(jwtAuth(http.HandlerFunc(withReadLock(handleGetReferences)))))
+
+	// Version control
+	http.Handle("GET /api/admin/vcs/status", cors(jwtAuth(http.HandlerFunc(handleVCSStatus))))
+	http.Handle("GET /api/admin/vcs/history", cors(jwtAuth(http.HandlerFunc(handleListCommits))))
+	http.Handle("GET /api/admin/vcs/diff/{hash}", cors(jwtAuth(http.HandlerFunc(handleGetDiff))))
+	http.Handle("POST /api/admin/vcs/checkpoint", cors(jwtAuth(http.HandlerFunc(handleCheckpoint))))
+	http.Handle("POST /api/admin/vcs/revert/{hash}", cors(jwtAuth(http.HandlerFunc(handleRevert))))
 }

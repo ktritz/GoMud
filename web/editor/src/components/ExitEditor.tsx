@@ -1,5 +1,8 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
+import { rooms as roomsApi, type RoomSummary } from '../api/client';
+import { EntityPicker } from './EntityPicker';
 
 interface Exit {
   RoomId: number;
@@ -17,7 +20,11 @@ export function ExitEditor({ exits, onSave }: ExitEditorProps) {
   const [editing, setEditing] = useState(false);
   const [draft, setDraft] = useState<Record<string, Exit>>({});
   const [newDir, setNewDir] = useState('');
-  const [newRoomId, setNewRoomId] = useState('');
+  const [newRoomId, setNewRoomId] = useState(0);
+
+  // Fetch room names for read-only display
+  const { data: roomData } = useQuery({ queryKey: ['rooms'], queryFn: () => roomsApi.list(), staleTime: 60_000 });
+  const roomNames = new Map((roomData?.rooms || []).map((r: RoomSummary) => [r.roomId, r.title]));
 
   const startEdit = () => {
     setDraft(JSON.parse(JSON.stringify(exits || {})));
@@ -31,9 +38,9 @@ export function ExitEditor({ exits, onSave }: ExitEditorProps) {
 
   const addExit = () => {
     if (!newDir || !newRoomId) return;
-    setDraft({ ...draft, [newDir]: { RoomId: parseInt(newRoomId) } });
+    setDraft({ ...draft, [newDir]: { RoomId: newRoomId } });
     setNewDir('');
-    setNewRoomId('');
+    setNewRoomId(0);
   };
 
   const removeExit = (dir: string) => {
@@ -60,7 +67,7 @@ export function ExitEditor({ exits, onSave }: ExitEditorProps) {
                 className="flex items-center justify-between bg-gray-800 rounded px-3 py-2 hover:bg-gray-700 transition-colors"
               >
                 <span className="font-mono text-blue-400">{dir}</span>
-                <span className="text-gray-400">→ #{exit.RoomId}</span>
+                <span className="text-gray-400">&rarr; #{exit.RoomId} {roomNames.get(exit.RoomId) || ''}</span>
                 {exit.Secret && <span className="text-yellow-500 text-xs ml-2">secret</span>}
                 {exit.Lock?.Difficulty ? (
                   <span className="text-red-400 text-xs ml-2">locked ({exit.Lock.Difficulty})</span>
@@ -86,16 +93,16 @@ export function ExitEditor({ exits, onSave }: ExitEditorProps) {
       {Object.entries(draft).map(([dir, exit]) => (
         <div key={dir} className="flex items-center gap-2 bg-gray-800 rounded px-3 py-2">
           <span className="font-mono text-blue-400 w-24">{dir}</span>
-          <span className="text-gray-400">→</span>
-          <input
-            type="number"
+          <span className="text-gray-400">&rarr;</span>
+          <EntityPicker
+            type="room"
             value={exit.RoomId}
-            onChange={(e) => {
+            onChange={(id) => {
               const updated = { ...draft };
-              updated[dir] = { ...updated[dir], RoomId: parseInt(e.target.value) || 0 };
+              updated[dir] = { ...updated[dir], RoomId: id };
               setDraft(updated);
             }}
-            className="w-20 px-2 py-1 bg-gray-700 border border-gray-600 rounded text-white text-sm"
+            className="w-56"
           />
           <label className="flex items-center gap-1 text-sm text-gray-400">
             <input
@@ -123,13 +130,12 @@ export function ExitEditor({ exits, onSave }: ExitEditorProps) {
           onChange={(e) => setNewDir(e.target.value)}
           className="w-32 px-2 py-1 bg-gray-700 border border-gray-600 rounded text-white text-sm"
         />
-        <span className="text-gray-400">→</span>
-        <input
-          type="number"
-          placeholder="room ID"
+        <span className="text-gray-400">&rarr;</span>
+        <EntityPicker
+          type="room"
           value={newRoomId}
-          onChange={(e) => setNewRoomId(e.target.value)}
-          className="w-20 px-2 py-1 bg-gray-700 border border-gray-600 rounded text-white text-sm"
+          onChange={(id) => setNewRoomId(id)}
+          className="w-56"
         />
         <button
           onClick={addExit}

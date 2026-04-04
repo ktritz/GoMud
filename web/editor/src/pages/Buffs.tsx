@@ -1,48 +1,48 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useQuery, useQueryClient } from '@tanstack/react-query';
-import { quests } from '../api/client';
+import { buffs, api } from '../api/client';
 import { EntityList } from '../components/EntityList';
 import { CreateEntityModal } from '../components/CreateEntityModal';
 
-export function Quests() {
+export function Buffs() {
   const [showCreate, setShowCreate] = useState(false);
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
   const { data, isLoading } = useQuery({
-    queryKey: ['quests'],
-    queryFn: () => quests.list(),
+    queryKey: ['buffs'],
+    queryFn: () => buffs.list(),
   });
 
   return (
     <>
       <EntityList
-        title="Quests"
-        data={data?.quests}
+        title="Buffs"
+        data={data?.buffs}
         isLoading={isLoading}
-        linkPrefix="/quests"
-        idField="QuestId"
+        linkPrefix="/buffs"
+        idField="buffId"
         columns={[
-          { key: 'QuestId', label: 'ID' },
-          { key: 'Name', label: 'Name' },
-          { key: 'Description', label: 'Description' },
+          { key: 'buffId', label: 'ID' },
+          { key: 'name', label: 'Name' },
+          { key: 'description', label: 'Description' },
         ]}
         onCreate={() => setShowCreate(true)}
       />
 
       {showCreate && (
         <CreateEntityModal
-          title="Create Quest"
+          title="Create Buff"
           fields={[
-            { key: 'Name', label: 'Name', type: 'text', required: true, placeholder: 'Quest name' },
-            { key: 'Description', label: 'Description', type: 'text', placeholder: 'Quest description' },
+            { key: 'Name', label: 'Name', type: 'text', required: true, placeholder: 'Buff name' },
+            { key: 'Description', label: 'Description', type: 'text', placeholder: 'Description' },
           ]}
-          onSubmit={(data) => quests.create(data as any)}
+          onSubmit={(data) => api.post('/admin/buffs', data)}
           onCreated={(result) => {
-            queryClient.invalidateQueries({ queryKey: ['quests'] });
+            queryClient.invalidateQueries({ queryKey: ['buffs'] });
             setShowCreate(false);
-            if (result?.QuestId) navigate(`/quests/${result.QuestId}`);
+            if (result?.BuffId) navigate(`/buffs/${result.BuffId}`);
           }}
           onClose={() => setShowCreate(false)}
         />

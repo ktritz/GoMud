@@ -1,10 +1,16 @@
 import { useParams, Link } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
-import { mobs } from '../api/client';
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
+import { mobs, api } from '../api/client';
+import { EditableText, EditableNumber, EditableBoolean, EditableList, Section, SaveStatus } from '../components/EditableField';
+import { useMobValidation, ValidationPanel } from '../hooks/useValidation';
+import { useMobReferences } from '../hooks/useReferences';
+import { ReferencesPanel } from '../components/ReferencesPanel';
+import { DetailActions } from '../components/DetailActions';
 
 export function MobDetail() {
   const { mobId } = useParams();
   const id = Number(mobId);
+  const queryClient = useQueryClient();
 
   const { data: mob, isLoading, error } = useQuery({
     queryKey: ['mobs', id],
@@ -12,11 +18,27 @@ export function MobDetail() {
     enabled: !isNaN(id),
   });
 
+  const updateMutation = useMutation({
+    mutationFn: (updates: Record<string, any>) =>
+      api.put(`/admin/mobs/${id}`, updates),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ['mobs', id] });
+      queryClient.invalidateQueries({ queryKey: ['mobs'] });
+    },
+  });
+
+  const saveField = (field: string, value: any) => {
+    updateMutation.mutate({ [field]: value });
+  };
+
+  const warnings = useMobValidation(mob);
+  const references = useMobReferences(id);
+
   if (isLoading) return <div className="text-gray-400">Loading...</div>;
   if (error) return <div className="text-red-400">Error: {(error as Error).message}</div>;
   if (!mob) return <div className="text-gray-400">Mob not found</div>;
 
-  const char = mob.Character || mob.character || {};
+  const char = mob.Character || {};
 
   return (
     <div className="max-w-4xl">
@@ -26,64 +48,158 @@ export function MobDetail() {
         <span className="text-gray-300">#{mob.MobId}</span>
       </div>
 
+      <DetailActions
+        entityType="mobs"
+        entityId={id}
+        entityName={char.Name || 'mob'}
+        listPath="/mobs"
+        detailPath="/mobs"
+        duplicateData={{ Name: `${char.Name} (Copy)`, Zone: mob.Zone, Level: char.Level }}
+      />
+      <ValidationPanel warnings={warnings} />
+      <SaveStatus
+        isPending={updateMutation.isPending}
+        isError={updateMutation.isError}
+        isSuccess={updateMutation.isSuccess}
+        error={updateMutation.error as Error}
+      />
+
       <div className="flex items-center gap-4 mb-6">
-        <h1 className="text-2xl font-bold">{char.Name || char.name || 'Unknown'}</h1>
+        <h1 className="text-2xl font-bold">
+          <EditableText value={char.Name || ''} onSave={(v) => saveField('CharName', v)} label="Name" />
+        </h1>
         <span className="px-2 py-0.5 bg-gray-700 rounded text-sm text-gray-300">{mob.Zone}</span>
         {mob.Hostile && (
           <span className="px-2 py-0.5 bg-red-900/50 rounded text-sm text-red-300">Hostile</span>
         )}
         <span className="px-2 py-0.5 bg-blue-900/50 rounded text-sm text-blue-300">
-          Level {char.Level || char.level}
+          Level {char.Level}
         </span>
       </div>
 
       <Section title="Description">
-        <p className="text-gray-300 whitespace-pre-wrap">
-          {char.Description || char.description || 'No description'}
-        </p>
+        <EditableText
+          value={char.Description || ''}
+          onSave={(v) => saveField('CharDescription', v)}
+          label="Description"
+          multiline
+        />
       </Section>
 
-      <Section title="Properties">
+      <Section title="Character Stats">
         <div className="grid grid-cols-3 gap-4 text-sm">
-          <Prop label="Activity Level" value={mob.ActivityLevel} />
-          <Prop label="Max Wander" value={mob.MaxWander} />
-          <Prop label="Item Drop Chance" value={`${mob.ItemDropChance}%`} />
-          <Prop label="Gold" value={char.Gold || char.gold || 0} />
-          <Prop label="Race ID" value={char.RaceId || char.raceid} />
-          <Prop label="Alignment" value={char.Alignment || char.alignment || 0} />
-          <Prop label="No Corpse" value={mob.NoCorpse ? 'Yes' : 'No'} />
-          <Prop label="Script Tag" value={mob.ScriptTag || 'none'} />
+          <div>
+            <span className="text-gray-500">Level: </span>
+            <EditableNumber value={char.Level || 0} onSave={(v) => saveField('CharLevel', v)} label="Level" min={1} />
+          </div>
+          <div>
+            <span className="text-gray-500">Gold: </span>
+            <EditableNumber value={char.Gold || 0} onSave={(v) => saveField('CharGold', v)} label="Gold" min={0} />
+          </div>
+          <div>
+            <span className="text-gray-500">Race ID: </span>
+            <span className="text-gray-300">{char.RaceId || ''}</span>
+          </div>
+          <div>
+            <span className="text-gray-500">Alignment: </span>
+            <span className="text-gray-300">{char.Alignment || 0}</span>
+          </div>
         </div>
       </Section>
 
-      {mob.DeathMessage && (
-        <Section title="Death Message">
-          <p className="text-gray-300">{stripAnsi(mob.DeathMessage)}</p>
-        </Section>
-      )}
+      <Section title="Behavior">
+        <div className="grid grid-cols-3 gap-4 text-sm">
+          <div>
+            <span className="text-gray-500">Hostile: </span>
+            <EditableBoolean value={!!mob.Hostile} onSave={(v) => saveField('Hostile', v)} label="Hostile" />
+          </div>
+          <div>
+            <span className="text-gray-500">Activity Level: </span>
+            <EditableNumber value={mob.ActivityLevel || 0} onSave={(v) => saveField('ActivityLevel', v)} label="Activity Level" min={0} />
+          </div>
+          <div>
+            <span className="text-gray-500">Max Wander: </span>
+            <EditableNumber value={mob.MaxWander || 0} onSave={(v) => saveField('MaxWander', v)} label="Max Wander" min={0} />
+          </div>
+          <div>
+            <span className="text-gray-500">No Corpse: </span>
+            <EditableBoolean value={!!mob.NoCorpse} onSave={(v) => saveField('NoCorpse', v)} label="No Corpse" />
+          </div>
+          <div>
+            <span className="text-gray-500">Item Drop Chance: </span>
+            <EditableNumber value={mob.ItemDropChance || 0} onSave={(v) => saveField('ItemDropChance', v)} min={0} max={100} />
+          </div>
+          <div>
+            <span className="text-gray-500">Script Tag: </span>
+            <EditableText value={mob.ScriptTag || ''} onSave={(v) => saveField('ScriptTag', v)} />
+          </div>
+        </div>
+      </Section>
+
+      <Section title="Death Message">
+        <EditableText
+          value={mob.DeathMessage ? stripAnsi(mob.DeathMessage) : ''}
+          onSave={(v) => saveField('DeathMessage', v)}
+          label="Death Message"
+        />
+      </Section>
 
       <Section title="Groups">
-        {mob.Groups && mob.Groups.length > 0 ? (
-          <div className="flex flex-wrap gap-2">
-            {mob.Groups.map((g: string) => (
-              <span key={g} className="px-2 py-0.5 bg-gray-700 rounded text-sm text-gray-300">{g}</span>
-            ))}
-          </div>
-        ) : (
-          <p className="text-gray-500">None</p>
-        )}
+        <EditableList
+          value={mob.Groups || []}
+          onSave={(v) => saveField('Groups', v)}
+          label="Groups"
+          placeholder="Add group..."
+        />
+      </Section>
+
+      <Section title="Hates">
+        <EditableList
+          value={mob.Hates || []}
+          onSave={(v) => saveField('Hates', v)}
+          placeholder="Add hate group..."
+        />
+      </Section>
+
+      <Section title="Angry Commands">
+        <EditableList
+          value={mob.AngryCommands || []}
+          onSave={(v) => saveField('AngryCommands', v)}
+          placeholder="Add angry command..."
+        />
+      </Section>
+
+      <Section title="Combat Commands">
+        <EditableList
+          value={mob.CombatCommands || []}
+          onSave={(v) => saveField('CombatCommands', v)}
+          placeholder="Add combat command..."
+        />
+      </Section>
+
+      <Section title="Quest Flags">
+        <EditableList
+          value={mob.QuestFlags || []}
+          onSave={(v) => saveField('QuestFlags', v)}
+          placeholder="Add quest flag..."
+        />
+      </Section>
+
+      <Section title="Buff IDs">
+        <EditableList
+          value={(mob.BuffIds || []).map(String)}
+          onSave={(v) => saveField('BuffIds', v.map(Number).filter(n => !isNaN(n)))}
+          placeholder="Add buff ID..."
+        />
       </Section>
 
       <Section title="Idle Commands">
-        {mob.IdleCommands && mob.IdleCommands.length > 0 ? (
-          <ul className="space-y-1">
-            {mob.IdleCommands.filter((c: string) => c).map((cmd: string, i: number) => (
-              <li key={i} className="text-gray-400 text-sm font-mono">{cmd}</li>
-            ))}
-          </ul>
-        ) : (
-          <p className="text-gray-500">None</p>
-        )}
+        <EditableList
+          value={(mob.IdleCommands || []).filter((c: string) => c)}
+          onSave={(v) => saveField('IdleCommands', v)}
+          label="Idle Commands"
+          placeholder="Add command..."
+        />
       </Section>
 
       {/* Shop */}
@@ -104,6 +220,8 @@ export function MobDetail() {
         </Section>
       )}
 
+      <ReferencesPanel references={references} />
+
       <Section title="Raw Data">
         <details>
           <summary className="text-gray-500 cursor-pointer hover:text-gray-300 text-sm">
@@ -114,26 +232,6 @@ export function MobDetail() {
           </pre>
         </details>
       </Section>
-    </div>
-  );
-}
-
-function Section({ title, children }: { title: string; children: React.ReactNode }) {
-  return (
-    <section className="mb-6">
-      <h2 className="text-lg font-semibold text-gray-200 mb-2 border-b border-gray-700 pb-1">
-        {title}
-      </h2>
-      {children}
-    </section>
-  );
-}
-
-function Prop({ label, value }: { label: string; value: any }) {
-  return (
-    <div>
-      <span className="text-gray-500">{label}:</span>{' '}
-      <span className="text-gray-300">{String(value ?? '')}</span>
     </div>
   );
 }

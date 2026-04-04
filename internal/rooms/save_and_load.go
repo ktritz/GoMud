@@ -184,47 +184,49 @@ func SaveRoomTemplate(roomTpl Room) error {
 	//
 	roomBeingReplaced := roomManager.rooms[roomTpl.RoomId]
 
-	// Copy container contents (if new vs. old room container names match)
-	for containerName, container := range roomBeingReplaced.Containers {
+	if roomBeingReplaced != nil {
+		// Copy container contents (if new vs. old room container names match)
+		for containerName, container := range roomBeingReplaced.Containers {
 
-		if newContainer, ok := roomTpl.Containers[containerName]; ok {
+			if newContainer, ok := roomTpl.Containers[containerName]; ok {
 
-			if newContainer.Gold == 0 {
-				newContainer.Gold = container.Gold
+				if newContainer.Gold == 0 {
+					newContainer.Gold = container.Gold
+				}
+
+				if len(newContainer.Items) == 0 && len(container.Items) > 0 {
+					newContainer.Items = make([]items.Item, len(container.Items))
+					copy(newContainer.Items, container.Items)
+				}
+
+				roomTpl.Containers[containerName] = newContainer
 			}
+		}
 
-			if len(newContainer.Items) == 0 && len(container.Items) > 0 {
-				newContainer.Items = make([]items.Item, len(container.Items))
-				copy(newContainer.Items, container.Items)
+		// Copy items and stashed items
+		for _, itm := range roomBeingReplaced.GetAllFloorItems(true) {
+			if itm.StashedBy > 0 {
+				roomTpl.AddItem(itm, true)
+			} else {
+				roomTpl.AddItem(itm, false)
 			}
-
-			roomTpl.Containers[containerName] = newContainer
 		}
+
+		// Copy gold on floor
+		roomTpl.Gold = roomBeingReplaced.Gold
+
+		// Copy signs
+		roomTpl.Signs = make([]Sign, len(roomBeingReplaced.Signs))
+		copy(roomTpl.Signs, roomBeingReplaced.Signs)
+
+		// Copy mobs in room
+		roomTpl.mobs = make([]int, len(roomBeingReplaced.mobs))
+		copy(roomTpl.mobs, roomBeingReplaced.mobs)
+
+		// Copy players in room
+		roomTpl.players = make([]int, len(roomBeingReplaced.players))
+		copy(roomTpl.players, roomBeingReplaced.players)
 	}
-
-	// Copy items and stashed items
-	for _, itm := range roomBeingReplaced.GetAllFloorItems(true) {
-		if itm.StashedBy > 0 {
-			roomTpl.AddItem(itm, true)
-		} else {
-			roomTpl.AddItem(itm, false)
-		}
-	}
-
-	// Copy gold on floor
-	roomTpl.Gold = roomBeingReplaced.Gold
-
-	// Copy signs
-	roomTpl.Signs = make([]Sign, len(roomBeingReplaced.Signs))
-	copy(roomTpl.Signs, roomBeingReplaced.Signs)
-
-	// Copy mobs in room
-	roomTpl.mobs = make([]int, len(roomBeingReplaced.mobs))
-	copy(roomTpl.mobs, roomBeingReplaced.mobs)
-
-	// Copy players in room
-	roomTpl.players = make([]int, len(roomBeingReplaced.players))
-	copy(roomTpl.players, roomBeingReplaced.players)
 
 	// Add to memory with the force flag true
 	// This will clear out the old data and force write the new data.

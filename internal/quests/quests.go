@@ -179,6 +179,31 @@ func GetAllQuests() []Quest {
 	return ret
 }
 
+func SaveQuest(q *Quest) error {
+	saveModes := []fileloader.SaveOption{}
+	if configs.GetFilePathsConfig().CarefulSaveFiles {
+		saveModes = append(saveModes, fileloader.SaveCareful)
+	}
+	return fileloader.SaveFlatFile[*Quest](configs.GetFilePathsConfig().DataFiles.String()+`/quests`, q, saveModes...)
+}
+
+func CreateNewQuest(q Quest) (int, error) {
+	nextId := 1
+	for _, existing := range quests {
+		if existing.QuestId >= nextId {
+			nextId = existing.QuestId + 1
+		}
+	}
+	q.QuestId = nextId
+
+	if err := SaveQuest(&q); err != nil {
+		return 0, err
+	}
+
+	quests[nextId] = &q
+	return nextId, nil
+}
+
 // file self loads due to init()
 func LoadDataFiles() {
 

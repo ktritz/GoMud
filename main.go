@@ -260,6 +260,7 @@ func main() {
 
 	mudlog.Info(`========================`)
 	api.InitJWT()
+	api.InitVCS()
 	web.Listen(&wg, HandleWebSocketConnection)
 
 	allServerListeners := make([]net.Listener, 0, len(c.Network.TelnetPort))

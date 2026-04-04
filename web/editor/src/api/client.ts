@@ -62,7 +62,7 @@ export interface LoginResponse {
 
 export async function login(username: string, password: string): Promise<LoginResponse> {
   const data = await request<LoginResponse>('POST', '/auth/login', { username, password });
-  authToken = data.token;
+  setToken(data.token);
   return data;
 }
 
@@ -103,6 +103,8 @@ export const rooms = {
     return api.get<{ rooms: RoomSummary[]; total: number }>(`/admin/rooms${query ? '?' + query : ''}`);
   },
   get: (id: number) => api.get<any>(`/admin/rooms/${id}`),
+  create: (data: { Zone: string; Title?: string; Description?: string }) =>
+    api.post<any>('/admin/rooms', data),
 };
 
 export const mobs = {
@@ -111,6 +113,8 @@ export const mobs = {
     return api.get<{ mobs: MobSummary[]; total: number }>(`/admin/mobs${query ? '?' + query : ''}`);
   },
   get: (id: number) => api.get<any>(`/admin/mobs/${id}`),
+  create: (data: { Name: string; Zone: string; Level?: number }) =>
+    api.post<any>('/admin/mobs', data),
 };
 
 export const items = {
@@ -119,23 +123,30 @@ export const items = {
     return api.get<{ items: ItemSummary[]; total: number }>(`/admin/items${query ? '?' + query : ''}`);
   },
   get: (id: number) => api.get<any>(`/admin/items/${id}`),
+  create: (data: { Name: string; Type: string; Subtype?: string }) =>
+    api.post<any>('/admin/items', data),
 };
 
 export const quests = {
   list: () => api.get<{ quests: any[]; total: number }>('/admin/quests'),
   get: (id: string) => api.get<any>(`/admin/quests/${id}`),
+  create: (data: { Name: string; Description?: string }) =>
+    api.post<any>('/admin/quests', data),
 };
 
 export const buffs = {
   list: () => api.get<{ buffs: any[]; total: number }>('/admin/buffs'),
+  get: (id: number) => api.get<any>(`/admin/buffs/${id}`),
 };
 
 export const spells = {
   list: () => api.get<{ spells: any[]; total: number }>('/admin/spells'),
+  get: (id: string) => api.get<any>(`/admin/spells/${id}`),
 };
 
 export const races = {
   list: () => api.get<{ races: any[]; total: number }>('/admin/races'),
+  get: (id: number) => api.get<any>(`/admin/races/${id}`),
 };
 
 export const zones = {
@@ -144,4 +155,20 @@ export const zones = {
 
 export const server = {
   stats: () => api.get<{ connections: number; disconnections: number; onlineUsers: number }>('/admin/stats'),
+};
+
+export interface VCSCommit {
+  hash: string;
+  shortHash: string;
+  author: string;
+  date: string;
+  message: string;
+}
+
+export const vcs = {
+  status: () => api.get<{ active: boolean; dirty: boolean; changed: string[] }>('/admin/vcs/status'),
+  history: (limit = 50) => api.get<{ commits: VCSCommit[]; total: number }>(`/admin/vcs/history?limit=${limit}`),
+  diff: (hash: string) => api.get<{ hash: string; diff: string }>(`/admin/vcs/diff/${hash}`),
+  checkpoint: (message: string) => api.post<{ committed: boolean; message: string }>('/admin/vcs/checkpoint', { message }),
+  revert: (hash: string) => api.post<{ reverted: boolean; hash: string }>(`/admin/vcs/revert/${hash}`),
 };

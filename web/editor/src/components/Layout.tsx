@@ -25,6 +25,12 @@ const navSections = [
       { to: '/spells', label: 'Spells' },
     ],
   },
+  {
+    label: 'Tools',
+    links: [
+      { to: '/history', label: 'History' },
+    ],
+  },
 ];
 
 export function Layout() {
