@@ -76,6 +76,10 @@ func RegisterRoutes() {
 	http.Handle("GET /api/admin/scripts/{type}/{id}", cors(jwtAuth(http.HandlerFunc(withReadLock(handleGetScript)))))
 	http.Handle("PUT /api/admin/scripts/{type}/{id}", cors(jwtAuth(http.HandlerFunc(withWriteLock(handleSaveScript)))))
 
+	// Dialogue trees
+	http.Handle("GET /api/admin/dialogue/{type}/{id}", cors(jwtAuth(http.HandlerFunc(withReadLock(handleGetDialogue)))))
+	http.Handle("PUT /api/admin/dialogue/{type}/{id}", cors(jwtAuth(http.HandlerFunc(withWriteLock(handleSaveDialogue)))))
+
 	// Cross-references
 	http.Handle("GET /api/admin/references/{type}/{id}", cors(jwtAuth(http.HandlerFunc(withReadLock(handleGetReferences)))))
 

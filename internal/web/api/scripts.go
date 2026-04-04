@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"os"
 	"strconv"
+	"strings"
 
 	"github.com/GoMudEngine/GoMud/internal/buffs"
 	"github.com/GoMudEngine/GoMud/internal/items"
@@ -75,6 +76,59 @@ func handleSaveScript(w http.ResponseWriter, r *http.Request) {
 
 	if err := os.WriteFile(scriptPath, []byte(req.Content), 0644); err != nil {
 		writeError(w, http.StatusInternalServerError, "Failed to write script: "+err.Error())
+		return
+	}
+
+	writeJSON(w, http.StatusOK, map[string]any{"saved": true})
+}
+
+// Dialogue tree endpoints — stores JSON design data alongside scripts
+func handleGetDialogue(w http.ResponseWriter, r *http.Request) {
+	entityType := r.PathValue("type")
+	entityId := r.PathValue("id")
+
+	scriptPath, err := resolveScriptPath(entityType, entityId)
+	if err != nil {
+		writeError(w, http.StatusBadRequest, err.Error())
+		return
+	}
+
+	dialoguePath := strings.Replace(scriptPath, ".js", ".dialogue.json", 1)
+	content, err := os.ReadFile(dialoguePath)
+	if err != nil {
+		if os.IsNotExist(err) {
+			writeJSON(w, http.StatusOK, map[string]any{"exists": false, "tree": nil})
+			return
+		}
+		writeError(w, http.StatusInternalServerError, "Failed to read dialogue: "+err.Error())
+		return
+	}
+
+	var tree any
+	json.Unmarshal(content, &tree)
+	writeJSON(w, http.StatusOK, map[string]any{"exists": true, "tree": tree})
+}
+
+func handleSaveDialogue(w http.ResponseWriter, r *http.Request) {
+	entityType := r.PathValue("type")
+	entityId := r.PathValue("id")
+
+	scriptPath, err := resolveScriptPath(entityType, entityId)
+	if err != nil {
+		writeError(w, http.StatusBadRequest, err.Error())
+		return
+	}
+
+	dialoguePath := strings.Replace(scriptPath, ".js", ".dialogue.json", 1)
+
+	body, _ := io.ReadAll(r.Body)
+
+	// Ensure the directory exists
+	dir := dialoguePath[:strings.LastIndex(dialoguePath, "/")]
+	os.MkdirAll(dir, 0755)
+
+	if err := os.WriteFile(dialoguePath, body, 0644); err != nil {
+		writeError(w, http.StatusInternalServerError, "Failed to save dialogue: "+err.Error())
 		return
 	}
 

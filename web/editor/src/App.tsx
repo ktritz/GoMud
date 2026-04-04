@@ -22,6 +22,7 @@ import { RaceDetail } from './pages/RaceDetail';
 import { QuestDetail } from './pages/QuestDetail';
 import { History } from './pages/History';
 import { ZoneMap } from './pages/ZoneMap';
+import { DialogueEditor } from './pages/DialogueEditor';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -73,6 +74,7 @@ export default function App() {
             <Route path="/spells/:spellId" element={<SpellDetail />} />
             <Route path="/races" element={<Races />} />
             <Route path="/races/:raceId" element={<RaceDetail />} />
+            <Route path="/dialogue/:entityType/:entityId" element={<DialogueEditor />} />
             <Route path="/history" element={<History />} />
           </Route>
         </Routes>

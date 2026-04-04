@@ -223,6 +223,15 @@ export function MobDetail() {
 
       <ScriptEditor entityType="mob" entityId={id} />
 
+      <section className="mb-6">
+        <Link
+          to={`/dialogue/mob/${id}`}
+          className="inline-block px-3 py-1.5 bg-purple-900/50 hover:bg-purple-800/50 border border-purple-700 text-purple-300 text-sm rounded"
+        >
+          Open Dialogue Editor
+        </Link>
+      </section>
+
       <ReferencesPanel references={references} />
 
       <Section title="Raw Data">
