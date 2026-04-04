@@ -5,6 +5,7 @@ import { EditableText, EditableNumber, EditableBoolean, EditableMap, Section, Sa
 import { useBuffReferences } from '../hooks/useReferences';
 import { ReferencesPanel } from '../components/ReferencesPanel';
 import { DetailActions } from '../components/DetailActions';
+import { ScriptEditor } from '../components/ScriptEditor';
 
 export function BuffDetail() {
   const { buffId } = useParams();
@@ -120,6 +121,8 @@ export function BuffDetail() {
           valueType="number"
         />
       </Section>
+
+      <ScriptEditor entityType="buff" entityId={id} />
 
       <ReferencesPanel references={references} />
 

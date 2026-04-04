@@ -17,14 +17,27 @@ export function Zones() {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {data?.zones?.map((zone: any) => (
-            <Link
+            <div
               key={zone.name}
-              to={`/rooms?zone=${encodeURIComponent(zone.name)}`}
-              className="bg-gray-800 rounded-lg p-4 border border-gray-700 hover:border-blue-500 transition-colors"
+              className="bg-gray-800 rounded-lg p-4 border border-gray-700 hover:border-gray-600 transition-colors"
             >
               <div className="font-semibold text-white">{zone.name}</div>
               <div className="text-sm text-gray-400 mt-1">{zone.roomCount} rooms</div>
-            </Link>
+              <div className="flex gap-2 mt-3">
+                <Link
+                  to={`/rooms?zone=${encodeURIComponent(zone.name)}`}
+                  className="px-2 py-1 bg-gray-700 hover:bg-gray-600 text-gray-300 text-xs rounded"
+                >
+                  Rooms
+                </Link>
+                <Link
+                  to={`/zones/${encodeURIComponent(zone.name)}/map`}
+                  className="px-2 py-1 bg-blue-900/50 hover:bg-blue-800/50 text-blue-300 text-xs rounded"
+                >
+                  Map
+                </Link>
+              </div>
+            </div>
           ))}
         </div>
       )}

@@ -24,6 +24,7 @@ func RegisterRoutes() {
 	// Zones
 	http.Handle("GET /api/admin/zones", cors(jwtAuth(http.HandlerFunc(withReadLock(handleListZones)))))
 	http.Handle("GET /api/admin/zones/{zoneName}", cors(jwtAuth(http.HandlerFunc(withReadLock(handleGetZone)))))
+	http.Handle("GET /api/admin/zones/{zoneName}/map", cors(jwtAuth(http.HandlerFunc(withReadLock(handleGetZoneMap)))))
 
 	// Mobs
 	http.Handle("GET /api/admin/mobs", cors(jwtAuth(http.HandlerFunc(withReadLock(handleListMobs)))))
@@ -70,6 +71,10 @@ func RegisterRoutes() {
 	// Server
 	http.Handle("POST /api/admin/reload", cors(jwtAuth(http.HandlerFunc(withWriteLock(handleReload)))))
 	http.Handle("GET /api/admin/stats", cors(jwtAuth(http.HandlerFunc(withReadLock(handleStats)))))
+
+	// Scripts
+	http.Handle("GET /api/admin/scripts/{type}/{id}", cors(jwtAuth(http.HandlerFunc(withReadLock(handleGetScript)))))
+	http.Handle("PUT /api/admin/scripts/{type}/{id}", cors(jwtAuth(http.HandlerFunc(withWriteLock(handleSaveScript)))))
 
 	// Cross-references
 	http.Handle("GET /api/admin/references/{type}/{id}", cors(jwtAuth(http.HandlerFunc(withReadLock(handleGetReferences)))))

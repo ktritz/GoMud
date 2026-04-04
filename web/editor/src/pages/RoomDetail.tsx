@@ -8,6 +8,7 @@ import { useRoomValidation, ValidationPanel } from '../hooks/useValidation';
 import { useRoomReferences } from '../hooks/useReferences';
 import { ReferencesPanel } from '../components/ReferencesPanel';
 import { DetailActions } from '../components/DetailActions';
+import { ScriptEditor } from '../components/ScriptEditor';
 
 export function RoomDetail() {
   const { roomId } = useParams();
@@ -182,6 +183,8 @@ export function RoomDetail() {
       <Section title="Music">
         <EditableText value={room.MusicFile || ''} onSave={(v) => saveField('MusicFile', v)} />
       </Section>
+
+      <ScriptEditor entityType="room" entityId={id} />
 
       <ReferencesPanel references={references} />
 

@@ -6,6 +6,7 @@ import { useItemValidation, ValidationPanel } from '../hooks/useValidation';
 import { useItemReferences } from '../hooks/useReferences';
 import { ReferencesPanel } from '../components/ReferencesPanel';
 import { DetailActions } from '../components/DetailActions';
+import { ScriptEditor } from '../components/ScriptEditor';
 
 const typeOptions = [
   'weapon', 'offhand', 'head', 'neck', 'body', 'belt', 'gloves', 'ring',
@@ -222,6 +223,8 @@ export function ItemDetail() {
           valueType="number"
         />
       </Section>
+
+      <ScriptEditor entityType="item" entityId={id} />
 
       <ReferencesPanel references={references} />
 

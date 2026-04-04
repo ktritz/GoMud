@@ -11,6 +11,7 @@ import (
 	"github.com/GoMudEngine/GoMud/internal/buffs"
 	"github.com/GoMudEngine/GoMud/internal/configs"
 	"github.com/GoMudEngine/GoMud/internal/connections"
+	"github.com/GoMudEngine/GoMud/internal/mapper"
 	"github.com/GoMudEngine/GoMud/internal/races"
 	"github.com/GoMudEngine/GoMud/internal/rooms"
 	"github.com/GoMudEngine/GoMud/internal/spells"
@@ -47,6 +48,53 @@ func handleGetZone(w http.ResponseWriter, r *http.Request) {
 
 	writeJSON(w, http.StatusOK, map[string]any{
 		"name": zoneName,
+	})
+}
+
+func handleGetZoneMap(w http.ResponseWriter, r *http.Request) {
+	zoneName := r.PathValue("zoneName")
+	if zoneName == "" {
+		writeError(w, http.StatusBadRequest, "Zone name required")
+		return
+	}
+
+	cfg := rooms.GetZoneConfig(zoneName)
+	if cfg.RoomId == 0 {
+		writeError(w, http.StatusNotFound, "Zone not found")
+		return
+	}
+
+	m := mapper.GetMapper(cfg.RoomId)
+	if m == nil {
+		writeError(w, http.StatusNotFound, "No map data for zone")
+		return
+	}
+
+	nodes := m.GetMapData()
+
+	// Also fetch room titles
+	type mapRoomInfo struct {
+		mapper.MapNodeInfo
+		Title string `json:"title"`
+	}
+
+	result := make([]mapRoomInfo, 0, len(nodes))
+	for _, node := range nodes {
+		title := ""
+		if room := rooms.LoadRoom(node.RoomId); room != nil {
+			title = room.Title
+		}
+		result = append(result, mapRoomInfo{
+			MapNodeInfo: node,
+			Title:       title,
+		})
+	}
+
+	writeJSON(w, http.StatusOK, map[string]any{
+		"zone":     zoneName,
+		"rootRoom": cfg.RoomId,
+		"rooms":    result,
+		"total":    len(result),
 	})
 }
 

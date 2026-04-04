@@ -337,6 +337,38 @@ func (r *mapper) HasRoom(roomId int) bool {
 	return r.crawledRooms[roomId] != nil
 }
 
+// MapNodeInfo is an exported representation of a room's position on the map.
+type MapNodeInfo struct {
+	RoomId int            `json:"roomId"`
+	X      int            `json:"x"`
+	Y      int            `json:"y"`
+	Z      int            `json:"z"`
+	Symbol string         `json:"symbol"`
+	Legend string         `json:"legend"`
+	Exits  map[string]int `json:"exits"` // direction -> roomId
+}
+
+// GetMapData returns position data for all rooms in this map.
+func (r *mapper) GetMapData() []MapNodeInfo {
+	result := make([]MapNodeInfo, 0, len(r.crawledRooms))
+	for _, node := range r.crawledRooms {
+		exits := make(map[string]int)
+		for dir, ex := range node.Exits {
+			exits[dir] = ex.RoomId
+		}
+		result = append(result, MapNodeInfo{
+			RoomId: node.RoomId,
+			X:      node.Pos.x,
+			Y:      node.Pos.y,
+			Z:      node.Pos.z,
+			Symbol: string(node.Symbol),
+			Legend:  node.Legend,
+			Exits:  exits,
+		})
+	}
+	return result
+}
+
 // Get the roomId at a given coordinate
 func (r *mapper) GetRoomId(x, y, z int) (roomId int, err error) {
 

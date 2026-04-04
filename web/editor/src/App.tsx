@@ -21,6 +21,7 @@ import { Races } from './pages/Races';
 import { RaceDetail } from './pages/RaceDetail';
 import { QuestDetail } from './pages/QuestDetail';
 import { History } from './pages/History';
+import { ZoneMap } from './pages/ZoneMap';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -57,6 +58,7 @@ export default function App() {
           <Route element={<Layout />}>
             <Route path="/" element={<Dashboard />} />
             <Route path="/zones" element={<Zones />} />
+            <Route path="/zones/:zoneName/map" element={<ZoneMap />} />
             <Route path="/rooms" element={<Rooms />} />
             <Route path="/rooms/:roomId" element={<RoomDetail />} />
             <Route path="/mobs" element={<Mobs />} />

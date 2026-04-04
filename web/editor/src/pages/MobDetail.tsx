@@ -6,6 +6,7 @@ import { useMobValidation, ValidationPanel } from '../hooks/useValidation';
 import { useMobReferences } from '../hooks/useReferences';
 import { ReferencesPanel } from '../components/ReferencesPanel';
 import { DetailActions } from '../components/DetailActions';
+import { ScriptEditor } from '../components/ScriptEditor';
 
 export function MobDetail() {
   const { mobId } = useParams();
@@ -219,6 +220,8 @@ export function MobDetail() {
           </div>
         </Section>
       )}
+
+      <ScriptEditor entityType="mob" entityId={id} />
 
       <ReferencesPanel references={references} />
 
